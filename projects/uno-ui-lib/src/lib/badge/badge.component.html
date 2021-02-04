@@ -1,0 +1,7 @@
+<span
+    class="slds-badge slds-truncate"
+    [class.badge-pointer]="pointer"
+    [ngClass]=" type ? 'slds-theme--' + type : '' "
+    [ngStyle]="customStyle">
+        <ng-content></ng-content>
+</span>

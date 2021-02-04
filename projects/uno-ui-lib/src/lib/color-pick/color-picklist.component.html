@@ -1,0 +1,36 @@
+<!-- picklist HTML is a <span unoDropdown /> markup, with specific TS behaviors - like multiple selection, items list online filtering, etc. -->
+<span
+    [ngClass]="{ 'slds-picklist--fluid': fluid }"
+    (openChange)="openChange.emit($event)"
+    (selectedElem)="onSelectedElem($event)"
+    unoDropdown
+    uno-popover-trigger
+    [unoPopover]="colorsContent"
+    [unoPopoverOpen]="open"
+    unoPopoverSize="medium"
+    [unoPopoverPlacement]="popOverPosition"
+    [unoPopoverNubbin]="nubbinPosition"
+    (click)="open = !open">
+    
+    <button
+        type="button"
+        class="slds-button--neutral slds-uno-picklist--label slds-truncate"
+        style="padding: 0 10px"
+        [class.slds-input]="!isForInlineTableCSS"
+        [class.slds-button]="isForInlineTableCSS"
+        [disabled]="isDisabled">
+            <ng-content></ng-content>
+            <uno-icon icon="down_s" size="xx-small" class="slds-m-left_small slds-float--right"></uno-icon>
+    </button>
+</span>
+
+<ng-template #colorsContent>
+    <div class="slds-grid slds-wrap" style="padding: 16px;">
+        <!-- Cycle of all [colors] elements: -->
+        <div class="slds-size--1-of-7" style="z-index: 1; text-align: center; padding-bottom: 5px;" *ngFor="let item of data; let i = index;"
+            uno-pick-option
+            [unoPickOption]="item">
+            <span [class.slds-is-active]="isOptionActive(item)" (click)="selectedElem.emit(item)" [ngStyle]="{'background-color': item.color}" style="height: 27px; width: 27px; border-radius: 50%; display: inline-block; cursor: pointer;"></span>
+        </div>
+    </div>
+</ng-template>

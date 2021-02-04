@@ -1,0 +1,231 @@
+<div style="color: #000;">
+    <p class="slds-text-title--caps slds-m-bottom--small" style="text-decoration: underline;">
+        Use UNO library's <strong>&#60;uno-picklist /&#62;</strong> or <strong>&#60;uno-lookup /&#62;</strong> ui-component...?
+    </p>
+    <p>
+        On <strong>&#60;uno-picklist /&#62;</strong> data can be <em><b>filtered</b></em> at the <b>front end</b> - coming with, or without, pagination, cumulating items on <em>scrollDown</em> or not.
+    </p>
+    <p class="slds-m-bottom--large">Multiple options can be selected, if <strong>&#60;uno-pick /&#62;</strong>'s "<strong>unoPickMultiple</strong>" Directive is set to true</p>
+    <p>
+        On <strong>&#60;uno-lookup /&#62;</strong> an Input <em><b>query</b></em> must be sent to the <b>back end</b> - the results, already obeying the done query, can come with, or without, pagination, cumulating items on <em>scrollDown</em> or not.
+    </p>
+    <p class="slds-m-bottom--x-large">No filtering is possible at the <b>front side</b> - you have to trigger an Input change to get different results from the back end.</p>
+</div>
+
+<!-- ********************************************************************************************************************************** -->
+<hr />
+
+<p>
+    You can have <strong>single</strong> or <strong>multiple</strong> selections, and an input box to <strong>filter</strong> (exclude) Dropdown items from:
+</p>
+<p>&nbsp;</p>
+
+<uno-picklist
+    [data]="items"
+    [(open)]="open2"
+    [position]="true"
+    (selectedElem)=optionSelected($event)
+    insertBlankElement="true"
+    insertCreateButton="true"
+    addButton="Add Button Text"
+    
+    fluid="true"
+
+    unoPick
+    [(unoPick)]="pickSelected"
+    [unoPickMultiple]="true"
+    
+    filterDataField="value"
+    listSizeForFilter="5"
+>
+    <span class="slds-truncate" title="{{ pickLabel }}">{{ pickLabel }}</span>
+    <ng-template uno-picklist-item let-item>{{ item.value }}</ng-template>
+
+</uno-picklist>
+<uno-picklist
+    [data]="items"
+    [(open)]="open"
+    [position]="true"
+    (selectedElem)=optionSelected($event)
+    insertBlankElement="true"
+    insertCreateButton="true"
+    addButton="Add Button Text"
+    
+    fluid="true"
+
+    unoPick
+    [(unoPick)]="pick"
+    [unoPickMultiple]="multiple"
+    
+    filterDataField="value"
+    listSizeForFilter="5"
+>
+    <span class="slds-truncate" title="{{ pickLabel }}">{{ pickLabel }}</span>
+    <ng-template uno-picklist-item let-item>{{ item.value }}</ng-template>
+
+</uno-picklist>
+<button unoButton unoType="secondary" unoSize="x-small" class="slds-m-left--small" (click)="multiple=!multiple; pick = multiple ? [] : '';">Toggle to {{ multiple ? 'single option' : 'multiple options' }}</button>
+
+<!-- List the chosen multiple entrances, in badges: -->
+<span *ngIf="multiple && pick.length > 0" class="slds-m-top--large">
+    <span *ngFor="let eachPick of pick;" class=".slds-text-align--right">
+        <uno-badge class="slds-show--inline-block slds-p-around_x-small" type="{{ eachPick.badgeType}}" maxContentSize="25">{{ eachPick.value }}</uno-badge>
+    </span>
+</span>
+
+<!-- If single option is chosen for the "unoPick", show the icon from the selected (picked) option: -->
+<div *ngIf="!multiple && pick" class="slds-m-top--medium">
+    <uno-icon icon="{{ pick.icon }}" class="slds-m-left--medium"></uno-icon>
+</div>
+
+<p class="slds-m-top--small">
+    Please notice that Input "<strong>listSizeForFilter</strong>" will dictate, @ installation and in a <strong>dynamic way</strong>, from what number (of passed in array) elements will the filter box appear - no sense to filter, i.e., if you have 2 or 3 items at Dropdown...
+</p>
+
+<!-- //////////////////////////////////////////////////////// -->
+
+<div class="slds-m-top--medium">
+    Next &#60;uno-picklist /&#62; is <strong>disabled</strong> - simply by passing in the Input Directive <strong>[disabled]: "true"</strong>:
+    <uno-picklist
+        [data]="items"
+        [(open)]="openDisabled"
+
+        unoPick
+        [(unoPick)]="pickDisabled"
+
+        [isDisabled]="true">
+
+        <span class="slds-truncate">{{ pickDisabled.value || 'Select an option' }}</span>
+        <ng-template uno-picklist-item let-item>{{ item.value }}</ng-template>
+
+    </uno-picklist>
+</div>
+
+
+<!-- ********************************************************************************************************************************** -->
+<hr />
+
+<div class="slds-m-top--medium">
+    <p>
+        Next &#60;uno-picklist /&#62; will now be geting its items through an <strong>Observable</strong> of an <strong>asynchronous GET</strong> paginated&nbsp; <em>http</em> service call.
+    </p>
+    <p class="slds-m-bottom--small">
+        Please notice that clicking outside will <strong>NOT close</strong> the Picklist dropdown list - Directive <strong>[closeClickOutside]="false"</strong>.
+    </p>
+
+    <p>
+        If you <strong>filter a term</strong>, notice, on <em>"Navigating through Paginated Items"</em>, even when a new users list is filled through the service call, the filter keeps validating it.
+    </p>
+    <p class="slds-m-bottom--small">
+        On the other hand, if a <strong>picked</strong> is made on any user, and <em>"Cumulating Paginated Items"</em> is choosen, even when new users are added through the service call, the <strong><em>ticked</em>/chosen</strong> user still keeps the <em>"approval"</em> icon.
+    </p>
+    <p class="slds-m-bottom--large">
+        Please notice the <em><b>scrollDown</b></em> event, once you scroll the returned list to the <b>bottom</b> - a new set of items is fetched, either cumulating with current one, or replacing current page (same number of page items).
+    </p>
+
+    <!-- ********************************************************************************************************************************** -->
+
+    <uno-picklist class="slds-m-right--small"
+        [data]="asyncItems"
+        [(open)]="openAsync"
+        insertBlankElement="true"
+        [closeClickOutside]="false"
+        [isDisabled]="!selectedFill"
+
+        uno-pick
+        [(unoPick)]="pickAsyncItem"
+        
+        filterDataField="login"
+
+        (scrollEndReached)="scrollPicklist($event)"
+    >
+        <span class="slds-truncate">{{ pickAsyncItem ? '"' + pickAsyncItem.login + '" out of ' + asyncTotalResults : 'Select a "tom"s login Name @ Github users:' }}</span>
+        <ng-template uno-picklist-item let-item>
+            <img src="{{ item.avatar_url }}" class="slds-avatar slds-m-right--xx-small">
+            {{ item.login }}
+        </ng-template>
+
+    </uno-picklist>
+
+    <!-- // -->
+
+    by
+    <!-- The type of filling of picklist Dropdown list selector: either show each selected page or cumulate the pages: -->
+    <span class="slds-m-left--small">
+        <div uno-pick [(unoPick)]="selectedFill" unoPickActiveClass="slds-button--brand" class="slds-button-group" role="group">
+            <button type="button" class="slds-button--neutral slds-p-horizontal--medium slds-m-right--small"
+                uno-pick-option unoPickOption="Paginate" (click)="changePicklistFillInType($event)"
+            >Navigating pages</button>
+            &nbsp;or&nbsp;
+            <button type="button" class="slds-button--neutral slds-p-horizontal--medium slds-m-horizontal--small"
+                uno-pick-option unoPickOption="Cumulate" (click)="changePicklistFillInType($event)"
+            >Cumulating pages</button>
+        </div>
+    </span>
+    <!-- The options showed if user chooses "paged" or "cumulated" for the picklist Dropdown list conten: -->
+    <span *ngIf="selectedFill === undefined" class="slds-truncate">...?</span>
+    <span *ngIf="selectedFill === 'Paginate'" class="slds-truncate slds-m-left--xx-small">
+        Page Number: <b style="color: red;">{{ asyncPageNumber }}</b>
+        <uno-icon size="x-small" icon="minus_b" (click)="navigate(-1);" class="slds-m-left--small"></uno-icon>
+        <uno-icon size="x-small" icon="plus_b" (click)="navigate(+1);" class="slds-m-left--small"></uno-icon>
+    </span>
+    <span *ngIf="selectedFill === 'Cumulate'" class="slds-truncate slds-m-left--xx-small">
+        Items listed: <b style="color: red;">{{ asyncPageNumber * asyncTotalPageItems }}</b>
+        <uno-icon size="x-small" icon="plus_b" (click)="navigate(+1);" class="slds-m-left--small slds-truncate"
+            uno-popover-trigger
+            unoPopoverBehavior
+            unoPopover="Bring in some more Github users!"
+            unoPopoverTooltip="true"
+        ></uno-icon>
+    </span>
+
+    <!-- // -->
+
+    <!-- The result details of the (Asyncronous http service called) picked Item -->
+    <div *ngIf="pickAsyncItem.id" class="slds-m-top--large">
+        <img src="{{ pickAsyncItem.avatar_url }}" class="slds-avatar slds-avatar--large slds-avatar_circle slds-m-right--small" style="vertical-align: inherit;">
+        <span style="display: inline-block;">
+            <strong>{{ pickAsyncItem.login }}</strong>
+            <br />
+            Id=<strong>{{ pickAsyncItem.id }}</strong>
+            <br />
+            <a href="{{ pickAsyncItem.html_url }}" target="_blank">{{ pickAsyncItem.html_url }}</a>
+        </span>
+    </div>
+
+</div>
+
+<!-- ********************************************************************************************************************************** -->
+<hr />
+
+<div class="slds-m-top--medium">
+    <p>
+        Next &#60;uno-picklist /&#62; will allow <strong>multiple Items property filtering</strong>, by specifying a <strong><em>function</em></strong> for <strong>@Input filterDataField</strong> instead of a (<em>string</em>) property name.
+    </p>
+    <p>
+        Notice that by passing <strong>@Input isForInlineTableCSS</strong> to true, we get a thinner, with smaler lettering, trigger button, sutable to use on UNO smart table's editing input @ Nano app.
+    </p>
+
+    <uno-picklist
+        [data]="multiFilteringItems"
+        [(open)]="openMultiFiltering"
+        isForInlineTableCSS="true"
+
+        unoPick
+        [(unoPick)]="pickMultiFiltering"
+        (selectedElem)=optionSelected($event)
+
+        [filterDataField]="multiFilteringFilter()"
+        listSizeForFilter="6"
+        (userChangedFilter)="userChangedFilter($event)">
+
+        <span class="slds-truncate">
+            {{ pickMultiFiltering.name ? pickMultiFiltering.name + ' (' + pickMultiFiltering.tagNum + ')' : 'Select an option' }}
+        </span>
+        <ng-template uno-picklist-item let-item>
+            <span title="{{ item.name + ' (' + item.tagNum + ')' }}">{{ item.name + ' (' + item.tagNum + ')' }}</span>
+        </ng-template>
+
+    </uno-picklist>
+
+</div>

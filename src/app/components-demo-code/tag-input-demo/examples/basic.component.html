@@ -1,0 +1,53 @@
+<div style="width: 350px">
+    <uno-input-tags
+        [objects]="allSkills"
+        [selectedObjects]="mySkills"
+        (objectsSelected)="objectsSelected($event)"
+        [isDisable]="true">
+    </uno-input-tags>
+</div>
+
+<div style="width: 350px; margin-top: 20px">
+    <uno-input-tags
+        [objects]="allSkills"
+        (objectsSelected)="objectsSelected($event)">
+    </uno-input-tags>
+</div>
+
+<div style="width: 350px; margin-top: 20px">
+    <uno-input-tags
+        (objectsSelected)="objectsSelected($event)"
+        [isDisable]="true">
+    </uno-input-tags>
+</div>
+
+<div style="width: 350px; margin-top: 20px">
+    <uno-input-tags
+        [objects]="allSkills"
+        [selectedObjects]="mySkills"
+        (objectsSelected)="objectsSelected($event)">
+    </uno-input-tags>
+</div>
+
+<uno-input-tags
+    [objects]="allSkills"
+    [key]="'name'"
+    [value]="'id'"
+    (objectsSelected)="objectsSelected($event)">
+</uno-input-tags>
+
+<uno-modal [open]="openModalSmall">
+    <div class="slds-p-around--large">
+        <uno-input-tags
+            [objects]="allSkills"
+            [key]="'name'"
+            [value]="'id'"
+            (click)="$event.stopPropagation()"
+            (objectsSelected)="objectsSelected($event)">
+        </uno-input-tags>
+    </div>
+    <ng-template unoModalFooter>
+        <button type="button" unoButton (click)="openModalSmall=false;">Cancel</button>
+        <button type="button" unoButton unoType="green" (click)="openModalSmall=false;">Save</button>
+    </ng-template>
+</uno-modal>

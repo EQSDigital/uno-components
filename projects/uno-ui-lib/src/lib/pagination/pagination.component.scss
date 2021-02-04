@@ -1,0 +1,39 @@
+.pagination-controls {
+    display: inline-block;
+    margin: 1px;
+    min-width: 20px;
+    text-align: center;
+    color: var(--dark-blue-grey);
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.drop-select-num-items {
+    width: 50px;
+    height: 18px;
+    border-radius: 100px;
+    color: #121212;
+}
+
+.button-style {
+    display: inline-flex;
+    // padding: 0;
+    background: transparent;
+    background-clip: border-box;
+    border: 1px solid transparent;
+    font-size: 0.75rem;
+    // text-decoration: none;
+    -webkit-appearance: none;
+    appearance: none;
+    white-space: normal;
+    user-select: none;
+    transition: color 0.05s linear, background-color 0.05s linear;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+.slds-dropdown--left {
+    left: 28px;
+}

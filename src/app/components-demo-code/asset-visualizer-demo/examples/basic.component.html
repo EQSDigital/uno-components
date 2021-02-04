@@ -1,0 +1,26 @@
+<!-- The component's installation: -->
+<div style="display: inline-block; width: 40%">
+    <uno-asset-visualizer
+        [defaultAssetImgURL]="defaultImgURL"
+        [imgURL]="imgURL"
+        [hasMonitor]="hasMonitorLink"
+        [scenes3D]="scenes3D_array"
+
+        (imageUploaded)="newImgUploaded($event)"
+        (imageDeleted)="imageDeleted()"
+        (sendAssetInfo)="sendAsset($event)"
+        (goToMonitorLink)="goToMonitor($event)">
+    </uno-asset-visualizer>
+</div>
+
+<div style="display: inline-block; width: 40%">
+    <uno-asset-visualizer
+        [imgURL]="imgURL"
+        [onlyViewImage]="true"
+        [hasMonitor]="hasMonitorLink"
+        [scenes3D]="scenes3D_array"
+
+        (sendAssetInfo)="sendAsset($event)"
+        (goToMonitorLink)="goToMonitor($event)">
+    </uno-asset-visualizer>
+</div>

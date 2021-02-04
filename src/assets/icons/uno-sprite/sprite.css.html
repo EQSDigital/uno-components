@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<title>SVG CSS sprite preview | svg-sprite</title>
+		<style>@charset "UTF-8";body{padding:0;margin:0;color:#666;background:#fafafa;font-family:Arial,Helvetica,sans-serif;font-size:1em;line-height:1.4}header{display:block;padding:3em 3em 2em 3em;background-color:#fff}header p{margin:2em 0 0 0}section{border-top:1px solid #eee;padding:2em 3em 0 3em}section ul{margin:0;padding:0}section li{display:inline;display:inline-block;background-color:#fff;position:relative;margin:0 2em 2em 0;vertical-align:top;border:1px solid #ccc;padding:1em 1em 3em 1em;cursor:default}.icon-box{margin:0;width:144px;height:144px;position:relative;background:#ccc url("data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=") top left repeat;border:1px solid #ccc;display:table-cell;vertical-align:middle;text-align:center}.icon{display:inline;display:inline-block}h1{margin-top:0}h2{margin:0;padding:0;font-size:1em;font-weight:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:absolute;left:1em;right:1em;bottom:1em}footer{display:block;margin:0;padding:0 3em 3em 3em}footer p{margin:0;font-size:.7em}footer a{color:#0f7595;margin-left:0}</style>
+		<style>i{text-indent:200%;white-space:nowrap;overflow:hidden;display:inline-block;background-size:189px 167px!important}</style>
+
+<!--
+
+Sprite CSS
+====================================================================================================
+This is an all-in-one inline version of the CSS necessary to use the SVG sprite.
+
+-->
+
+<style type="text/css">
+.svg-3D_develop {
+	background: url("svg/sprite.css-e4e941fc.svg") 14.37125748502994% 0 no-repeat;
+	width: 22px;
+	height: 22px;
+}
+.svg-Combined_Shape {
+	background: url("svg/sprite.css-e4e941fc.svg") 75.5813953488372% 13.605442176870747% no-repeat;
+	width: 17px;
+	height: 20px;
+}
+.svg-asset_portfolio {
+	background: url("svg/sprite.css-e4e941fc.svg") 23.391812865497077% 59.183673469387756% no-repeat;
+	width: 18px;
+	height: 20px;
+}
+.svg-back {
+	background: url("svg/sprite.css-e4e941fc.svg") 34.319526627218934% 59.183673469387756% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-back_b {
+	background: url("svg/sprite.css-e4e941fc.svg") 46.15384615384615% 59.183673469387756% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-back_s {
+	background: url("svg/sprite.css-e4e941fc.svg") 0 72.78911564625851% no-repeat;
+	width: 12px;
+	height: 20px;
+}
+.svg-calendar {
+	background: url("svg/sprite.css-e4e941fc.svg") 98.25581395348837% 86.66666666666667% no-repeat;
+	width: 17px;
+	height: 17px;
+}
+.svg-client_manager {
+	background: url("svg/sprite.css-e4e941fc.svg") 30.76923076923077% 72.78911564625851% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-close {
+	background: url("svg/sprite.css-e4e941fc.svg") 42.603550295857985% 72.78911564625851% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-close_b {
+	background: url("svg/sprite.css-e4e941fc.svg") 0 86.39455782312925% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-component {
+	background: url("svg/sprite.css-e4e941fc.svg") 53.25443786982248% 46.45161290322581% no-repeat;
+	width: 20px;
+	height: 12px;
+}
+.svg-contacts {
+	background: url("svg/sprite.css-e4e941fc.svg") 23.668639053254438% 100% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-documents {
+	background: url("svg/sprite.css-e4e941fc.svg") 35.50295857988166% 100% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-down {
+	background: url("svg/sprite.css-e4e941fc.svg") 13.017751479289942% 44.21768707482993% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-down_0 {
+	background: url("svg/sprite.css-e4e941fc.svg") 24.85207100591716% 44.21768707482993% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-down_0_b {
+	background: url("svg/sprite.css-e4e941fc.svg") 36.68639053254438% 44.21768707482993% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-down_b {
+	background: url("svg/sprite.css-e4e941fc.svg") 53.25443786982248% 0 no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-down_s {
+	background: url("svg/sprite.css-e4e941fc.svg") 53.25443786982248% 12.903225806451612% no-repeat;
+	width: 20px;
+	height: 12px;
+}
+.svg-equipment {
+	background: url("svg/sprite.css-e4e941fc.svg") 40% 30.136986301369863% no-repeat;
+	width: 19px;
+	height: 21px;
+}
+.svg-external_clients {
+	background: url("svg/sprite.css-e4e941fc.svg") 53.25443786982248% 35.374149659863946% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-go {
+	background: url("svg/sprite.css-e4e941fc.svg") 0 59.183673469387756% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-go_b {
+	background: url("svg/sprite.css-e4e941fc.svg") 11.834319526627219% 59.183673469387756% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-group {
+	background: url("svg/sprite.css-e4e941fc.svg") 0 0 no-repeat;
+	width: 24px;
+	height: 21px;
+}
+.svg-help {
+	background: url("svg/sprite.css-e4e941fc.svg") 27.54491017964072% 0 no-repeat;
+	width: 22px;
+	height: 22px;
+}
+.svg-help_copy {
+	background: url("svg/sprite.css-e4e941fc.svg") 0 29.655172413793103% no-repeat;
+	width: 22px;
+	height: 22px;
+}
+.svg-left {
+	background: url("svg/sprite.css-e4e941fc.svg") 65.08875739644971% 0 no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-left_b {
+	background: url("svg/sprite.css-e4e941fc.svg") 65.08875739644971% 13.605442176870747% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-lock {
+	background: url("svg/sprite.css-e4e941fc.svg") 62.857142857142854% 27.210884353741495% no-repeat;
+	width: 14px;
+	height: 20px;
+}
+.svg-lock_b {
+	background: url("svg/sprite.css-e4e941fc.svg") 62.857142857142854% 40.816326530612244% no-repeat;
+	width: 14px;
+	height: 20px;
+}
+.svg-lock_pw {
+	background: url("svg/sprite.css-e4e941fc.svg") 61.79775280898876% 54.42176870748299% no-repeat;
+	width: 11px;
+	height: 20px;
+}
+.svg-lock_pw_b {
+	background: url("svg/sprite.css-e4e941fc.svg") 55.056179775280896% 59.183673469387756% no-repeat;
+	width: 11px;
+	height: 20px;
+}
+.svg-logout {
+	background: url("svg/sprite.css-e4e941fc.svg") 12.941176470588236% 29.655172413793103% no-repeat;
+	width: 19px;
+	height: 22px;
+}
+.svg-logout_copy {
+	background: url("svg/sprite.css-e4e941fc.svg") 0 14.482758620689655% no-repeat;
+	width: 19px;
+	height: 22px;
+}
+.svg-logout_copy_2 {
+	background: url("svg/sprite.css-e4e941fc.svg") 18.93491124260355% 72.78911564625851% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-logout_copy_3 {
+	background: url("svg/sprite.css-e4e941fc.svg") 40.7185628742515% 0 no-repeat;
+	width: 22px;
+	height: 22px;
+}
+.svg-logout_copy_4 {
+	background: url("svg/sprite.css-e4e941fc.svg") 40.7185628742515% 15.172413793103448% no-repeat;
+	width: 22px;
+	height: 22px;
+}
+.svg-logout_copy_5 {
+	background: url("svg/sprite.css-e4e941fc.svg") 54.437869822485204% 72.78911564625851% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-master_data {
+	background: url("svg/sprite.css-e4e941fc.svg") 76.47058823529412% 0 no-repeat;
+	width: 19px;
+	height: 20px;
+}
+.svg-menu {
+	background: url("svg/sprite.css-e4e941fc.svg") 0 44.827586206896555% no-repeat;
+	width: 22px;
+	height: 22px;
+}
+.svg-menu_b {
+	background: url("svg/sprite.css-e4e941fc.svg") 100% 62.585034013605444% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-minus {
+	background: url("svg/sprite.css-e4e941fc.svg") 11.834319526627219% 86.39455782312925% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-minus_b {
+	background: url("svg/sprite.css-e4e941fc.svg") 23.668639053254438% 86.39455782312925% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-more_h {
+	background: url("svg/sprite.css-e4e941fc.svg") 24.550898203592816% 29.655172413793103% no-repeat;
+	width: 22px;
+	height: 22px;
+}
+.svg-more_h_b {
+	background: url("svg/sprite.css-e4e941fc.svg") 35.50295857988166% 86.39455782312925% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-more_opt_h {
+	background: url("svg/sprite.css-e4e941fc.svg") 65.08875739644971% 61.34969325153374% no-repeat;
+	width: 20px;
+	height: 4px;
+}
+.svg-more_opt_v {
+	background: url("svg/sprite.css-e4e941fc.svg") 70.27027027027027% 27.210884353741495% no-repeat;
+	width: 4px;
+	height: 20px;
+}
+.svg-more_v {
+	background: url("svg/sprite.css-e4e941fc.svg") 47.337278106508876% 86.39455782312925% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-more_v_b {
+	background: url("svg/sprite.css-e4e941fc.svg") 59.171597633136095% 86.39455782312925% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-neg {
+	background: url("svg/sprite.css-e4e941fc.svg") 71.00591715976331% 86.39455782312925% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-neg_b {
+	background: url("svg/sprite.css-e4e941fc.svg") 88.16568047337279% 0 no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-next {
+	background: url("svg/sprite.css-e4e941fc.svg") 88.16568047337279% 13.605442176870747% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-next_b {
+	background: url("svg/sprite.css-e4e941fc.svg") 88.16568047337279% 27.210884353741495% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-next_s {
+	background: url("svg/sprite.css-e4e941fc.svg") 84.18079096045197% 40.816326530612244% no-repeat;
+	width: 12px;
+	height: 20px;
+}
+.svg-notifications {
+	background: url("svg/sprite.css-e4e941fc.svg") 98.83040935672514% 75.16778523489933% no-repeat;
+	width: 18px;
+	height: 18px;
+}
+.svg-opunit {
+	background: url("svg/sprite.css-e4e941fc.svg") 85.63218390804597% 68.02721088435374% no-repeat;
+	width: 15px;
+	height: 20px;
+}
+.svg-part {
+	background: url("svg/sprite.css-e4e941fc.svg") 88.16568047337279% 77.41935483870968% no-repeat;
+	width: 20px;
+	height: 12px;
+}
+.svg-plant {
+	background: url("svg/sprite.css-e4e941fc.svg") 75.14450867052022% 40.816326530612244% no-repeat;
+	width: 16px;
+	height: 20px;
+}
+.svg-plus {
+	background: url("svg/sprite.css-e4e941fc.svg") 0 100% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-plus_b {
+	background: url("svg/sprite.css-e4e941fc.svg") 11.834319526627219% 100% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-radio_1 {
+	background: url("svg/sprite.css-e4e941fc.svg") 27.38095238095238% 15.068493150684931% no-repeat;
+	width: 21px;
+	height: 21px;
+}
+.svg-radion_0 {
+	background: url("svg/sprite.css-e4e941fc.svg") 14.285714285714286% 15.068493150684931% no-repeat;
+	width: 21px;
+	height: 21px;
+}
+.svg-right {
+	background: url("svg/sprite.css-e4e941fc.svg") 47.337278106508876% 100% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-right_b {
+	background: url("svg/sprite.css-e4e941fc.svg") 59.171597633136095% 100% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-subequipment {
+	background: url("svg/sprite.css-e4e941fc.svg") 76.47058823529412% 54.42176870748299% no-repeat;
+	width: 19px;
+	height: 20px;
+}
+.svg-subopunit {
+	background: url("svg/sprite.css-e4e941fc.svg") 76.13636363636364% 27.210884353741495% no-repeat;
+	width: 13px;
+	height: 20px;
+}
+.svg-subplant {
+	background: url("svg/sprite.css-e4e941fc.svg") 75.14450867052022% 68.02721088435374% no-repeat;
+	width: 16px;
+	height: 20px;
+}
+.svg-trash {
+	background: url("svg/sprite.css-e4e941fc.svg") 65.49707602339181% 72.78911564625851% no-repeat;
+	width: 18px;
+	height: 20px;
+}
+.svg-unlock {
+	background: url("svg/sprite.css-e4e941fc.svg") 68.57142857142857% 100% no-repeat;
+	width: 14px;
+	height: 20px;
+}
+.svg-unlock_b {
+	background: url("svg/sprite.css-e4e941fc.svg") 76.57142857142857% 100% no-repeat;
+	width: 14px;
+	height: 20px;
+}
+.svg-up {
+	background: url("svg/sprite.css-e4e941fc.svg") 87.57396449704142% 100% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-up_0 {
+	background: url("svg/sprite.css-e4e941fc.svg") 100% 0 no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-up_0b {
+	background: url("svg/sprite.css-e4e941fc.svg") 100% 13.605442176870747% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-up_b {
+	background: url("svg/sprite.css-e4e941fc.svg") 100% 27.210884353741495% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-up_s {
+	background: url("svg/sprite.css-e4e941fc.svg") 100% 38.70967741935484% no-repeat;
+	width: 20px;
+	height: 12px;
+}
+.svg-user {
+	background: url("svg/sprite.css-e4e941fc.svg") 100% 48.97959183673469% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-validate_off {
+	background: url("svg/sprite.css-e4e941fc.svg") 88.16568047337279% 54.42176870748299% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-validate_on {
+	background: url("svg/sprite.css-e4e941fc.svg") 7.100591715976331% 72.78911564625851% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-validate_on_b {
+	background: url("svg/sprite.css-e4e941fc.svg") 53.25443786982248% 21.768707482993197% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+</style>
+
+<!--
+====================================================================================================
+-->
+
+	</head>
+	<body>
+		<header>
+			<h1>SVG CSS sprite preview</h1>
+			<p>This preview features the generated SVG file as a conventional CSS sprite. The shapes are displayed as background images of several <code>&lt;i&gt;</code> elements.</p>
+		</header>
+		<section>
+
+<!--
+
+Conventional CSS sprite
+====================================================================================================
+This technique uses CSS classes to display portions of the sprite as background image of
+appropriately sized elements.
+
+-->
+
+			<ul>
+				<li title="3D_develop">
+					<div class="icon-box">
+
+						<!-- 3D_develop -->
+						<i class="svg-3D_develop">3D_develop</i>
+
+					</div>
+					<h2>3D_develop</h2>
+				</li>
+				<li title="Combined_Shape">
+					<div class="icon-box">
+
+						<!-- Combined_Shape -->
+						<i class="svg-Combined_Shape">Combined_Shape</i>
+
+					</div>
+					<h2>Combined_Shape</h2>
+				</li>
+				<li title="asset_portfolio">
+					<div class="icon-box">
+
+						<!-- asset_portfolio -->
+						<i class="svg-asset_portfolio">asset_portfolio</i>
+
+					</div>
+					<h2>asset_portfolio</h2>
+				</li>
+				<li title="back">
+					<div class="icon-box">
+
+						<!-- back -->
+						<i class="svg-back">back</i>
+
+					</div>
+					<h2>back</h2>
+				</li>
+				<li title="back_b">
+					<div class="icon-box">
+
+						<!-- back_b -->
+						<i class="svg-back_b">back_b</i>
+
+					</div>
+					<h2>back_b</h2>
+				</li>
+				<li title="back_s">
+					<div class="icon-box">
+
+						<!-- back_s -->
+						<i class="svg-back_s">back_s</i>
+
+					</div>
+					<h2>back_s</h2>
+				</li>
+				<li title="calendar">
+					<div class="icon-box">
+
+						<!-- calendar -->
+						<i class="svg-calendar">calendar</i>
+
+					</div>
+					<h2>calendar</h2>
+				</li>
+				<li title="client_manager">
+					<div class="icon-box">
+
+						<!-- client_manager -->
+						<i class="svg-client_manager">client_manager</i>
+
+					</div>
+					<h2>client_manager</h2>
+				</li>
+				<li title="close">
+					<div class="icon-box">
+
+						<!-- close -->
+						<i class="svg-close">close</i>
+
+					</div>
+					<h2>close</h2>
+				</li>
+				<li title="close_b">
+					<div class="icon-box">
+
+						<!-- close_b -->
+						<i class="svg-close_b">close_b</i>
+
+					</div>
+					<h2>close_b</h2>
+				</li>
+				<li title="component">
+					<div class="icon-box">
+
+						<!-- component -->
+						<i class="svg-component">component</i>
+
+					</div>
+					<h2>component</h2>
+				</li>
+				<li title="contacts">
+					<div class="icon-box">
+
+						<!-- contacts -->
+						<i class="svg-contacts">contacts</i>
+
+					</div>
+					<h2>contacts</h2>
+				</li>
+				<li title="documents">
+					<div class="icon-box">
+
+						<!-- documents -->
+						<i class="svg-documents">documents</i>
+
+					</div>
+					<h2>documents</h2>
+				</li>
+				<li title="down">
+					<div class="icon-box">
+
+						<!-- down -->
+						<i class="svg-down">down</i>
+
+					</div>
+					<h2>down</h2>
+				</li>
+				<li title="down_0">
+					<div class="icon-box">
+
+						<!-- down_0 -->
+						<i class="svg-down_0">down_0</i>
+
+					</div>
+					<h2>down_0</h2>
+				</li>
+				<li title="down_0_b">
+					<div class="icon-box">
+
+						<!-- down_0_b -->
+						<i class="svg-down_0_b">down_0_b</i>
+
+					</div>
+					<h2>down_0_b</h2>
+				</li>
+				<li title="down_b">
+					<div class="icon-box">
+
+						<!-- down_b -->
+						<i class="svg-down_b">down_b</i>
+
+					</div>
+					<h2>down_b</h2>
+				</li>
+				<li title="down_s">
+					<div class="icon-box">
+
+						<!-- down_s -->
+						<i class="svg-down_s">down_s</i>
+
+					</div>
+					<h2>down_s</h2>
+				</li>
+				<li title="equipment">
+					<div class="icon-box">
+
+						<!-- equipment -->
+						<i class="svg-equipment">equipment</i>
+
+					</div>
+					<h2>equipment</h2>
+				</li>
+				<li title="external_clients">
+					<div class="icon-box">
+
+						<!-- external_clients -->
+						<i class="svg-external_clients">external_clients</i>
+
+					</div>
+					<h2>external_clients</h2>
+				</li>
+				<li title="go">
+					<div class="icon-box">
+
+						<!-- go -->
+						<i class="svg-go">go</i>
+
+					</div>
+					<h2>go</h2>
+				</li>
+				<li title="go_b">
+					<div class="icon-box">
+
+						<!-- go_b -->
+						<i class="svg-go_b">go_b</i>
+
+					</div>
+					<h2>go_b</h2>
+				</li>
+				<li title="group">
+					<div class="icon-box">
+
+						<!-- group -->
+						<i class="svg-group">group</i>
+
+					</div>
+					<h2>group</h2>
+				</li>
+				<li title="help">
+					<div class="icon-box">
+
+						<!-- help -->
+						<i class="svg-help">help</i>
+
+					</div>
+					<h2>help</h2>
+				</li>
+				<li title="help_copy">
+					<div class="icon-box">
+
+						<!-- help_copy -->
+						<i class="svg-help_copy">help_copy</i>
+
+					</div>
+					<h2>help_copy</h2>
+				</li>
+				<li title="left">
+					<div class="icon-box">
+
+						<!-- left -->
+						<i class="svg-left">left</i>
+
+					</div>
+					<h2>left</h2>
+				</li>
+				<li title="left_b">
+					<div class="icon-box">
+
+						<!-- left_b -->
+						<i class="svg-left_b">left_b</i>
+
+					</div>
+					<h2>left_b</h2>
+				</li>
+				<li title="lock">
+					<div class="icon-box">
+
+						<!-- lock -->
+						<i class="svg-lock">lock</i>
+
+					</div>
+					<h2>lock</h2>
+				</li>
+				<li title="lock_b">
+					<div class="icon-box">
+
+						<!-- lock_b -->
+						<i class="svg-lock_b">lock_b</i>
+
+					</div>
+					<h2>lock_b</h2>
+				</li>
+				<li title="lock_pw">
+					<div class="icon-box">
+
+						<!-- lock_pw -->
+						<i class="svg-lock_pw">lock_pw</i>
+
+					</div>
+					<h2>lock_pw</h2>
+				</li>
+				<li title="lock_pw_b">
+					<div class="icon-box">
+
+						<!-- lock_pw_b -->
+						<i class="svg-lock_pw_b">lock_pw_b</i>
+
+					</div>
+					<h2>lock_pw_b</h2>
+				</li>
+				<li title="logout">
+					<div class="icon-box">
+
+						<!-- logout -->
+						<i class="svg-logout">logout</i>
+
+					</div>
+					<h2>logout</h2>
+				</li>
+				<li title="logout_copy">
+					<div class="icon-box">
+
+						<!-- logout_copy -->
+						<i class="svg-logout_copy">logout_copy</i>
+
+					</div>
+					<h2>logout_copy</h2>
+				</li>
+				<li title="logout_copy_2">
+					<div class="icon-box">
+
+						<!-- logout_copy_2 -->
+						<i class="svg-logout_copy_2">logout_copy_2</i>
+
+					</div>
+					<h2>logout_copy_2</h2>
+				</li>
+				<li title="logout_copy_3">
+					<div class="icon-box">
+
+						<!-- logout_copy_3 -->
+						<i class="svg-logout_copy_3">logout_copy_3</i>
+
+					</div>
+					<h2>logout_copy_3</h2>
+				</li>
+				<li title="logout_copy_4">
+					<div class="icon-box">
+
+						<!-- logout_copy_4 -->
+						<i class="svg-logout_copy_4">logout_copy_4</i>
+
+					</div>
+					<h2>logout_copy_4</h2>
+				</li>
+				<li title="logout_copy_5">
+					<div class="icon-box">
+
+						<!-- logout_copy_5 -->
+						<i class="svg-logout_copy_5">logout_copy_5</i>
+
+					</div>
+					<h2>logout_copy_5</h2>
+				</li>
+				<li title="master_data">
+					<div class="icon-box">
+
+						<!-- master_data -->
+						<i class="svg-master_data">master_data</i>
+
+					</div>
+					<h2>master_data</h2>
+				</li>
+				<li title="menu">
+					<div class="icon-box">
+
+						<!-- menu -->
+						<i class="svg-menu">menu</i>
+
+					</div>
+					<h2>menu</h2>
+				</li>
+				<li title="menu_b">
+					<div class="icon-box">
+
+						<!-- menu_b -->
+						<i class="svg-menu_b">menu_b</i>
+
+					</div>
+					<h2>menu_b</h2>
+				</li>
+				<li title="minus">
+					<div class="icon-box">
+
+						<!-- minus -->
+						<i class="svg-minus">minus</i>
+
+					</div>
+					<h2>minus</h2>
+				</li>
+				<li title="minus_b">
+					<div class="icon-box">
+
+						<!-- minus_b -->
+						<i class="svg-minus_b">minus_b</i>
+
+					</div>
+					<h2>minus_b</h2>
+				</li>
+				<li title="more_h">
+					<div class="icon-box">
+
+						<!-- more_h -->
+						<i class="svg-more_h">more_h</i>
+
+					</div>
+					<h2>more_h</h2>
+				</li>
+				<li title="more_h_b">
+					<div class="icon-box">
+
+						<!-- more_h_b -->
+						<i class="svg-more_h_b">more_h_b</i>
+
+					</div>
+					<h2>more_h_b</h2>
+				</li>
+				<li title="more_opt_h">
+					<div class="icon-box">
+
+						<!-- more_opt_h -->
+						<i class="svg-more_opt_h">more_opt_h</i>
+
+					</div>
+					<h2>more_opt_h</h2>
+				</li>
+				<li title="more_opt_v">
+					<div class="icon-box">
+
+						<!-- more_opt_v -->
+						<i class="svg-more_opt_v">more_opt_v</i>
+
+					</div>
+					<h2>more_opt_v</h2>
+				</li>
+				<li title="more_v">
+					<div class="icon-box">
+
+						<!-- more_v -->
+						<i class="svg-more_v">more_v</i>
+
+					</div>
+					<h2>more_v</h2>
+				</li>
+				<li title="more_v_b">
+					<div class="icon-box">
+
+						<!-- more_v_b -->
+						<i class="svg-more_v_b">more_v_b</i>
+
+					</div>
+					<h2>more_v_b</h2>
+				</li>
+				<li title="neg">
+					<div class="icon-box">
+
+						<!-- neg -->
+						<i class="svg-neg">neg</i>
+
+					</div>
+					<h2>neg</h2>
+				</li>
+				<li title="neg_b">
+					<div class="icon-box">
+
+						<!-- neg_b -->
+						<i class="svg-neg_b">neg_b</i>
+
+					</div>
+					<h2>neg_b</h2>
+				</li>
+				<li title="next">
+					<div class="icon-box">
+
+						<!-- next -->
+						<i class="svg-next">next</i>
+
+					</div>
+					<h2>next</h2>
+				</li>
+				<li title="next_b">
+					<div class="icon-box">
+
+						<!-- next_b -->
+						<i class="svg-next_b">next_b</i>
+
+					</div>
+					<h2>next_b</h2>
+				</li>
+				<li title="next_s">
+					<div class="icon-box">
+
+						<!-- next_s -->
+						<i class="svg-next_s">next_s</i>
+
+					</div>
+					<h2>next_s</h2>
+				</li>
+				<li title="notifications">
+					<div class="icon-box">
+
+						<!-- notifications -->
+						<i class="svg-notifications">notifications</i>
+
+					</div>
+					<h2>notifications</h2>
+				</li>
+				<li title="opunit">
+					<div class="icon-box">
+
+						<!-- opunit -->
+						<i class="svg-opunit">opunit</i>
+
+					</div>
+					<h2>opunit</h2>
+				</li>
+				<li title="part">
+					<div class="icon-box">
+
+						<!-- part -->
+						<i class="svg-part">part</i>
+
+					</div>
+					<h2>part</h2>
+				</li>
+				<li title="plant">
+					<div class="icon-box">
+
+						<!-- plant -->
+						<i class="svg-plant">plant</i>
+
+					</div>
+					<h2>plant</h2>
+				</li>
+				<li title="plus">
+					<div class="icon-box">
+
+						<!-- plus -->
+						<i class="svg-plus">plus</i>
+
+					</div>
+					<h2>plus</h2>
+				</li>
+				<li title="plus_b">
+					<div class="icon-box">
+
+						<!-- plus_b -->
+						<i class="svg-plus_b">plus_b</i>
+
+					</div>
+					<h2>plus_b</h2>
+				</li>
+				<li title="radio_1">
+					<div class="icon-box">
+
+						<!-- radio_1 -->
+						<i class="svg-radio_1">radio_1</i>
+
+					</div>
+					<h2>radio_1</h2>
+				</li>
+				<li title="radion_0">
+					<div class="icon-box">
+
+						<!-- radion_0 -->
+						<i class="svg-radion_0">radion_0</i>
+
+					</div>
+					<h2>radion_0</h2>
+				</li>
+				<li title="right">
+					<div class="icon-box">
+
+						<!-- right -->
+						<i class="svg-right">right</i>
+
+					</div>
+					<h2>right</h2>
+				</li>
+				<li title="right_b">
+					<div class="icon-box">
+
+						<!-- right_b -->
+						<i class="svg-right_b">right_b</i>
+
+					</div>
+					<h2>right_b</h2>
+				</li>
+				<li title="subequipment">
+					<div class="icon-box">
+
+						<!-- subequipment -->
+						<i class="svg-subequipment">subequipment</i>
+
+					</div>
+					<h2>subequipment</h2>
+				</li>
+				<li title="subopunit">
+					<div class="icon-box">
+
+						<!-- subopunit -->
+						<i class="svg-subopunit">subopunit</i>
+
+					</div>
+					<h2>subopunit</h2>
+				</li>
+				<li title="subplant">
+					<div class="icon-box">
+
+						<!-- subplant -->
+						<i class="svg-subplant">subplant</i>
+
+					</div>
+					<h2>subplant</h2>
+				</li>
+				<li title="trash">
+					<div class="icon-box">
+
+						<!-- trash -->
+						<i class="svg-trash">trash</i>
+
+					</div>
+					<h2>trash</h2>
+				</li>
+				<li title="unlock">
+					<div class="icon-box">
+
+						<!-- unlock -->
+						<i class="svg-unlock">unlock</i>
+
+					</div>
+					<h2>unlock</h2>
+				</li>
+				<li title="unlock_b">
+					<div class="icon-box">
+
+						<!-- unlock_b -->
+						<i class="svg-unlock_b">unlock_b</i>
+
+					</div>
+					<h2>unlock_b</h2>
+				</li>
+				<li title="up">
+					<div class="icon-box">
+
+						<!-- up -->
+						<i class="svg-up">up</i>
+
+					</div>
+					<h2>up</h2>
+				</li>
+				<li title="up_0">
+					<div class="icon-box">
+
+						<!-- up_0 -->
+						<i class="svg-up_0">up_0</i>
+
+					</div>
+					<h2>up_0</h2>
+				</li>
+				<li title="up_0b">
+					<div class="icon-box">
+
+						<!-- up_0b -->
+						<i class="svg-up_0b">up_0b</i>
+
+					</div>
+					<h2>up_0b</h2>
+				</li>
+				<li title="up_b">
+					<div class="icon-box">
+
+						<!-- up_b -->
+						<i class="svg-up_b">up_b</i>
+
+					</div>
+					<h2>up_b</h2>
+				</li>
+				<li title="up_s">
+					<div class="icon-box">
+
+						<!-- up_s -->
+						<i class="svg-up_s">up_s</i>
+
+					</div>
+					<h2>up_s</h2>
+				</li>
+				<li title="user">
+					<div class="icon-box">
+
+						<!-- user -->
+						<i class="svg-user">user</i>
+
+					</div>
+					<h2>user</h2>
+				</li>
+				<li title="validate_off">
+					<div class="icon-box">
+
+						<!-- validate_off -->
+						<i class="svg-validate_off">validate_off</i>
+
+					</div>
+					<h2>validate_off</h2>
+				</li>
+				<li title="validate_on">
+					<div class="icon-box">
+
+						<!-- validate_on -->
+						<i class="svg-validate_on">validate_on</i>
+
+					</div>
+					<h2>validate_on</h2>
+				</li>
+				<li title="validate_on_b">
+					<div class="icon-box">
+
+						<!-- validate_on_b -->
+						<i class="svg-validate_on_b">validate_on_b</i>
+
+					</div>
+					<h2>validate_on_b</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<footer>
+			<p>Generated at Fri, 20 Oct 2017 11:33:30 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+.uno-search {
+    width: 337px;
+    border-bottom: solid 2px var(--grey);
+    display: inline-block;
+
+    &::placeholder {
+        width: 300px;
+        height: 17px;
+        font-family: 'OpenSans';
+        font-size: 12px;
+        font-weight: 300;
+        font-style: italic;
+        color: var(--slate-grey);
+        border: none;
+        opacity: 0.5;
+        outline: none;
+    }
+
+    .search-input {
+        width: 300px;
+        height: 27px;
+        font-family: 'OpenSans';
+        font-size: 12px;
+        font-weight: 300;
+        font-style: italic;
+        text-align: left;
+        background-color: transparent;
+        color: var(--slate-grey);
+        border: none;
+        outline: none;
+        padding-left: 10px;
+    }
+
+    button:focus {
+        box-shadow: none;
+    }
+}

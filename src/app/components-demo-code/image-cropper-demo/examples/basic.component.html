@@ -1,0 +1,34 @@
+<input type="file" class="slds-m-around--small" (change)="fileChangeEvent($event)" />
+
+<p class="slds-m-top--small" [style.display]="croppedImage === '' ? 'none' : 'inline-flex'">
+    <button type="button" class="slds-m-around_x-small" unoButton unoSize="small" (click)="imageCropper.rotateLeft()">Rotate left</button>
+    <button type="button" class="slds-m-around_x-small" unoButton unoSize="small" (click)="imageCropper.rotateRight()">Rotate right</button>
+</p>
+<p class="slds-m-top--small slds-float--right"  [style.display]="croppedImage ==='' ? 'none' : 'inline-flex'">
+    <button type="button" class="slds-m-around_x-small" unoButton unoSize="small" unoType="blue" (click)="imageCropper.flipHorizontal()">Flip horizontal</button>
+    <button type="button" class="slds-m-around_x-small" unoButton unoSize="small" unoType="blue" (click)="imageCropper.flipVertical()">Flip vertical</button>
+</p>
+
+<div class="slds-m-top--small">
+    <uno-image-cropper
+        [imageChangedEvent]="imageChangedEvent"
+        [maintainAspectRatio]="false"
+        [aspectRatio]="4 / 3"
+        [resizeToWidth]="128"
+        [onlyScaleDown]="true"
+        [cropperMinWidth]="128"
+        [autoCrop]="true"
+        format="png"
+        outputType="base64"
+        [style.display]="showCropper ? null : 'none'"
+        
+        (imageCropped)="imageCropped($event)"
+        (imageLoaded)="imageLoaded()"
+        (startCropImage)="startCropImage()"
+        (cropperReady)="cropperReady()"
+        (loadImageFailed)="loadImageFailed()"
+    ></uno-image-cropper>
+</div>
+<div class="slds-m-top--small" style="text-align: center;">
+    <img [src]="croppedImage" />
+</div>

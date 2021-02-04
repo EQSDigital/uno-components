@@ -1,0 +1,30 @@
+main {
+    box-shadow: 1px 3px 5px 2px var(--grey);
+}
+
+section.asset-image {
+    height: 250px;
+    border-bottom: 1px solid var(--grey)
+}
+
+section.bottom-bar-container {
+    display: flow-root;
+    padding: 0.5rem;
+}
+
+section.bottom-bar-container > .badges-container > uno-badge {
+    margin-right: 10px;
+}
+
+section.bottom-bar-container > .right-actions-container {
+    float: right;
+}
+
+section.bottom-bar-container > .right-actions-container > .file-input-container > input {
+    display: none;
+}
+
+a, :visited {
+    text-decoration: none;
+    color: var(--white);
+}

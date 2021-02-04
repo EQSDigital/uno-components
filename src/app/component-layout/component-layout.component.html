@@ -1,0 +1,39 @@
+
+<header class="component__header slds-border_bottom slds-grid slds-wrap slds-m-bottom_medium">
+    <div class="slds-has-flexi-truncate slds-align-middle">
+        <h1 style="text-transform: capitalize">{{ title }}</h1>
+    </div>
+    <div class="slds-align-middle slds-text-body_small"></div>
+</header>
+<div class="slds-m-vertical_medium readme"></div>
+<div class="slds-m-vertical_medium">
+    <h2 class="callout">Examples</h2>
+    <div class="slds-box slds-is-relative slds-theme_default slds-m-bottom_large" style="padding-top: 1.5rem;">
+        <div class="example__header slds-text-heading_small">Basic Usage</div>
+        <ng-content></ng-content>
+        <div class="slds-is-relative slds-m-top_large" style="min-height: 25px;">
+            <div class="slds-is-absolute" style="right: 0;">
+                <button class="slds-button slds-button_neutral" (click)="showCode = !showCode" title="Toggle Code">
+                    Code
+                </button>
+            </div>
+            <uno-tabs *ngIf="showCode" [(selected)]="selectedTab">
+                <ng-template unoTab unoTabId="markup" heading="Markup">
+                    <markdown [src]="'app/components-demo-code/' + component + '/examples/basic.component.html'"></markdown>
+                </ng-template>
+                <ng-template unoTab unoTabId="ts" heading="Typescript">
+                    <markdown [src]="'app/components-demo-code/' + component + '/examples/basic.component.ts'"></markdown>
+                </ng-template>
+            </uno-tabs>
+        </div>
+    </div>
+</div>
+<div class="slds-m-vertical_medium">
+    <h2 class="callout">API</h2>
+    <div class="slds-box slds-theme_default">
+        <div class="api">
+            <!-- <markdown emoji>I :heart: ngx-markdown</markdown> -->
+            <markdown [src]="'app/components-demo-code/' + component + '/API.md'"></markdown>
+        </div>
+    </div>
+</div>

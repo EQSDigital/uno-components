@@ -1,0 +1,37 @@
+<uno-circle-graph 
+    [color]="pickSelected?.color"
+    [evaluated]="evaluated"
+    [projected]="projected"
+    [posLegX1]="posLegX1"
+    [posLegY1]="posLegY1"
+    [posLegX2]="posLegX2"
+    [posLegY2]="posLegY2"
+    [levelType]="levelType"
+    (evaluatedEmitter)="onEvaluated($event)"
+    (projectedEmitter)="onProjected($event)">
+</uno-circle-graph>
+
+<div class="slds-grid">
+    <div class="slds-size--1-of-2">
+        <input class="slds-input" placeholder="Insert Evaluated" [(ngModel)]="evaluated" type="number">
+    </div>
+    <div class="slds-size--1-of-2">
+        <input class="slds-input" placeholder="Insert Projected" [(ngModel)]="projected" type="number">
+    </div>
+</div>
+<div class="slds-grid">
+    <div class="slds-size--1-of-2">
+        <input class="slds-input" step="0.01" [(ngModel)]="posLegX1" type="number">
+    </div>
+    <div class="slds-size--1-of-2">
+        <input class="slds-input" step="0.01" [(ngModel)]="posLegY1" type="number">
+    </div>
+</div>
+<div class="slds-grid">
+    <div class="slds-size--1-of-2">
+        <input class="slds-input" step="0.01" [(ngModel)]="posLegX2" type="number">
+    </div>
+    <div class="slds-size--1-of-2">
+        <input class="slds-input" step="0.01" [(ngModel)]="posLegY2" type="number">
+    </div>
+</div>

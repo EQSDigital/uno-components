@@ -1,0 +1,29 @@
+<div class="slds-grid slds-wrap slds-grow">
+    <header class="slds-size--1-of-1 header-uno-ui-lib">
+        <div class="slds-grid slds-grid_align-center slds-p-vertical--x-small">
+            <img src="assets/imgs/uno-icon.svg" class="slds-p-horizontal--small">
+            <span>{{ title }}</span>
+        </div>
+    </header>
+    <aside class="aside slds-grow slds-order_2 slds-small-order_2 slds-medium-order_1 slds-large-order_1">
+        <div class="slds-nav-vertical__section">
+            <h2 class="slds-nav-vertical__title">Components</h2>
+            <ul>
+                <li class="slds-nav-vertical__item" *ngFor="let link of links" routerLinkActive="slds-is-active">
+                    <a class="slds-nav-vertical__action slds-truncate" [routerLink]="'/components/' + link.path">
+                        {{ getLabel(link) }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <div class="main slds-grow slds-order_1 slds-small-order_1 slds-medium-order_2 slds-large-order_2">
+        <div class="slds-p-horizontal_xx-large slds-p-bottom_large" style="flex-grow: 1;">
+            <router-outlet></router-outlet>
+        </div>
+        <footer class="footer width-100pc slds-grid slds-grid_vertical-align-end slds-wrap slds-text-body_small slds-p-top_medium slds-p-bottom_small slds-p-horizontal_xx-large">
+            <div class="slds-col">© 2020 - present. Code licensed under the MIT License.</div>
+            <div class="slds-col slds-text-align_right">Last updated on {{ now | date:'dd MMM yyyy HH:mm:ss'}} v0.0.113</div>
+        </footer>
+    </div>
+</div>

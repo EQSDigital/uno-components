@@ -1,0 +1,39 @@
+Select a day:
+<span unoDropdown [(open)]="openDropdown" style="width: 96px;">
+    <button unoDropdownTrigger class="slds-button slds-button--neutral" style="width: 100%; text-align: left;">
+        <span class="slds-truncate">{{ daySelected || 'Day?' }}</span>
+        <uno-icon icon="down_s" size="xx-small" class="slds-m-left_small" style="float: right;"></uno-icon>
+    </button>
+    <div class="slds-dropdown slds-dropdown--left">
+        <ul class="dropdown__list" role="menu" style="max-height: 200px; overflow: auto;">
+            <li *ngFor="let selectDay of setOfDays;" class="slds-dropdown__item">
+                <a unoDropdownItem role="menuitem" (click)="daySelected=selectDay;">
+                    <p class="slds-truncate">{{ selectDay }}</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</span>
+
+<!-- The sort of day calendar DEMO example: -->
+<div class="slds-box slds-box--x-small slds-datepicker slds-m-vertical--medium" style="overflow: auto;">
+    <table role="grid">
+        <thead>
+            <tr>
+                <th colspan="7">The weeks of a certain Month of an Year!</th>
+            </tr>
+        </thead>
+      
+        <tbody>
+            <tr *ngFor="let week of weeks;">
+                <td *ngFor="let date of week;" (click)="disabledDays.indexOf(date.day) < 0 ? daySelected=date.day : false;"
+                    uno-date-day
+                    [day]="date.day"
+                    [daySelected]="daySelected ? date.day === daySelected : date.day === 1"
+                    [dayDisabled]="disabledDays.indexOf(date.day) > -1"
+                ></td>
+            </tr>
+        </tbody>
+    
+    </table>
+</div>

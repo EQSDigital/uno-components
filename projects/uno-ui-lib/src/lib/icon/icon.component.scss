@@ -1,0 +1,55 @@
+/* Relative to directive "withOpacity": */
+.slds-icon-with-opacity {
+    opacity: 0.6;
+
+    &:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+}
+
+.slds-icon_medium,
+.slds-icon--medium {
+  width: 2rem;
+  height: 2rem;
+}
+
+.slds-icon_xx_large
+.slds-icon--xx-large {
+  width: 7rem;
+  height: 7rem;
+}
+
+/* Relative to pre-defined coloring (text icon): */
+.slds-icon-text-default {
+    fill: var(--sapphire);
+}
+
+.slds-icon-text-white {
+    fill: var(--white);
+}
+
+.slds-icon-text-black {
+    fill: var(--dark);
+}
+
+.slds-icon-text-grey {
+    fill: var(--grey);
+}
+
+.slds-icon-text-green-menu {
+    fill: var(--dark-lime-green);
+}
+
+.slds-icon-text-tomato-red {
+    fill: var(--tomato-red);
+}
+
+.slds-icon-text-sapphire {
+    fill: var(--sapphire);
+}
+
+.slds-icon-text-light-grey-blue {
+    fill: var(--light-grey-blue);
+}
+

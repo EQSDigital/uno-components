@@ -1,0 +1,47 @@
+.circle-graph {
+    position: relative;
+    display: inline-block;
+
+    & .title {
+        position: absolute;
+        width:82px;
+        top: 45px;
+        left: 55px;
+        font-family: 'Nunito Bold';
+        font-size: 12px;
+    }
+
+    & .values {
+        position: absolute;
+        left: 85px;
+        width: 70px;
+        font-family: 'Nunito Bold';
+        font-size: 16px;
+        cursor: pointer;
+
+        &.evaluated {
+            top: 74px;
+        }
+
+        &.projected {
+            top: 116px;
+        }
+    }
+
+    & .legends {
+        position: absolute;
+        width:82px;
+        left: 55px;
+        font-family: 'Nunito Semibold';
+        font-size: 11px;
+        cursor: pointer;
+
+        &.evaluated {
+            top: 94px;
+        }
+
+        &.projected {
+            top: 136px;
+        }
+    }
+}

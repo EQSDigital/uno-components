@@ -1,0 +1,21 @@
+<p class="slds-p-bottom--small">
+    You can use the <strong>keybord to navigate</strong> ("Enter" to set!) to ANY date: "arrow" - 4 directions - "PageUp/Down", "Home" and "End"!
+</p>
+
+<uno-datepicker class="slds-box slds-box--x-small slds-datepicker"
+    [(date)]="date"
+    [numYearsBefore]=5
+    [numYearsAfter]=100>
+</uno-datepicker>
+
+<p class="slds-p-top--medium">Current chosen/today date is:</p>
+<p class="slds-p-bottom--small"><strong>{{ date | date:'EEEE' }}, {{ date | date:'MMMM dd (yyyy)' }}</strong></p>
+
+<p>&nbsp;</p>
+
+<!-- ///////////////////////////////////////////////// -->
+
+<p>
+    If you need it enclosed on some <strong>popup</strong> triggered user action, <strong>&#60;uno-popover&#62;</strong> component has already designed a template (<em>@Input='<b>datePickerContent</b>'</em>) with UNO ui library's <strong>&#60;uno-datepicker&#62;</strong> component inside!
+</p>
+<p>Try it <a href="javascript:void(0);" (click)="goToAnchor('popover');" >here</a>!</p>

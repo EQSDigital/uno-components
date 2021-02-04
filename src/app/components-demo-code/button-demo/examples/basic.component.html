@@ -1,0 +1,64 @@
+<p>
+    Simplest ones - try <em>console.log</em> clicking:
+</p>
+<div class="simplest-uno-buttons">
+    <button type="button" unoButton (click)="buttonClick($event)" class="slds-m-around_x-small">Nano Default</button>
+    <button type="button" unoButton disabled (click)="buttonClick($event)" class="slds-m-around_x-small" (click)="buttonClick($event)">Nano Disabled</button>
+
+</div>
+<p class="slds-m-top--large">
+    You can still use <strong>Lightning System CSS</strong> ones, "inside" unoButton styling:
+</p>
+<div class="external-css-uno-buttons">
+    <button type="button" unoButton class="slds-button--destructive slds-m-around_x-small">Lightning System Destructive</button>
+    <button type="button" unoButton class="slds-button--success slds-m-around_x-small">Lightning System Success</button>
+</div>
+
+
+<p class="slds-m-top--large">
+    Customization regarding "<strong>unoType</strong>" ones:
+</p>
+<div class="custom-type-uno-buttons">
+    <button type="button" unoButton unoType="secondary" class="slds-m-around_x-small">Nano Secondary</button>
+    <button type="button" unoButton unoType="blue" class="slds-m-around_x-small">Nano Blue</button>
+    <button type="button" unoButton unoType="green" class="slds-m-around_x-small">Nano Green</button>
+    <button type="button" unoButton unoType="blue" disabled class="slds-m-around_x-small">Nano Blue Disabled</button>
+</div>
+
+<p class="slds-m-top--large">
+    Customization regarding "<strong>unoSize</strong>" ones:
+</p>
+<div class="custom-size-uno-buttons">
+    <button type="button" unoButton unoType="green" unoSize="x-small" class="slds-m-around_x-small">X-S (no min-width!)</button>
+    <button type="button" unoButton unoType="blue" unoSize="small" class="slds-m-around_x-small">S</button>
+    <button type="button" unoButton unoType="secondary" disabled class="slds-m-around_x-small">Nano Secondary Default Size Disabled</button>
+</div>
+
+
+<p class="slds-m-top--large">
+    Specific Nano "<strong>worksheet</strong>" buttons (used on collapsible table's rows):
+</p>
+<div class="worksheet-uno-buttons-container">
+    <button type="button" unoButton unoType="worksheet-default" class="slds-m-horizontal_large slds-m-vertical_x-small">Nano's Worksheet (default)</button>
+    <button type="button" unoButton unoType="worksheet-add" class="slds-m-horizontal_large slds-m-vertical_x-small">Add +</button>
+    <button type="button" unoButton unoType="worksheet-default" disabled class="slds-m-horizontal_large slds-m-vertical_x-small">Nano's Worksheet Disabled</button>
+</div>
+
+<p class="slds-m-top--large">
+    Customization with an <strong>icon</strong> at any button label text's position:
+</p>
+<div class="custom-icon-uno-buttons-container">
+    <button type="button" unoButton unoType="secondary" class="slds-m-around_x-small">
+        <uno-icon size="xx-small" icon="calendar" [withOpacity]="false" color="green-menu" class="slds-p-around_x-small"></uno-icon>    
+        With an xx-small left icon!
+    </button>
+    <button type="button" unoButton unoType="blue" class="slds-m-around_x-small">
+        With an x-small right icon!
+        <uno-icon size="x-small" icon="client_manager" [withOpacity]="false" color="white" class="slds-p-around_x-small"></uno-icon>    
+    </button>
+    <button type="button" unoButton unoType="green" class="slds-m-around_x-small">
+        Small icon inserted
+        <uno-icon size="small" icon="dashboard" [withOpacity]="false" color="black" class="slds-p-around_x-small"></uno-icon>    
+        into button's text
+    </button>
+</div>

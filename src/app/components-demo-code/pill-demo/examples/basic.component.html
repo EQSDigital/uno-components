@@ -1,0 +1,29 @@
+<div class="slds-text-title--caps slds-m-bottom--small">
+    Pill examples
+</div>
+
+<uno-pill class="slds-p-around_x-small slds-m-right_x-small slds-m-bottom_x-small">
+    <a href="http://unodigital.io" target="_blank" title="Go to http://unodigital.io">Default with link</a>
+</uno-pill>
+
+<uno-pill class="slds-p-around_x-small slds-m-right_x-small slds-m-bottom_x-small">
+    <span unoPillImage>
+        <uno-icon size="x-small" icon="plant" svgType="sprite-color"></uno-icon>
+    </span>
+    <a href="javascript:void(0)" title="Example were href is dead - you can use click event listener!">With icon and link</a>
+</uno-pill>
+
+<uno-pill class="slds-p-around_x-small slds-m-right_x-small slds-m-bottom_x-small">Unlinked</uno-pill>
+
+<!-- ///////////////////////////////////////////////////////////////////// -->
+
+<div class="slds-text-title--caps slds-m-bottom--small slds-m-top--x-large">
+    Removable pills
+</div>
+
+<uno-pill *ngFor="let pill of pills" unoPillRemove (unoPillRemoveElem)="remove(pill)" class="slds-m-right_x-small slds-m-bottom_x-small">
+    <uno-icon size="x-small" icon="clone" unoPillImage></uno-icon>
+    <a href="javascript:void(0)">{{ pill }}</a>
+</uno-pill>
+<div class="slds-clearfix slds-p-vertical--xx-small"></div>
+<button type="button" unoButton unoType="worksheet-add" (click)="add()">Add</button>

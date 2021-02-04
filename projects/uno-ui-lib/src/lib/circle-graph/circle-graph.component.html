@@ -1,0 +1,8 @@
+<div class="circle-graph" [style.width]="width + 'px'" [style.height]="height + 'px'">
+    <canvas #myCanvas></canvas>
+    <div class="slds-truncate slds-text-align--center title">{{ levelTitle }}</div>
+    <div class="slds-truncate values evaluated" (click)="evaluatedEmitter.emit(levelType)">{{ evaluated | number: '2.0-0' }}</div>
+    <div class="slds-truncate slds-text-align--center text-uppercase legends evaluated" (click)="evaluatedEmitter.emit(levelType)" translate>{{ evaluatedTitle }}</div>
+    <div class="slds-truncate values projected" (click)="projectedEmitter.emit(levelType)">{{ projected | number: '2.0-0'}}</div>
+    <div class="slds-truncate slds-text-align--center text-uppercase legends projected" (click)="projectedEmitter.emit(levelType)" translate>{{ projectedTitle }}</div>
+</div>

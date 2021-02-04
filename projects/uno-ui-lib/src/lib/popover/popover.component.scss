@@ -1,0 +1,10 @@
+.popover-close-icon {
+    position: absolute;
+    right: .75rem;
+}
+
+.popover-close-icon.from-datepicker {
+    right: unset;
+    left: 1.5rem;
+    top: 1.4rem;
+}

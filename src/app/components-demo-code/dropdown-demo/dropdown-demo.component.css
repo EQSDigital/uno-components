@@ -1,0 +1,9 @@
+.slds-dropdown__item.unselect-item {
+    display: flex;
+    justify-content: center;
+}
+.slds-dropdown__item.unselect-item > a:hover,
+.slds-dropdown__item.unselect-item > a:focus {
+    width: 100%;
+    justify-content: center;
+}

@@ -1,0 +1,154 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+code[class*="language-"], pre[class="prism-style"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+
+pre[class="prism-style"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre)>code[class*="language-"], pre[class="prism-style"] {
+	background: #272822;
+}
+
+/* Inline code */
+
+:not(pre)>code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment, .token.prolog, .token.doctype, .token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property, .token.tag, .token.constant, .token.symbol, .token.deleted {
+	color: #f92672;
+}
+
+.token.boolean, .token.number {
+	color: #ae81ff;
+}
+
+.token.selector, .token.attr-name, .token.string, .token.char, .token.builtin, .token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator, .token.entity, .token.url, .language-css .token.string, .style .token.string, .token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule, .token.attr-value, .token.function {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex, .token.important {
+	color: #fd971f;
+}
+
+.token.important, .token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+.readme p {
+	margin: 5px 0 10px 0;
+}
+
+.readme ul {
+	list-style: disc;
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+
+.api {
+	background-color: #151718;
+	color: #d4d7d6;
+}
+
+.api code {
+	color: #ffffff;
+	background-color: #696969;
+	padding: 0 3px;
+}
+
+.api h1 {
+	font-size: larger;
+	margin-bottom: 20px;
+	margin-top: 5px;
+}
+
+.api h3 {
+	font-size: large;
+	line-height: 0;
+}
+
+.api h1 code,
+.api h3 code {
+	background-color: transparent;
+	color: var(--tomato-red);
+}
+
+.api ul {
+	list-style: disc;
+	margin-left: 50px;
+	margin-bottom: 10px;
+	line-height: 14px;
+}
+
+.api ul > li > code:nth-child(1) {
+	color: var(--sun-yellow);
+    font-weight: 300;
+    background-color: transparent;
+}
+.api ul > li > code:nth-child(2) {
+	color: var(--greenish-teal);
+    font-weight: 300;
+    background-color: transparent;
+}
+
+.api ul > li a {
+	color: var(--azure);
+}

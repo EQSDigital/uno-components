@@ -1,0 +1,53 @@
+<div class="slds-datepicker__filter slds-grid slds-m-bottom--medium">
+
+    <div class="slds-datepicker__filter--month slds-grid slds-grid--align-spread slds-grow slds-size-">
+        <button (click)="keyboardHandler($event, 'MoveMonth', -1)" class="slds-button slds-button--icon-container">
+            <uno-icon icon="back_b" size="x-small"></uno-icon><span class="slds-assistive-text">Previous Month</span>
+        </button>
+        <h2 [id]="uid + '_month'" aria-live="assertive" aria-atomic="true" class="slds-align-middle">
+            <uno-badge type="info" class="month-label">{{ monthLabel }}</uno-badge>
+        </h2>
+        <button (click)="keyboardHandler($event, 'MoveMonth', 1)" class="slds-button slds-button--icon-container">
+            <uno-icon icon="next_b" size="x-small"></uno-icon><span class="slds-assistive-text">Next Month</span>
+        </button>
+    </div>
+
+    <button
+        *ngIf="todayButton"
+        class="go-to-today"
+        (click)="selectToday()"
+        unoButton
+        unoType="secondary"
+        unoSize="small" translate>TODAY
+    </button>
+
+    <uno-date-year
+        class="slds-shrink-none slds-p-horizontal--x-small"
+        [year]="current.year"
+        [numYearsBefore]="numYearsBefore"
+        [numYearsAfter]="numYearsAfter"
+        (yearChange)="moveYear($event)">
+    </uno-date-year>
+</div>
+
+<table role="grid" [attr.aria-labelledby]="uid + '_month'" class="datepicker__month" style="table-layout: fixed;">
+    <thead>
+        <tr uno-date-weekdays
+            [firstDayOfWeek]="firstDayOfWeek"
+            [dayNamesShort]="dayNamesShort"
+            [dayNamesLong]="dayNamesLong">
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let week of weeks; trackBy:indexTrackBy">
+            <td *ngFor="let date of week;"
+                [class.slds-is-today]="isActive(date)"
+                (click)="select(date);"
+                uno-date-day
+                [day]="date.day"
+                [daySelected]="isSelected(date)"
+                [dayDisabled]="date.disabled">
+            </td>
+        </tr>
+    </tbody>
+</table>

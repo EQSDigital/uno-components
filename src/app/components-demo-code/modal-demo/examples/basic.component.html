@@ -1,0 +1,301 @@
+<p class="slds-m-bottom--small">You have a wide set of configurations for the <strong>&#60;uno-modal /&#62;</strong> -
+    as you can conclude from the wide range list of API methods!</p>
+<p class="slds-m-bottom--small">
+    Templates for <strong>header</strong>, <strong>body</strong> and <strong>footer</strong>, so you can freely
+    customize each,<br />
+    or <strong>Input</strong> Directives for minimal header setup (where you skip the header template drawing), 2
+    pre-configured buttons at the footer and a freely body drawing.
+</p>
+<p class="slds-m-bottom--x-large">
+    Both (using pre-configured or drawing templates - all 3 or any of the 3) can be freely mixed up at the
+    <strong>instalation</strong> side!
+</p>
+<hr />
+
+<!-- ////////////////////////////////////////////////////////////////////// -->
+<div class="modal-triggers-container">
+    <div class="slds-m-bottom--small">
+        <p class="slds-m-bottom--x-small">Simplest Modal ('small') using Input Directives for the Header set up and
+            Angular Template for the Footer:</p>
+        <button unoButton unoType="green" unoSize="x-small" (click)="openModalSmall=true;">Open Small Modal</button>
+    </div>
+
+    <div class="slds-m-vertical--small">
+        <p class="slds-m-bottom--x-small">Simplest Modal ('large') using Angular Template for the Header and Footer:</p>
+        <button unoButton unoType="blue" unoSize="x-small" (click)="openModalLarge=true;">Open Large Modal</button>
+    </div>
+
+    <hr>
+
+    <p class="slds-p-bottom--large">Templated Modal examples, specific for <strong>Nano app</strong> use, with minimum
+        installation code:</p>
+
+    <dl class="slds-dl_horizontal slds-p-bottom--large">
+        <dd class="slds-dl_horizontal__label slds-text-align--center">
+            <button unoButton unoType="worksheet-default" (click)="openModalSuccess=true;"
+                style="box-shadow: 1px 2px 8px 0 var(--greenish-teal);">SUCCESS Modal</button>
+        </dd>
+        <dt class="slds-dl_horizontal__detail">Nano Tpl - success</dt>
+    </dl>
+
+    <dl class="slds-dl_horizontal slds-p-bottom--large">
+        <dd class="slds-dl_horizontal__label slds-text-align--center">
+            <button unoButton unoType="worksheet-default" (click)="openModalWarning=true;"
+                style="box-shadow: 1px 2px 8px 0 var(--orangey-yellow);">WARNING Modal</button>
+        </dd>
+        <dt class="slds-dl_horizontal__detail">Nano Tpl - warning (user wrong action)</dt>
+    </dl>
+
+    <dl class="slds-dl_horizontal slds-p-bottom--large">
+        <dd class="slds-dl_horizontal__label slds-text-align--center">
+            <button unoButton unoType="worksheet-default" (click)="openModalConfirmDel=true;"
+                style="box-shadow: 1px 2px 8px 0 var(--tomato-red);">CONFIRM DEL Modal</button>
+        </dd>
+        <dt class="slds-dl_horizontal__detail">Nano Tpl - confirm delete</dt>
+    </dl>
+
+    <dl class="slds-dl_horizontal slds-p-bottom--large">
+        <dd class="slds-dl_horizontal__label slds-text-align--center">
+            <button unoButton unoType="worksheet-default" (click)="openModalConfirmAction=true;"
+                style="box-shadow: 1px 2px 8px 0 var(--orangey-yellow);">CONFIRM ACTION Modal</button>
+        </dd>
+        <dt class="slds-dl_horizontal__detail">Nano Tpl - confirm some previous user action</dt>
+    </dl>
+
+    <dl class="slds-dl_horizontal slds-p-bottom--large">
+        <dd class="slds-dl_horizontal__label slds-text-align--center">
+            <uno-badge type="badge-3d" pointer="true" (click)="openModalAssets3d=true;">3D</uno-badge>
+        </dd>
+        <dt class="slds-dl_horizontal__detail">'assets3DModal' Nano Template Modal, with <strong>Footer
+                Template</strong> controlled @ installation</dt>
+    </dl>
+
+    <dl class="slds-dl_horizontal slds-p-bottom--large">
+        <dd class="slds-dl_horizontal__label slds-text-align--center">
+            <uno-icon icon="up" (click)="openModalDocsUpload=true; isFormToReset=false; isFormToBeSubmited=false;">
+            </uno-icon>
+        </dd>
+        <dt class="slds-dl_horizontal__detail">
+            'docsUploadModal' Nano Template Modal, using Angular's Reactive <strong>Form validation</strong> (and
+            <strong>Footer and Header Template</strong>) controlled @ installation.
+            Please note that the "<b>Cancel</b>" button, existent here, is controling the inside <strong>&#60;uno-modal
+                /&#62;</strong>'s Angular Reactive Form - it resets completely the <b>form</b>, by seting @Input
+            "resetForm" to <b><i>true</i></b>.
+            On the other hand, "<b>Add</b>" installation button controls internal <strong>&#60;uno-modal
+                /&#62;</strong>'s Angular Reactive Form <strong>submission</strong>.
+        </dt>
+    </dl>
+
+    <dl class="slds-dl_horizontal slds-p-bottom--large">
+        <dd class="slds-dl_horizontal__label slds-text-align--center">
+            <uno-icon icon="up"
+                (click)="openModalDocsUpload=true; isFormToReset=false; isFormToBeSubmited=false; editMode();">
+            </uno-icon>
+        </dd>
+        <dt class="slds-dl_horizontal__detail">
+            uno-upload-modal with data to edit document.
+        </dt>
+    </dl>
+
+
+    <dl class="slds-dl_horizontal slds-p-bottom--large">
+        <dd class="slds-dl_horizontal__label slds-text-align--center">
+            <uno-icon icon="up" (click)="openModalSSCUpload=true; isFormToReset=false; isFormToBeSubmited=false;">
+            </uno-icon>
+        </dd>
+        <dt class="slds-dl_horizontal__detail">
+            uno-upload-modal to ssc
+        </dt>
+    </dl>
+
+    <dl class="slds-dl_horizontal slds-p-bottom--large">
+        <dd class="slds-dl_horizontal__label slds-text-align--center">
+            <uno-icon icon="up"
+                (click)="openModalSSCUpload=true; isFormToReset=false; isFormToBeSubmited=false; editSSCMode();">
+            </uno-icon>
+        </dd>
+        <dt class="slds-dl_horizontal__detail">
+            uno-upload-modal to ssc edit
+        </dt>
+    </dl>
+
+    <hr>
+
+</div>
+<!-- ////////////////////////////////////////////////////////////////////// -->
+
+
+<!-- EACH MODAL's HTML: -->
+
+<!-- ModalSmall -->
+<uno-modal headerStr='I am a Modal Window!' subHeaderStr='This is the Modal Subtitle' [(open)]="openModalSmall">
+
+    <div>
+        <p class="slds-m-vertical--medium">
+            <b>Simplest</b> Modal (<i>small</i> size) using <u>Input Directives</u> for the Header set up and <u>Angular
+                Template</u> for the Footer!
+        </p>
+    </div>
+
+    <ng-template unoModalFooter>
+        <button type="button" unoButton (click)="openModalSmall = false;">Cancel</button>
+        <button type="button" unoButton unoType="green" (click)="openModalSmall = false;">Save</button>
+    </ng-template>
+
+</uno-modal>
+
+<!-- ModalLarge -->
+<uno-modal [(open)]="openModalLarge" size="large">
+
+    <ng-template unoModalHeader>
+        <h2 style="font-family: 'Nunito'; font-size: 26px;">Title</h2>
+        <h2 style="font-family: 'OpenSans'; font-size: 14px; color: var(--slate-grey)">Subtitle</h2>
+    </ng-template>
+
+    <div>
+        <b>Simplest</b> Modal (<i>large</i> size) using <u>Angular Template</u> for the <b>Header</b> and for the
+        <b>Footer</b>!
+    </div>
+
+    <ng-template unoModalFooter>
+        <button unoButton unoType="secondary" (click)="openModalLarge=false;">CANCEL</button>
+        <button unoButton unoType="blue" (click)="openModalLarge=false;">OK</button>
+    </ng-template>
+
+</uno-modal>
+
+<!-- Success Modal -->
+<uno-modal [(open)]="openModalSuccess" templateType="successModal"
+    templateCustomMsg="I'm the <strong>modal of <em>success</em></strong>,<br><code class='slds-button--icon-error'>HTML correctly formated</code>!"
+    templateIconPath="assets/imgs/success-icon.svg" (clickedButton)="modalClickEvt($event)">
+</uno-modal>
+
+<!-- Warning Modal -->
+<uno-modal [(open)]="openModalWarning" templateType="warningModal"
+    templateCustomMsg="Your <strong>action</strong> <span class='slds-button--icon-error'>doesn't meet</span> current specifications.<br><i><u>Please <b>change</b> action</u></i>..."
+    templateIconPath="assets/imgs/warning-icon.svg" (clickedButton)="modalClickEvt($event)">
+</uno-modal>
+
+<!-- Confirm Delete Modal -->
+<uno-modal [(open)]="openModalConfirmDel" templateType="confirmDelModal"
+    templateCustomMsg="Deletion will procceed <b>immediately</b>!<br>Remember you <span class='slds-button--icon-error'>can't <b>undo</b></span> this action..."
+    templateIconPath="assets/imgs/confirm-del-icon.svg" (clickedButton)="modalClickEvt($event)">
+</uno-modal>
+
+<!-- Confirm some previous user action Modal -->
+<uno-modal [(open)]="openModalConfirmAction" templateType="confirmActionModal"
+    templateCustomMsg="Are you sure you want to do <i>this</i>....?<br>Please confirm your action..."
+    templateIconPath="assets/imgs/warning-icon.svg" (clickedButton)="modalClickEvt($event)">
+</uno-modal>
+
+<!-- 'assets3DModal' Nano Template Modal -->
+<uno-modal headerStr='Select 3D scene' subHeaderStr='Select and click Open' [(open)]="openModalAssets3d"
+    templateType="assets3DModal" [scenes3D]="scenes3dArray" (selected3DScene)="scene3DSelected($event)">
+
+    <ng-template unoModalFooter>
+        <button unoButton (click)="openModalAssets3d=false;">CANCEL</button>
+        <button unoButton unoType="green" disabled class="open-scene" (click)="openModalAssets3d=false;">OPEN</button>
+    </ng-template>
+</uno-modal>
+
+<!-- Docs to Upload Modal, with Angular Reactive Form: -->
+<uno-modal
+    [(open)]="openModalDocsUpload"
+    [templateType]="'docsUploadModal'"
+    [docTypeSelector]="docUpload_possibleTypes"
+    [docStatusSelector]="docUpload_possibleStatus"
+    [docResultSelector]="docUpload_possibleResults"
+    [documentMinDate]="minDate"
+    [documentMaxDate]="maxDate"
+    [expireMinDate]="minDate"
+    [expireMaxDate]="maxDate"
+    [showExpiredDate]="true"
+    [editData]="editData"
+    [resetForm]="isFormToReset"
+    [submitForm]="isFormToBeSubmited"
+    [fileSize]="15000000"
+    (selectedTypeEmitter)="loadResults($event)"
+    (formValidation)="isDocsUploadFormValid($event)"
+    (formSubmitionData)="dispatchFormUploadData($event)">
+
+    <ng-template unoModalHeader>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size--11-of-12">
+                <h2 style="font-family: 'Nunito'; font-size: 26px;">Upload your files</h2>
+            </div>
+            <div class="slds-col slds-size--1-of-12" style="padding-top: 5px; padding-left: 1.5rem;">
+                <uno-icon icon="close" size="small" color="sapphire" class="slds-button__icon--left"
+                    (click)="openModalDocsUpload=false; isFormToReset=true; editData = null"></uno-icon>
+            </div>
+        </div>
+
+    </ng-template>
+
+    <ng-template unoModalFooter>
+        <button
+            unoType="secondary"
+            unoButton
+            (click)="openModalDocsUpload=false; isFormToReset=true; editData=null; editData = null">Cancel</button>
+        <button
+            unoButton
+            unoType="blue"
+            disabled
+            class="add-uploaded-doc"
+            (click)="openModalDocsUpload=false; isFormToBeSubmited=true;">Add</button>
+    </ng-template>
+
+</uno-modal>
+
+<!-- Docs to Upload Modal, with Angular Reactive Form: -->
+<uno-modal
+    [(open)]="openModalSSCUpload"
+    [templateType]="'sscUploadModal'"
+    [sscStatusSelector]="docUpload_possibleSSCStatus"
+    [editData]="editData" [expireMinDate]="minDate"
+    [expireMaxDate]="maxDate"
+    [sscStatusLabel]="'sscStatusLabel'"
+    [disableSSCType]="false"
+    [disableInputFile]="false"
+    [disableInputName]="false"
+    [disableSSCDate]="false"
+    [disableSSCStatus]="false"
+    [disableDescription]="false"
+    [disableComments]="false"
+    [resetForm]="isFormToReset"
+    [submitForm]="isFormToBeSubmited"
+    (selectedTypeEmitter)="loadResults($event)"
+    (closeOutside)="editData = null"
+    (formValidation)="isDocsUploadFormValid($event)"
+    (formSubmitionData)="dispatchFormUploadData($event)">
+
+    <ng-template unoModalHeader>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size--11-of-12">
+                <h2 style="font-family: 'Nunito'; font-size: 26px;">Upload your files</h2>
+            </div>
+            <div class="slds-col slds-size--1-of-12" style="padding-top: 5px; padding-left: 1.5rem;">
+                <uno-icon
+                    icon="close"
+                    size="small"
+                    color="sapphire"
+                    class="slds-button__icon--left"
+                    (click)="openModalSSCUpload=false; isFormToReset=true; editData = null">
+                </uno-icon>
+            </div>
+        </div>
+    </ng-template>
+
+    <ng-template unoModalFooter>
+        <button
+            unoType="secondary"
+            unoButton
+            (click)="openModalSSCUpload=false; isFormToReset=true; editData=null">Cancel</button>
+        <button
+            unoButton
+            unoType="blue"
+            disabled
+            class="ssc-add-uploaded-doc"
+            (click)="openModalSSCUpload=false; isFormToBeSubmited=true;">Add</button>
+    </ng-template>
+
+</uno-modal>

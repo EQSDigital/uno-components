@@ -1,0 +1,15 @@
+<!-- The Pill image/icon - as long as Directive is there -->
+<ng-content select="[unoPillImage]"></ng-content>
+<!-- The Pill link href - everytime an <a href="" /> is drawn @ HTML intalation -->
+<ng-content select="a"></ng-content>
+<!-- The Pill unlinked - as long as Directive is there -->
+<span *ngIf="unlinked" class="slds-pill__label">
+    <ng-content></ng-content>
+</span>
+
+<!-- Add a close button, if Pill is removable: -->
+<uno-icon *ngIf="removable"
+    [icon]="closeIcon"
+    class="slds-button__icon slds-button slds-button--icon slds-pill__remove"
+    (click)="remove()">
+</uno-icon>
