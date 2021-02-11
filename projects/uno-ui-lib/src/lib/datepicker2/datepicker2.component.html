@@ -2,20 +2,17 @@
     <div class="slds-grid">
         <div style="width: 100%;">
             <input
-                style="box-shadow: 0px 0px 0px 0px"
                 [formControl]="dateForm"
                 (click)="markAsDirty()"
                 class="date-input"
                 matInput
                 [matDatepicker]="picker"
                 [placeholder]="chooseLabel"
-                (dateInput)="addEvent('input', $event)"
                 (dateChange)="addEvent('change', $event)"
                 [min]="min"
                 [max]="max"
                 [value]="date">
-            <mat-datepicker (opened)="dtpOpened()" (click)="dtpOpened()" [disabled]="disableCalendar" #picker></mat-datepicker>
-            
+            <mat-datepicker [disabled]="disableCalendar" #picker></mat-datepicker>
         </div>
         <!-- TODO: UPGRADE TO V10 TO BE ABLE TO USE DATE RANGE -->
         <!-- <div style="width: 100%;">
@@ -34,11 +31,7 @@
     <uno-icon size="x-small" icon="error_icon" svgType="sprite-color" [withOpacity]="false"></uno-icon>
     <span class="slds-p-left_xx-small" translate>requiredField</span>
 </mat-error>
-<mat-error *ngIf="dateForm.hasError('matDatepickerMin') && dateForm.dirty && !hideError" class="slds-truncate">
-    <uno-icon size="x-small" icon="error_icon" svgType="sprite-color" [withOpacity]="false"></uno-icon>
-    <span class="slds-p-left_xx-small" translate>invalidDate</span>
-</mat-error>
-<mat-error *ngIf="dateForm.hasError('matDatepickerMax') && dateForm.dirty && !hideError" class="slds-truncate">
+<mat-error *ngIf="(dateForm.hasError('matDatepickerMin') || dateForm.hasError('matDatepickerMax')) && dateForm.dirty && !hideError" class="slds-truncate">
     <uno-icon size="x-small" icon="error_icon" svgType="sprite-color" [withOpacity]="false"></uno-icon>
     <span class="slds-p-left_xx-small" translate>invalidDate</span>
 </mat-error>
