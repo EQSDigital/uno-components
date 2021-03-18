@@ -16,10 +16,10 @@
 | `[filterPlaceholder]` | The placeholder string to display for the filter input field. | string | |
 | `[listSizeForFilter]` | From what number of elements, of the Dropdown list, will filter box be avilable for the user. | number | 1 |
 | `[showCheckBox]` | Shows a checkbox next to the name. | boolean | false |
-| `(openChange)`: Whether the Dropdown is being opened or closed. | EventEmitter\<boolean\> | |
-| `(userChangedFilter)`: When user is typing a Dropdown filtering, instalation can pick up the (string) changes and do a custom filtering function. | EventEmitter\<string\> | |
-| `(selectedElem)`: Once Dropdown is being closed, by a user selection option, the emiited value by the Dropdown Directive it's an `HTMLElemnt` type - the one the user selected/chosen. | EventEmitter\<HTMLElement\> | |
-| `(scrollEndReached)`: Keeps tracking of the scroll position, inside the `<uno-picklist />` Dropdown, on the property `pos`. If the container's bottom/end limit is reached, property `endReached` of the Emitter comes true. | EventEmitter\<{pos: number, endReached: boolean}\> | |
+| `(openChange)` | Whether the Dropdown is being opened or closed. | EventEmitter\<boolean\> | |
+| `(userChangedFilter)` | When user is typing a Dropdown filtering, instalation can pick up the (string) changes and do a custom filtering function. | EventEmitter\<string\> | |
+| `(selectedElem)` | Once Dropdown is being closed, by a user selection option, the emiited value by the Dropdown Directive it's an `HTMLElemnt` type - the one the user selected/chosen. | EventEmitter\<HTMLElement\> | |
+| `(scrollEndReached)` | Keeps tracking of the scroll position, inside the `<uno-picklist />` Dropdown, on the property `pos`. If the container's bottom/end limit is reached, property `endReached` of the Emitter comes true. | EventEmitter\<{pos: number, endReached: boolean}\> | |
 
 ### Content possibilities
 

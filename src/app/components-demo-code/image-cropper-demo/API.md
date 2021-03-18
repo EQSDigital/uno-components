@@ -21,5 +21,5 @@
 | `(imageLoaded)` | Triggered when the image was loaded into the cropper. | EventEmitter\<\> | |
 | `(loadImageFailed)` | Triggered when a wrong file type was selected (only png, gif and jpg are allowed). | EventEmitter\<\> | |
 | `(startCropImage)` | Triggered once cropper is ready to (re)start - either at loading picture or any other time user uses the cropper. | EventEmitter\<\> | |
-| `(imageCropped)` | `EventEmitter<ImageCroppedEvent event>` Emits an ImageCroppedEvent event (a Type imported from component's UI lib, with cropped image properties) each time the image is cropped.
+| `(imageCropped)` | Emits an ImageCroppedEvent event (a Type imported from component's UI lib, with cropped image properties) each time the image is cropped. | EventEmitter\<ImageCroppedEvent\> | |
 | `(cropperReady)` | Triggered when the component finishes 1st cropping (or any other later) of the loadded image and is ready to be user used. | EventEmitter\<\> | |

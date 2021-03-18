@@ -14,12 +14,12 @@ export const routes = [
     {
         path: 'circle-graph',
         loadChildren: () => import('./circle-graph-demo/circle-graph-demo.module').then(m => m.CircleGraphDemoModule),
-        label: "Cicle Graph"
+        label: 'Circle Graph'
     },
     {
         path: 'color-pick',
         loadChildren: () => import('./color-pick-demo/color-pick-demo.module').then(m => m.ColorPickDemoModule),
-        label: "Color Pick"
+        label: 'Color Pick'
     },
     {
         path: 'date-day',

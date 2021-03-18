@@ -27,27 +27,11 @@ interface DropDownSelector {
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDestroy {
-
-    openModalAssets3d: boolean;
-    openModalDocsUpload: boolean;
-    openModalSmall: boolean;
-    openModalLarge: boolean;
-    openModalSuccess: boolean;
-    openModalWarning: boolean;
-    openModalConfirmDel: boolean;
-    openModalConfirmAction: boolean;
-
-    datePickerData: any;
-
-    datePickerExpiredData: any;
-
     // To save time @ component's instalation, we have already prepared HTML templates for certain, often used, Modals:
     @Input() templateType: 'successModal' | 'warningModal' | 'confirmDelModal' | 'confirmActionModal' | 'assets3DModal' | 'docsUploadModal' | 'sscUploadModal' | '';
     @Input() templateCustomMsg: string;       // Can be an HTML string
     // Exclusively for assets3DModal Template (should, at least, have property 'name'), the scenes Array:
     @Input() scenes3D: any[];
-    // Exclusively for 'docsUploadModal' template:
-    uploadForm: FormGroup;
     @Input() docTypeSelector: any[];    // Observable<NanoModels.NanoDropdownDto[]>;
     @Input() docStatusSelector: any[];  // Observable<NanoModels.NanoDropdownDto[]>;
     @Input() docResultSelector: any[];  // Observable<NanoModels.NanoDropdownDto[]>;
@@ -71,7 +55,7 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
     headingId = uniqueId('modal-heading');
     contentId = uniqueId('modal-content');
     @Input() modalIsDeaf = false;
-    @Input() editData;
+    @Input() editData: any;
     @Input() showDate = true;
     @Input() showExpiredDate = false;
     @Input() showTag = true;
@@ -188,6 +172,22 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
 
     @ContentChild(ModalHeaderDirective) headerDirective: ModalHeaderDirective;
     @ContentChild(ModalFooterDirective) footerDirective: ModalFooterDirective;
+
+    openModalAssets3d: boolean;
+    openModalDocsUpload: boolean;
+    openModalSmall: boolean;
+    openModalLarge: boolean;
+    openModalSuccess: boolean;
+    openModalWarning: boolean;
+    openModalConfirmDel: boolean;
+    openModalConfirmAction: boolean;
+
+    datePickerData: any;
+
+    datePickerExpiredData: any;
+
+    // Exclusively for 'docsUploadModal' template:
+    public uploadForm: FormGroup;
 
     public fileName: any;
     public sscFileName: any;

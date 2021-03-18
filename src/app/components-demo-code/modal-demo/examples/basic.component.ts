@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { ModalComponent } from 'uno-ui-lib';
 
 @Component({
     selector: 'basic-example',
@@ -18,6 +19,8 @@ export class BasicComponent {
 
     minDate = new Date();
     maxDate = new Date();
+
+    @ViewChild(ModalComponent) private modalComponent: ModalComponent;
 
     constructor() {
         const currentYear = new Date().getFullYear();
@@ -122,6 +125,7 @@ export class BasicComponent {
     }
 
     editSSCMode() {
+        console.log(this.modalComponent.uploadForm);
         this.editData = {
             documentType: {
                 name: 'test me',

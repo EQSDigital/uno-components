@@ -1,12 +1,17 @@
 # uno-components
 
-UNO user interface components library.
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.4
+UNO user interface components library. 
+This contains native [Angular](https://angular.io/) components and directives written from scratch in TypeScript using the [Lightning Design System](https://www.lightningdesignsystem.com/) CSS framework.
 
-## Development server - DEMO page
+## Installation
 
-After `$ npm run build-ng` command, you should be able to navigate to `http://localhost:3000/` and use the DEMO page, of the library component's demo application (several examples, with HTML, TS code, and the detailed API of how to use them, for each library component).
+Install through `npm`:
+```bash
+npm install --save uno-ui-lib
+```
+## Usage & Demo
 
-## Further help
+After execute command `npm run build-ng`, you should be able to navigate to [Demo page](http://localhost:3000/), of the library component's demo application (several examples, with HTML, TS code, and the detailed API of how to use them, for each library component).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## License
+- This project is distributed under MIT license available on the repository page.

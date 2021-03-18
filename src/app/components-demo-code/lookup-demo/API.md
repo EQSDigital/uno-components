@@ -4,7 +4,7 @@
 
 | Property | Description | Type | Default |
 | -------- | ----------- | ---- | ------- |
-| `[pick]` | any` The selected item (Obj, string, number, ...) by the user.
+| `[pick]` | The selected item (Obj, string, number, ...) by the user. | any | |
 | `[value]` | Input filter value. ONLY chnges on this value, will trigger `<uno-lookup />` Dropdown refreshment. | string |
 | `[lookup]` | MUST be a function! It's the callback to invoke to search for suggestions - `<uno-lookup />` Dropdown will EXCLUSIVELY refresh on `value` (search text Input) CHANGES. | Function (value: string): Observable\<any[]\> \| any[] ||
 | `[field]` | On the received Data, the field that will suport label writing/changes, upon new pick item. | string |
