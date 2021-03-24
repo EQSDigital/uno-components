@@ -27,26 +27,7 @@
 | `[showName]` | Determines if the name field is shown. | boolean | true |
 | `[fileSize]` | Determines the maximum size of the file in bytes. (1.5mb === 1500000) | number | |
 | `[acceptedTypes]` | string` Determines what types of files are accepted (ex: .pdf, .docx, etc) | | |
-| `[successTitle]` | Success Title. | string | 'Success' |
-| `[warningTitle]` | Warning Title. | string | 'Warning!' |
-| `[confirmTitle]` | Confirm Title. | string | 'Please Confirm!' |
-| `[deleteSubTitle]` | Delete Sub Title. | string | 'Are you Sure you Wish to Delete?' |
-| `[okLabel]` | Ok Label. | string | 'OK' |
-| `[deleteLabel]` | Delete Label. | string | 'DELETE' |
-| `[proceedLabel]` | proceed Label. | string | 'PROCEED' |
-| `[cancelLabel]` | cancel Label. | string | 'CANCEL' |
-| `[sceneNameLabel]` | Scene name File Label. | string | 'Scene name...?' |
-| `[chooseFileLabel]` | Choose File Label. | string | 'Choose File' |
-| `[nameLabel]` | Name Label. | string | 'Name' |
-| `[tagLabel]` | Tag Label. | string | 'Tag' |
-| `[documentTypeLabel]` | Document Type Label. | string | 'Document Type' |
-| `[documentStatusLabel]` | Document Statu Label. | string | 'Document Status' |
-| `[selectItemLabel]` | Select an Item Label. | string | 'Select an Item...' |
-| `[hooseDateLabel]` | Choose a Date Label. | string | 'Choose a date...' |
-| `[documentDateLabel]` | Document Date Label. | string | 'Document Date' |
-| `[documentResultLabel]` | Document Result Label | string | 'Document Result' |
-| `[commentsLabel]` | Comments Label. | string | 'Comments - ' |
-| `[optionalLabel]` | Optional Label. | string | 'Optional' |
+| `[sscStatusLabel]` | Site Safety Coordinator Label. | string | 'sscStatusLabel' |
 | `(openChange)` | Any/all TEMPLATES: emitted when `<uno-modal />`'s visibility is going to change to false (about to be closeed). | EventEmitter\<boolean\> | |
 | `(clickedButton)` | For ALL 'templateType' switched TEMPLATES ('successModal', 'warningModal', 'confirmDelModal', 'confirmActionModal'), where no header or footer exists - the whole `<uno-modal />` window is made at a Body Template. Generally speaking emits an event containing the label of the clicked ('Cancel'/'OK') button, so we can correspond unequivocally, at instalation code, the HTML button event with the TS action/function. | EventEmitter\<string\> | |
 | `(selected3DScene)` | For 'assets3DModal' TEMPLATE: emitted when user chooses one of a 3D scene set, to visualize - sceneIdx is passed on the emitter. | EventEmitter\<number\> | |

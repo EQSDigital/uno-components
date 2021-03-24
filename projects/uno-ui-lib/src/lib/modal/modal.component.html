@@ -304,12 +304,12 @@
                                     <uno-datepicker2
                                         [min]="expireMinDate"
                                         [max]="expireMaxDate"
-                                        (dateChange)="expireDateEmited($event)"
                                         [date]="datePickerExpiredData"
                                         [chooseLabel]="'chooseDateLabel' | translate"
                                         [disableCalendar]="disableSSCDate"
                                         [reset]="resetDatePicker"
-                                        [disable]="disableSSCDate">
+                                        [disable]="disableSSCDate"
+                                        (dateChange)="expireDateEmited($event)">
                                     </uno-datepicker2>
                                 </div>
                             </fieldset>
@@ -321,7 +321,7 @@
                                 <div unoDropdown [(open)]="dD?.sscStatus.opened">
                                     <button [class.disabledField]="disableSSCStatus" unoDropdownTrigger class="slds-input form-control uno-dropdown" [title]="dD?.sscStatus.name" (click)="uploadForm?.controls.sscStatus.markAsTouched(); cloneHiddenInputClasses(0);">
                                         <input type="hidden" formControlName="sscStatus">
-                                        <span  *ngIf="dD?.sscStatus.name" style="height: 12px; width: 12px; border-radius: 50%; margin-right: 10px; margin-top: 8px;" [ngStyle]="{'background-color': dD?.sscStatus.color }"></span>
+                                        <span *ngIf="dD?.sscStatus.name" style="height: 12px; width: 12px; border-radius: 50%; margin-right: 10px; margin-top: 8px;" [ngStyle]="{'background-color': dD?.sscStatus.color }"></span>
                                         <span class="slds-truncate" *ngIf="dD?.sscStatus.name">{{ dD?.sscStatus.name }}</span>
                                         <span class="slds-truncate" *ngIf="!dD?.sscStatus.name" translate>selectItemLabel</span>
                                         <uno-icon icon="down_s" size="xx-small" class="slds-m-left_small"></uno-icon>

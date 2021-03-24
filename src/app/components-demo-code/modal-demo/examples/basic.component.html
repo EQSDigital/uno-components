@@ -266,7 +266,8 @@
     (selectedTypeEmitter)="loadResults($event)"
     (closeOutside)="editData = null"
     (formValidation)="isDocsUploadFormValid($event)"
-    (formSubmitionData)="dispatchFormUploadData($event)">
+    (formSubmitionData)="dispatchFormUploadData($event)"
+    (formIsDirty)="formIsDirty($event)">
 
     <ng-template unoModalHeader>
         <div class="slds-grid slds-wrap">
@@ -289,13 +290,25 @@
         <button
             unoType="secondary"
             unoButton
-            (click)="openModalSSCUpload=false; isFormToReset=true; editData=null">Cancel</button>
+            (click)="openModalSSCUpload=false; isFormToReset=true; editData=null">
+            Cancel
+        </button>
         <button
+            *ngIf="isFormDirty"
             unoButton
             unoType="blue"
-            disabled
             class="ssc-add-uploaded-doc"
-            (click)="openModalSSCUpload=false; isFormToBeSubmited=true;">Add</button>
+            (click)="openModalSSCUpload=false; isFormToBeSubmited=true;">
+            Add
+        </button>
+        <button
+            *ngIf="!isFormDirty"
+            unoButton
+            unoType="blue"
+            class="ssc-add-uploaded-doc"
+            (click)="openModalSSCUpload=false; isFormToBeSubmited=true; editData=null">
+            Ok
+        </button>
     </ng-template>
 
 </uno-modal>

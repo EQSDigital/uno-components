@@ -15,7 +15,6 @@ import { ModalFooterDirective } from './footer.directive';
 interface DropDownSelector {
     id: number;
     name: string;
-    // Boolean telling dropdown selector to open or not:
     opened: boolean;
     color: string;
 }
@@ -29,16 +28,13 @@ interface DropDownSelector {
 export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDestroy {
     // To save time @ component's instalation, we have already prepared HTML templates for certain, often used, Modals:
     @Input() templateType: 'successModal' | 'warningModal' | 'confirmDelModal' | 'confirmActionModal' | 'assets3DModal' | 'docsUploadModal' | 'sscUploadModal' | '';
-    @Input() templateCustomMsg: string;       // Can be an HTML string
+    @Input() templateCustomMsg: string; // Can be an HTML string
     // Exclusively for assets3DModal Template (should, at least, have property 'name'), the scenes Array:
     @Input() scenes3D: any[];
     @Input() docTypeSelector: any[];    // Observable<NanoModels.NanoDropdownDto[]>;
     @Input() docStatusSelector: any[];  // Observable<NanoModels.NanoDropdownDto[]>;
     @Input() docResultSelector: any[];  // Observable<NanoModels.NanoDropdownDto[]>;
     @Input() sscStatusSelector: any[];  // Observable<NanoModels.NanoDropdownDto[]>;
-    formErrorsObservable: Subscription;
-    // Object with all form's drop down selectors, each with an Id and a Name
-    dD = {} as { [key: string]: DropDownSelector };
 
     // Let the instalation state the path for each modal template's image/icon/svg, providing a default one
     @Input() templateIconPath = 'assets/images/default-modal-template-icon.svg';
@@ -52,8 +48,6 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
     @Input() headerStr = '';
     @Input() subHeaderStr = '';
     @Input() headerAlign: 'left' | 'center' | 'right' = 'left';
-    headingId = uniqueId('modal-heading');
-    contentId = uniqueId('modal-content');
     @Input() modalIsDeaf = false;
     @Input() editData: any;
     @Input() showDate = true;
@@ -81,41 +75,7 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
     @Input() expireMinDate: any;
     @Input() expireMaxDate: any;
 
-    // LABELS
-    // actionAccomplishedSuccess = 'Your action was accomplished with success!';
-    // confirmAction = 'Please confirm your action...';
-    // proceedWithDeletion= 'Are you sure you want to proceed with deletion...?';
-    // actionNotMeetingCurrentSpecifications = 'Your action is not meeting current specifications!';
-    // chooseFileUpload = 'Choose a file to upload.';
-    // successTitle = 'Success';
-    // warningTitle = 'Warning!';
-    // confirmTitle = 'Please Confirm!';
-    // deleteSubTitle = 'are you Sure you Wish to Delete?';
-    // okLabel = 'OK';
-    // deleteLabel = 'DELETE';
-    // proceedLabel = 'PROCEED';
-    // cancelLabel = 'CANCEL';
-
-    // sceneNameLabel = 'Scene name...?';
-    // chooseFileLabel = 'Choose File';
-    // nameLabel = 'Name';
-    // tagLabel = 'Tag';
-    // documentTypeLabel = 'Document Type';
-    // documentStatusLabel = 'Document Status';
-    // selectItemLabel = 'Select an Item...';
-    // chooseDateLabel = 'Choose a date...';
-    // documentDateLabel = 'Document Date';
-    // documentResultLabel = 'Document Result';
-    // commentsLabel = 'Comments - ';
-    // optionalLabel = 'Optional';
-    // insertTag = 'Insert Tag';
-    // insertName = 'Insert Name';
-    // insertDescription = 'Insert Descrtiption';
-    // insertComments = 'Insert Comments';
-
     @Input() sscStatusLabel = 'sscStatusLabel';
-    // expireDateLabel = 'Expire Date';
-    // descriptionLabel = 'Description ';
 
     // ======================================
     private _separateButtons = true;
@@ -137,7 +97,9 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
         }
 
         this._resetForm = _resetForm;
-        if (_resetForm === true) { this.resetUploadForm(); }
+        if (_resetForm === true) {
+            this.resetUploadForm();
+        }
     }
     get resetForm() {
         return this._resetForm;
@@ -151,7 +113,10 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
         }
 
         this._submitForm = _submitForm;
-        if (_submitForm === true) { this.formSubmitionData.emit(this.uploadForm.value); this.resetUploadForm(); }
+        if (_submitForm === true) {
+            this.formSubmitionData.emit(this.uploadForm.value);
+            this.resetUploadForm();
+        }
     }
     get submitForm() {
         return this._submitForm;
@@ -166,25 +131,30 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
     // Exclusively for 'docsUploadModal' template:
     // @Output() imageUploaded = new EventEmitter();
     @Output() selectedTypeEmitter = new EventEmitter();
-    @Output() formValidation = new EventEmitter();
+    @Output() formValidation = new EventEmitter<boolean>();
     @Output() formSubmitionData = new EventEmitter();
     @Output() closeOutside = new EventEmitter();
 
-    @ContentChild(ModalHeaderDirective) headerDirective: ModalHeaderDirective;
-    @ContentChild(ModalFooterDirective) footerDirective: ModalFooterDirective;
+    @Output() formIsDirty = new EventEmitter<boolean>();
 
-    openModalAssets3d: boolean;
-    openModalDocsUpload: boolean;
-    openModalSmall: boolean;
-    openModalLarge: boolean;
-    openModalSuccess: boolean;
-    openModalWarning: boolean;
-    openModalConfirmDel: boolean;
-    openModalConfirmAction: boolean;
+    @ContentChild(ModalHeaderDirective) public headerDirective: ModalHeaderDirective;
+    @ContentChild(ModalFooterDirective) public footerDirective: ModalFooterDirective;
 
-    datePickerData: any;
+    public headingId = uniqueId('modal-heading');
+    public contentId = uniqueId('modal-content');
 
-    datePickerExpiredData: any;
+    public openModalAssets3d: boolean;
+    public openModalDocsUpload: boolean;
+    public openModalSmall: boolean;
+    public openModalLarge: boolean;
+    public openModalSuccess: boolean;
+    public openModalWarning: boolean;
+    public openModalConfirmDel: boolean;
+    public openModalConfirmAction: boolean;
+
+    public datePickerData: Date;
+
+    public datePickerExpiredData: Date;
 
     // Exclusively for 'docsUploadModal' template:
     public uploadForm: FormGroup;
@@ -196,6 +166,8 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
 
     public fileUploadIsToBig = false;
 
+    public dD = {} as { [key: string]: DropDownSelector };
+
     private focusTrap: FocusTrap;
 
     private container: OverlayRef;
@@ -203,6 +175,8 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
     private elementFocusedBeforeDialogWasOpened: HTMLElement | null = null;
 
     private scrollStrategy: BlockScrollStrategy;
+
+    private formErrorsObservable: Subscription;
 
     constructor(
         private fb: FormBuilder,
@@ -255,6 +229,10 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
                 }
             );
 
+            this.uploadForm.valueChanges.subscribe(() => {
+                this.formIsDirty.emit(this.uploadForm.dirty);
+            });
+
             // Account for each/all dropdowns selectors we'll have on this Reactive Form:
             this.initDropDowns();
             this.cdRef.detectChanges();
@@ -269,52 +247,52 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
             this.handleOpen();
         }
 
-        if (changes.editData && this.editData) {
-            setTimeout(() => {
-                if (this.editData.file || this.editData.documentFileName) {
-                    this.uploadForm.controls.uploadedFile.clearValidators();
-                    this.uploadForm.controls.uploadedFile.updateValueAndValidity();
-                }
-                this.uploadForm.controls.name.setValue(this.editData.name);
-                this.uploadForm.controls.tag.setValue(this.editData.documentTag);
+        if (changes.editData && changes.editData.currentValue) {
+            // setTimeout(() => {
+            if (this.editData.file || this.editData.documentFileName) {
+                this.uploadForm.controls.uploadedFile.clearValidators();
+                this.uploadForm.controls.uploadedFile.updateValueAndValidity();
+            }
+            this.uploadForm.controls.name.setValue(this.editData.name);
+            this.uploadForm.controls.tag.setValue(this.editData.documentTag);
 
-                if (this.editData.documentType) {
-                    this.uploadForm.controls.sscStatus.clearValidators();
-                    this.uploadForm.controls.sscStatus.updateValueAndValidity();
-                    this.dD['docType'] = { id: this.editData.documentType.id, name: this.editData.documentType.name, opened: false, color: null };
-                    this.uploadForm.controls.documentType.setValue(this.editData.documentType);
-                    this.selectedTypeEmitter.emit(this.editData.documentType);
-                }
+            if (this.editData.documentType) {
+                this.uploadForm.controls.sscStatus.clearValidators();
+                this.uploadForm.controls.sscStatus.updateValueAndValidity();
+                this.dD['docType'] = { id: this.editData.documentType.id, name: this.editData.documentType.name, opened: false, color: null };
+                this.uploadForm.controls.documentType.setValue(this.editData.documentType);
+                this.selectedTypeEmitter.emit(this.editData.documentType);
+            }
 
-                if (this.editData.documentStatus) {
-                    if (this.editData.documentStatus.color) {
-                        this.dD['sscStatus'] = { id: this.editData.documentStatus.id, name: this.editData.documentStatus.name, color: this.editData.documentStatus.color, opened: false };
-                        this.uploadForm.controls.sscStatus.setValue(this.editData.documentStatus);
-                    } else {
-                        this.dD['docStatus'] = { id: this.editData.documentStatus.id, name: this.editData.documentStatus.name, opened: false, color: null };
-                        this.uploadForm.controls.documentStatus.setValue(this.editData.documentStatus);
-                    }
+            if (this.editData.documentStatus) {
+                if (this.editData.documentStatus.color) {
+                    this.dD['sscStatus'] = { id: this.editData.documentStatus.id, name: this.editData.documentStatus.name, color: this.editData.documentStatus.color, opened: false };
+                    this.uploadForm.controls.sscStatus.setValue(this.editData.documentStatus);
+                } else {
+                    this.dD['docStatus'] = { id: this.editData.documentStatus.id, name: this.editData.documentStatus.name, opened: false, color: null };
+                    this.uploadForm.controls.documentStatus.setValue(this.editData.documentStatus);
                 }
+            }
 
-                if (this.editData.documentResult) {
-                    this.dD['docResult'] = { id: this.editData.documentResult.id, name: this.editData.documentResult.name, opened: false, color: null };
-                    this.uploadForm.controls.documentResult.setValue(this.editData.documentResult);
-                }
+            if (this.editData.documentResult) {
+                this.dD['docResult'] = { id: this.editData.documentResult.id, name: this.editData.documentResult.name, opened: false, color: null };
+                this.uploadForm.controls.documentResult.setValue(this.editData.documentResult);
+            }
 
-                this.uploadForm.controls.documentDate.setValue(this.editData.documentDate);
-                this.uploadForm.controls.description.setValue(this.editData.description);
-                this.uploadForm.controls.comments.setValue(this.editData.comments);
+            this.uploadForm.controls.documentDate.setValue(this.editData.documentDate);
+            this.uploadForm.controls.description.setValue(this.editData.description);
+            this.uploadForm.controls.comments.setValue(this.editData.comments);
 
-                if (this.editData.expiredDate) {
-                    const date = new Date(this.editData.expiredDate);
-                    this.datePickerExpiredData = date;
-                    this.uploadForm.controls.expiredDate.setValue(date);
-                }
+            if (this.editData.expiredDate) {
+                const date = new Date(this.editData.expiredDate);
+                this.datePickerExpiredData = date;
+                this.uploadForm.controls.expiredDate.setValue(date);
+            }
 
-                if (this.editData.documentFileName) {
-                    this.fileName = this.editData.documentFileName;
-                }
-            });
+            if (this.editData.documentFileName) {
+                this.fileName = this.editData.documentFileName;
+            }
+            // });
         }
 
         if (changes.docStatusSelector && this.docStatusSelector) {
@@ -330,14 +308,14 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
     }
 
     ngAfterContentInit() {
-        this.handleOpen();
+        // this.handleOpen();
     }
 
     ngOnDestroy() {
         this.handleOpen(false);
         this.scrollStrategy = null;
 
-        if (this.formErrorsObservable) {    // In case the template chosen is 'docsUploadModal'
+        if (this.formErrorsObservable) {
             this.formErrorsObservable.unsubscribe();
         }
     }
@@ -414,6 +392,7 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
             this.uploadForm.controls.documentResult.updateValueAndValidity();
             this.uploadForm.controls.documentStatus.updateValueAndValidity();
             this.uploadForm.controls.sscStatus.updateValueAndValidity();
+            this.uploadForm.controls.documentStatus.markAsDirty();
             this.uploadForm.controls.documentStatus.setValue(null);
             this.uploadForm.controls.documentResult.setValue(null);
             this.dD['docStatus'] = { id: null, name: null, opened: false, color: null };
@@ -425,6 +404,8 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
             this.dD[selectorName].color = selectedItem.color;
             this.uploadForm.controls.documentType.clearValidators();
             this.uploadForm.controls.documentType.updateValueAndValidity();
+            this.uploadForm.controls.sscStatus.markAsDirty();
+            this.uploadForm.controls.sscStatus.setValue(selectedItem);
         }
     }
 
@@ -461,6 +442,7 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
         }
 
         this.fileName = selectedFile.name || '(none)';
+        this.uploadForm.controls.uploadedFile.markAsDirty();
         this.uploadForm.controls.uploadedFile.setValue(evt);
     }
 
@@ -478,8 +460,8 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
         this.fileName = null;
         if (this.uploadForm) {
             this.uploadForm.reset();
-            this.uploadForm.controls.uploadedFile.setValidators(Validators.required);
-            this.uploadForm.controls.uploadedFile.updateValueAndValidity();
+            // this.uploadForm.controls.uploadedFile.setValidators(Validators.required);
+            // this.uploadForm.controls.uploadedFile.updateValueAndValidity();
         }
     }
 
@@ -490,23 +472,30 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
      */
     templateEventEmited(event: string) {
         if (event && event !== 'invalid') {
+            this.uploadForm.controls.documentDate.markAsDirty();
             this.uploadForm.controls.documentDate.setValue(event);
         } else if (event === 'invalid') {
             this.uploadForm.controls.documentDate.setErrors({ invalid: true });
         } else {
+            this.uploadForm.controls.documentDate.markAsDirty();
             this.uploadForm.controls.documentDate.setValue(null);
         }
+
         this.resetDatePicker = false;
+
     }
 
     expireDateEmited(event: string) {
         if (event && event !== 'invalid') {
+            this.uploadForm.controls.expiredDate.markAsDirty();
             this.uploadForm.controls.expiredDate.setValue(event);
         } else if (event === 'invalid') {
             this.uploadForm.controls.expiredDate.setErrors({ invalid: true });
         } else {
+            this.uploadForm.controls.expiredDate.markAsDirty();
             this.uploadForm.controls.expiredDate.setValue(null);
         }
+
         this.resetDatePicker = false;
     }
 
@@ -514,6 +503,7 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
      * Method to remove file from form and reset file name
      */
     removeFile() {
+        this.uploadForm.controls.uploadedFile.markAsDirty();
         this.uploadForm.controls.uploadedFile.setValue(null);
         this.fileName = null;
     }

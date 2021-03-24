@@ -20,7 +20,7 @@ export class BasicComponent {
     minDate = new Date();
     maxDate = new Date();
 
-    @ViewChild(ModalComponent) private modalComponent: ModalComponent;
+    isFormDirty = false;
 
     constructor() {
         const currentYear = new Date().getFullYear();
@@ -80,14 +80,14 @@ export class BasicComponent {
             addButtonSSC.disabled = !isItValid;
         }
 
-        console.log('Doc\'s Uploadd form is ', isItValid === true ? 'VALID' : 'INvalid!');
+        // console.log('Doc\'s Uploadd form is ', isItValid === true ? 'VALID' : 'INvalid!');
     }
 
     dispatchFormUploadData(formData: any) {
         console.warn('Upload form\'s Data:', formData);
     }
 
-    loadResults(item) {
+    loadResults(item: any) {
         if (item.haveDocumentStatus) {
             this.docUpload_possibleStatus = [
                 { name: 'Draft', id: 1, siteId: 1 },
@@ -125,7 +125,6 @@ export class BasicComponent {
     }
 
     editSSCMode() {
-        console.log(this.modalComponent.uploadForm);
         this.editData = {
             documentType: {
                 name: 'test me',
@@ -139,5 +138,9 @@ export class BasicComponent {
             name: 'tttt',
             documentFileName: 'document'
         };
+    }
+
+    formIsDirty(evt: boolean) {
+        this.isFormDirty = evt;
     }
 }
