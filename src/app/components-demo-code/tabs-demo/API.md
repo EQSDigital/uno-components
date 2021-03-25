@@ -21,8 +21,8 @@
 | `[headingNaturalCase]` |By default tab's header/title text are uppercase; this directive allows it to be displayed at it's own natural case (as HTML written). | boolean | |
 | `[bgColorHeading]` | Defines the background color of the tab HEADING/TITLE from `uno-palette.css` (CSS known var namespace). | string | |
 | `[txtColorHeading]` | Defines the color (text) of the tab HEADING/TITLE from `uno-palette.css` (CSS known var namespace). | string | |
-| `[bgColorContent]` | Defines the background color of the tab COONTENT from `uno-palette.css` (CSS known var namespace). | string | |
-| `[txtColorContent]` | Defines the color (text) of the tab COONTENT from `uno-palette.css` (CSS known var namespace). | string | |
+| `[bgColorContent]` | Defines the background color of the tab CONTENT from `uno-palette.css` (CSS known var namespace). | string | |
+| `[txtColorContent]` | Defines the color (text) of the tab CONTENT from `uno-palette.css` (CSS known var namespace). | string | |
 
 ### \<uno-tab\>
 #### UnoTab
