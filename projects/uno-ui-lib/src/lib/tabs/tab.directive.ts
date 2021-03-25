@@ -48,6 +48,7 @@ export class TabDirective implements OnChanges {
     @Input() txtColorHeading: string;
     @Input() bgColorContent: string;
     @Input() txtColorContent: string;
+    @Input() bgHeightContent: string;
 
     /**
      * ... into our component's "customStyle" object, to be HTML applied:
@@ -83,6 +84,11 @@ export class TabDirective implements OnChanges {
 
         if (this.txtColorContent) {
             this.customContentStyle['color'] = `var(--${this.txtColorContent})`;
+        }
+
+        if (this.bgHeightContent) {
+            // 40px is the size of the tab.
+            this.customContentStyle['height'] = `calc(${this.bgHeightContent} - 40px)`;
         }
     }
 

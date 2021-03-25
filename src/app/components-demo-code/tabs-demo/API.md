@@ -23,6 +23,7 @@
 | `[txtColorHeading]` | Defines the color (text) of the tab HEADING/TITLE from `uno-palette.css` (CSS known var namespace). | string | |
 | `[bgColorContent]` | Defines the background color of the tab CONTENT from `uno-palette.css` (CSS known var namespace). | string | |
 | `[txtColorContent]` | Defines the color (text) of the tab CONTENT from `uno-palette.css` (CSS known var namespace). | string | |
+| `[bgheightContent]` | Defines the background height of the tab CONTENT. | string | |
 
 ### \<uno-tab\>
 #### UnoTab
