@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { of } from 'rxjs';
 
 @Component({
     selector: 'basic-example',
@@ -9,11 +10,13 @@ export class BasicComponent {
     selectedDefaultTab = 'tab3';
     selectedScopeTab = 'tabScoped3';
 
-    newId = 1;
-    newTabs: string[] = [];
+    newId = 0;
+    newTabs: number[] = [];
+
+    newTabs$ = of(null);
 
     addDetail() {
-        this.newTabs.push('Dynamic Tab ' + this.newId++);
+        this.newTabs.push(this.newId++);
     }
 
     protected removeTab(dynamicTab: Object) {

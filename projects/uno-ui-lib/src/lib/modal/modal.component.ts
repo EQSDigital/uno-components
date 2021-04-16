@@ -8,7 +8,7 @@ import { BlockScrollStrategy, Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ConfigurableFocusTrapFactory, FocusTrap } from '@angular/cdk/a11y';
 import { Subscription } from 'rxjs';
 
-import { InputBoolean, toBoolean, uniqueId } from '../../util/util';
+import { InputBoolean, noWhitespaceValidator, toBoolean, uniqueId } from '../../util/util';
 import { ModalHeaderDirective } from './header.directive';
 import { ModalFooterDirective } from './footer.directive';
 
@@ -205,7 +205,7 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
         if (this.templateType === 'docsUploadModal' || this.templateType === 'sscUploadModal') {
             // Set each form's Input/selector init value, validators, disableds, etc.:
             this.uploadForm = this.fb.group({
-                name: ['', [Validators.minLength(3), Validators.required]],
+                name: ['', [Validators.minLength(3), Validators.maxLength(100), Validators.required, noWhitespaceValidator]],
                 tag: [''],
                 sscStatus: [''],
                 documentType: ['', Validators.required],
@@ -213,8 +213,8 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
                 documentDate: [],
                 expiredDate: [null],
                 documentResult: [''],
-                description: ['', Validators.minLength(3)],
-                comments: ['', Validators.minLength(3)],
+                description: ['', [Validators.minLength(3), Validators.maxLength(255), noWhitespaceValidator]],
+                comments: ['', [Validators.minLength(3), Validators.maxLength(255), noWhitespaceValidator]],
                 uploadedFile: [null, Validators.required]
             });
 

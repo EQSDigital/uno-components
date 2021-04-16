@@ -3,12 +3,12 @@ import { Directive, Input, TemplateRef, ContentChild, AfterContentInit } from '@
 import { TabDirective } from './tab.directive';
 
 /*
- * <ng-template unoTab [heading="..."]>
+ * <uno-tab [heading="..."]>
  *    <ng-template unoTabHeading>...</ng-template>
  *    <ng-template unoTabContent>
  *       Content goes here...
  *    </ng-template>
- * </ng-template>
+ * </uno-tab>
  */
 @Directive({ selector: '[unoTabHeading]' })
 export class TabHeadingDirective {
@@ -28,10 +28,6 @@ export class TabContentDirective {
     }],
 })
 export class TabHeadingDetailDirective extends TabDirective implements AfterContentInit {
-    @Input() unoTabId: string;
-    @Input() heading: string | TemplateRef<any>;
-    // @Output() onActivate = new EventEmitter<TabDirective>();
-    // @Output() onDeactivate = new EventEmitter<TabDirective>();
 
     @ContentChild(TabHeadingDirective) headingTemplate: TabHeadingDirective;
     @ContentChild(TabContentDirective) contentTemplate: TabContentDirective;

@@ -106,7 +106,9 @@
                                 <input id="file-input" type="file" (change)="fileToUploadChange($event)" [accept]="acceptedTypes">
                             </fieldset>
                         </div>
-                        <div *ngIf="fileUploadIsToBig" class="slds-col" style="color: var(--vermillion)"><span translate>fileSizeExceed</span> {{ fileSize / 1000000 }}mb</div>
+                        <div *ngIf="fileUploadIsToBig" class="slds-col" style="color: var(--vermillion)">
+                            <span translate>fileSizeExceed</span> {{ fileSize / 1000000 }}mb
+                        </div>
                         <div class="slds-col slds-size--1-of-1 slds-m-bottom--medium" *ngIf="fileName">
                             <span class="slds-m-right--small" style="font-size: 14px; color: var(--dark-blue-grey);">{{ fileName }}</span>
                             <uno-icon *ngIf="!editData" icon="close_b" size="x-small" color="sapphire" [withOpacity]="true" class="slds-button__icon--left" (click)="removeFile(); stopPropagation($event)"></uno-icon>
@@ -258,7 +260,9 @@
                                 <input id="ssc-file-input" type="file" (change)="fileToUploadChange($event)" [accept]="acceptedTypes">
                             </fieldset>
                         </div>
-                        <div *ngIf="fileUploadIsToBig" class="slds-col" style="color: var(--vermillion)"><span translate>fileSizeExceed</span> {{ fileSize / 1000000 }}mb</div>
+                        <div *ngIf="fileUploadIsToBig" class="slds-col" style="color: var(--vermillion)">
+                            <span translate>fileSizeExceed</span> {{ fileSize / 1000000 }}mb
+                        </div>
                         <div class="slds-col slds-size--1-of-1 slds-m-bottom--medium" *ngIf="fileName">
                             <span class="slds-m-right--small" style="font-size: 14px; color: var(--dark-blue-grey);">{{ fileName }}</span>
                             <uno-icon *ngIf="!editData" icon="close_b" size="x-small" color="sapphire" [withOpacity]="true" class="slds-button__icon--left" (click)="removeFile(); stopPropagation($event)"></uno-icon>
@@ -272,7 +276,6 @@
                                 <input [class.disabledField]="disableInputName" type="text" class="slds-input form-control" [placeholder]="'insertName' | translate" formControlName="name">
                             </fieldset>
                         </div>
-
 
                         <div class="slds-col slds-size_1-of-2 slds-m-bottom--medium" *ngIf="showSSCType">
                             <fieldset class="slds-form-element">

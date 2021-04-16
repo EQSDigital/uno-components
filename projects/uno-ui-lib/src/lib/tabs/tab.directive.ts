@@ -61,9 +61,7 @@ export class TabDirective implements OnChanges {
      */
     isTabActive = false;
 
-    constructor(
-        @Optional() public templateRef: TemplateRef<any>
-    ) { }
+    constructor(@Optional() public templateRef: TemplateRef<any>) { }
 
     // About color/backgorund-color CSS independent costumization: before DOM ready (being injected through HTML's NG "customStyle" var)
     ngOnChanges() {
@@ -99,5 +97,9 @@ export class TabDirective implements OnChanges {
         }
 
         this.isTabActive = active;
+    }
+
+    get active(): boolean {
+        return this.isTabActive;
     }
 }

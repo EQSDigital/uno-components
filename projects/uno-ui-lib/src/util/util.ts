@@ -1,5 +1,6 @@
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { ElementRef, Renderer2 } from '@angular/core';
+import { ValidatorFn, FormControl, ValidationErrors } from '@angular/forms';
 
 function propDecoratorFactory<T, D>(name: string, fallback: (v: T) => D): (target: any, propName: string) => void {
     function propDecorator(target: any, propName: string): void {
@@ -82,4 +83,8 @@ function setClass(instance: IReplaceClass, klasses: string | string[], isAdd: bo
             instance.renderer[isAdd ? 'addClass' : 'removeClass'](instance.element.nativeElement, k);
         });
     }
+}
+
+export const noWhitespaceValidator: ValidatorFn = (control: FormControl): ValidationErrors | null => {
+    return (control.value as string).indexOf(' ') >= 0 ? { 'whitespace': true } : null;
 }

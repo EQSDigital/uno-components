@@ -1,24 +1,26 @@
-<ul role="tablist"
-    [ngClass]="'slds-tabs--' + type + '__nav'+' slds-tabs--'+ alignment "
+<ul
+    [ngClass]="'slds-tabs--' + type + '__nav'+' slds-tabs--'+ alignment"
+    role="tablist"
     (keydown.ArrowLeft)="move($event, -1)"
     (keydown.ArrowRight)="move($event, 1)">
 
-    <li role="presentation" *ngFor="let tab of tabs"
+    <li *ngFor="let tab of tabs"
         class="slds-m-right--large"
-        [ngClass]="'slds-tabs--' + type + '__item' + ' slds-tabs--' + alignment "
+        [ngClass]="'slds-tabs--' + type + '__item' + ' slds-tabs--' + alignment"
         [class.slds-active]="tab.isTabActive"
         [class.slds-text-title--natural-caps]="tab.headingNaturalCase"
         [class.slds-tabs--is-disabled]="tab.disableTab"
-        (click)="select(tab)">
+        (click)="select(tab)"
+        role="presentation" >
 
-        <a role="tab"
+        <a
             [ngClass]="'slds-tabs--' + type + '__link'"
             [ngStyle]="tab.customHeadingStyle"
             [attr.aria-selected]="tab.isTabActive"
-            [attr.tabindex]="tab.isTabActive ? 0 : 1">
+            [attr.tabindex]="tab.isTabActive ? 0 : -1"
+            role="tab">
 
             <div class="tab-header-text-container">
-                <!-- <div [unoHelperStringTemplateRef]="tab.heading"></div> -->
                 <div translate>{{ tab.heading }}</div>
                 <div translate>{{ tab.headingSub }}</div>
             </div>
@@ -26,9 +28,10 @@
     </li>
 </ul>
 
-<div role="tabpanel"
+<div
     [ngClass]="'slds-tabs--' + type + '__content'"
-    [ngStyle]="activeTabCustomStyle">
+    [ngStyle]="activeTabCustomStyle"
+    role="tabpanel">
 
     <ng-template [ngTemplateOutlet]="activeTab?.templateRef"></ng-template>
 </div>

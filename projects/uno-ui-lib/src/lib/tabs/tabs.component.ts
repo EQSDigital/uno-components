@@ -27,8 +27,7 @@ import { TabDirective } from './tab.directive';
 @Component({
     selector: 'uno-tabs',
     templateUrl: './tabs.component.html',
-    styleUrls: ['./tabs.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    styleUrls: ['./tabs.component.scss']
 })
 
 export class TabsComponent implements AfterContentInit {
@@ -104,7 +103,7 @@ export class TabsComponent implements AfterContentInit {
 
     // HTML <li> click() event, if NOT "disableTab"=true:
     select(tab: TabDirective) {
-        if (!tab.disableTab) {
+        if (tab && !tab.disableTab) {
             this.selectedChange.emit(tab);
         }
     }
@@ -121,9 +120,8 @@ export class TabsComponent implements AfterContentInit {
     /**
      * AUX functions:
      */
-
     private applyCustomStyleActiveTab() {
-        if (this.activeTab.hasOwnProperty('customContentStyle')) {
+        if (this.activeTab && this.activeTab.hasOwnProperty('customContentStyle')) {
             this.activeTabCustomStyle = this.activeTab.customContentStyle;
         }
     }
@@ -154,11 +152,8 @@ export class TabsComponent implements AfterContentInit {
             return this.tabs.toArray()[+value];
         }
 
-        return this.tabs.toArray().find(
-            (t: TabDirective) => {
-                // console.error(t);
-                return t.unoTabId && t.unoTabId === value;
-            }
-        );
+        return this.tabs.toArray().find((t: TabDirective) => {
+            return t.unoTabId && t.unoTabId === value;
+        });
     }
 }
