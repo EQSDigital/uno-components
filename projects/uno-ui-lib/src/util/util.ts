@@ -86,5 +86,8 @@ function setClass(instance: IReplaceClass, klasses: string | string[], isAdd: bo
 }
 
 export const noWhitespaceValidator: ValidatorFn = (control: FormControl): ValidationErrors | null => {
-    return (control.value as string).indexOf(' ') >= 0 ? { 'whitespace': true } : null;
+    // CHECK IF FIRST AND LAST CHARACTER IS A EMPTY SPACE
+    return control.value
+        && (control.value as string).length > 0
+        && ((control.value as string).indexOf(' ') === 0 || (control.value as string).lastIndexOf(' ') === (control.value as string).length - 1) ? { 'whitespace': true } : null;
 }
