@@ -67,9 +67,3 @@ label[for=ssc-file-input] > span { vertical-align: middle; }
 .slds-popover {
     z-index: 9999999 !important;
 }
-
-.disabledField {
-    background-color: var(--very-light-blue);
-    cursor: not-allowed;
-    pointer-events: none;
-}

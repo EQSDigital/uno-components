@@ -81,7 +81,7 @@
                 </ng-template>
 
                 <ng-template [ngSwitchCase]="'assets3DModal'">
-                    <fieldset class="slds-form-element slds-m-bottom--x-large">
+                    <fieldset class="slds-form-element slds-p-around--large">
                         <div class="slds-form-element__control">
                             <span *ngFor="let scene of scenes3D; let idx=index;" class="slds-radio slds-p-vertical--small">
                                 <input type="radio" id="scene3D-{{ idx }}" name="scene3Didx" (click)="onSelectingScene(idx)" />
@@ -119,14 +119,14 @@
                         <div class="slds-col slds-size--1-of-1 slds-m-bottom--medium" *ngIf="showName">
                             <fieldset class="slds-form-element">
                                 <label translate>nameLabel</label>
-                                <input type="text" class="slds-input form-control" [placeholder]="'insertName' | translate" formControlName="name">
+                                <input type="text" class="slds-input" [placeholder]="'insertName' | translate" formControlName="name">
                             </fieldset>
                         </div>
 
                         <div class="slds-col slds-size--1-of-2 slds-m-bottom--medium" *ngIf="showTag">
                             <fieldset class="slds-form-element">
                                 <label translate>tagLabel</label>
-                                <input type="text" class="slds-input form-control" [placeholder]="'insertTag' | translate" formControlName="tag">
+                                <input type="text" class="slds-input" [placeholder]="'insertTag' | translate" formControlName="tag">
                             </fieldset>
                         </div>
 
@@ -242,7 +242,7 @@
                         <div class="slds-col slds-size--1-of-1" *ngIf="showComment">
                             <fieldset class="slds-form-element" style="padding-top: 0px;">
                                 <label translate>commentsLabel<span style="font-style: italic" translate>optionalLabel</span></label>
-                                <textarea rows="4" class="slds-input form-control" [placeholder]="'insertComments' | translate" formControlName="description"></textarea>
+                                <textarea rows="4" class="slds-input" [placeholder]="'insertComments' | translate" formControlName="description"></textarea>
                             </fieldset>
                         </div>
                     </form>
@@ -273,7 +273,7 @@
                         <div class="slds-col slds-size--1-of-1 slds-m-bottom--medium">
                             <fieldset class="slds-form-element">
                                 <label translate>nameLabel</label>
-                                <input [class.disabledField]="disableInputName" type="text" class="slds-input form-control" [placeholder]="'insertName' | translate" formControlName="name">
+                                <input type="text" class="slds-input" [placeholder]="'insertName' | translate" formControlName="name">
                             </fieldset>
                         </div>
 
@@ -348,14 +348,14 @@
                         <div class="slds-col slds-size--1-of-1">
                             <fieldset class="slds-form-element" style="padding-top: 0px;">
                                 <label translate>descriptionLabel<span style="font-style: italic" translate>optionalLabel</span></label>
-                                <textarea [class.disabledField]="disableDescription" rows="4" class="slds-input form-control" [placeholder]="'insertDescription' | translate" formControlName="description"></textarea>
+                                <textarea rows="4" class="slds-input" [placeholder]="'insertDescription' | translate" formControlName="description"></textarea>
                             </fieldset>
                         </div>
 
                         <div class="slds-col slds-size--1-of-1">
                             <fieldset class="slds-form-element">
                                 <label translate>commentsLabel<span style="font-style: italic" translate>optionalLabel</span></label>
-                                <textarea [class.disabledField]="disableComments" rows="4" class="slds-input form-control" [placeholder]="'insertComments' | translate" formControlName="comments"></textarea>
+                                <textarea rows="4" class="slds-input" [placeholder]="'insertComments' | translate" formControlName="comments"></textarea>
                             </fieldset>
                         </div>
                     </form>

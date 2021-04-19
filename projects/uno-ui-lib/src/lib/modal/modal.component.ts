@@ -253,6 +253,7 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
                 this.uploadForm.controls.uploadedFile.clearValidators();
                 this.uploadForm.controls.uploadedFile.updateValueAndValidity();
             }
+
             this.uploadForm.controls.name.setValue(this.editData.name);
             this.uploadForm.controls.tag.setValue(this.editData.documentTag);
 
@@ -292,6 +293,18 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
             if (this.editData.documentFileName) {
                 this.fileName = this.editData.documentFileName;
             }
+
+            if (this.disableInputName) {
+                this.uploadForm.controls.name.disable();
+            }
+
+            if (this.disableDescription) {
+                this.uploadForm.controls.description.disable();
+            }
+
+            if (this.disableComments) {
+                this.uploadForm.controls.comments.disable();
+            }
             // });
         }
 
@@ -304,7 +317,6 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
             this.uploadForm.controls.documentResult.setValidators(Validators.required);
             this.uploadForm.controls.documentResult.updateValueAndValidity();
         }
-
     }
 
     ngAfterContentInit() {
