@@ -114,7 +114,7 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
 
         this._submitForm = _submitForm;
         if (_submitForm === true) {
-            this.formSubmitionData.emit(this.uploadForm.value);
+            this.formSubmitionData.emit(this.uploadForm.getRawValue());
             this.resetUploadForm();
         }
     }
