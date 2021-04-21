@@ -71,10 +71,11 @@ export class InputTagsComponent implements OnChanges {
      * @param evt - The DOM element that trigger the listener.
      */
     @HostListener('window:click', ['$event'])
-    clickOut(evt) {
+    clickOut(evt: any) {
         // If click inside image, show dropdown.
         if (!this.eRef.nativeElement.contains(evt.target.parentElement)) {
             this.openDrop = false;
+            this.searchObject('');
         }
     }
 
@@ -95,6 +96,8 @@ export class InputTagsComponent implements OnChanges {
         if (this.openDrop) {
             this.searchObject(this.searchTerm);
             setTimeout(() => this.search.nativeElement.focus(), 0);
+        } else {
+            this.searchObject('');
         }
     }
 
@@ -164,7 +167,7 @@ export class InputTagsComponent implements OnChanges {
 
         if (search.length > 0) {
             this.filteredObjects = this.filteredObjects.filter((obj: any) =>
-                obj[this.value].toLowerCase().indexOf(search) > -1
+                obj[this.value].toLowerCase().indexOf(search.toLowerCase()) > -1
             );
 
             if (this.filteredObjects.length === 0) {
