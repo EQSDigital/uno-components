@@ -7,37 +7,34 @@ fieldset {
 }
 // For Angular Reactive Form's Validation, color '.form-control' with errors AFTER user has been fiddling around:
 .form-control.ng-invalid.ng-touched { box-shadow: 0 1px 3px var(--tomato-red);}
-.form-control.ng-valid.ng-touched:not(.no-validator) { box-shadow: 0 1px 3px var(--weird-green);}
 
 // Using radio button Inputs...?
 .slds-radio__label { cursor: pointer; }
 span.slds-radio { border-bottom: 1px solid var(--grey); }
 // What about any <textarea /> input...? Give "enter" format - as the user might have entered!
 .view-formated-text-area > pre {
-    font-family: 'Nunito Bold' !important; font-size: 14px;
+    font-family: 'Nunito Bold' !important;
+    font-size: 14px;
     white-space: pre-line;
 }
 /* Simulate the input text box height, and left padding, to align with all the others ".slds-input": */
 .switch-input-container { padding-top: 0.4rem; padding-left: 0.75rem; }
 /* Hide file upload Input and style around: */
-.file-to-upload-container {   
+.file-to-upload-container {
     border: dashed 1px #ccc;
   
     /* Individual border image properties */
     border-image-source: url("http://ceres.eqs.local:9090/v1/image/get/d766902d-526a-4b4a-ac64-092d629e86ec.png");
     border-image-slice: 1;
-    border-image-repeat: round;  
+    border-image-repeat: round;
 
-    border-radius: 4px; 
-    height: 36px; 
+    border-radius: 4px;
+    height: 36px;
     padding-top: 6px;
  }
 label[for=file-input] { cursor: pointer; }
 label[for=file-input] > span { vertical-align: middle; }
 #file-input { display: none; }
-label[for=ssc-file-input] { cursor: pointer; }
-label[for=ssc-file-input] > span { vertical-align: middle; }
-#ssc-file-input { display: none; }
 #file-uploaded-name { font-weight: 100; font-style: italic; margin-bottom: 1rem; }
 
 
@@ -59,7 +56,8 @@ label[for=ssc-file-input] > span { vertical-align: middle; }
 /* -------------- */
 .slds-dropdown {
     /* Reset ".slds-dropdown" max/min-width: */
-    max-width: unset; min-width: unset;
+    min-width: unset;
+    max-width: unset;
     /* and put it full width: */
     width: 100%;
 }

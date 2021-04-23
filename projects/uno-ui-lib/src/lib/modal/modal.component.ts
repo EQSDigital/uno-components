@@ -247,8 +247,7 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
             this.handleOpen();
         }
 
-        if (changes.editData && changes.editData.currentValue) {
-            // setTimeout(() => {
+        if (this.editData && this.templateType) {
             if (this.editData.file || this.editData.documentFileName) {
                 this.uploadForm.controls.uploadedFile.clearValidators();
                 this.uploadForm.controls.uploadedFile.updateValueAndValidity();
@@ -305,7 +304,14 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
             if (this.disableComments) {
                 this.uploadForm.controls.comments.disable();
             }
-            // });
+
+            if (this.disableSSCType) {
+                this.uploadForm.controls.documentType.disable();
+            }
+
+            if (this.disableSSCStatus) {
+                this.uploadForm.controls.sscStatus.disable();
+            }
         }
 
         if (changes.docStatusSelector && this.docStatusSelector) {

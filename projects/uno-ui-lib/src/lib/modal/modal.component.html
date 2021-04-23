@@ -253,11 +253,11 @@
 
                         <div class="slds-col slds-size--1-of-1 slds-text-align_center slds-m-bottom--medium" *ngIf="!fileName">
                             <fieldset class="slds-form-element file-to-upload-container">
-                                <label for="ssc-file-input" [title]="'Choose a file to upload.' | translate">
+                                <label for="file-input" [title]="'Choose a file to upload.' | translate">
                                     <uno-icon icon="upload" size="small" class="slds-button__icon--left"></uno-icon>
                                     <span class="slds-m-right--small" style="font-size: 17px; color: var(--light-grey-blue);" translate>chooseFileLabel</span>
                                 </label>
-                                <input id="ssc-file-input" type="file" (change)="fileToUploadChange($event)" [accept]="acceptedTypes">
+                                <input id="file-input" type="file" (change)="fileToUploadChange($event)" [accept]="acceptedTypes">
                             </fieldset>
                         </div>
                         <div *ngIf="fileUploadIsToBig" class="slds-col" style="color: var(--vermillion)">
@@ -267,7 +267,7 @@
                             <span class="slds-m-right--small" style="font-size: 14px; color: var(--dark-blue-grey);">{{ fileName }}</span>
                             <uno-icon *ngIf="!editData" icon="close_b" size="x-small" color="sapphire" [withOpacity]="true" class="slds-button__icon--left" (click)="removeFile(); stopPropagation($event)"></uno-icon>
                             <button *ngIf="!disableInputFile" unoButton unoType="secondary" unoSize="x-small" (click)="file.click(); stopPropagation($event)" translate>chooseFileLabel</button>
-                            <input id="ssc-file-input" type="file" (change)="fileToUploadChange($event)" #file [accept]="acceptedTypes">
+                            <input id="file-input" type="file" (change)="fileToUploadChange($event)" #file [accept]="acceptedTypes">
                         </div>
 
                         <div class="slds-col slds-size--1-of-1 slds-m-bottom--medium">
@@ -281,7 +281,7 @@
                             <fieldset class="slds-form-element">
                                 <label translate>documentTypeLabel</label>
                                 <div unoDropdown [(open)]="dD?.docType.opened">
-                                    <button [class.disabledField]="disableSSCType" unoDropdownTrigger class="slds-input form-control uno-dropdown" [title]="dD?.docType.name" (click)="uploadForm?.controls.documentType.markAsTouched(); cloneHiddenInputClasses(0);">
+                                    <button formControlName="documentType" ngDefaultControl unoDropdownTrigger class="slds-input form-control uno-dropdown" [title]="dD?.docType.name" (click)="uploadForm?.controls.documentType.markAsTouched(); cloneHiddenInputClasses(0);">
                                         <input type="hidden" formControlName="documentType">
                                         <span class="slds-truncate">{{ dD?.docType.name || ('selectItemLabel' | translate) }}</span>
                                         <uno-icon icon="down_s" size="xx-small" class="slds-m-left_small"></uno-icon>
@@ -322,7 +322,7 @@
                             <fieldset class="slds-form-element">
                                 <label translate>{{ sscStatusLabel }}</label>
                                 <div unoDropdown [(open)]="dD?.sscStatus.opened">
-                                    <button [class.disabledField]="disableSSCStatus" unoDropdownTrigger class="slds-input form-control uno-dropdown" [title]="dD?.sscStatus.name" (click)="uploadForm?.controls.sscStatus.markAsTouched(); cloneHiddenInputClasses(0);">
+                                    <button formControlName="sscStatus" ngDefaultControl unoDropdownTrigger class="slds-input form-control uno-dropdown" [title]="dD?.sscStatus.name" (click)="uploadForm?.controls.sscStatus.markAsTouched(); cloneHiddenInputClasses(0);">
                                         <input type="hidden" formControlName="sscStatus">
                                         <span *ngIf="dD?.sscStatus.name" style="height: 12px; width: 12px; border-radius: 50%; margin-right: 10px; margin-top: 8px;" [ngStyle]="{'background-color': dD?.sscStatus.color }"></span>
                                         <span class="slds-truncate" *ngIf="dD?.sscStatus.name">{{ dD?.sscStatus.name }}</span>
