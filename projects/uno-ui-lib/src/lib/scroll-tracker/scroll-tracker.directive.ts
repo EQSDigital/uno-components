@@ -8,13 +8,13 @@ export class ScrollTrackerDirective {
     @Output() scrollEndReached = new EventEmitter<any>();
 
     @HostListener('scroll', ['$event'])
-    onScroll(event) {
+    onScroll(event: any) {
         // Listen to scroll events in the component
         const tracker = event.target;
         const bottomLimit = tracker.scrollHeight - tracker.clientHeight;
         let endReached = false;
 
-        if (tracker.scrollTop === bottomLimit) {
+        if (tracker.scrollTop >= bottomLimit) {
             endReached = true;
         }
 
