@@ -1,5 +1,12 @@
-<div class="slds-modal" [class.slds-fade-in-open]="open" [ngClass]="[size ? 'slds-modal--' + size : '']"
-    [attr.aria-hidden]="!open" [attr.aria-labelledby]="headingId" [attr.aria-describedby]="contentId" role="dialog">
+<div
+    class="slds-modal"
+    [class.slds-fade-in-open]="open"
+    [ngClass]="[size ? 'slds-modal--' + size : '']"
+    [attr.aria-hidden]="!open"
+    [attr.aria-labelledby]="headingId"
+    [attr.aria-describedby]="contentId"
+    role="dialog">
+
     <div class="slds-modal__container" [class.slds-modal-small-container--of-template]="smallerModal">
 
         <!-- Modal Header -->
@@ -95,9 +102,9 @@
                 </ng-template>
 
                 <ng-template [ngSwitchCase]="'docsUploadModal'">
-                    <form [formGroup]="uploadForm" class="slds-grid slds-gutters_small slds-wrap" style="background: var(--pale-grey); padding: 25px;">
+                    <form [formGroup]="uploadForm" class="uno-forms slds-grid slds-gutters_small slds-wrap slds-p-around--large" style="background: var(--pale-grey);">
 
-                        <div class="slds-col slds-size--1-of-1 slds-text-align_center slds-m-bottom--medium" *ngIf="!fileName">
+                        <div class="slds-col slds-size--1-of-1 slds-text-align_center" *ngIf="!fileName">
                             <fieldset class="slds-form-element file-to-upload-container">
                                 <label for="file-input" [title]="'chooseFileUpload' | translate">
                                     <uno-icon icon="upload" size="small" class="slds-button__icon--left"></uno-icon>
@@ -106,31 +113,33 @@
                                 <input id="file-input" type="file" (change)="fileToUploadChange($event)" [accept]="acceptedTypes">
                             </fieldset>
                         </div>
+
                         <div *ngIf="fileUploadIsToBig" class="slds-col" style="color: var(--vermillion)">
                             <span translate>fileSizeExceed</span> {{ fileSize / 1000000 }}mb
                         </div>
-                        <div class="slds-col slds-size--1-of-1 slds-m-bottom--medium" *ngIf="fileName">
+
+                        <div class="slds-col slds-size--1-of-1" *ngIf="fileName">
                             <span class="slds-m-right--small" style="font-size: 14px; color: var(--dark-blue-grey);">{{ fileName }}</span>
                             <uno-icon *ngIf="!editData" icon="close_b" size="x-small" color="sapphire" [withOpacity]="true" class="slds-button__icon--left" (click)="removeFile(); stopPropagation($event)"></uno-icon>
                             <button unoButton unoType="secondary" unoSize="x-small" (click)="file.click(); stopPropagation($event)" translate>chooseFileLabel</button>
                             <input id="file-input" type="file" (change)="fileToUploadChange($event)" #file [accept]="acceptedTypes">
                         </div>
 
-                        <div class="slds-col slds-size--1-of-1 slds-m-bottom--medium" *ngIf="showName">
+                        <div class="slds-col slds-size--1-of-1" *ngIf="showName">
                             <fieldset class="slds-form-element">
                                 <label translate>nameLabel</label>
                                 <input type="text" class="slds-input" [placeholder]="'insertName' | translate" formControlName="name">
                             </fieldset>
                         </div>
 
-                        <div class="slds-col slds-size--1-of-2 slds-m-bottom--medium" *ngIf="showTag">
+                        <div class="slds-col slds-size--1-of-2" *ngIf="showTag">
                             <fieldset class="slds-form-element">
                                 <label translate>tagLabel</label>
                                 <input type="text" class="slds-input" [placeholder]="'insertTag' | translate" formControlName="tag">
                             </fieldset>
                         </div>
 
-                        <div class="slds-col slds-size_1-of-2 slds-m-bottom--medium" *ngIf="showType">
+                        <div class="slds-col slds-size_1-of-2" *ngIf="showType">
                             <fieldset class="slds-form-element">
                                 <label translate>documentTypeLabel</label>
                                 <div unoDropdown [(open)]="dD?.docType.opened">
@@ -154,10 +163,10 @@
                             </fieldset>
                         </div>
 
-                        <div class="slds-col slds-size_1-of-3 slds-m-bottom--medium" *ngIf="showDate">
+                        <div class="slds-col slds-size_1-of-3" *ngIf="showDate">
                             <fieldset class="slds-form-element">
                                 <label translate>documentDateLabel</label>
-                                <div class="date-picker-demo-container" style="min-height: 55px;">
+                                <div class="date-picker-demo-container">
                                     <uno-datepicker2
                                         [min]="documentMinDate"
                                         [max]="documentMaxDate"
@@ -172,10 +181,10 @@
                             </fieldset>
                         </div>
 
-                        <div class="slds-col slds-size_1-of-3 slds-m-bottom--medium" *ngIf="showExpiredDate">
+                        <div class="slds-col slds-size_1-of-3" *ngIf="showExpiredDate">
                             <fieldset class="slds-form-element">
                                 <label translate>documentDateLabel</label>
-                                <div class="date-picker-demo-container" style="min-height: 55px;">
+                                <div class="date-picker-demo-container">
                                     <uno-datepicker2
                                         [min]="expireMinDate"
                                         [max]="expireMaxDate"
@@ -190,7 +199,7 @@
                             </fieldset>
                         </div>
 
-                        <div class="slds-col slds-size_1-of-3 slds-m-bottom--medium" *ngIf="docStatusSelector">
+                        <div class="slds-col slds-size_1-of-3" *ngIf="docStatusSelector">
                             <fieldset class="slds-form-element">
                                 <label translate>documentStatusLabel</label>
                                 <div unoDropdown [(open)]="dD?.docStatus.opened">
@@ -215,7 +224,7 @@
                             </fieldset>
                         </div>
 
-                        <div class="slds-col slds-size_1-of-3 slds-m-bottom--medium" *ngIf="docResultSelector">
+                        <div class="slds-col slds-size_1-of-3" *ngIf="docResultSelector">
                             <fieldset class="slds-form-element">
                                 <label translate>documentResultLabel</label>
                                 <div unoDropdown [(open)]="dD?.docResult.opened">
@@ -240,7 +249,7 @@
                         </div>
 
                         <div class="slds-col slds-size--1-of-1" *ngIf="showComment">
-                            <fieldset class="slds-form-element" style="padding-top: 0px;">
+                            <fieldset class="slds-form-element">
                                 <label translate>commentsLabel<span style="font-style: italic" translate>optionalLabel</span></label>
                                 <textarea rows="4" class="slds-input" [placeholder]="'insertComments' | translate" formControlName="description"></textarea>
                             </fieldset>
@@ -249,9 +258,9 @@
                 </ng-template>
 
                 <ng-template [ngSwitchCase]="'sscUploadModal'">
-                    <form [formGroup]="uploadForm" class="slds-grid slds-gutters_small slds-wrap" style="background: var(--pale-grey); padding: 25px;">
+                    <form [formGroup]="uploadForm" class="uno-forms slds-grid slds-gutters_small slds-wrap slds-p-around--large" style="background: var(--pale-grey);">
 
-                        <div class="slds-col slds-size--1-of-1 slds-text-align_center slds-m-bottom--medium" *ngIf="!fileName">
+                        <div class="slds-col slds-size--1-of-1 slds-text-align_center" *ngIf="!fileName">
                             <fieldset class="slds-form-element file-to-upload-container">
                                 <label for="file-input" [title]="'Choose a file to upload.' | translate">
                                     <uno-icon icon="upload" size="small" class="slds-button__icon--left"></uno-icon>
@@ -260,24 +269,26 @@
                                 <input id="file-input" type="file" (change)="fileToUploadChange($event)" [accept]="acceptedTypes">
                             </fieldset>
                         </div>
+
                         <div *ngIf="fileUploadIsToBig" class="slds-col" style="color: var(--vermillion)">
                             <span translate>fileSizeExceed</span> {{ fileSize / 1000000 }}mb
                         </div>
-                        <div class="slds-col slds-size--1-of-1 slds-m-bottom--medium" *ngIf="fileName">
+
+                        <div class="slds-col slds-size--1-of-1" *ngIf="fileName">
                             <span class="slds-m-right--small" style="font-size: 14px; color: var(--dark-blue-grey);">{{ fileName }}</span>
                             <uno-icon *ngIf="!editData" icon="close_b" size="x-small" color="sapphire" [withOpacity]="true" class="slds-button__icon--left" (click)="removeFile(); stopPropagation($event)"></uno-icon>
                             <button *ngIf="!disableInputFile" unoButton unoType="secondary" unoSize="x-small" (click)="file.click(); stopPropagation($event)" translate>chooseFileLabel</button>
                             <input id="file-input" type="file" (change)="fileToUploadChange($event)" #file [accept]="acceptedTypes">
                         </div>
 
-                        <div class="slds-col slds-size--1-of-1 slds-m-bottom--medium">
+                        <div class="slds-col slds-size--1-of-1">
                             <fieldset class="slds-form-element">
                                 <label translate>nameLabel</label>
                                 <input type="text" class="slds-input" [placeholder]="'insertName' | translate" formControlName="name">
                             </fieldset>
                         </div>
 
-                        <div class="slds-col slds-size_1-of-2 slds-m-bottom--medium" *ngIf="showSSCType">
+                        <div class="slds-col slds-size_1-of-2" *ngIf="showSSCType">
                             <fieldset class="slds-form-element">
                                 <label translate>documentTypeLabel</label>
                                 <div unoDropdown [(open)]="dD?.docType.opened">
@@ -300,10 +311,10 @@
                             </fieldset>
                         </div>
                     
-                        <div class="slds-col slds-size_1-of-3 slds-m-bottom--medium">
+                        <div class="slds-col slds-size_1-of-3">
                             <fieldset class="slds-form-element">
                                 <label translate>expireDateLabel</label>
-                                <div class="date-picker-demo-container" style="min-height: 55px;">
+                                <div class="date-picker-demo-container">
                                     <uno-datepicker2
                                         [min]="expireMinDate"
                                         [max]="expireMaxDate"
@@ -318,7 +329,7 @@
                             </fieldset>
                         </div>
 
-                        <div class="slds-col slds-size_1-of-3 slds-m-bottom--medium">
+                        <div class="slds-col slds-size_1-of-3">
                             <fieldset class="slds-form-element">
                                 <label translate>{{ sscStatusLabel }}</label>
                                 <div unoDropdown [(open)]="dD?.sscStatus.opened">
@@ -346,7 +357,7 @@
                         </div>
 
                         <div class="slds-col slds-size--1-of-1">
-                            <fieldset class="slds-form-element" style="padding-top: 0px;">
+                            <fieldset class="slds-form-element">
                                 <label translate>descriptionLabel<span style="font-style: italic" translate>optionalLabel</span></label>
                                 <textarea rows="4" class="slds-input" [placeholder]="'insertDescription' | translate" formControlName="description"></textarea>
                             </fieldset>

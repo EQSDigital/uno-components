@@ -6,7 +6,7 @@ import {
 import { Observable, BehaviorSubject, of, Subscription } from 'rxjs';
 import { switchMap, skip, tap } from 'rxjs/operators';
 
-import { uniqueId, isObject, toBoolean } from '../../util/util';
+import { uniqueId, isObject, toBoolean } from '../../utils/util';
 
 // ======================
 // Directives we'll use INSIDE <uno-lookup /> UNO ui-library component:

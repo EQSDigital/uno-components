@@ -5,6 +5,7 @@ import { UnoBadgeModule } from './badge/badge.module';
 import { UnoButtonModule } from './button/button.module';
 import { UnoCircleGraphModule } from './circle-graph/circle-graph.module';
 import { UnoColorPicklistModule } from './color-pick/color-picklist.module';
+import { UnoControlErrorModule } from './control-error/control-error.module';
 import { UnoDateDayModule } from './date-day/date-day.module';
 import { UnoDateWeekdaysModule } from './date-weekdays/date-weekdays.module';
 import { UnoDateYearModule } from './date-year/date-year.module';
@@ -33,6 +34,7 @@ const MODULES = [
     UnoButtonModule,
     UnoCircleGraphModule,
     UnoColorPicklistModule,
+    UnoControlErrorModule,
     UnoDateDayModule,
     UnoDateWeekdaysModule,
     UnoDateYearModule,
@@ -53,7 +55,7 @@ const MODULES = [
     UnoScrollTrackerModule,
     UnoSearchModule,
     UnoSwitchModule,
-    UnoTabsModule
+    UnoTabsModule,
 ];
 
 @NgModule({

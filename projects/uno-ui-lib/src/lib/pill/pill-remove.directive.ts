@@ -1,7 +1,7 @@
 import { Directive, OnInit, Input } from '@angular/core';
 
 import { PillComponent } from './pill.component';
-import { toBoolean } from '../../util/util';
+import { toBoolean } from '../../utils/util';
 
 @Directive({
     selector: '[unoPillRemove]',

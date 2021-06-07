@@ -4,7 +4,7 @@ import {
     HostBinding, HostListener, AfterViewInit
 } from '@angular/core';
 
-import { replaceClass, toBoolean, uniqueId } from '../../util/util';
+import { replaceClass, toBoolean, uniqueId } from '../../utils/util';
 
 export type Direction = 'top' | 'top-left' | 'top-right' |
     'right' | 'right-top' | 'right-bottom' |

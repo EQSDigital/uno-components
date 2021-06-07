@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, HostBinding, Input, Output, EventEmitter, HostListener } from '@angular/core';
 
-import { uniqueId } from '../../util/util';
+import { uniqueId } from '../../utils/util';
 
 export interface NanoInternalDate {
     year: number;

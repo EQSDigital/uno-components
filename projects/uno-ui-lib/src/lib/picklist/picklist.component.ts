@@ -6,7 +6,7 @@ import { filter } from 'rxjs/operators';
 
 import { PickItemDirective } from './pick-item.directive';
 import { PickDirective } from '../pick/pick.directive';
-import { toBoolean } from '../../util/util';
+import { toBoolean } from '../../utils/util';
 
 @Component({
     selector: 'uno-picklist[unoPick]',

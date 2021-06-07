@@ -1,6 +1,6 @@
 import { Directive, Input, ElementRef, Renderer2 } from '@angular/core';
 
-import { replaceClass } from '../../util/util';
+import { replaceClass } from '../../utils/util';
 
 @Directive({
     selector: '[unoButton]'

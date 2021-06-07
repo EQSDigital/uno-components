@@ -12,6 +12,7 @@ import { UnoButtonModule } from '../button/button.module';
 import { UnoIconModule } from '../icon/icon.module';
 import { UnoDatepicker2Module } from '../datepicker2/datepicker2.module';
 import { UnoDropdownModule } from '../dropdown/dropdown.module';
+import { UnoControlErrorModule } from '../control-error/control-error.module';
 
 @NgModule({
     imports: [
@@ -24,7 +25,8 @@ import { UnoDropdownModule } from '../dropdown/dropdown.module';
         UnoButtonModule,
         UnoIconModule,
         UnoDatepicker2Module,
-        UnoDropdownModule
+        UnoDropdownModule,
+        UnoControlErrorModule
     ],
     exports: [ModalComponent, ModalHeaderDirective, ModalFooterDirective],
     declarations: [ModalComponent, ModalHeaderDirective, ModalFooterDirective],

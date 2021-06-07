@@ -2,6 +2,13 @@ import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { ElementRef, Renderer2 } from '@angular/core';
 import { ValidatorFn, FormControl, ValidationErrors } from '@angular/forms';
 
+export const EMAIL_REGEX: RegExp =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+export const PHONE_REGEX: RegExp = /[0-9]{9}$/;
+
+export const PHONE_REGEX_V2: RegExp = /^\+(?:[0-9] ?){6,14}[0-9]$/;
+
 function propDecoratorFactory<T, D>(name: string, fallback: (v: T) => D): (target: any, propName: string) => void {
     function propDecorator(target: any, propName: string): void {
         const privatePropName = `$$__${propName}`;

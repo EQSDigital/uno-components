@@ -1,24 +1,45 @@
 /* Using strong semantic HTML style form fields generally, instead of each column: */
-label { font-family: 'OpenSans'; font-size: 14px; color: var(--dark-blue-grey); display: block; padding-bottom: 8px }
+label {
+    font-family: 'OpenSans';
+    font-size: 14px;
+    color: var(--dark-blue-grey);
+    display: block;
+    padding-bottom: 8px
+}
+
 fieldset {
     padding-top: 1rem;
     /* Reset BROWSER's min-width for <fieldset /> - some do it, others don't! */
     min-width: unset;
 }
+
 // For Angular Reactive Form's Validation, color '.form-control' with errors AFTER user has been fiddling around:
-.form-control.ng-invalid.ng-touched { box-shadow: 0 1px 3px var(--tomato-red);}
+.form-control.ng-invalid.ng-touched {
+    box-shadow: 0 1px 3px var(--tomato-red);
+}
 
 // Using radio button Inputs...?
-.slds-radio__label { cursor: pointer; }
-span.slds-radio { border-bottom: 1px solid var(--grey); }
+.slds-radio__label {
+    cursor: pointer;
+}
+
+span.slds-radio {
+    border-bottom: 1px solid var(--grey);
+}
+
 // What about any <textarea /> input...? Give "enter" format - as the user might have entered!
 .view-formated-text-area > pre {
     font-family: 'Nunito Bold' !important;
     font-size: 14px;
     white-space: pre-line;
 }
+
 /* Simulate the input text box height, and left padding, to align with all the others ".slds-input": */
-.switch-input-container { padding-top: 0.4rem; padding-left: 0.75rem; }
+.switch-input-container {
+    padding-top: 0.4rem;
+    padding-left: 0.75rem;
+}
+
 /* Hide file upload Input and style around: */
 .file-to-upload-container {
     border: dashed 1px #ccc;
@@ -31,28 +52,55 @@ span.slds-radio { border-bottom: 1px solid var(--grey); }
     border-radius: 4px;
     height: 36px;
     padding-top: 6px;
- }
-label[for=file-input] { cursor: pointer; }
-label[for=file-input] > span { vertical-align: middle; }
-#file-input { display: none; }
-#file-uploaded-name { font-weight: 100; font-style: italic; margin-bottom: 1rem; }
+}
 
+label[for=file-input] {
+    cursor: pointer;
+
+    > span {
+        vertical-align: middle;
+    }
+}
+
+#file-input {
+    display: none;
+}
+
+#file-uploaded-name {
+    font-weight: 100;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
 
 /* IMPORTANT classes from Lightning System MISSING @ nano-design-system.css: */
 .slds-gutters_small {
     margin-right: -0.75rem;
     margin-left: -0.75rem;
-}
-.slds-gutters_small .slds-col {
-    padding-right: 0.75rem;
-    padding-left: 0.75rem;
+
+    .slds-col {
+        padding-right: 0.75rem;
+        padding-left: 0.75rem;
+    }
 }
 
 /* Our "unoDropdown" injected Directive (@ any HTML tag) classed as "slds-dropdown-trigger": */
-.slds-dropdown-trigger { width: 100%; }
-.slds-dropdown-trigger > button.slds-input { text-align: left; display: flex; }
-.slds-dropdown-trigger > button.slds-input > span.slds-truncate { flex: 1; }
-.slds-dropdown-trigger > button.slds-input > uno-icon { float: right; }
+.slds-dropdown-trigger {
+    width: 100%;
+
+    > button.slds-input {
+        text-align: left;
+        display: flex;
+
+        > span.slds-truncate {
+            flex: 1;
+        }
+
+        > uno-icon {
+            float: right;
+        }
+    }
+}
+
 /* -------------- */
 .slds-dropdown {
     /* Reset ".slds-dropdown" max/min-width: */
@@ -60,8 +108,13 @@ label[for=file-input] > span { vertical-align: middle; }
     max-width: unset;
     /* and put it full width: */
     width: 100%;
+
+    > ul {
+        max-height: 150px;
+        overflow-x: hidden
+    }
 }
-.slds-dropdown > ul { max-height: 150px; overflow-x: hidden; }
+
 .slds-popover {
     z-index: 9999999 !important;
 }

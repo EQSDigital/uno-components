@@ -3,7 +3,7 @@ import {
     EventEmitter, ElementRef, Renderer2, ChangeDetectionStrategy
 } from '@angular/core';
 
-import { isInt } from '../../util/util';
+import { isInt } from '../../utils/util';
 
 import { TabDirective } from './tab.directive';
 

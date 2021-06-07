@@ -5,7 +5,7 @@ import {
 import { Subscription } from 'rxjs';
 
 import { DropdownItemDirective } from './dropdown-item.directive';
-import { toBoolean } from '../../util/util';
+import { toBoolean } from '../../utils/util';
 
 const openEventEmitter = new EventEmitter<any>();
 

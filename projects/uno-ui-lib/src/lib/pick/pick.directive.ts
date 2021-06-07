@@ -1,6 +1,6 @@
 import { Directive, Input, Output, EventEmitter, AfterContentInit} from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { toBoolean } from '../../util/util';
+import { toBoolean } from '../../utils/util';
 
 @Directive({selector: '[unoPick]' })
 

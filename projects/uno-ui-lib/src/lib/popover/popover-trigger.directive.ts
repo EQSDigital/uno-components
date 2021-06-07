@@ -9,7 +9,7 @@ import * as Tether from 'tether';
 
 import { PopoverComponent, Direction, Size } from './popover.component';
 import { placement } from './placements';
-import { toBoolean } from '../../util/util';
+import { toBoolean } from '../../utils/util';
 
 @Directive({
     // tslint:disable-next-line:directive-selector

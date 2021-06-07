@@ -8,7 +8,7 @@ import { BlockScrollStrategy, Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ConfigurableFocusTrapFactory, FocusTrap } from '@angular/cdk/a11y';
 import { Subscription } from 'rxjs';
 
-import { InputBoolean, noWhitespaceValidator, toBoolean, uniqueId } from '../../util/util';
+import { InputBoolean, noWhitespaceValidator, toBoolean, uniqueId } from '../../utils/util';
 import { ModalHeaderDirective } from './header.directive';
 import { ModalFooterDirective } from './footer.directive';
 

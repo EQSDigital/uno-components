@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { StringTemplateRefTransformComponent } from '../../util/common-directives/string-templateRef-transform';
+import { StringTemplateRefTransformComponent } from '../../utils/common-directives/string-templateRef-transform';
 import { UnoIconModule } from '../icon/icon.module';
 import { UnoPillModule } from '../pill/pill.module';
 import { UnoScrollTrackerModule } from '../scroll-tracker/scroll-tracker.module';

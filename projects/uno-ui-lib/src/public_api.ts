@@ -10,6 +10,7 @@ export * from './lib/badge/public_api';
 export * from './lib/button/public_api';
 export * from './lib/circle-graph/public_api';
 export * from './lib/color-pick/public_api';
+export * from './lib/control-error/public_api';
 export * from './lib/date-day/public_api';
 export * from './lib/date-weekdays/public_api';
 export * from './lib/date-year/public_api';

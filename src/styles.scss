@@ -517,3 +517,22 @@ uno-badge.month-label { display: flex; }
     height: 0.675rem;
     line-height: 1;
 }
+
+div.validator-error-message {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: -8px;
+    color: var(--vermillion);
+    /* Don't let text slide under uno-icon: */
+    white-space: nowrap;
+
+    > uno-icon {
+        margin: 0 2px;
+    }
+
+    > span {
+        vertical-align: middle;
+        font-size: 12px;
+    }
+}
