@@ -3,7 +3,7 @@
  */
 
 export * from './lib/uno-ui-lib.module';
-export * from './lib/index';
+// export * from './lib/index';
 
 export * from './lib/asset-visualizer/public_api';
 export * from './lib/badge/public_api';

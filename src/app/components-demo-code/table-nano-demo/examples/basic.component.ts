@@ -3,7 +3,7 @@ import { take, delay } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 // <uno-smart-table /> class to get Data source (just the grid rows data) into it:
-import { LocalDataSource, UnoSmartTableSettings } from 'projects/uno-ui-lib/src/lib/table';
+import { LocalDataSource, UnoSmartTableSettings } from 'uno-ui-lib';
 
 // Nano app's API http Services and config:
 import { NanoService, RowData, Paging, Filter, ColumnSort } from '../nano-http.service';

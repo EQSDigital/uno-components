@@ -1,8 +1,6 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { TableComponent } from 'uno-ui-lib';
-import { LocalSorter } from 'projects/uno-ui-lib/src/lib/table/lib/data-source/local/local.sorter';
-import { LocalDataSource, UnoSmartTableSettings } from 'projects/uno-ui-lib/src/lib/table';
+import { TableComponent, LocalDataSource, UnoSmartTableSettings, LocalSorter } from 'uno-ui-lib';
 
 // Check @ https://stackoverflow.com/a/48123576
 declare var require: any;
@@ -13,7 +11,6 @@ declare var require: any;
 })
 
 export class BasicComponent implements AfterViewInit {
-    // dataTable = new LocalDataSource();
     dataTable: LocalDataSource;
 
     roles = [];

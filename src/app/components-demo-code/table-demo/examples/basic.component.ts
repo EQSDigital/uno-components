@@ -1,16 +1,13 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { TableComponent } from 'uno-ui-lib';
+import { TableComponent, ActionCustom, UnoSmartTableSettings, LocalSorter, LocalDataSource } from 'uno-ui-lib';
 
 // Components that will implemnet customized Cell Editor and Render, for delared fields @ "columns":
 import { EditorLinkComponent } from '../editor-cell-link';
 import { RenderUsernameComponent } from '../render-cell-username';
 import { RenderPickColumnComponent } from '../render-pick-cell';
 
-import { ActionCustom, UnoSmartTableSettings } from 'projects/uno-ui-lib/src/lib/table/table.interfaces';
-import { LocalSorter } from 'projects/uno-ui-lib/src/lib/table/lib/data-source/local/local.sorter';
 import { EMAIL_REGEX } from 'projects/uno-ui-lib/src/utils/util';
-import { LocalDataSource } from 'projects/uno-ui-lib/src/lib/table';
 
 // Check @ https://stackoverflow.com/a/48123576
 declare var require: any;

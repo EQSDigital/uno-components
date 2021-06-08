@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { LocalDataSource, UnoSmartTableSettings } from 'projects/uno-ui-lib/src/lib/table';
+import { LocalDataSource, UnoSmartTableSettings } from 'uno-ui-lib';
 
 import { RenderDuskBadgeColumnComponent } from '../badge.renderDuskBadgeColumn';
 import { RenderCommentsColumnComponent } from '../comments.renderCommentsColumn';

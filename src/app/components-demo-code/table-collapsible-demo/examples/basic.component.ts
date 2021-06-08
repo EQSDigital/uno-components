@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UnoSmartTableSettings, LocalDataSource } from 'projects/uno-ui-lib/src/lib/table';
+import { UnoSmartTableSettings, LocalDataSource } from 'uno-ui-lib';
 
 import { RenderBadgeComponent } from '../render-badge';
 import { RenderInputTagsComponent } from '../render-input-tags';
