@@ -1,0 +1,19 @@
+<tr ng2-st-thead-titles-row
+    *ngIf="!isHideHeader"
+    class="ng2-smart-titles"
+    [grid]="grid"
+    (sort)="sort.emit($event)"
+    (selectAllRows)="selectAllRows.emit($event)"
+    (getColumnFilters)="getColumnFilters.emit($event)">
+</tr>
+
+<tr ng2-st-thead-form-row
+    *ngIf="grid.createFormShown"
+    [editingFormGroup]="editingFormGroup"
+    [grid]="grid"
+    [updateColumnList]="updateColumnList"
+    [createConfirm]="createConfirm"
+    [cancelCreate]="cancelCreate"
+    (selectedElem)="selectedElem.emit($event)"
+    (createSave)="createSave.emit($event)">
+</tr>

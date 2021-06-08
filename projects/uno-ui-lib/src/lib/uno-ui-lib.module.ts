@@ -26,6 +26,7 @@ import { UnoPopoverModule } from './popover/popover.module';
 import { UnoScrollTrackerModule } from './scroll-tracker/scroll-tracker.module';
 import { UnoSearchModule } from './search/search.module';
 import { UnoSwitchModule } from './switch/switch.module';
+import { UnoTableModule } from './table/table.module';
 import { UnoTabsModule } from './tabs/tabs.module';
 
 const MODULES = [
@@ -55,6 +56,7 @@ const MODULES = [
     UnoScrollTrackerModule,
     UnoSearchModule,
     UnoSwitchModule,
+    UnoTableModule,
     UnoTabsModule,
 ];
 

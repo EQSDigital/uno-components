@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "name": "Leanne Graham",
+        "description": "O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias",
+        "skills": [{ "id": 1, "name": "Angular" }, { "id": 2, "name": "Css" }, { "id": 3, "name": "Javascript" }],
+        "isGreate": true,
+        "color": "#494362"
+    },
+    {
+        "id": 2,
+        "name": "Talita Mesquita",
+        "description": "O Lorem Ipsum é um texto modelo",
+        "skills": [{ "id": 1, "name": "Angular" }, { "id": 2, "name": "Css" }, { "id": 3, "name": "Javascript" }],
+        "isGreate": false,
+        "color": "#77dc01"
+    },
+    {
+        "id": 3,
+        "name": "Nicholas DuBuque",
+        "description": "O Lorem Ipsum é um texto modelo",
+        "skills": [{ "id": 1, "name": "Angular" }, { "id": 2, "name": "Css" }, { "id": 3, "name": "Javascript" }],
+        "isGreate": true,
+        "color": "#f44336"
+    },
+    {
+        "id": 4,
+        "name": "Patricia Lebsack",
+        "description": "O Lorem Ipsum é um texto modelo",
+        "skills": [{ "id": 1, "name": "Angular" }, { "id": 2, "name": "Css" }, { "id": 3, "name": "Javascript" }],
+        "isGreate": false,
+        "color": "#2196f3"
+    },
+    {
+        "id": 5,
+        "name": "Chelsey Dietrich",
+        "description": "O Lorem Ipsum é um texto modelo",
+        "skills": [{ "id": 1, "name": "Angular" }, { "id": 2, "name": "Css" }, { "id": 3, "name": "Javascript" }],
+        "isGreate": true,
+        "color": "#77dc01"
+    },
+    {
+        "id": 6,
+        "name": "Ricardo Coelho",
+        "description": "O Lorem Ipsum é um texto modelo",
+        "skills": [{ "id": 1, "name": "Angular" }, { "id": 2, "name": "Css" }, { "id": 3, "name": "Javascript" }],
+        "isGreate": false,
+        "color": "#2196f3"
+    },
+    {
+        "id": 7,
+        "name": "Kurtis Weissnat",
+        "description": "O Lorem Ipsum é um texto modelo",
+        "skills": [{ "id": 1, "name": "Angular" }, { "id": 2, "name": "Css" }, { "id": 3, "name": "Javascript" }],
+        "isGreate": true,
+        "color": "#f44336"
+    },
+    {
+        "id": 8,
+        "name": "Nicholas Runolfsdottir V",
+        "description": "O Lorem Ipsum é um texto modelo",
+        "skills": [{ "id": 1, "name": "Angular" }, { "id": 2, "name": "Css" }, { "id": 3, "name": "Javascript" }],
+        "isGreate": false,
+        "color": "#77dc01"
+    },
+    {
+        "id": 9,
+        "name": "Glenna Reichert",
+        "description": "O Lorem Ipsum é um texto modelo",
+        "skills": [{ "id": 1, "name": "Angular" }, { "id": 2, "name": "Css" }, { "id": 3, "name": "Javascript" }],
+        "isGreate": true,
+        "color": "#2196f3"
+    },
+    {
+        "id": 10,
+        "name": "Clementina DuBuque",
+        "description": "O Lorem Ipsum é um texto modelo",
+        "skills": [{ "id": 1, "name": "Angular" }, { "id": 2, "name": "Css" }, { "id": 3, "name": "Javascript" }],
+        "isGreate": false,
+        "color": "#77dc01"
+    }
+]

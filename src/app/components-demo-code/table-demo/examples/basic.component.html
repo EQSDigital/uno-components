@@ -1,0 +1,27 @@
+<uno-smart-table
+    #table
+    [settings]="settings"
+    [source]="dataTable"
+    [columnFilters]="columnFilters"
+    (internalAction)="gridAffairAction($event)"
+    
+    (create)="isInCreating($event)"
+    (createSave)="createSaveEvent($event)"
+    (createConfirm)="confirmRowActionEvent($event, 'create')"
+
+    (edit)="isInEditing($event)"
+    (selectedElem)="onSelectedElem($event)"
+    (editSave)="rowActionEditSaveEvent($event)"
+    (editConfirm)="confirmRowActionEvent($event, 'edit')"
+    
+    (deleteConfirm)="confirmRowActionEvent($event, 'delete')"
+
+    (rowActionCustomEvent)="rowActionCustomEvent($event)"
+    (rowActionDownloadCustomEvent)="rowActionDownloadCustomEvent($event)"
+    (rowHeaderActionCustomEvent)="rowHeaderActionCustomEvent($event)"
+    (searchTerm)="onSearchTerm($event)"
+    (saveOptions)="onSaveOptions($event)"
+    (getColumnFilters)="onGetColumnFilters($event)">
+</uno-smart-table>
+<button class="slds-input" (click)="onAddInlineOutsideTable()">Add inline with click outside table</button>
+<button class="slds-input" (click)="onClickShowPlusButton()">Show plus button</button>

@@ -31,4 +31,5 @@ export * from './lib/popover/public_api';
 export * from './lib/scroll-tracker/public_api';
 export * from './lib/search/public_api';
 export * from './lib/switch/public_api';
+export * from './lib/table/public_api';
 export * from './lib/tabs/public_api';

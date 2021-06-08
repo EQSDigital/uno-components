@@ -1,0 +1,24 @@
+:host {
+    input,
+    textarea {
+        width: 100%;
+        line-height: normal;
+        padding: .375em .75em;
+        // Form validators, for Input text and Textare
+        &.form-control.ng-invalid.ng-touched { border: 1px solid var(--vermillion) }
+        &.form-control.ng-valid.ng-touched:not(.no-validator) { border: none }
+    }
+}
+
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: normal;
+    overflow: hidden;
+}
+
+.view-default-expanded {
+    text-align: justify;
+    word-wrap: break-word;
+}

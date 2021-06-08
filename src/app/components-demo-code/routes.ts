@@ -104,5 +104,28 @@ export const routes = [
     {
         path: 'tag-input',
         loadChildren: () => import('./tag-input-demo/tag-input-demo.module').then(m => m.TagInputDemoModule)
+    },
+    {
+        path: 'table',
+        loadChildren: () => import('./table-demo/table-demo.module').then(m => m.TableDemoModule)
+    },
+    {
+        path: 'table-sample',
+        loadChildren: () => import('./table-sample-demo/table-demo-sample.module').then(m => m.TableDemoSampleModule)
+    },
+    {
+        path: 'table-nano',
+        loadChildren: () => import('./table-nano-demo/table-demo-nano.module').then(m => m.TableNanoModule),
+        label: 'Nano'
+    },
+    {
+        path: 'table-collapsible',
+        loadChildren: () => import('./table-collapsible-demo/table-demo-collapsible.module').then(m => m.TableDemoCollapsibleModule),
+        label: 'Collapsible'
+    },
+    {
+        path: 'table-risk-template',
+        loadChildren: () => import('./table-risk-template-demo/table-demo-risk-template.module').then(m => m.TableDemoRiskTemplateModule),
+        label: 'Risk Template'
     }
 ];

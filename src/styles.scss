@@ -536,3 +536,70 @@ div.validator-error-message {
         font-size: 12px;
     }
 }
+
+/* Adapt the slds-table height to the define by the new design */
+uno-smart-table {
+    table-layout: auto;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent;
+    font-size: 12px;
+}
+
+uno-smart-table tbody tr {
+    background: var(--white);
+}
+
+uno-smart-table table > thead {
+    background-color: transparent;
+}
+
+/* ========== uno-smart-table HEAD */
+
+/* table thead > tr <=> .table-header-title */
+.ng2-smart-titles {
+    font-size: 10px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: normal;
+}
+
+.ng2-smart-title {
+    font-weight: normal;
+    color: var(--dark-blue-grey);
+}
+/* table thead > tr > th*/
+th.ng2-smart-th {
+    padding-top: 1.1rem;
+}
+
+.ng2-smart-actions {
+    padding-right: calc(2 * 0.625rem);
+    width: 120px;
+}
+
+.columns {
+    min-width: 100px;
+}
+
+/* ========== uno-smart-table BODY */
+
+uno-smart-table tbody tr > td {
+    padding: 0 0.625rem;
+    min-height: 40px;
+    height: 45px;
+}
+
+uno-smart-table thead tr > th {
+    padding: 0 0.625rem;
+    min-height: 40px;
+    height: 45px;
+}
+
+uno-smart-table table:not(.without-stripes) tbody tr:nth-child(odd) { background: var(--very-light-blue); }
+uno-smart-table table:not(.without-stripes) tbody tr:nth-child(even) { background: var(--white); }
+
+.text-red {
+    color: black;
+    font-weight: bold;
+}

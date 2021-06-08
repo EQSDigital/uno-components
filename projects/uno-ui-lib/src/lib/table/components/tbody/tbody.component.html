@@ -1,0 +1,90 @@
+<ng-container *ngFor="let row of grid.dataSet.rows">
+    <tr class="ng2-smart-row"
+        [className]="rowClassFunction(row)"
+        [ngClass]="{ 'selected': row.isSelected, 'pointer': userRowSelect.observers.length > 0 }"
+
+        (click)="userSelectRow.emit(row)"
+        (mouseover)="onRowHover(row)"
+        (mouseenter)="onRowHoverEnter(row)"
+        (mouseleave)="onRowHoverLeave(row)">
+
+        <!-- Row Color -->
+        <td *ngIf="colorRow" [ngStyle]="{'border-left': '5px solid' + row.data?.color, 'padding': '0' }">
+        </td>
+
+        <!-- All Rows selector -->
+        <td *ngIf="isMultiSelectVisible" class="ng2-smart-action-multiple-select" (click)="multipleSelectRow.emit(row)">
+            <input type="checkbox" class="form-control" [ngModel]="row.isSelected">
+        </td>
+
+        <!-- The collapsed column -->
+        <td *ngIf="tableCollapsible.isCollapsible">
+            <uno-icon
+                [id]="rowsCollapsible[row.index] ? tableCollapsible.iconOpen : tableCollapsible.iconClose"
+                [icon]="rowsCollapsible[row.index] ? tableCollapsible.iconOpen : tableCollapsible.iconClose"
+                [withOpacity]="!row.isInEditing"
+                size="x-small"
+                (click)="rowCollapsed($event, row)">
+            </uno-icon>
+        </td>
+
+        <!-- ////////////////////// Each smart-table CELL: ////////////////////// -->
+        <ng-container *ngFor="let cell of row.cells">
+            <td *ngIf="cell.column.isVisibled"
+                [ngClass]="cell.column.class"
+                [class.columns]="cell.column.title">
+                <ng2-smart-table-cell
+                    [isInEditing]="row.isInEditing && !tableCollapsible.isCollapsible"
+                    [editingFormGroup]="editingFormGroup"
+                    [cell]="cell"
+                    [grid]="grid"
+                    [updateColumnList]="updateColumnList"
+                    [row]="row"
+                    [isNew]="false"
+                    [mode]="mode"
+                    [inputClass]="editInputClass"
+                    (selectedElem)="selectedElem.emit($event)">
+                </ng2-smart-table-cell>
+            </td>
+        </ng-container>
+        <!-- ////////////////////// END Each smart-table CELL: ////////////////////// -->
+
+        <!-- ////////////////////// editing @ RIGHT  ////////////////////// -->
+        <!-- @ RIGHT !editing Custom/Edit/Delete + editing Create/Cancel buttons (!row.isInEditing)-->
+        <td *ngIf="row.isInEditing"  class="ng2-smart-actions slds-text-align--right">
+            <ng2-st-tbody-save-cancel
+                [editingFormGroup]="editingFormGroup"
+                [grid]="grid"
+                [row]="row"
+                [editConfirm]="editConfirm"
+                (editSave)="editSave.emit($event)"
+                (editCancel)="onEditCancel(row)">
+            </ng2-st-tbody-save-cancel>
+        </td>
+        <td *ngIf="!row.isInEditing" class="ng2-smart-actions slds-text-align--right">
+            <ng2-st-tbody-custom class="ng2-smart-action-icon"
+                [grid]="grid"
+                [row]="row"
+                (rowActionCustomEvent)="rowActionCustomEvent.emit($event)"
+                (rowActionDownloadCustomEvent)="rowActionDownloadCustomEvent.emit($event)">
+            </ng2-st-tbody-custom>
+
+            <ng2-st-tbody-edit-delete class="ng2-smart-action-icon"
+                [grid]="grid"
+                [deleteConfirm]="deleteConfirm"
+                [row]="row"
+                (edit)="onEditRowCollappsed(row)"
+                (delete)="delete.emit(row)"
+                (editRowSelect)="editRowSelect.emit($event)">
+            </ng2-st-tbody-edit-delete>
+        </td>
+    </tr>
+    <ng-container *ngIf="tableCollapsible.isCollapsible && rowsCollapsible[row.index]">
+        <ng-template *ngTemplateOutlet="collapseTableContent.templateRef; context: { $implicit: row, grid: grid, form: editingFormGroup, mode: mode }">
+        </ng-template>
+    </ng-container>
+</ng-container>
+
+<tr *ngIf="grid.dataSet.rows.length === 0">
+    <td [attr.colspan]="grid.dataSet.columns.length + 4" translate>{{ noDataMessage }}</td>
+</tr>

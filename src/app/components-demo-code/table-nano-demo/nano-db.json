@@ -1,0 +1,7066 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "voluptatibus eaque est",
+      "author": "UserName2",
+      "rating": "3",
+      "year_published": 2017
+    },
+    {
+      "id": 2,
+      "title": "asperiores",
+      "author": "Ashley Feest",
+      "rating": 2.7,
+      "year_published": 1805
+    },
+    {
+      "id": 3,
+      "title": "alias ipsam nemo et",
+      "author": "Jaron Kirlin",
+      "rating": "3.755555555",
+      "year_published": 1911
+    },
+    {
+      "id": 4,
+      "title": "nesciunt voluptate aut",
+      "author": "Kara Fadel",
+      "rating": 0.95,
+      "year_published": 1741
+    },
+    {
+      "id": 5,
+      "title": "",
+      "author": "",
+      "rating": 2.45,
+      "year_published": 1890
+    },
+    {
+      "id": 6,
+      "title": "voluptatem rem",
+      "author": "Trinity Larkin",
+      "rating": 1.65,
+      "year_published": 1938
+    },
+    {
+      "id": 7,
+      "title": "non incidunt molestiae itaque voluptas",
+      "author": "Zackery Nolan",
+      "rating": 2,
+      "year_published": 1709
+    },
+    {
+      "id": 8,
+      "title": "est rerum voluptatum eos sed",
+      "author": "Bettie Kunze",
+      "rating": 2,
+      "year_published": 1751
+    },
+    {
+      "id": 9,
+      "title": "consequuntur et",
+      "author": "Taryn Hilll",
+      "rating": 3.8,
+      "year_published": 1902
+    },
+    {
+      "id": 10,
+      "title": "voluptate enim natus ducimus",
+      "author": "Rosanna Williamson",
+      "rating": 4.35,
+      "year_published": 1718
+    },
+    {
+      "id": 11,
+      "title": "dolores asperiores esse magnam quae",
+      "author": "Lysanne Hartmann",
+      "rating": 4.9,
+      "year_published": 1907
+    },
+    {
+      "id": 12,
+      "title": "quam aliquid veritatis quaerat",
+      "author": "Elvis Kub",
+      "rating": 1.35,
+      "year_published": 1827
+    },
+    {
+      "id": 13,
+      "title": "sunt et quis fugit",
+      "author": "Rylee Paucek",
+      "rating": 1.5,
+      "year_published": 1849
+    },
+    {
+      "id": 14,
+      "title": "consequatur nesciunt",
+      "author": "Terrance DuBuque",
+      "rating": 1.6,
+      "year_published": 1723
+    },
+    {
+      "id": 15,
+      "title": "sint odit nisi",
+      "author": "William Bauch",
+      "rating": 2.05,
+      "year_published": 1951
+    },
+    {
+      "id": 16,
+      "title": "ex odit laudantium doloribus consequatur",
+      "author": "Lelia Kunde",
+      "rating": 3.9,
+      "year_published": 1898
+    },
+    {
+      "id": 17,
+      "title": "reiciendis quia deleniti",
+      "author": "Broderick Hegmann",
+      "rating": 2.95,
+      "year_published": 2014
+    },
+    {
+      "id": 18,
+      "title": "qui voluptatem vel pariatur omnis eos",
+      "author": "Akeem Jacobi",
+      "rating": 3.5,
+      "year_published": 1814
+    },
+    {
+      "id": 19,
+      "title": "odio",
+      "author": "Rosalee Schultz",
+      "rating": 3.05,
+      "year_published": 1942
+    },
+    {
+      "id": 20,
+      "title": "ut voluptatem quae",
+      "author": "Stevie Torphy",
+      "rating": 2,
+      "year_published": 1950
+    },
+    {
+      "id": 21,
+      "title": "nihil",
+      "author": "Mariela Strosin",
+      "rating": 3.7,
+      "year_published": 1715
+    },
+    {
+      "id": 22,
+      "title": "fuga nisi culpa iste",
+      "author": "Jason Stark",
+      "rating": 4.95,
+      "year_published": 1797
+    },
+    {
+      "id": 23,
+      "title": "esse placeat sequi fugiat",
+      "author": "Kallie Doyle",
+      "rating": 2.05,
+      "year_published": 1914
+    },
+    {
+      "id": 24,
+      "title": "autem suscipit nam iusto iusto quia",
+      "author": "Bernhard Stiedemann",
+      "rating": 1.8,
+      "year_published": 1711
+    },
+    {
+      "id": 25,
+      "title": "laudantium possimus occaecati ut ut",
+      "author": "Kayli Abshire",
+      "rating": 4.9,
+      "year_published": 1848
+    },
+    {
+      "id": 26,
+      "title": "non voluptatem expedita facere",
+      "author": "Marielle Ebert",
+      "rating": 4.2,
+      "year_published": 1713
+    },
+    {
+      "id": 27,
+      "title": "ea ea voluptatem",
+      "author": "Pauline Leffler",
+      "rating": 0.7,
+      "year_published": 1885
+    },
+    {
+      "id": 28,
+      "title": "quia repudiandae fugiat dolorum quisquam amet",
+      "author": "Demarco Ondricka",
+      "rating": 1.5,
+      "year_published": 2016
+    },
+    {
+      "id": 29,
+      "title": "ullam accusantium molestiae",
+      "author": "Rose Mills",
+      "rating": 0.1,
+      "year_published": 1994
+    },
+    {
+      "id": 30,
+      "title": "nisi eum",
+      "author": "Adonis Bogisich",
+      "rating": 4.75,
+      "year_published": 1792
+    },
+    {
+      "id": 31,
+      "title": "hic",
+      "author": "Elliott Moen",
+      "rating": 0.05,
+      "year_published": 1992
+    },
+    {
+      "id": 32,
+      "title": "aliquam ut eaque minus",
+      "author": "Fae Pollich",
+      "rating": 1.65,
+      "year_published": 1916
+    },
+    {
+      "id": 33,
+      "title": "minima ut modi",
+      "author": "Rocky Gutkowski",
+      "rating": 1.85,
+      "year_published": 1761
+    },
+    {
+      "id": 34,
+      "title": "necessitatibus itaque",
+      "author": "Courtney Gerhold",
+      "rating": 4.55,
+      "year_published": 1716
+    },
+    {
+      "id": 35,
+      "title": "quia dignissimos dicta vel reiciendis blanditiis",
+      "author": "Dean Predovic",
+      "rating": 0.9,
+      "year_published": 1947
+    },
+    {
+      "id": 36,
+      "title": "quos in",
+      "author": "Tracey Bruen",
+      "rating": 0.95,
+      "year_published": 1721
+    },
+    {
+      "id": 37,
+      "title": "iusto quam",
+      "author": "Heaven Klein",
+      "rating": 2.05,
+      "year_published": 1817
+    },
+    {
+      "id": 38,
+      "title": "beatae",
+      "author": "Wilbert Hackett",
+      "rating": 0.5,
+      "year_published": 1986
+    },
+    {
+      "id": 39,
+      "title": "vel",
+      "author": "Savanah Schulist",
+      "rating": 3.5,
+      "year_published": 1758
+    },
+    {
+      "id": 40,
+      "title": "ea odio",
+      "author": "Katelynn Rowe",
+      "rating": 1.8,
+      "year_published": 1719
+    },
+    {
+      "id": 41,
+      "title": "facere beatae odit quo iusto rerum",
+      "author": "Destiney Reichel",
+      "rating": 0.35,
+      "year_published": 2010
+    },
+    {
+      "id": 42,
+      "title": "aliquam corrupti",
+      "author": "Marcel Hickle",
+      "rating": 1.95,
+      "year_published": 1798
+    },
+    {
+      "id": 43,
+      "title": "nihil minus molestiae",
+      "author": "Robyn Thiel",
+      "rating": 1.3,
+      "year_published": 1899
+    },
+    {
+      "id": 44,
+      "title": "quaerat debitis",
+      "author": "Cole Monahan",
+      "rating": 0.5,
+      "year_published": 1823
+    },
+    {
+      "id": 45,
+      "title": "voluptatem pariatur",
+      "author": "Payton Kertzmann",
+      "rating": 3.95,
+      "year_published": 1772
+    },
+    {
+      "id": 46,
+      "title": "ducimus harum suscipit incidunt totam",
+      "author": "Tobin Denesik",
+      "rating": 3.65,
+      "year_published": 1832
+    },
+    {
+      "id": 47,
+      "title": "rerum maiores in totam voluptates",
+      "author": "Audreanne Stanton",
+      "rating": 3.05,
+      "year_published": 1906
+    },
+    {
+      "id": 48,
+      "title": "rem debitis excepturi qui porro",
+      "author": "Harley Kris",
+      "rating": 3.8,
+      "year_published": 1993
+    },
+    {
+      "id": 49,
+      "title": "et cupiditate possimus quisquam modi",
+      "author": "Cheyanne Luettgen",
+      "rating": 1.2,
+      "year_published": 1746
+    },
+    {
+      "id": 50,
+      "title": "dicta aut et",
+      "author": "Christiana Robel",
+      "rating": 1.55,
+      "year_published": 1850
+    },
+    {
+      "id": 51,
+      "title": "veniam molestiae aut totam",
+      "author": "Trycia Reilly",
+      "rating": 3.2,
+      "year_published": 1830
+    },
+    {
+      "id": 52,
+      "title": "aperiam suscipit aperiam dolore",
+      "author": "Derrick Rath",
+      "rating": 2.65,
+      "year_published": 1963
+    },
+    {
+      "id": 53,
+      "title": "mollitia officiis aliquam occaecati ex",
+      "author": "Yasmin Breitenberg",
+      "rating": 2.95,
+      "year_published": 1760
+    },
+    {
+      "id": 54,
+      "title": "omnis nulla omnis vero",
+      "author": "Brenda Lemke",
+      "rating": 0.7,
+      "year_published": 1826
+    },
+    {
+      "id": 55,
+      "title": "quam nihil vitae id",
+      "author": "Barney Kuhlman",
+      "rating": 1.55,
+      "year_published": 1704
+    },
+    {
+      "id": 56,
+      "title": "deleniti et qui",
+      "author": "Reynold Moen",
+      "rating": 1.8,
+      "year_published": 1732
+    },
+    {
+      "id": 57,
+      "title": "accusantium voluptatem quaerat eius ipsa",
+      "author": "Lisette Rosenbaum",
+      "rating": 0.9,
+      "year_published": 1910
+    },
+    {
+      "id": 58,
+      "title": "quia minus quaerat ut consequatur",
+      "author": "Angelina Wintheiser",
+      "rating": 2.2,
+      "year_published": 1744
+    },
+    {
+      "id": 59,
+      "title": "delectus iusto recusandae rem",
+      "author": "Donavon Paucek",
+      "rating": 2.6,
+      "year_published": 1872
+    },
+    {
+      "id": 60,
+      "title": "fugiat facilis",
+      "author": "Marilyne Boyle",
+      "rating": 1.55,
+      "year_published": 1846
+    },
+    {
+      "id": 61,
+      "title": "laborum aut et consequatur minus",
+      "author": "Mariana Stanton",
+      "rating": 4.65,
+      "year_published": 1768
+    },
+    {
+      "id": 62,
+      "title": "voluptate facilis maiores voluptatem consequuntur",
+      "author": "Cecile Turcotte",
+      "rating": 3.75,
+      "year_published": 1818
+    },
+    {
+      "id": 63,
+      "title": "ut corporis sit qui",
+      "author": "Gilda Koepp",
+      "rating": 1.6,
+      "year_published": 1895
+    },
+    {
+      "id": 64,
+      "title": "reprehenderit",
+      "author": "Adriel Kozey",
+      "rating": 0.9,
+      "year_published": 1835
+    },
+    {
+      "id": 65,
+      "title": "et earum id omnis",
+      "author": "Jaden Hartmann",
+      "rating": 2.65,
+      "year_published": 1899
+    },
+    {
+      "id": 66,
+      "title": "iste velit adipisci minus et",
+      "author": "Jordyn Mueller",
+      "rating": 2.8,
+      "year_published": 1883
+    },
+    {
+      "id": 67,
+      "title": "laboriosam atque a quia fugiat",
+      "author": "Krystal Mraz",
+      "rating": 2.7,
+      "year_published": 1969
+    },
+    {
+      "id": 68,
+      "title": "rerum veniam reiciendis omnis",
+      "author": "Burley Hauck",
+      "rating": 2.6,
+      "year_published": 1752
+    },
+    {
+      "id": 69,
+      "title": "ut",
+      "author": "Darrell Kiehn",
+      "rating": 4.8,
+      "year_published": 1833
+    },
+    {
+      "id": 70,
+      "title": "pariatur",
+      "author": "Abdul Becker",
+      "rating": 4.65,
+      "year_published": 1967
+    },
+    {
+      "id": 71,
+      "title": "sint cupiditate est nisi",
+      "author": "Sonny Marvin",
+      "rating": 4.25,
+      "year_published": 1980
+    },
+    {
+      "id": 72,
+      "title": "dicta ut",
+      "author": "Armand Leuschke",
+      "rating": 1.75,
+      "year_published": 1718
+    },
+    {
+      "id": 73,
+      "title": "veniam explicabo qui quod minus",
+      "author": "Maye Cole",
+      "rating": 4.15,
+      "year_published": 1971
+    },
+    {
+      "id": 74,
+      "title": "omnis fugiat sunt quisquam maiores",
+      "author": "Gideon Mosciski",
+      "rating": 2.65,
+      "year_published": 1985
+    },
+    {
+      "id": 75,
+      "title": "rerum adipisci perspiciatis",
+      "author": "Rashad Sporer",
+      "rating": 2.65,
+      "year_published": 1798
+    },
+    {
+      "id": 76,
+      "title": "delectus illum distinctio nemo quos",
+      "author": "Kristin Goldner",
+      "rating": 1.95,
+      "year_published": 1813
+    },
+    {
+      "id": 77,
+      "title": "ipsum numquam",
+      "author": "Freda Grimes",
+      "rating": 2.65,
+      "year_published": 1955
+    },
+    {
+      "id": 78,
+      "title": "inventore voluptates accusantium a",
+      "author": "Alexanne Rutherford",
+      "rating": 0.45,
+      "year_published": 1710
+    },
+    {
+      "id": 79,
+      "title": "commodi",
+      "author": "Karine Bartell",
+      "rating": 0.4,
+      "year_published": 1801
+    },
+    {
+      "id": 80,
+      "title": "placeat facere mollitia rerum voluptatum vel",
+      "author": "Liana Kautzer",
+      "rating": 0.95,
+      "year_published": 2005
+    },
+    {
+      "id": 81,
+      "title": "qui similique et eum sit iure",
+      "author": "Ernestina Johnston",
+      "rating": 0.85,
+      "year_published": 1957
+    },
+    {
+      "id": 82,
+      "title": "eligendi tempore id omnis tenetur",
+      "author": "Hudson Altenwerth",
+      "rating": 3.2,
+      "year_published": 2010
+    },
+    {
+      "id": 83,
+      "title": "tempora suscipit",
+      "author": "Lisette Weber",
+      "rating": 1.4,
+      "year_published": 1821
+    },
+    {
+      "id": 84,
+      "title": "quis sed",
+      "author": "Lois Windler",
+      "rating": 1.7,
+      "year_published": 1756
+    },
+    {
+      "id": 85,
+      "title": "dolore",
+      "author": "Walter Mohr",
+      "rating": 0.95,
+      "year_published": 1802
+    },
+    {
+      "id": 86,
+      "title": "corrupti",
+      "author": "Keagan Watsica",
+      "rating": 3.7,
+      "year_published": 1790
+    },
+    {
+      "id": 87,
+      "title": "est",
+      "author": "Ethyl Pouros",
+      "rating": 1.6,
+      "year_published": 1949
+    },
+    {
+      "id": 88,
+      "title": "pariatur est dolor sit animi",
+      "author": "Dusty Gulgowski",
+      "rating": 2.95,
+      "year_published": 1803
+    },
+    {
+      "id": 89,
+      "title": "iure amet vel",
+      "author": "Guiseppe Romaguera",
+      "rating": 3.95,
+      "year_published": 1862
+    },
+    {
+      "id": 90,
+      "title": "qui ratione rerum",
+      "author": "Valentine Kihn",
+      "rating": 4.55,
+      "year_published": 1832
+    },
+    {
+      "id": 91,
+      "title": "aperiam qui",
+      "author": "Jeanne Runte",
+      "rating": 5,
+      "year_published": 1925
+    },
+    {
+      "id": 92,
+      "title": "atque",
+      "author": "Mandy Gislason",
+      "rating": 0.65,
+      "year_published": 1851
+    },
+    {
+      "id": 93,
+      "title": "quam ipsa",
+      "author": "Myra Padberg",
+      "rating": 2.55,
+      "year_published": 1893
+    },
+    {
+      "id": 94,
+      "title": "quia cum",
+      "author": "Maiya Olson",
+      "rating": 3.2,
+      "year_published": 1955
+    },
+    {
+      "id": 95,
+      "title": "asperiores ut non assumenda",
+      "author": "Lelia Huel",
+      "rating": 3.95,
+      "year_published": 1727
+    },
+    {
+      "id": 96,
+      "title": "qui provident esse vel",
+      "author": "Alex Zboncak",
+      "rating": 3.6,
+      "year_published": 2009
+    },
+    {
+      "id": 97,
+      "title": "illo et illo quaerat dicta",
+      "author": "Ariel Friesen",
+      "rating": 3.65,
+      "year_published": 1879
+    },
+    {
+      "id": 98,
+      "title": "quas",
+      "author": "Braeden Leannon",
+      "rating": 1.4,
+      "year_published": 1928
+    },
+    {
+      "id": 99,
+      "title": "a officiis pariatur possimus",
+      "author": "Deontae Cruickshank",
+      "rating": 2.6,
+      "year_published": 1919
+    },
+    {
+      "id": 100,
+      "title": "nisi doloribus",
+      "author": "Xzavier Wolf",
+      "rating": 5,
+      "year_published": 1978
+    },
+    {
+      "id": 101,
+      "title": "enim consectetur veniam beatae",
+      "author": "Sheldon Fisher",
+      "rating": 0.65,
+      "year_published": 1822
+    },
+    {
+      "id": 102,
+      "title": "amet consequatur est",
+      "author": "Luisa Walker",
+      "rating": 3.65,
+      "year_published": 1752
+    },
+    {
+      "id": 103,
+      "title": "nostrum",
+      "author": "Alphonso Moore",
+      "rating": 0.5,
+      "year_published": 2012
+    },
+    {
+      "id": 104,
+      "title": "tempore maxime possimus inventore",
+      "author": "Giles Ledner",
+      "rating": 0.1,
+      "year_published": 1931
+    },
+    {
+      "id": 105,
+      "title": "rerum distinctio eligendi",
+      "author": "Presley Will",
+      "rating": 3.65,
+      "year_published": 1830
+    },
+    {
+      "id": 106,
+      "title": "nesciunt animi dolorum",
+      "author": "Rachael Ward",
+      "rating": 2.3,
+      "year_published": 1887
+    },
+    {
+      "id": 107,
+      "title": "quis reiciendis officia",
+      "author": "Ofelia Reinger",
+      "rating": 3.3,
+      "year_published": 1898
+    },
+    {
+      "id": 108,
+      "title": "consequuntur",
+      "author": "Trent Carroll",
+      "rating": 0.05,
+      "year_published": 1924
+    },
+    {
+      "id": 109,
+      "title": "reprehenderit sed",
+      "author": "Amos Sauer",
+      "rating": 4,
+      "year_published": 1888
+    },
+    {
+      "id": 110,
+      "title": "reprehenderit suscipit saepe",
+      "author": "Jeramy Bahringer",
+      "rating": 2.45,
+      "year_published": 1901
+    },
+    {
+      "id": 111,
+      "title": "saepe ut harum incidunt",
+      "author": "Jeanie Konopelski",
+      "rating": 2.5,
+      "year_published": 1720
+    },
+    {
+      "id": 112,
+      "title": "neque tempore sit beatae eius",
+      "author": "Nigel Huels",
+      "rating": 4.5,
+      "year_published": 1849
+    },
+    {
+      "id": 113,
+      "title": "eligendi eos est aspernatur",
+      "author": "Rae Breitenberg",
+      "rating": 0.55,
+      "year_published": 1783
+    },
+    {
+      "id": 114,
+      "title": "adipisci quod",
+      "author": "Angelo Mertz",
+      "rating": 0.35,
+      "year_published": 1881
+    },
+    {
+      "id": 115,
+      "title": "vero aliquam pariatur incidunt",
+      "author": "Vivienne Dibbert",
+      "rating": 1.65,
+      "year_published": 1867
+    },
+    {
+      "id": 116,
+      "title": "qui praesentium",
+      "author": "Gus Keeling",
+      "rating": 2.55,
+      "year_published": 1971
+    },
+    {
+      "id": 117,
+      "title": "magni et corporis",
+      "author": "Axel Gleason",
+      "rating": 3.2,
+      "year_published": 1878
+    },
+    {
+      "id": 118,
+      "title": "inventore nihil",
+      "author": "Gia Shanahan",
+      "rating": 3.25,
+      "year_published": 1761
+    },
+    {
+      "id": 119,
+      "title": "enim ullam",
+      "author": "Aiden Douglas",
+      "rating": 1.7,
+      "year_published": 1811
+    },
+    {
+      "id": 120,
+      "title": "velit",
+      "author": "Jarrod Anderson",
+      "rating": 1,
+      "year_published": 1855
+    },
+    {
+      "id": 121,
+      "title": "non voluptatem",
+      "author": "Olin Hammes",
+      "rating": 2.65,
+      "year_published": 1946
+    },
+    {
+      "id": 122,
+      "title": "officiis nobis rem eum",
+      "author": "Jazmyn Hayes",
+      "rating": 4.8,
+      "year_published": 1850
+    },
+    {
+      "id": 123,
+      "title": "autem magni sit",
+      "author": "Avis Schoen",
+      "rating": 0.7,
+      "year_published": 1749
+    },
+    {
+      "id": 124,
+      "title": "voluptatem cupiditate voluptas expedita",
+      "author": "Esta Reinger",
+      "rating": 0.85,
+      "year_published": 1942
+    },
+    {
+      "id": 125,
+      "title": "quam quidem nemo a sint",
+      "author": "Leonel Powlowski",
+      "rating": 4.2,
+      "year_published": 1771
+    },
+    {
+      "id": 126,
+      "title": "ut quasi sint perspiciatis saepe tempora",
+      "author": "Nola Murray",
+      "rating": 1.1,
+      "year_published": 1961
+    },
+    {
+      "id": 127,
+      "title": "itaque et",
+      "author": "Shaina Feeney",
+      "rating": 1.35,
+      "year_published": 1870
+    },
+    {
+      "id": 128,
+      "title": "qui sed doloremque facere",
+      "author": "Erick Bogan",
+      "rating": 0.4,
+      "year_published": 1779
+    },
+    {
+      "id": 129,
+      "title": "facilis nisi optio molestias fugiat consequatur",
+      "author": "Trudie Lockman",
+      "rating": 0.25,
+      "year_published": 1848
+    },
+    {
+      "id": 130,
+      "title": "nostrum amet inventore",
+      "author": "Pearlie Sanford",
+      "rating": 2.3,
+      "year_published": 1709
+    },
+    {
+      "id": 131,
+      "title": "nisi quia et aperiam libero",
+      "author": "Dayna Donnelly",
+      "rating": 1.8,
+      "year_published": 1750
+    },
+    {
+      "id": 132,
+      "title": "est",
+      "author": "Isabell McKenzie",
+      "rating": 2.7,
+      "year_published": 1991
+    },
+    {
+      "id": 133,
+      "title": "eum voluptas quos tempora in eligendi",
+      "author": "Juliana Gibson",
+      "rating": 0.35,
+      "year_published": 1960
+    },
+    {
+      "id": 134,
+      "title": "aperiam ullam dolorum",
+      "author": "Davon Batz",
+      "rating": 0.25,
+      "year_published": 1954
+    },
+    {
+      "id": 135,
+      "title": "aliquid consequatur aut quam deleniti",
+      "author": "Earnestine Watsica",
+      "rating": 0.1,
+      "year_published": 1879
+    },
+    {
+      "id": 136,
+      "title": "temporibus ab",
+      "author": "Bette Lowe",
+      "rating": 0.2,
+      "year_published": 1913
+    },
+    {
+      "id": 137,
+      "title": "consequatur dolores error qui distinctio",
+      "author": "Lennie Hermiston",
+      "rating": 4.45,
+      "year_published": 1945
+    },
+    {
+      "id": 138,
+      "title": "quia omnis sint",
+      "author": "Jenifer Johns",
+      "rating": 2.7,
+      "year_published": 1789
+    },
+    {
+      "id": 139,
+      "title": "incidunt ipsam",
+      "author": "Mya Lynch",
+      "rating": 0.8,
+      "year_published": 1936
+    },
+    {
+      "id": 140,
+      "title": "consequatur laborum id",
+      "author": "Marlon Shields",
+      "rating": 4.75,
+      "year_published": 1959
+    },
+    {
+      "id": 141,
+      "title": "voluptatem ratione ad",
+      "author": "Rick Sipes",
+      "rating": 4.4,
+      "year_published": 1955
+    },
+    {
+      "id": 142,
+      "title": "sunt tenetur architecto",
+      "author": "Darrick Considine",
+      "rating": 0.9,
+      "year_published": 1773
+    },
+    {
+      "id": 143,
+      "title": "ut",
+      "author": "Jesse Lind",
+      "rating": 3.25,
+      "year_published": 1826
+    },
+    {
+      "id": 144,
+      "title": "rerum velit voluptas ut eius",
+      "author": "Missouri Connelly",
+      "rating": 1.75,
+      "year_published": 1915
+    },
+    {
+      "id": 145,
+      "title": "molestiae",
+      "author": "Mauricio Koelpin",
+      "rating": 0.15,
+      "year_published": 1886
+    },
+    {
+      "id": 146,
+      "title": "aut alias et laborum ullam",
+      "author": "Keanu Schuster",
+      "rating": 3.95,
+      "year_published": 1876
+    },
+    {
+      "id": 147,
+      "title": "eum porro aut ut provident doloribus",
+      "author": "Dillan Anderson",
+      "rating": 3.9,
+      "year_published": 1951
+    },
+    {
+      "id": 148,
+      "title": "aut illum",
+      "author": "Aida Bogisich",
+      "rating": 4.7,
+      "year_published": 1860
+    },
+    {
+      "id": 149,
+      "title": "voluptates qui culpa",
+      "author": "Matilda Bogan",
+      "rating": 2.3,
+      "year_published": 1808
+    },
+    {
+      "id": 150,
+      "title": "sapiente laudantium",
+      "author": "Lea Raynor",
+      "rating": 3.7,
+      "year_published": 1776
+    },
+    {
+      "id": 151,
+      "title": "necessitatibus possimus perferendis fuga",
+      "author": "Tia Mohr",
+      "rating": 3.65,
+      "year_published": 1896
+    },
+    {
+      "id": 152,
+      "title": "est consequatur quis",
+      "author": "Jacynthe Bartell",
+      "rating": 3.9,
+      "year_published": 1952
+    },
+    {
+      "id": 153,
+      "title": "iusto velit odit atque natus rerum",
+      "author": "Alyce Lesch",
+      "rating": 2,
+      "year_published": 1757
+    },
+    {
+      "id": 154,
+      "title": "nobis provident et ducimus",
+      "author": "Antonietta Effertz",
+      "rating": 1.05,
+      "year_published": 1710
+    },
+    {
+      "id": 155,
+      "title": "id vel",
+      "author": "Sydnee Heller",
+      "rating": 0.3,
+      "year_published": 1838
+    },
+    {
+      "id": 156,
+      "title": "adipisci accusantium",
+      "author": "Seth Kertzmann",
+      "rating": 1.4,
+      "year_published": 1898
+    },
+    {
+      "id": 157,
+      "title": "dolor temporibus officia harum",
+      "author": "Lelia Connelly",
+      "rating": 2.25,
+      "year_published": 1833
+    },
+    {
+      "id": 158,
+      "title": "voluptatem error iste neque ut",
+      "author": "Ron Hansen",
+      "rating": 0.4,
+      "year_published": 1880
+    },
+    {
+      "id": 159,
+      "title": "quis itaque rerum exercitationem",
+      "author": "Emiliano Olson",
+      "rating": 2.55,
+      "year_published": 1763
+    },
+    {
+      "id": 160,
+      "title": "sint aut et molestias ut",
+      "author": "Cali Dare",
+      "rating": 4.4,
+      "year_published": 1927
+    },
+    {
+      "id": 161,
+      "title": "ut deserunt eos ducimus",
+      "author": "Estell Greenholt",
+      "rating": 4.8,
+      "year_published": 1851
+    },
+    {
+      "id": 162,
+      "title": "repellendus ut tempora",
+      "author": "Susan Kreiger",
+      "rating": 1.45,
+      "year_published": 1837
+    },
+    {
+      "id": 163,
+      "title": "est laudantium velit consequatur et",
+      "author": "Braulio Ledner",
+      "rating": 1.45,
+      "year_published": 1826
+    },
+    {
+      "id": 164,
+      "title": "sed quia",
+      "author": "Danika Howell",
+      "rating": 2.05,
+      "year_published": 1750
+    },
+    {
+      "id": 165,
+      "title": "explicabo consequatur eveniet hic autem",
+      "author": "Adrian Spencer",
+      "rating": 3.45,
+      "year_published": 1822
+    },
+    {
+      "id": 166,
+      "title": "consequuntur qui",
+      "author": "Randal Abbott",
+      "rating": 3.05,
+      "year_published": 1803
+    },
+    {
+      "id": 167,
+      "title": "esse id voluptas dolorum numquam aperiam",
+      "author": "Reba Osinski",
+      "rating": 3.55,
+      "year_published": 1818
+    },
+    {
+      "id": 168,
+      "title": "nisi illum porro",
+      "author": "Maritza Collins",
+      "rating": 4,
+      "year_published": 1986
+    },
+    {
+      "id": 169,
+      "title": "sint et id et",
+      "author": "Kayleigh Bergstrom",
+      "rating": 0.95,
+      "year_published": 1730
+    },
+    {
+      "id": 170,
+      "title": "est ullam debitis",
+      "author": "Kiarra Pollich",
+      "rating": 3.9,
+      "year_published": 2006
+    },
+    {
+      "id": 171,
+      "title": "illo voluptatum fugit",
+      "author": "Kimberly Tromp",
+      "rating": 2.7,
+      "year_published": 1808
+    },
+    {
+      "id": 172,
+      "title": "et error cumque",
+      "author": "Brown Boyer",
+      "rating": 3.95,
+      "year_published": 1946
+    },
+    {
+      "id": 173,
+      "title": "omnis dolores dolore",
+      "author": "Elizabeth Hettinger",
+      "rating": 4.15,
+      "year_published": 2013
+    },
+    {
+      "id": 174,
+      "title": "ut quis",
+      "author": "Verner Murazik",
+      "rating": 0.4,
+      "year_published": 1846
+    },
+    {
+      "id": 175,
+      "title": "blanditiis velit fugiat maxime officia culpa",
+      "author": "Bernadine Stark",
+      "rating": 3.2,
+      "year_published": 2004
+    },
+    {
+      "id": 176,
+      "title": "eum quis cum voluptas aliquid quaerat",
+      "author": "Itzel Abshire",
+      "rating": 1.7,
+      "year_published": 1769
+    },
+    {
+      "id": 177,
+      "title": "quos facilis a vel qui",
+      "author": "Aracely Brekke",
+      "rating": 3.55,
+      "year_published": 1735
+    },
+    {
+      "id": 178,
+      "title": "quam rerum delectus",
+      "author": "Jed Sauer",
+      "rating": 3.95,
+      "year_published": 2012
+    },
+    {
+      "id": 179,
+      "title": "quasi ex",
+      "author": "Marisol Reilly",
+      "rating": 3.55,
+      "year_published": 1820
+    },
+    {
+      "id": 180,
+      "title": "consequatur natus voluptatem vero",
+      "author": "Ara Spinka",
+      "rating": 4.75,
+      "year_published": 1913
+    },
+    {
+      "id": 181,
+      "title": "et tempore non non molestias",
+      "author": "Jensen Quitzon",
+      "rating": 2.2,
+      "year_published": 1932
+    },
+    {
+      "id": 182,
+      "title": "dignissimos perspiciatis optio dolorem",
+      "author": "Lionel Nikolaus",
+      "rating": 2.25,
+      "year_published": 1819
+    },
+    {
+      "id": 183,
+      "title": "necessitatibus esse",
+      "author": "Shane Bode",
+      "rating": 2.05,
+      "year_published": 1983
+    },
+    {
+      "id": 184,
+      "title": "quia",
+      "author": "Peggie Stamm",
+      "rating": 3.1,
+      "year_published": 1937
+    },
+    {
+      "id": 185,
+      "title": "dolore praesentium",
+      "author": "Misty Moen",
+      "rating": 3.95,
+      "year_published": 1856
+    },
+    {
+      "id": 186,
+      "title": "voluptatem at",
+      "author": "Ryan Kertzmann",
+      "rating": 4.6,
+      "year_published": 1895
+    },
+    {
+      "id": 187,
+      "title": "blanditiis autem",
+      "author": "Edwardo Paucek",
+      "rating": 0.25,
+      "year_published": 1877
+    },
+    {
+      "id": 188,
+      "title": "iusto voluptas quaerat",
+      "author": "Dina Ryan",
+      "rating": 2.45,
+      "year_published": 1745
+    },
+    {
+      "id": 189,
+      "title": "quia necessitatibus sit",
+      "author": "Catalina Cummings",
+      "rating": 1.75,
+      "year_published": 1811
+    },
+    {
+      "id": 190,
+      "title": "quia",
+      "author": "Cruz Predovic",
+      "rating": 2.2,
+      "year_published": 1970
+    },
+    {
+      "id": 191,
+      "title": "dolores qui dolorum dolorem quidem",
+      "author": "Cristal Wuckert",
+      "rating": 2.75,
+      "year_published": 2004
+    },
+    {
+      "id": 192,
+      "title": "repudiandae et at aliquam dolore qui",
+      "author": "Guy Dooley",
+      "rating": 2.45,
+      "year_published": 1758
+    },
+    {
+      "id": 193,
+      "title": "labore incidunt et iure",
+      "author": "Rhett Cole",
+      "rating": 2.7,
+      "year_published": 1842
+    },
+    {
+      "id": 194,
+      "title": "laboriosam facere consequatur et molestias",
+      "author": "Vesta Mante",
+      "rating": 3.7,
+      "year_published": 1980
+    },
+    {
+      "id": 195,
+      "title": "amet necessitatibus hic",
+      "author": "Violet Nikolaus",
+      "rating": 3.35,
+      "year_published": 1888
+    },
+    {
+      "id": 196,
+      "title": "quia repellendus atque ipsam",
+      "author": "Abraham Thompson",
+      "rating": 4.35,
+      "year_published": 1936
+    },
+    {
+      "id": 197,
+      "title": "autem mollitia consequatur delectus consectetur",
+      "author": "Ryan Lindgren",
+      "rating": 3.75,
+      "year_published": 1725
+    },
+    {
+      "id": 198,
+      "title": "voluptatibus",
+      "author": "Ward Keebler",
+      "rating": 4.4,
+      "year_published": 1972
+    },
+    {
+      "id": 199,
+      "title": "eaque deleniti",
+      "author": "Elmo Blanda",
+      "rating": 4.5,
+      "year_published": 1910
+    },
+    {
+      "id": 200,
+      "title": "unde nesciunt eligendi",
+      "author": "Anthony Kunde",
+      "rating": 2,
+      "year_published": 1894
+    },
+    {
+      "id": 201,
+      "title": "nihil sit quis ut sequi",
+      "author": "Tom Paucek",
+      "rating": 2.5,
+      "year_published": 1850
+    },
+    {
+      "id": 202,
+      "title": "magni provident suscipit soluta",
+      "author": "Letha Lowe",
+      "rating": 4.35,
+      "year_published": 1895
+    },
+    {
+      "id": 203,
+      "title": "doloremque ad deserunt nulla aliquid",
+      "author": "Ella Boyer",
+      "rating": 4.7,
+      "year_published": 1858
+    },
+    {
+      "id": 204,
+      "title": "nemo accusantium labore qui",
+      "author": "Bernadine Blick",
+      "rating": 2.95,
+      "year_published": 1976
+    },
+    {
+      "id": 205,
+      "title": "eligendi modi",
+      "author": "Eryn Heathcote",
+      "rating": 3.75,
+      "year_published": 1876
+    },
+    {
+      "id": 206,
+      "title": "doloribus non qui sed",
+      "author": "Aidan Weissnat",
+      "rating": 3.35,
+      "year_published": 1710
+    },
+    {
+      "id": 207,
+      "title": "minus quisquam dolorem corporis",
+      "author": "Maeve Lebsack",
+      "rating": 3.55,
+      "year_published": 1847
+    },
+    {
+      "id": 208,
+      "title": "qui eos perspiciatis in",
+      "author": "River Swift",
+      "rating": 1.75,
+      "year_published": 1754
+    },
+    {
+      "id": 209,
+      "title": "doloremque voluptas",
+      "author": "Magdalen Wyman",
+      "rating": 4.95,
+      "year_published": 1775
+    },
+    {
+      "id": 210,
+      "title": "eius repellendus nihil eos sequi aut",
+      "author": "Vivian Graham",
+      "rating": 4.9,
+      "year_published": 1939
+    },
+    {
+      "id": 211,
+      "title": "dolor molestias molestiae eos",
+      "author": "Bethel Bauch",
+      "rating": 2.35,
+      "year_published": 1852
+    },
+    {
+      "id": 212,
+      "title": "velit est nesciunt aliquid",
+      "author": "Carlee Funk",
+      "rating": 3.9,
+      "year_published": 1878
+    },
+    {
+      "id": 213,
+      "title": "et voluptates atque sit accusamus",
+      "author": "Leopoldo Gibson",
+      "rating": 1.95,
+      "year_published": 1793
+    },
+    {
+      "id": 214,
+      "title": "quasi voluptatem sit voluptates eveniet",
+      "author": "Bessie Daugherty",
+      "rating": 3,
+      "year_published": 1938
+    },
+    {
+      "id": 215,
+      "title": "veritatis voluptates minus blanditiis optio provident",
+      "author": "Scarlett Lockman",
+      "rating": 3.1,
+      "year_published": 1941
+    },
+    {
+      "id": 216,
+      "title": "aut molestiae",
+      "author": "Amiya Nader",
+      "rating": 3.95,
+      "year_published": 1791
+    },
+    {
+      "id": 217,
+      "title": "commodi excepturi et explicabo sint",
+      "author": "Nils Swift",
+      "rating": 4.8,
+      "year_published": 1806
+    },
+    {
+      "id": 218,
+      "title": "perspiciatis corrupti ducimus",
+      "author": "Jordi Leannon",
+      "rating": 3.5,
+      "year_published": 1740
+    },
+    {
+      "id": 219,
+      "title": "autem tempora",
+      "author": "Grant Cronin",
+      "rating": 4.05,
+      "year_published": 1930
+    },
+    {
+      "id": 220,
+      "title": "voluptate debitis veritatis qui",
+      "author": "Haskell Schuster",
+      "rating": 4.7,
+      "year_published": 1728
+    },
+    {
+      "id": 221,
+      "title": "labore cum perspiciatis",
+      "author": "Emilio Zulauf",
+      "rating": 1.4,
+      "year_published": 1963
+    },
+    {
+      "id": 222,
+      "title": "eos",
+      "author": "Gilbert McGlynn",
+      "rating": 0.85,
+      "year_published": 1741
+    },
+    {
+      "id": 223,
+      "title": "quos",
+      "author": "Aurore Smith",
+      "rating": 4.25,
+      "year_published": 2003
+    },
+    {
+      "id": 224,
+      "title": "necessitatibus porro error minus molestiae",
+      "author": "Delores Block",
+      "rating": 3,
+      "year_published": 1706
+    },
+    {
+      "id": 225,
+      "title": "enim excepturi qui",
+      "author": "Katlyn Boyle",
+      "rating": 1.05,
+      "year_published": 1965
+    },
+    {
+      "id": 226,
+      "title": "aut rem consequatur",
+      "author": "Vladimir Torp",
+      "rating": 4.05,
+      "year_published": 1846
+    },
+    {
+      "id": 227,
+      "title": "aspernatur qui",
+      "author": "Naomi Spinka",
+      "rating": 4.2,
+      "year_published": 1987
+    },
+    {
+      "id": 228,
+      "title": "id nulla",
+      "author": "Ted Hyatt",
+      "rating": 4.05,
+      "year_published": 1710
+    },
+    {
+      "id": 229,
+      "title": "sint veniam dolorem",
+      "author": "Troy Bernhard",
+      "rating": 2.55,
+      "year_published": 1987
+    },
+    {
+      "id": 230,
+      "title": "perferendis adipisci architecto",
+      "author": "Zoila Zieme",
+      "rating": 0.6,
+      "year_published": 1906
+    },
+    {
+      "id": 231,
+      "title": "eos et id illum",
+      "author": "Mazie Mitchell",
+      "rating": 1.15,
+      "year_published": 1773
+    },
+    {
+      "id": 232,
+      "title": "possimus rerum",
+      "author": "Malvina Schneider",
+      "rating": 3.2,
+      "year_published": 1993
+    },
+    {
+      "id": 233,
+      "title": "quia quo",
+      "author": "Mariam Kuhn",
+      "rating": 2.15,
+      "year_published": 1845
+    },
+    {
+      "id": 234,
+      "title": "itaque omnis et quia",
+      "author": "Zachariah Kilback",
+      "rating": 0.5,
+      "year_published": 1935
+    },
+    {
+      "id": 235,
+      "title": "necessitatibus quam aut",
+      "author": "Aniyah McCullough",
+      "rating": 0.7,
+      "year_published": 1753
+    },
+    {
+      "id": 236,
+      "title": "eum placeat quidem",
+      "author": "Reece Leuschke",
+      "rating": 1.8,
+      "year_published": 1947
+    },
+    {
+      "id": 237,
+      "title": "ab tenetur aut quas",
+      "author": "Alessandra Dach",
+      "rating": 3.85,
+      "year_published": 1955
+    },
+    {
+      "id": 238,
+      "title": "eius dicta et qui vel quibusdam",
+      "author": "Estell Ziemann",
+      "rating": 1.95,
+      "year_published": 1884
+    },
+    {
+      "id": 239,
+      "title": "itaque aut id quidem similique",
+      "author": "Antwan Schmitt",
+      "rating": 2.1,
+      "year_published": 1984
+    },
+    {
+      "id": 240,
+      "title": "consequatur",
+      "author": "Josefa Quigley",
+      "rating": 0.15,
+      "year_published": 1793
+    },
+    {
+      "id": 241,
+      "title": "fugiat molestiae non magnam",
+      "author": "Luciano Walsh",
+      "rating": 1.9,
+      "year_published": 1795
+    },
+    {
+      "id": 242,
+      "title": "maiores sed",
+      "author": "Guillermo Schroeder",
+      "rating": 2.9,
+      "year_published": 1956
+    },
+    {
+      "id": 243,
+      "title": "fuga doloribus qui reprehenderit illo",
+      "author": "Jodie Marks",
+      "rating": 3.4,
+      "year_published": 1728
+    },
+    {
+      "id": 244,
+      "title": "occaecati odio soluta",
+      "author": "Dominic Klein",
+      "rating": 0.35,
+      "year_published": 1737
+    },
+    {
+      "id": 245,
+      "title": "neque ipsam quasi in nemo cupiditate",
+      "author": "Adriel Jacobs",
+      "rating": 0.1,
+      "year_published": 1854
+    },
+    {
+      "id": 246,
+      "title": "et eos veniam nulla",
+      "author": "Franco Walter",
+      "rating": 4.45,
+      "year_published": 1801
+    },
+    {
+      "id": 247,
+      "title": "et",
+      "author": "Fleta Predovic",
+      "rating": 2.45,
+      "year_published": 1966
+    },
+    {
+      "id": 248,
+      "title": "qui natus esse ea ipsa",
+      "author": "Werner Heaney",
+      "rating": 3.65,
+      "year_published": 1886
+    },
+    {
+      "id": 249,
+      "title": "voluptatem quia similique illo officia porro",
+      "author": "Arlo Hahn",
+      "rating": 4.5,
+      "year_published": 1870
+    },
+    {
+      "id": 250,
+      "title": "cupiditate",
+      "author": "Dakota Stamm",
+      "rating": 2.95,
+      "year_published": 1830
+    },
+    {
+      "id": 251,
+      "title": "sit sit",
+      "author": "Liza Beer",
+      "rating": 2.2,
+      "year_published": 1807
+    },
+    {
+      "id": 252,
+      "title": "sit et esse placeat corporis",
+      "author": "Margot Wisozk",
+      "rating": 0.9,
+      "year_published": 1911
+    },
+    {
+      "id": 253,
+      "title": "consectetur accusamus",
+      "author": "Carley Green",
+      "rating": 1.05,
+      "year_published": 1756
+    },
+    {
+      "id": 254,
+      "title": "atque enim dolorum est labore",
+      "author": "Judson Klocko",
+      "rating": 4.35,
+      "year_published": 1938
+    },
+    {
+      "id": 255,
+      "title": "vel ea placeat commodi et omnis",
+      "author": "Ariel Schumm",
+      "rating": 3.9,
+      "year_published": 1811
+    },
+    {
+      "id": 256,
+      "title": "quisquam enim dolorem quia",
+      "author": "Lesly Becker",
+      "rating": 2.75,
+      "year_published": 1977
+    },
+    {
+      "id": 257,
+      "title": "sequi",
+      "author": "Dexter Nitzsche",
+      "rating": 2.5,
+      "year_published": 1760
+    },
+    {
+      "id": 258,
+      "title": "tenetur minus minus",
+      "author": "Dorthy Spencer",
+      "rating": 1.05,
+      "year_published": 2004
+    },
+    {
+      "id": 259,
+      "title": "minus sapiente reiciendis hic",
+      "author": "Martin Tromp",
+      "rating": 1.45,
+      "year_published": 1730
+    },
+    {
+      "id": 260,
+      "title": "sed",
+      "author": "Arnoldo Hoppe",
+      "rating": 0.65,
+      "year_published": 1886
+    },
+    {
+      "id": 261,
+      "title": "earum consectetur",
+      "author": "Diego Cole",
+      "rating": 0.45,
+      "year_published": 1774
+    },
+    {
+      "id": 262,
+      "title": "perspiciatis aut aperiam",
+      "author": "Hallie Keeling",
+      "rating": 3.55,
+      "year_published": 1795
+    },
+    {
+      "id": 263,
+      "title": "repellendus provident sint",
+      "author": "Domenick Kuhn",
+      "rating": 2.3,
+      "year_published": 1804
+    },
+    {
+      "id": 264,
+      "title": "perferendis recusandae dolores non",
+      "author": "Jamey Wisoky",
+      "rating": 0.25,
+      "year_published": 1858
+    },
+    {
+      "id": 265,
+      "title": "est ipsa optio eum voluptatem vero",
+      "author": "Brooks Senger",
+      "rating": 2.85,
+      "year_published": 1986
+    },
+    {
+      "id": 266,
+      "title": "pariatur iure iure quae enim",
+      "author": "Raquel Wiegand",
+      "rating": 0.95,
+      "year_published": 2010
+    },
+    {
+      "id": 267,
+      "title": "voluptatem nobis dolore ut",
+      "author": "April Cummings",
+      "rating": 1.5,
+      "year_published": 1930
+    },
+    {
+      "id": 268,
+      "title": "porro non quis cum voluptatum perspiciatis",
+      "author": "Alize Osinski",
+      "rating": 4.45,
+      "year_published": 1764
+    },
+    {
+      "id": 269,
+      "title": "nemo dolore",
+      "author": "Keeley Jacobson",
+      "rating": 3.1,
+      "year_published": 1885
+    },
+    {
+      "id": 270,
+      "title": "aut laboriosam repellendus",
+      "author": "Verda Lindgren",
+      "rating": 0.35,
+      "year_published": 1981
+    },
+    {
+      "id": 271,
+      "title": "aspernatur occaecati voluptas",
+      "author": "Trace Senger",
+      "rating": 1.65,
+      "year_published": 1885
+    },
+    {
+      "id": 272,
+      "title": "nemo occaecati voluptas nostrum sunt soluta",
+      "author": "Jaquan Hane",
+      "rating": 4.25,
+      "year_published": 1897
+    },
+    {
+      "id": 273,
+      "title": "ut nisi sit sunt",
+      "author": "Addie Hilpert",
+      "rating": 1.5,
+      "year_published": 1963
+    },
+    {
+      "id": 274,
+      "title": "quo repellendus inventore et est",
+      "author": "Nellie Bartoletti",
+      "rating": 2.4,
+      "year_published": 1935
+    },
+    {
+      "id": 275,
+      "title": "illo quo",
+      "author": "Diana Trantow",
+      "rating": 1.45,
+      "year_published": 1752
+    },
+    {
+      "id": 276,
+      "title": "quo modi porro",
+      "author": "Robb Conroy",
+      "rating": 4.2,
+      "year_published": 1890
+    },
+    {
+      "id": 277,
+      "title": "nemo nemo voluptatem",
+      "author": "Brenda Cormier",
+      "rating": 0.6,
+      "year_published": 1810
+    },
+    {
+      "id": 278,
+      "title": "ex fugiat laboriosam ut veritatis sunt",
+      "author": "Ruthie Purdy",
+      "rating": 4.85,
+      "year_published": 1871
+    },
+    {
+      "id": 279,
+      "title": "debitis aspernatur ut",
+      "author": "Ross Lockman",
+      "rating": 0.15,
+      "year_published": 1899
+    },
+    {
+      "id": 280,
+      "title": "magnam sequi",
+      "author": "Meggie Leuschke",
+      "rating": 4.75,
+      "year_published": 1944
+    },
+    {
+      "id": 281,
+      "title": "numquam sapiente dolor facilis",
+      "author": "Leon Rosenbaum",
+      "rating": 1.15,
+      "year_published": 1738
+    },
+    {
+      "id": 282,
+      "title": "odit officiis voluptas et deleniti laudantium",
+      "author": "Doris Kozey",
+      "rating": 4.4,
+      "year_published": 1758
+    },
+    {
+      "id": 283,
+      "title": "perferendis ducimus",
+      "author": "Josh Considine",
+      "rating": 0.1,
+      "year_published": 1979
+    },
+    {
+      "id": 284,
+      "title": "aperiam atque",
+      "author": "Julien Marks",
+      "rating": 1,
+      "year_published": 1729
+    },
+    {
+      "id": 285,
+      "title": "et minima sunt quis",
+      "author": "Carleton Eichmann",
+      "rating": 0.25,
+      "year_published": 1975
+    },
+    {
+      "id": 286,
+      "title": "minima debitis et aut ratione",
+      "author": "Janice Morissette",
+      "rating": 1.4,
+      "year_published": 1888
+    },
+    {
+      "id": 287,
+      "title": "vero ullam eos labore magnam",
+      "author": "Kennith Adams",
+      "rating": 1.1,
+      "year_published": 1734
+    },
+    {
+      "id": 288,
+      "title": "accusantium fugiat earum voluptas at",
+      "author": "Sophie Harvey",
+      "rating": 4.75,
+      "year_published": 1989
+    },
+    {
+      "id": 289,
+      "title": "ullam",
+      "author": "Maximo Macejkovic",
+      "rating": 3.9,
+      "year_published": 1878
+    },
+    {
+      "id": 290,
+      "title": "ratione debitis minima",
+      "author": "Terrill Champlin",
+      "rating": 0.7,
+      "year_published": 1867
+    },
+    {
+      "id": 291,
+      "title": "eaque dolores",
+      "author": "Tanner Rodriguez",
+      "rating": 4.35,
+      "year_published": 1736
+    },
+    {
+      "id": 292,
+      "title": "ex eum",
+      "author": "Emilie Emard",
+      "rating": 3.5,
+      "year_published": 1999
+    },
+    {
+      "id": 293,
+      "title": "asperiores delectus et neque",
+      "author": "Craig Champlin",
+      "rating": 1.8,
+      "year_published": 1996
+    },
+    {
+      "id": 294,
+      "title": "veritatis maiores adipisci quis eum id",
+      "author": "Christian Strosin",
+      "rating": 0.9,
+      "year_published": 1814
+    },
+    {
+      "id": 295,
+      "title": "dolorem ea eveniet pariatur praesentium",
+      "author": "Kadin Keeling",
+      "rating": 0.6,
+      "year_published": 1938
+    },
+    {
+      "id": 296,
+      "title": "rem eveniet sunt nostrum ipsa quod",
+      "author": "Fiona Bradtke",
+      "rating": 4.5,
+      "year_published": 1835
+    },
+    {
+      "id": 297,
+      "title": "cum",
+      "author": "Patricia McCullough",
+      "rating": 0.25,
+      "year_published": 1720
+    },
+    {
+      "id": 298,
+      "title": "fugit natus impedit et earum",
+      "author": "Laurie Runolfsdottir",
+      "rating": 1.9,
+      "year_published": 1907
+    },
+    {
+      "id": 299,
+      "title": "beatae voluptatem earum et et",
+      "author": "Hulda Donnelly",
+      "rating": 0.1,
+      "year_published": 1775
+    },
+    {
+      "id": 300,
+      "title": "sit eaque suscipit esse quidem aut",
+      "author": "Rosina Stoltenberg",
+      "rating": 2.65,
+      "year_published": 1936
+    },
+    {
+      "id": 301,
+      "title": "excepturi pariatur culpa vel itaque minus",
+      "author": "Antoinette Leuschke",
+      "rating": 2.4,
+      "year_published": 1931
+    },
+    {
+      "id": 302,
+      "title": "nam reprehenderit cumque",
+      "author": "Garret Rutherford",
+      "rating": 4.45,
+      "year_published": 1947
+    },
+    {
+      "id": 303,
+      "title": "laborum accusantium sint",
+      "author": "Benjamin Hackett",
+      "rating": 1.5,
+      "year_published": 1917
+    },
+    {
+      "id": 304,
+      "title": "qui fuga dolores sit",
+      "author": "Destin Ebert",
+      "rating": 4.9,
+      "year_published": 1755
+    },
+    {
+      "id": 305,
+      "title": "corporis cumque",
+      "author": "Ova Wilkinson",
+      "rating": 3.85,
+      "year_published": 1861
+    },
+    {
+      "id": 306,
+      "title": "similique",
+      "author": "Claudine Schneider",
+      "rating": 3.5,
+      "year_published": 1947
+    },
+    {
+      "id": 307,
+      "title": "omnis quas",
+      "author": "Shania Nitzsche",
+      "rating": 3.2,
+      "year_published": 1919
+    },
+    {
+      "id": 308,
+      "title": "quisquam vel quidem quidem voluptas minus",
+      "author": "Jeffry Towne",
+      "rating": 2.95,
+      "year_published": 1745
+    },
+    {
+      "id": 309,
+      "title": "et enim deleniti",
+      "author": "Madie Jerde",
+      "rating": 0.85,
+      "year_published": 1887
+    },
+    {
+      "id": 310,
+      "title": "eligendi velit ut sed numquam omnis",
+      "author": "Marjory Turcotte",
+      "rating": 2.4,
+      "year_published": 1895
+    },
+    {
+      "id": 311,
+      "title": "velit aut accusamus",
+      "author": "Abel Kuhic",
+      "rating": 1.9,
+      "year_published": 1781
+    },
+    {
+      "id": 312,
+      "title": "ab animi occaecati praesentium",
+      "author": "Lottie Eichmann",
+      "rating": 4,
+      "year_published": 1858
+    },
+    {
+      "id": 313,
+      "title": "earum iure et cumque nam et",
+      "author": "Philip Daniel",
+      "rating": 2.25,
+      "year_published": 1919
+    },
+    {
+      "id": 314,
+      "title": "libero maiores molestias",
+      "author": "Hallie Bartell",
+      "rating": 2.35,
+      "year_published": 1916
+    },
+    {
+      "id": 315,
+      "title": "sapiente fuga est voluptatibus",
+      "author": "Raleigh Jacobs",
+      "rating": 3.65,
+      "year_published": 1835
+    },
+    {
+      "id": 316,
+      "title": "odio",
+      "author": "Armando Lesch",
+      "rating": 0.4,
+      "year_published": 1855
+    },
+    {
+      "id": 317,
+      "title": "labore ab sint ipsa tenetur",
+      "author": "Vada Schmeler",
+      "rating": 4.7,
+      "year_published": 1845
+    },
+    {
+      "id": 318,
+      "title": "magnam aliquam explicabo sit",
+      "author": "Dariana Fadel",
+      "rating": 0.95,
+      "year_published": 1830
+    },
+    {
+      "id": 319,
+      "title": "enim asperiores unde qui temporibus",
+      "author": "Doris Dooley",
+      "rating": 2.15,
+      "year_published": 1701
+    },
+    {
+      "id": 320,
+      "title": "perspiciatis corrupti odio",
+      "author": "Orlo Monahan",
+      "rating": 3.65,
+      "year_published": 1801
+    },
+    {
+      "id": 321,
+      "title": "labore animi et iusto qui",
+      "author": "Ward Lubowitz",
+      "rating": 2.7,
+      "year_published": 1855
+    },
+    {
+      "id": 322,
+      "title": "quisquam perferendis non aut",
+      "author": "Sonya Schmeler",
+      "rating": 3.95,
+      "year_published": 1784
+    },
+    {
+      "id": 323,
+      "title": "non ut",
+      "author": "Deondre Bergstrom",
+      "rating": 1.8,
+      "year_published": 1736
+    },
+    {
+      "id": 324,
+      "title": "nihil minus adipisci omnis sit accusamus",
+      "author": "Emiliano Connelly",
+      "rating": 2.55,
+      "year_published": 1811
+    },
+    {
+      "id": 325,
+      "title": "quia odio dolores magnam",
+      "author": "Eula Lemke",
+      "rating": 3.55,
+      "year_published": 1979
+    },
+    {
+      "id": 326,
+      "title": "iure porro quasi ad quia consequatur",
+      "author": "Genevieve Lowe",
+      "rating": 0.65,
+      "year_published": 2015
+    },
+    {
+      "id": 327,
+      "title": "illoiiii expedita quia quia odit a",
+      "author": "Alejandra Botsford",
+      "rating": 0.95,
+      "year_published": 1988
+    },
+    {
+      "id": 328,
+      "title": "architecto voluptatem ut rerum quas",
+      "author": "Danielle Romaguera",
+      "rating": 0.65,
+      "year_published": 1767
+    },
+    {
+      "id": 329,
+      "title": "soluta adipisci et et est",
+      "author": "Cleveland Greenfelder",
+      "rating": 2.6,
+      "year_published": 2008
+    },
+    {
+      "id": 330,
+      "title": "ut laboriosam",
+      "author": "Andrew Champlin",
+      "rating": 0.5,
+      "year_published": 1996
+    },
+    {
+      "id": 331,
+      "title": "autem beatae pariatur",
+      "author": "Heloise Thompson",
+      "rating": 3.3,
+      "year_published": 1934
+    },
+    {
+      "id": 332,
+      "title": "dolores voluptates ipsam",
+      "author": "Jeanne Wilkinson",
+      "rating": 3.75,
+      "year_published": 1772
+    },
+    {
+      "id": 333,
+      "title": "provident",
+      "author": "Laury Ankunding",
+      "rating": 0.95,
+      "year_published": 1966
+    },
+    {
+      "id": 334,
+      "title": "facilis tempora aut quisquam",
+      "author": "Sydnie Blick",
+      "rating": 2.5,
+      "year_published": 1844
+    },
+    {
+      "id": 335,
+      "title": "nihil maiores nihil eos qui",
+      "author": "Kacie Stanton",
+      "rating": 4.45,
+      "year_published": 1839
+    },
+    {
+      "id": 336,
+      "title": "et",
+      "author": "Florencio Shanahan",
+      "rating": 3.1,
+      "year_published": 1857
+    },
+    {
+      "id": 337,
+      "title": "aut",
+      "author": "Deon Bernhard",
+      "rating": 1.55,
+      "year_published": 1701
+    },
+    {
+      "id": 338,
+      "title": "accusantium qui dolor voluptas",
+      "author": "Janick Will",
+      "rating": 2.95,
+      "year_published": 1950
+    },
+    {
+      "id": 339,
+      "title": "magni ut qui et qui",
+      "author": "Justyn Wisozk",
+      "rating": 3.9,
+      "year_published": 1900
+    },
+    {
+      "id": 340,
+      "title": "deserunt omnis veritatis",
+      "author": "Isobel Nader",
+      "rating": 2.25,
+      "year_published": 1773
+    },
+    {
+      "id": 341,
+      "title": "porro et",
+      "author": "Beaulah Corkery",
+      "rating": 2.75,
+      "year_published": 1835
+    },
+    {
+      "id": 342,
+      "title": "quaerat vero commodi et",
+      "author": "Geovanni Vandervort",
+      "rating": 0.8,
+      "year_published": 1724
+    },
+    {
+      "id": 343,
+      "title": "quidem occaecati quam",
+      "author": "Sallie Schamberger",
+      "rating": 4.45,
+      "year_published": 1872
+    },
+    {
+      "id": 344,
+      "title": "nemo itaque perspiciatis voluptas velit",
+      "author": "Flavie Marvin",
+      "rating": 3.5,
+      "year_published": 1992
+    },
+    {
+      "id": 345,
+      "title": "quos dolore totam sint laborum eos",
+      "author": "Crawford Prosacco",
+      "rating": 0.15,
+      "year_published": 1911
+    },
+    {
+      "id": 346,
+      "title": "optio laboriosam quia et rerum",
+      "author": "Emory Rice",
+      "rating": 1.95,
+      "year_published": 1884
+    },
+    {
+      "id": 347,
+      "title": "ut a",
+      "author": "Dawson Berge",
+      "rating": 3.35,
+      "year_published": 1940
+    },
+    {
+      "id": 348,
+      "title": "sit",
+      "author": "Carlo Ortiz",
+      "rating": 2.05,
+      "year_published": 1949
+    },
+    {
+      "id": 349,
+      "title": "ea eaque ducimus ut",
+      "author": "Stone Sawayn",
+      "rating": 2.25,
+      "year_published": 1901
+    },
+    {
+      "id": 350,
+      "title": "laboriosam aperiam corrupti nostrum",
+      "author": "Clifford Monahan",
+      "rating": 1,
+      "year_published": 1998
+    },
+    {
+      "id": 351,
+      "title": "temporibus saepe ullam pariatur quidem esse",
+      "author": "Alfred Blanda",
+      "rating": 4.75,
+      "year_published": 1924
+    },
+    {
+      "id": 352,
+      "title": "consequatur maxime",
+      "author": "Delmer Heller",
+      "rating": 1.65,
+      "year_published": 1824
+    },
+    {
+      "id": 353,
+      "title": "consequatur perspiciatis nemo in ut",
+      "author": "Brandi Boehm",
+      "rating": 4.2,
+      "year_published": 1700
+    },
+    {
+      "id": 354,
+      "title": "perspiciatis voluptates rerum et qui",
+      "author": "Sid Casper",
+      "rating": 1,
+      "year_published": 1729
+    },
+    {
+      "id": 355,
+      "title": "sed",
+      "author": "Alba Hessel",
+      "rating": 0.6,
+      "year_published": 2012
+    },
+    {
+      "id": 356,
+      "title": "quis rerum",
+      "author": "Annamae Schiller",
+      "rating": 1.9,
+      "year_published": 1785
+    },
+    {
+      "id": 357,
+      "title": "praesentium cupiditate",
+      "author": "Audrey Schneider",
+      "rating": 2.4,
+      "year_published": 1769
+    },
+    {
+      "id": 358,
+      "title": "totam sint qui et",
+      "author": "Trevion Cormier",
+      "rating": 4.4,
+      "year_published": 1743
+    },
+    {
+      "id": 359,
+      "title": "nemo",
+      "author": "Vance Zboncak",
+      "rating": 4.1,
+      "year_published": 2015
+    },
+    {
+      "id": 360,
+      "title": "est fuga fugit",
+      "author": "Elda Hickle",
+      "rating": 1.6,
+      "year_published": 1883
+    },
+    {
+      "id": 361,
+      "title": "amet veniam esse perferendis molestiae",
+      "author": "Leonor Braun",
+      "rating": 4.2,
+      "year_published": 1879
+    },
+    {
+      "id": 362,
+      "title": "corporis quod voluptatum porro omnis",
+      "author": "Lorena Klein",
+      "rating": 3.5,
+      "year_published": 1860
+    },
+    {
+      "id": 363,
+      "title": "sunt nesciunt nobis eos",
+      "author": "Gerda Wisoky",
+      "rating": 2.6,
+      "year_published": 1854
+    },
+    {
+      "id": 364,
+      "title": "non",
+      "author": "Gail Ullrich",
+      "rating": 2.75,
+      "year_published": 1812
+    },
+    {
+      "id": 365,
+      "title": "omnis soluta nulla",
+      "author": "Rosalia Streich",
+      "rating": 3.15,
+      "year_published": 1854
+    },
+    {
+      "id": 366,
+      "title": "eos",
+      "author": "Kaleigh Hilll",
+      "rating": 3.45,
+      "year_published": 1855
+    },
+    {
+      "id": 367,
+      "title": "laboriosam natus ipsum explicabo aliquid",
+      "author": "Werner Feil",
+      "rating": 0.8,
+      "year_published": 1742
+    },
+    {
+      "id": 368,
+      "title": "nesciunt eum culpa",
+      "author": "Mose Turcotte",
+      "rating": 0.85,
+      "year_published": 1768
+    },
+    {
+      "id": 369,
+      "title": "eos laborum qui officiis alias qui",
+      "author": "Manuela Dare",
+      "rating": 2.45,
+      "year_published": 1972
+    },
+    {
+      "id": 370,
+      "title": "commodi fugit quo et sed modi",
+      "author": "Ayden Lemke",
+      "rating": 4.95,
+      "year_published": 1942
+    },
+    {
+      "id": 371,
+      "title": "quos harum ex voluptatem quidem",
+      "author": "Charlene Tillman",
+      "rating": 3.65,
+      "year_published": 1835
+    },
+    {
+      "id": 372,
+      "title": "facilis quibusdam similique dolorem pariatur",
+      "author": "Harley Kshlerin",
+      "rating": 0.6,
+      "year_published": 1856
+    },
+    {
+      "id": 373,
+      "title": "numquam nisi explicabo",
+      "author": "Easton Kris",
+      "rating": 1.05,
+      "year_published": 1998
+    },
+    {
+      "id": 374,
+      "title": "eum id ipsam omnis id",
+      "author": "Destinee Mante",
+      "rating": 1.55,
+      "year_published": 1878
+    },
+    {
+      "id": 375,
+      "title": "non aut perferendis nulla",
+      "author": "Kaycee Kilback",
+      "rating": 2.05,
+      "year_published": 1730
+    },
+    {
+      "id": 376,
+      "title": "quis nihil nulla unde dolore quam",
+      "author": "Mona Legros",
+      "rating": 1.95,
+      "year_published": 1907
+    },
+    {
+      "id": 377,
+      "title": "omnis at accusamus qui quia possimus",
+      "author": "Jillian Larkin",
+      "rating": 3.85,
+      "year_published": 1897
+    },
+    {
+      "id": 378,
+      "title": "officiis facere corrupti",
+      "author": "Caesar Kiehn",
+      "rating": 1.35,
+      "year_published": 1872
+    },
+    {
+      "id": 379,
+      "title": "ut",
+      "author": "Larry Hilpert",
+      "rating": 4.95,
+      "year_published": 1901
+    },
+    {
+      "id": 380,
+      "title": "omnis impedit",
+      "author": "Alvah Daniel",
+      "rating": 0.2,
+      "year_published": 1908
+    },
+    {
+      "id": 381,
+      "title": "sit facilis et laudantium quia ut",
+      "author": "Nikko Koepp",
+      "rating": 4.9,
+      "year_published": 1734
+    },
+    {
+      "id": 382,
+      "title": "non quis ea at sint voluptatibus",
+      "author": "Lauretta Mertz",
+      "rating": 2.9,
+      "year_published": 1946
+    },
+    {
+      "id": 383,
+      "title": "sit ut in necessitatibus",
+      "author": "Reymundo Muller",
+      "rating": 2.9,
+      "year_published": 2002
+    },
+    {
+      "id": 384,
+      "title": "ut voluptatem et ea optio",
+      "author": "Kayley Rosenbaum",
+      "rating": 3.5,
+      "year_published": 1964
+    },
+    {
+      "id": 385,
+      "title": "ullam soluta delectus vero iste",
+      "author": "Gilda Goodwin",
+      "rating": 3.55,
+      "year_published": 1739
+    },
+    {
+      "id": 386,
+      "title": "praesentium cupiditate",
+      "author": "Isaiah Blanda",
+      "rating": 1.15,
+      "year_published": 1706
+    },
+    {
+      "id": 387,
+      "title": "molestiae",
+      "author": "Hoyt Schumm",
+      "rating": 3.65,
+      "year_published": 1890
+    },
+    {
+      "id": 388,
+      "title": "ut reprehenderit consequatur recusandae",
+      "author": "Tressa Towne",
+      "rating": 4.15,
+      "year_published": 1908
+    },
+    {
+      "id": 389,
+      "title": "accusantium fugit id molestiae error",
+      "author": "Lelia Wuckert",
+      "rating": 2.8,
+      "year_published": 1910
+    },
+    {
+      "id": 390,
+      "title": "ipsa quod distinctio facilis voluptates",
+      "author": "Lesley Hagenes",
+      "rating": 4.75,
+      "year_published": 1904
+    },
+    {
+      "id": 391,
+      "title": "rem consectetur quis provident id",
+      "author": "Chaya Rogahn",
+      "rating": 2.55,
+      "year_published": 1849
+    },
+    {
+      "id": 392,
+      "title": "rerum eveniet sint et",
+      "author": "Aric Bauch",
+      "rating": 2.8,
+      "year_published": 1750
+    },
+    {
+      "id": 393,
+      "title": "illum quam aut animi",
+      "author": "Stevie Satterfield",
+      "rating": 3.05,
+      "year_published": 1924
+    },
+    {
+      "id": 394,
+      "title": "qui consequatur vitae aspernatur",
+      "author": "Horace Williamson",
+      "rating": 1.85,
+      "year_published": 1994
+    },
+    {
+      "id": 395,
+      "title": "quo dicta qui quis non vitae",
+      "author": "Judy Abernathy",
+      "rating": 0.2,
+      "year_published": 1807
+    },
+    {
+      "id": 396,
+      "title": "nisi quia et molestias quod",
+      "author": "Syble Dickens",
+      "rating": 0.2,
+      "year_published": 2010
+    },
+    {
+      "id": 397,
+      "title": "sed animi delectus laboriosam",
+      "author": "Leta Weber",
+      "rating": 0.55,
+      "year_published": 1872
+    },
+    {
+      "id": 398,
+      "title": "dolorem in et magnam consequatur",
+      "author": "Mack Hegmann",
+      "rating": 2,
+      "year_published": 1781
+    },
+    {
+      "id": 399,
+      "title": "sunt",
+      "author": "Stan Bayer",
+      "rating": 0.6,
+      "year_published": 1832
+    },
+    {
+      "id": 400,
+      "title": "provident velit esse",
+      "author": "Quincy Abernathy",
+      "rating": 3.65,
+      "year_published": 1940
+    },
+    {
+      "id": 401,
+      "title": "laboriosam voluptas blanditiis pariatur quae totam",
+      "author": "Sidney Stokes",
+      "rating": 2.6,
+      "year_published": 1952
+    },
+    {
+      "id": 402,
+      "title": "non ullam consequatur",
+      "author": "Moriah Nikolaus",
+      "rating": 3.55,
+      "year_published": 1989
+    },
+    {
+      "id": 403,
+      "title": "reprehenderit",
+      "author": "Stone Heidenreich",
+      "rating": 3,
+      "year_published": 1954
+    },
+    {
+      "id": 404,
+      "title": "consequatur quam adipisci nostrum",
+      "author": "Katrine Brakus",
+      "rating": 0.4,
+      "year_published": 2011
+    },
+    {
+      "id": 405,
+      "title": "est nulla aut doloribus id",
+      "author": "Benedict Jakubowski",
+      "rating": 2.7,
+      "year_published": 1905
+    },
+    {
+      "id": 406,
+      "title": "sit a amet natus",
+      "author": "Larue Deckow",
+      "rating": 4.25,
+      "year_published": 1826
+    },
+    {
+      "id": 407,
+      "title": "dolores iure mollitia blanditiis autem qui",
+      "author": "Vincenza Pacocha",
+      "rating": 3,
+      "year_published": 1922
+    },
+    {
+      "id": 408,
+      "title": "earum eveniet occaecati",
+      "author": "Nicolas Casper",
+      "rating": 2.6,
+      "year_published": 1935
+    },
+    {
+      "id": 409,
+      "title": "placeat tenetur",
+      "author": "Korbin Rutherford",
+      "rating": 0.85,
+      "year_published": 1914
+    },
+    {
+      "id": 410,
+      "title": "delectus qui",
+      "author": "Clint Adams",
+      "rating": 0.15,
+      "year_published": 1800
+    },
+    {
+      "id": 411,
+      "title": "expedita",
+      "author": "Alexander Legros",
+      "rating": 3.4,
+      "year_published": 1888
+    },
+    {
+      "id": 412,
+      "title": "mollitia corrupti perferendis",
+      "author": "Mayra Stamm",
+      "rating": 1.65,
+      "year_published": 1959
+    },
+    {
+      "id": 413,
+      "title": "qui excepturi quo sed nihil",
+      "author": "Jose Lowe",
+      "rating": 2,
+      "year_published": 1781
+    },
+    {
+      "id": 414,
+      "title": "quisquam voluptas qui provident",
+      "author": "Dawn Hauck",
+      "rating": 0.8,
+      "year_published": 1989
+    },
+    {
+      "id": 415,
+      "title": "architecto quia nihil molestias minus",
+      "author": "Tyra Corwin",
+      "rating": 2.15,
+      "year_published": 1796
+    },
+    {
+      "id": 416,
+      "title": "vero ut minima",
+      "author": "Kailey Schumm",
+      "rating": 0.6,
+      "year_published": 1787
+    },
+    {
+      "id": 417,
+      "title": "nam provident nihil itaque",
+      "author": "Kari West",
+      "rating": 2.65,
+      "year_published": 1928
+    },
+    {
+      "id": 418,
+      "title": "fugiat",
+      "author": "Ayla Klein",
+      "rating": 1.95,
+      "year_published": 1943
+    },
+    {
+      "id": 419,
+      "title": "dignissimos repellendus autem",
+      "author": "Yesenia Hansen",
+      "rating": 3.3,
+      "year_published": 1850
+    },
+    {
+      "id": 420,
+      "title": "et",
+      "author": "Gabriel White",
+      "rating": 3.45,
+      "year_published": 1960
+    },
+    {
+      "id": 421,
+      "title": "fuga nam autem at",
+      "author": "Otho Keebler",
+      "rating": 1.15,
+      "year_published": 1916
+    },
+    {
+      "id": 422,
+      "title": "tempore quae nostrum quas dolores",
+      "author": "Jaida Gutmann",
+      "rating": 0.7,
+      "year_published": 1850
+    },
+    {
+      "id": 423,
+      "title": "quas ad optio",
+      "author": "Rosamond Orn",
+      "rating": 1.95,
+      "year_published": 1835
+    },
+    {
+      "id": 424,
+      "title": "harum eaque neque fuga",
+      "author": "Dewitt Grant",
+      "rating": 3.25,
+      "year_published": 1832
+    },
+    {
+      "id": 425,
+      "title": "cum deleniti qui",
+      "author": "Halie Collins",
+      "rating": 4.6,
+      "year_published": 2000
+    },
+    {
+      "id": 426,
+      "title": "molestiae sequi id sint",
+      "author": "Baron Greenfelder",
+      "rating": 0.5,
+      "year_published": 1854
+    },
+    {
+      "id": 427,
+      "title": "aut quisquam placeat ut qui",
+      "author": "Deangelo Halvorson",
+      "rating": 3.4,
+      "year_published": 1900
+    },
+    {
+      "id": 428,
+      "title": "enim maxime nam natus",
+      "author": "Kathryn Raynor",
+      "rating": 3.15,
+      "year_published": 1808
+    },
+    {
+      "id": 429,
+      "title": "vel numquam odio",
+      "author": "Phoebe Weimann",
+      "rating": 3.15,
+      "year_published": 1926
+    },
+    {
+      "id": 430,
+      "title": "sunt architecto",
+      "author": "Shanna Herman",
+      "rating": 2.2,
+      "year_published": 1749
+    },
+    {
+      "id": 431,
+      "title": "qui repudiandae autem debitis et",
+      "author": "Nia Cummings",
+      "rating": 2.65,
+      "year_published": 1725
+    },
+    {
+      "id": 432,
+      "title": "dolorem nam illo",
+      "author": "Amparo Wolff",
+      "rating": 4.6,
+      "year_published": 1827
+    },
+    {
+      "id": 433,
+      "title": "optio quis accusamus molestias",
+      "author": "Israel Nicolas",
+      "rating": 1.4,
+      "year_published": 1703
+    },
+    {
+      "id": 434,
+      "title": "cupiditate",
+      "author": "Bailey Cartwright",
+      "rating": 2.85,
+      "year_published": 1822
+    },
+    {
+      "id": 435,
+      "title": "eos voluptas",
+      "author": "Violet Crona",
+      "rating": 4.05,
+      "year_published": 1885
+    },
+    {
+      "id": 436,
+      "title": "id architecto",
+      "author": "Reggie Mitchell",
+      "rating": 0.85,
+      "year_published": 1866
+    },
+    {
+      "id": 437,
+      "title": "nulla sed dolore error dolores",
+      "author": "Hulda Quigley",
+      "rating": 1.1,
+      "year_published": 1764
+    },
+    {
+      "id": 438,
+      "title": "explicabo",
+      "author": "Sydney Grimes",
+      "rating": 3.95,
+      "year_published": 1893
+    },
+    {
+      "id": 439,
+      "title": "reprehenderit est eius aperiam laboriosam",
+      "author": "Osborne Stokes",
+      "rating": 1.4,
+      "year_published": 2002
+    },
+    {
+      "id": 440,
+      "title": "deserunt voluptatem hic rerum",
+      "author": "Cade King",
+      "rating": 2.7,
+      "year_published": 1917
+    },
+    {
+      "id": 441,
+      "title": "voluptatibus voluptatibus aut",
+      "author": "Shaina Koelpin",
+      "rating": 2.6,
+      "year_published": 1905
+    },
+    {
+      "id": 442,
+      "title": "vero id amet commodi sequi",
+      "author": "Chandler Beahan",
+      "rating": 1.85,
+      "year_published": 1983
+    },
+    {
+      "id": 443,
+      "title": "sunt tenetur similique in nulla ipsa",
+      "author": "Savanna Greenholt",
+      "rating": 2.9,
+      "year_published": 1759
+    },
+    {
+      "id": 444,
+      "title": "amet corporis eligendi voluptatem numquam cupiditate",
+      "author": "Deontae Ruecker",
+      "rating": 1.7,
+      "year_published": 1862
+    },
+    {
+      "id": 445,
+      "title": "est mollitia",
+      "author": "Krystel Paucek",
+      "rating": 3.35,
+      "year_published": 1817
+    },
+    {
+      "id": 446,
+      "title": "asperiores reprehenderit quo ut repellendus",
+      "author": "Hertha Bayer",
+      "rating": 2.7,
+      "year_published": 1730
+    },
+    {
+      "id": 447,
+      "title": "veniam aut dolor nostrum sapiente",
+      "author": "Retta Lueilwitz",
+      "rating": 3.5,
+      "year_published": 1820
+    },
+    {
+      "id": 448,
+      "title": "consequatur quia",
+      "author": "Michaela Flatley",
+      "rating": 0.8,
+      "year_published": 1972
+    },
+    {
+      "id": 449,
+      "title": "nostrum totam eaque amet quo aliquam",
+      "author": "Brennan Pagac",
+      "rating": 2.65,
+      "year_published": 1776
+    },
+    {
+      "id": 450,
+      "title": "fugit enim ut quis totam",
+      "author": "Flo Lubowitz",
+      "rating": 1.65,
+      "year_published": 1973
+    },
+    {
+      "id": 451,
+      "title": "dolorem minus",
+      "author": "Oran Hayes",
+      "rating": 2.45,
+      "year_published": 1796
+    },
+    {
+      "id": 452,
+      "title": "dolores qui iure et sed enim",
+      "author": "Mariam Nitzsche",
+      "rating": 1.8,
+      "year_published": 1940
+    },
+    {
+      "id": 453,
+      "title": "et exercitationem aut id",
+      "author": "Rosamond Muller",
+      "rating": 4.7,
+      "year_published": 1953
+    },
+    {
+      "id": 454,
+      "title": "numquam aut corrupti dolores",
+      "author": "Emely Barrows",
+      "rating": 1.55,
+      "year_published": 1842
+    },
+    {
+      "id": 455,
+      "title": "incidunt cumque ut",
+      "author": "Kellie Braun",
+      "rating": 2.75,
+      "year_published": 1823
+    },
+    {
+      "id": 456,
+      "title": "ipsam culpa possimus",
+      "author": "Issac Sanford",
+      "rating": 1.6,
+      "year_published": 1985
+    },
+    {
+      "id": 457,
+      "title": "id incidunt eius in earum magni",
+      "author": "Dorcas Eichmann",
+      "rating": 0.7,
+      "year_published": 1778
+    },
+    {
+      "id": 458,
+      "title": "hic aut dignissimos ut eos",
+      "author": "Richie Schuppe",
+      "rating": 1.1,
+      "year_published": 1771
+    },
+    {
+      "id": 459,
+      "title": "aliquid dolorum sed ullam",
+      "author": "Simone Nitzsche",
+      "rating": 4,
+      "year_published": 1768
+    },
+    {
+      "id": 460,
+      "title": "veniam",
+      "author": "Tina Thompson",
+      "rating": 0.8,
+      "year_published": 1865
+    },
+    {
+      "id": 461,
+      "title": "eum nesciunt",
+      "author": "Johnathon Schmidt",
+      "rating": 5,
+      "year_published": 1753
+    },
+    {
+      "id": 462,
+      "title": "dignissimos aut sint",
+      "author": "Mathilde Simonis",
+      "rating": 4.3,
+      "year_published": 1943
+    },
+    {
+      "id": 463,
+      "title": "voluptatem animi non",
+      "author": "Mervin Monahan",
+      "rating": 1.35,
+      "year_published": 1798
+    },
+    {
+      "id": 464,
+      "title": "ea expedita quia",
+      "author": "Onie Hirthe",
+      "rating": 0.1,
+      "year_published": 1817
+    },
+    {
+      "id": 465,
+      "title": "consequatur consequatur pariatur modi",
+      "author": "Kenton Wilderman",
+      "rating": 2,
+      "year_published": 1700
+    },
+    {
+      "id": 466,
+      "title": "qui accusamus dolorem",
+      "author": "Elissa Rogahn",
+      "rating": 3.9,
+      "year_published": 1873
+    },
+    {
+      "id": 467,
+      "title": "animi enim perferendis illo iure sint",
+      "author": "Bernie Kohler",
+      "rating": 2.35,
+      "year_published": 1889
+    },
+    {
+      "id": 468,
+      "title": "beatae eaque consequatur",
+      "author": "Dakota Schaden",
+      "rating": 3.75,
+      "year_published": 1745
+    },
+    {
+      "id": 469,
+      "title": "omnis placeat",
+      "author": "Roman McLaughlin",
+      "rating": 2.7,
+      "year_published": 1762
+    },
+    {
+      "id": 470,
+      "title": "voluptatem",
+      "author": "Jermaine Turcotte",
+      "rating": 2,
+      "year_published": 1887
+    },
+    {
+      "id": 471,
+      "title": "ea vel",
+      "author": "Dominique Mills",
+      "rating": 1.3,
+      "year_published": 1911
+    },
+    {
+      "id": 472,
+      "title": "dolorem est",
+      "author": "Joseph Kunde",
+      "rating": 1.9,
+      "year_published": 1943
+    },
+    {
+      "id": 473,
+      "title": "quos et perspiciatis at",
+      "author": "Malinda Ward",
+      "rating": 3.75,
+      "year_published": 1766
+    },
+    {
+      "id": 474,
+      "title": "commodi ea quo quas ut minima",
+      "author": "Wilma Legros",
+      "rating": 4.2,
+      "year_published": 1924
+    },
+    {
+      "id": 475,
+      "title": "aut molestiae et assumenda dolorem sunt",
+      "author": "Wilfredo Feil",
+      "rating": 5,
+      "year_published": 1843
+    },
+    {
+      "id": 476,
+      "title": "fugiat qui eos fugiat",
+      "author": "Jules Bode",
+      "rating": 3.85,
+      "year_published": 1831
+    },
+    {
+      "id": 477,
+      "title": "ut accusamus temporibus maiores",
+      "author": "Louisa Brakus",
+      "rating": 0.05,
+      "year_published": 1783
+    },
+    {
+      "id": 478,
+      "title": "dolor rerum quae molestias delectus",
+      "author": "Abagail Leuschke",
+      "rating": 0.15,
+      "year_published": 1965
+    },
+    {
+      "id": 479,
+      "title": "possimus inventore dolorum",
+      "author": "Corine Witting",
+      "rating": 0.9,
+      "year_published": 1984
+    },
+    {
+      "id": 480,
+      "title": "quas quisquam eveniet iusto",
+      "author": "Davin Bradtke",
+      "rating": 3.6,
+      "year_published": 1989
+    },
+    {
+      "id": 481,
+      "title": "quia sit",
+      "author": "Carolina Morar",
+      "rating": 2.5,
+      "year_published": 1790
+    },
+    {
+      "id": 482,
+      "title": "similique ab",
+      "author": "Kathleen Kirlin",
+      "rating": 2.3,
+      "year_published": 1844
+    },
+    {
+      "id": 483,
+      "title": "explicabo in qui sed",
+      "author": "Vada Spinka",
+      "rating": 3.2,
+      "year_published": 1803
+    },
+    {
+      "id": 484,
+      "title": "quo eum",
+      "author": "Maxime Nikolaus",
+      "rating": 3.45,
+      "year_published": 1764
+    },
+    {
+      "id": 485,
+      "title": "qui",
+      "author": "Rosella Hamill",
+      "rating": 0.35,
+      "year_published": 1841
+    },
+    {
+      "id": 486,
+      "title": "atque et occaecati voluptatem enim",
+      "author": "Pearl Schulist",
+      "rating": 1.15,
+      "year_published": 1874
+    },
+    {
+      "id": 487,
+      "title": "et dolorem non illum",
+      "author": "Deshawn Dickinson",
+      "rating": 3.65,
+      "year_published": 1973
+    },
+    {
+      "id": 488,
+      "title": "quia expedita unde",
+      "author": "Alexandra Bednar",
+      "rating": 4.6,
+      "year_published": 1788
+    },
+    {
+      "id": 489,
+      "title": "molestias",
+      "author": "Marcelina Stamm",
+      "rating": 4.3,
+      "year_published": 1716
+    },
+    {
+      "id": 490,
+      "title": "dolores ut",
+      "author": "Jacinto Reynolds",
+      "rating": 0.6,
+      "year_published": 1941
+    },
+    {
+      "id": 491,
+      "title": "et ea",
+      "author": "Raleigh Kovacek",
+      "rating": 2.05,
+      "year_published": 1913
+    },
+    {
+      "id": 492,
+      "title": "eaque labore vel sapiente",
+      "author": "Alivia Harris",
+      "rating": 1.05,
+      "year_published": 1881
+    },
+    {
+      "id": 493,
+      "title": "provident fugit",
+      "author": "Cecilia Stroman",
+      "rating": 3.05,
+      "year_published": 1968
+    },
+    {
+      "id": 494,
+      "title": "harum sit rem",
+      "author": "Geraldine Monahan",
+      "rating": 3.9,
+      "year_published": 1993
+    },
+    {
+      "id": 495,
+      "title": "adipisci non ipsum laboriosam aut",
+      "author": "Deborah Berge",
+      "rating": 2.5,
+      "year_published": 1768
+    },
+    {
+      "id": 496,
+      "title": "aliquam unde qui aut",
+      "author": "Keyshawn Murazik",
+      "rating": 4.55,
+      "year_published": 1705
+    },
+    {
+      "id": 497,
+      "title": "quae quisquam",
+      "author": "Marielle Romaguera",
+      "rating": 4.5,
+      "year_published": 1819
+    },
+    {
+      "id": 498,
+      "title": "consequatur qui",
+      "author": "Jabari Lehner",
+      "rating": 4.7,
+      "year_published": 2011
+    },
+    {
+      "id": 499,
+      "title": "quae quam",
+      "author": "Tavares Shanahan",
+      "rating": 0.95,
+      "year_published": 1969
+    },
+    {
+      "id": 500,
+      "title": "et non temporibus ea et rerum",
+      "author": "Ally Little",
+      "rating": 0.3,
+      "year_published": 1736
+    },
+    {
+      "id": 501,
+      "title": "est similique quibusdam",
+      "author": "Alicia Collier",
+      "rating": 1.45,
+      "year_published": 1755
+    },
+    {
+      "id": 502,
+      "title": "quidem velit omnis beatae et",
+      "author": "Rashad Champlin",
+      "rating": 0.7,
+      "year_published": 1803
+    },
+    {
+      "id": 503,
+      "title": "nihil nobis",
+      "author": "Idell Rempel",
+      "rating": 4.95,
+      "year_published": 1836
+    },
+    {
+      "id": 504,
+      "title": "ut et fugiat debitis sint",
+      "author": "Cameron McCullough",
+      "rating": 3.95,
+      "year_published": 1941
+    },
+    {
+      "id": 505,
+      "title": "eum commodi eos dolor omnis autem",
+      "author": "Scarlett Reilly",
+      "rating": 2.15,
+      "year_published": 1750
+    },
+    {
+      "id": 506,
+      "title": "magni",
+      "author": "Juvenal Harvey",
+      "rating": 3.75,
+      "year_published": 1731
+    },
+    {
+      "id": 507,
+      "title": "commodi ratione",
+      "author": "River Torp",
+      "rating": 2.7,
+      "year_published": 1971
+    },
+    {
+      "id": 508,
+      "title": "accusantium",
+      "author": "Izabella Gaylord",
+      "rating": 2.2,
+      "year_published": 1835
+    },
+    {
+      "id": 509,
+      "title": "illo voluptatem excepturi repudiandae",
+      "author": "Murl Jones",
+      "rating": 0.3,
+      "year_published": 1932
+    },
+    {
+      "id": 510,
+      "title": "ex non aut ab",
+      "author": "Brigitte Maggio",
+      "rating": 3.45,
+      "year_published": 1801
+    },
+    {
+      "id": 511,
+      "title": "distinctio quis facilis consequatur non",
+      "author": "Juvenal Daniel",
+      "rating": 1.1,
+      "year_published": 1978
+    },
+    {
+      "id": 512,
+      "title": "et placeat fugit exercitationem enim",
+      "author": "Marion Sawayn",
+      "rating": 3,
+      "year_published": 1746
+    },
+    {
+      "id": 513,
+      "title": "dolores aut nam aliquam non",
+      "author": "Rupert Considine",
+      "rating": 4.85,
+      "year_published": 1879
+    },
+    {
+      "id": 514,
+      "title": "recusandae laudantium modi maxime",
+      "author": "Ignacio Beatty",
+      "rating": 2.45,
+      "year_published": 1927
+    },
+    {
+      "id": 515,
+      "title": "cumque ut autem tempore repudiandae",
+      "author": "Roy Stroman",
+      "rating": 1.3,
+      "year_published": 1751
+    },
+    {
+      "id": 516,
+      "title": "animi",
+      "author": "Elvie Ferry",
+      "rating": 2.7,
+      "year_published": 1998
+    },
+    {
+      "id": 517,
+      "title": "delectus at",
+      "author": "Mathilde Waelchi",
+      "rating": 3.8,
+      "year_published": 1987
+    },
+    {
+      "id": 518,
+      "title": "minima id nihil",
+      "author": "Elyse Turcotte",
+      "rating": 2.55,
+      "year_published": 1701
+    },
+    {
+      "id": 519,
+      "title": "dicta et fugit adipisci",
+      "author": "Elyssa Hamill",
+      "rating": 4.6,
+      "year_published": 1730
+    },
+    {
+      "id": 520,
+      "title": "eos dolorum ipsam id hic eum",
+      "author": "Lucas Stamm",
+      "rating": 4.65,
+      "year_published": 1725
+    },
+    {
+      "id": 521,
+      "title": "autem minus",
+      "author": "Rolando Harber",
+      "rating": 4.25,
+      "year_published": 1784
+    },
+    {
+      "id": 522,
+      "title": "quos magnam consequatur sequi est",
+      "author": "Reta Hartmann",
+      "rating": 3.5,
+      "year_published": 1916
+    },
+    {
+      "id": 523,
+      "title": "voluptatem fugiat vel",
+      "author": "Enid Wisozk",
+      "rating": 1.95,
+      "year_published": 1995
+    },
+    {
+      "id": 524,
+      "title": "quia explicabo",
+      "author": "Turner Sawayn",
+      "rating": 0.8,
+      "year_published": 1924
+    },
+    {
+      "id": 525,
+      "title": "unde explicabo ut totam aperiam enim",
+      "author": "Richie Olson",
+      "rating": 4.15,
+      "year_published": 2007
+    },
+    {
+      "id": 526,
+      "title": "dolorem est",
+      "author": "Dawn Dickinson",
+      "rating": 0.55,
+      "year_published": 1703
+    },
+    {
+      "id": 527,
+      "title": "quas accusantium deserunt quo asperiores",
+      "author": "Issac Dach",
+      "rating": 3.7,
+      "year_published": 1709
+    },
+    {
+      "id": 528,
+      "title": "perferendis ut",
+      "author": "Vernie Treutel",
+      "rating": 3.9,
+      "year_published": 1952
+    },
+    {
+      "id": 529,
+      "title": "praesentium nemo laborum",
+      "author": "Lera Erdman",
+      "rating": 1.25,
+      "year_published": 1754
+    },
+    {
+      "id": 530,
+      "title": "excepturi magnam",
+      "author": "Ethel Langworth",
+      "rating": 3.8,
+      "year_published": 1913
+    },
+    {
+      "id": 531,
+      "title": "ad possimus fugit",
+      "author": "Alec Feest",
+      "rating": 0.05,
+      "year_published": 1945
+    },
+    {
+      "id": 532,
+      "title": "accusamus voluptate",
+      "author": "Mario Metz",
+      "rating": 0.1,
+      "year_published": 1795
+    },
+    {
+      "id": 533,
+      "title": "cupiditate",
+      "author": "Brielle Runolfsson",
+      "rating": 2.2,
+      "year_published": 1960
+    },
+    {
+      "id": 534,
+      "title": "recusandae mollitia",
+      "author": "Marianna Gislason",
+      "rating": 0.6,
+      "year_published": 1734
+    },
+    {
+      "id": 535,
+      "title": "atque provident",
+      "author": "Kelly Renner",
+      "rating": 1.25,
+      "year_published": 1915
+    },
+    {
+      "id": 536,
+      "title": "cumque dignissimos ea nulla",
+      "author": "Sanford Williamson",
+      "rating": 3.15,
+      "year_published": 1919
+    },
+    {
+      "id": 537,
+      "title": "ut",
+      "author": "Isabelle Hartmann",
+      "rating": 1.2,
+      "year_published": 1746
+    },
+    {
+      "id": 538,
+      "title": "est aut dolorum hic neque fuga",
+      "author": "Derick Mills",
+      "rating": 4.7,
+      "year_published": 2008
+    },
+    {
+      "id": 539,
+      "title": "tempore voluptatum eos provident et exercitationem",
+      "author": "George Willms",
+      "rating": 4.75,
+      "year_published": 1749
+    },
+    {
+      "id": 540,
+      "title": "veniam ab aut incidunt ut",
+      "author": "Kianna Hudson",
+      "rating": 1.5,
+      "year_published": 1934
+    },
+    {
+      "id": 541,
+      "title": "sunt iure officiis",
+      "author": "Luciano Romaguera",
+      "rating": 3.55,
+      "year_published": 1821
+    },
+    {
+      "id": 542,
+      "title": "est",
+      "author": "Maria Langosh",
+      "rating": 2.65,
+      "year_published": 1717
+    },
+    {
+      "id": 543,
+      "title": "nisi nihil autem ad",
+      "author": "Samanta Barton",
+      "rating": 4.8,
+      "year_published": 1776
+    },
+    {
+      "id": 544,
+      "title": "ipsum ea dignissimos quasi debitis cum",
+      "author": "Lexi Weissnat",
+      "rating": 3.15,
+      "year_published": 1858
+    },
+    {
+      "id": 545,
+      "title": "quam magni odit",
+      "author": "Demarcus Yost",
+      "rating": 4.75,
+      "year_published": 1788
+    },
+    {
+      "id": 546,
+      "title": "accusamus doloremque dolore",
+      "author": "Cassie Yost",
+      "rating": 2.35,
+      "year_published": 1925
+    },
+    {
+      "id": 547,
+      "title": "debitis harum pariatur",
+      "author": "Johnson Schmeler",
+      "rating": 1.3,
+      "year_published": 1839
+    },
+    {
+      "id": 548,
+      "title": "placeat quis",
+      "author": "Irving Howell",
+      "rating": 3.35,
+      "year_published": 1986
+    },
+    {
+      "id": 549,
+      "title": "veniam a",
+      "author": "Hulda Streich",
+      "rating": 2.15,
+      "year_published": 1806
+    },
+    {
+      "id": 550,
+      "title": "itaque rerum",
+      "author": "Dave Kessler",
+      "rating": 2.45,
+      "year_published": 1879
+    },
+    {
+      "id": 551,
+      "title": "atque eum qui",
+      "author": "Dock Bednar",
+      "rating": 0.5,
+      "year_published": 1804
+    },
+    {
+      "id": 552,
+      "title": "magni ipsum quibusdam at",
+      "author": "Billie Klein",
+      "rating": 4.7,
+      "year_published": 1717
+    },
+    {
+      "id": 553,
+      "title": "voluptatem vel",
+      "author": "Margret Durgan",
+      "rating": 3.5,
+      "year_published": 1802
+    },
+    {
+      "id": 554,
+      "title": "excepturi assumenda",
+      "author": "Enid Braun",
+      "rating": 0.05,
+      "year_published": 1778
+    },
+    {
+      "id": 555,
+      "title": "voluptas explicabo",
+      "author": "Estrella Maggio",
+      "rating": 3.55,
+      "year_published": 1863
+    },
+    {
+      "id": 556,
+      "title": "praesentium mollitia reprehenderit vel quis",
+      "author": "Lavina Gottlieb",
+      "rating": 3.2,
+      "year_published": 1836
+    },
+    {
+      "id": 557,
+      "title": "ipsum magnam consectetur",
+      "author": "Joannie Hauck",
+      "rating": 4.8,
+      "year_published": 1762
+    },
+    {
+      "id": 558,
+      "title": "amet consequatur et",
+      "author": "Jazmin Bartell",
+      "rating": 4.65,
+      "year_published": 1955
+    },
+    {
+      "id": 559,
+      "title": "qui laborum harum sed",
+      "author": "Amina Reichel",
+      "rating": 4,
+      "year_published": 1975
+    },
+    {
+      "id": 560,
+      "title": "non ipsa sed consectetur",
+      "author": "Zack Schultz",
+      "rating": 2.05,
+      "year_published": 1716
+    },
+    {
+      "id": 561,
+      "title": "amet veritatis qui",
+      "author": "Oliver Johnson",
+      "rating": 4.45,
+      "year_published": 1907
+    },
+    {
+      "id": 562,
+      "title": "perspiciatis beatae ea",
+      "author": "Queenie Conn",
+      "rating": 2,
+      "year_published": 1937
+    },
+    {
+      "id": 563,
+      "title": "sed commodi sed qui quaerat",
+      "author": "Astrid Jewess",
+      "rating": 4.8,
+      "year_published": 1817
+    },
+    {
+      "id": 564,
+      "title": "numquam",
+      "author": "Alicia Bechtelar",
+      "rating": 4.7,
+      "year_published": 1926
+    },
+    {
+      "id": 565,
+      "title": "quibusdam qui sit et corporis quos",
+      "author": "Dorris Hane",
+      "rating": 0.1,
+      "year_published": 1937
+    },
+    {
+      "id": 566,
+      "title": "minima neque et consequatur aperiam",
+      "author": "Elody Mitchell",
+      "rating": 0.45,
+      "year_published": 1778
+    },
+    {
+      "id": 567,
+      "title": "nobis ut quisquam",
+      "author": "Arlo Herzog",
+      "rating": 0.45,
+      "year_published": 1963
+    },
+    {
+      "id": 568,
+      "title": "ab ducimus",
+      "author": "Morton Fahey",
+      "rating": 0.3,
+      "year_published": 1756
+    },
+    {
+      "id": 569,
+      "title": "et aut",
+      "author": "Adam Denesik",
+      "rating": 2.7,
+      "year_published": 1837
+    },
+    {
+      "id": 570,
+      "title": "animi voluptas odit aliquam saepe in",
+      "author": "Elsie Welch",
+      "rating": 0.7,
+      "year_published": 1804
+    },
+    {
+      "id": 571,
+      "title": "nemo",
+      "author": "Amalia Walter",
+      "rating": 2.5,
+      "year_published": 1938
+    },
+    {
+      "id": 572,
+      "title": "nam eveniet aut aperiam nulla",
+      "author": "Alana Runolfsdottir",
+      "rating": 1.55,
+      "year_published": 2010
+    },
+    {
+      "id": 573,
+      "title": "nisi saepe labore minus voluptatibus",
+      "author": "Luz Schaefer",
+      "rating": 0.25,
+      "year_published": 1898
+    },
+    {
+      "id": 574,
+      "title": "quia est",
+      "author": "Freeman Boyer",
+      "rating": 1.15,
+      "year_published": 1886
+    },
+    {
+      "id": 575,
+      "title": "ullam voluptas mollitia quam",
+      "author": "Julie Stracke",
+      "rating": 0.65,
+      "year_published": 1809
+    },
+    {
+      "id": 576,
+      "title": "et qui similique et repellat",
+      "author": "Baylee Bartoletti",
+      "rating": 2.9,
+      "year_published": 1771
+    },
+    {
+      "id": 577,
+      "title": "autem est amet ea veniam soluta",
+      "author": "Andreane Lehner",
+      "rating": 4.6,
+      "year_published": 1766
+    },
+    {
+      "id": 578,
+      "title": "rem et",
+      "author": "Katelyn Jerde",
+      "rating": 0.5,
+      "year_published": 1795
+    },
+    {
+      "id": 579,
+      "title": "ullam quo",
+      "author": "Archibald Batz",
+      "rating": 2.35,
+      "year_published": 1762
+    },
+    {
+      "id": 580,
+      "title": "rerum nulla et nihil",
+      "author": "Derek Collins",
+      "rating": 0.35,
+      "year_published": 1755
+    },
+    {
+      "id": 581,
+      "title": "ipsum nulla",
+      "author": "Felicia Bernier",
+      "rating": 2.55,
+      "year_published": 1818
+    },
+    {
+      "id": 582,
+      "title": "aut qui ratione",
+      "author": "Jacinthe Dickens",
+      "rating": 2.4,
+      "year_published": 1766
+    },
+    {
+      "id": 583,
+      "title": "omnis sed vero",
+      "author": "Jessica Breitenberg",
+      "rating": 3.3,
+      "year_published": 1991
+    },
+    {
+      "id": 584,
+      "title": "sunt explicabo quo",
+      "author": "Jefferey Daugherty",
+      "rating": 4.8,
+      "year_published": 1885
+    },
+    {
+      "id": 585,
+      "title": "nobis quia",
+      "author": "Jabari Fisher",
+      "rating": 2.35,
+      "year_published": 2012
+    },
+    {
+      "id": 586,
+      "title": "itaque nisi temporibus a",
+      "author": "Kacie Powlowski",
+      "rating": 4.9,
+      "year_published": 2000
+    },
+    {
+      "id": 587,
+      "title": "et",
+      "author": "Eunice Dooley",
+      "rating": 4.6,
+      "year_published": 1844
+    },
+    {
+      "id": 588,
+      "title": "quis quas qui",
+      "author": "Abdiel Robel",
+      "rating": 1.45,
+      "year_published": 1926
+    },
+    {
+      "id": 589,
+      "title": "facilis consequuntur",
+      "author": "Elenora Larson",
+      "rating": 3.55,
+      "year_published": 1959
+    },
+    {
+      "id": 590,
+      "title": "consequatur sit",
+      "author": "Alden Cassin",
+      "rating": 3.7,
+      "year_published": 1757
+    },
+    {
+      "id": 591,
+      "title": "qui",
+      "author": "Chasity Schiller",
+      "rating": 3.6,
+      "year_published": 1987
+    },
+    {
+      "id": 592,
+      "title": "distinctio ea",
+      "author": "Antonia Mosciski",
+      "rating": 0.55,
+      "year_published": 1884
+    },
+    {
+      "id": 593,
+      "title": "at eos provident ut",
+      "author": "Evie Miller",
+      "rating": 1.9,
+      "year_published": 1920
+    },
+    {
+      "id": 594,
+      "title": "dolore placeat porro",
+      "author": "Lempi Hand",
+      "rating": 2.2,
+      "year_published": 1892
+    },
+    {
+      "id": 595,
+      "title": "officia voluptatibus",
+      "author": "Sage Dooley",
+      "rating": 1.45,
+      "year_published": 1926
+    },
+    {
+      "id": 596,
+      "title": "molestiae praesentium labore",
+      "author": "Mohammed Friesen",
+      "rating": 1.35,
+      "year_published": 1979
+    },
+    {
+      "id": 597,
+      "title": "odit dolor et",
+      "author": "Gerald Borer",
+      "rating": 4,
+      "year_published": 1798
+    },
+    {
+      "id": 598,
+      "title": "et vel harum assumenda necessitatibus",
+      "author": "Madelynn Dach",
+      "rating": 2.1,
+      "year_published": 1923
+    },
+    {
+      "id": 599,
+      "title": "ut hic sit omnis perferendis",
+      "author": "Santiago Flatley",
+      "rating": 3.9,
+      "year_published": 1800
+    },
+    {
+      "id": 600,
+      "title": "culpa odio voluptatibus inventore",
+      "author": "Lyla Padberg",
+      "rating": 0.55,
+      "year_published": 1894
+    },
+    {
+      "id": 601,
+      "title": "quae aspernatur pariatur ex",
+      "author": "Abdiel Gottlieb",
+      "rating": 1.5,
+      "year_published": 2010
+    },
+    {
+      "id": 602,
+      "title": "incidunt adipisci",
+      "author": "Alexie Beahan",
+      "rating": 4.65,
+      "year_published": 1961
+    },
+    {
+      "id": 603,
+      "title": "ipsa",
+      "author": "Isaias Harber",
+      "rating": 2.25,
+      "year_published": 1982
+    },
+    {
+      "id": 604,
+      "title": "quae possimus",
+      "author": "Yasmeen Effertz",
+      "rating": 2.15,
+      "year_published": 1828
+    },
+    {
+      "id": 605,
+      "title": "inventore qui perspiciatis libero",
+      "author": "Alba Dooley",
+      "rating": 5,
+      "year_published": 1932
+    },
+    {
+      "id": 606,
+      "title": "dolore aliquam laudantium magnam",
+      "author": "Kayla Grant",
+      "rating": 0.25,
+      "year_published": 2012
+    },
+    {
+      "id": 607,
+      "title": "illum qui voluptates ipsam",
+      "author": "Ernesto Bins",
+      "rating": 1.2,
+      "year_published": 1821
+    },
+    {
+      "id": 608,
+      "title": "aliquam mollitia et dignissimos eos",
+      "author": "Casey Stamm",
+      "rating": 2.25,
+      "year_published": 2007
+    },
+    {
+      "id": 609,
+      "title": "nemo sed deserunt dolores voluptas",
+      "author": "Chasity Gutmann",
+      "rating": 0.4,
+      "year_published": 1805
+    },
+    {
+      "id": 610,
+      "title": "earum quo temporibus tempore",
+      "author": "Dangelo Walker",
+      "rating": 3.1,
+      "year_published": 1831
+    },
+    {
+      "id": 611,
+      "title": "optio saepe expedita",
+      "author": "Angelo Gulgowski",
+      "rating": 4.6,
+      "year_published": 1887
+    },
+    {
+      "id": 612,
+      "title": "modi optio unde eveniet aliquam voluptas",
+      "author": "Murray Sanford",
+      "rating": 2.85,
+      "year_published": 1984
+    },
+    {
+      "id": 613,
+      "title": "sit repudiandae",
+      "author": "Jordy Haag",
+      "rating": 2.2,
+      "year_published": 1843
+    },
+    {
+      "id": 614,
+      "title": "eaque excepturi minima explicabo aut",
+      "author": "Kacey Shanahan",
+      "rating": 0.95,
+      "year_published": 2003
+    },
+    {
+      "id": 615,
+      "title": "veniam autem",
+      "author": "Liliane Waelchi",
+      "rating": 2.05,
+      "year_published": 1876
+    },
+    {
+      "id": 616,
+      "title": "voluptas omnis qui",
+      "author": "Shannon Haley",
+      "rating": 3.75,
+      "year_published": 1888
+    },
+    {
+      "id": 617,
+      "title": "dolorem velit",
+      "author": "Delia Miller",
+      "rating": 3.4,
+      "year_published": 1933
+    },
+    {
+      "id": 618,
+      "title": "aperiam vel unde quidem",
+      "author": "Jairo Lindgren",
+      "rating": 1.55,
+      "year_published": 1889
+    },
+    {
+      "id": 619,
+      "title": "quae aspernatur delectus rerum",
+      "author": "Charity Doyle",
+      "rating": 3.05,
+      "year_published": 1915
+    },
+    {
+      "id": 620,
+      "title": "voluptate consequatur consequatur",
+      "author": "Ethelyn Gottlieb",
+      "rating": 0.95,
+      "year_published": 1897
+    },
+    {
+      "id": 621,
+      "title": "temporibus impedit labore ipsum illo",
+      "author": "Jarvis Yost",
+      "rating": 1.25,
+      "year_published": 2009
+    },
+    {
+      "id": 622,
+      "title": "fuga ducimus qui",
+      "author": "Adolfo Zieme",
+      "rating": 2.25,
+      "year_published": 1730
+    },
+    {
+      "id": 623,
+      "title": "sint ducimus",
+      "author": "Hildegard Lockman",
+      "rating": 2.25,
+      "year_published": 1875
+    },
+    {
+      "id": 624,
+      "title": "autem deserunt",
+      "author": "Mike Flatley",
+      "rating": 3.2,
+      "year_published": 1962
+    },
+    {
+      "id": 625,
+      "title": "porro nihil ab velit qui",
+      "author": "Hiram Dach",
+      "rating": 4.15,
+      "year_published": 1744
+    },
+    {
+      "id": 626,
+      "title": "nobis laudantium error libero saepe et",
+      "author": "Carlee Von",
+      "rating": 2.7,
+      "year_published": 1966
+    },
+    {
+      "id": 627,
+      "title": "eius",
+      "author": "Juana Mosciski",
+      "rating": 0.7,
+      "year_published": 1923
+    },
+    {
+      "id": 628,
+      "title": "voluptas placeat ea sit qui",
+      "author": "Nicole Frami",
+      "rating": 0.95,
+      "year_published": 1931
+    },
+    {
+      "id": 629,
+      "title": "qui et",
+      "author": "Aurelia Cassin",
+      "rating": 1.35,
+      "year_published": 2000
+    },
+    {
+      "id": 630,
+      "title": "et deleniti",
+      "author": "Cecelia Bernier",
+      "rating": 3.75,
+      "year_published": 1876
+    },
+    {
+      "id": 631,
+      "title": "ut sint at est earum quos",
+      "author": "Payton Yundt",
+      "rating": 0.6,
+      "year_published": 1908
+    },
+    {
+      "id": 632,
+      "title": "sunt",
+      "author": "Wiley Feil",
+      "rating": 2.15,
+      "year_published": 1996
+    },
+    {
+      "id": 633,
+      "title": "nam eveniet voluptatem inventore",
+      "author": "Elisha Lang",
+      "rating": 4.15,
+      "year_published": 1849
+    },
+    {
+      "id": 634,
+      "title": "qui",
+      "author": "Eric Kub",
+      "rating": 2.3,
+      "year_published": 1993
+    },
+    {
+      "id": 635,
+      "title": "exercitationem tempore",
+      "author": "Bridie Dibbert",
+      "rating": 0.85,
+      "year_published": 1988
+    },
+    {
+      "id": 636,
+      "title": "et est atque",
+      "author": "Keara Bartell",
+      "rating": 1.65,
+      "year_published": 1856
+    },
+    {
+      "id": 637,
+      "title": "rerum impedit similique",
+      "author": "Jackie Waters",
+      "rating": 0.3,
+      "year_published": 1711
+    },
+    {
+      "id": 638,
+      "title": "enim rerum et ut",
+      "author": "Jarvis McCullough",
+      "rating": 3.7,
+      "year_published": 1719
+    },
+    {
+      "id": 639,
+      "title": "velit ut distinctio quasi",
+      "author": "Gwen Lehner",
+      "rating": 2.9,
+      "year_published": 1710
+    },
+    {
+      "id": 640,
+      "title": "facilis ipsa sint qui sint",
+      "author": "Calista Blick",
+      "rating": 0.25,
+      "year_published": 1769
+    },
+    {
+      "id": 641,
+      "title": "deserunt et",
+      "author": "Liliana Kessler",
+      "rating": 4.2,
+      "year_published": 1755
+    },
+    {
+      "id": 642,
+      "title": "ea tempore cupiditate sequi",
+      "author": "Jose Kutch",
+      "rating": 2.7,
+      "year_published": 1917
+    },
+    {
+      "id": 643,
+      "title": "non non necessitatibus",
+      "author": "Jaylan McCullough",
+      "rating": 1,
+      "year_published": 1738
+    },
+    {
+      "id": 644,
+      "title": "quas consequatur laborum",
+      "author": "Hulda Lindgren",
+      "rating": 1.5,
+      "year_published": 1855
+    },
+    {
+      "id": 645,
+      "title": "quod exercitationem",
+      "author": "Billie Daugherty",
+      "rating": 4.45,
+      "year_published": 1848
+    },
+    {
+      "id": 646,
+      "title": "et corrupti est",
+      "author": "Kristian Balistreri",
+      "rating": 3.3,
+      "year_published": 1822
+    },
+    {
+      "id": 647,
+      "title": "et nihil",
+      "author": "Lillie Ruecker",
+      "rating": 0.7,
+      "year_published": 1823
+    },
+    {
+      "id": 648,
+      "title": "quia est quis quia voluptatem quisquam",
+      "author": "Lorenzo Gislason",
+      "rating": 0.6,
+      "year_published": 1854
+    },
+    {
+      "id": 649,
+      "title": "quo est",
+      "author": "Lempi Oberbrunner",
+      "rating": 4.4,
+      "year_published": 2003
+    },
+    {
+      "id": 650,
+      "title": "molestiae quae occaecati perferendis",
+      "author": "Adrienne Wyman",
+      "rating": 4.2,
+      "year_published": 1955
+    },
+    {
+      "id": 651,
+      "title": "molestiae in ut doloribus sed",
+      "author": "Lucy Sipes",
+      "rating": 1.75,
+      "year_published": 1773
+    },
+    {
+      "id": 652,
+      "title": "excepturi deleniti eos",
+      "author": "Tianna Weber",
+      "rating": 2.5,
+      "year_published": 1793
+    },
+    {
+      "id": 653,
+      "title": "reprehenderit repudiandae pariatur recusandae",
+      "author": "Lue Ankunding",
+      "rating": 4.55,
+      "year_published": 1859
+    },
+    {
+      "id": 654,
+      "title": "earum dolorem quis et",
+      "author": "Hollie Hodkiewicz",
+      "rating": 0.95,
+      "year_published": 1710
+    },
+    {
+      "id": 655,
+      "title": "officia assumenda omnis",
+      "author": "Kaylin Moore",
+      "rating": 3.7,
+      "year_published": 1711
+    },
+    {
+      "id": 656,
+      "title": "asperiores blanditiis est distinctio aliquid",
+      "author": "Claudia Prosacco",
+      "rating": 1.8,
+      "year_published": 1866
+    },
+    {
+      "id": 657,
+      "title": "vel",
+      "author": "Alene Green",
+      "rating": 4.15,
+      "year_published": 1713
+    },
+    {
+      "id": 658,
+      "title": "eos eos assumenda ea",
+      "author": "Alessandro Langworth",
+      "rating": 4.05,
+      "year_published": 1999
+    },
+    {
+      "id": 659,
+      "title": "dolorem fugit adipisci",
+      "author": "Jamaal Spencer",
+      "rating": 0.95,
+      "year_published": 1817
+    },
+    {
+      "id": 660,
+      "title": "itaque possimus aperiam qui",
+      "author": "Garrison Wehner",
+      "rating": 2.7,
+      "year_published": 1983
+    },
+    {
+      "id": 661,
+      "title": "ut",
+      "author": "Bettie Anderson",
+      "rating": 1.5,
+      "year_published": 2013
+    },
+    {
+      "id": 662,
+      "title": "qui laudantium",
+      "author": "Gracie Windler",
+      "rating": 0.15,
+      "year_published": 1878
+    },
+    {
+      "id": 663,
+      "title": "sed veniam",
+      "author": "Percy Swaniawski",
+      "rating": 4.6,
+      "year_published": 1789
+    },
+    {
+      "id": 664,
+      "title": "error possimus ea doloremque adipisci",
+      "author": "Sigrid White",
+      "rating": 3.35,
+      "year_published": 1760
+    },
+    {
+      "id": 665,
+      "title": "placeat quibusdam aut",
+      "author": "Ardella Walker",
+      "rating": 3.9,
+      "year_published": 1860
+    },
+    {
+      "id": 666,
+      "title": "velit dolorem",
+      "author": "Clemmie Carroll",
+      "rating": 3.9,
+      "year_published": 1875
+    },
+    {
+      "id": 667,
+      "title": "reprehenderit mollitia ipsa consequatur",
+      "author": "Westley Kihn",
+      "rating": 1,
+      "year_published": 1853
+    },
+    {
+      "id": 668,
+      "title": "voluptatem pariatur assumenda dolore accusamus omnis",
+      "author": "Johnson Boyle",
+      "rating": 0.85,
+      "year_published": 1914
+    },
+    {
+      "id": 669,
+      "title": "veniam necessitatibus rem dicta suscipit",
+      "author": "Mercedes Beahan",
+      "rating": 1.55,
+      "year_published": 1964
+    },
+    {
+      "id": 670,
+      "title": "eligendi reprehenderit",
+      "author": "Aracely Thiel",
+      "rating": 4.35,
+      "year_published": 1889
+    },
+    {
+      "id": 671,
+      "title": "ad praesentium",
+      "author": "Bernard Lesch",
+      "rating": 2.9,
+      "year_published": 1922
+    },
+    {
+      "id": 672,
+      "title": "error magnam quis",
+      "author": "Darlene Roberts",
+      "rating": 3,
+      "year_published": 1982
+    },
+    {
+      "id": 673,
+      "title": "est libero eligendi nobis",
+      "author": "Merle Miller",
+      "rating": 1.25,
+      "year_published": 1811
+    },
+    {
+      "id": 674,
+      "title": "eum blanditiis deleniti perspiciatis aspernatur",
+      "author": "Chyna Murazik",
+      "rating": 3.25,
+      "year_published": 1774
+    },
+    {
+      "id": 675,
+      "title": "error dolorem quia",
+      "author": "Hipolito Wolff",
+      "rating": 0.95,
+      "year_published": 2015
+    },
+    {
+      "id": 676,
+      "title": "nulla voluptatem provident velit atque iusto",
+      "author": "Julius Johnston",
+      "rating": 1.45,
+      "year_published": 1750
+    },
+    {
+      "id": 677,
+      "title": "quo placeat autem cumque hic",
+      "author": "Liana Rowe",
+      "rating": 3.2,
+      "year_published": 1897
+    },
+    {
+      "id": 678,
+      "title": "eum sed labore et",
+      "author": "Emie Wilkinson",
+      "rating": 2.85,
+      "year_published": 1908
+    },
+    {
+      "id": 679,
+      "title": "quisquam fuga",
+      "author": "Zella McClure",
+      "rating": 0.75,
+      "year_published": 1759
+    },
+    {
+      "id": 680,
+      "title": "eius quae",
+      "author": "Fredy Mayert",
+      "rating": 4,
+      "year_published": 1999
+    },
+    {
+      "id": 681,
+      "title": "ad et",
+      "author": "Kariane Gibson",
+      "rating": 0.7,
+      "year_published": 1746
+    },
+    {
+      "id": 682,
+      "title": "consequatur aut qui est minima",
+      "author": "Alayna Miller",
+      "rating": 3,
+      "year_published": 1827
+    },
+    {
+      "id": 683,
+      "title": "voluptatem",
+      "author": "Dedrick Koelpin",
+      "rating": 1.45,
+      "year_published": 1848
+    },
+    {
+      "id": 684,
+      "title": "modi omnis dolor ut illo",
+      "author": "Carlie Hills",
+      "rating": 3.2,
+      "year_published": 1885
+    },
+    {
+      "id": 685,
+      "title": "eos quia id facere",
+      "author": "Lesley Kassulke",
+      "rating": 4.85,
+      "year_published": 1721
+    },
+    {
+      "id": 686,
+      "title": "quia autem iusto laudantium",
+      "author": "Justine Funk",
+      "rating": 1.4,
+      "year_published": 1981
+    },
+    {
+      "id": 687,
+      "title": "vero harum qui nihil",
+      "author": "Gustave Fisher",
+      "rating": 5,
+      "year_published": 1857
+    },
+    {
+      "id": 688,
+      "title": "asperiores quisquam corporis",
+      "author": "Keshawn Kessler",
+      "rating": 0.2,
+      "year_published": 1907
+    },
+    {
+      "id": 689,
+      "title": "accusamus delectus voluptate corrupti qui",
+      "author": "Audra Kilback",
+      "rating": 1.25,
+      "year_published": 1887
+    },
+    {
+      "id": 690,
+      "title": "corporis blanditiis qui voluptatibus ut",
+      "author": "Celia Bartell",
+      "rating": 3.5,
+      "year_published": 1968
+    },
+    {
+      "id": 691,
+      "title": "dolorem",
+      "author": "Itzel Donnelly",
+      "rating": 2.9,
+      "year_published": 1744
+    },
+    {
+      "id": 692,
+      "title": "dicta et",
+      "author": "Bradly Mohr",
+      "rating": 0.2,
+      "year_published": 2008
+    },
+    {
+      "id": 693,
+      "title": "deleniti natus quod sequi",
+      "author": "Karelle Pollich",
+      "rating": 0.35,
+      "year_published": 1769
+    },
+    {
+      "id": 694,
+      "title": "aut quas a eaque",
+      "author": "Cara Streich",
+      "rating": 0.55,
+      "year_published": 2011
+    },
+    {
+      "id": 695,
+      "title": "natus neque officiis sed qui",
+      "author": "Keaton Baumbach",
+      "rating": 4.75,
+      "year_published": 1953
+    },
+    {
+      "id": 696,
+      "title": "velit tenetur iure dolor ad",
+      "author": "Arlo Pfeffer",
+      "rating": 4.2,
+      "year_published": 2000
+    },
+    {
+      "id": 697,
+      "title": "quo voluptatem voluptas accusamus quam",
+      "author": "Juliet Erdman",
+      "rating": 2.75,
+      "year_published": 1970
+    },
+    {
+      "id": 698,
+      "title": "non perferendis repellendus dolorum",
+      "author": "Ebba Denesik",
+      "rating": 3.9,
+      "year_published": 1940
+    },
+    {
+      "id": 699,
+      "title": "possimus ea aperiam",
+      "author": "Ella Smitham",
+      "rating": 2.45,
+      "year_published": 1859
+    },
+    {
+      "id": 700,
+      "title": "qui omnis",
+      "author": "Makenna Parker",
+      "rating": 1.85,
+      "year_published": 2002
+    },
+    {
+      "id": 701,
+      "title": "a",
+      "author": "Larry Jacobson",
+      "rating": 3.5,
+      "year_published": 1924
+    },
+    {
+      "id": 702,
+      "title": "dolores vero quia",
+      "author": "Suzanne Mosciski",
+      "rating": 3.75,
+      "year_published": 1727
+    },
+    {
+      "id": 703,
+      "title": "fuga aliquam officia qui rerum ut",
+      "author": "Christine Bradtke",
+      "rating": 4.4,
+      "year_published": 1940
+    },
+    {
+      "id": 704,
+      "title": "error labore",
+      "author": "Ansley Heller",
+      "rating": 0.4,
+      "year_published": 1805
+    },
+    {
+      "id": 705,
+      "title": "ut cum nisi quibusdam",
+      "author": "Brannon Lynch",
+      "rating": 0.05,
+      "year_published": 1993
+    },
+    {
+      "id": 706,
+      "title": "in tenetur aut non",
+      "author": "Rene Windler",
+      "rating": 2.9,
+      "year_published": 1887
+    },
+    {
+      "id": 707,
+      "title": "quisquam",
+      "author": "Pauline Cruickshank",
+      "rating": 4.2,
+      "year_published": 1909
+    },
+    {
+      "id": 708,
+      "title": "optio totam quia aut fugiat",
+      "author": "Jaylan Roob",
+      "rating": 3,
+      "year_published": 1980
+    },
+    {
+      "id": 709,
+      "title": "consequatur",
+      "author": "Alessandro Metz",
+      "rating": 3.15,
+      "year_published": 1743
+    },
+    {
+      "id": 710,
+      "title": "ut",
+      "author": "Lilliana Ullrich",
+      "rating": 0.9,
+      "year_published": 1824
+    },
+    {
+      "id": 711,
+      "title": "et",
+      "author": "Tamia Bode",
+      "rating": 2,
+      "year_published": 1907
+    },
+    {
+      "id": 712,
+      "title": "veritatis architecto explicabo velit",
+      "author": "Jaiden Schimmel",
+      "rating": 2.9,
+      "year_published": 1828
+    },
+    {
+      "id": 713,
+      "title": "rerum at quia eligendi eius",
+      "author": "Gordon Ledner",
+      "rating": 2.2,
+      "year_published": 1831
+    },
+    {
+      "id": 714,
+      "title": "quisquam nihil voluptas vel et",
+      "author": "Richie Schmidt",
+      "rating": 0.85,
+      "year_published": 1794
+    },
+    {
+      "id": 715,
+      "title": "nesciunt ut officia culpa",
+      "author": "Kaylie Ratke",
+      "rating": 0.6,
+      "year_published": 1913
+    },
+    {
+      "id": 716,
+      "title": "nobis id quasi",
+      "author": "Maxine Leannon",
+      "rating": 1.6,
+      "year_published": 1833
+    },
+    {
+      "id": 717,
+      "title": "a quis",
+      "author": "Aurore Hauck",
+      "rating": 0.25,
+      "year_published": 1940
+    },
+    {
+      "id": 718,
+      "title": "et sed voluptatibus assumenda occaecati",
+      "author": "Pablo Jacobi",
+      "rating": 3.8,
+      "year_published": 1796
+    },
+    {
+      "id": 719,
+      "title": "rerum velit recusandae in ut",
+      "author": "Renee Jaskolski",
+      "rating": 3.65,
+      "year_published": 1855
+    },
+    {
+      "id": 720,
+      "title": "hic itaque necessitatibus placeat sit dolor",
+      "author": "Gilbert Upton",
+      "rating": 2.2,
+      "year_published": 1840
+    },
+    {
+      "id": 721,
+      "title": "ex optio",
+      "author": "Monroe Terry",
+      "rating": 4.9,
+      "year_published": 1819
+    },
+    {
+      "id": 722,
+      "title": "rerum sequi soluta et explicabo modi",
+      "author": "Berniece Blanda",
+      "rating": 4.35,
+      "year_published": 1843
+    },
+    {
+      "id": 723,
+      "title": "similique sint in",
+      "author": "Tamara Dach",
+      "rating": 1.7,
+      "year_published": 1917
+    },
+    {
+      "id": 724,
+      "title": "possimus est omnis",
+      "author": "Eladio Windler",
+      "rating": 0.5,
+      "year_published": 1833
+    },
+    {
+      "id": 725,
+      "title": "quis laborum mollitia",
+      "author": "Kurtis Simonis",
+      "rating": 2.2,
+      "year_published": 1761
+    },
+    {
+      "id": 726,
+      "title": "et",
+      "author": "Mike Conn",
+      "rating": 0.85,
+      "year_published": 1836
+    },
+    {
+      "id": 727,
+      "title": "aperiam numquam omnis enim odio ea",
+      "author": "Donavon Okuneva",
+      "rating": 4.4,
+      "year_published": 1972
+    },
+    {
+      "id": 728,
+      "title": "adipisci est aperiam",
+      "author": "Gay Johnston",
+      "rating": 2.4,
+      "year_published": 1883
+    },
+    {
+      "id": 729,
+      "title": "dignissimos est omnis eaque provident",
+      "author": "Angel Legros",
+      "rating": 2.1,
+      "year_published": 1842
+    },
+    {
+      "id": 730,
+      "title": "excepturi dolor vel ut consequatur",
+      "author": "Nicolas Abshire",
+      "rating": 2.45,
+      "year_published": 1967
+    },
+    {
+      "id": 731,
+      "title": "excepturi ipsum vero officiis et quia",
+      "author": "Jaiden Block",
+      "rating": 1.1,
+      "year_published": 1719
+    },
+    {
+      "id": 732,
+      "title": "est",
+      "author": "Susanna Goyette",
+      "rating": 3.75,
+      "year_published": 1752
+    },
+    {
+      "id": 733,
+      "title": "asperiores eum aut et",
+      "author": "Michele Senger",
+      "rating": 1,
+      "year_published": 1730
+    },
+    {
+      "id": 734,
+      "title": "reiciendis et sunt officia",
+      "author": "Hassan Ortiz",
+      "rating": 1.6,
+      "year_published": 1873
+    },
+    {
+      "id": 735,
+      "title": "commodi vero vel rerum",
+      "author": "Micaela Bednar",
+      "rating": 4.3,
+      "year_published": 1875
+    },
+    {
+      "id": 736,
+      "title": "eveniet maxime earum in consectetur",
+      "author": "Alysson Goldner",
+      "rating": 3.4,
+      "year_published": 1788
+    },
+    {
+      "id": 737,
+      "title": "optio rem ratione cupiditate est",
+      "author": "Angus McClure",
+      "rating": 2.3,
+      "year_published": 1958
+    },
+    {
+      "id": 738,
+      "title": "non non",
+      "author": "Mallie Fadel",
+      "rating": 1.05,
+      "year_published": 1941
+    },
+    {
+      "id": 739,
+      "title": "deserunt voluptatum non",
+      "author": "Rosa Pagac",
+      "rating": 0.8,
+      "year_published": 1853
+    },
+    {
+      "id": 740,
+      "title": "aspernatur ut modi consequatur quia",
+      "author": "Sydney Olson",
+      "rating": 1.6,
+      "year_published": 1820
+    },
+    {
+      "id": 741,
+      "title": "cupiditate et mollitia voluptatibus a",
+      "author": "Milan Aufderhar",
+      "rating": 2.2,
+      "year_published": 1950
+    },
+    {
+      "id": 742,
+      "title": "aliquam dolores",
+      "author": "Eulah Jenkins",
+      "rating": 2.55,
+      "year_published": 1911
+    },
+    {
+      "id": 743,
+      "title": "quo dolorem repudiandae libero eveniet voluptatem",
+      "author": "Angelo Altenwerth",
+      "rating": 2.6,
+      "year_published": 1705
+    },
+    {
+      "id": 744,
+      "title": "ratione odit",
+      "author": "Bailey Kirlin",
+      "rating": 1.35,
+      "year_published": 1708
+    },
+    {
+      "id": 745,
+      "title": "cupiditate mollitia quia",
+      "author": "Sage Reynolds",
+      "rating": 0.45,
+      "year_published": 2005
+    },
+    {
+      "id": 746,
+      "title": "voluptatem iusto",
+      "author": "Raquel Thiel",
+      "rating": 0.35,
+      "year_published": 1745
+    },
+    {
+      "id": 747,
+      "title": "voluptatem",
+      "author": "Morgan Raynor",
+      "rating": 1.4,
+      "year_published": 2014
+    },
+    {
+      "id": 748,
+      "title": "deserunt deleniti",
+      "author": "Herta Weimann",
+      "rating": 4.55,
+      "year_published": 1758
+    },
+    {
+      "id": 749,
+      "title": "tempore eum debitis",
+      "author": "Rocky Toy",
+      "rating": 3.65,
+      "year_published": 2003
+    },
+    {
+      "id": 750,
+      "title": "magnam quia",
+      "author": "Donald Bernhard",
+      "rating": 2.75,
+      "year_published": 1979
+    },
+    {
+      "id": 751,
+      "title": "alias ea sit aliquam",
+      "author": "Garrett Mraz",
+      "rating": 3.6,
+      "year_published": 1701
+    },
+    {
+      "id": 752,
+      "title": "voluptatum nostrum eveniet est fugit",
+      "author": "Chandler Kris",
+      "rating": 0.5,
+      "year_published": 1875
+    },
+    {
+      "id": 753,
+      "title": "est accusamus",
+      "author": "Olen Considine",
+      "rating": 1.6,
+      "year_published": 1992
+    },
+    {
+      "id": 754,
+      "title": "qui excepturi aut accusantium reprehenderit cupiditate",
+      "author": "Cecilia Considine",
+      "rating": 0.95,
+      "year_published": 1913
+    },
+    {
+      "id": 755,
+      "title": "consequatur aut eius error",
+      "author": "Lennie Altenwerth",
+      "rating": 4.6,
+      "year_published": 1895
+    },
+    {
+      "id": 756,
+      "title": "quia facilis corrupti",
+      "author": "Demario Rath",
+      "rating": 0.45,
+      "year_published": 1788
+    },
+    {
+      "id": 757,
+      "title": "itaque minima",
+      "author": "Karlie Kuvalis",
+      "rating": 1.55,
+      "year_published": 1837
+    },
+    {
+      "id": 758,
+      "title": "natus",
+      "author": "Odell Purdy",
+      "rating": 0.1,
+      "year_published": 1712
+    },
+    {
+      "id": 759,
+      "title": "accusamus veritatis officia",
+      "author": "Uriah Mitchell",
+      "rating": 4.25,
+      "year_published": 1714
+    },
+    {
+      "id": 760,
+      "title": "quidem quia impedit",
+      "author": "Delia Schimmel",
+      "rating": 3.05,
+      "year_published": 1757
+    },
+    {
+      "id": 761,
+      "title": "voluptatem",
+      "author": "Carole Raynor",
+      "rating": 4.55,
+      "year_published": 1708
+    },
+    {
+      "id": 762,
+      "title": "enim est beatae nobis velit",
+      "author": "Jalen Christiansen",
+      "rating": 2,
+      "year_published": 1732
+    },
+    {
+      "id": 763,
+      "title": "tempora est",
+      "author": "Imogene Murphy",
+      "rating": 1.1,
+      "year_published": 1803
+    },
+    {
+      "id": 764,
+      "title": "aut illo natus non rerum",
+      "author": "Celia Heidenreich",
+      "rating": 4.15,
+      "year_published": 1985
+    },
+    {
+      "id": 765,
+      "title": "consequatur",
+      "author": "Reinhold Stanton",
+      "rating": 1.45,
+      "year_published": 1810
+    },
+    {
+      "id": 766,
+      "title": "recusandae temporibus ea blanditiis sunt deserunt",
+      "author": "Marcelo Strosin",
+      "rating": 0.3,
+      "year_published": 1825
+    },
+    {
+      "id": 767,
+      "title": "ea voluptatem molestiae et dolor",
+      "author": "German Hirthe",
+      "rating": 3.1,
+      "year_published": 1944
+    },
+    {
+      "id": 768,
+      "title": "tempora maxime ut",
+      "author": "Alyson Glover",
+      "rating": 2,
+      "year_published": 1776
+    },
+    {
+      "id": 769,
+      "title": "ut accusamus aperiam voluptas",
+      "author": "Agustina Rippin",
+      "rating": 1.6,
+      "year_published": 1751
+    },
+    {
+      "id": 770,
+      "title": "et velit necessitatibus id praesentium",
+      "author": "Hazle Bogisich",
+      "rating": 1.7,
+      "year_published": 1702
+    },
+    {
+      "id": 771,
+      "title": "dolorum nulla recusandae praesentium",
+      "author": "Friedrich Jerde",
+      "rating": 0.85,
+      "year_published": 1707
+    },
+    {
+      "id": 772,
+      "title": "voluptatem",
+      "author": "Lorine Feest",
+      "rating": 1.45,
+      "year_published": 1805
+    },
+    {
+      "id": 773,
+      "title": "ut ut vel animi",
+      "author": "Candido Kautzer",
+      "rating": 0.95,
+      "year_published": 1840
+    },
+    {
+      "id": 774,
+      "title": "nihil velit facilis",
+      "author": "Gunnar Durgan",
+      "rating": 3.8,
+      "year_published": 1837
+    },
+    {
+      "id": 775,
+      "title": "et explicabo dolores sed modi",
+      "author": "Tristian Marks",
+      "rating": 1.5,
+      "year_published": 1744
+    },
+    {
+      "id": 776,
+      "title": "dicta aut error amet fuga",
+      "author": "Angela Ondricka",
+      "rating": 0.55,
+      "year_published": 1850
+    },
+    {
+      "id": 777,
+      "title": "aut ratione optio",
+      "author": "Barbara Breitenberg",
+      "rating": 4.2,
+      "year_published": 1744
+    },
+    {
+      "id": 778,
+      "title": "temporibus dolores explicabo",
+      "author": "Marcellus Schowalter",
+      "rating": 1.7,
+      "year_published": 1866
+    },
+    {
+      "id": 779,
+      "title": "iste",
+      "author": "Colin Cole",
+      "rating": 0.65,
+      "year_published": 1726
+    },
+    {
+      "id": 780,
+      "title": "ea provident eos et nisi",
+      "author": "Abigayle Waters",
+      "rating": 4.75,
+      "year_published": 1894
+    },
+    {
+      "id": 781,
+      "title": "et voluptates aut ipsa accusamus",
+      "author": "Wilber Haley",
+      "rating": 2.65,
+      "year_published": 1938
+    },
+    {
+      "id": 782,
+      "title": "aut quisquam nobis quisquam ut exercitationem",
+      "author": "Kaci Grant",
+      "rating": 3.55,
+      "year_published": 1878
+    },
+    {
+      "id": 783,
+      "title": "quo ex dolorem",
+      "author": "Jaycee Lesch",
+      "rating": 0.4,
+      "year_published": 1866
+    },
+    {
+      "id": 784,
+      "title": "praesentium officiis",
+      "author": "Arnoldo Dibbert",
+      "rating": 3.1,
+      "year_published": 1938
+    },
+    {
+      "id": 785,
+      "title": "eaque cumque pariatur hic rem",
+      "author": "Winifred Lubowitz",
+      "rating": 4.8,
+      "year_published": 2004
+    },
+    {
+      "id": 786,
+      "title": "soluta reiciendis aperiam consequuntur est",
+      "author": "Sallie Keeling",
+      "rating": 1.3,
+      "year_published": 1719
+    },
+    {
+      "id": 787,
+      "title": "consequuntur corporis eaque nihil temporibus est",
+      "author": "Dillon Bode",
+      "rating": 0.8,
+      "year_published": 1708
+    },
+    {
+      "id": 788,
+      "title": "voluptates eius",
+      "author": "Lessie Schumm",
+      "rating": 0.15,
+      "year_published": 1812
+    },
+    {
+      "id": 789,
+      "title": "magni ab",
+      "author": "Marilou Roob",
+      "rating": 2.5,
+      "year_published": 1892
+    },
+    {
+      "id": 790,
+      "title": "labore repudiandae reiciendis nobis",
+      "author": "Providenci Mueller",
+      "rating": 1.85,
+      "year_published": 1825
+    },
+    {
+      "id": 791,
+      "title": "tempore asperiores neque",
+      "author": "Adan Rippin",
+      "rating": 0.8,
+      "year_published": 1754
+    },
+    {
+      "id": 792,
+      "title": "doloribus",
+      "author": "Wilburn Hegmann",
+      "rating": 0.95,
+      "year_published": 1765
+    },
+    {
+      "id": 793,
+      "title": "optio maxime pariatur",
+      "author": "Silas Cummerata",
+      "rating": 0.95,
+      "year_published": 1806
+    },
+    {
+      "id": 794,
+      "title": "sed assumenda ad et reiciendis",
+      "author": "Vergie Morissette",
+      "rating": 1.6,
+      "year_published": 1884
+    },
+    {
+      "id": 795,
+      "title": "est tenetur quod et omnis",
+      "author": "Mylene Schuppe",
+      "rating": 1.5,
+      "year_published": 2010
+    },
+    {
+      "id": 796,
+      "title": "asperiores qui nam",
+      "author": "Tia Turner",
+      "rating": 4.6,
+      "year_published": 1830
+    },
+    {
+      "id": 797,
+      "title": "reiciendis reprehenderit voluptas officia",
+      "author": "Lamont Jones",
+      "rating": 2.9,
+      "year_published": 1882
+    },
+    {
+      "id": 798,
+      "title": "saepe aut non",
+      "author": "Lennie Hodkiewicz",
+      "rating": 2.65,
+      "year_published": 1951
+    },
+    {
+      "id": 799,
+      "title": "aut quo at sit",
+      "author": "Jodie Kuhlman",
+      "rating": 5,
+      "year_published": 1913
+    },
+    {
+      "id": 800,
+      "title": "amet",
+      "author": "Rigoberto Turcotte",
+      "rating": 3.9,
+      "year_published": 1836
+    },
+    {
+      "id": 801,
+      "title": "nostrum voluptatem nobis provident praesentium quas",
+      "author": "Cristina Marks",
+      "rating": 3.7,
+      "year_published": 1719
+    },
+    {
+      "id": 802,
+      "title": "non ea voluptates",
+      "author": "Linwood Lindgren",
+      "rating": 0.75,
+      "year_published": 1735
+    },
+    {
+      "id": 803,
+      "title": "quia occaecati ad",
+      "author": "Joana White",
+      "rating": 2.05,
+      "year_published": 1742
+    },
+    {
+      "id": 804,
+      "title": "iusto",
+      "author": "Noemie Gottlieb",
+      "rating": 1.85,
+      "year_published": 1931
+    },
+    {
+      "id": 805,
+      "title": "molestias exercitationem",
+      "author": "Bryce Walker",
+      "rating": 1,
+      "year_published": 1771
+    },
+    {
+      "id": 806,
+      "title": "qui quia dolores",
+      "author": "Cruz Kirlin",
+      "rating": 4.35,
+      "year_published": 1743
+    },
+    {
+      "id": 807,
+      "title": "similique",
+      "author": "Neha Cormier",
+      "rating": 4.1,
+      "year_published": 2008
+    },
+    {
+      "id": 808,
+      "title": "consectetur dolorum voluptates cumque eaque iure",
+      "author": "Clement Wilderman",
+      "rating": 0.8,
+      "year_published": 1965
+    },
+    {
+      "id": 809,
+      "title": "qui omnis iure voluptatem",
+      "author": "Bernhard Wyman",
+      "rating": 2.9,
+      "year_published": 1985
+    },
+    {
+      "id": 810,
+      "title": "consectetur in",
+      "author": "Gennaro Frami",
+      "rating": 0.25,
+      "year_published": 1842
+    },
+    {
+      "id": 811,
+      "title": "quaerat corporis nihil nihil dicta",
+      "author": "Peggie Lockman",
+      "rating": 2.2,
+      "year_published": 1714
+    },
+    {
+      "id": 812,
+      "title": "amet quia consectetur quisquam",
+      "author": "Nicole Balistreri",
+      "rating": 0.55,
+      "year_published": 1825
+    },
+    {
+      "id": 813,
+      "title": "earum asperiores officiis dicta",
+      "author": "Juston Considine",
+      "rating": 0.5,
+      "year_published": 1944
+    },
+    {
+      "id": 814,
+      "title": "natus tempore quia rerum magnam officiis",
+      "author": "Kory Spencer",
+      "rating": 3.55,
+      "year_published": 1782
+    },
+    {
+      "id": 815,
+      "title": "et dolores",
+      "author": "Janick Cummings",
+      "rating": 3.2,
+      "year_published": 1867
+    },
+    {
+      "id": 816,
+      "title": "debitis ad autem autem",
+      "author": "Norwood Davis",
+      "rating": 4.1,
+      "year_published": 1791
+    },
+    {
+      "id": 817,
+      "title": "maiores occaecati doloribus eaque nobis",
+      "author": "Kelley Franecki",
+      "rating": 0.75,
+      "year_published": 1760
+    },
+    {
+      "id": 818,
+      "title": "totam omnis architecto",
+      "author": "Brian Abshire",
+      "rating": 0.5,
+      "year_published": 1858
+    },
+    {
+      "id": 819,
+      "title": "perferendis ut",
+      "author": "Maiya Koepp",
+      "rating": 3.65,
+      "year_published": 1844
+    },
+    {
+      "id": 820,
+      "title": "consequatur sunt",
+      "author": "Vivian Dickinson",
+      "rating": 1.45,
+      "year_published": 1705
+    },
+    {
+      "id": 821,
+      "title": "nihil ipsam",
+      "author": "Mabelle Blanda",
+      "rating": 2.75,
+      "year_published": 1906
+    },
+    {
+      "id": 822,
+      "title": "sed molestias dicta",
+      "author": "Lisette Jones",
+      "rating": 2.8,
+      "year_published": 1855
+    },
+    {
+      "id": 823,
+      "title": "eum ipsa sapiente ratione",
+      "author": "Elyssa Spencer",
+      "rating": 4.3,
+      "year_published": 1715
+    },
+    {
+      "id": 824,
+      "title": "fugit eos non explicabo dolorem",
+      "author": "Ethel Marvin",
+      "rating": 2.7,
+      "year_published": 1869
+    },
+    {
+      "id": 825,
+      "title": "laudantium quisquam reiciendis eaque fugiat qui",
+      "author": "Norberto Abernathy",
+      "rating": 0.35,
+      "year_published": 1825
+    },
+    {
+      "id": 826,
+      "title": "nulla nobis ex",
+      "author": "Branson Wiza",
+      "rating": 4.45,
+      "year_published": 1926
+    },
+    {
+      "id": 827,
+      "title": "dicta maiores explicabo",
+      "author": "Ruthie Moore",
+      "rating": 2.95,
+      "year_published": 1807
+    },
+    {
+      "id": 828,
+      "title": "odio",
+      "author": "Christa Lebsack",
+      "rating": 2,
+      "year_published": 1980
+    },
+    {
+      "id": 829,
+      "title": "maiores adipisci neque",
+      "author": "Eugene Botsford",
+      "rating": 2.2,
+      "year_published": 1935
+    },
+    {
+      "id": 830,
+      "title": "aut consequuntur deserunt cupiditate nihil fugiat",
+      "author": "Janice Johnson",
+      "rating": 0.95,
+      "year_published": 1985
+    },
+    {
+      "id": 831,
+      "title": "fuga perferendis consequatur tempore error",
+      "author": "Charles Feeney",
+      "rating": 3.75,
+      "year_published": 1977
+    },
+    {
+      "id": 832,
+      "title": "aut eius nam recusandae illum",
+      "author": "Sophia Muller",
+      "rating": 1.75,
+      "year_published": 1860
+    },
+    {
+      "id": 833,
+      "title": "voluptates",
+      "author": "Carleton Stark",
+      "rating": 1.95,
+      "year_published": 1841
+    },
+    {
+      "id": 834,
+      "title": "neque ut sit ea",
+      "author": "Ima Turcotte",
+      "rating": 2,
+      "year_published": 1902
+    },
+    {
+      "id": 835,
+      "title": "est quibusdam placeat",
+      "author": "Rylee Stamm",
+      "rating": 0.05,
+      "year_published": 1973
+    },
+    {
+      "id": 836,
+      "title": "sunt possimus dolorem",
+      "author": "Earline Rosenbaum",
+      "rating": 0.25,
+      "year_published": 1957
+    },
+    {
+      "id": 837,
+      "title": "sit nulla optio ea",
+      "author": "Jamie Skiles",
+      "rating": 4.5,
+      "year_published": 1870
+    },
+    {
+      "id": 838,
+      "title": "distinctio illum nemo vitae nemo",
+      "author": "Darren Murray",
+      "rating": 3.95,
+      "year_published": 1964
+    },
+    {
+      "id": 839,
+      "title": "sequi",
+      "author": "Gloria Collins",
+      "rating": 0.15,
+      "year_published": 1801
+    },
+    {
+      "id": 840,
+      "title": "id aut laboriosam doloribus sed",
+      "author": "Pattie Russel",
+      "rating": 0.3,
+      "year_published": 1739
+    },
+    {
+      "id": 841,
+      "title": "temporibus",
+      "author": "Kayla Mohr",
+      "rating": 2,
+      "year_published": 1731
+    },
+    {
+      "id": 842,
+      "title": "non",
+      "author": "Frederic Purdy",
+      "rating": 4.4,
+      "year_published": 1849
+    },
+    {
+      "id": 843,
+      "title": "consequuntur rerum voluptatum",
+      "author": "Earl Hodkiewicz",
+      "rating": 1.8,
+      "year_published": 1736
+    },
+    {
+      "id": 844,
+      "title": "qui laboriosam explicabo quasi ipsa dolores",
+      "author": "Zoila Wyman",
+      "rating": 1.1,
+      "year_published": 1874
+    },
+    {
+      "id": 845,
+      "title": "harum maxime et quisquam voluptatem error",
+      "author": "Johnathan Waelchi",
+      "rating": 3.35,
+      "year_published": 1732
+    },
+    {
+      "id": 846,
+      "title": "nam",
+      "author": "Donny Beahan",
+      "rating": 4.5,
+      "year_published": 1834
+    },
+    {
+      "id": 847,
+      "title": "voluptate earum beatae laborum veritatis",
+      "author": "Lucius Eichmann",
+      "rating": 4.65,
+      "year_published": 1831
+    },
+    {
+      "id": 848,
+      "title": "et culpa tempora",
+      "author": "Landen Swaniawski",
+      "rating": 1.15,
+      "year_published": 1771
+    },
+    {
+      "id": 849,
+      "title": "voluptatum enim nisi eius adipisci qui",
+      "author": "Tara McKenzie",
+      "rating": 3.2,
+      "year_published": 1819
+    },
+    {
+      "id": 850,
+      "title": "ut quibusdam",
+      "author": "Maryjane Hahn",
+      "rating": 0.5,
+      "year_published": 1760
+    },
+    {
+      "id": 851,
+      "title": "deleniti assumenda recusandae qui sint",
+      "author": "Maverick Wuckert",
+      "rating": 2.2,
+      "year_published": 1740
+    },
+    {
+      "id": 852,
+      "title": "id",
+      "author": "Stephen Flatley",
+      "rating": 0.55,
+      "year_published": 1831
+    },
+    {
+      "id": 853,
+      "title": "omnis eum",
+      "author": "Boyd Senger",
+      "rating": 1.7,
+      "year_published": 1949
+    },
+    {
+      "id": 854,
+      "title": "voluptatibus possimus quis sit et sed",
+      "author": "Kamren Morar",
+      "rating": 0.7,
+      "year_published": 1736
+    },
+    {
+      "id": 855,
+      "title": "laudantium dolor impedit recusandae",
+      "author": "Kendra Howe",
+      "rating": 3.75,
+      "year_published": 1904
+    },
+    {
+      "id": 856,
+      "title": "tenetur sit in repellat iure",
+      "author": "Annamae Heaney",
+      "rating": 4.15,
+      "year_published": 2007
+    },
+    {
+      "id": 857,
+      "title": "voluptas",
+      "author": "Regan Jacobson",
+      "rating": 4.9,
+      "year_published": 1886
+    },
+    {
+      "id": 858,
+      "title": "enim cum aliquid",
+      "author": "Francis Rodriguez",
+      "rating": 2.35,
+      "year_published": 1793
+    },
+    {
+      "id": 859,
+      "title": "voluptatum est quod doloribus",
+      "author": "Paige Kilback",
+      "rating": 0.3,
+      "year_published": 1751
+    },
+    {
+      "id": 860,
+      "title": "optio voluptatem",
+      "author": "Natalia Murazik",
+      "rating": 4.7,
+      "year_published": 1979
+    },
+    {
+      "id": 861,
+      "title": "nostrum sit aliquid",
+      "author": "Justus Nienow",
+      "rating": 1.6,
+      "year_published": 1719
+    },
+    {
+      "id": 862,
+      "title": "molestias molestiae deleniti magnam magni fuga",
+      "author": "Omari Bergnaum",
+      "rating": 2.1,
+      "year_published": 1887
+    },
+    {
+      "id": 863,
+      "title": "velit",
+      "author": "Krystina Schaefer",
+      "rating": 0.75,
+      "year_published": 1957
+    },
+    {
+      "id": 864,
+      "title": "fugiat esse et aut ut",
+      "author": "Leila Streich",
+      "rating": 3.1,
+      "year_published": 1885
+    },
+    {
+      "id": 865,
+      "title": "autem",
+      "author": "Carmel Hansen",
+      "rating": 4.85,
+      "year_published": 1869
+    },
+    {
+      "id": 866,
+      "title": "nulla quis vel esse",
+      "author": "Evert Cronin",
+      "rating": 4.45,
+      "year_published": 1888
+    },
+    {
+      "id": 867,
+      "title": "fuga voluptatum quos sint enim",
+      "author": "Mandy Braun",
+      "rating": 0.4,
+      "year_published": 2011
+    },
+    {
+      "id": 868,
+      "title": "aut nihil cumque",
+      "author": "Darien Conroy",
+      "rating": 4.6,
+      "year_published": 1811
+    },
+    {
+      "id": 869,
+      "title": "quis qui et assumenda laudantium",
+      "author": "Alejandrin Flatley",
+      "rating": 2.65,
+      "year_published": 1735
+    },
+    {
+      "id": 870,
+      "title": "eum hic voluptatum et assumenda",
+      "author": "Kiara Runolfsdottir",
+      "rating": 2.65,
+      "year_published": 1779
+    },
+    {
+      "id": 871,
+      "title": "quis sunt nihil eius sequi",
+      "author": "Celestine Hoppe",
+      "rating": 3.7,
+      "year_published": 1816
+    },
+    {
+      "id": 872,
+      "title": "voluptas quasi qui labore",
+      "author": "Nels Sauer",
+      "rating": 4.2,
+      "year_published": 1940
+    },
+    {
+      "id": 873,
+      "title": "autem qui facere repellendus",
+      "author": "Kathleen Upton",
+      "rating": 2.35,
+      "year_published": 1731
+    },
+    {
+      "id": 874,
+      "title": "sunt nemo",
+      "author": "Antonia Haag",
+      "rating": 3.05,
+      "year_published": 1899
+    },
+    {
+      "id": 875,
+      "title": "nihil laboriosam",
+      "author": "Roma Olson",
+      "rating": 4.9,
+      "year_published": 1734
+    },
+    {
+      "id": 876,
+      "title": "doloremque ut",
+      "author": "Camylle Ruecker",
+      "rating": 1.9,
+      "year_published": 1968
+    },
+    {
+      "id": 877,
+      "title": "dignissimos at nisi",
+      "author": "Judah Shields",
+      "rating": 2.1,
+      "year_published": 1705
+    },
+    {
+      "id": 878,
+      "title": "iure illum",
+      "author": "Rita Lang",
+      "rating": 0.85,
+      "year_published": 1898
+    },
+    {
+      "id": 879,
+      "title": "quibusdam vitae harum non temporibus et",
+      "author": "Junior Thompson",
+      "rating": 0.05,
+      "year_published": 1997
+    },
+    {
+      "id": 880,
+      "title": "enim rerum sed quia est",
+      "author": "Desiree Mohr",
+      "rating": 2.8,
+      "year_published": 1726
+    },
+    {
+      "id": 881,
+      "title": "cupiditate dolore totam id",
+      "author": "Anderson Emard",
+      "rating": 1.55,
+      "year_published": 1936
+    },
+    {
+      "id": 882,
+      "title": "accusamus exercitationem quae",
+      "author": "Vivienne Stracke",
+      "rating": 3.15,
+      "year_published": 1811
+    },
+    {
+      "id": 883,
+      "title": "id et",
+      "author": "Daniella Sipes",
+      "rating": 0.25,
+      "year_published": 1827
+    },
+    {
+      "id": 884,
+      "title": "cumque neque eaque",
+      "author": "Gregg Lang",
+      "rating": 4.35,
+      "year_published": 1811
+    },
+    {
+      "id": 885,
+      "title": "praesentium consectetur et animi id quo",
+      "author": "Edna Cole",
+      "rating": 4.65,
+      "year_published": 1706
+    },
+    {
+      "id": 886,
+      "title": "qui rerum",
+      "author": "Arnold Lind",
+      "rating": 4.45,
+      "year_published": 1791
+    },
+    {
+      "id": 887,
+      "title": "illo necessitatibus tempora",
+      "author": "Laverna Jewess",
+      "rating": 2.15,
+      "year_published": 1743
+    },
+    {
+      "id": 888,
+      "title": "incidunt sunt laborum laudantium aut harum",
+      "author": "Vernie Weber",
+      "rating": 4.85,
+      "year_published": 1869
+    },
+    {
+      "id": 889,
+      "title": "facilis qui quis",
+      "author": "Pierre Quitzon",
+      "rating": 4.1,
+      "year_published": 1834
+    },
+    {
+      "id": 890,
+      "title": "veritatis sint",
+      "author": "Anissa Wolf",
+      "rating": 1.95,
+      "year_published": 1920
+    },
+    {
+      "id": 891,
+      "title": "amet nihil",
+      "author": "Ivah Leannon",
+      "rating": 3.4,
+      "year_published": 1761
+    },
+    {
+      "id": 892,
+      "title": "neque temporibus dolor",
+      "author": "Evangeline Kassulke",
+      "rating": 1.1,
+      "year_published": 1968
+    },
+    {
+      "id": 893,
+      "title": "rerum ea omnis occaecati ipsa",
+      "author": "Zula Gaylord",
+      "rating": 4.15,
+      "year_published": 1722
+    },
+    {
+      "id": 894,
+      "title": "quis adipisci amet numquam vel",
+      "author": "Olga Grant",
+      "rating": 2.8,
+      "year_published": 1914
+    },
+    {
+      "id": 895,
+      "title": "reprehenderit eum",
+      "author": "George Rolfson",
+      "rating": 3.05,
+      "year_published": 1726
+    },
+    {
+      "id": 896,
+      "title": "quia aut porro necessitatibus",
+      "author": "Aron Herman",
+      "rating": 0.85,
+      "year_published": 1839
+    },
+    {
+      "id": 897,
+      "title": "voluptatum rerum distinctio",
+      "author": "Alisha Beahan",
+      "rating": 0.65,
+      "year_published": 1993
+    },
+    {
+      "id": 898,
+      "title": "laborum tenetur aut aut",
+      "author": "Odessa Howell",
+      "rating": 2.3,
+      "year_published": 1870
+    },
+    {
+      "id": 899,
+      "title": "sapiente dolores animi aliquid mollitia",
+      "author": "Arjun Bogisich",
+      "rating": 2.05,
+      "year_published": 1738
+    },
+    {
+      "id": 900,
+      "title": "nesciunt non veritatis sunt voluptate",
+      "author": "Humberto Shanahan",
+      "rating": 2.2,
+      "year_published": 2015
+    },
+    {
+      "id": 901,
+      "title": "in minima error molestiae et",
+      "author": "Samanta Kuvalis",
+      "rating": 3.4,
+      "year_published": 1947
+    },
+    {
+      "id": 902,
+      "title": "aperiam laborum eligendi itaque quibusdam",
+      "author": "Manley Rogahn",
+      "rating": 4.1,
+      "year_published": 1987
+    },
+    {
+      "id": 903,
+      "title": "quasi aut atque",
+      "author": "Petra Larson",
+      "rating": 3.3,
+      "year_published": 1753
+    },
+    {
+      "id": 904,
+      "title": "laudantium nihil eos dolorem",
+      "author": "Ayden Stracke",
+      "rating": 2,
+      "year_published": 1970
+    },
+    {
+      "id": 905,
+      "title": "consectetur",
+      "author": "Josie Conroy",
+      "rating": 0.65,
+      "year_published": 1982
+    },
+    {
+      "id": 906,
+      "title": "facilis ex vero totam",
+      "author": "Evangeline Block",
+      "rating": 2.55,
+      "year_published": 1942
+    },
+    {
+      "id": 907,
+      "title": "consequuntur minima eius architecto qui labore",
+      "author": "Dayne Leuschke",
+      "rating": 0.95,
+      "year_published": 1890
+    },
+    {
+      "id": 908,
+      "title": "in exercitationem facere laborum molestias",
+      "author": "Christophe Stroman",
+      "rating": 4.9,
+      "year_published": 1775
+    },
+    {
+      "id": 909,
+      "title": "possimus eaque",
+      "author": "Aurelia Stroman",
+      "rating": 3.25,
+      "year_published": 1748
+    },
+    {
+      "id": 910,
+      "title": "quasi culpa consectetur excepturi dolorum neque",
+      "author": "Samara Smitham",
+      "rating": 2.25,
+      "year_published": 1745
+    },
+    {
+      "id": 911,
+      "title": "facilis est et",
+      "author": "Clare McCullough",
+      "rating": 1.25,
+      "year_published": 1863
+    },
+    {
+      "id": 912,
+      "title": "cupiditate voluptatem culpa et impedit",
+      "author": "Dashawn Koepp",
+      "rating": 1.75,
+      "year_published": 1822
+    },
+    {
+      "id": 913,
+      "title": "quaerat quia",
+      "author": "Loyal Prohaska",
+      "rating": 2.25,
+      "year_published": 1751
+    },
+    {
+      "id": 914,
+      "title": "ullam voluptatem iusto neque quo omnis",
+      "author": "Hilton Leannon",
+      "rating": 3.2,
+      "year_published": 1919
+    },
+    {
+      "id": 915,
+      "title": "occaecati eaque voluptate expedita hic",
+      "author": "Arch Marvin",
+      "rating": 4.35,
+      "year_published": 1970
+    },
+    {
+      "id": 916,
+      "title": "cum necessitatibus",
+      "author": "August Wiza",
+      "rating": 4.9,
+      "year_published": 1798
+    },
+    {
+      "id": 917,
+      "title": "minima",
+      "author": "Kirsten Thiel",
+      "rating": 3.15,
+      "year_published": 1700
+    },
+    {
+      "id": 918,
+      "title": "illum",
+      "author": "Amely Hickle",
+      "rating": 3.5,
+      "year_published": 1876
+    },
+    {
+      "id": 919,
+      "title": "debitis saepe qui aut ut",
+      "author": "Willis Hilpert",
+      "rating": 4.4,
+      "year_published": 1973
+    },
+    {
+      "id": 920,
+      "title": "earum ducimus et",
+      "author": "Hubert Schumm",
+      "rating": 0.2,
+      "year_published": 1890
+    },
+    {
+      "id": 921,
+      "title": "distinctio nobis fuga sapiente",
+      "author": "Stephany Hickle",
+      "rating": 0.05,
+      "year_published": 1923
+    },
+    {
+      "id": 922,
+      "title": "laboriosam reprehenderit",
+      "author": "Erling Reilly",
+      "rating": 3.25,
+      "year_published": 1922
+    },
+    {
+      "id": 923,
+      "title": "nisi consequatur et consequatur",
+      "author": "Brandi Maggio",
+      "rating": 4,
+      "year_published": 1971
+    },
+    {
+      "id": 924,
+      "title": "totam",
+      "author": "Trace Ferry",
+      "rating": 4.7,
+      "year_published": 1801
+    },
+    {
+      "id": 925,
+      "title": "nihil velit aliquid",
+      "author": "Delphia Botsford",
+      "rating": 4.95,
+      "year_published": 1996
+    },
+    {
+      "id": 926,
+      "title": "omnis impedit ut non eius in",
+      "author": "Marianne Lubowitz",
+      "rating": 1.5,
+      "year_published": 1760
+    },
+    {
+      "id": 927,
+      "title": "odit veniam",
+      "author": "Deshaun Schuppe",
+      "rating": 4.05,
+      "year_published": 1859
+    },
+    {
+      "id": 928,
+      "title": "ea sunt a aperiam non",
+      "author": "Lacy Frami",
+      "rating": 1.1,
+      "year_published": 1883
+    },
+    {
+      "id": 929,
+      "title": "dolor excepturi reiciendis",
+      "author": "Concepcion Howe",
+      "rating": 4.2,
+      "year_published": 1867
+    },
+    {
+      "id": 930,
+      "title": "omnis",
+      "author": "Travis Halvorson",
+      "rating": 0.15,
+      "year_published": 1855
+    },
+    {
+      "id": 931,
+      "title": "et nihil dolorem dolorum suscipit suscipit",
+      "author": "Tiara Rodriguez",
+      "rating": 0.75,
+      "year_published": 1987
+    },
+    {
+      "id": 932,
+      "title": "et iure dolorem ratione",
+      "author": "Enos Bins",
+      "rating": 3.55,
+      "year_published": 1807
+    },
+    {
+      "id": 933,
+      "title": "itaque",
+      "author": "Faustino Windler",
+      "rating": 1.05,
+      "year_published": 1754
+    },
+    {
+      "id": 934,
+      "title": "atque corporis",
+      "author": "Sadie Huel",
+      "rating": 4.75,
+      "year_published": 1871
+    },
+    {
+      "id": 935,
+      "title": "qui possimus et animi labore eligendi",
+      "author": "Laurel Kuhic",
+      "rating": 4.55,
+      "year_published": 2003
+    },
+    {
+      "id": 936,
+      "title": "non corrupti omnis adipisci",
+      "author": "Maya Bartoletti",
+      "rating": 0.35,
+      "year_published": 1914
+    },
+    {
+      "id": 937,
+      "title": "vel tempora",
+      "author": "Dorothy Dooley",
+      "rating": 0.15,
+      "year_published": 1969
+    },
+    {
+      "id": 938,
+      "title": "sunt dolor",
+      "author": "Cullen Rosenbaum",
+      "rating": 0.15,
+      "year_published": 1829
+    },
+    {
+      "id": 939,
+      "title": "porro adipisci consequatur molestiae eius tempore",
+      "author": "Lawson Dare",
+      "rating": 0.95,
+      "year_published": 1753
+    },
+    {
+      "id": 940,
+      "title": "eveniet a accusantium in voluptatem minus",
+      "author": "Walter Lindgren",
+      "rating": 2.85,
+      "year_published": 1866
+    },
+    {
+      "id": 941,
+      "title": "non aut",
+      "author": "Brianne Hane",
+      "rating": 1.5,
+      "year_published": 1956
+    },
+    {
+      "id": 942,
+      "title": "ut consectetur velit nobis",
+      "author": "Alford Koepp",
+      "rating": 0.6,
+      "year_published": 1852
+    },
+    {
+      "id": 943,
+      "title": "animi aut eligendi qui",
+      "author": "Clementine Wyman",
+      "rating": 0.5,
+      "year_published": 1794
+    },
+    {
+      "id": 944,
+      "title": "est sit fugit similique incidunt",
+      "author": "Quinten Reilly",
+      "rating": 2.35,
+      "year_published": 1863
+    },
+    {
+      "id": 945,
+      "title": "nesciunt ab non alias explicabo",
+      "author": "Sean Kuhic",
+      "rating": 0.55,
+      "year_published": 1790
+    },
+    {
+      "id": 946,
+      "title": "consectetur nobis quas nihil",
+      "author": "Bessie Pfannerstill",
+      "rating": 4.15,
+      "year_published": 1986
+    },
+    {
+      "id": 947,
+      "title": "vitae qui",
+      "author": "Alexandra Marvin",
+      "rating": 4.5,
+      "year_published": 1874
+    },
+    {
+      "id": 948,
+      "title": "sunt nulla perspiciatis error",
+      "author": "Rubie Balistreri",
+      "rating": 2.5,
+      "year_published": 1870
+    },
+    {
+      "id": 949,
+      "title": "similique consectetur illo consequatur dolorum",
+      "author": "Sheridan Larson",
+      "rating": 4.9,
+      "year_published": 1906
+    },
+    {
+      "id": 950,
+      "title": "excepturi",
+      "author": "Hulda Miller",
+      "rating": 3.95,
+      "year_published": 1712
+    },
+    {
+      "id": 951,
+      "title": "eos reprehenderit",
+      "author": "Zoey Tillman",
+      "rating": 0.25,
+      "year_published": 1977
+    },
+    {
+      "id": 952,
+      "title": "distinctio porro molestiae",
+      "author": "Keegan Pouros",
+      "rating": 4.5,
+      "year_published": 1982
+    },
+    {
+      "id": 953,
+      "title": "autem temporibus vitae pariatur",
+      "author": "Dusty Lang",
+      "rating": 2.7,
+      "year_published": 1782
+    },
+    {
+      "id": 954,
+      "title": "voluptatem provident",
+      "author": "Crawford Stamm",
+      "rating": 3.55,
+      "year_published": 1750
+    },
+    {
+      "id": 955,
+      "title": "ad quo pariatur est",
+      "author": "Kelvin Schuster",
+      "rating": 3.85,
+      "year_published": 1859
+    },
+    {
+      "id": 956,
+      "title": "nostrum saepe et",
+      "author": "Casey Hansen",
+      "rating": 4.2,
+      "year_published": 1940
+    },
+    {
+      "id": 957,
+      "title": "placeat neque mollitia delectus",
+      "author": "Kenny Mosciski",
+      "rating": 4.6,
+      "year_published": 1892
+    },
+    {
+      "id": 958,
+      "title": "commodi aliquid",
+      "author": "Aliza Runte",
+      "rating": 2.75,
+      "year_published": 1925
+    },
+    {
+      "id": 959,
+      "title": "autem excepturi ab quod sint",
+      "author": "Kyla Jacobs",
+      "rating": 3.55,
+      "year_published": 1766
+    },
+    {
+      "id": 960,
+      "title": "perferendis",
+      "author": "Abe Carroll",
+      "rating": 1.45,
+      "year_published": 1803
+    },
+    {
+      "id": 961,
+      "title": "maiores illo",
+      "author": "Pamela Runolfsdottir",
+      "rating": 1.6,
+      "year_published": 1713
+    },
+    {
+      "id": 962,
+      "title": "quae aperiam distinctio",
+      "author": "Marco Schiller",
+      "rating": 3.25,
+      "year_published": 1727
+    },
+    {
+      "id": 963,
+      "title": "voluptas voluptate provident eos nihil",
+      "author": "Vernie Weber",
+      "rating": 0.6,
+      "year_published": 1768
+    },
+    {
+      "id": 964,
+      "title": "error impedit",
+      "author": "Pat Gottlieb",
+      "rating": 4.9,
+      "year_published": 1973
+    },
+    {
+      "id": 965,
+      "title": "voluptas alias",
+      "author": "Geraldine Hoeger",
+      "rating": 4.9,
+      "year_published": 1898
+    },
+    {
+      "id": 966,
+      "title": "reiciendis dolorem sit",
+      "author": "Joy Cormier",
+      "rating": 1.3,
+      "year_published": 1803
+    },
+    {
+      "id": 967,
+      "title": "iure iste reiciendis",
+      "author": "Myah Heidenreich",
+      "rating": 3,
+      "year_published": 1784
+    },
+    {
+      "id": 968,
+      "title": "similique nobis dicta",
+      "author": "Thalia Schultz",
+      "rating": 2.3,
+      "year_published": 1832
+    },
+    {
+      "id": 969,
+      "title": "consectetur maiores",
+      "author": "Giles Wintheiser",
+      "rating": 4.6,
+      "year_published": 1910
+    },
+    {
+      "id": 970,
+      "title": "aspernatur vel natus vel magnam",
+      "author": "Brown Osinski",
+      "rating": 2.3,
+      "year_published": 1922
+    },
+    {
+      "id": 971,
+      "title": "qui voluptas",
+      "author": "William Batz",
+      "rating": 4.15,
+      "year_published": 1713
+    },
+    {
+      "id": 972,
+      "title": "iusto sit",
+      "author": "Ottilie Shields",
+      "rating": 1.2,
+      "year_published": 1884
+    },
+    {
+      "id": 973,
+      "title": "alias",
+      "author": "Taurean Lehner",
+      "rating": 3.9,
+      "year_published": 1767
+    },
+    {
+      "id": 974,
+      "title": "et",
+      "author": "Jane Farrell",
+      "rating": 4.15,
+      "year_published": 1878
+    },
+    {
+      "id": 975,
+      "title": "dolore",
+      "author": "Ella Bernier",
+      "rating": 0.4,
+      "year_published": 1796
+    },
+    {
+      "id": 976,
+      "title": "voluptas omnis iusto ratione",
+      "author": "Barry Schuster",
+      "rating": 0.5,
+      "year_published": 1926
+    },
+    {
+      "id": 977,
+      "title": "debitis temporibus sunt",
+      "author": "Mabel Breitenberg",
+      "rating": 0.7,
+      "year_published": 1940
+    },
+    {
+      "id": 978,
+      "title": "voluptatum esse ratione",
+      "author": "Neil Koss",
+      "rating": 1.15,
+      "year_published": 1845
+    },
+    {
+      "id": 979,
+      "title": "modi et autem",
+      "author": "Marco Franecki",
+      "rating": 2.75,
+      "year_published": 1720
+    },
+    {
+      "id": 980,
+      "title": "id",
+      "author": "Lionel Lang",
+      "rating": 2.05,
+      "year_published": 1707
+    },
+    {
+      "id": 981,
+      "title": "facere explicabo assumenda optio corrupti",
+      "author": "Selmer Stark",
+      "rating": 3.1,
+      "year_published": 1704
+    },
+    {
+      "id": 982,
+      "title": "est aut",
+      "author": "Alden Kilback",
+      "rating": 0.65,
+      "year_published": 1938
+    },
+    {
+      "id": 983,
+      "title": "nam",
+      "author": "Iliana Keeling",
+      "rating": 5,
+      "year_published": 1953
+    },
+    {
+      "id": 984,
+      "title": "qui aut nisi maiores",
+      "author": "Lillie Flatley",
+      "rating": 2.6,
+      "year_published": 1826
+    },
+    {
+      "id": 985,
+      "title": "voluptatem",
+      "author": "Naomie Mueller",
+      "rating": 2.35,
+      "year_published": 1744
+    },
+    {
+      "id": 986,
+      "title": "veritatis reprehenderit similique sit accusantium",
+      "author": "Hershel Hermann",
+      "rating": 4.3,
+      "year_published": 1918
+    },
+    {
+      "id": 987,
+      "title": "nulla dicta",
+      "author": "Lynn Altenwerth",
+      "rating": 1.1,
+      "year_published": 2005
+    },
+    {
+      "id": 988,
+      "title": "atque est odio enim",
+      "author": "Trevion Hettinger",
+      "rating": 3.3,
+      "year_published": 1774
+    },
+    {
+      "id": 989,
+      "title": "odit dolor",
+      "author": "Dorian Von",
+      "rating": 2.4,
+      "year_published": 1877
+    },
+    {
+      "id": 990,
+      "title": "atque ut sequi voluptas",
+      "author": "Rosemary Lowe",
+      "rating": 2.6,
+      "year_published": 1895
+    },
+    {
+      "id": 991,
+      "title": "minima fugit quae dolorem beatae",
+      "author": "Carmel Upton",
+      "rating": 3.95,
+      "year_published": 1922
+    },
+    {
+      "id": 992,
+      "title": "earum ut harum qui",
+      "author": "Consuelo Grant",
+      "rating": 1.55,
+      "year_published": 1889
+    },
+    {
+      "id": 993,
+      "title": "animi impedit aut nesciunt autem dolor",
+      "author": "Viola West",
+      "rating": 3.9,
+      "year_published": 1903
+    },
+    {
+      "id": 994,
+      "title": "iste et",
+      "author": "Unique Ernser",
+      "rating": 3.05,
+      "year_published": 1897
+    },
+    {
+      "id": 995,
+      "title": "aliquid ipsam consectetur",
+      "author": "Ansel Corwin",
+      "rating": 4,
+      "year_published": 1705
+    },
+    {
+      "id": 996,
+      "title": "expedita veniam",
+      "author": "Aubree Zemlak",
+      "rating": 0.4,
+      "year_published": 1865
+    },
+    {
+      "id": 997,
+      "title": "ex sit beatae voluptatem culpa mollitia",
+      "author": "Morton Rippin",
+      "rating": 4,
+      "year_published": 1977
+    },
+    {
+      "id": 998,
+      "title": "dolores quo",
+      "author": "Adrian Murray",
+      "rating": 1.15,
+      "year_published": 2002
+    },
+    {
+      "id": 999,
+      "title": "cumque officia consequatur magnam",
+      "author": "Luis Schmitt",
+      "rating": 2.25,
+      "year_published": 1981
+    },
+    {
+      "id": 1000,
+      "title": "eius facilis quo dolore fugiat",
+      "author": "Adolph Wyman",
+      "rating": 1.95,
+      "year_published": 1836
+    },
+    {
+      "id": "1002",
+      "title": "2",
+      "author": "2",
+      "rating": "2",
+      "year_published": "2"
+    },
+    {
+      "id": "1001",
+      "title": "2",
+      "author": "2",
+      "rating": "2",
+      "year_published": "2"
+    },
+    {
+      "id": "1003",
+      "title": "3",
+      "author": "3",
+      "rating": "3",
+      "year_published": "34"
+    },
+    {
+      "id": "WIjgWHB",
+      "title": "",
+      "author": "",
+      "rating": "",
+      "year_published": ""
+    },
+    {
+      "id": "L-qN05j",
+      "title": "",
+      "author": "UserName1",
+      "rating": "",
+      "year_published": 2018
+    },
+    {
+      "id": "YoctTHu",
+      "title": "sdfghjk",
+      "author": "UserName1",
+      "rating": "",
+      "year_published": ""
+    },
+    {
+      "id": "AEFBAtp",
+      "title": "",
+      "author": "UserName2",
+      "rating": ""
+    },
+    {
+      "id": "mtMMjkX",
+      "title": "",
+      "author": "UserName1",
+      "rating": "",
+      "year_published": 2018
+    },
+    {
+      "id": "lhvWo3Y",
+      "title": "czvxc",
+      "author": "UserName1",
+      "rating": "",
+      "year_published": 2017
+    }
+  ]
+}
