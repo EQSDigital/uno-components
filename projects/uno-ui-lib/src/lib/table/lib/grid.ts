@@ -5,7 +5,7 @@ import { Deferred, getDeepFromObject } from './helpers';
 import { Column } from './data-set/column';
 import { Row } from './data-set/row';
 import { DataSet } from './data-set/data-set';
-import { UnoSmartTableSettings } from '../table.models';
+import { UnoSmartTableSettings } from '../table.interfaces';
 import { LocalDataSource } from './data-source/local/local.data-source';
 
 @Directive()

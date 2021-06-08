@@ -2,7 +2,7 @@ import { Component, OnChanges, Input, Output, EventEmitter, ChangeDetectionStrat
 import { cloneDeep } from 'lodash';
 
 import { Grid } from '../../lib/grid';
-import { ActionCustom } from '../../table.models';
+import { ActionCustom } from '../../table.interfaces';
 import { Column } from '../../lib/data-set/column';
 import { Row } from '../../lib/data-set/row';
 

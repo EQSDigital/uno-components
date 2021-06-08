@@ -1,20 +1,19 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
 import { TableComponent } from 'uno-ui-lib';
-import { UnoSmartTableSettings, LocalDataSource } from 'projects/uno-ui-lib/src/lib/table';
 
 // Components that will implemnet customized Cell Editor and Render, for delared fields @ "columns":
 import { EditorLinkComponent } from '../editor-cell-link';
 import { RenderUsernameComponent } from '../render-cell-username';
 import { RenderPickColumnComponent } from '../render-pick-cell';
 
-import { ActionCustom } from 'projects/uno-ui-lib/src/lib/table/table.models';
+import { ActionCustom, UnoSmartTableSettings } from 'projects/uno-ui-lib/src/lib/table/table.interfaces';
 import { LocalSorter } from 'projects/uno-ui-lib/src/lib/table/lib/data-source/local/local.sorter';
+import { EMAIL_REGEX } from 'projects/uno-ui-lib/src/utils/util';
+import { LocalDataSource } from 'projects/uno-ui-lib/src/lib/table';
 
 // Check @ https://stackoverflow.com/a/48123576
 declare var require: any;
-
-const EMAIL_REGEX: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 @Component({
     selector: 'basic-example',

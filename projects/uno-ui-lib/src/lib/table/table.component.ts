@@ -9,7 +9,7 @@ import { Grid } from './lib/grid';
 import { DataSource } from './lib/data-source/data-source';
 import { Row } from './lib/data-set/row';
 // Our Interface Models library for the uno-smart-table - special the enormous config Object:
-import { UnoSmartTableSettings, RowActionCustom } from './table.models';
+import { UnoSmartTableSettings, RowActionCustom } from './table.interfaces';
 
 import { deepExtend } from './lib/helpers';
 import { LocalDataSource } from './lib/data-source/local/local.data-source';
