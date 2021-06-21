@@ -137,6 +137,10 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
 
     @Output() formIsDirty = new EventEmitter<boolean>();
 
+    @Output() filesDropped = new EventEmitter();
+
+    @Output() deleteFile = new EventEmitter();
+
     @ContentChild(ModalHeaderDirective) public headerDirective: ModalHeaderDirective;
     @ContentChild(ModalFooterDirective) public footerDirective: ModalFooterDirective;
 
@@ -524,6 +528,14 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
         this.uploadForm.controls.uploadedFile.markAsDirty();
         this.uploadForm.controls.uploadedFile.setValue(null);
         this.fileName = null;
+    }
+
+    onFileDropped(evt: any) {
+        this.filesDropped.emit(evt);
+    }
+
+    onDeleteFile() {
+        this.deleteFile.emit();
     }
 
     private handleOpen(open = this.open) {

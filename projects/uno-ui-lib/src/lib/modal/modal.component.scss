@@ -42,16 +42,10 @@ span.slds-radio {
 
 /* Hide file upload Input and style around: */
 .file-to-upload-container {
-    border: dashed 1px #ccc;
-  
-    /* Individual border image properties */
-    border-image-source: url("http://ceres.eqs.local:9090/v1/image/get/d766902d-526a-4b4a-ac64-092d629e86ec.png");
-    border-image-slice: 1;
-    border-image-repeat: round;
-
-    border-radius: 4px;
-    height: 36px;
-    padding-top: 6px;
+    position: relative;
+    border-radius: 2px;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='2' ry='2' stroke='%23AABAC3FF' stroke-width='2' stroke-dasharray='5%2c 6' stroke-dashoffset='10' stroke-linecap='square'/%3e%3c/svg%3e");
+    cursor: pointer;
 }
 
 label[for=file-input] {

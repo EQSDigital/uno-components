@@ -260,11 +260,12 @@
                 <ng-template [ngSwitchCase]="'sscUploadModal'">
                     <form [formGroup]="uploadForm" class="uno-forms slds-grid slds-gutters_small slds-wrap slds-p-around--large" style="background: var(--pale-grey);">
 
-                        <div class="slds-col slds-size--1-of-1 slds-text-align_center" *ngIf="!fileName">
-                            <fieldset class="slds-form-element file-to-upload-container">
-                                <label for="file-input" [title]="'Choose a file to upload.' | translate">
+                        <div class="slds-col slds-size--1-of-1 slds-text-align_center">
+                            <fieldset class="slds-form-element file-to-upload-container" unoDragDropFile (fileDropped)="onFileDropped($event)">
+                                <label for="file-input" [title]="'chooseFileLabel' | translate">
                                     <uno-icon icon="upload" size="small" class="slds-button__icon--left"></uno-icon>
-                                    <span class="slds-m-right--small" style="font-size: 17px; color: var(--light-grey-blue);" translate>chooseFileLabel</span>
+                                    <span class="slds-m-right--small" style="font-size: 17px; color: var(--light-grey-blue);">{{ fileName || ('chooseFileLabel' | translate) }}</span>
+                                    <uno-icon icon="trash" size="x-small" class="slds-button__icon--right" (click)="onDeleteFile()"></uno-icon>
                                 </label>
                                 <input id="file-input" type="file" (change)="fileToUploadChange($event)" [accept]="acceptedTypes">
                             </fieldset>
@@ -274,12 +275,12 @@
                             <span translate>fileSizeExceed</span> {{ fileSize / 1000000 }}mb
                         </div>
 
-                        <div class="slds-col slds-size--1-of-1" *ngIf="fileName">
+                        <!-- <div class="slds-col slds-size--1-of-1" *ngIf="fileName">
                             <span class="slds-m-right--small" style="font-size: 14px; color: var(--dark-blue-grey);">{{ fileName }}</span>
                             <uno-icon *ngIf="!editData" icon="close_b" size="x-small" color="sapphire" [withOpacity]="true" class="slds-button__icon--left" (click)="removeFile(); stopPropagation($event)"></uno-icon>
                             <button *ngIf="!disableInputFile" unoButton unoType="secondary" unoSize="x-small" (click)="file.click(); stopPropagation($event)" translate>chooseFileLabel</button>
                             <input id="file-input" type="file" (change)="fileToUploadChange($event)" #file [accept]="acceptedTypes">
-                        </div>
+                        </div> -->
 
                         <div class="slds-col slds-size--1-of-1">
                             <fieldset class="slds-form-element">
