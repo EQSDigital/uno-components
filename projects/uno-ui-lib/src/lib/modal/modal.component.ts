@@ -137,8 +137,6 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
 
     @Output() formIsDirty = new EventEmitter<boolean>();
 
-    @Output() filesDropped = new EventEmitter();
-
     @Output() deleteFile = new EventEmitter();
 
     @ContentChild(ModalHeaderDirective) public headerDirective: ModalHeaderDirective;
@@ -439,23 +437,6 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
         this.uploadForm.controls[selectorName].markAsTouched();
     }
 
-    /**
-     * Our HTML5 doc uploaded Input changes:
-     */
-    fileToUploadChange(evt: File) { // In fact it's an EVENT and NOT a FILE - but somebody imposes Filter properties!
-        this.fileUploadIsToBig = false;
-        const selectedFile = evt['target'].files[0];
-
-        if (this.fileSize && selectedFile.size >= this.fileSize) {
-            this.fileUploadIsToBig = true;
-            return;
-        }
-
-        // this.fileName = selectedFile.name || '(none)';
-        this.uploadForm.controls.uploadedFile.markAsDirty();
-        this.uploadForm.controls.uploadedFile.setValue(evt);
-    }
-
 
     // As an Input() parameter to <uno-modal />, you can reset the 'docsUploadModal' template from the (exterior) instalation side:
     resetUploadForm() {
@@ -518,8 +499,9 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
         this.file = null;
     }
 
-    onFileDropped(evt: any) {
-        this.filesDropped.emit(evt);
+    onFileDropped(evt: File) {
+        this.uploadForm.controls.uploadedFile.setValue(evt);
+        this.uploadForm.controls.uploadedFile.markAsDirty();
     }
 
     onDeleteFile() {
