@@ -1,6 +1,6 @@
 import {
     Component, ChangeDetectionStrategy, OnInit, OnDestroy, Input, Output, EventEmitter,
-    ContentChild, HostListener, ElementRef, Renderer2, ChangeDetectorRef, OnChanges, SimpleChanges, AfterContentInit, Inject
+    ContentChild, HostListener, ElementRef, ChangeDetectorRef, OnChanges, SimpleChanges, AfterContentInit, Inject
 } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DOCUMENT } from '@angular/common';
@@ -163,7 +163,7 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
     // Exclusively for 'docsUploadModal' template:
     public uploadForm: FormGroup;
 
-    public fileName: any;
+    public file: any;
     public sscFileName: any;
 
     public resetDatePicker = false;
@@ -171,6 +171,14 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
     public fileUploadIsToBig = false;
 
     public dD = {} as { [key: string]: DropDownSelector };
+
+    public pickStatus: any;
+
+    public pickDocType: any;
+
+    public pickDocStatus: any;
+
+    public pickDocResult: any;
 
     private focusTrap: FocusTrap;
 
@@ -184,8 +192,6 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
 
     constructor(
         private fb: FormBuilder,
-        private modalDOM: ElementRef,
-        private renderer: Renderer2,
         private cdRef: ChangeDetectorRef,
         private focusTrapFactory: ConfigurableFocusTrapFactory,
         @Inject(DOCUMENT) private document: any,
@@ -245,7 +251,7 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
     }
 
     ngOnChanges(changes: SimpleChanges) {
-        this.fileName = null;
+        this.file = null;
         this.datePickerExpiredData = null;
         if (changes.open) {
             this.handleOpen();
@@ -294,7 +300,7 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
             }
 
             if (this.editData.documentFileName) {
-                this.fileName = this.editData.documentFileName;
+                this.file = { name: this.editData.documentFileName } as File;
             }
 
             if (this.disableInputName) {
@@ -375,7 +381,7 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
 
             if (target.closest('.slds-modal__content') === null) {
                 this.openChange.emit(false);
-                this.fileName = null;
+                this.file = null;
                 this.resetUploadForm();
                 this.closeOutside.emit();
             }
@@ -429,26 +435,8 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
             this.uploadForm.controls.sscStatus.markAsDirty();
             this.uploadForm.controls.sscStatus.setValue(selectedItem);
         }
-    }
 
-    // Clones the "formControlName" Angular Reactive Form Input's (hidden) dynamic classes (ng-valid, ng-touched...) into our UNO component
-    // - "unoDropdownTrigger" in this form's case:
-    cloneHiddenInputClasses(buttonIdx: number) {
-        if (buttonIdx) {
-            const unoModal = this.modalDOM.nativeElement;
-            // The dropdown trigger will be colorfull! ;-)
-            const unoDropdownButton: HTMLElement = unoModal.querySelectorAll('.uno-dropdown')[buttonIdx];
-            // There's only ONE <input type="hidden"> for each uno-dropdown:
-            const fakeHiddenInput: HTMLElement = unoDropdownButton.querySelector('input');
-            // Must fix initial "unoDropdownTrigger" button classes:
-            const fixedUnoDropdownClasses = 'slds-input form-control uno-dropdown ';
-            // Watch the trailing ' ' at the end! We'll be working with "classList" (strings!)
-
-            // Make it assynchronous, waiting for the Angular Form to work on Validator's classes:
-            setTimeout(() => this.renderer.setAttribute(
-                unoDropdownButton, 'class', fixedUnoDropdownClasses + fakeHiddenInput.getAttribute('class')
-            ));
-        }
+        this.uploadForm.controls[selectorName].markAsTouched();
     }
 
     /**
@@ -463,7 +451,7 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
             return;
         }
 
-        this.fileName = selectedFile.name || '(none)';
+        // this.fileName = selectedFile.name || '(none)';
         this.uploadForm.controls.uploadedFile.markAsDirty();
         this.uploadForm.controls.uploadedFile.setValue(evt);
     }
@@ -479,7 +467,7 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
         this.initDropDowns();
         // ... not forgeting the file upload fancy boxing!
         // There's only ONE:
-        this.fileName = null;
+        this.file = null;
         if (this.uploadForm) {
             this.uploadForm.reset();
             // this.uploadForm.controls.uploadedFile.setValidators(Validators.required);
@@ -527,7 +515,7 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
     removeFile() {
         this.uploadForm.controls.uploadedFile.markAsDirty();
         this.uploadForm.controls.uploadedFile.setValue(null);
-        this.fileName = null;
+        this.file = null;
     }
 
     onFileDropped(evt: any) {

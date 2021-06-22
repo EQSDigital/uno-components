@@ -11,6 +11,7 @@ import { UnoDateWeekdaysModule } from './date-weekdays/date-weekdays.module';
 import { UnoDateYearModule } from './date-year/date-year.module';
 import { UnoDatepickerModule } from './datepicker/datepicker.module';
 import { UnoDatepicker2Module } from './datepicker2/datepicker2.module';
+import { UnoDragDropFileModule } from './drag-drop-file/drag-drop-file.module';
 import { UnoDropdownModule } from './dropdown/dropdown.module';
 import { UnoIconModule } from './icon/icon.module';
 import { UnoImageCropperModule } from './image-cropper/image-cropper.module';
@@ -41,6 +42,7 @@ const MODULES = [
     UnoDateYearModule,
     UnoDatepickerModule,
     UnoDatepicker2Module,
+    UnoDragDropFileModule,
     UnoDropdownModule,
     UnoIconModule,
     UnoImageCropperModule,

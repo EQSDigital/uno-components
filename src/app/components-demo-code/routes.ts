@@ -42,6 +42,10 @@ export const routes = [
         loadChildren: () => import('./datepicker2-demo/datepicker2-demo.module').then(m => m.Datepicker2DemoModule)
     },
     {
+        path: 'drag-drop-file',
+        loadChildren: () => import('./drag-drop-file-demo/drag-drop-file-demo.module').then(m => m.DragDropFileDemoModule)
+    },
+    {
         path: 'dropdown',
         loadChildren: () => import('./dropdown-demo/dropdown-demo.module').then(m => m.DropdownDemoModule)
     },

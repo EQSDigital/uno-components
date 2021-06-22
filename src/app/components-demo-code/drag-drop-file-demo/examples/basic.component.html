@@ -1,0 +1,16 @@
+<div class="slds-p-around--large">
+    Single file
+    <uno-dragDropFile (filesDropped)="onFilesDropped($event)"></uno-dragDropFile>
+</div>
+
+<div class="slds-p-around--large">
+    Multiple files
+    <uno-dragDropFile [multipleFiles]="true" (filesDropped)="onFilesDropped($event)"></uno-dragDropFile>
+</div>
+
+<div class="slds-p-around--large">
+    Files
+    <div *ngFor="let file of files">
+        {{ file.name }}
+    </div>
+</div>

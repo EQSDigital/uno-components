@@ -8,12 +8,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalComponent } from './modal.component';
 import { ModalHeaderDirective } from './header.directive';
 import { ModalFooterDirective } from './footer.directive';
-import { DragAndDropFileDirective } from '../../utils/common-directives/drag-and-drop-files.directive';
+import { DragAndDropFileDirective } from '../drag-drop-file/drag-and-drop-files.directive';
 import { UnoButtonModule } from '../button/button.module';
 import { UnoIconModule } from '../icon/icon.module';
 import { UnoDatepicker2Module } from '../datepicker2/datepicker2.module';
 import { UnoDropdownModule } from '../dropdown/dropdown.module';
 import { UnoControlErrorModule } from '../control-error/control-error.module';
+import { UnoPicklistModule } from '../picklist/picklist.module';
+import { UnoPickModule } from '../pick/pick.module';
+import { UnoDragDropFileModule } from '../drag-drop-file/drag-drop-file.module';
 
 @NgModule({
     imports: [
@@ -27,10 +30,13 @@ import { UnoControlErrorModule } from '../control-error/control-error.module';
         UnoIconModule,
         UnoDatepicker2Module,
         UnoDropdownModule,
-        UnoControlErrorModule
+        UnoControlErrorModule,
+        UnoPicklistModule,
+        UnoPickModule,
+        UnoDragDropFileModule
     ],
     exports: [ModalComponent, ModalHeaderDirective, ModalFooterDirective],
-    declarations: [ModalComponent, ModalHeaderDirective, ModalFooterDirective, DragAndDropFileDirective],
+    declarations: [ModalComponent, ModalHeaderDirective, ModalFooterDirective],
     providers: [],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

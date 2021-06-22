@@ -104,25 +104,8 @@
                 <ng-template [ngSwitchCase]="'docsUploadModal'">
                     <form [formGroup]="uploadForm" class="uno-forms slds-grid slds-gutters_small slds-wrap slds-p-around--large" style="background: var(--pale-grey);">
 
-                        <div class="slds-col slds-size--1-of-1 slds-text-align_center" *ngIf="!fileName">
-                            <fieldset class="slds-form-element file-to-upload-container">
-                                <label for="file-input" [title]="'chooseFileUpload' | translate">
-                                    <uno-icon icon="upload" size="small" class="slds-button__icon--left"></uno-icon>
-                                    <span class="slds-m-right--small" style="font-size: 17px; color: var(--light-grey-blue);" translate>chooseFileLabel</span>
-                                </label>
-                                <input id="file-input" type="file" (change)="fileToUploadChange($event)" [accept]="acceptedTypes">
-                            </fieldset>
-                        </div>
-
-                        <div *ngIf="fileUploadIsToBig" class="slds-col" style="color: var(--vermillion)">
-                            <span translate>fileSizeExceed</span> {{ fileSize / 1000000 }}mb
-                        </div>
-
-                        <div class="slds-col slds-size--1-of-1" *ngIf="fileName">
-                            <span class="slds-m-right--small" style="font-size: 14px; color: var(--dark-blue-grey);">{{ fileName }}</span>
-                            <uno-icon *ngIf="!editData" icon="close_b" size="x-small" color="sapphire" [withOpacity]="true" class="slds-button__icon--left" (click)="removeFile(); stopPropagation($event)"></uno-icon>
-                            <button unoButton unoType="secondary" unoSize="x-small" (click)="file.click(); stopPropagation($event)" translate>chooseFileLabel</button>
-                            <input id="file-input" type="file" (change)="fileToUploadChange($event)" #file [accept]="acceptedTypes">
+                        <div class="slds-col slds-size--1-of-1">
+                            <uno-dragDropFile [file]="file" (fileDropped)="onFileDropped($event)"></uno-dragDropFile>
                         </div>
 
                         <div class="slds-col slds-size--1-of-1" *ngIf="showName">
@@ -142,24 +125,16 @@
                         <div class="slds-col slds-size_1-of-2" *ngIf="showType">
                             <fieldset class="slds-form-element">
                                 <label translate>documentTypeLabel</label>
-                                <div unoDropdown [(open)]="dD?.docType.opened">
-                                    <button unoDropdownTrigger class="slds-input form-control uno-dropdown" [title]="dD?.docType.name"
-                                        (click)="uploadForm?.controls.documentType.markAsTouched(); cloneHiddenInputClasses(0);">
-                                        <input type="hidden" formControlName="documentType">
-                                        <span class="slds-truncate">{{ dD?.docType.name || ('selectItemLabel' | translate) }}</span>
-                                        <uno-icon icon="down_s" size="xx-small" class="slds-m-left_small"></uno-icon>
-                                    </button>
-                                    <div class="slds-dropdown slds-dropdown--left">
-                                        <ul class="dropdown__list" role="menu">
-                                            <li *ngFor="let item of docTypeSelector;" class="slds-dropdown__item">
-                                                <a unoDropdownItem role="menuitem" [title]="item.name"
-                                                    (click)="updateWithSelectedOption('docType', item, 'documentType'); cloneHiddenInputClasses(0);">
-                                                    <p class="slds-truncate">{{ item.name }}</p>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                <uno-picklist
+                                    [data]="docTypeSelector"
+                                    [(open)]="dD?.docType.opened"
+                                    fluid="true"
+                                    unoPick
+                                    [(unoPick)]="pickDocType"
+                                    (selectedElem)="updateWithSelectedOption('docType', pickDocType, 'documentType')">
+                                    <span class="slds-truncate" [title]="dD?.docType.name || ('selectItemLabel' | translate)">{{ dD?.docType.name || ('selectItemLabel' | translate) }}</span>
+                                    <ng-template uno-picklist-item let-item>{{ item.name }}</ng-template>
+                                </uno-picklist>
                             </fieldset>
                         </div>
 
@@ -202,49 +177,32 @@
                         <div class="slds-col slds-size_1-of-3" *ngIf="docStatusSelector">
                             <fieldset class="slds-form-element">
                                 <label translate>documentStatusLabel</label>
-                                <div unoDropdown [(open)]="dD?.docStatus.opened">
-                                    <button unoDropdownTrigger class="slds-input form-control uno-dropdown" [title]="dD?.docStatus.name"
-                                        (click)="uploadForm?.controls.documentStatus.markAsTouched(); cloneHiddenInputClasses(1);">
-
-                                        <input type="hidden" formControlName="documentStatus">
-                                        <span class="slds-truncate">{{ dD?.docStatus.name || ('selectItemLabel' | translate) }}</span>
-                                        <uno-icon icon="down_s" size="xx-small" class="slds-m-left_small"></uno-icon>
-                                    </button>
-                                    <div class="slds-dropdown slds-dropdown--left">
-                                        <ul class="dropdown__list" role="menu">
-                                            <li *ngFor="let item of docStatusSelector;" class="slds-dropdown__item">
-                                                <a unoDropdownItem role="menuitem" [title]="item.name"
-                                                    (click)="updateWithSelectedOption('docStatus', item, 'documentStatus'); cloneHiddenInputClasses(1);">
-                                                    <p class="slds-truncate">{{ item.name }}</p>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                <uno-picklist
+                                    [data]="docStatusSelector"
+                                    [(open)]="dD?.docStatus.opened"
+                                    fluid="true"
+                                    unoPick
+                                    [(unoPick)]="pickDocStatus"
+                                    (selectedElem)="updateWithSelectedOption('docStatus', pickDocStatus, 'documentStatus')">
+                                    <span class="slds-truncate" [title]="dD?.docStatus.name || ('selectItemLabel' | translate)">{{ dD?.docStatus.name || ('selectItemLabel' | translate) }}</span>
+                                    <ng-template uno-picklist-item let-item>{{ item.name }}</ng-template>
+                                </uno-picklist>
                             </fieldset>
                         </div>
 
                         <div class="slds-col slds-size_1-of-3" *ngIf="docResultSelector">
                             <fieldset class="slds-form-element">
                                 <label translate>documentResultLabel</label>
-                                <div unoDropdown [(open)]="dD?.docResult.opened">
-                                    <button unoDropdownTrigger class="slds-input form-control uno-dropdown" [title]="dD?.docResult.name"
-                                        (click)="uploadForm?.controls.documentResult.markAsTouched()">
-                                        <input type="hidden" formControlName="documentResult">
-                                        <span class="slds-truncate">{{ dD?.docResult.name || ('selectItemLabel' | translate) }}</span>
-                                        <uno-icon icon="down_s" size="xx-small" class="slds-m-left_small"></uno-icon>
-                                    </button>
-                                    <div class="slds-dropdown slds-dropdown--left">
-                                        <ul class="dropdown__list" role="menu">
-                                            <li *ngFor="let item of docResultSelector;" class="slds-dropdown__item">
-                                                <a unoDropdownItem role="menuitem" [title]="item.name"
-                                                    (click)="updateWithSelectedOption('docResult', item, 'documentResult')">
-                                                    <p class="slds-truncate">{{ item.name }}</p>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                <uno-picklist
+                                    [data]="docResultSelector"
+                                    [(open)]="dD?.docResult.opened"
+                                    fluid="true"
+                                    unoPick
+                                    [(unoPick)]="pickDocResult"
+                                    (selectedElem)="updateWithSelectedOption('docResult', pickDocResult, 'documentResult')">
+                                    <span class="slds-truncate" [title]="dD?.docResult.name || ('selectItemLabel' | translate)">{{ dD?.docResult.name || ('selectItemLabel' | translate) }}</span>
+                                    <ng-template uno-picklist-item let-item>{{ item.name }}</ng-template>
+                                </uno-picklist>
                             </fieldset>
                         </div>
 
@@ -260,27 +218,9 @@
                 <ng-template [ngSwitchCase]="'sscUploadModal'">
                     <form [formGroup]="uploadForm" class="uno-forms slds-grid slds-gutters_small slds-wrap slds-p-around--large" style="background: var(--pale-grey);">
 
-                        <div class="slds-col slds-size--1-of-1 slds-text-align_center">
-                            <fieldset class="slds-form-element file-to-upload-container" unoDragDropFile (fileDropped)="onFileDropped($event)">
-                                <label for="file-input" [title]="'chooseFileLabel' | translate">
-                                    <uno-icon icon="upload" size="small" class="slds-button__icon--left"></uno-icon>
-                                    <span class="slds-m-right--small" style="font-size: 17px; color: var(--light-grey-blue);">{{ fileName || ('chooseFileLabel' | translate) }}</span>
-                                    <uno-icon icon="trash" size="x-small" class="slds-button__icon--right" (click)="onDeleteFile()"></uno-icon>
-                                </label>
-                                <input id="file-input" type="file" (change)="fileToUploadChange($event)" [accept]="acceptedTypes">
-                            </fieldset>
+                        <div class="slds-col slds-size--1-of-1">
+                            <uno-dragDropFile [file]="file" (fileDropped)="onFileDropped($event)"></uno-dragDropFile>
                         </div>
-
-                        <div *ngIf="fileUploadIsToBig" class="slds-col" style="color: var(--vermillion)">
-                            <span translate>fileSizeExceed</span> {{ fileSize / 1000000 }}mb
-                        </div>
-
-                        <!-- <div class="slds-col slds-size--1-of-1" *ngIf="fileName">
-                            <span class="slds-m-right--small" style="font-size: 14px; color: var(--dark-blue-grey);">{{ fileName }}</span>
-                            <uno-icon *ngIf="!editData" icon="close_b" size="x-small" color="sapphire" [withOpacity]="true" class="slds-button__icon--left" (click)="removeFile(); stopPropagation($event)"></uno-icon>
-                            <button *ngIf="!disableInputFile" unoButton unoType="secondary" unoSize="x-small" (click)="file.click(); stopPropagation($event)" translate>chooseFileLabel</button>
-                            <input id="file-input" type="file" (change)="fileToUploadChange($event)" #file [accept]="acceptedTypes">
-                        </div> -->
 
                         <div class="slds-col slds-size--1-of-1">
                             <fieldset class="slds-form-element">
@@ -292,7 +232,7 @@
                         <div class="slds-col slds-size_1-of-2" *ngIf="showSSCType">
                             <fieldset class="slds-form-element">
                                 <label translate>documentTypeLabel</label>
-                                <div unoDropdown [(open)]="dD?.docType.opened">
+                                <!-- <div unoDropdown [(open)]="dD?.docType.opened">
                                     <button formControlName="documentType" ngDefaultControl unoDropdownTrigger class="slds-input form-control uno-dropdown" [title]="dD?.docType.name" (click)="uploadForm?.controls.documentType.markAsTouched(); cloneHiddenInputClasses(0);">
                                         <input type="hidden" formControlName="documentType">
                                         <span class="slds-truncate">{{ dD?.docType.name || ('selectItemLabel' | translate) }}</span>
@@ -308,7 +248,17 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div> -->
+                                <uno-picklist
+                                    [data]="docTypeSelector"
+                                    [(open)]="dD?.docType.opened"
+                                    fluid="true"
+                                    unoPick
+                                    [(unoPick)]="pickDocType"
+                                    (selectedElem)="updateWithSelectedOption('docType', pickDocType, 'documentType')">
+                                    <span class="slds-truncate" [title]="dD?.docType.name || ('selectItemLabel' | translate)">{{ dD?.docType.name || ('selectItemLabel' | translate) }}</span>
+                                    <ng-template uno-picklist-item let-item>{{ item.name }}</ng-template>
+                                </uno-picklist>
                             </fieldset>
                         </div>
                     
@@ -333,27 +283,20 @@
                         <div class="slds-col slds-size_1-of-3">
                             <fieldset class="slds-form-element">
                                 <label translate>{{ sscStatusLabel }}</label>
-                                <div unoDropdown [(open)]="dD?.sscStatus.opened">
-                                    <button formControlName="sscStatus" ngDefaultControl unoDropdownTrigger class="slds-input form-control uno-dropdown" [title]="dD?.sscStatus.name" (click)="uploadForm?.controls.sscStatus.markAsTouched(); cloneHiddenInputClasses(0);">
-                                        <input type="hidden" formControlName="sscStatus">
-                                        <span *ngIf="dD?.sscStatus.name" style="height: 12px; width: 12px; border-radius: 50%; margin-right: 10px; margin-top: 8px;" [ngStyle]="{'background-color': dD?.sscStatus.color }"></span>
-                                        <span class="slds-truncate" *ngIf="dD?.sscStatus.name">{{ dD?.sscStatus.name }}</span>
-                                        <span class="slds-truncate" *ngIf="!dD?.sscStatus.name" translate>selectItemLabel</span>
-                                        <uno-icon icon="down_s" size="xx-small" class="slds-m-left_small"></uno-icon>
-                                    </button>
-                                    <div class="slds-dropdown slds-dropdown--left">
-                                        <ul class="dropdown__list" role="menu">
-                                            <li *ngFor="let item of sscStatusSelector;" class="slds-dropdown__item">
-                                                <a unoDropdownItem role="menuitem" [title]="item.name" (click)="updateWithSelectedOption('sscStatus', item, 'sscStatus'); cloneHiddenInputClasses(0);">
-                                                    <p class="slds-truncate">
-                                                        <span style="height: 12px; width: 12px; border-radius: 50%; margin-right: 10px; padding-left: 15px;" [ngStyle]="{'background-color': item.color }"></span>
-                                                        {{ item.name }}
-                                                    </p>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                <uno-picklist
+                                    [data]="sscStatusSelector"
+                                    [(open)]="dD?.sscStatus.opened"
+                                    fluid="true"
+                                    unoPick
+                                    [(unoPick)]="pickStatus"
+                                    (selectedElem)="updateWithSelectedOption('sscStatus', pickStatus, 'sscStatus')">
+                                    <span *ngIf="dD?.sscStatus.name" style="height: 12px; width: 12px; border-radius: 50%; margin-right: 10px;" [style.background-color]="dD?.sscStatus.color"></span>
+                                    <span class="slds-truncate" [title]="dD?.sscStatus.name || ('selectItemLabel' | translate)">{{ dD?.sscStatus.name || ('selectItemLabel' | translate) }}</span>
+                                    <ng-template uno-picklist-item let-item>
+                                        <span style="height: 12px; width: 12px; border-radius: 50%; margin-right: 10px; padding-left: 16px;" [style.background-color]="item.color"></span>
+                                        {{ item.name }}
+                                    </ng-template>
+                                </uno-picklist>
                             </fieldset>
                         </div>
 

@@ -5,7 +5,9 @@ import { Directive, EventEmitter, HostBinding, HostListener, Input, Output } fro
 })
 export class DragAndDropFileDirective {
     @HostBinding('class.fileover') fileOver: boolean;
+
     @Input() public multiple = false;
+
     @Output() public fileDropped = new EventEmitter<any>();
 
     @HostListener('dragover', ['$event']) onDragEvent(evt: any) {
@@ -27,7 +29,11 @@ export class DragAndDropFileDirective {
         this.fileOver = false;
         const files = evt.dataTransfer.files;
         if (files.length > 0) {
-            this.fileDropped.emit(files);
+            if (this.multiple) {
+                this.fileDropped.emit(files);
+            } else {
+                this.fileDropped.emit(files[0]);
+            }
         }
     }
 }

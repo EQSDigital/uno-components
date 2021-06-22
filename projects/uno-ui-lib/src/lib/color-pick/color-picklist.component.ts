@@ -1,8 +1,6 @@
 import {
-    Component, ChangeDetectionStrategy, AfterContentInit, OnDestroy,
-    Input, Output, EventEmitter, ContentChild, ViewChild, ElementRef
+    Component, ChangeDetectionStrategy, AfterContentInit, OnDestroy, Input, Output, EventEmitter, ContentChild
 } from '@angular/core';
-import { filter } from 'rxjs/operators';
 
 import { ColorPickItemDirective } from './color-picklist-item.directive';
 import { PickDirective } from '../pick/pick.directive';
@@ -65,10 +63,7 @@ export class ColorPicklistComponent implements AfterContentInit, OnDestroy {
     private _disabled = false;
     private _fluid = false;
 
-    constructor(
-        public pick: PickDirective
-    ) {
-    }
+    constructor(public pick: PickDirective) { }
 
     ngAfterContentInit() {
 

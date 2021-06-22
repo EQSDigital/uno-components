@@ -1,9 +1,7 @@
 /*
  * Public API Surface of uno-ui-lib
  */
-
 export * from './lib/uno-ui-lib.module';
-// export * from './lib/index';
 
 export * from './lib/asset-visualizer/public_api';
 export * from './lib/badge/public_api';
@@ -16,6 +14,7 @@ export * from './lib/date-weekdays/public_api';
 export * from './lib/date-year/public_api';
 export * from './lib/datepicker/public_api';
 export * from './lib/datepicker2/public_api';
+export * from './lib/drag-drop-file/public_api';
 export * from './lib/dropdown/public_api';
 export * from './lib/icon/public_api';
 export * from './lib/image-cropper/public_api';
