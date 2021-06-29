@@ -105,7 +105,11 @@
                     <form [formGroup]="uploadForm" class="uno-forms slds-grid slds-gutters_small slds-wrap slds-p-around--large" style="background: var(--pale-grey);">
 
                         <div class="slds-col slds-size--1-of-1">
-                            <uno-dragDropFile [file]="file" (fileDropped)="onFileDropped($event)"></uno-dragDropFile>
+                            <uno-drag-drop-file
+                                [file]="file"
+                                [disabled]="disableInputFile"
+                                (fileDropped)="onFileDropped($event)">
+                            </uno-drag-drop-file>
                         </div>
 
                         <div class="slds-col slds-size--1-of-1" *ngIf="showName">
@@ -219,7 +223,11 @@
                     <form [formGroup]="uploadForm" class="uno-forms slds-grid slds-gutters_small slds-wrap slds-p-around--large" style="background: var(--pale-grey);">
 
                         <div class="slds-col slds-size--1-of-1">
-                            <uno-dragDropFile [file]="file" (fileDropped)="onFileDropped($event)"></uno-dragDropFile>
+                            <uno-drag-drop-file
+                                [file]="file"
+                                [disabled]="disableInputFile"
+                                (fileDropped)="onFileDropped($event)">
+                            </uno-drag-drop-file>
                         </div>
 
                         <div class="slds-col slds-size--1-of-1">
@@ -289,7 +297,8 @@
                                     fluid="true"
                                     unoPick
                                     [(unoPick)]="pickStatus"
-                                    (selectedElem)="updateWithSelectedOption('sscStatus', pickStatus, 'sscStatus')">
+                                    (selectedElem)="updateWithSelectedOption('sscStatus', pickStatus, 'sscStatus')"
+                                    [isDisabled]="disableSSCStatus">
                                     <span *ngIf="dD?.sscStatus.name" style="height: 12px; width: 12px; border-radius: 50%; margin-right: 10px;" [style.background-color]="dD?.sscStatus.color"></span>
                                     <span class="slds-truncate" [title]="dD?.sscStatus.name || ('selectItemLabel' | translate)">{{ dD?.sscStatus.name || ('selectItemLabel' | translate) }}</span>
                                     <ng-template uno-picklist-item let-item>

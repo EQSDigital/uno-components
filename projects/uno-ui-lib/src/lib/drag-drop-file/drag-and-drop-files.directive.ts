@@ -8,12 +8,14 @@ export class DragAndDropFileDirective {
 
     @Input() public multiple = false;
 
+    @Input() public disabled = false;
+
     @Output() public fileDropped = new EventEmitter<any>();
 
     @HostListener('dragover', ['$event']) onDragEvent(evt: any) {
         evt.preventDefault();
         evt.stopPropagation();
-        this.fileOver = true;
+        this.fileOver = this.disabled ? false : true;
     }
 
     @HostListener('dragleave', ['$event']) onDragLeave(evt: any) {
@@ -28,7 +30,7 @@ export class DragAndDropFileDirective {
 
         this.fileOver = false;
         const files = evt.dataTransfer.files;
-        if (files.length > 0) {
+        if (files.length > 0 && !this.disabled) {
             if (this.multiple) {
                 this.fileDropped.emit(files);
             } else {
