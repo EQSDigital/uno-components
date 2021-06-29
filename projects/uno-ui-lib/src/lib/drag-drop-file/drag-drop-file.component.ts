@@ -16,9 +16,9 @@ export class DragDropFileComponent {
 
     @Input() public disabled = false;
 
-    @Output() filesDropped = new EventEmitter();
+    @Output() filesDropped = new EventEmitter<File | FileList>();
 
-    @Output() deleteFile = new EventEmitter();
+    @Output() deleteFile = new EventEmitter<File>();
 
     @ViewChild('fileInput') private fileInput: ElementRef;
 

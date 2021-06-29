@@ -504,8 +504,8 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
         this.uploadForm.controls.uploadedFile.markAsDirty();
     }
 
-    onDeleteFile() {
-        this.deleteFile.emit();
+    onDeleteFile(evt: File | FileList) {
+        this.deleteFile.emit(evt);
     }
 
     private handleOpen(open = this.open) {

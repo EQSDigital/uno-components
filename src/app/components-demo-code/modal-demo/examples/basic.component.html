@@ -256,7 +256,7 @@
     [expireMaxDate]="maxDate"
     [sscStatusLabel]="'sscStatusLabel'"
     [disableSSCType]="false"
-    [disableInputFile]="true"
+    [disableInputFile]="false"
     [disableInputName]="false"
     [disableSSCDate]="false"
     [disableSSCStatus]="false"
@@ -268,7 +268,8 @@
     (closeOutside)="editData = null"
     (formValidation)="isDocsUploadFormValid($event)"
     (formSubmitionData)="dispatchFormUploadData($event)"
-    (formIsDirty)="formIsDirty($event)">
+    (formIsDirty)="formIsDirty($event)"
+    (deleteFile)="onDeleteFile($event)">
 
     <ng-template unoModalHeader>
         <div class="slds-grid slds-wrap">

@@ -143,4 +143,8 @@ export class BasicComponent {
     formIsDirty(evt: boolean) {
         this.isFormDirty = evt;
     }
+
+    onDeleteFile(evt: File) {
+        console.log(evt);
+    }
 }

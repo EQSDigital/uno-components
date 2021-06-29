@@ -108,7 +108,8 @@
                             <uno-drag-drop-file
                                 [file]="file"
                                 [disabled]="disableInputFile"
-                                (fileDropped)="onFileDropped($event)">
+                                (fileDropped)="onFileDropped($event)"
+                                (deleteFile)="onDeleteFile($event)">
                             </uno-drag-drop-file>
                         </div>
 
@@ -226,7 +227,8 @@
                             <uno-drag-drop-file
                                 [file]="file"
                                 [disabled]="disableInputFile"
-                                (fileDropped)="onFileDropped($event)">
+                                (fileDropped)="onFileDropped($event)"
+                                (deleteFile)="onDeleteFile($event)">
                             </uno-drag-drop-file>
                         </div>
 
