@@ -113,14 +113,14 @@ export class BasicComponent {
 
     editMode() {
         this.editData = {
-            Description: 'gggggg',
-            DocumentDate: new Date(),
-            DocumentResult: { name: 'Result 2', id: 2, siteId: 1 },
-            DocumentStatus: { name: 'Result 3', id: 3, siteId: 1 },
-            DocumentType: { name: 'Certificate', id: 1, siteId: 1, haveResultStatus: true, haveDocumentStatus: true },
-            Name: 'tttt',
-            DocumentTag: 'ffff',
-            DocumentFileName: 'Document name'
+            description: 'gggggg',
+            documentDate: new Date(),
+            documentResult: { name: 'Result 2', id: 2, siteId: 1 },
+            documentStatus: { name: 'Result 3', id: 3, siteId: 1 },
+            documentType: { name: 'Certificate', id: 1, siteId: 1, haveResultStatus: true, haveDocumentStatus: true },
+            name: 'tttt',
+            documentTag: 'ffff',
+            documentFileName: 'Document name'
         };
     }
 

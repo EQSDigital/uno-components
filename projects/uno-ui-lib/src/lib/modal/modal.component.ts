@@ -1,6 +1,6 @@
 import {
     Component, ChangeDetectionStrategy, OnInit, OnDestroy, Input, Output, EventEmitter,
-    ContentChild, HostListener, ElementRef, ChangeDetectorRef, OnChanges, SimpleChanges, AfterContentInit, Inject
+    ContentChild, HostListener, ElementRef, ChangeDetectorRef, OnChanges, SimpleChanges, Inject
 } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DOCUMENT } from '@angular/common';
@@ -25,7 +25,7 @@ interface DropDownSelector {
     styleUrls: ['./modal.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDestroy {
+export class ModalComponent implements OnInit, OnChanges, OnDestroy {
     // To save time @ component's instalation, we have already prepared HTML templates for certain, often used, Modals:
     @Input() templateType: 'successModal' | 'warningModal' | 'confirmDelModal' | 'confirmActionModal' | 'assets3DModal' | 'docsUploadModal' | 'sscUploadModal' | '';
     @Input() templateCustomMsg: string; // Can be an HTML string
@@ -333,10 +333,6 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
         }
     }
 
-    ngAfterContentInit() {
-        // this.handleOpen();
-    }
-
     ngOnDestroy() {
         this.handleOpen(false);
         this.scrollStrategy = null;
@@ -434,7 +430,7 @@ export class ModalComponent implements OnInit, OnChanges, AfterContentInit, OnDe
             this.uploadForm.controls.sscStatus.setValue(selectedItem);
         }
 
-        this.uploadForm.controls[selectorName].markAsTouched();
+        this.uploadForm.controls[formControlName].markAsTouched();
     }
 
 

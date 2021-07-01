@@ -201,7 +201,7 @@
 <!-- Docs to Upload Modal, with Angular Reactive Form: -->
 <uno-modal
     [(open)]="openModalDocsUpload"
-    [templateType]="'docsUploadModal'"
+    templateType="docsUploadModal"
     [docTypeSelector]="docUpload_possibleTypes"
     [docStatusSelector]="docUpload_possibleStatus"
     [docResultSelector]="docUpload_possibleResults"
@@ -214,6 +214,10 @@
     [resetForm]="isFormToReset"
     [submitForm]="isFormToBeSubmited"
     [fileSize]="15000000"
+    [disableSSCStatus]="true"
+    [showDate]="false"
+    [showExpiredDate]="true"
+    [showTag]="false"
     (selectedTypeEmitter)="loadResults($event)"
     (formValidation)="isDocsUploadFormValid($event)"
     (formSubmitionData)="dispatchFormUploadData($event)">
