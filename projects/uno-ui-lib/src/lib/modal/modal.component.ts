@@ -208,9 +208,18 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
             || this.templateType === 'confirmActionModal'
             || this.templateType === ''
         ) ? true : false;
+    }
+
+    ngOnChanges(changes: SimpleChanges) {
+        this.file = null;
+        this.datePickerExpiredData = null;
+
+        if (changes.open) {
+            this.handleOpen();
+        }
 
         // In case the template chosen is 'docsUploadModal' we need to set up an Angular Reactive Form (uploadForm):
-        if (this.templateType === 'docsUploadModal' || this.templateType === 'sscUploadModal') {
+        if (changes.templateType && this.templateType === 'docsUploadModal' || this.templateType === 'sscUploadModal') {
             // Set each form's Input/selector init value, validators, disableds, etc.:
             this.uploadForm = this.fb.group({
                 name: ['', [Validators.minLength(3), Validators.maxLength(100), Validators.required, noWhitespaceValidator]],
@@ -244,15 +253,6 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
             // Account for each/all dropdowns selectors we'll have on this Reactive Form:
             this.initDropDowns();
             this.cdRef.detectChanges();
-        }
-
-    }
-
-    ngOnChanges(changes: SimpleChanges) {
-        this.file = null;
-        this.datePickerExpiredData = null;
-        if (changes.open) {
-            this.handleOpen();
         }
 
         if (this.editData && this.templateType) {
@@ -447,8 +447,6 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
         this.file = null;
         if (this.uploadForm) {
             this.uploadForm.reset();
-            // this.uploadForm.controls.uploadedFile.setValidators(Validators.required);
-            // this.uploadForm.controls.uploadedFile.updateValueAndValidity();
         }
     }
 
@@ -486,18 +484,9 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
         this.resetDatePicker = false;
     }
 
-    /**
-     * Method to remove file from form and reset file name
-     */
-    removeFile() {
-        this.uploadForm.controls.uploadedFile.markAsDirty();
-        this.uploadForm.controls.uploadedFile.setValue(null);
-        this.file = null;
-    }
-
     onFileDropped(evt: File) {
-        this.uploadForm.controls.uploadedFile.setValue(evt);
         this.uploadForm.controls.uploadedFile.markAsDirty();
+        this.uploadForm.controls.uploadedFile.setValue(evt);
     }
 
     onDeleteFile(evt: File | FileList) {

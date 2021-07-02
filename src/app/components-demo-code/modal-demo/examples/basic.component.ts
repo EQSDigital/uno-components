@@ -42,8 +42,20 @@ export class BasicComponent {
         { name: 'Estimation under evaluation to make it big!', id: 6, siteId: 1, haveResultStatus: true, haveDocumentStatus: true },
         { name: 'Others', id: 7, siteId: 1, haveResultStatus: false, haveDocumentStatus: true }
     ];
-    docUpload_possibleStatus = null;
-    docUpload_possibleResults = null;
+
+    docUpload_possibleStatus = [
+        { name: 'Draft', id: 1, siteId: 1 },
+        { name: 'In Progress', id: 2, siteId: 1 },
+        { name: 'Approved', id: 3, siteId: 1 },
+        { name: 'Rejected', id: 4, siteId: 1 }
+    ];
+
+    docUpload_possibleResults = [
+        { name: 'Result 1', id: 1, siteId: 1 },
+        { name: 'Result 2', id: 2, siteId: 1 },
+        { name: 'Result 3', id: 3, siteId: 1 },
+        { name: 'Result 4', id: 4, siteId: 1 }
+    ];;
 
     docUpload_possibleSSCStatus = [
         { name: 'Rejected', id: 1, siteId: 1, color: '#f44336' },
@@ -89,23 +101,23 @@ export class BasicComponent {
 
     loadResults(item: any) {
         if (item.haveDocumentStatus) {
-            this.docUpload_possibleStatus = [
-                { name: 'Draft', id: 1, siteId: 1 },
-                { name: 'In Progress', id: 2, siteId: 1 },
-                { name: 'Approved', id: 3, siteId: 1 },
-                { name: 'Rejected', id: 4, siteId: 1 }
-            ];
+            // this.docUpload_possibleStatus = [
+            //     { name: 'Draft', id: 1, siteId: 1 },
+            //     { name: 'In Progress', id: 2, siteId: 1 },
+            //     { name: 'Approved', id: 3, siteId: 1 },
+            //     { name: 'Rejected', id: 4, siteId: 1 }
+            // ];
         } else {
             this.docUpload_possibleStatus = null;
         }
 
         if (item.HaveResultStatus) {
-            this.docUpload_possibleResults = [
-                { name: 'Result 1', id: 1, siteId: 1 },
-                { name: 'Result 2', id: 2, siteId: 1 },
-                { name: 'Result 3', id: 3, siteId: 1 },
-                { name: 'Result 4', id: 4, siteId: 1 }
-            ];
+            // this.docUpload_possibleResults = [
+            //     { name: 'Result 1', id: 1, siteId: 1 },
+            //     { name: 'Result 2', id: 2, siteId: 1 },
+            //     { name: 'Result 3', id: 3, siteId: 1 },
+            //     { name: 'Result 4', id: 4, siteId: 1 }
+            // ];
         } else {
             this.docUpload_possibleResults = null;
         }
