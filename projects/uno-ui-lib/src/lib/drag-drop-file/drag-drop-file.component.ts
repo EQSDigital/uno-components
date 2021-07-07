@@ -1,10 +1,9 @@
-import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
     selector: 'uno-drag-drop-file',
     templateUrl: 'drag-drop-file.component.html',
-    styleUrls: ['drag-drop-file.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    styleUrls: ['drag-drop-file.component.scss']
 })
 
 export class DragDropFileComponent {
@@ -23,6 +22,8 @@ export class DragDropFileComponent {
     @ViewChild('fileInput') private fileInput: ElementRef;
 
     public fileUploadIsToBig = false;
+
+    constructor(private render: Renderer2) {}
 
     onClickUpload() {
         if (!this.disabled) {
@@ -46,6 +47,8 @@ export class DragDropFileComponent {
             this.filesDropped.emit(evt.target.files[0]);
             this.file = evt.target.files[0];
         }
+
+        this.render.setProperty(this.fileInput.nativeElement, 'value', '');
     }
 
     onFileDropped(file: File | FileList) {

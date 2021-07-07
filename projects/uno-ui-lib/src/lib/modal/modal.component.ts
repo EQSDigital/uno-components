@@ -1,6 +1,6 @@
 import {
     Component, ChangeDetectionStrategy, OnInit, OnDestroy, Input, Output, EventEmitter,
-    ContentChild, HostListener, ElementRef, ChangeDetectorRef, OnChanges, SimpleChanges, Inject
+    ContentChild, HostListener, ElementRef, ChangeDetectorRef, OnChanges, SimpleChanges, Inject, ViewChild
 } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DOCUMENT } from '@angular/common';
@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs';
 import { InputBoolean, noWhitespaceValidator, toBoolean, uniqueId } from '../../utils/util';
 import { ModalHeaderDirective } from './header.directive';
 import { ModalFooterDirective } from './footer.directive';
+import { DragDropFileComponent } from '../drag-drop-file/drag-drop-file.component';
 
 interface DropDownSelector {
     id: number;
@@ -97,7 +98,7 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
         }
 
         this._resetForm = _resetForm;
-        if (_resetForm === true) {
+        if (_resetForm) {
             this.resetUploadForm();
         }
     }
@@ -113,7 +114,7 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
         }
 
         this._submitForm = _submitForm;
-        if (_submitForm === true) {
+        if (_submitForm) {
             this.formSubmitionData.emit(this.uploadForm.getRawValue());
             this.resetUploadForm();
         }
@@ -138,6 +139,8 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
     @Output() formIsDirty = new EventEmitter<boolean>();
 
     @Output() deleteFile = new EventEmitter();
+
+    @ViewChild(DragDropFileComponent) private dragDropFile: DragDropFileComponent;
 
     @ContentChild(ModalHeaderDirective) public headerDirective: ModalHeaderDirective;
     @ContentChild(ModalFooterDirective) public footerDirective: ModalFooterDirective;
@@ -211,8 +214,7 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
     }
 
     ngOnChanges(changes: SimpleChanges) {
-        this.file = null;
-        this.datePickerExpiredData = null;
+        this.resetUploadForm();
 
         if (changes.open) {
             this.handleOpen();
@@ -250,8 +252,6 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
                 this.formIsDirty.emit(this.uploadForm.dirty);
             });
 
-            // Account for each/all dropdowns selectors we'll have on this Reactive Form:
-            this.initDropDowns();
             this.cdRef.detectChanges();
         }
 
@@ -375,8 +375,8 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
 
             if (target.closest('.slds-modal__content') === null) {
                 this.openChange.emit(false);
-                this.file = null;
                 this.resetUploadForm();
+                this.dragDropFile.file = null;
                 this.closeOutside.emit();
             }
         }
@@ -445,6 +445,7 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
         // ... not forgeting the file upload fancy boxing!
         // There's only ONE:
         this.file = null;
+
         if (this.uploadForm) {
             this.uploadForm.reset();
         }
