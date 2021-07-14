@@ -19,3 +19,13 @@
         [max]="maxDate">
     </uno-datepicker2>
 </div>
+
+<div style="width: 300px;">
+    <uno-datepicker2
+        (dateChange)="newDate($event)"
+        [required]="false"
+        [dateRange]="true"
+        [min]="minDate"
+        [max]="maxDate">
+    </uno-datepicker2>
+</div>

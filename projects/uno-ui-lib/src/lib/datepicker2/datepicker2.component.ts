@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter, OnChanges, HostListener, SimpleChanges } from '@angular/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
-import { Validators, FormControl } from '@angular/forms';
+import { Validators, FormControl, FormBuilder, FormGroup } from '@angular/forms';
 import { MatDateFormats } from '@angular/material/core';
 import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
 
@@ -54,16 +54,24 @@ export class Datepicker2Component implements OnChanges {
     // Current date selected
     @Input() date: Date;
 
+    @Input() startDateRange: Date;
+
+    @Input() endDateRange: Date;
+
     // Min and Max years for the datepicker
     @Input() min: number;
     @Input() max: number;
 
-    @Input() reset: false;
+    @Input() reset = false;
+
+    @Input() dateRange = false;
 
     // Emitter to detect changes on the date
     @Output() dateChange = new EventEmitter();
 
     dateForm = new FormControl('');
+
+    form: FormGroup;
 
     @HostListener('document:click', ['$event'])
     clickout(event: any) {
@@ -78,6 +86,8 @@ export class Datepicker2Component implements OnChanges {
             c.innerText = c.innerText === 'Do' ? 'D' : c.innerText;
         });
     }
+
+    constructor(private fb: FormBuilder) { }
 
     ngOnChanges(changes: SimpleChanges) {
         if (changes.disable && this.disable) {
@@ -99,6 +109,25 @@ export class Datepicker2Component implements OnChanges {
 
         if (changes.reset && this.reset) {
             this.dateForm.setValue(null);
+        }
+
+        if (changes.dateRange && changes.dateRange.currentValue) {
+            this.form = this.fb.group({
+                start: [{ value: '', disabled: true }],
+                end: [{ value: '', disabled: true }]
+            })
+        }
+
+        if (changes.startDateRange && changes.startDateRange.currentValue) {
+            if (this.form) {
+                this.form.controls.start.setValue(this.startDateRange);
+            }
+        }
+
+        if (changes.endDateRange && changes.endDateRange.currentValue) {
+            if (this.form) {
+                this.form.controls.end.setValue(this.endDateRange);
+            }
         }
     }
 
@@ -139,5 +168,14 @@ export class Datepicker2Component implements OnChanges {
 
     markAsDirty() {
         this.dateForm.markAsDirty();
+    }
+
+    onCloseDatePickerRange() {
+        const obj = {
+            start: new Date(this.form.value.start).toISOString(),
+            end: new Date(this.form.value.end).toISOString()
+        };
+
+        this.dateChange.emit(obj);
     }
 }

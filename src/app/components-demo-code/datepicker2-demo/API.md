@@ -12,4 +12,5 @@
 | `[hideError]` | Variable to hide the error message. | boolean | false |
 | `[min]` | Variable for the min year on the datepicker. | number | |
 | `[max]` | Variable for the max year on the datepicker. | number | |
+| `[dateRange]` | Variable to set datepicker with start and end date. | boolean | false |
 | `(dateChange)` | Emits the new date selected. | EventEmitter\<Date \| null \| 'invalid'\> | |

@@ -103,7 +103,9 @@ export class TableComponent implements OnChanges, OnDestroy {
     rowClassFunction: Function;
 
     grid: Grid;
+
     @ViewChild('unoSmartTable', { static: true }) private table: ElementRef<HTMLElement>;
+    
     private subscriptions$ = new Subscription();
 
     private defaultSettings: UnoSmartTableSettings = {
