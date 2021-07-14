@@ -8,6 +8,8 @@
 | `[disable]` | Variable to disable the datepicker. | boolean | false |
 | `[disableCalendar]` | Variable to disable the datepicker calendar. | boolean | false
 | `[date]` | Variable with the current date to display. | Date | |
+| `[startDateRange]` | Variable with the current start date to display. | Date | |
+| `[endDateRange]` | Variable with the current end date to display. | Date | |
 | `[required]` | Variable to add the required validation to the datepicker. | boolean | false |
 | `[hideError]` | Variable to hide the error message. | boolean | false |
 | `[min]` | Variable for the min year on the datepicker. | number | |
