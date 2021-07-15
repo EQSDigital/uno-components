@@ -15,6 +15,7 @@ import { deepExtend } from './lib/helpers';
 import { LocalDataSource } from './lib/data-source/local/local.data-source';
 import { SetUpFormControllers } from './lib/data-set/form-validators';
 import { TbodyCollapseContentDirective } from './components/tbody/tbody-collapse-content.directive';
+import { HeaderComponent } from './components/header/header.component';
 
 @Component({
     selector: 'uno-smart-table',
@@ -104,7 +105,9 @@ export class TableComponent implements OnChanges, OnDestroy {
 
     grid: Grid;
 
-    @ViewChild('unoSmartTable', { static: true }) private table: ElementRef<HTMLElement>;
+    @ViewChild(HeaderComponent) private header: HeaderComponent;
+
+    @ViewChild('unoSmartTable') private table: ElementRef<HTMLElement>;
     
     private subscriptions$ = new Subscription();
 
@@ -362,6 +365,10 @@ export class TableComponent implements OnChanges, OnDestroy {
 
     onSaveOptions(obj: any) {
         this.saveOptions.emit(obj);
+    }
+
+    setSearchTerm(term: string) {
+        this.render.setProperty(this.header.search.inputSearch.nativeElement, 'value', term);
     }
 
     private resetAllSelector() {

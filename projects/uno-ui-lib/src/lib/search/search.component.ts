@@ -1,11 +1,4 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild, ElementRef, Renderer2 } from '@angular/core';
-
-/**
- * The Search component
- *
- * @example
- * <uno-search></uno-search>
- */
 @Component({
     selector: 'uno-search',
     templateUrl: './search.component.html',
@@ -22,8 +15,10 @@ export class SearchComponent {
 
     inSearchMode = false;
 
+    // Get access to the input to manipulate it.
+    @ViewChild('searchText') inputSearch: ElementRef;
+
     @ViewChild('unoSearch') private unoSearch: ElementRef;
-    @ViewChild('searchText') private inputSearch: ElementRef;
 
     constructor(private renderer: Renderer2) { }
 

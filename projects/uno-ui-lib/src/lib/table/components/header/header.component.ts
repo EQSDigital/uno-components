@@ -1,16 +1,16 @@
-import { Component, OnChanges, Input, Output, EventEmitter, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
+import { Component, OnChanges, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { cloneDeep } from 'lodash';
 
 import { Grid } from '../../lib/grid';
 import { ActionCustom } from '../../table.interfaces';
 import { Column } from '../../lib/data-set/column';
 import { Row } from '../../lib/data-set/row';
+import { SearchComponent } from '../../../search/search.component';
 
 @Component({
     selector: 'header',
     templateUrl: 'header.component.html',
-    styleUrls: ['header.component.css'],
-    // changeDetection: ChangeDetectionStrategy.OnPush
+    styleUrls: ['header.component.css']
 })
 
 export class HeaderComponent implements OnChanges {
@@ -52,6 +52,8 @@ export class HeaderComponent implements OnChanges {
      * Variable to control the show/hide button save on popover options.
      */
     showButtonSave = false;
+
+    @ViewChild(SearchComponent) search: SearchComponent;
 
     /**
      * Variable with all actions of the header.
