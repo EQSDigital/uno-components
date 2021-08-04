@@ -1,4 +1,6 @@
-# uno-components
+# UNO Components
+
+[![npm version](https://badge.fury.io/js/uno-ui-lib.svg)](https://badge.fury.io/js/uno-ui-lib)
 
 UNO user interface components library. 
 This contains native [Angular](https://angular.io/) components and directives written from scratch in TypeScript using the [Lightning Design System](https://www.lightningdesignsystem.com/) CSS framework.
