@@ -6,9 +6,16 @@ import { ColorPickItemDirective } from './color-picklist-item.directive';
 import { UnoButtonModule } from '../button/button.module';
 import { UnoPopoverModule } from '../popover/popover.module';
 import { UnoPickModule } from '../pick/pick.module';
+import { UnoIconModule } from '../icon/icon.module';
 
 @NgModule({
-    imports: [CommonModule, UnoButtonModule, UnoPopoverModule, UnoPickModule],
+    imports: [
+        CommonModule,
+        UnoButtonModule,
+        UnoPopoverModule,
+        UnoPickModule,
+        UnoIconModule
+    ],
     exports: [ColorPicklistComponent],
     declarations: [ColorPicklistComponent, ColorPickItemDirective],
     providers: [],
