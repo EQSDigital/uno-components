@@ -376,7 +376,11 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
             if (target.closest('.slds-modal__content') === null) {
                 this.openChange.emit(false);
                 this.resetUploadForm();
-                this.dragDropFile.file = null;
+
+                if (this.dragDropFile) {
+                    this.dragDropFile.file = null;
+                }
+
                 this.closeOutside.emit();
             }
         }

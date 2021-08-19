@@ -50,7 +50,7 @@ export class ColorPicklistComponent implements OnChanges, AfterContentInit, OnDe
     ngOnChanges(changes: SimpleChanges) {
         if (changes.closeClickOutside && changes.closeClickOutside.currentValue) {
             this.subscriptions.add(
-                this.renderer.listen('window', 'click', (evt: Event) => {
+                this.renderer.listen('document', 'click', (evt: Event) => {
                     if (this.button && this.colorsPopover &&
                         evt.target !== this.button.nativeElement && evt.target !== this.colorsPopover.nativeElement) {
                         this.open = false;
