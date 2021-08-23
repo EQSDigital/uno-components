@@ -2,6 +2,7 @@ import { FormGroup, FormControl, AbstractControl, Validators, ValidatorFn } from
 
 import { Grid } from '../grid';
 import { Column } from './column';
+import { noWhitespaceValidator } from '../../../../utils/util';
 
 export class SetUpFormControllers {
 
@@ -52,6 +53,11 @@ export class SetUpFormControllers {
                 if (colValidators.hasOwnProperty('maxLength')) {
                     formValidators.push(Validators.maxLength(colValidators.maxLength));
                 }
+
+                if (colValidators.hasOwnProperty('minLength') || colValidators.hasOwnProperty('maxLength')) {
+                    formValidators.push(noWhitespaceValidator);
+                }
+
 
                 if (colValidators.pattern) {
                     formValidators.push(Validators.pattern(new RegExp(colValidators.pattern)));
