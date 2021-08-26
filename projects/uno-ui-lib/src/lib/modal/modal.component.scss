@@ -1,10 +1,10 @@
 /* Using strong semantic HTML style form fields generally, instead of each column: */
 label {
-    font-family: 'OpenSans';
+    font-family: "OpenSans";
     font-size: 14px;
     color: var(--dark-blue-grey);
     display: block;
-    padding-bottom: 8px
+    padding-bottom: 8px;
 }
 
 fieldset {
@@ -29,41 +29,9 @@ span.slds-radio {
 
 // What about any <textarea /> input...? Give "enter" format - as the user might have entered!
 .view-formated-text-area > pre {
-    font-family: 'Nunito Bold' !important;
+    font-family: "Nunito Bold" !important;
     font-size: 14px;
     white-space: pre-line;
-}
-
-/* Simulate the input text box height, and left padding, to align with all the others ".slds-input": */
-.switch-input-container {
-    padding-top: 0.4rem;
-    padding-left: 0.75rem;
-}
-
-/* Hide file upload Input and style around: */
-.file-to-upload-container {
-    position: relative;
-    border-radius: 2px;
-    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='2' ry='2' stroke='%23AABAC3FF' stroke-width='2' stroke-dasharray='5%2c 6' stroke-dashoffset='10' stroke-linecap='square'/%3e%3c/svg%3e");
-    cursor: pointer;
-}
-
-label[for=file-input] {
-    cursor: pointer;
-
-    > span {
-        vertical-align: middle;
-    }
-}
-
-#file-input {
-    display: none;
-}
-
-#file-uploaded-name {
-    font-weight: 100;
-    font-style: italic;
-    margin-bottom: 1rem;
 }
 
 /* IMPORTANT classes from Lightning System MISSING @ nano-design-system.css: */
@@ -105,10 +73,24 @@ label[for=file-input] {
 
     > ul {
         max-height: 150px;
-        overflow-x: hidden
+        overflow-x: hidden;
     }
 }
 
 .slds-popover {
     z-index: 9999999 !important;
+}
+
+.reference-template {
+    height: 28px;
+    background-color: rgba(255, 226, 36, 0.2);
+    font-family: "OpenSans";
+    font-size: 12px;
+
+    & span {
+        color: var(--sapphire);
+        text-decoration: underline;
+        cursor: pointer;
+        padding-left: 0.3rem;
+    }
 }

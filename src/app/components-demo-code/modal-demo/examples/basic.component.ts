@@ -139,6 +139,7 @@ export class BasicComponent {
     editSSCMode() {
         this.editData = {
             documentType: {
+                templateName: 'RGPD Template',
                 name: 'test me',
                 id: 56,
                 siteId: 1
@@ -157,6 +158,10 @@ export class BasicComponent {
     }
 
     onDeleteFile(evt: File) {
+        console.log(evt);
+    }
+
+    onDownloadTemplate(evt: any) {
         console.log(evt);
     }
 }

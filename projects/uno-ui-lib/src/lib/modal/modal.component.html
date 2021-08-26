@@ -234,6 +234,14 @@
                             </uno-drag-drop-file>
                         </div>
 
+                        <div *ngIf="editData.documentType.templateName" class="slds-col slds-size--1-of-1 slds-p-top--small">
+                            <div class="reference-template slds-grid slds-grid--vertical-align-center">
+                                <uno-icon icon="info" size="xx-small" [withOpacity]="false" class="slds-p-left--small slds-p-right--xx-small"></uno-icon>
+                                {{ 'referenceTemplate' | translate }}:
+                                <span (click)="onDownloadTemplate()">{{ editData.documentType.templateName }}</span>
+                            </div>
+                        </div>
+
                         <div class="slds-col slds-size--1-of-1">
                             <fieldset class="slds-form-element">
                                 <label translate>nameLabel</label>
@@ -244,23 +252,6 @@
                         <div class="slds-col slds-size_1-of-2" *ngIf="showSSCType">
                             <fieldset class="slds-form-element">
                                 <label translate>documentTypeLabel</label>
-                                <!-- <div unoDropdown [(open)]="dD?.docType.opened">
-                                    <button formControlName="documentType" ngDefaultControl unoDropdownTrigger class="slds-input form-control uno-dropdown" [title]="dD?.docType.name" (click)="uploadForm?.controls.documentType.markAsTouched(); cloneHiddenInputClasses(0);">
-                                        <input type="hidden" formControlName="documentType">
-                                        <span class="slds-truncate">{{ dD?.docType.name || ('selectItemLabel' | translate) }}</span>
-                                        <uno-icon icon="down_s" size="xx-small" class="slds-m-left_small"></uno-icon>
-                                    </button>
-                                    <div class="slds-dropdown slds-dropdown--left">
-                                        <ul class="dropdown__list" role="menu">
-                                            <li *ngFor="let item of docTypeSelector;" class="slds-dropdown__item">
-                                                <a unoDropdownItem role="menuitem" [title]="item.name"
-                                                    (click)="updateWithSelectedOption('docType', item, 'documentType'); cloneHiddenInputClasses(0);">
-                                                    <p class="slds-truncate">{{ item.name }}</p>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div> -->
                                 <uno-picklist
                                     [data]="docTypeSelector"
                                     [(open)]="dD?.docType.opened"

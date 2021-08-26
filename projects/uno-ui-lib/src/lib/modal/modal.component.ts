@@ -140,6 +140,8 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
 
     @Output() deleteFile = new EventEmitter();
 
+    @Output() downloadTemplate = new EventEmitter();
+
     @ViewChild(DragDropFileComponent) private dragDropFile: DragDropFileComponent;
 
     @ContentChild(ModalHeaderDirective) public headerDirective: ModalHeaderDirective;
@@ -496,6 +498,10 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
 
     onDeleteFile(evt: File | FileList) {
         this.deleteFile.emit(evt);
+    }
+
+    onDownloadTemplate() {
+        this.downloadTemplate.emit(this.editData.documentType)
     }
 
     private handleOpen(open = this.open) {
