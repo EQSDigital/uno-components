@@ -222,9 +222,7 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
             this.handleOpen();
         }
 
-        // In case the template chosen is 'docsUploadModal' we need to set up an Angular Reactive Form (uploadForm):
-        if (changes.templateType && this.templateType === 'docsUploadModal' || this.templateType === 'sscUploadModal') {
-            // Set each form's Input/selector init value, validators, disableds, etc.:
+        if (changes.templateType && (this.templateType === 'docsUploadModal' || this.templateType === 'sscUploadModal')) {
             this.uploadForm = this.fb.group({
                 name: ['', [Validators.minLength(3), Validators.maxLength(100), Validators.required, noWhitespaceValidator]],
                 tag: [''],
