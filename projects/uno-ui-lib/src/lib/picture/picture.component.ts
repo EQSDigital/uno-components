@@ -306,14 +306,17 @@ export class PictureComponent implements OnChanges {
      */
     saveImgCropper() {
         this.openImgCropper = false;
-        const reader = new FileReader;
 
-        reader.onload = () => {
-            this.image = reader.result;
-        };
+        if (this.savedImageCropped && this.savedImageCropped.target) {
+            const reader = new FileReader;
 
-        reader.readAsDataURL(this.savedImageCropped.target.files[0]);
+            reader.onload = () => {
+                this.image = reader.result;
+            };
 
-        this.uploadedImage.emit(this.savedImageCropped.target.files[0] as File);
+            reader.readAsDataURL(this.savedImageCropped.target.files[0]);
+
+            this.uploadedImage.emit(this.savedImageCropped.target.files[0] as File);
+        }
     }
 }

@@ -1,4 +1,4 @@
-<div 
+<div
     (click)="onPictureClick($event)"
     (mouseenter)="showOverlay = true"
     (mouseleave)="onMouseLeavePicture()"
@@ -10,7 +10,7 @@
         <div *ngIf="showUpIcon" class="slds-align--absolute-center" style="position: absolute; width: 100%; height: 100%;">
             <uno-icon icon="up_image" [size]="UpIconSize" [withOpacity]="false" color="white"></uno-icon>
         </div>
-        <div 
+        <div
             *ngIf="!onlyViewImage && showOverlay && image"
             class="overlay"
             [style.border-radius]="rounded ? '50%' : 'none'"
@@ -42,9 +42,7 @@
                 [imageChangedEvent]="imageChangedEvent"
                 [maintainAspectRatio]="false"
                 [roundCropper]="rounded"
-                
                 (imageCropped)="imageCropped($event)"
-
                 (imageLoaded)="openImgCropper = true">
             </uno-image-cropper>
         </p>
@@ -57,7 +55,7 @@
 
 </uno-modal>
 
-<uno-modal  [(open)]="openImgViewer" *ngIf="image">
+<uno-modal [(open)]="openImgViewer" *ngIf="image">
     <div style="text-align: center">
         <img [src]="image">
     </div>
