@@ -47,8 +47,11 @@ export class PicklistComponent implements AfterContentInit, OnDestroy {
     @Input() insertCreateButton: boolean;
 
     @Input() filterDataField: string | Function;
+
     @Input() filterPlaceholder = '';
+
     @Input() listSizeForFilter = 11;
+
     private filterActiveIndex = 0;
     private hasFilterFocus = false;
     filteredData: any[];
@@ -63,9 +66,13 @@ export class PicklistComponent implements AfterContentInit, OnDestroy {
     get open() {
         return this._open;
     }
+
     @Input() closeClickOutside: boolean;
+
     @Input() isToOpenUp = false;
+
     @Input() addButton = 'Create Item';
+
     @Input() showCheckBox = false;
 
     @Input() set position(position: boolean | string) {
@@ -78,8 +85,11 @@ export class PicklistComponent implements AfterContentInit, OnDestroy {
     // ==============================================
 
     @Output() openChange = new EventEmitter();
+
     @Output() userChangedFilter = new EventEmitter();
+
     @Output() selectedElem = new EventEmitter<{ HTMLElement: HTMLElement, idx: number }>();
+
     @Output() scrollEndReached = new EventEmitter<any>();
 
     // ==============================================
@@ -108,13 +118,9 @@ export class PicklistComponent implements AfterContentInit, OnDestroy {
     // private filterActiveIndex = 0;
     // private hasFilterFocus = false;
 
-    constructor(
-        public pick: PickDirective
-    ) {
-    }
+    constructor(public pick: PickDirective) { }
 
     ngAfterContentInit() {
-
         this._changeSubscription = this.pick.unoPickChange
             // Check it out: https://github.com/ngrx/platform/issues/564#issuecomment-344372463
             .pipe(
@@ -170,7 +176,7 @@ export class PicklistComponent implements AfterContentInit, OnDestroy {
         }
     }
 
-    isOptionActive(item) {
+    isOptionActive(item: any) {
         if (this.pick.selected) {
             if (this.pick.isMultiple) {
                 const sel = this.pick.selected.filter((elem) => elem.id === item.id)[0];

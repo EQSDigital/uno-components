@@ -13,14 +13,14 @@
         <!-- the Dropdown trigger: -->
         <button
             type="button"
-            class="slds-grid"
+            class="slds-grid slds-grid--vertical-align-center"
             unoDropdownTrigger
             [class.slds-input]="!isForInlineTableCSS"
             [class.slds-button]="isForInlineTableCSS"
             [disabled]="isDisabled">
                 <ng-content></ng-content>
         </button>
-        <span class="slds-icon__container slds-input__icon slds-input__icon--right">
+        <span class="slds-icon__container slds-input__icon slds-input__icon--right" unoDropdownTrigger>
             <uno-icon icon="down_s" size="xx-small" class="slds-m-left_small slds-float--right"></uno-icon>
         </span>
 
