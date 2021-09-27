@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter, OnChanges, ElementRef, AfterVie
 import { FormGroup } from '@angular/forms';
 
 import { Grid } from '../../lib/grid';
+import { ActionCustom } from '../../table.interfaces';
 
 @Component({
     selector: '[ng2-st-thead]',
@@ -14,17 +15,28 @@ export class Ng2SmartTableTheadComponent implements OnChanges, AfterViewInit {
     @Input() editingFormGroup: FormGroup;
 
     @Input() grid: Grid;
+
     @Input() createConfirm: EventEmitter<any>;
+
     @Input() updateColumnList: any;
+
     @Input() cancelCreate: EventEmitter<any>;
 
     @Output() sort = new EventEmitter<any>();
+
     @Output() selectAllRows = new EventEmitter<boolean>();
+
     @Output() create = new EventEmitter<any>();
+
     @Output() selectedElem = new EventEmitter<any>();
+
     @Output() createSave = new EventEmitter<any>();
+
     @Output() filter = new EventEmitter<any>();
+
     @Output() getColumnFilters = new EventEmitter<string>();
+
+    @Output() customAction = new EventEmitter<ActionCustom>();
 
     tableHead: HTMLElement;
     isHideHeader: boolean;

@@ -1,10 +1,12 @@
 <tr ng2-st-thead-titles-row
     *ngIf="!isHideHeader"
     class="ng2-smart-titles"
+    [style.background-color]="grid.getSelectedRows().length > 0 ? 'var(--light-blue-grey)' : null"
     [grid]="grid"
     (sort)="sort.emit($event)"
     (selectAllRows)="selectAllRows.emit($event)"
-    (getColumnFilters)="getColumnFilters.emit($event)">
+    (getColumnFilters)="getColumnFilters.emit($event)"
+    (customAction)="customAction.emit($event)">
 </tr>
 
 <tr ng2-st-thead-form-row

@@ -126,6 +126,10 @@ export class BasicComponent implements AfterViewInit {
         console.warn('Some "custom" row header action was triggered inside <uno-smart-table />', evt);
     }
 
+    rowSelectActionCustomEvent(evt: ActionCustom) {
+        console.log(evt);
+    }
+
     rowActionDownloadCustomEvent(evt) {
         console.log(
             'Click @ smart-table-lib\'s tbody > cells > custom > template "' + evt.fromTemplate + '" > icon "' + evt.fromIcon + '":',
@@ -181,6 +185,18 @@ export class BasicComponent implements AfterViewInit {
                     icon: 'share',
                     visible: false,
                     title: 'share'
+                }
+            ],
+            selectActions: [
+                {
+                    icon: 'clone',
+                    visible: true,
+                    title: 'clone'
+                },
+                {
+                    icon: 'trash',
+                    visible: true,
+                    title: 'delete'
                 }
             ],
             actions: {

@@ -86,6 +86,11 @@ export interface UnoSmartTableSettings {
     headerActions?: ActionCustom[];
 
     /**
+     * Determines the actions of the header.
+     */
+    selectActions?: ActionCustom[];
+
+    /**
      * Determines the actions of the table.
      */
     actions?: {
@@ -94,7 +99,7 @@ export interface UnoSmartTableSettings {
          * 'right' - Thes last column is the actions.
          * 'none' - No actions appear.
          */
-        position?: 'right'| 'none';
+        position?: 'right' | 'none';
 
         /**
          * Determines the title of the column actions.
@@ -184,8 +189,8 @@ export interface UnoSmartTableColumn {
     class?: string;                     // HTML class @ this Header's field/column <th> tag
     width?: string;                     // '_px' | '_%'
     defaultValue?: string | Object;     // Defines an init value to be displayed once EDITing or CREATEing form is opened/triggered.
-                                        // As we can pass a function to render/edit/create a cell
-                                        // (i.e. "valuePrepareFunction: (value) => value.Name"), this can also be an Object
+    // As we can pass a function to render/edit/create a cell
+    // (i.e. "valuePrepareFunction: (value) => value.Name"), this can also be an Object
 
     valuePrepareFunction?: Function;
     isVisible?: boolean;
@@ -233,7 +238,7 @@ export interface ColumnEditor {
     };
 
     popoverErrors?: boolean;     // Indicates if this Input has a proper form Validator Popover, independentely of the existence
-                                // of a single Popover, next to submit ("update" | "create") trigger.
+    // of a single Popover, next to submit ("update" | "create") trigger.
     inputPopoverTheme?: string;  // Default is 'info', if this cell/column "popoverErrors: true".
     // But you can pass here allowed themes for "uno-popover" component -
     // 'default' | 'success' | 'warning' | 'info' | 'error' | 'offline' | 'inverse-text' | 'shade' | 'inverse' | 'alt-inverse' = 'default';

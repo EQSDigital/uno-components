@@ -25,7 +25,8 @@
             (selectAllRows)="onSelectAllRows($event)"
             (sort)="sort($event)"
             (filter)="filter($event)"
-            (getColumnFilters)="getColumnFilters.emit($event)">
+            (getColumnFilters)="getColumnFilters.emit($event)"
+            (customAction)="rowSelectActionCustomEvent.emit($event)">
         </thead>
 
         <tbody

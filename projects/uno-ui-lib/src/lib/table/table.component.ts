@@ -60,19 +60,33 @@ export class TableComponent implements OnChanges, OnDestroy {
 
     // Actions events:
     @Output() create = new EventEmitter<any>();
+
     @Output() createSave = new EventEmitter<any>();
+
     @Output() cancelCreate = new EventEmitter<any>();
+
     @Output() edit = new EventEmitter<any>();
+
     @Output() delete = new EventEmitter<any>();
+
     @Output() editSave = new EventEmitter<any>();
+
     @Output() cancelEdit = new EventEmitter<any>();
+
     @Output() rowActionCustomEvent = new EventEmitter<any>();
+
     @Output() rowActionDownloadCustomEvent = new EventEmitter<any>();
+
     @Output() rowHeaderActionCustomEvent = new EventEmitter<any>();
+
+    @Output() rowSelectActionCustomEvent = new EventEmitter<any>();
+
     @Output() selectedElem = new EventEmitter<any>();
     // Actions confirmation events:
     @Output() deleteConfirm = new EventEmitter<any>();
+    
     @Output() editConfirm = new EventEmitter<any>();
+
     @Output() createConfirm = new EventEmitter<any>();
     // Several Grid's internal affairs - like pagination, sort, filter, etc - that need to be passed to EXTERIOR API:
     // Important when you have the API url to call services OUTSIDE the Table components - at its installation
@@ -136,6 +150,7 @@ export class TableComponent implements OnChanges, OnDestroy {
         rowPopoverErrors: false,
         popoverTheme: 'info',
         headerActions: [],
+        selectActions: [],
         actions: {
             position: 'right',
             columnTitle: '',

@@ -61,15 +61,17 @@
                 (editCancel)="onEditCancel(row)">
             </ng2-st-tbody-save-cancel>
         </td>
-        <td *ngIf="!row.isInEditing" class="ng2-smart-actions slds-text-align--right">
-            <ng2-st-tbody-custom class="ng2-smart-action-icon"
+        <td *ngIf="!row.isInEditing && grid.getSelectedRows().length === 0" class="ng2-smart-actions slds-text-align--right">
+            <ng2-st-tbody-custom
+                class="ng2-smart-action-icon"
                 [grid]="grid"
                 [row]="row"
                 (rowActionCustomEvent)="rowActionCustomEvent.emit($event)"
                 (rowActionDownloadCustomEvent)="rowActionDownloadCustomEvent.emit($event)">
             </ng2-st-tbody-custom>
 
-            <ng2-st-tbody-edit-delete class="ng2-smart-action-icon"
+            <ng2-st-tbody-edit-delete
+                class="ng2-smart-action-icon"
                 [grid]="grid"
                 [deleteConfirm]="deleteConfirm"
                 [row]="row"
