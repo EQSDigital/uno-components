@@ -3,14 +3,19 @@ import { Column } from './column';
 
 export class DataSet {
     private _data: any[];
+
     private _columns: Column[];
+
     private _rows: Row[];
+
     private _selectedRow: Row;
+
     private _willSelect: string;
+
     private _newRow: Row;
 
     constructor(data: any[] = [], columnSettings: Column[] = []) {
-        this._willSelect = 'first';
+        this._willSelect = '';
         this._columns = columnSettings;
         this._data = data;
 
@@ -166,9 +171,10 @@ export class DataSet {
             }
 
             this._willSelect = '';
-        } else {
-            this.selectFirstRow();
-        }
+        } 
+        // else {
+        //     this.selectFirstRow();
+        // }
 
         return this._selectedRow;
     }

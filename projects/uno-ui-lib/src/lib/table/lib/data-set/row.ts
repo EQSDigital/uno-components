@@ -6,7 +6,9 @@ export class Row {
     private _data: any;
 
     isSelected = false;
+
     isInEditing = false;
+
     private _cells: Cell[] = [];
 
     constructor(

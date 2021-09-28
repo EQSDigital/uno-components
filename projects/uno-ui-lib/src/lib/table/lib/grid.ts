@@ -11,8 +11,11 @@ import { LocalDataSource } from './data-source/local/local.data-source';
 @Directive()
 export class Grid implements OnDestroy {
     private _createFormShown: boolean;
+
     private _source: LocalDataSource;
+    
     private _settings: UnoSmartTableSettings;
+
     private _dataSet: DataSet;
 
     private onSelectRowSource = new Subject<any>();
