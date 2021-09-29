@@ -296,7 +296,7 @@ export class TableComponent implements OnChanges, OnDestroy {
 
     onUserSelectRow(row: Row) {
         if (this.grid.getSetting('selectMode') !== 'multi') {
-            this.grid.selectRow(row);
+            // this.grid.selectRow(row);
             this.emitUserSelectRow(row);
             this.emitSelectRow(row);
         }
