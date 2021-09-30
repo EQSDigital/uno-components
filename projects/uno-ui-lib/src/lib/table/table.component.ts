@@ -84,7 +84,7 @@ export class TableComponent implements OnChanges, OnDestroy {
     @Output() selectedElem = new EventEmitter<any>();
     // Actions confirmation events:
     @Output() deleteConfirm = new EventEmitter<any>();
-    
+
     @Output() editConfirm = new EventEmitter<any>();
 
     @Output() createConfirm = new EventEmitter<any>();
@@ -122,7 +122,7 @@ export class TableComponent implements OnChanges, OnDestroy {
     @ViewChild(HeaderComponent) private header: HeaderComponent;
 
     @ViewChild('unoSmartTable') private table: ElementRef<HTMLElement>;
-    
+
     private subscriptions$ = new Subscription();
 
     private defaultSettings: UnoSmartTableSettings = {
@@ -295,11 +295,10 @@ export class TableComponent implements OnChanges, OnDestroy {
     }
 
     onUserSelectRow(row: Row) {
-        if (this.grid.getSetting('selectMode') !== 'multi') {
-            // this.grid.selectRow(row);
-            this.emitUserSelectRow(row);
-            this.emitSelectRow(row);
-        }
+        // if (this.grid.getSetting('selectMode') !== 'multi') {
+        this.emitUserSelectRow(row);
+        //     this.emitSelectRow(row);
+        // }
     }
 
     onRowHover(row: Row) {
@@ -308,14 +307,14 @@ export class TableComponent implements OnChanges, OnDestroy {
 
     multipleSelectRow(row: Row) {
         this.grid.multipleSelectRow(row);
-        this.emitUserSelectRow(row);
+        // this.emitUserSelectRow(row);
         this.emitSelectRow(row);
     }
 
     onSelectAllRows(value: boolean) {
         this.grid.selectAllRows(value);
 
-        this.emitUserSelectRow(null);
+        // this.emitUserSelectRow(null);
         this.emitSelectRow(null);
     }
 
@@ -402,11 +401,19 @@ export class TableComponent implements OnChanges, OnDestroy {
     }
 
     private emitSelectRow(row: Row) {
-        this.rowSelect.emit({
-            data: row ? row.data : null,
-            isSelected: row ? row.getIsSelected() : null,
-            source: this.source,
-        });
+        if (row) {
+            this.rowSelect.emit({
+                data: row.data,
+                isSelected: row.getIsSelected(),
+                source: this.source
+            });
+        } else {
+            this.rowSelect.emit({
+                data: this.grid.getSelectedRows(),
+                isSelected: this.grid.getSelectedRows().length > 0,
+                source: this.source
+            });
+        }
     }
 
     private removeResizableGrid() {

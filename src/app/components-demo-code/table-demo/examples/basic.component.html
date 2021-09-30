@@ -10,7 +10,7 @@
     (createConfirm)="confirmRowActionEvent($event, 'create')"
 
     (edit)="isInEditing($event)"
-    (selectedElem)="onSelectedElem($event)"
+    (rowSelect)="onSelectedElem($event)"
     (editSave)="rowActionEditSaveEvent($event)"
     (editConfirm)="confirmRowActionEvent($event, 'edit')"
     
@@ -22,7 +22,8 @@
     (rowSelectActionCustomEvent)="rowSelectActionCustomEvent($event)"
     (searchTerm)="onSearchTerm($event)"
     (saveOptions)="onSaveOptions($event)"
-    (getColumnFilters)="onGetColumnFilters($event)">
+    (getColumnFilters)="onGetColumnFilters($event)"
+    (userRowSelect)="onSelectedElem($event)">
 </uno-smart-table>
 <button class="slds-input" (click)="onAddInlineOutsideTable()">Add inline with click outside table</button>
 <button class="slds-input" (click)="onClickShowPlusButton()">Show plus button</button>

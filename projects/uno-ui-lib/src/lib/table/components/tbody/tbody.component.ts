@@ -17,26 +17,45 @@ export class Ng2SmartTableTbodyComponent implements OnChanges, AfterContentInit,
     @Input() editingFormGroup: FormGroup;
 
     @Input() grid: Grid;
+
     @Input() deleteConfirm: EventEmitter<any>;
+
     @Input() editConfirm: EventEmitter<any>;
+
     @Input() rowClassFunction: Function;
+
     @Input() collapseTableContent: TbodyCollapseContentDirective;
+
     @Input() updateColumnList: any;
+
     @Input() cancelEdit: EventEmitter<any>;
+
     @Input() userRowSelect: EventEmitter<any>;
 
     @Output() save = new EventEmitter<any>();
+
     @Output() cancel = new EventEmitter<any>();
+
     @Output() edit = new EventEmitter<any>();
+
     @Output() editSave = new EventEmitter<any>();
+
     @Output() delete = new EventEmitter<any>();
+
     @Output() rowActionCustomEvent = new EventEmitter<any>();
+
     @Output() rowActionDownloadCustomEvent = new EventEmitter<any>();
+
     @Output() edited = new EventEmitter<any>();
+
     @Output() userSelectRow = new EventEmitter<any>();
+
     @Output() editRowSelect = new EventEmitter<any>();
+
     @Output() multipleSelectRow = new EventEmitter<any>();
+
     @Output() rowHover = new EventEmitter<any>();
+
     @Output() selectedElem = new EventEmitter<any>();
 
     tableBody: HTMLElement;
@@ -225,5 +244,10 @@ export class Ng2SmartTableTbodyComponent implements OnChanges, AfterContentInit,
         }
 
         return count;
+    }
+
+    onSelectRow(row: Row, evt: Event) {
+        evt.stopPropagation();
+        this.multipleSelectRow.emit(row);
     }
 }
