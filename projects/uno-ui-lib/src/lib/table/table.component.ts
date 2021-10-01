@@ -209,6 +209,7 @@ export class TableComponent implements OnChanges, OnDestroy {
         this.tableId = this.grid.getSetting('attr.id');
         this.tableClass = this.grid.getSetting('attr.class');
         this.isHideHeader = this.grid.getSetting('hideHeader');
+
         this.rowClassFunction = this.grid.getSetting('rowClassFunction');
     }
 
@@ -263,11 +264,12 @@ export class TableComponent implements OnChanges, OnDestroy {
     // Open to EDIT:
     editRowSelect(row: Row) {
         // Open it/them:
-        if (this.grid.getSetting('selectMode') === 'multi') {
-            this.onMultipleSelectRow(row);
-        } else {
-            this.onSelectRow(row);
-        }
+        // if (this.grid.getSetting('selectMode') === 'multi') {
+        //     this.onMultipleSelectRow(row);
+        // } else {
+        //     this.onSelectRow(row);
+        // }
+
         // UNBORDER hovered <tr>:
         const hoveredTR = this.table.nativeElement.querySelectorAll('table > tbody')[0].children;
         const configBorderType = this.grid.getSetting('hoveringRow');

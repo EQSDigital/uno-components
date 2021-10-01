@@ -51,11 +51,15 @@ import { Row } from '../../../lib/data-set/row';
 export class TbodyEditDeleteComponent implements OnChanges {
 
     @Input() grid: Grid;
+
     @Input() row: Row;
+
     @Input() deleteConfirm: EventEmitter<any>;
 
     @Output() edit = new EventEmitter<any>();
+
     @Output() delete = new EventEmitter<any>();
+
     @Output() editRowSelect = new EventEmitter<any>();
 
     isActionEdit: boolean;

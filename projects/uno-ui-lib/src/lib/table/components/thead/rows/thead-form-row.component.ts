@@ -52,13 +52,19 @@ export class TheadFormRowComponent implements OnChanges {
     @Input() editingFormGroup: FormGroup;
 
     @Input() grid: Grid;
+
     @Input() row: Row;
+
     @Input() createConfirm: EventEmitter<any>;
+
     @Input() updateColumnList: any;
+
     @Input() cancelCreate: EventEmitter<any>;
 
     @Output() create = new EventEmitter<any>();
+
     @Output() selectedElem = new EventEmitter<any>();
+
     @Output() createSave = new EventEmitter<any>();
 
     colorRow: boolean;

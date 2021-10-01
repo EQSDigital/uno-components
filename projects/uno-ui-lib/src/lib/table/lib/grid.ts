@@ -277,9 +277,10 @@ export class Grid implements OnDestroy {
             if (changes['elements'].length === 0) {
                 // we have to store which one to select as the data will be reloaded
                 this._dataSet.willSelectLastRow();
-            } else {
-                return this._dataSet.selectPreviousRow();
             }
+            // else {
+            //     return this._dataSet.selectPreviousRow();
+            // }
         }
 
         if (changes['action'] === 'append') {

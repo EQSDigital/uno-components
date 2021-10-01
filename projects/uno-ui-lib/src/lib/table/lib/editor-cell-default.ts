@@ -24,11 +24,15 @@ export class DefaultEditorDirective extends ClickOutsideDefault implements Edito
     @Input() editingFormGroup: FormGroup;
 
     @Input() cell: Cell;
+
     @Input() inputClass: string;
+
     @Input() updateColumnList: any;
 
     @Output() onStopEditing = new EventEmitter<any>();
+
     @Output() onEdited = new EventEmitter<any>();
+
     @Output() onClick = new EventEmitter<any>();
 
     errorsData: any;
