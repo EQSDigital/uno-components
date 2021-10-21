@@ -11,27 +11,6 @@ ul.dropdown__list {
     position: inherit !important;
 }
 
-/*
-    Correct LIghtning System, once "fluid" (an option @Input) is passed in
-    => we want a 100% parent-container-width for Input, Label and Dropdown list:
-*/
-.slds-picklist_fluid .slds-picklist__input,
-.slds-picklist_fluid .slds-picklist__label,
-.slds-picklist_fluid .slds-dropdown,
-.slds-picklist_fluid .slds-lookup,
-.slds-picklist--fluid .slds-picklist__input,
-.slds-picklist--fluid .slds-picklist__label,
-.slds-picklist--fluid .slds-dropdown,
-.slds-picklist--fluid .slds-lookup { width: 100% !important; /* And NOT "auto" */}
-/* .... and for the current being, trigger button (classed as "slds-uno-picklist--label"), also needs to be 100%: */
-.slds-picklist--fluid .slds-uno-picklist--label { width: 100%; }
-/* ... and no "min" or "max" measures imposed for '.slds-dropdown': */
-.slds-picklist--fluid .slds-dropdown { max-width: unset; min-width: unset; }
-
-/* Continuing to style all elements for width=100%: */
-// .slds-picklist_fluid button.slds-uno-picklist--label,
-// .slds-picklist--fluid button.slds-uno-picklist--label { text-align: left; display: flex; }
-
 .picklist-border {
     border-bottom: 0.5px solid #d6e0e8;
 }

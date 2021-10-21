@@ -6,7 +6,7 @@ import { Row } from '../../../lib/data-set/row';
 @Component({
     selector: 'select-editor',
     template: `
-        <div class="form-cell form-editor-selector" [formGroup]="editingFormGroup">
+        <div class="form-cell form-editor-selector" [formGroup]="editingFormGroup" style="max-width: 20rem">
             <uno-picklist
                 class="form-control"
 
