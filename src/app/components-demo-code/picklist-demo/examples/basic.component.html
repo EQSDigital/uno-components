@@ -28,9 +28,7 @@
     insertBlankElement="true"
     insertCreateButton="true"
     addButton="Add Button Text"
-    
-    fluid="true"
-
+    fluid
     unoPick
     [(unoPick)]="pickSelected"
     [unoPickMultiple]="true"
@@ -42,28 +40,29 @@
     <ng-template uno-picklist-item let-item>{{ item.value }}</ng-template>
 
 </uno-picklist>
-<uno-picklist
-    [data]="items"
-    [(open)]="open"
-    [position]="true"
-    (selectedElem)=optionSelected($event)
-    insertBlankElement="true"
-    insertCreateButton="true"
-    addButton="Add Button Text"
-    
-    fluid="true"
 
-    unoPick
-    [(unoPick)]="pick"
-    [unoPickMultiple]="multiple"
-    
-    filterDataField="value"
-    listSizeForFilter="5"
->
-    <span class="slds-truncate" title="{{ pickLabel }}">{{ pickLabel }}</span>
-    <ng-template uno-picklist-item let-item>{{ item.value }}</ng-template>
+<div style="width: 250px;">
+    <uno-picklist
+        [data]="items"
+        [(open)]="open"
+        [position]="true"
+        (selectedElem)=optionSelected($event)
+        insertBlankElement="true"
+        insertCreateButton="true"
+        addButton="Add Button Text"
+        fluid
+        unoPick
+        [(unoPick)]="pick"
+        [unoPickMultiple]="multiple"
 
-</uno-picklist>
+        filterDataField="value"
+        listSizeForFilter="5"
+    >
+        <span class="slds-truncate" title="{{ pickLabel }}">{{ pickLabel }}</span>
+        <ng-template uno-picklist-item let-item>{{ item.value }}</ng-template>
+
+    </uno-picklist>
+</div>
 <button unoButton unoType="secondary" unoSize="x-small" class="slds-m-left--small" (click)="multiple=!multiple; pick = multiple ? [] : '';">Toggle to {{ multiple ? 'single option' : 'multiple options' }}</button>
 
 <!-- List the chosen multiple entrances, in badges: -->
@@ -125,16 +124,17 @@
 
     <!-- ********************************************************************************************************************************** -->
 
-    <uno-picklist class="slds-m-right--small"
+    <uno-picklist
+        class="slds-m-right--small"
         [data]="asyncItems"
         [(open)]="openAsync"
         insertBlankElement="true"
         [closeClickOutside]="false"
         [isDisabled]="!selectedFill"
-
+        fluid
         uno-pick
         [(unoPick)]="pickAsyncItem"
-        
+
         filterDataField="login"
 
         (scrollEndReached)="scrollPicklist($event)"

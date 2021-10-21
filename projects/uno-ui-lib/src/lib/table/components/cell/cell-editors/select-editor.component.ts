@@ -24,6 +24,8 @@ import { Row } from '../../../lib/data-set/row';
 
                 filterDataField="value"
 
+                fluid
+
                 (click)="onClickDropdownButton($event)"
                 (keydown.enter)="onEdited.emit($event)"
                 (keydown.esc)="onStopEditing.emit()"
