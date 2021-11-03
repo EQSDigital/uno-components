@@ -298,7 +298,7 @@ export class Grid implements OnDestroy {
 
         if (changes['action'] === 'prepend') {
             // we have to store which one to select as the data will be reloaded
-            this._dataSet.willSelectFirstRow();
+            // this._dataSet.willSelectFirstRow();
         }
 
         return null;
