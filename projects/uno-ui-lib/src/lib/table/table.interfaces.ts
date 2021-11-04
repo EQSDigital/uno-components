@@ -162,6 +162,8 @@ export interface UnoSmartTableSettings {
 
     showSearch?: boolean;
 
+    showSaveColumns?: boolean;
+
     /**
      * The table's columns - only at instalation, we know the name of each column (key, to the interface Type)!.
      */

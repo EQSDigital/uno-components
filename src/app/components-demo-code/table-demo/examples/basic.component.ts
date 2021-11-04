@@ -165,6 +165,7 @@ export class BasicComponent implements AfterViewInit {
             selectMode: 'multi',
             filterType: 'single',
             showSearch: true,
+            showSaveColumns: true,
             headerActions: [
                 {
                     icon: 'logout',

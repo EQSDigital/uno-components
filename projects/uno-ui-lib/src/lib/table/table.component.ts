@@ -180,6 +180,7 @@ export class TableComponent implements OnChanges, OnDestroy {
             confirmDelete: false,
         },
         showSearch: false,
+        showSaveColumns: false,
 
         columns: {},
 
