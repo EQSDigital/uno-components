@@ -29,11 +29,14 @@ export class BasicComponent implements AfterViewInit {
 
     showAdd = true;
 
+    userSettings: any;
+
     @ViewChild(TableComponent, { static: true }) private table: TableComponent;
 
     constructor() {
         this.dataTable = new LocalDataSource(require('../table-data/data.json'));
         this.settings = this.createTableSettings();
+        this.userSettings = this.createUserSetings();
     }
 
     public ngAfterViewInit() {
@@ -158,6 +161,67 @@ export class BasicComponent implements AfterViewInit {
     onClickShowPlusButton() {
         this.showAdd = !this.showAdd;
         this.settings = this.createTableSettings();
+    }
+
+    private createUserSetings() {
+        return {
+            id: {
+                isVisible: false,
+                require: false,
+                width: null,
+                filter: false,
+                sort: true,
+            },
+            name: {
+                isVisible: true,
+                require: true,
+                width: null,
+                filter: false,
+                sort: true,
+            },
+            description: {
+                isVisible: false,
+                require: true,
+                width: null,
+                filter: false,
+                sort: true,
+            },
+            username: {
+                isVisible: true,
+                require: false,
+                width: null,
+                filter: false,
+                sort: true,
+            },
+            email: {
+                isVisible: true,
+                require: false,
+                width: null,
+                filter: false,
+                sort: true,
+            },
+            link: {
+                isVisible: true,
+                require: false,
+                width: null,
+                filter: false,
+                sort: true,
+            },
+            passed: {
+                isVisible: true,
+                require: false,
+                width: null,
+                filter: false,
+                sort: true,
+            },
+            role: {
+                isVisible: true,
+                require: false,
+                width: null,
+                filter: false,
+                sort: true,
+            }
+        };
     }
 
     private createTableSettings(): UnoSmartTableSettings {
