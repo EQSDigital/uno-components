@@ -45,6 +45,7 @@ export class BasicComponent {
 
     docUpload_possibleStatus = [
         { name: 'Draft', id: 1, siteId: 1 },
+        
         { name: 'In Progress', id: 2, siteId: 1 },
         { name: 'Approved', id: 3, siteId: 1 },
         { name: 'Rejected', id: 4, siteId: 1 }
