@@ -40,7 +40,7 @@ import { Row } from '../../../lib/data-set/row';
         <uno-icon
             id="trash"
             *ngIf="row.data[deleteRowProperty] && isActionDelete"
-            size="xx-small"
+            size="x-small"
             icon="trash"
             class="uno-smart-table-action uno-smart-table-action-delete-delete"
             [title]="deleteRowButtonContent | translate"

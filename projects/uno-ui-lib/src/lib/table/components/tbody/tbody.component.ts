@@ -136,10 +136,11 @@ export class Ng2SmartTableTbodyComponent implements OnChanges, AfterContentInit,
         const hoveredTR = this.tableBody.children[rowObj.index + this.howManyItemsAreOpenBeforeMe(rowObj.index)];
         const actionIcons = this.getThisRowActionIcons(hoveredTR);
         const configBorderType = this.grid.getSetting('hoveringRow');
+        const cssProperty = configBorderType ? configBorderType.css : null;
 
         // BORDER hovered <tr> ?:
         if (configBorderType) {
-            this.renderer.setAttribute(hoveredTR, 'style', configBorderType.css);
+            this.renderer.setStyle(hoveredTR, cssProperty.split(':')[0], cssProperty.split(':')[1]);
         }
         // SHOW '.ng2-smart-actions' Actions <td> ICONS for this hovered <tr>:
         for (let i = 0; i < actionIcons.length; i++) {
@@ -158,7 +159,7 @@ export class Ng2SmartTableTbodyComponent implements OnChanges, AfterContentInit,
 
         // UNBORDER hovered <tr>:
         if (cssProperty) {
-            this.renderer.setAttribute(hoveredTR, 'style', cssProperty.split(':')[0] + ': none;');
+            this.renderer.removeStyle(hoveredTR, cssProperty.split(':')[0]);
         }
         // HIDE '.ng2-smart-actions' Actions <td> ICONS for this hovered <tr>:
         for (let i = 0; i < actionIcons.length; i++) {

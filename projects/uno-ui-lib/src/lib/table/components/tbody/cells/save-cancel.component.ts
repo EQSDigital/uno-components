@@ -33,7 +33,7 @@ import { DefaultCreateSaveCancel } from '../../../lib/create-save-cancel-default
             <uno-icon
                 id="close"
                 icon="close"
-                size="xx-small"
+                size="x-small"
                 class="uno-smart-table-action uno-smart-table-action-edit-cancel"
                 [title]="cancelButtonContent | translate"
                 (click)="onCancelEdit($event)">

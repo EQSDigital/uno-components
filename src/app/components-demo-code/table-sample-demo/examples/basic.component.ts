@@ -72,6 +72,14 @@ export class BasicComponent implements AfterViewInit {
         }
     }
 
+    public rowActionCustomEvent(evt: any) {
+        switch (evt.action) {
+            case 'edit':
+                window.alert(evt.data);
+                break;
+        }
+    }
+
     onSearchTerm(term: string) {
         console.log(`Search term: ${term}`);
         this.dataTable.addFilter({ field: 'name', search: [term] });
@@ -88,6 +96,14 @@ export class BasicComponent implements AfterViewInit {
             actions: {
                 add: true,
                 delete: true,
+                custom: [
+                    {
+                        name: 'edit',
+                        title: 'edit',
+                        icon: 'edit',
+                        visible: true
+                    }
+                ]
             },
 
             delete: { confirmDelete: true },

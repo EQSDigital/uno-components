@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, Host } from '@angular/core';
 
 import { Row } from '../../../lib/data-set/row';
 import { Grid } from '../../../lib/grid';
+import { Ng2SmartTableTbodyComponent } from '../tbody.component';
 
 @Component({
     selector: 'ng2-st-tbody-custom',
@@ -37,7 +38,7 @@ import { Grid } from '../../../lib/grid';
             id="down"
             *ngIf="row.data?.downloadContentData"
             icon="down"
-            size="xx-small"
+            size="x-small"
             uno-popover-trigger
 
             unoPopoverPlacement="leftBottom"
@@ -63,6 +64,10 @@ export class TbodyCustomComponent {
     @Output() rowActionCustomEvent = new EventEmitter<any>();
     @Output() rowActionDownloadCustomEvent = new EventEmitter<any>();
 
+    constructor(
+        @Host() private parentComponent: Ng2SmartTableTbodyComponent
+    ) { }
+
     onCustom(action: any, event: any) {
         event.preventDefault();
         event.stopPropagation();
@@ -74,6 +79,8 @@ export class TbodyCustomComponent {
             source: this.grid.source,
             row: this.row
         });
+
+        this.parentComponent.onRowHoverLeave(this.row);
     }
 
     downloadInnerEventEmited(objData: any) {

@@ -3,6 +3,7 @@
     (mouseenter)="showOverlay = true"
     (mouseleave)="onMouseLeavePicture()"
     class="picture"
+    [style.background-size]="rounded ? 'cover' : 'contain'"
     [style.width]="width"
     [style.height]="height"
     [style.background-image]="'url(' + (image || defaultImage) + ')'"
