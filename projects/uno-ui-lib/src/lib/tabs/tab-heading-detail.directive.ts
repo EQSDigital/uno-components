@@ -1,4 +1,4 @@
-import { Directive, Input, TemplateRef, ContentChild, AfterContentInit } from '@angular/core';
+import { Directive, TemplateRef, ContentChild, AfterContentInit } from '@angular/core';
 
 import { TabDirective } from './tab.directive';
 

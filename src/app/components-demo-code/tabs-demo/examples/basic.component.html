@@ -12,7 +12,7 @@
 
         <!-- Tabs (heading and content) can be added dynamically, -->
         <!-- through the use of <unoTab /> Directive, with "unoTabHeading" and "unoTabContent" Directives inside: -->
-        <uno-tab *ngFor="let newTab of newTabs$ | async" [heading]="'Dynamic Tab ' + newTab">
+        <uno-tab *ngFor="let newTab of newTabs" [unoTabId]="newTab" [heading]="'Dynamic Tab ' + newTab">
             <ng-template unoTabContent>
                 <p>Some detail text for <b>{{ newTab }}</b>.</p>
                 <!-- Think on a way to delete this dynamically created Tab: -->

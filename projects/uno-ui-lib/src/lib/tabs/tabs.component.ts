@@ -1,7 +1,4 @@
-import {
-    Component, AfterContentInit, QueryList, ContentChildren, Input, Output,
-    EventEmitter, ElementRef, Renderer2, ChangeDetectionStrategy
-} from '@angular/core';
+import { Component, AfterContentInit, QueryList, ContentChildren, Input, Output, EventEmitter, ElementRef, Renderer2 } from '@angular/core';
 
 import { isInt } from '../../utils/util';
 

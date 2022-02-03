@@ -7,22 +7,20 @@ import { of } from 'rxjs';
 })
 
 export class BasicComponent {
-    selectedDefaultTab = 'tab3';
+    selectedDefaultTab = 'tab2';
     selectedScopeTab = 'tabScoped3';
 
-    newId = 0;
-    newTabs: number[] = [];
-
-    newTabs$ = of(null);
+    newTabs: string[] = ['tab1', 'tab2', 'tab3'];
 
     addDetail() {
-        this.newTabs.push(this.newId++);
+        this.newTabs.push(`tab${++this.newTabs.length}`);
     }
 
     protected removeTab(dynamicTab: Object) {
         this.newTabs = this.newTabs.filter(
             (tab) => tab !== dynamicTab
         );
+
         // ... and select the default selected tab, so content can be swipped off of the HTML:
         setTimeout(() => this.selectedDefaultTab = 'tab3');
     }
