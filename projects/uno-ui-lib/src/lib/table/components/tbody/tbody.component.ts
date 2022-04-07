@@ -139,7 +139,7 @@ export class Ng2SmartTableTbodyComponent implements OnChanges, AfterContentInit,
         const cssProperty = configBorderType ? configBorderType.css : null;
 
         // BORDER hovered <tr> ?:
-        if (configBorderType) {
+        if (configBorderType && cssProperty) {
             this.renderer.setStyle(hoveredTR, cssProperty.split(':')[0], cssProperty.split(':')[1]);
         }
         // SHOW '.ng2-smart-actions' Actions <td> ICONS for this hovered <tr>:

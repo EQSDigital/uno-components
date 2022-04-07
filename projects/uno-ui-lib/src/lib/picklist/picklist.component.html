@@ -68,7 +68,7 @@
                         <p class="slds-truncate" style="display: contents;">
                             <input *ngIf="showCheckBox" type="checkbox" [checked]="isOptionActive(item)">
                             <span class="picklist-text slds-truncate">
-                                <ng-template [ngTemplateOutlet]="itemTemplate?.templateRef" [ngTemplateOutletContext]="{$implicit: item}"></ng-template>    
+                                <ng-template [ngTemplateOutlet]="itemTemplate?.templateRef" [ngTemplateOutletContext]="{$implicit: item}"></ng-template>
                             </span>
                         </p>
                     </span>
