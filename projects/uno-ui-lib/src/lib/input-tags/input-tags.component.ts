@@ -150,9 +150,11 @@ export class InputTagsComponent implements OnChanges {
      * This method remove/add elements to dropdown every time user select a object from list.
      */
     filterArray() {
-        this.filteredObjects = this.objects.filter((obj) =>
-            this.selectedObjects.findIndex((aux) => aux[this.key] === obj[this.key]) < 0
-        );
+        // if (this.selectedObjects && this.selectedObjects.length > 0) {
+            this.filteredObjects = this.objects.filter((obj) =>
+                this.selectedObjects.findIndex((aux) => aux[this.key] === obj[this.key]) < 0
+            );
+        // }
     }
 
     /**
