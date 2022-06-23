@@ -35,7 +35,7 @@
                             "node_modules/prismjs/themes/prism-okaidia.css"
                         ],
                         "scripts": [
-                            "node_modules/marked/lib/marked.js",
+                            "node_modules/marked/marked.min.js",
                             "node_modules/prismjs/prism.js",
                             "node_modules/emoji-toolkit/lib/js/joypixels.min.js",
                             "node_modules/prismjs/components/prism-markdown.min.js",
@@ -73,20 +73,24 @@
                             "extractLicenses": true,
                             "vendorChunk": false,
                             "buildOptimizer": true
-                        }
+                        },
+                        "development": {}
                     },
-                    "defaultConfiguration": ""
+                    "defaultConfiguration": "production"
                 },
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                        "browserTarget": "uno-ui-lib-app:build"
                     },
                     "configurations": {
                         "production": {
                             "browserTarget": "uno-ui-lib-app:build:production"
+                        },
+                        "development": {
+                            "browserTarget": "uno-ui-lib-app:build:development"
                         }
-                    }
+                    },
+                    "defaultConfiguration": "development"
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -134,7 +138,8 @@
                     "options": {
                         "protractorConfig": "e2e/protractor.conf.js",
                         "devServerTarget": "uno-ui-lib-app:serve"
-                    }
+                    },
+                    "configurations": {}
                 },
                 "lint": {
                     "builder": "@angular-devkit/build-angular:tslint",
@@ -163,8 +168,10 @@
                         "production": {
                             "project": "projects/uno-ui-lib/ng-package.prod.json",
                             "tsConfig": "projects/uno-ui-lib/tsconfig.lib.prod.json"
-                        }
-                    }
+                        },
+                        "development": {}
+                    },
+                    "defaultConfiguration": "production"
                 },
                 "test": {
                     "builder": "@angular-devkit/build-angular:karma",
