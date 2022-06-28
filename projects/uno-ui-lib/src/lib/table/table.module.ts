@@ -4,13 +4,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { TableComponent } from './table.component';
-import { DefaultEditorDirective } from './index';
 import { CellModule } from './components/cell/cell.module';
 import { TBodyModule } from './components/tbody/tbody.module';
 import { THeadModule } from './components/thead/thead.module';
 import { HeaderModule } from './components/header/header.module';
 
-import { TbodyCollapseContentDirective } from './components/tbody/tbody-collapse-content.directive';
+
 
 @NgModule({
     imports: [
@@ -25,14 +24,10 @@ import { TbodyCollapseContentDirective } from './components/tbody/tbody-collapse
     ],
     exports: [
         TableComponent,
-        DefaultEditorDirective,
-        CellModule,
-        TbodyCollapseContentDirective
+        CellModule
     ],
     declarations: [
-        TableComponent,
-        DefaultEditorDirective,
-        TbodyCollapseContentDirective
+        TableComponent
     ],
     providers: [],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]

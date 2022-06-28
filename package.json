@@ -29,13 +29,13 @@
     "@angular/router": "~13.3.11",
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
-    "core-js": "^3.6.4",
-    "lodash": "^4.17.20",
-    "moment": "^2.26.0",
+    "core-js": "^3.20.2",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.3",
     "ng2-completer": "^3.0.3",
-    "ngx-markdown": "^12.1.0",
+    "ngx-markdown": "^13.1.0",
     "rxjs": "^6.5.4",
-    "tether": "^1.4.7",
+    "tether": "^2.0.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
   },
@@ -47,7 +47,10 @@
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.8",
     "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
     "codelyzer": "^6.0.0",
+    "eslint": "^8.18.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~6.3.2",
@@ -58,7 +61,6 @@
     "ng-packagr": "^13.3.1",
     "protractor": "~7.0.0",
     "ts-node": "~8.6.2",
-    "tslint": "~6.1.0",
     "typescript": "~4.6.4"
   }
 }

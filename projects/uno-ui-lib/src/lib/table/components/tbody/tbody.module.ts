@@ -5,10 +5,11 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { CellModule } from '../cell/cell.module';
 
-import { Ng2SmartTableTbodyComponent } from './tbody.component';
+import { Ng2SmartTableTbodyComponent, TbodyCustomComponent } from './tbody.component';
 import { TbodySaveCancelComponent } from './cells/save-cancel.component';
 import { TbodyEditDeleteComponent } from './cells/edit-delete.component';
-import { TbodyCustomComponent } from './cells/custom.component';
+// import { TbodyCustomComponent } from './cells/custom.component';
+import { TbodyCollapseContentDirective } from './tbody-collapse-content.directive';
 
 import { UnoIconModule } from '../../../icon/icon.module';
 import { UnoButtonModule } from '../../../button/button.module';
@@ -18,7 +19,8 @@ const TBODY_COMPONENTS = [
     TbodySaveCancelComponent,
     TbodyEditDeleteComponent,
     TbodyCustomComponent,
-    Ng2SmartTableTbodyComponent
+    Ng2SmartTableTbodyComponent,
+    TbodyCollapseContentDirective
 ];
 
 @NgModule({

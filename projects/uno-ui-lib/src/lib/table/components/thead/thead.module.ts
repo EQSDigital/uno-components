@@ -11,6 +11,7 @@ import { CheckboxSelectAllComponent } from './cells/checkbox-select-all.componen
 import { ColumnTitleComponent } from './cells/column-title.component';
 import { TheadFormRowComponent } from './rows/thead-form-row.component';
 import { TheadTitlesRowComponent } from './rows/thead-titles-row.component';
+import { DefaultEditorDirective } from '../../lib/editor-cell-default';
 
 import { UnoIconModule } from '../../../icon/icon.module';
 import { UnoButtonModule } from '../../../button/button.module';
@@ -24,6 +25,7 @@ const THEAD_COMPONENTS = [
     TheadFormRowComponent,
     TheadTitlesRowComponent,
     Ng2SmartTableTheadComponent,
+    DefaultEditorDirective
 ];
 
 @NgModule({

@@ -1,7 +1,4 @@
-import {
-    Component, Input, ComponentFactoryResolver, ViewChild,
-    ViewContainerRef, OnInit, OnDestroy, ComponentFactory, ChangeDetectionStrategy
-} from '@angular/core';
+import { Component, Input, ViewChild, ViewContainerRef, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 
 import { Cell } from '../../../lib/data-set/cell';
 import { ViewCell } from '../../../lib/view-cell-interface';
@@ -24,7 +21,7 @@ export class CustomViewComponent implements OnInit, OnDestroy {
 
     @ViewChild('dynamicTarget', { read: ViewContainerRef, static: true }) dynamicTarget: ViewContainerRef;
 
-    constructor(private resolver: ComponentFactoryResolver) { }
+    constructor() { }
 
     ngOnInit() {
         if (this.cell && !this.customComponent) {
@@ -44,14 +41,11 @@ export class CustomViewComponent implements OnInit, OnDestroy {
      * This method render de template defined on table settings for custom template.
      */
     protected createCustomComponent() {
-        let componentFactory: ComponentFactory<any>;
         if (this.isExpanded) {
-            componentFactory = this.resolver.resolveComponentFactory(this.cell.column.renderComponentExpanded);
+            this.customComponent = this.dynamicTarget.createComponent(this.cell.column.renderComponentExpanded);
         } else {
-            componentFactory = this.resolver.resolveComponentFactory(this.cell.column.renderComponent);
+            this.customComponent = this.dynamicTarget.createComponent(this.cell.column.renderComponent);
         }
-
-        this.customComponent = this.dynamicTarget.createComponent(componentFactory);
     }
 
     /**

@@ -1,7 +1,4 @@
-import {
-    Component, ComponentFactoryResolver, ViewChild,
-    ViewContainerRef, OnChanges, OnDestroy, Input, OnInit, SimpleChanges, ChangeDetectionStrategy
-} from '@angular/core';
+import { Component, ViewChild, ViewContainerRef, OnChanges, OnDestroy, Input, OnInit, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
@@ -35,7 +32,7 @@ export class CustomEditComponent extends EditCellDefault implements OnInit, OnCh
      */
     subscriptions$: Subscription = new Subscription();
 
-    constructor(private resolver: ComponentFactoryResolver) {
+    constructor() {
         super();
     }
 
@@ -46,10 +43,8 @@ export class CustomEditComponent extends EditCellDefault implements OnInit, OnCh
 
     ngOnChanges(changes: SimpleChanges) {
         if (this.cell && !this.customComponent) {
-            // Render the Component setted on UnoTableSettings.
-            const componentFactory = this.resolver.resolveComponentFactory(this.cell.column.editor.component);
             // Create component and set the instance of the Component.
-            this.customComponent = this.dynamicTarget.createComponent(componentFactory);
+            this.customComponent = this.dynamicTarget.createComponent(this.cell.column.editor.component);
 
             // set @Inputs and @Outputs of custom component
             this.customComponent.instance.cell = this.cell;

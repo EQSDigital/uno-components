@@ -1,4 +1,4 @@
-import { Directive, ViewContainerRef, ComponentFactoryResolver, Optional, OnInit, OnDestroy, ComponentRef, Input } from '@angular/core';
+import { Directive, ViewContainerRef, Optional, OnInit, OnDestroy, ComponentRef, Input } from '@angular/core';
 import { NgControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
@@ -22,7 +22,6 @@ export class ControlErrorDirective implements OnInit, OnDestroy {
 
     constructor(
         public vcr: ViewContainerRef,
-        private resolver: ComponentFactoryResolver,
         @Optional() controlErrorContainer: ControlErrorContainerDirective,
         private controlDir: NgControl,
         private translate: TranslateService
@@ -56,8 +55,7 @@ export class ControlErrorDirective implements OnInit, OnDestroy {
 
     private setError(text: string) {
         if (!this.ref) {
-            const factory = this.resolver.resolveComponentFactory(ControlErrorComponent);
-            this.ref = this.container.createComponent(factory);
+            this.ref = this.container.createComponent(ControlErrorComponent);
         }
 
         this.ref.instance.text = text;
