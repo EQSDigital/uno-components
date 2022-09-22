@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 export class BasicComponent {
     pickSelected = { color: '#3434d6' };
 
-    levelType = { id: 1, siteId: 1, name: 'Level III' };
+    levelType = { id: 1, siteId: 1, name: 'LEVEL III' };
     posLegX1 = 0.8;
-    posLegY1 = 0.86;
+    posLegY1 = 0.81;
 
     evaluated = 325;
     projected = 279;

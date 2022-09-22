@@ -1,47 +1,49 @@
 .circle-graph {
     position: relative;
-    display: inline-block;
 
     & .title {
         position: absolute;
-        width:82px;
-        top: 45px;
-        left: 55px;
-        font-family: 'Nunito Bold';
+        width: 100px;
+        top: 42px;
+        left: 40px;
+        font-family: "Nunito Bold";
         font-size: 12px;
+        color: var(--light-gray-3);
     }
 
     & .values {
         position: absolute;
-        left: 85px;
+        left: 80px;
         width: 70px;
-        font-family: 'Nunito Bold';
+        font-family: "Nunito Bold";
         font-size: 16px;
         cursor: pointer;
+        color: var(--light-gray-1);
 
         &.evaluated {
-            top: 74px;
+            top: 63px;
         }
 
         &.projected {
-            top: 116px;
+            top: 105px;
         }
     }
 
     & .legends {
         position: absolute;
-        width:82px;
-        left: 55px;
-        font-family: 'Nunito Semibold';
+        width: 82px;
+        left: 52px;
+        font-family: "Nunito Semibold";
         font-size: 11px;
         cursor: pointer;
+        color: var(--light-gray-1);
 
         &.evaluated {
-            top: 94px;
+            top: 85px;
         }
 
         &.projected {
-            top: 136px;
+            top: 127px;
         }
     }
 }

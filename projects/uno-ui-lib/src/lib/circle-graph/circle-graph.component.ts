@@ -12,13 +12,13 @@ export class CircleGraphComponent implements OnInit, OnChanges {
     @Input() projected = 1;
 
     @Input() posLegX1 = 0.8;
-    @Input() posLegY1 = 0.86;
+    @Input() posLegY1 = 0.81;
 
     @Input() posLegX2 = 0.8;
     @Input() posLegY2 = 1.28;
 
-    @Input() width = 192;
-    @Input() height = 199;
+    @Input() width = 183;
+    @Input() height = 183;
 
     @Input() evaluatedTitle = 'evaluated';
     @Input() projectedTitle = 'projected';
@@ -56,7 +56,7 @@ export class CircleGraphComponent implements OnInit, OnChanges {
         this.radius = 80;
 
         this.total = this.evaluated + this.projected;
-        this.projected > 0 ? this.percentage = (this.projected / this.total) * 100 : this.percentage = 1;
+        this.percentage = this.projected > 0 ? (this.projected / this.total) * 100 : 1;
 
         this.drawPercentageCircle(this.percentage, this.radius, this.canvas);
     }
@@ -86,7 +86,7 @@ export class CircleGraphComponent implements OnInit, OnChanges {
         context.clearRect(0, 0, this.width, this.height);
         context.beginPath();
         context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
-        context.lineWidth = 12;
+        context.lineWidth = 15;
 
         // line color
         context.strokeStyle = this.hexToRgbA(this.color, '0.25');
@@ -97,7 +97,7 @@ export class CircleGraphComponent implements OnInit, OnChanges {
 
         context.beginPath();
         context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
-        context.lineWidth = 12;
+        context.lineWidth = 15;
         context.lineCap = 'round';
 
         // line color

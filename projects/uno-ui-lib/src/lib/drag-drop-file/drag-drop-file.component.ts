@@ -15,9 +15,13 @@ export class DragDropFileComponent {
 
     @Input() public disabled = false;
 
+    @Input() public disabledDownload = false;
+
     @Output() filesDropped = new EventEmitter<File | FileList>();
 
     @Output() deleteFile = new EventEmitter<File>();
+
+    @Output() downloadFile = new EventEmitter<File>();
 
     @ViewChild('fileInput') private fileInput: ElementRef;
 
@@ -63,6 +67,11 @@ export class DragDropFileComponent {
     onDeleteFile(evt: any) {
         evt.stopPropagation();
         this.deleteFile.emit(this.file);
+    }
+
+    onDownloadFile(evt: any) {
+        evt.stopPropagation();
+        this.downloadFile.emit(this.file);
     }
 
 }
