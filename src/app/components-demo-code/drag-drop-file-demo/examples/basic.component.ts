@@ -17,4 +17,17 @@ export class BasicComponent {
             this.files.push(evt);
         }
     }
+
+    onDeleteFile(evt: any) {
+        console.log(evt);
+    }
+
+    onDownloadFile(evt: any) {
+        console.log(evt);
+    }
+
+    onUploadImage(evt: any) {
+        console.log(evt);
+    }
+
 }

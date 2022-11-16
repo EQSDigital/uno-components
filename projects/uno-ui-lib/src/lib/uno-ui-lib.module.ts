@@ -29,6 +29,7 @@ import { UnoSearchModule } from './search/search.module';
 import { UnoSwitchModule } from './switch/switch.module';
 import { UnoTableModule } from './table/table.module';
 import { UnoTabsModule } from './tabs/tabs.module';
+import { UnoDragDropImageModule } from './drag-drop-image/drag-drop-image.module';
 
 const MODULES = [
     UnoAssetVisualizerModule,
@@ -60,6 +61,7 @@ const MODULES = [
     UnoSwitchModule,
     UnoTableModule,
     UnoTabsModule,
+    UnoDragDropImageModule,
 ];
 
 @NgModule({
