@@ -293,8 +293,13 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
 
             if (this.editData.expiredDate) {
                 const date = new Date(this.editData.expiredDate);
-                this.datePickerExpiredData = date;
-                this.uploadForm.controls.expiredDate.setValue(date);
+                if (this.expireMinDate && this.editData.expiredDate < new Date()) {
+                    this.datePickerExpiredData = date;
+                    this.uploadForm.controls.expiredDate.setErrors({ invalid: true });
+                } else {
+                    this.datePickerExpiredData = date;
+                    this.uploadForm.controls.expiredDate.setValue(date);
+                }
             }
 
             if (this.editData.documentFileName) {

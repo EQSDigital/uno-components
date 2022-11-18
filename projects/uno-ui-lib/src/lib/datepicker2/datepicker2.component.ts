@@ -105,6 +105,7 @@ export class Datepicker2Component implements OnChanges {
         if (changes.date && changes.date.currentValue) {
             this.dateForm.reset();
             this.dateForm.setValue(this.date);
+            this.dateForm.markAsDirty();
         }
 
         if (changes.reset && this.reset) {
