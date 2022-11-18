@@ -147,7 +147,7 @@ export class BasicComponent {
             },
             description: 'gggggg',
             comments: 'uuuuu',
-            expiredDate: new Date().toISOString(),
+            expiredDate: new Date(2022, 9, 22),
             documentStatus: { name: 'Pending', id: 2, siteId: 1, color: '#ffeb3b' },
             name: 'tttt',
             documentFileName: 'document'
