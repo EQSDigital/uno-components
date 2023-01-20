@@ -24,11 +24,13 @@ export class ClickOutsideDefault {
             || (event['composedPath'] && event['composedPath()']),
             toFind = document.querySelectorAll('uno-lookup.form-control')[0];
 
-        path.forEach(elem => {
-            if (elem === toFind) {
-                this.clickWasInside = true;
-            }
-        });
+        if (path) {
+            path.forEach(elem => {
+                if (elem === toFind) {
+                    this.clickWasInside = true;
+                }
+            });
+        }
 
         if (!this.clickWasInside) {
             this.openValidatorPopover = false;
