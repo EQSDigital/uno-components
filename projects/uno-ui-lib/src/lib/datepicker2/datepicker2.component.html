@@ -1,18 +1,17 @@
-<mat-form-field [class.form-field]="!dateForm.valid && dateForm.dirty" appearance="outline" style="width: 100%;" id="date">
+<mat-form-field [class.form-field]="!dateForm.disable && !dateForm.valid && dateForm.dirty" appearance="outline" style="width: 100%;" id="date">
     <div class="slds-grid">
         <ng-container *ngIf="!dateRange">
             <div style="width: 100%;">
                 <input
-                    [formControl]="dateForm"
-                    (click)="markAsDirty()"
-                    class="date-input"
-                    matInput
-                    [matDatepicker]="picker"
-                    [placeholder]="chooseLabel"
-                    (dateChange)="addEvent('change', $event)"
-                    [min]="min"
-                    [max]="max"
-                    [value]="date">
+                       [formControl]="dateForm"
+                       (click)="markAsDirty()"
+                       class="date-input"
+                       matInput
+                       [matDatepicker]="picker"
+                       [placeholder]="chooseLabel"
+                       (dateChange)="addEvent('change', $event)"
+                       [min]="min"
+                       [max]="max">
                 <mat-datepicker [disabled]="disableCalendar" #picker></mat-datepicker>
             </div>
             <div style="padding-top: 8px;">

@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
 })
 
 export class BasicComponent {
-    date = new Date();
+    date = new Date('2019-09-01T23:00:00');
 
     minDate = new Date();
-    maxDate = new Date();
+    maxDate: any;
 
     constructor() {
         const currentYear = new Date().getFullYear();
