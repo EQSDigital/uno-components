@@ -55,7 +55,7 @@ export class SearchComponent {
     public keyDownFunction(event: any, text: string) {
         event.stopPropagation();
         if (event.keyCode === 13) {
-            this.searchTerm.emit(text);
+            this.searchTerm.emit(this.normalizeString(text));
 
             if (text.length > 0) {
                 this.inSearchMode = true;
@@ -71,5 +71,9 @@ export class SearchComponent {
                 }
             }
         }
+    }
+
+    private normalizeString(str: string): string {
+        return str.normalize('NFD').replace(/\p{Diacritic}/gu, "");
     }
 }
