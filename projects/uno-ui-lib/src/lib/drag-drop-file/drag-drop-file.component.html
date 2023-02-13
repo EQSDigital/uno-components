@@ -1,14 +1,14 @@
 <div
-    class="slds-grid slds-grid--align-center slds-grid--vertical-align-center border"
-    [class.border--cursor]="disabled ? false : true"
-    unoDragDropFile
-    [multiple]="multipleFiles"
-    [disabled]="disabled"
-    (fileDropped)="onFileDropped($event)"
-    (click)="onClickUpload()">
+     class="slds-grid slds-grid--align-center slds-grid--vertical-align-center border"
+     [class.border--cursor]="disabled ? false : true"
+     unoDragDropFile
+     [multiple]="multipleFiles"
+     [disabled]="disabled"
+     (fileDropped)="onFileDropped($event)"
+     (click)="onClickUpload()">
     <ng-container *ngIf="!file; else showFile">
         <uno-icon icon="upload" size="x-small" class="slds-button__icon--left"></uno-icon>
-        <span class="slds-m-right--small" style="font-size: 17px; color: var(--light-grey-blue);" translate>chooseFileLabel</span>
+        <span class="slds-m-right--small" style="font-size: 14px; color: var(--light-grey-blue);" translate>chooseFileLabel</span>
     </ng-container>
     <ng-template #showFile>
         <span class="slds-m-right--small" class="open-sans-semibold-14">{{ file?.name }}</span>

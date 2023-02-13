@@ -13,8 +13,14 @@ export class DragDropFileComponent {
 
     @Input() public file: File;
 
+    /**
+     * Remove from templete the "trash" icon.
+     */
     @Input() public disabled = false;
 
+    /**
+     * Remove from template the "download" icon.
+     */
     @Input() public disabledDownload = false;
 
     @Output() filesDropped = new EventEmitter<File | FileList>();
@@ -27,7 +33,7 @@ export class DragDropFileComponent {
 
     public fileUploadIsToBig = false;
 
-    constructor(private render: Renderer2) {}
+    constructor(private render: Renderer2) { }
 
     onClickUpload() {
         if (!this.disabled) {

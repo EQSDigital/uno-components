@@ -1,25 +1,26 @@
 <div
-    class="slds-modal"
-    [class.slds-fade-in-open]="open"
-    [ngClass]="[size ? 'slds-modal--' + size : '']"
-    [attr.aria-hidden]="!open"
-    [attr.aria-labelledby]="headingId"
-    [attr.aria-describedby]="contentId"
-    role="dialog">
+     class="slds-modal"
+     [class.slds-fade-in-open]="open"
+     [ngClass]="[size ? 'slds-modal--' + size : '']"
+     [attr.aria-hidden]="!open"
+     [attr.aria-labelledby]="headingId"
+     [attr.aria-describedby]="contentId"
+     role="dialog">
 
     <div class="slds-modal__container" [class.slds-modal-small-container--of-template]="smallerModal">
 
         <!-- Modal Header -->
         <header class="slds-modal__header" [class.slds-modal__header--empty]="!(headerStr || headerDirective)" [style.text-align]="headerAlign">
-            
+
             <!-- ... using Input Directives: -->
             <ng-template #localHeader>
                 <h2 *ngIf="headerStr" class="slds-text-heading_large" [id]="headingId">{{ headerStr }}</h2>
                 <h3 *ngIf="subHeaderStr" class="slds-text-heading_small" style="color: var(--slate-grey)">{{ subHeaderStr }}</h3>
             </ng-template>
-            
+
             <!-- ...using Angular Template: -->
-            <ng-template *ngIf="headerDirective; else localHeader" [ngTemplateOutlet]="headerDirective.templateRef" [ngTemplateOutletContext]="{ id: headingId }"></ng-template>
+            <ng-template *ngIf="headerDirective; else localHeader" [ngTemplateOutlet]="headerDirective.templateRef"
+                         [ngTemplateOutletContext]="{ id: headingId }"></ng-template>
 
         </header>
 
@@ -31,7 +32,7 @@
 
             <!-- ... using pre-defined UNO ui lib Angular Templates, SPECIFIC to apply into Nano APP!-->
             <div [ngSwitch]="templateType">
-                
+
                 <ng-template [ngSwitchCase]="'successModal'">
                     <div class="success-modal-container slds-text-align--center slds-p-around--x-large">
                         <h2 style="font-family: 'Nunito'; font-size: 32px;" translate>successTitle</h2>
@@ -102,15 +103,18 @@
                 </ng-template>
 
                 <ng-template [ngSwitchCase]="'docsUploadModal'">
-                    <form [formGroup]="uploadForm" class="uno-forms slds-grid slds-gutters_small slds-wrap slds-p-around--large" style="background: var(--pale-grey);">
+                    <form [formGroup]="uploadForm" class="uno-forms slds-grid slds-gutters_small slds-wrap slds-p-around--large"
+                          style="background: var(--pale-grey);">
 
                         <div class="slds-col slds-size--1-of-1">
                             <uno-drag-drop-file
-                                [file]="file"
-                                [disabled]="disableInputFile"
-                                [maxFileSize]="fileSize"
-                                (filesDropped)="onFileDropped($event)"
-                                (deleteFile)="onDeleteFile($event)">
+                                                [file]="file"
+                                                [disabled]="disableInputFile"
+                                                [maxFileSize]="fileSize"
+                                                [disabled]="true"
+                                                (filesDropped)="onFileDropped($event)"
+                                                (deleteFile)="onDeleteFile($event)"
+                                                (downloadFile)="onDownloadFile()">
                             </uno-drag-drop-file>
                         </div>
 
@@ -132,13 +136,14 @@
                             <fieldset class="slds-form-element">
                                 <label translate>documentTypeLabel</label>
                                 <uno-picklist
-                                    [data]="docTypeSelector"
-                                    [(open)]="dD?.docType.opened"
-                                    fluid="true"
-                                    unoPick
-                                    [(unoPick)]="pickDocType"
-                                    (selectedElem)="updateWithSelectedOption('docType', pickDocType, 'documentType')">
-                                    <span class="slds-truncate" [title]="dD?.docType.name || ('selectItemLabel' | translate)">{{ dD?.docType.name || ('selectItemLabel' | translate) }}</span>
+                                              [data]="docTypeSelector"
+                                              [(open)]="dD?.docType.opened"
+                                              fluid="true"
+                                              unoPick
+                                              [(unoPick)]="pickDocType"
+                                              (selectedElem)="updateWithSelectedOption('docType', pickDocType, 'documentType')">
+                                    <span class="slds-truncate" [title]="dD?.docType.name || ('selectItemLabel' | translate)">{{ dD?.docType.name ||
+                                        ('selectItemLabel' | translate) }}</span>
                                     <ng-template uno-picklist-item let-item>{{ item.name }}</ng-template>
                                 </uno-picklist>
                             </fieldset>
@@ -149,14 +154,14 @@
                                 <label translate>documentDateLabel</label>
                                 <div class="date-picker-demo-container">
                                     <uno-datepicker2
-                                        [min]="documentMinDate"
-                                        [max]="documentMaxDate"
-                                        (dateChange)="templateEventEmited($event)"
-                                        [date]="datePickerData"
-                                        [chooseLabel]="'chooseDateLabel' | translate"
-                                        [disableCalendar]="false"
-                                        [reset]="resetDatePicker"
-                                        [disable]="false">
+                                                     [min]="documentMinDate"
+                                                     [max]="documentMaxDate"
+                                                     (dateChange)="templateEventEmited($event)"
+                                                     [date]="datePickerData"
+                                                     [chooseLabel]="'chooseDateLabel' | translate"
+                                                     [disableCalendar]="false"
+                                                     [reset]="resetDatePicker"
+                                                     [disable]="false">
                                     </uno-datepicker2>
                                 </div>
                             </fieldset>
@@ -167,14 +172,14 @@
                                 <label translate>documentDateLabel</label>
                                 <div class="date-picker-demo-container">
                                     <uno-datepicker2
-                                        [min]="expireMinDate"
-                                        [max]="expireMaxDate"
-                                        (dateChange)="expireDateEmited($event)"
-                                        [date]="datePickerExpiredData"
-                                        [chooseLabel]="'chooseDateLabel' | translate"
-                                        [disableCalendar]="false"
-                                        [reset]="resetDatePicker"
-                                        [disable]="false">
+                                                     [min]="expireMinDate"
+                                                     [max]="expireMaxDate"
+                                                     (dateChange)="expireDateEmited($event)"
+                                                     [date]="datePickerExpiredData"
+                                                     [chooseLabel]="'chooseDateLabel' | translate"
+                                                     [disableCalendar]="false"
+                                                     [reset]="resetDatePicker"
+                                                     [disable]="false">
                                     </uno-datepicker2>
                                 </div>
                             </fieldset>
@@ -184,13 +189,14 @@
                             <fieldset class="slds-form-element">
                                 <label translate>documentStatusLabel</label>
                                 <uno-picklist
-                                    [data]="docStatusSelector"
-                                    [(open)]="dD?.docStatus.opened"
-                                    fluid="true"
-                                    unoPick
-                                    [(unoPick)]="pickDocStatus"
-                                    (selectedElem)="updateWithSelectedOption('docStatus', pickDocStatus, 'documentStatus')">
-                                    <span class="slds-truncate" [title]="dD?.docStatus.name || ('selectItemLabel' | translate)">{{ dD?.docStatus.name || ('selectItemLabel' | translate) }}</span>
+                                              [data]="docStatusSelector"
+                                              [(open)]="dD?.docStatus.opened"
+                                              fluid="true"
+                                              unoPick
+                                              [(unoPick)]="pickDocStatus"
+                                              (selectedElem)="updateWithSelectedOption('docStatus', pickDocStatus, 'documentStatus')">
+                                    <span class="slds-truncate" [title]="dD?.docStatus.name || ('selectItemLabel' | translate)">{{ dD?.docStatus.name ||
+                                        ('selectItemLabel' | translate) }}</span>
                                     <ng-template uno-picklist-item let-item>{{ item.name }}</ng-template>
                                 </uno-picklist>
                             </fieldset>
@@ -200,13 +206,14 @@
                             <fieldset class="slds-form-element">
                                 <label translate>documentResultLabel</label>
                                 <uno-picklist
-                                    [data]="docResultSelector"
-                                    [(open)]="dD?.docResult.opened"
-                                    fluid="true"
-                                    unoPick
-                                    [(unoPick)]="pickDocResult"
-                                    (selectedElem)="updateWithSelectedOption('docResult', pickDocResult, 'documentResult')">
-                                    <span class="slds-truncate" [title]="dD?.docResult.name || ('selectItemLabel' | translate)">{{ dD?.docResult.name || ('selectItemLabel' | translate) }}</span>
+                                              [data]="docResultSelector"
+                                              [(open)]="dD?.docResult.opened"
+                                              fluid="true"
+                                              unoPick
+                                              [(unoPick)]="pickDocResult"
+                                              (selectedElem)="updateWithSelectedOption('docResult', pickDocResult, 'documentResult')">
+                                    <span class="slds-truncate" [title]="dD?.docResult.name || ('selectItemLabel' | translate)">{{ dD?.docResult.name ||
+                                        ('selectItemLabel' | translate) }}</span>
                                     <ng-template uno-picklist-item let-item>{{ item.name }}</ng-template>
                                 </uno-picklist>
                             </fieldset>
@@ -222,15 +229,18 @@
                 </ng-template>
 
                 <ng-template [ngSwitchCase]="'sscUploadModal'">
-                    <form [formGroup]="uploadForm" class="uno-forms slds-grid slds-gutters_small slds-wrap slds-p-around--large" style="background: var(--pale-grey);">
+                    <form [formGroup]="uploadForm" class="uno-forms slds-grid slds-gutters_small slds-wrap slds-p-around--large"
+                          style="background: var(--pale-grey);">
 
                         <div class="slds-col slds-size--1-of-1">
                             <uno-drag-drop-file
-                                [file]="file"
-                                [disabled]="disableInputFile"
-                                [maxFileSize]="fileSize"
-                                (filesDropped)="onFileDropped($event)"
-                                (deleteFile)="onDeleteFile($event)">
+                                                [file]="file"
+                                                [disabled]="disableInputFile"
+                                                [maxFileSize]="fileSize"
+                                                [disabled]="true"
+                                                (filesDropped)="onFileDropped($event)"
+                                                (deleteFile)="onDeleteFile($event)"
+                                                (downloadFile)="onDownloadFile()">
                             </uno-drag-drop-file>
                         </div>
 
@@ -253,31 +263,32 @@
                             <fieldset class="slds-form-element">
                                 <label translate>documentTypeLabel</label>
                                 <uno-picklist
-                                    [data]="docTypeSelector"
-                                    [(open)]="dD?.docType.opened"
-                                    fluid="true"
-                                    unoPick
-                                    [(unoPick)]="pickDocType"
-                                    (selectedElem)="updateWithSelectedOption('docType', pickDocType, 'documentType')">
-                                    <span class="slds-truncate" [title]="dD?.docType.name || ('selectItemLabel' | translate)">{{ dD?.docType.name || ('selectItemLabel' | translate) }}</span>
+                                              [data]="docTypeSelector"
+                                              [(open)]="dD?.docType.opened"
+                                              fluid="true"
+                                              unoPick
+                                              [(unoPick)]="pickDocType"
+                                              (selectedElem)="updateWithSelectedOption('docType', pickDocType, 'documentType')">
+                                    <span class="slds-truncate" [title]="dD?.docType.name || ('selectItemLabel' | translate)">{{ dD?.docType.name ||
+                                        ('selectItemLabel' | translate) }}</span>
                                     <ng-template uno-picklist-item let-item>{{ item.name }}</ng-template>
                                 </uno-picklist>
                             </fieldset>
                         </div>
-                    
+
                         <div class="slds-col slds-size_1-of-3">
                             <fieldset class="slds-form-element">
                                 <label translate>expireDateLabel</label>
                                 <div class="date-picker-demo-container">
                                     <uno-datepicker2
-                                        [min]="expireMinDate"
-                                        [max]="expireMaxDate"
-                                        [date]="datePickerExpiredData"
-                                        [chooseLabel]="'chooseDateLabel' | translate"
-                                        [disableCalendar]="disableSSCDate"
-                                        [reset]="resetDatePicker"
-                                        [disable]="disableSSCDate"
-                                        (dateChange)="expireDateEmited($event)">
+                                                     [min]="expireMinDate"
+                                                     [max]="expireMaxDate"
+                                                     [date]="datePickerExpiredData"
+                                                     [chooseLabel]="'chooseDateLabel' | translate"
+                                                     [disableCalendar]="disableSSCDate"
+                                                     [reset]="resetDatePicker"
+                                                     [disable]="disableSSCDate"
+                                                     (dateChange)="expireDateEmited($event)">
                                     </uno-datepicker2>
                                 </div>
                             </fieldset>
@@ -287,17 +298,20 @@
                             <fieldset class="slds-form-element">
                                 <label translate>{{ sscStatusLabel }}</label>
                                 <uno-picklist
-                                    [data]="sscStatusSelector"
-                                    [(open)]="dD?.sscStatus.opened"
-                                    fluid="true"
-                                    unoPick
-                                    [(unoPick)]="pickStatus"
-                                    (selectedElem)="updateWithSelectedOption('sscStatus', pickStatus, 'sscStatus')"
-                                    [isDisabled]="disableSSCStatus">
-                                    <span *ngIf="dD?.sscStatus.name" style="height: 12px; width: 12px; border-radius: 50%; margin-right: 10px;" [style.background-color]="dD?.sscStatus.color"></span>
-                                    <span class="slds-truncate" [title]="dD?.sscStatus.name || ('selectItemLabel' | translate)">{{ dD?.sscStatus.name || ('selectItemLabel' | translate) }}</span>
+                                              [data]="sscStatusSelector"
+                                              [(open)]="dD?.sscStatus.opened"
+                                              fluid="true"
+                                              unoPick
+                                              [(unoPick)]="pickStatus"
+                                              (selectedElem)="updateWithSelectedOption('sscStatus', pickStatus, 'sscStatus')"
+                                              [isDisabled]="disableSSCStatus">
+                                    <span *ngIf="dD?.sscStatus.name" style="height: 12px; width: 12px; border-radius: 50%; margin-right: 10px;"
+                                          [style.background-color]="dD?.sscStatus.color"></span>
+                                    <span class="slds-truncate" [title]="dD?.sscStatus.name || ('selectItemLabel' | translate)">{{ dD?.sscStatus.name ||
+                                        ('selectItemLabel' | translate) }}</span>
                                     <ng-template uno-picklist-item let-item>
-                                        <span style="height: 12px; width: 12px; border-radius: 50%; margin-right: 10px; padding-left: 16px;" [style.background-color]="item.color"></span>
+                                        <span style="height: 12px; width: 12px; border-radius: 50%; margin-right: 10px; padding-left: 16px;"
+                                              [style.background-color]="item.color"></span>
                                         {{ item.name }}
                                     </ng-template>
                                 </uno-picklist>
