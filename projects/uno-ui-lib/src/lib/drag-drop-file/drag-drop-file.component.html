@@ -12,7 +12,7 @@
     </ng-container>
     <ng-template #showFile>
         <span class="slds-m-right--small" class="open-sans-semibold-14">{{ file?.name }}</span>
-        <uno-icon *ngIf="!disabled" icon="trash" size="xx-small" class="slds-button__icon--right" (click)="onDeleteFile($event)"></uno-icon>
+        <uno-icon *ngIf="!disabledTrash" icon="trash" size="xx-small" class="slds-button__icon--right" (click)="onDeleteFile($event)"></uno-icon>
         <uno-icon *ngIf="!disabledDownload" icon="download_l" size="xx-small" class="slds-button__icon--right" (click)="onDownloadFile($event)"></uno-icon>
     </ng-template>
     <input #fileInput id="file-input" type="file" [multiple]="multipleFiles" (change)="fileToUploadChange($event)">

@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, Output, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, Renderer2, ViewChild, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
     selector: 'uno-drag-drop-file',
@@ -6,7 +6,7 @@ import { Component, ElementRef, EventEmitter, Input, Output, Renderer2, ViewChil
     styleUrls: ['drag-drop-file.component.scss']
 })
 
-export class DragDropFileComponent {
+export class DragDropFileComponent implements OnChanges {
     @Input() public maxFileSize: number;
 
     @Input() public multipleFiles = false;
@@ -14,9 +14,14 @@ export class DragDropFileComponent {
     @Input() public file: File;
 
     /**
-     * Remove from templete the "trash" icon.
+     * Disable to make changes.
      */
     @Input() public disabled = false;
+
+    /**
+     * Remove from templete the "trash" icon.
+     */
+    @Input() public disabledTrash = false;
 
     /**
      * Remove from template the "download" icon.
@@ -34,6 +39,12 @@ export class DragDropFileComponent {
     public fileUploadIsToBig = false;
 
     constructor(private render: Renderer2) { }
+
+    public ngOnChanges(changes: SimpleChanges): void {
+        if (changes.disabled && changes.disabled.currentValue) {
+            this.disabledTrash = true;
+        }
+    }
 
     onClickUpload() {
         if (!this.disabled) {

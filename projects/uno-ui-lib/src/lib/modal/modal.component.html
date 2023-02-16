@@ -111,10 +111,10 @@
                                                 [file]="file"
                                                 [disabled]="disableInputFile"
                                                 [maxFileSize]="fileSize"
-                                                [disabled]="true"
+                                                [disabledTrash]="true"
+                                                [disabledDownload]="true"
                                                 (filesDropped)="onFileDropped($event)"
-                                                (deleteFile)="onDeleteFile($event)"
-                                                (downloadFile)="onDownloadFile()">
+                                                (deleteFile)="onDeleteFile($event)">
                             </uno-drag-drop-file>
                         </div>
 
@@ -237,10 +237,10 @@
                                                 [file]="file"
                                                 [disabled]="disableInputFile"
                                                 [maxFileSize]="fileSize"
-                                                [disabled]="true"
+                                                [disabledTrash]="true"
+                                                [disabledDownload]="true"
                                                 (filesDropped)="onFileDropped($event)"
-                                                (deleteFile)="onDeleteFile($event)"
-                                                (downloadFile)="onDownloadFile()">
+                                                (deleteFile)="onDeleteFile($event)">
                             </uno-drag-drop-file>
                         </div>
 
