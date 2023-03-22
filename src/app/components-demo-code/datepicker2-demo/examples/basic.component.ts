@@ -15,6 +15,11 @@ export class BasicComponent {
         const currentYear = new Date().getFullYear();
         this.minDate.setDate(this.minDate.getDate());
         this.maxDate = new Date(currentYear + 1, 11, 31);
+
+        setTimeout(() => {
+            this.minDate = new Date(this.date.getFullYear() - 1, 11, 31);
+            console.log(this.minDate);
+        }, 5000);
     }
 
     newDate(evt: any) {

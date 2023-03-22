@@ -3,7 +3,13 @@ import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { Validators, FormControl, FormBuilder, FormGroup } from '@angular/forms';
 import { MatDateFormats } from '@angular/material/core';
-import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
+import { MomentDateAdapter } from '@angular/material-moment-adapter';
+
+class CustomDateAdapter extends MomentDateAdapter {
+    getDayOfWeekNames(style: 'long' | 'short' | 'narrow') {
+        return ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+    }
+}
 
 export const MY_FORMATS: MatDateFormats = {
     parse: {
@@ -24,15 +30,16 @@ export const MY_FORMATS: MatDateFormats = {
         // The locale would typically be provided on the root module of your application. We do it at
         // the component level here, due to limitations of our example generation script.
         { provide: MAT_DATE_LOCALE, useValue: 'pt-PT' },
+        { provide: DateAdapter, useClass: CustomDateAdapter, deps: [MAT_DATE_LOCALE] },
 
         // `MomentDateAdapter` and `MAT_MOMENT_DATE_FORMATS` can be automatically provided by importing
         // `MatMomentDateModule` in your applications root module. We provide it at the component level
         // here, due to limitations of our example generation script.
-        {
-            provide: DateAdapter,
-            useClass: MomentDateAdapter,
-            deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS]
-        },
+        // {
+        //     provide: DateAdapter,
+        //     useClass: MomentDateAdapter,
+        //     deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS]
+        // },
         { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
     ],
     changeDetection: ChangeDetectionStrategy.OnPush
@@ -75,16 +82,16 @@ export class Datepicker2Component implements OnChanges {
 
     @HostListener('document:click', ['$event'])
     clickout(event: any) {
-        const cells = Array.from(document.querySelectorAll<HTMLDivElement>('.mat-calendar .mat-calendar-table-header tr th'));
-        cells.forEach((c) => {
-            c.innerText = c.innerText === '2ª' ? 'S' : c.innerText;
-            c.innerText = c.innerText === '3ª' ? 'T' : c.innerText;
-            c.innerText = c.innerText === '4ª' ? 'Q' : c.innerText;
-            c.innerText = c.innerText === '5ª' ? 'Q' : c.innerText;
-            c.innerText = c.innerText === '6ª' ? 'S' : c.innerText;
-            c.innerText = c.innerText === 'Sá' ? 'S' : c.innerText;
-            c.innerText = c.innerText === 'Do' ? 'D' : c.innerText;
-        });
+        // const cells = Array.from(document.querySelectorAll<HTMLDivElement>('.mat-calendar .mat-calendar-table-header tr th'));
+        // cells.forEach((c) => {
+        //     c.innerText = c.innerText === '2ª' ? 'S' : c.innerText;
+        //     c.innerText = c.innerText === '3ª' ? 'T' : c.innerText;
+        //     c.innerText = c.innerText === '4ª' ? 'Q' : c.innerText;
+        //     c.innerText = c.innerText === '5ª' ? 'Q' : c.innerText;
+        //     c.innerText = c.innerText === '6ª' ? 'S' : c.innerText;
+        //     c.innerText = c.innerText === 'Sá' ? 'S' : c.innerText;
+        //     c.innerText = c.innerText === 'Do' ? 'D' : c.innerText;
+        // });
     }
 
     constructor(private fb: FormBuilder) { }
@@ -133,6 +140,18 @@ export class Datepicker2Component implements OnChanges {
                 this.form.controls.end.setValue(this.endDateRange);
             }
         }
+
+        if (changes.min && changes.min.currentValue) {
+            // When change the min date value the datepicker dont remove the error message if date are valid.
+            // It's need a click to update template. I try ChangeDetectionRef and don't work.
+            setTimeout(() => { document.getElementById('date').click() })
+        }
+
+        if (changes.max && changes.max.currentValue) {
+            // When change the min date value the datepicker dont remove the error message if date are valid.
+            // It's need a click to update template. I try ChangeDetectionRef and don't work.
+            setTimeout(() => { document.getElementById('date').click() })
+        }
     }
 
     /**
@@ -156,16 +175,16 @@ export class Datepicker2Component implements OnChanges {
 
     dtpOpened() {
         setTimeout(() => {
-            const cells = Array.from(document.querySelectorAll<HTMLDivElement>('.mat-calendar .mat-calendar-table-header tr th'));
-            cells.forEach((c) => {
-                c.innerText = c.innerText === '2ª' ? 'S' : c.innerText;
-                c.innerText = c.innerText === '3ª' ? 'T' : c.innerText;
-                c.innerText = c.innerText === '4ª' ? 'Q' : c.innerText;
-                c.innerText = c.innerText === '5ª' ? 'Q' : c.innerText;
-                c.innerText = c.innerText === '6ª' ? 'S' : c.innerText;
-                c.innerText = c.innerText === 'Sá' ? 'S' : c.innerText;
-                c.innerText = c.innerText === 'Do' ? 'D' : c.innerText;
-            });
+            // const cells = Array.from(document.querySelectorAll<HTMLDivElement>('.mat-calendar .mat-calendar-table-header tr th'));
+            // cells.forEach((c) => {
+            //     c.innerText = c.innerText === '2ª' ? 'S' : c.innerText;
+            //     c.innerText = c.innerText === '3ª' ? 'T' : c.innerText;
+            //     c.innerText = c.innerText === '4ª' ? 'Q' : c.innerText;
+            //     c.innerText = c.innerText === '5ª' ? 'Q' : c.innerText;
+            //     c.innerText = c.innerText === '6ª' ? 'S' : c.innerText;
+            //     c.innerText = c.innerText === 'Sá' ? 'S' : c.innerText;
+            //     c.innerText = c.innerText === 'Do' ? 'D' : c.innerText;
+            // });
 
         });
     }

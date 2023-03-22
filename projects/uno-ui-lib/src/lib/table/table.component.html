@@ -1,59 +1,59 @@
 <header
-    [grid]="grid"
-    [headerSettings]="grid.settings"
-    (create)="createRowNew()"
-    (searchTerm)="searchTerm.emit($event)"
-    (customAction)="rowHeaderActionCustomEvent.emit($event)"
-    (clickIconOptions)="onClickIconOptions($event)"
-    (saveOptions)="onSaveOptions($event)">
+        [grid]="grid"
+        [headerSettings]="grid.settings"
+        (create)="createRowNew()"
+        (searchTerm)="searchTerm.emit($event)"
+        (customAction)="rowHeaderActionCustomEvent.emit($event)"
+        (clickIconOptions)="onClickIconOptions($event)"
+        (saveOptions)="onSaveOptions($event)">
 </header>
 
-<form [formGroup]="form">
+<form [formGroup]="form" autocomplete="off">
 
     <table [id]="tableId" [ngClass]="tableClass" #unoSmartTable>
 
         <thead
-            ng2-st-thead
-            *ngIf="!isHideHeader"
-            [editingFormGroup]="form"
-            [grid]="grid"
-            [updateColumnList]="updateColumnList"
-            [createConfirm]="createConfirm"
-            [cancelCreate]="cancelCreate"
-            (createSave)="createSave.emit($event)"
-            (selectedElem)="selectedElem.emit($event)"
-            (selectAllRows)="onSelectAllRows($event)"
-            (sort)="sort($event)"
-            (filter)="filter($event)"
-            (getColumnFilters)="getColumnFilters.emit($event)"
-            (customAction)="rowSelectActionCustomEvent.emit($event)">
+               ng2-st-thead
+               *ngIf="!isHideHeader"
+               [editingFormGroup]="form"
+               [grid]="grid"
+               [updateColumnList]="updateColumnList"
+               [createConfirm]="createConfirm"
+               [cancelCreate]="cancelCreate"
+               (createSave)="createSave.emit($event)"
+               (selectedElem)="selectedElem.emit($event)"
+               (selectAllRows)="onSelectAllRows($event)"
+               (sort)="sort($event)"
+               (filter)="filter($event)"
+               (getColumnFilters)="getColumnFilters.emit($event)"
+               (customAction)="rowSelectActionCustomEvent.emit($event)">
         </thead>
 
         <tbody
-            ng2-st-tbody
-            [editingFormGroup]="form"
-            [grid]="grid"
-            [deleteConfirm]="deleteConfirm"
-            [editConfirm]="editConfirm"
-            [collapseTableContent]="collapseTableContent"
-            [updateColumnList]="updateColumnList"
-            [rowClassFunction]="rowClassFunction"
-            [cancelEdit]="cancelEdit"
-            [userRowSelect]="userRowSelect"
+               ng2-st-tbody
+               [editingFormGroup]="form"
+               [grid]="grid"
+               [deleteConfirm]="deleteConfirm"
+               [editConfirm]="editConfirm"
+               [collapseTableContent]="collapseTableContent"
+               [updateColumnList]="updateColumnList"
+               [rowClassFunction]="rowClassFunction"
+               [cancelEdit]="cancelEdit"
+               [userRowSelect]="userRowSelect"
 
-            (editSave)="editSave.emit($event); onSubmit();"
-            (selectedElem)="selectedElem.emit($event)"
-            (edit)="edit.emit($event)"
-            (delete)="delete.emit($event)"
-            (rowActionCustomEvent)="rowActionCustomEvent.emit($event)"
-            (rowActionDownloadCustomEvent)="rowActionDownloadCustomEvent.emit($event)"
-            (userSelectRow)="onUserSelectRow($event)"
-            (editRowSelect)="editRowSelect($event)"
-            (multipleSelectRow)="multipleSelectRow($event)"
+               (editSave)="editSave.emit($event); onSubmit();"
+               (selectedElem)="selectedElem.emit($event)"
+               (edit)="edit.emit($event)"
+               (delete)="delete.emit($event)"
+               (rowActionCustomEvent)="rowActionCustomEvent.emit($event)"
+               (rowActionDownloadCustomEvent)="rowActionDownloadCustomEvent.emit($event)"
+               (userSelectRow)="onUserSelectRow($event)"
+               (editRowSelect)="editRowSelect($event)"
+               (multipleSelectRow)="multipleSelectRow($event)"
 
-            (rowHover)="onRowHover($event)"
+               (rowHover)="onRowHover($event)"
 
-            (internalAction)="internalAction.emit($event)">
+               (internalAction)="internalAction.emit($event)">
         </tbody>
     </table>
 </form>
