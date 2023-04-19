@@ -1,37 +1,11 @@
 <main>
     <section class="asset-image">
         <uno-picture
-            [defaultImage]="defaultAssetImgURL"
-            [image]="imgURL"
-            [onlyViewImage]="onlyViewImage"
-            (uploadedImage)="this.imageUploaded.emit($event)"
-            (deleteImage)="this.imageDeleted.emit()">
+                     [defaultImage]="defaultAssetImgURL"
+                     [image]="imgURL"
+                     [onlyViewImage]="onlyViewImage"
+                     (uploadedImage)="this.imageUploaded.emit($event)"
+                     (deleteImage)="this.imageDeleted.emit()">
         </uno-picture>
-    </section>
-    
-    <section *ngIf="scenes3D?.length > 0 || hasMonitor" class="bottom-bar-container">
-
-        <span class="badges-container">
-            <!-- Later, thre will be also here a 2D badge -->
-            <uno-badge
-                *ngIf="scenes3D?.length > 0"
-                title="See 3D scenes of this Asset..."
-                type="badge-3d"
-                pointer="true"
-                (click)="sendAssetInfo.emit($event)">3D
-            </uno-badge>
-        </span>
-
-        <span class="right-actions-container">
-            <uno-icon
-                *ngIf="hasMonitor"
-                class="slds-button__icon--left"
-                title="Go to Asset Monitor..."
-                icon="asset_monitor"
-                size="x-small"
-                [withOpacity]="true"
-                (click)="goToMonitorLink.emit($event)">
-            </uno-icon>
-        </span>
     </section>
 </main>

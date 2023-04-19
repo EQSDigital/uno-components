@@ -30,8 +30,7 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
     // To save time @ component's instalation, we have already prepared HTML templates for certain, often used, Modals:
     @Input() templateType: 'successModal' | 'warningModal' | 'confirmDelModal' | 'confirmActionModal' | 'assets3DModal' | 'docsUploadModal' | 'sscUploadModal' | '';
     @Input() templateCustomMsg: string; // Can be an HTML string
-    // Exclusively for assets3DModal Template (should, at least, have property 'name'), the scenes Array:
-    @Input() scenes3D: any[];
+
     @Input() docTypeSelector: any[];    // Observable<NanoModels.NanoDropdownDto[]>;
     @Input() docStatusSelector: any[];  // Observable<NanoModels.NanoDropdownDto[]>;
     @Input() docResultSelector: any[];  // Observable<NanoModels.NanoDropdownDto[]>;

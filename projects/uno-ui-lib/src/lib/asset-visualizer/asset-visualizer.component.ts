@@ -37,10 +37,6 @@ export class AssetVisualizerComponent {
      */
     @Input() onlyViewImage = false;
 
-
-    @Input() hasMonitor = false;
-    @Input() scenes3D: any[];
-
     @Output() imageUploaded = new EventEmitter();
     @Output() imageDeleted = new EventEmitter();
 

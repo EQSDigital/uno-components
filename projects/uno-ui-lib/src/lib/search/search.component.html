@@ -7,7 +7,9 @@
 </div>
 
 <div *ngIf="type === 'secondary'" class="slds-input-has-icon slds-input-has-icon_right">
-    <uno-icon *ngIf="!inSearchMode" icon="search" size="xx-small" class="slds-input__icon slds-input__icon_right" (click)="onButtonClick(searchText.value)"></uno-icon>
-    <uno-icon *ngIf="inSearchMode" icon="close" size="x-small" class="slds-input__icon slds-input__icon_right" (click)="onButtonClick(searchText.value)"></uno-icon>
     <input #searchText [placeholder]="placeholder | translate" class="slds-input" (keydown)="keyDownFunction($event, searchText.value)" />
+    <button (click)="onButtonClick(searchText.value)" class="slds-button slds-button_icon slds-input__icon slds-input__icon_right slds-button--icon-small">
+        <uno-icon id="search" *ngIf="!inSearchMode" icon="search" size="x-small" class="slds-align--absolute-center"></uno-icon>
+        <uno-icon id="close" *ngIf="inSearchMode" icon="close" size="x-small" class="slds-align--absolute-center"></uno-icon>
+    </button>
 </div>
