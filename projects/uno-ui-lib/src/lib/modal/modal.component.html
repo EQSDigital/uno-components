@@ -88,20 +88,6 @@
                     </div>
                 </ng-template>
 
-                <ng-template [ngSwitchCase]="'assets3DModal'">
-                    <fieldset class="slds-form-element slds-p-around--large">
-                        <div class="slds-form-element__control">
-                            <span *ngFor="let scene of scenes3D; let idx=index;" class="slds-radio slds-p-vertical--small">
-                                <input type="radio" id="scene3D-{{ idx }}" name="scene3Didx" (click)="onSelectingScene(idx)" />
-                                <label class="slds-radio__label" for="scene3D-{{ idx }}">
-                                    <span class="slds-radio_faux"></span>
-                                    <span class="slds-form-element__label">{{ scene.name || ('sceneNameLabel' | translate) }}</span>
-                                </label>
-                            </span>
-                        </div>
-                    </fieldset>
-                </ng-template>
-
                 <ng-template [ngSwitchCase]="'docsUploadModal'">
                     <form [formGroup]="uploadForm" class="uno-forms slds-grid slds-gutters_small slds-wrap slds-p-around--large"
                           style="background: var(--pale-grey);">

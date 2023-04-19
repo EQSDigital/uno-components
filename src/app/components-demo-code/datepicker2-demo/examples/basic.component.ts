@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
 })
 
 export class BasicComponent {
-    date = new Date('2019-09-01T23:00:00');
+    // date = new Date('2019-09-01T23:00:00');
+    date = undefined;
 
     minDate = new Date();
     maxDate: any;
@@ -17,9 +18,14 @@ export class BasicComponent {
         this.maxDate = new Date(currentYear + 1, 11, 31);
 
         setTimeout(() => {
+            this.date = new Date('2019-09-01T23:00:00');
             this.minDate = new Date(this.date.getFullYear() - 1, 11, 31);
-            console.log(this.minDate);
-        }, 5000);
+        }, 2000);
+
+        // setTimeout(() => {
+        //     this.minDate = new Date(this.date.getFullYear() - 1, 11, 31);
+        //     console.log(this.minDate);
+        // }, 5000);
     }
 
     newDate(evt: any) {

@@ -112,9 +112,11 @@ export class Datepicker2Component implements OnChanges {
         if (changes.date && changes.date.currentValue) {
             this.dateForm.reset();
             this.dateForm.setValue(this.date);
-            if (this.dateForm.hasError('matDatepickerMin')) {
+
+            if ((this.min && new Date(this.date)) < new Date(this.min) || (this.max && new Date(this.date)) > new Date(this.max)) {
                 this.dateChange.emit("invalid");
             }
+
             this.dateForm.markAsDirty();
         }
 
@@ -143,14 +145,14 @@ export class Datepicker2Component implements OnChanges {
 
         if (changes.min && changes.min.currentValue) {
             // When change the min date value the datepicker dont remove the error message if date are valid.
-            // It's need a click to update template. I try ChangeDetectionRef and don't work.
-            setTimeout(() => { document.getElementById('date').click() })
+            // It's need a click to update template. I try ChangeDetectionRef and didn't work.
+            setTimeout(() => { document.getElementById('date').click() });
         }
 
         if (changes.max && changes.max.currentValue) {
             // When change the min date value the datepicker dont remove the error message if date are valid.
-            // It's need a click to update template. I try ChangeDetectionRef and don't work.
-            setTimeout(() => { document.getElementById('date').click() })
+            // It's need a click to update template. I try ChangeDetectionRef and didn't work.
+            setTimeout(() => { document.getElementById('date').click() });
         }
     }
 
