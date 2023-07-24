@@ -1,23 +1,23 @@
 <!-- picklist HTML is a <span unoDropdown /> markup, with specific TS behaviors - like multiple selection, items list online filtering, etc. -->
 <div
-    class="slds-combobox"
-    unoDropdown
-    [open]="open"
-    [unoDropdownHandlePageEvents]="closeClickOutside"
+     class="slds-combobox"
+     unoDropdown
+     [open]="open"
+     [unoDropdownHandlePageEvents]="closeClickOutside"
 
-    (openChange)="openChange.emit($event)"
-    (selectedElem)="onSelectedElem($event)">
-    
+     (openChange)="openChange.emit($event)"
+     (selectedElem)="onSelectedElem($event)">
+
     <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon--right">
         <!-- the Dropdown trigger: -->
         <button
-            type="button"
-            class="slds-grid slds-grid--vertical-align-center"
-            unoDropdownTrigger
-            [class.slds-input]="!isForInlineTableCSS"
-            [class.slds-button]="isForInlineTableCSS"
-            [disabled]="isDisabled">
-                <ng-content></ng-content>
+                type="button"
+                class="slds-grid slds-grid--vertical-align-center"
+                unoDropdownTrigger
+                [class.slds-input]="!isForInlineTableCSS"
+                [class.slds-button]="isForInlineTableCSS"
+                [disabled]="isDisabled">
+            <ng-content></ng-content>
         </button>
         <span class="slds-icon__container slds-input__icon slds-input__icon--right" unoDropdownTrigger>
             <uno-icon icon="down_s" size="xx-small" class="slds-m-left_small slds-float--right"></uno-icon>
@@ -25,27 +25,30 @@
 
         <!-- the Dropdown list of items -->
         <div
-            class="slds-dropdown slds-dropdown--left"
-            [ngClass]="{ 'slds-dropdown_fluid': fluid, 'slds-p-top--none': hasFilter, 'slds-dropdown--open-up': isToOpenUp, 'positionInherit': position }"
-            role="listbox">
+             class="slds-dropdown slds-dropdown--left"
+             [ngClass]="{ 'slds-dropdown_fluid': fluid, 'slds-p-top--none': hasFilter, 'slds-dropdown--open-up': isToOpenUp, 'positionInherit': position }"
+             role="listbox">
 
             <!-- filtering user input box possibility-->
-            <input 
-                *ngIf="hasFilter"
-                class="slds-input"
-                #filterInput
-                [attr.placeholder]="filterPlaceholder"
-                [ngModel]="userFilter"
-                (ngModelChange)="filterChange($event)"
+            <input
+                   *ngIf="hasFilter"
+                   class="slds-input"
+                   #filterInput
+                   [attr.placeholder]="filterPlaceholder"
+                   [ngModel]="userFilter"
+                   (ngModelChange)="filterChange($event)"
 
-                (keydown.enter)="onFilterPick()"
-                (keydown.arrowdown)="setFilterActive(1, $event)"
-                (keydown.arrowup)="setFilterActive(-1, $event)"
-                (focus)="onFilterFocus()"
-                (blur)="onFilterBlur()" >
+                   (keydown.enter)="onFilterPick()"
+                   (keydown.arrowdown)="setFilterActive(1, $event)"
+                   (keydown.arrowup)="setFilterActive(-1, $event)"
+                   (focus)="onFilterFocus()"
+                   (blur)="onFilterBlur()">
 
             <!-- the Dropdown list of items -->
-            <ul class="slds-listbox slds-listbox_vertical" [ngClass]="dropdownListClass" role="presentation"
+            <ul style="max-height: 250px; overflow-y: auto;"
+                class="slds-listbox slds-listbox_vertical"
+                [ngClass]="dropdownListClass"
+                role="presentation"
                 unoScrollTracker
                 (scrollEndReached)="scrollEndReached.emit($event)">
 

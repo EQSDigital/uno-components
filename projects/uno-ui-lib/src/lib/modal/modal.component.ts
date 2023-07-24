@@ -201,6 +201,7 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
         private element: ElementRef
     ) {
         this.scrollStrategy = this.overlay.scrollStrategies.block();
+        this.initDropDowns();
     }
 
     ngOnInit() {
@@ -215,7 +216,7 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
     }
 
     ngOnChanges(changes: SimpleChanges) {
-        this.resetUploadForm();
+        // this.resetUploadForm();
 
         if (changes.open) {
             this.handleOpen();
