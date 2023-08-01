@@ -257,7 +257,7 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
             this.cdRef.detectChanges();
         }
 
-        if (this.editData && this.templateType) {
+        if (changes.editData && this.editData && this.templateType) {
             if (this.editData.file || this.editData.documentFileName) {
                 this.uploadForm.controls.uploadedFile.clearValidators();
                 this.uploadForm.controls.uploadedFile.updateValueAndValidity();
