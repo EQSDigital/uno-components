@@ -190,7 +190,7 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
 
     private scrollStrategy: BlockScrollStrategy;
 
-    private formErrorsObservable: Subscription;
+    private subscriptions$ = new Subscription();
 
     constructor(
         private fb: FormBuilder,
@@ -238,14 +238,16 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
             });
 
             // ... and Subscribe (to emit back) to any form changes/validation, so we can take action @ component's installation:
-            this.formErrorsObservable = this.uploadForm.statusChanges.subscribe(
-                (formStatus) => {
-                    if (formStatus === 'INVALID') {
-                        this.formValidation.emit(false);
-                    } else {
-                        this.formValidation.emit(true);
+            this.subscriptions$.add(
+                this.uploadForm.statusChanges.subscribe(
+                    (formStatus) => {
+                        if (formStatus === 'INVALID') {
+                            this.formValidation.emit(false);
+                        } else {
+                            this.formValidation.emit(true);
+                        }
                     }
-                }
+                )
             );
 
             this.uploadForm.valueChanges.subscribe(() => {
@@ -342,9 +344,7 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
         this.handleOpen(false);
         this.scrollStrategy = null;
 
-        if (this.formErrorsObservable) {
-            this.formErrorsObservable.unsubscribe();
-        }
+        this.subscriptions$.unsubscribe();
     }
 
     initDropDowns() {

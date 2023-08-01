@@ -13,7 +13,6 @@ export class BasicComponent {
     openModalWarning = false;
     openModalConfirmDel = false;
     openModalConfirmAction = false;
-    openModalAssets3d = false;
     openModalDocsUpload = false;
     openModalSSCUpload = false;
 
@@ -45,7 +44,6 @@ export class BasicComponent {
 
     docUpload_possibleStatus = [
         { name: 'Draft', id: 1, siteId: 1 },
-        
         { name: 'In Progress', id: 2, siteId: 1 },
         { name: 'Approved', id: 3, siteId: 1 },
         { name: 'Rejected', id: 4, siteId: 1 }
@@ -70,15 +68,6 @@ export class BasicComponent {
 
     modalClickEvt(buttonChosen: string) {
         console.warn('Button ' + buttonChosen + ' was clicked!');
-    }
-
-    scene3DSelected(sceneIdx: number) {
-        // As soon as 1 scene is user selected, enable click on button OK to go to the 3d Scene App:
-        const openButton: any = document.querySelector('.open-scene');
-
-        openButton.disabled = false;
-
-        console.log('Scene índex ' + sceneIdx + ' as been selected by the user!');
     }
 
     isDocsUploadFormValid(isItValid: boolean) {
