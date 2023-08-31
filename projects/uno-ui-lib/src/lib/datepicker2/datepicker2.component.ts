@@ -113,8 +113,10 @@ export class Datepicker2Component implements OnChanges {
             this.dateForm.reset();
             this.dateForm.setValue(this.date);
 
-            if ((this.min && new Date(this.date)) < new Date(this.min) || (this.max && new Date(this.date)) > new Date(this.max)) {
-                this.dateChange.emit("invalid");
+            if (!this.disable && !this.disableCalendar) {
+                if ((this.min && new Date(this.date)) < new Date(this.min) || (this.max && new Date(this.date)) > new Date(this.max)) {
+                    this.dateChange.emit("invalid");
+                }
             }
 
             this.dateForm.markAsDirty();
