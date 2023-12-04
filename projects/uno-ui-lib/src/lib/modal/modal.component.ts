@@ -272,6 +272,14 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
                 this.dD['docType'] = { id: this.editData.documentType.id, name: this.editData.documentType.name, opened: false, color: null };
                 this.uploadForm.controls.documentType.setValue(this.editData.documentType);
                 this.selectedTypeEmitter.emit(this.editData.documentType);
+
+                if (this.editData.documentType.expirationDateRequired) {
+                    this.uploadForm.controls.expiredDate.addValidators(Validators.required);
+                    this.uploadForm.controls.expiredDate.updateValueAndValidity();
+                } else {
+                    this.uploadForm.controls.expiredDate.clearValidators();
+                    this.uploadForm.controls.expiredDate.updateValueAndValidity();
+                }
             }
 
             if (this.editData.documentStatus) {

@@ -1,5 +1,4 @@
-<div
-     class="slds-modal"
+<div class="slds-modal"
      [class.slds-fade-in-open]="open"
      [ngClass]="[size ? 'slds-modal--' + size : '']"
      [attr.aria-hidden]="!open"
@@ -93,8 +92,7 @@
                           style="background: var(--pale-grey);">
 
                         <div class="slds-col slds-size--1-of-1">
-                            <uno-drag-drop-file
-                                                [file]="file"
+                            <uno-drag-drop-file [file]="file"
                                                 [disabled]="disableInputFile"
                                                 [maxFileSize]="fileSize"
                                                 [disabledTrash]="true"
@@ -121,8 +119,7 @@
                         <div class="slds-col slds-size_1-of-2" *ngIf="showType">
                             <fieldset class="slds-form-element">
                                 <label translate>documentTypeLabel</label>
-                                <uno-picklist
-                                              [data]="docTypeSelector"
+                                <uno-picklist [data]="docTypeSelector"
                                               [(open)]="dD?.docType.opened"
                                               fluid="true"
                                               unoPick
@@ -139,8 +136,7 @@
                             <fieldset class="slds-form-element">
                                 <label translate>documentDateLabel</label>
                                 <div class="date-picker-demo-container">
-                                    <uno-datepicker2
-                                                     [min]="documentMinDate"
+                                    <uno-datepicker2 [min]="documentMinDate"
                                                      [max]="documentMaxDate"
                                                      (dateChange)="templateEventEmited($event)"
                                                      [date]="datePickerData"
@@ -157,8 +153,7 @@
                             <fieldset class="slds-form-element">
                                 <label translate>documentDateLabel</label>
                                 <div class="date-picker-demo-container">
-                                    <uno-datepicker2
-                                                     [min]="expireMinDate"
+                                    <uno-datepicker2 [min]="expireMinDate"
                                                      [max]="expireMaxDate"
                                                      (dateChange)="expireDateEmited($event)"
                                                      [date]="datePickerExpiredData"
@@ -174,8 +169,7 @@
                         <div class="slds-col slds-size_1-of-3" *ngIf="docStatusSelector">
                             <fieldset class="slds-form-element">
                                 <label translate>documentStatusLabel</label>
-                                <uno-picklist
-                                              [data]="docStatusSelector"
+                                <uno-picklist [data]="docStatusSelector"
                                               [(open)]="dD?.docStatus.opened"
                                               fluid="true"
                                               unoPick
@@ -191,8 +185,7 @@
                         <div class="slds-col slds-size_1-of-3" *ngIf="docResultSelector">
                             <fieldset class="slds-form-element">
                                 <label translate>documentResultLabel</label>
-                                <uno-picklist
-                                              [data]="docResultSelector"
+                                <uno-picklist [data]="docResultSelector"
                                               [(open)]="dD?.docResult.opened"
                                               fluid="true"
                                               unoPick
@@ -219,8 +212,7 @@
                           style="background: var(--pale-grey);">
 
                         <div class="slds-col slds-size--1-of-1">
-                            <uno-drag-drop-file
-                                                [file]="file"
+                            <uno-drag-drop-file [file]="file"
                                                 [disabled]="disableInputFile"
                                                 [maxFileSize]="fileSize"
                                                 [disabledTrash]="true"
@@ -248,8 +240,7 @@
                         <div class="slds-col slds-size_1-of-2" *ngIf="showSSCType">
                             <fieldset class="slds-form-element">
                                 <label translate>documentTypeLabel</label>
-                                <uno-picklist
-                                              [data]="docTypeSelector"
+                                <uno-picklist [data]="docTypeSelector"
                                               [(open)]="dD?.docType.opened"
                                               fluid="true"
                                               unoPick
@@ -266,8 +257,7 @@
                             <fieldset class="slds-form-element">
                                 <label translate>expireDateLabel</label>
                                 <div class="date-picker-demo-container">
-                                    <uno-datepicker2
-                                                     [min]="expireMinDate"
+                                    <uno-datepicker2 [min]="expireMinDate"
                                                      [max]="expireMaxDate"
                                                      [date]="datePickerExpiredData"
                                                      [chooseLabel]="'chooseDateLabel' | translate"
@@ -283,8 +273,7 @@
                         <div class="slds-col slds-size_1-of-3">
                             <fieldset class="slds-form-element">
                                 <label translate>{{ sscStatusLabel }}</label>
-                                <uno-picklist
-                                              [data]="sscStatusSelector"
+                                <uno-picklist [data]="sscStatusSelector"
                                               [(open)]="dD?.sscStatus.opened"
                                               fluid="true"
                                               unoPick
