@@ -40,6 +40,8 @@ export class InputTagsComponent implements OnChanges {
      */
     @Input() isDisable = false;
 
+    @Input() newTags = false;
+
     /**
      * Variable that emit the selectedObjects.
      */
@@ -123,11 +125,19 @@ export class InputTagsComponent implements OnChanges {
      * @param obj - The object to be added to array of the selectedObjects.
      */
     addObject(obj: any) {
+        if (this.newTags && typeof obj === 'string') {
+            obj = {
+                // FIND THE MAX ID OF THE TAGS AND ADD 1
+                id: (this.objects.reduce((a, b) => a.id > b.id ? a.id : b.id) + 1),
+                name: obj
+            };
+
+            this.objects.push(obj);
+        }
+
         this.selectedObjects.push(obj);
         this.searchObject(this.searchTerm);
-
         this.render.setProperty(this.search.nativeElement, 'value', '');
-
         this.objectsSelected.emit(this.selectedObjects);
     }
 
@@ -151,9 +161,9 @@ export class InputTagsComponent implements OnChanges {
      */
     filterArray() {
         // if (this.selectedObjects && this.selectedObjects.length > 0) {
-            this.filteredObjects = this.objects.filter((obj) =>
-                this.selectedObjects.findIndex((aux) => aux[this.key] === obj[this.key]) < 0
-            );
+        this.filteredObjects = this.objects?.filter((obj) =>
+            this.selectedObjects.findIndex((aux) => aux[this.key] === obj[this.key]) < 0
+        );
         // }
     }
 

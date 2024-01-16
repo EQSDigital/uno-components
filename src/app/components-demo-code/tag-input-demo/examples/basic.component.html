@@ -1,49 +1,52 @@
 <div style="width: 350px">
-    <uno-input-tags
-        [objects]="allSkills"
-        [selectedObjects]="mySkills"
-        (objectsSelected)="objectsSelected($event)"
-        [isDisable]="true">
+    <uno-input-tags [objects]="allSkills"
+                    [selectedObjects]="mySkills"
+                    (objectsSelected)="objectsSelected($event)"
+                    [isDisable]="true">
     </uno-input-tags>
 </div>
 
 <div style="width: 350px; margin-top: 20px">
-    <uno-input-tags
-        [objects]="allSkills"
-        (objectsSelected)="objectsSelected($event)">
+    <uno-input-tags [objects]="allSkills"
+                    (objectsSelected)="objectsSelected($event)">
     </uno-input-tags>
 </div>
 
 <div style="width: 350px; margin-top: 20px">
-    <uno-input-tags
-        (objectsSelected)="objectsSelected($event)"
-        [isDisable]="true">
+    <uno-input-tags (objectsSelected)="objectsSelected($event)"
+                    [isDisable]="true">
     </uno-input-tags>
 </div>
 
 <div style="width: 350px; margin-top: 20px">
-    <uno-input-tags
-        [objects]="allSkills"
-        [selectedObjects]="mySkills"
-        (objectsSelected)="objectsSelected($event)">
+    <uno-input-tags [objects]="allSkills"
+                    [selectedObjects]="mySkills"
+                    (objectsSelected)="objectsSelected($event)">
     </uno-input-tags>
 </div>
 
-<uno-input-tags
-    [objects]="allSkills"
-    [key]="'name'"
-    [value]="'id'"
-    (objectsSelected)="objectsSelected($event)">
+<uno-input-tags [objects]="allSkills"
+                [key]="'name'"
+                [value]="'id'"
+                (objectsSelected)="objectsSelected($event)">
+</uno-input-tags>
+
+New Tags
+<uno-input-tags [objects]="allSkills"
+                [key]="'id'"
+                [value]="'name'"
+                [newTags]="true"
+                (objectsSelected)="objectsSelected($event)">
 </uno-input-tags>
 
 <uno-modal [open]="openModalSmall">
     <div class="slds-p-around--large">
         <uno-input-tags
-            [objects]="allSkills"
-            [key]="'name'"
-            [value]="'id'"
-            (click)="$event.stopPropagation()"
-            (objectsSelected)="objectsSelected($event)">
+                        [objects]="allSkills"
+                        [key]="'name'"
+                        [value]="'id'"
+                        (click)="$event.stopPropagation()"
+                        (objectsSelected)="objectsSelected($event)">
         </uno-input-tags>
     </div>
     <ng-template unoModalFooter>
