@@ -9,7 +9,7 @@
 
 <!-- Add a close button, if Pill is removable: -->
 <uno-icon *ngIf="removable"
-    [icon]="closeIcon"
-    class="slds-button__icon slds-button slds-button--icon slds-pill__remove"
-    (click)="remove()">
+          [icon]="closeIcon"
+          class="slds-button__icon slds-button slds-button--icon slds-pill__remove"
+          (click)="remove(); $event.stopPropagation()">
 </uno-icon>
