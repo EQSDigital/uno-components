@@ -1,5 +1,4 @@
-<header
-        [grid]="grid"
+<header [grid]="grid"
         [headerSettings]="grid.settings"
         (create)="createRowNew()"
         (searchTerm)="searchTerm.emit($event)"
@@ -12,8 +11,7 @@
 
     <table [id]="tableId" [ngClass]="tableClass" #unoSmartTable>
 
-        <thead
-               ng2-st-thead
+        <thead ng2-st-thead
                *ngIf="!isHideHeader"
                [editingFormGroup]="form"
                [grid]="grid"
@@ -29,8 +27,7 @@
                (customAction)="rowSelectActionCustomEvent.emit($event)">
         </thead>
 
-        <tbody
-               ng2-st-tbody
+        <tbody ng2-st-tbody
                [editingFormGroup]="form"
                [grid]="grid"
                [deleteConfirm]="deleteConfirm"

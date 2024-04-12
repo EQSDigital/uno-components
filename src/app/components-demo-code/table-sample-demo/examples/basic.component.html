@@ -1,10 +1,9 @@
-<uno-smart-table
-    [settings]="settings"
-    [source]="dataTable"
-    (internalAction)="gridAffairAction($event)"
-    (createConfirm)="confirmRowActionEvent($event, 'create')"
-    (selectedElem)="onSelectedElem($event)"
-    (deleteConfirm)="confirmRowActionEvent($event, 'delete')"
-    (searchTerm)="onSearchTerm($event)"
-    (rowActionCustomEvent)="rowActionCustomEvent($event)">
+<uno-smart-table [settings]="settings"
+                 [source]="dataTable"
+                 (internalAction)="gridAffairAction($event)"
+                 (createConfirm)="confirmRowActionEvent($event, 'create')"
+                 (selectedElem)="onSelectedElem($event)"
+                 (deleteConfirm)="confirmRowActionEvent($event, 'delete')"
+                 (searchTerm)="onSearchTerm($event)"
+                 (rowActionCustomEvent)="rowActionCustomEvent($event)">
 </uno-smart-table>

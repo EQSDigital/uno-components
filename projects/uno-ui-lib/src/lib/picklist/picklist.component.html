@@ -1,6 +1,5 @@
 <!-- picklist HTML is a <span unoDropdown /> markup, with specific TS behaviors - like multiple selection, items list online filtering, etc. -->
-<div
-     class="slds-combobox"
+<div class="slds-combobox"
      unoDropdown
      [open]="open"
      [unoDropdownHandlePageEvents]="closeClickOutside"
@@ -10,8 +9,7 @@
 
     <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon--right">
         <!-- the Dropdown trigger: -->
-        <button
-                type="button"
+        <button type="button"
                 class="slds-grid slds-grid--vertical-align-center"
                 unoDropdownTrigger
                 [class.slds-input]="!isForInlineTableCSS"
@@ -24,14 +22,12 @@
         </span>
 
         <!-- the Dropdown list of items -->
-        <div
-             class="slds-dropdown slds-dropdown--left"
+        <div class="slds-dropdown slds-dropdown--left"
              [ngClass]="{ 'slds-dropdown_fluid': fluid, 'slds-p-top--none': hasFilter, 'slds-dropdown--open-up': isToOpenUp, 'positionInherit': position }"
              role="listbox">
 
             <!-- filtering user input box possibility-->
-            <input
-                   *ngIf="hasFilter"
+            <input *ngIf="hasFilter"
                    class="slds-input"
                    #filterInput
                    [attr.placeholder]="filterPlaceholder"
