@@ -1,0 +1,87 @@
+.uno-toast {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 330px;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 5px 1fr;
+
+    &.success {
+        background-color: var(--success-background);
+    }
+
+    &.warning {
+        background-color: var(--warning-background);
+    }
+
+    &.info {
+        background-color: var(--information-background);
+    }
+
+    &.error {
+        background-color: var(--error-background);
+    }
+
+    & .toast-status {
+        height: inherit;
+        border-radius: 8px 0 0 8px;
+
+        &.success {
+            background-color: var(--success-normal);
+        }
+
+        &.warning {
+            background-color: var(--warning-normal);
+        }
+
+        &.info {
+            background-color: var(--information-normal);
+        }
+
+        &.error {
+            background-color: var(--error-normal);
+        }
+    }
+
+    & .toast-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        padding: 16px;
+
+        & .action-button {
+            min-width: 110px;
+            min-height: 24px;
+            border-radius: 8px;
+            font-family: "Nunito";
+            font-size: 10px;
+            font-weight: 700;
+            line-height: 10px;
+
+            &.success {
+                background-color: var(--success-background);
+                border: 1px solid var(--success-normal);
+                color: var(--success-normal);
+            }
+
+            &.warning {
+                background-color: var(--warning-background);
+                border: 1px solid var(--warning-normal);
+                color: var(--warning-normal);
+            }
+
+            &.info {
+                background-color: var(--information-background);
+                border: 1px solid var(--information-normal);
+                color: var(--information-normal);
+            }
+
+            &.error {
+                background-color: var(--error-background);
+                border: 1px solid var(--error-normal);
+                color: var(--error-normal);
+            }
+        }
+    }
+}

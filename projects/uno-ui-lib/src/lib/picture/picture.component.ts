@@ -260,12 +260,12 @@ export class PictureComponent implements OnChanges {
         // When user choose a image.
         inputFile.onchange = ((evt: any) => {
             this.originalFileNameType = {
-                name:  evt.target.files[0].name
+                name: evt.target.files[0].name
             };
 
             this.imageChangedEvent = {
                 target: {
-                    files:  evt.target.files
+                    files: evt.target.files
                 }
             };
         });

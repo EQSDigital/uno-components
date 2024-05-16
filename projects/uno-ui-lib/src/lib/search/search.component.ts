@@ -1,8 +1,8 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 @Component({
     selector: 'uno-search',
-    templateUrl: './search.component.html',
-    styleUrls: ['./search.component.scss'],
+    templateUrl: 'search.component.html',
+    styleUrls: ['search.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchComponent {

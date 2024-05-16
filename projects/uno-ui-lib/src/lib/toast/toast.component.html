@@ -1,0 +1,26 @@
+<div *ngIf="type" class="uno-toast" [ngClass]="type">
+    <div class="toast-status" [ngClass]="type"></div>
+    <div class="toast-container">
+        <div class="slds-size--1-of-12" [ngSwitch]="type">
+            <uno-icon *ngSwitchCase="'error'" icon="error_icon" svgType="sprite-color" [withOpacity]="false" size="x-small"></uno-icon>
+            <uno-icon *ngSwitchCase="'warning'" icon="alert-over" svgType="sprite-color" [withOpacity]="false" size="x-small"></uno-icon>
+            <uno-icon *ngSwitchCase="'info'" icon="info" svgType="sprite-color" [withOpacity]="false" size="x-small"></uno-icon>
+            <uno-icon *ngSwitchCase="'success'" icon="validate_o" svgType="sprite-color" [withOpacity]="false" size="x-small"></uno-icon>
+        </div>
+        <div class="slds-grid slds-grid--vertical slds-size--10-of-12">
+            <div class="slds-grid">
+                <label class="open-sans-semibold-16" style="line-height: 20px;" translate>{{ title }}</label>
+            </div>
+            <div class="slds-p-top--xx-small open-sans-12">
+                <label class="open-sans-12" style="line-height: 16px;" translate>{{ subTitle }}</label>
+                <ng-template *ngIf="toastDescriptionDirective" [ngTemplateOutlet]="toastDescriptionDirective.templateRef"></ng-template>
+            </div>
+        </div>
+        <div class="slds-size--1-of-12 slds-text-align--right">
+            <uno-icon icon="close" size="x-small"></uno-icon>
+        </div>
+        <div class="slds-size--1-of-1 slds-text-align--right slds-p-top--x-small">
+            <button (click)="onClose()" class="action-button" [ngClass]="type" translate>Action</button>
+        </div>
+    </div>
+</div>

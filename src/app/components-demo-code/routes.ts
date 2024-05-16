@@ -131,5 +131,10 @@ export const routes = [
         path: 'table-risk-template',
         loadChildren: () => import('./table-risk-template-demo/table-demo-risk-template.module').then(m => m.TableDemoRiskTemplateModule),
         label: 'Risk Template'
+    },
+    {
+        path: 'toast',
+        loadChildren: () => import('./toast-demo/toast-demo.module').then(m => m.ToastDemoModule),
+        label: 'Toast'
     }
 ];

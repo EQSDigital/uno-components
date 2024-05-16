@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
     selector: 'uno-drag-drop-image',
@@ -64,13 +64,13 @@ export class DragDropImageComponent {
     onFileDropped(file: any) {
         if (!this.disabled) {
             this.originalFileNameType = {
-                name:  file.name,
+                name: file.name,
                 type: file.type
             };
 
             this.imageChangedEvent = {
                 target: {
-                    files:  [file]
+                    files: [file]
                 }
             };
             this.openImgCropper = true;
@@ -113,7 +113,7 @@ export class DragDropImageComponent {
      * This method open the system file to choose a image.
      */
     onUploadImage() {
-       if ((this.image == null || this.image == undefined) && !this.disabled) {
+        if ((this.image == null || this.image == undefined) && !this.disabled) {
             // Create the input type file, because it's need dropdown when user click on upload image.
             const inputFile = document.createElement('input');
             inputFile.setAttribute('type', 'file');
@@ -122,19 +122,19 @@ export class DragDropImageComponent {
             // When user choose a image.
             inputFile.onchange = ((evt: any) => {
                 this.originalFileNameType = {
-                    name:  evt.target.files[0].name,
+                    name: evt.target.files[0].name,
                     type: evt.target.files[0].type
                 };
-    
+
                 this.imageChangedEvent = {
                     target: {
-                        files:  evt.target.files
+                        files: evt.target.files
                     }
                 };
             });
-       } else {
+        } else {
             this.openImgViewer = true;
-       }
+        }
     }
 
     onUploadImageIcon() {
@@ -146,13 +146,13 @@ export class DragDropImageComponent {
         // When user choose a image.
         inputFile.onchange = ((evt: any) => {
             this.originalFileNameType = {
-                name:  evt.target.files[0].name,
+                name: evt.target.files[0].name,
                 type: evt.target.files[0].type
             };
 
             this.imageChangedEvent = {
                 target: {
-                    files:  evt.target.files
+                    files: evt.target.files
                 }
             };
         });

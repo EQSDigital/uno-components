@@ -49,4 +49,47 @@
     --pale-grey: #f0f3f6;
     --very-light-blue-two: #e9ecf1;
     --flat-blue-10: rgba(61, 112, 178, 0.1);
+
+    /* NEW PALLETT */
+    --brand-normal: #0902d4;
+    --brand-hover: #fe9639;
+    --brand-highlight: #00d3fa;
+    --theme-dark: #1c1c28;
+    --theme-light: #ffffff;
+    --dark-gray-1: #fafafa;
+    --dark-gray-2: #d8dde4;
+    --dark-gray-3: #b8c1ce;
+    --dark-gray-4: #9ca6b7;
+    --dark-gray-5: #818da1;
+    --dark-gray-6: #69758b;
+    --dark-gray-7: #586379;
+    --dark-gray-8: #4d556a;
+    --dark-gray-9: #42475c;
+    --dark-gray-10: #363a4e;
+    --dark-gray-11: #2d2e3f;
+    --dark-gray-12: #222230;
+    --light-gray-1: #152935;
+    --light-gray-2: #23394b;
+    --light-gray-3: #354c60;
+    --light-gray-4: #495e76;
+    --light-gray-5: #62728b;
+    --light-gray-6: #808ca3;
+    --light-gray-7: #929db2;
+    --light-gray-8: #a8b3c3;
+    --light-gray-9: #bec8d4;
+    --light-gray-10: #d7dde5;
+    --light-gray-11: #f0f3f6;
+    --light-gray-12: #f4f7fa;
+    --error-normal: #e34c4c;
+    --error-hover: #bd3539;
+    --error-background: #FEF6F6;
+    --warning-normal: #f7b422;
+    --warning-hover: #ffab00;
+    --warning-background: #FFFBF4;
+    --success-normal: #56bd5b;
+    --success-hover: #3e9645;
+    --success-background: #F6FCF7;
+    --information-normal: #0099fa;
+    --information-hover: #007bd4;
+    --information-background: #F2FAFF;
 }

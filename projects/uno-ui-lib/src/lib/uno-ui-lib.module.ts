@@ -30,6 +30,7 @@ import { UnoSwitchModule } from './switch/switch.module';
 import { UnoTableModule } from './table/table.module';
 import { UnoTabsModule } from './tabs/tabs.module';
 import { UnoDragDropImageModule } from './drag-drop-image/drag-drop-image.module';
+import { UnoToastModule } from './toast/toast.module';
 
 const MODULES = [
     UnoAssetVisualizerModule,
@@ -62,6 +63,7 @@ const MODULES = [
     UnoTableModule,
     UnoTabsModule,
     UnoDragDropImageModule,
+    UnoToastModule
 ];
 
 @NgModule({

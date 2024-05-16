@@ -142,8 +142,8 @@
                   filterDataField="login"
 
                   (scrollEndReached)="scrollPicklist($event)">
-        <span class="slds-truncate">{{ pickAsyncItem ? `${pickAsyncItem.login} out of ${asyncTotalResults}` : 'Select a "tom"s login Name @ Github users:'
-            }}</span>
+        <span class="slds-truncate">
+            {{ pickAsyncItem ? pickAsyncItem.login + ' out of ' + asyncTotalResults : 'Select a "tom"s login Name @ Github users:' }}</span>
         <ng-template uno-picklist-item let-item>
             <img [src]="item.avatar_url" class="slds-avatar slds-m-right--xx-small">
             {{ item.login }}
