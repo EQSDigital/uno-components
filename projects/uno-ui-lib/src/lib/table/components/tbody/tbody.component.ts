@@ -1,5 +1,5 @@
 import { Component, OnChanges, AfterContentInit, Input, Output, EventEmitter, ElementRef, Renderer2, ChangeDetectorRef, OnDestroy, ChangeDetectionStrategy, Host } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
 import { Grid } from '../../lib/grid';
@@ -14,7 +14,7 @@ import { Row } from '../../../../lib/table/lib/data-set/row';
 export class Ng2SmartTableTbodyComponent implements OnChanges, AfterContentInit, OnDestroy {
 
     // Recieve, here, the Table's "editingForm":
-    @Input() editingFormGroup: FormGroup;
+    @Input() editingFormGroup: UntypedFormGroup;
 
     @Input() grid: Grid;
 

@@ -1,5 +1,5 @@
 import { Input, OnChanges, OnDestroy, Directive } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
 import { Grid } from './grid';
@@ -10,7 +10,7 @@ import { SetUpFormControllers } from './data-set/form-validators';
 export class DefaultCreateSaveCancel extends ClickOutsideDefault implements OnChanges, OnDestroy {
 
     // Recieve, here (better; on the components that EXTEND THIS class!), the Table's "editingForm":
-    @Input() editingFormGroup: FormGroup;
+    @Input() editingFormGroup: UntypedFormGroup;
 
     @Input() grid: Grid;
 

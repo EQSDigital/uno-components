@@ -1,6 +1,6 @@
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { ElementRef, Renderer2 } from '@angular/core';
-import { ValidatorFn, FormControl, ValidationErrors } from '@angular/forms';
+import { ValidatorFn, UntypedFormControl, ValidationErrors } from '@angular/forms';
 
 export const EMAIL_REGEX: RegExp =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -92,7 +92,7 @@ function setClass(instance: IReplaceClass, klasses: string | string[], isAdd: bo
     }
 }
 
-export const noWhitespaceValidator: ValidatorFn = (control: FormControl): ValidationErrors | null => {
+export const noWhitespaceValidator: ValidatorFn = (control: UntypedFormControl): ValidationErrors | null => {
     // CHECK IF FIRST AND LAST CHARACTER IS A EMPTY SPACE
     return control.value
         && (control.value as string).length > 0

@@ -1,5 +1,5 @@
 import { Directive, OnChanges, OnDestroy, Output, EventEmitter, Input } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
 import { Cell } from './data-set/cell';
@@ -21,7 +21,7 @@ export interface Editor {
 export class DefaultEditorDirective extends ClickOutsideDefault implements Editor, OnChanges, OnDestroy {
 
     // Receive, here (better; on the component that extends THIS class!), the Table's "editingForm":
-    @Input() editingFormGroup: FormGroup;
+    @Input() editingFormGroup: UntypedFormGroup;
 
     @Input() cell: Cell;
 

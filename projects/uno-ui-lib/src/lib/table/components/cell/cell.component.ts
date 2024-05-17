@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 
 import { Grid } from '../../lib/grid';
 import { Cell } from '../../lib/data-set/cell';
@@ -31,7 +31,7 @@ export class CellComponent {
     /**
      * Pass down to the form (editing) Inputs the Table's "editingForm":
      */
-    @Input() editingFormGroup: FormGroup;
+    @Input() editingFormGroup: UntypedFormGroup;
 
     @Input() grid: Grid;
     @Input() row: Row;

@@ -163,7 +163,6 @@
             }
         }
     },
-    "defaultProject": "uno-ui-lib-app",
     "cli": {
         "analytics": "8bfc5878-0e15-421d-ad3d-e1af02f1e4ff"
     }

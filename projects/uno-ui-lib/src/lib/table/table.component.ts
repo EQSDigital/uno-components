@@ -2,7 +2,7 @@ import {
     Component, OnDestroy, ElementRef, Renderer2, OnChanges, SimpleChanges,
     Input, Output, EventEmitter, ContentChild, ChangeDetectionStrategy, ViewChild, ChangeDetectorRef
 } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
 import { Grid } from './lib/grid';
@@ -106,7 +106,7 @@ export class TableComponent implements OnChanges, OnDestroy {
     @ContentChild(TbodyCollapseContentDirective) collapseTableContent: TbodyCollapseContentDirective;
 
     // THE editing Form:
-    form: FormGroup = new FormGroup({});
+    form: UntypedFormGroup = new UntypedFormGroup({});
     // You need the <form /> DOM to navigate to the "submit" button, lost in so many nested components! ;-):
     formHTML: HTMLElement;
     submitted = false;

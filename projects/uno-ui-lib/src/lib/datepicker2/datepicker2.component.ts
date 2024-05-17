@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter, OnChanges, HostListener, SimpleChanges } from '@angular/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
-import { Validators, FormControl, FormBuilder, FormGroup } from '@angular/forms';
+import { Validators, UntypedFormControl, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { MatDateFormats } from '@angular/material/core';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
 
@@ -76,9 +76,9 @@ export class Datepicker2Component implements OnChanges {
     // Emitter to detect changes on the date
     @Output() dateChange = new EventEmitter();
 
-    dateForm = new FormControl('');
+    dateForm = new UntypedFormControl('');
 
-    form: FormGroup;
+    form: UntypedFormGroup;
 
     @HostListener('document:click', ['$event'])
     clickout(event: any) {
@@ -94,7 +94,7 @@ export class Datepicker2Component implements OnChanges {
         // });
     }
 
-    constructor(private fb: FormBuilder) { }
+    constructor(private fb: UntypedFormBuilder) { }
 
     ngOnChanges(changes: SimpleChanges) {
         if (changes.disable && this.disable) {

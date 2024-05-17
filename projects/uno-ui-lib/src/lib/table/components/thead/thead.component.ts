@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnChanges, ElementRef, AfterViewInit, Renderer2, ChangeDetectionStrategy } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 
 import { Grid } from '../../lib/grid';
 import { ActionCustom } from '../../table.interfaces';
@@ -12,7 +12,7 @@ import { ActionCustom } from '../../table.interfaces';
 export class Ng2SmartTableTheadComponent implements OnChanges, AfterViewInit {
 
     // Recieve, here, the Table's "editingForm":
-    @Input() editingFormGroup: FormGroup;
+    @Input() editingFormGroup: UntypedFormGroup;
 
     @Input() grid: Grid;
 

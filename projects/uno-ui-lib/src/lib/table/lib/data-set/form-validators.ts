@@ -1,4 +1,4 @@
-import { FormGroup, FormControl, AbstractControl, Validators, ValidatorFn } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl, AbstractControl, Validators, ValidatorFn } from '@angular/forms';
 
 import { Grid } from '../grid';
 import { Column } from './column';
@@ -6,7 +6,7 @@ import { noWhitespaceValidator } from '../../../../utils/util';
 
 export class SetUpFormControllers {
 
-    static doFormControllersOn(grid: Grid, myForm: FormGroup) {
+    static doFormControllersOn(grid: Grid, myForm: UntypedFormGroup) {
         // When table settings changes it's need "reset" the form controls
         Object.keys(myForm.controls).forEach((key: string) => myForm.removeControl(key));
 
@@ -31,7 +31,7 @@ export class SetUpFormControllers {
             //     }
             // ));
 
-            myForm.addControl(column.id, new FormControl(initColValue));
+            myForm.addControl(column.id, new UntypedFormControl(initColValue));
 
             if (column.editor && column.editor.validators) {
                 if (colValidators.required) {
@@ -77,7 +77,7 @@ export class SetUpFormControllers {
         });
     }
 
-    static formErrorsCollection(grid: Grid, column: Column, myForm: FormGroup) {
+    static formErrorsCollection(grid: Grid, column: Column, myForm: UntypedFormGroup) {
         const inputErrorsCollection = [];
 
         Object.keys(myForm.controls).forEach((inputName: string) => {
@@ -106,7 +106,7 @@ export class SetUpFormControllers {
         return inputErrorsCollection;
     }
 
-    static enableControlWaitingValue(grid: Grid, form: FormGroup) {
+    static enableControlWaitingValue(grid: Grid, form: UntypedFormGroup) {
         grid.dataSet.columns.forEach((col: Column) =>
             Object.keys(form.controls).forEach((key: string) => {
                 if (col.editor && col.editor.isEditableUntil && col.editor.isEditableUntil === key && form.controls[key].value) {

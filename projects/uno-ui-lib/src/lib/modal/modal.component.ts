@@ -2,7 +2,7 @@ import {
     Component, ChangeDetectionStrategy, OnInit, OnDestroy, Input, Output, EventEmitter,
     ContentChild, HostListener, ElementRef, ChangeDetectorRef, OnChanges, SimpleChanges, Inject, ViewChild
 } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 import { DOCUMENT } from '@angular/common';
 import { BlockScrollStrategy, Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ConfigurableFocusTrapFactory, FocusTrap } from '@angular/cdk/a11y';
@@ -163,7 +163,7 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
     public datePickerExpiredData: Date;
 
     // Exclusively for 'docsUploadModal' template:
-    public uploadForm: FormGroup;
+    public uploadForm: UntypedFormGroup;
 
     public file: any;
     public sscFileName: any;
@@ -193,7 +193,7 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
     private subscriptions$ = new Subscription();
 
     constructor(
-        private fb: FormBuilder,
+        private fb: UntypedFormBuilder,
         private cdRef: ChangeDetectorRef,
         private focusTrapFactory: ConfigurableFocusTrapFactory,
         @Inject(DOCUMENT) private document: any,

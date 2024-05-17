@@ -1,5 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 
 import { EditCellDefault } from '../../../lib/edit-cell-default';
 
@@ -33,7 +33,7 @@ import { EditCellDefault } from '../../../lib/edit-cell-default';
 export class EditCellComponent extends EditCellDefault {
 
     // Pass down to the form (editing) Inputs the Table's "editingForm":
-    @Input() editingFormGroup: FormGroup;
+    @Input() editingFormGroup: UntypedFormGroup;
 
     constructor() {
         super();

@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewContainerRef, OnChanges, OnDestroy, Input, OnInit, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
 import { EditCellDefault } from '../../../lib/edit-cell-default';
@@ -20,7 +20,7 @@ export class CustomEditComponent extends EditCellDefault implements OnInit, OnCh
     /**
      * Variable with instance of the form.
      */
-    @Input() editingFormGroup: FormGroup;
+    @Input() editingFormGroup: UntypedFormGroup;
 
     /**
      * Variable to set the instance of the ViewContainerRef from the template.
