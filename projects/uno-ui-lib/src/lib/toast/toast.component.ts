@@ -25,7 +25,7 @@ export class ToastComponent implements OnChanges {
 
     @Output() public close = new EventEmitter();
 
-    public interval: Subscription;
+    private interval: Subscription;
 
     @ContentChild(ToastDescriptionDirective) public toastDescriptionDirective: ToastDescriptionDirective;
 
@@ -34,6 +34,21 @@ export class ToastComponent implements OnChanges {
     public ngOnChanges() {
         if (this.type) {
             this.interval = interval(5000).subscribe(() => this.onClose());
+
+            // TO IMPLEMENT ON FEATURE TO MULTIPLE TOASTS
+            // this.toast.push(this.type);
+            // setTimeout(() => {
+            //     this.toast.splice(0, 1);
+            //     this.onClose()
+            //     console.log(this.toast);
+            // }, 5000);
+
+            // this.intervals$.add(
+            //     interval(5000).subscribe(() => {
+            //         this.toast.splice(0, 1);
+            //         console.log(this.toast);
+            //     })
+            // )
         }
     }
 
@@ -48,5 +63,9 @@ export class ToastComponent implements OnChanges {
         this.type = null;
         this.cdr.detectChanges();
         this.ngOnDestroy();
+    }
+
+    public onClickAction() {
+        this.action.emit();
     }
 }

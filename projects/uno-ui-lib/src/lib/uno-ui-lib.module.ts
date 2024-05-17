@@ -31,6 +31,7 @@ import { UnoTableModule } from './table/table.module';
 import { UnoTabsModule } from './tabs/tabs.module';
 import { UnoDragDropImageModule } from './drag-drop-image/drag-drop-image.module';
 import { UnoToastModule } from './toast/toast.module';
+import { UnoBannerModule } from './banner/banner.module';
 
 const MODULES = [
     UnoAssetVisualizerModule,
@@ -63,7 +64,8 @@ const MODULES = [
     UnoTableModule,
     UnoTabsModule,
     UnoDragDropImageModule,
-    UnoToastModule
+    UnoToastModule,
+    UnoBannerModule
 ];
 
 @NgModule({

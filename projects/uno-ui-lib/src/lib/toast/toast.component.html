@@ -17,10 +17,10 @@
             </div>
         </div>
         <div class="slds-size--1-of-12 slds-text-align--right">
-            <uno-icon icon="close" size="x-small"></uno-icon>
+            <uno-icon icon="close" size="x-small" (click)="onClose()"></uno-icon>
         </div>
-        <div class="slds-size--1-of-1 slds-text-align--right slds-p-top--x-small">
-            <button (click)="onClose()" class="action-button" [ngClass]="type" translate>Action</button>
+        <div *ngIf="showAction" class="slds-size--1-of-1 slds-text-align--right slds-p-top--x-small">
+            <button class="action-button" [ngClass]="type" (click)="onClickAction()" translate>{{ actionTitle }}</button>
         </div>
     </div>
 </div>

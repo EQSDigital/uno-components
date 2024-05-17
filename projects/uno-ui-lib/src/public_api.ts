@@ -34,3 +34,4 @@ export * from './lib/table/public_api';
 export * from './lib/tabs/public_api';
 export * from './lib/drag-drop-image/public_api';
 export * from './lib/toast/public_api';
+export * from './lib/banner/public_api';

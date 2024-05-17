@@ -8,6 +8,11 @@ export const routes = [
         loadChildren: () => import('./badge-demo/badge-demo.module').then(m => m.BadgeDemoModule)
     },
     {
+        path: 'banner',
+        loadChildren: () => import('./banner-demo/banner-demo.module').then(m => m.BannerDemoModule),
+        label: 'Banner'
+    },
+    {
         path: 'button',
         loadChildren: () => import('./button-demo/button-demo.module').then(m => m.ButtonDemoModule)
     },
