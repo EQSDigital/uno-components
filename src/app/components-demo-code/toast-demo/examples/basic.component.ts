@@ -35,6 +35,6 @@ export class BasicComponent {
                 break;
         }
 
-        this.subTitle = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor';
+        this.subTitle = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor \nLorem ipsum dolor sit amet, consectetur adipiscing elit`;
     }
 }
