@@ -5,7 +5,7 @@
     width: 100%;
     border-radius: 0.25rem;
     cursor: text;
-    background-color: var(--white);
+    background-color: var(--light);
     min-height: calc(1.875rem + (3px * 2 + 1px));
 
     &.open {
@@ -29,7 +29,7 @@
             color: var(--dark-blue-grey);
             background-color: var(--very-light-blue);
             border: 1px solid var(--light-blue-grey);
-        
+
             &:hover {
                 border: solid 1px var(--light-blue-grey);
                 background-color: var(--light-periwinkle-two);
@@ -56,11 +56,11 @@
         overflow-y: auto;
         cursor: pointer;
         border: 1px solid var(--sapphire);
-        background-color: var(--white);
+        background-color: var(--light);
         z-index: 2;
 
         & > .item {
-            font-family: 'OpenSans';
+            font-family: "OpenSans";
             font-size: 12px;
             font-weight: normal;
             font-style: normal;

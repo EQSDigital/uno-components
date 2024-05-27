@@ -10,14 +10,13 @@
 
 .slds-icon_medium,
 .slds-icon--medium {
-  width: 2rem;
-  height: 2rem;
+    width: 2rem;
+    height: 2rem;
 }
 
-.slds-icon_xx_large
-.slds-icon--xx-large {
-  width: 7rem;
-  height: 7rem;
+.slds-icon_xx_large .slds-icon--xx-large {
+    width: 7rem;
+    height: 7rem;
 }
 
 /* Relative to pre-defined coloring (text icon): */
@@ -26,7 +25,7 @@
 }
 
 .slds-icon-text-white {
-    fill: var(--white);
+    fill: var(--light);
 }
 
 .slds-icon-text-black {
@@ -38,11 +37,11 @@
 }
 
 .slds-icon-text-green-menu {
-    fill: var(--dark-lime-green);
+    fill: var(--special-green-4);
 }
 
 .slds-icon-text-tomato-red {
-    fill: var(--tomato-red);
+    fill: var(--special-red-2);
 }
 
 .slds-icon-text-sapphire {
@@ -52,4 +51,3 @@
 .slds-icon-text-light-grey-blue {
     fill: var(--light-grey-blue);
 }
-

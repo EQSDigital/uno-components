@@ -4,7 +4,7 @@ main {
 
 section.asset-image {
     height: 250px;
-    border-bottom: 1px solid var(--grey)
+    border-bottom: 1px solid var(--grey);
 }
 
 section.bottom-bar-container {
@@ -24,7 +24,8 @@ section.bottom-bar-container > .right-actions-container > .file-input-container 
     display: none;
 }
 
-a, :visited {
+a,
+:visited {
     text-decoration: none;
-    color: var(--white);
+    color: var(--light);
 }

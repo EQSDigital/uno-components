@@ -10,13 +10,13 @@
     box-shadow: rgb(223, 223, 223) 0 0 0 0 inset;
     transition: 0.3s ease-out all;
     -webkit-transition: 0.3s ease-out all;
-    background-color: var(--light-blue-grey)
+    background-color: var(--light-blue-grey);
 }
 
 mark {
-    background-color: inherit;  // Reset Lightning System CSS for <mark />
+    background-color: inherit; // Reset Lightning System CSS for <mark />
     border-radius: 100%;
-    background-color: var(--white);
+    background-color: var(--light);
     // box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
     position: absolute;
     top: 1px;
@@ -27,11 +27,11 @@ mark {
 
 .switch.checked mark {
     border: none;
-    background: var(--white);
+    background: var(--light);
 }
 
 .disabled {
-    opacity: .50;
+    opacity: 0.5;
     cursor: not-allowed;
 }
 
@@ -49,8 +49,12 @@ mark {
     margin-left: 1px;
 }
 
-.switch-large.checked mark { left: 51px; }
-.switch-large.checked { background-color: var(--dark-lime-green) }
+.switch-large.checked mark {
+    left: 51px;
+}
+.switch-large.checked {
+    background-color: var(--special-green-4);
+}
 
 // =================
 .switch-medium {
@@ -65,8 +69,12 @@ mark {
     margin-top: 1px;
     margin-left: 1px;
 }
-.switch-medium.checked mark { left: 17px; }
-.switch-medium.checked { background-color: var(--dark-lime-green) }
+.switch-medium.checked mark {
+    left: 17px;
+}
+.switch-medium.checked {
+    background-color: var(--special-green-4);
+}
 
 // =================
 .switch-small {
@@ -81,6 +89,10 @@ mark {
     margin-top: 1px;
     margin-left: 1px;
 }
-.switch-small.checked mark { left: 13px; }
-.switch-small.checked { background-color: var(--dark-lime-green) }
+.switch-small.checked mark {
+    left: 13px;
+}
+.switch-small.checked {
+    background-color: var(--special-green-4);
+}
 // =================
