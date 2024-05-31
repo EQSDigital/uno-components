@@ -16,10 +16,13 @@ enum SortDirectionEnum {
 })
 export class ColumnTitleComponent implements OnChanges, OnDestroy {
     @Input() grid: Grid;
+
     @Input() column: Column;
 
     @Output() sort = new EventEmitter();
+
     @Output() hidePopovers = new EventEmitter();
+
     @Output() getColumnFilters = new EventEmitter<string>();
 
     currentDirection = '';
@@ -28,26 +31,26 @@ export class ColumnTitleComponent implements OnChanges, OnDestroy {
 
     sortDirectionEnum = SortDirectionEnum;
 
-    private subscription$: Subscription;
+    private subscriptions$ = new Subscription();
 
     ngOnChanges(changes: SimpleChanges) {
         if (changes.grid && changes.grid.currentValue) {
-            this.subscription$ = this.grid.source.onChanged().subscribe(() => {
-                const sortConf = this.grid.source.getSort();
+            this.subscriptions$.add(this.grid.source.onChanged()
+                .subscribe(() => {
+                    const sortConf = this.grid.source.getSort();
 
-                if (sortConf.length > 0 && sortConf[0]['field'] === this.column.id) {
-                    this.currentDirection = sortConf[0]['direction'];
-                } else {
-                    this.currentDirection = '';
-                }
-            });
+                    if (sortConf.length > 0 && sortConf[0]['field'] === this.column.id) {
+                        this.currentDirection = sortConf[0]['direction'];
+                    } else {
+                        this.currentDirection = '';
+                    }
+                })
+            );
         }
     }
 
     ngOnDestroy() {
-        if (this.subscription$) {
-            this.subscription$.unsubscribe();
-        }
+        this.subscriptions$.unsubscribe();
     }
 
     onClick() {

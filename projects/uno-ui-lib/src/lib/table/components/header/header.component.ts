@@ -1,4 +1,4 @@
-import { Component, OnChanges, Input, Output, EventEmitter, ViewChild } from '@angular/core';
+import { Component, OnChanges, Input, Output, EventEmitter, ViewChild, AfterViewInit } from '@angular/core';
 import { cloneDeep } from 'lodash';
 
 import { Grid } from '../../lib/grid';
@@ -17,6 +17,8 @@ export class HeaderComponent implements OnChanges {
     @Input() grid: Grid;
 
     @Input() headerSettings: any;
+
+    @Input() currentSearch: string;
 
     @Output() create = new EventEmitter<any>();
 

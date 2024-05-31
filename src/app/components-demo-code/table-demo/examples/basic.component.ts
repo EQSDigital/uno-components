@@ -31,6 +31,12 @@ export class BasicComponent implements AfterViewInit {
 
     userSettings: any;
 
+    paging = {
+        propertyToOrderBy: 'email',
+        isDescending: false,
+        searchTerm: 'teste',
+    }
+
     @ViewChild(TableComponent, { static: true }) private table: TableComponent;
 
     constructor() {

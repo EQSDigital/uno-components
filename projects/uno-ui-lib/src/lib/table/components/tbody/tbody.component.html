@@ -19,8 +19,7 @@
 
         <!-- The collapsed column -->
         <td *ngIf="tableCollapsible.isCollapsible">
-            <uno-icon
-                      [id]="rowsCollapsible[row.index] ? tableCollapsible.iconOpen : tableCollapsible.iconClose"
+            <uno-icon [id]="rowsCollapsible[row.index] ? tableCollapsible.iconOpen : tableCollapsible.iconClose"
                       [icon]="rowsCollapsible[row.index] ? tableCollapsible.iconOpen : tableCollapsible.iconClose"
                       [withOpacity]="!row.isInEditing"
                       size="x-small"
@@ -33,8 +32,7 @@
             <td *ngIf="cell.column.isVisibled"
                 [ngClass]="cell.column.class"
                 [class.columns]="cell.column.title">
-                <ng2-smart-table-cell
-                                      [isInEditing]="row.isInEditing && !tableCollapsible.isCollapsible"
+                <ng2-smart-table-cell [isInEditing]="row.isInEditing && !tableCollapsible.isCollapsible"
                                       [editingFormGroup]="editingFormGroup"
                                       [cell]="cell"
                                       [grid]="grid"
@@ -52,8 +50,7 @@
         <!-- ////////////////////// editing @ RIGHT  ////////////////////// -->
         <!-- @ RIGHT !editing Custom/Edit/Delete + editing Create/Cancel buttons (!row.isInEditing)-->
         <td *ngIf="row.isInEditing" class="ng2-smart-actions slds-text-align--right">
-            <ng2-st-tbody-save-cancel
-                                      [editingFormGroup]="editingFormGroup"
+            <ng2-st-tbody-save-cancel [editingFormGroup]="editingFormGroup"
                                       [grid]="grid"
                                       [row]="row"
                                       [editConfirm]="editConfirm"
@@ -62,16 +59,14 @@
             </ng2-st-tbody-save-cancel>
         </td>
         <td *ngIf="!row.isInEditing && grid.getSelectedRows().length === 0" class="ng2-smart-actions slds-text-align--right">
-            <ng2-st-tbody-custom
-                                 class="ng2-smart-action-icon"
+            <ng2-st-tbody-custom class="ng2-smart-action-icon"
                                  [grid]="grid"
                                  [row]="row"
                                  (rowActionCustomEvent)="rowActionCustomEvent.emit($event)"
                                  (rowActionDownloadCustomEvent)="rowActionDownloadCustomEvent.emit($event)">
             </ng2-st-tbody-custom>
 
-            <ng2-st-tbody-edit-delete
-                                      class="ng2-smart-action-icon"
+            <ng2-st-tbody-edit-delete class="ng2-smart-action-icon"
                                       [grid]="grid"
                                       [deleteConfirm]="deleteConfirm"
                                       [row]="row"

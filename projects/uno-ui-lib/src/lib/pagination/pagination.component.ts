@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 /**
  * The Pagination component
@@ -111,7 +111,7 @@ export class PaginationComponent {
 
     displayPageSizeOptions: number[];
 
-    constructor(private cdr: ChangeDetectorRef) {
+    constructor() {
         this._numItems = 0;
         this._pageSize = 0;
         this._pageIndex = 0;

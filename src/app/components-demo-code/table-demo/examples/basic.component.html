@@ -1,30 +1,30 @@
-<uno-smart-table
-    #table
-    [settings]="settings"
-    [source]="dataTable"
-    [columnFilters]="columnFilters"
-    [userSettings]="userSettings"
-    (internalAction)="gridAffairAction($event)"
-    
-    (create)="isInCreating($event)"
-    (createSave)="createSaveEvent($event)"
-    (createConfirm)="confirmRowActionEvent($event, 'create')"
+<uno-smart-table #table
+                 [settings]="settings"
+                 [source]="dataTable"
+                 [columnFilters]="columnFilters"
+                 [userSettings]="userSettings"
+                 [paging]="paging"
+                 (internalAction)="gridAffairAction($event)"
 
-    (edit)="isInEditing($event)"
-    (rowSelect)="onSelectedElem($event)"
-    (editSave)="rowActionEditSaveEvent($event)"
-    (editConfirm)="confirmRowActionEvent($event, 'edit')"
-    
-    (deleteConfirm)="confirmRowActionEvent($event, 'delete')"
+                 (create)="isInCreating($event)"
+                 (createSave)="createSaveEvent($event)"
+                 (createConfirm)="confirmRowActionEvent($event, 'create')"
 
-    (rowActionCustomEvent)="rowActionCustomEvent($event)"
-    (rowActionDownloadCustomEvent)="rowActionDownloadCustomEvent($event)"
-    (rowHeaderActionCustomEvent)="rowHeaderActionCustomEvent($event)"
-    (rowSelectActionCustomEvent)="rowSelectActionCustomEvent($event)"
-    (searchTerm)="onSearchTerm($event)"
-    (saveOptions)="onSaveOptions($event)"
-    (getColumnFilters)="onGetColumnFilters($event)"
-    (userRowSelect)="onSelectedElem($event)">
+                 (edit)="isInEditing($event)"
+                 (rowSelect)="onSelectedElem($event)"
+                 (editSave)="rowActionEditSaveEvent($event)"
+                 (editConfirm)="confirmRowActionEvent($event, 'edit')"
+
+                 (deleteConfirm)="confirmRowActionEvent($event, 'delete')"
+
+                 (rowActionCustomEvent)="rowActionCustomEvent($event)"
+                 (rowActionDownloadCustomEvent)="rowActionDownloadCustomEvent($event)"
+                 (rowHeaderActionCustomEvent)="rowHeaderActionCustomEvent($event)"
+                 (rowSelectActionCustomEvent)="rowSelectActionCustomEvent($event)"
+                 (searchTerm)="onSearchTerm($event)"
+                 (saveOptions)="onSaveOptions($event)"
+                 (getColumnFilters)="onGetColumnFilters($event)"
+                 (userRowSelect)="onSelectedElem($event)">
 </uno-smart-table>
 <button class="slds-input" (click)="onAddInlineOutsideTable()">Add inline with click outside table</button>
 <button class="slds-input" (click)="onClickShowPlusButton()">Show plus button</button>

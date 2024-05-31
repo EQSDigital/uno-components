@@ -1,5 +1,6 @@
 <header [grid]="grid"
         [headerSettings]="grid.settings"
+        [currentSearch]="paging.searchTerm"
         (create)="createRowNew()"
         (searchTerm)="searchTerm.emit($event)"
         (customAction)="rowHeaderActionCustomEvent.emit($event)"

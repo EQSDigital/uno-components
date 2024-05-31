@@ -34,17 +34,27 @@ export class CellComponent {
     @Input() editingFormGroup: UntypedFormGroup;
 
     @Input() grid: Grid;
+
     @Input() row: Row;
+
     @Input() createConfirm: EventEmitter<any>;
+
     @Input() isNew: boolean;
+
     @Input() cell: Cell;
+
     @Input() inputClass = '';
+
     @Input() mode = 'inline';
+
     @Input() isInEditing = false;
+
     @Input() isExpanded = false;
+
     @Input() updateColumnList: any;
 
     @Output() edited = new EventEmitter<any>();
+
     @Output() selectedElem = new EventEmitter<any>();
 
     onEdited() {

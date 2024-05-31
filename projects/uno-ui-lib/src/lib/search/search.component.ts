@@ -1,26 +1,37 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild, ElementRef, Renderer2, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 @Component({
     selector: 'uno-search',
     templateUrl: 'search.component.html',
     styleUrls: ['search.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SearchComponent {
+export class SearchComponent implements AfterViewInit {
 
     @Input() public placeholder = 'searchBox';
 
     @Input() public type: 'primary' | 'secondary' = 'primary';
 
+    @Input() public currentSearch: string;
+
     @Output() private searchTerm = new EventEmitter<string>();
 
-    inSearchMode = false;
+    public inSearchMode: boolean;
 
     // Get access to the input to manipulate it.
     @ViewChild('searchText') inputSearch: ElementRef;
 
     @ViewChild('unoSearch') private unoSearch: ElementRef;
 
-    constructor(private renderer: Renderer2) { }
+    constructor(private renderer: Renderer2, private cdr: ChangeDetectorRef) { }
+
+    public ngAfterViewInit() {
+        if (this.currentSearch && this.currentSearch.length > 0) {
+            this.inSearchMode = true;
+            this.renderer.setProperty(this.inputSearch.nativeElement, 'value', this.currentSearch);
+            this.renderer.setStyle(this.unoSearch.nativeElement, 'border-bottom', '2px solid var(--sapphire)');
+            this.cdr.detectChanges();
+        }
+    }
 
     public onButtonClick(text: string) {
         if (text.length > 0) {

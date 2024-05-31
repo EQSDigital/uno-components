@@ -43,6 +43,8 @@ export class TableComponent implements OnChanges, OnDestroy {
 
     @Input() columnFilters: any[];
 
+    @Input() paging: any;
+
     /**
      * Triggered once a row is selected.
      */
@@ -240,6 +242,12 @@ export class TableComponent implements OnChanges, OnDestroy {
             Object.keys(this.columnFilters).forEach((column) => {
                 this.grid.setColumnFilters(column, this.columnFilters[column]);
             });
+        }
+
+        if (changes.paging && changes.paging.currentValue) {
+            if (this.paging.propertyToOrderBy) {
+                this.source.setSort([{ field: this.paging.propertyToOrderBy, direction: this.paging.isDescending ? 'desc' : 'asc' }]);
+            }
         }
     }
 
