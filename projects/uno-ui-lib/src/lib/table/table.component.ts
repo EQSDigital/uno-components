@@ -246,7 +246,7 @@ export class TableComponent implements OnChanges, OnDestroy {
 
         if (changes.paging && changes.paging.currentValue) {
             if (this.paging.propertyToOrderBy) {
-                this.source.setSort([{ field: this.paging.propertyToOrderBy, direction: this.paging.isDescending ? 'desc' : 'asc' }]);
+                this.source.setSort([{ field: this.paging.propertyToOrderBy, direction: this.paging.isDescending ? 'desc' : 'asc' }], false);
             }
         }
     }
