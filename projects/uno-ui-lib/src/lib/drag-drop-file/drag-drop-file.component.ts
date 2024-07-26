@@ -41,7 +41,7 @@ export class DragDropFileComponent implements OnChanges {
     constructor(private render: Renderer2) { }
 
     public ngOnChanges(changes: SimpleChanges): void {
-        if (changes.disabled && changes.disabled.currentValue) {
+        if (changes.disabled?.currentValue) {
             this.disabledTrash = true;
         }
     }
@@ -90,5 +90,4 @@ export class DragDropFileComponent implements OnChanges {
         evt.stopPropagation();
         this.downloadFile.emit(this.file);
     }
-
 }

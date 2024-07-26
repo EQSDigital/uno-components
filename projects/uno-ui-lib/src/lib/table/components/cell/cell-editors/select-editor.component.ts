@@ -169,7 +169,7 @@ export class SelectEditorComponent extends DefaultEditorDirective implements OnI
 
         // Tell the world:
         if (this.editingFormGroup.controls[this.cell.column.id].errors) {
-            this.renderer.setStyle(formInput[0], 'border', `1px solid var(--vermillion)`);
+            this.renderer.setStyle(formInput[0], 'border', `1px solid var(--special-red-2)`);
             // For Validators messaging, also mark COMPONENT (NOT the Input - where user types! - of the UNO component) as touched!
             this.editingFormGroup.controls[this.cell.column.id].markAsTouched();
         } else {

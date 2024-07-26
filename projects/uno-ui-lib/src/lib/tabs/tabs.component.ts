@@ -34,7 +34,7 @@ export class TabsComponent implements AfterContentInit {
     // Specifies the aligment of the tabs heading and tabPanel text
     @Input() alignment = 'left';
     // Allows custom active tab's dash color (actually background-color of ::after pseudo-element):
-    @Input() activeTabDashColor = '#1589ee'; // = '#1825aa'; Can't be a CSS var (it's a var already) - so '--sapphire'; NOT ALLOWED!
+    @Input() activeTabDashColor = '#1589ee'; // = '#1825aa'; Can't be a CSS var (it's a var already) - so '--light-primary'; NOT ALLOWED!
 
     // Specifies if Tab directive is bringing custom style (bgColor, txtColor, etc.), to apply when active
     activeTabCustomStyle = {};
@@ -118,7 +118,7 @@ export class TabsComponent implements AfterContentInit {
      * AUX functions:
      */
     private applyCustomStyleActiveTab() {
-        if (this.activeTab && this.activeTab.hasOwnProperty('customContentStyle')) {
+        if (this.activeTab?.hasOwnProperty('customContentStyle')) {
             this.activeTabCustomStyle = this.activeTab.customContentStyle;
         }
     }

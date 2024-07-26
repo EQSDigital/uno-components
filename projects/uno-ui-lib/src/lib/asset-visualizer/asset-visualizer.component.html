@@ -1,7 +1,6 @@
 <main>
     <section class="asset-image">
-        <uno-picture
-                     [defaultImage]="defaultAssetImgURL"
+        <uno-picture [defaultImage]="defaultAssetImgURL"
                      [image]="imgURL"
                      [onlyViewImage]="onlyViewImage"
                      (uploadedImage)="this.imageUploaded.emit($event)"

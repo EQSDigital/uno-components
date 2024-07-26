@@ -2,7 +2,7 @@
 label {
     font-family: "OpenSans";
     font-size: 14px;
-    color: var(--dark-blue-grey);
+    color: var(--light-gray-1);
     display: block;
     padding-bottom: 8px;
 }
@@ -15,7 +15,7 @@ fieldset {
 
 // For Angular Reactive Form's Validation, color '.form-control' with errors AFTER user has been fiddling around:
 .form-control.ng-invalid.ng-touched {
-    box-shadow: 0 1px 3px var(--tomato-red);
+    box-shadow: 0 1px 3px var(--special-red-2);
 }
 
 // Using radio button Inputs...?
@@ -88,7 +88,7 @@ span.slds-radio {
     font-size: 12px;
 
     & span {
-        color: var(--sapphire);
+        color: var(--light-primary);
         text-decoration: underline;
         cursor: pointer;
         padding-left: 0.3rem;

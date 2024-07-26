@@ -3,7 +3,7 @@
     margin: 1px;
     min-width: 20px;
     text-align: center;
-    color: var(--dark-blue-grey);
+    color: var(--light-gray-1);
     vertical-align: middle;
     cursor: pointer;
 }
@@ -17,17 +17,17 @@
 
 .button-style {
     display: inline-flex;
-    // padding: 0;
     background: transparent;
     background-clip: border-box;
     border: 1px solid transparent;
     font-size: 0.75rem;
-    // text-decoration: none;
     -webkit-appearance: none;
     appearance: none;
     white-space: normal;
     user-select: none;
-    transition: color 0.05s linear, background-color 0.05s linear;
+    transition:
+        color 0.05s linear,
+        background-color 0.05s linear;
 
     &:focus {
         outline: 0;

@@ -18,7 +18,7 @@
 
     <ng-template [ngSwitchCase]="'infoContent'">
         <div class="slds-grid slds-wrap slds-p-around--small slds-text-align--left">
-            
+
             <!-- CLOSE POPOVER ICON/BUTTON -->
             <uno-icon *ngIf="!isInteractive" icon="close" size="x-small" class="popover-close-icon"></uno-icon>
             <!-- POPOVER HEADING -->
@@ -31,13 +31,14 @@
                 <div class="slds-grid slds-wrap slds-has-flexi-truncate">
                     <div class="slds-size--1-of-2 slds-truncate">
                         <span class="slds-uno-icon-info--text-parameter slds-truncate" translate>{{ infoCreatedBy }}</span>
-                        <br/>
+                        <br />
                         <span class="slds-uno-icon-info--text-parameter-value slds-truncate">{{ templateTypeData.createdBy }}</span>
                     </div>
                     <div class="slds-size--1-of-2 slds-truncate">
                         <span class="slds-uno-icon-info--text-parameter slds-truncate" translate>{{ infoDate }}</span>
-                        <br/>
-                        <span class="slds-uno-icon-info--text-parameter-value smaller-font-size slds-truncate">{{ templateTypeData.createdDate | date:'dd/MM/yyyy HH:mm' }}</span>
+                        <br />
+                        <span class="slds-uno-icon-info--text-parameter-value smaller-font-size slds-truncate">{{ templateTypeData.createdDate |
+                            date:'dd/MM/yyyy HH:mm' }}</span>
                     </div>
                 </div>
             </div>
@@ -46,13 +47,14 @@
                 <div class="slds-grid slds-wrap slds-has-flexi-truncate">
                     <div class="slds-size--1-of-2 slds-truncate">
                         <span class="slds-uno-icon-info--text-parameter slds-truncate" translate>{{ infoModifiedBy }}</span>
-                        <br/>
+                        <br />
                         <span class="slds-uno-icon-info--text-parameter-value slds-truncate">{{ templateTypeData.modifiedBy }}</span>
                     </div>
                     <div class="slds-size--1-of-2 slds-truncate">
                         <span class="slds-uno-icon-info--text-parameter slds-truncate" translate>{{ infoDate }}</span>
-                        <br/>
-                        <span class="slds-uno-icon-info--text-parameter-value smaller-font-size slds-truncate">{{ templateTypeData.modifiedDate | date:'dd/MM/yyyy HH:mm' }}</span>
+                        <br />
+                        <span class="slds-uno-icon-info--text-parameter-value smaller-font-size slds-truncate">{{ templateTypeData.modifiedDate |
+                            date:'dd/MM/yyyy HH:mm' }}</span>
                     </div>
                 </div>
             </div>
@@ -75,23 +77,25 @@
             <!-- POPOVER (data) FILES ARRAY: -->
             <div class="slds-size--1-of-1 slds-uno-icon-download--files-list-container">
 
-                <div *ngFor="let file of templateTypeData.files;" class="slds-grid slds-wrap slds-p-around--x-small slds-border--bottom slds-uno-icon-download--file-container">
+                <div *ngFor="let file of templateTypeData.files;"
+                     class="slds-grid slds-wrap slds-p-around--x-small slds-border--bottom slds-uno-icon-download--file-container">
                     <span class="slds-truncate slds-uno-icon-info--text-parameter-value">{{ file.fileName }}</span>
                     <span class="slds-uno-icon-info--text-parameter-value">{{ file.fileExtension }}</span>
-                    <uno-icon
-                        *ngIf="file.documentDescription"
-                        icon="doc"
-                        size="x-small"
-                        [withOpacity]="false"
-                        uno-popover-trigger
-                        [unoPopover]="file.documentDescription"
-                        unoPopoverTooltip="true"
-                        unoPopoverBehavior>
+                    <uno-icon *ngIf="file.documentDescription"
+                              icon="doc"
+                              size="x-small"
+                              [withOpacity]="false"
+                              uno-popover-trigger
+                              [unoPopover]="file.documentDescription"
+                              unoPopoverTooltip="true"
+                              unoPopoverBehavior>
                     </uno-icon>
                     <uno-icon icon="down" size="x-small" (click)="downloadContentDownloadFile(file)"></uno-icon>
                     <uno-icon *ngIf="hasEdit" icon="edit" size="x-small" (click)="downloadContentEditFile(file)"></uno-icon>
                     <uno-icon *ngIf="hasDelete" icon="trash" size="x-small" (click)="downloadContentDeleteFile(file)"></uno-icon>
-                    <span *ngIf="file.modifiedDate" class="slds-uno-icon-info--text-parameter-value smaller-font-size">{{ file.modifiedDate | date:'dd/MM/yyyy HH:mm' }}</span>
+                    <span *ngIf="file.modifiedDate" class="slds-uno-icon-info--text-parameter-value smaller-font-size">
+                        {{ file.modifiedDate | date:'dd/MM/yyyy HH:mm' }}
+                    </span>
                 </div>
             </div>
         </div>
@@ -104,10 +108,10 @@
         <uno-icon *ngIf="!isInteractive" icon="close" size="x-small" class="popover-close-icon from-datepicker"></uno-icon>
 
         <uno-datepicker class="slds-box slds-box--small slds-datepicker"
-            [(date)]="templateTypeData.dateChosen"
-            [numYearsBefore]=templateTypeData.numYearsBefore
-            [numYearsAfter]=templateTypeData.numYearsAfter
-            (dateChange)="datePickerContentChange($event)">
+                        [(date)]="templateTypeData.dateChosen"
+                        [numYearsBefore]=templateTypeData.numYearsBefore
+                        [numYearsAfter]=templateTypeData.numYearsAfter
+                        (dateChange)="datePickerContentChange($event)">
         </uno-datepicker>
 
     </ng-template>

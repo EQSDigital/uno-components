@@ -1,6 +1,5 @@
-<div
-     class="slds-grid slds-grid--align-center slds-grid--vertical-align-center border"
-     [class.border--cursor]="disabled ? false : true"
+<div class="slds-grid slds-grid--align-center slds-grid--vertical-align-center border"
+     [class.border--cursor]="disabled"
      unoDragDropFile
      [multiple]="multipleFiles"
      [disabled]="disabled"
@@ -8,7 +7,7 @@
      (click)="onClickUpload()">
     <ng-container *ngIf="!file; else showFile">
         <uno-icon icon="upload" size="x-small" class="slds-button__icon--left"></uno-icon>
-        <span class="slds-m-right--small" style="font-size: 14px; color: var(--light-grey-blue);" translate>chooseFileLabel</span>
+        <span class="slds-m-right--small" style="font-size: 14px; color: var(--light-gray-9);" translate>chooseFileLabel</span>
     </ng-container>
     <ng-template #showFile>
         <span class="slds-m-right--small" class="open-sans-semibold-14">{{ file?.name }}</span>
@@ -17,6 +16,6 @@
     </ng-template>
     <input #fileInput id="file-input" type="file" [multiple]="multipleFiles" (change)="fileToUploadChange($event)">
 </div>
-<div *ngIf="fileUploadIsToBig" class="slds-col" style="color: var(--vermillion)">
+<div *ngIf="fileUploadIsToBig" class="slds-col" style="color: var(--special-red-2)">
     <span translate>fileSizeExceed</span> {{ file?.size / 1000000 }}mb
 </div>

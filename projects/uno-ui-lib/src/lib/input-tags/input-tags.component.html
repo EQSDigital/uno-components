@@ -22,7 +22,8 @@
     </div>
     <div [style.display]="openDrop ? 'block' : 'none'" class="dropdown">
         <div class="slds-p-around--x-small item" *ngFor="let obj of filteredObjects" (click)="addObject(obj); $event.stopPropagation()">{{ obj[value] }}</div>
-        <div *ngIf="newTags && search.value" class="slds-p-around--x-small item" (click)="addObject(search.value); $event.stopPropagation()">{{
-            search.value }} ({{ ('newLabel' | translate) }})</div>
+        <div *ngIf="newTags && search.value" class="slds-p-around--x-small item" (click)="addObject(search.value); $event.stopPropagation()">
+            {{ search.value }} ({{ ('newLabel' | translate) }})
+        </div>
     </div>
 </div>

@@ -23,17 +23,16 @@ Select a day:
                 <th colspan="7">The weeks of a certain Month of an Year!</th>
             </tr>
         </thead>
-      
+
         <tbody>
             <tr *ngFor="let week of weeks;">
                 <td *ngFor="let date of week;" (click)="disabledDays.indexOf(date.day) < 0 ? daySelected=date.day : false;"
                     uno-date-day
                     [day]="date.day"
                     [daySelected]="daySelected ? date.day === daySelected : date.day === 1"
-                    [dayDisabled]="disabledDays.indexOf(date.day) > -1"
-                ></td>
+                    [dayDisabled]="disabledDays.indexOf(date.day) > -1"></td>
             </tr>
         </tbody>
-    
+
     </table>
 </div>

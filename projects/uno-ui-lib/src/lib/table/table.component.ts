@@ -217,7 +217,7 @@ export class TableComponent implements OnChanges, OnDestroy {
     }
 
     ngOnChanges(changes: SimpleChanges) {
-        if (changes.settings && changes.settings.currentValue) {
+        if (changes.settings?.currentValue) {
             this.grid.settings = this.prepareSettings();
 
             // Only set form if table is add or edit in line
@@ -226,25 +226,25 @@ export class TableComponent implements OnChanges, OnDestroy {
             }
         }
 
-        if (changes.source && changes.source.currentValue) {
+        if (changes.source?.currentValue) {
             this.grid.source = this.source;
         }
 
-        if (changes.updateColumnList && changes.updateColumnList.currentValue) {
+        if (changes.updateColumnList?.currentValue) {
             this.grid.updateSetting(this.updateColumnList);
         }
 
-        if (changes.userSettings && changes.userSettings.currentValue) {
+        if (changes.userSettings?.currentValue) {
             this.grid.settings = this.prepareUserSettings();
         }
 
-        if (changes.columnFilters && changes.columnFilters.currentValue) {
+        if (changes.columnFilters?.currentValue) {
             Object.keys(this.columnFilters).forEach((column) => {
                 this.grid.setColumnFilters(column, this.columnFilters[column]);
             });
         }
 
-        if (changes.paging && changes.paging.currentValue) {
+        if (changes.paging?.currentValue) {
             if (this.paging.propertyToOrderBy) {
                 this.source.setSort([{ field: this.paging.propertyToOrderBy, direction: this.paging.isDescending ? 'desc' : 'asc' }], false);
             }
@@ -487,7 +487,7 @@ export class TableComponent implements OnChanges, OnDestroy {
 
         // this.subscriptions$.add(
         //     this.render.listen(div, 'mouseover', (e: Event) => {
-        //         this.render.setStyle(e.target, 'border-right', '1px solid var(--light-blue-grey)');
+        //         this.render.setStyle(e.target, 'border-right', '1px solid var(--light-gray-9)');
         //     })
         // );
 
@@ -530,7 +530,7 @@ export class TableComponent implements OnChanges, OnDestroy {
         this.render.setStyle(div, 'position', 'absolute');
         this.render.setStyle(div, 'cursor', 'col-resize');
         this.render.setStyle(div, 'userSelect', 'none');
-        this.render.setStyle(div, 'border-right', '1px solid var(--light-blue-grey)');
+        this.render.setStyle(div, 'border-right', '1px solid var(--light-gray-9)');
         this.render.setStyle(div, 'height', `${height}px`);
 
         return div;

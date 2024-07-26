@@ -1,15 +1,14 @@
-<uno-circle-graph 
-    [color]="pickSelected?.color"
-    [evaluated]="evaluated"
-    [projected]="projected"
-    [posLegX1]="posLegX1"
-    [posLegY1]="posLegY1"
-    [posLegX2]="posLegX2"
-    [posLegY2]="posLegY2"
-    [levelTitle]="levelType.name"
-    [levelType]="levelType"
-    (evaluatedEmitter)="onEvaluated($event)"
-    (projectedEmitter)="onProjected($event)">
+<uno-circle-graph [color]="pickSelected?.color"
+                  [evaluated]="evaluated"
+                  [projected]="projected"
+                  [posLegX1]="posLegX1"
+                  [posLegY1]="posLegY1"
+                  [posLegX2]="posLegX2"
+                  [posLegY2]="posLegY2"
+                  [levelTitle]="levelType.name"
+                  [levelType]="levelType"
+                  (evaluatedEmitter)="onEvaluated($event)"
+                  (projectedEmitter)="onProjected($event)">
 </uno-circle-graph>
 
 <div class="slds-grid">

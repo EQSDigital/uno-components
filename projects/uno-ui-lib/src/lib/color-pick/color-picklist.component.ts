@@ -36,7 +36,7 @@ export class ColorPicklistComponent implements OnChanges, AfterContentInit, OnDe
 
     @ContentChild(ColorPickItemDirective) itemTemplate: ColorPickItemDirective;
 
-    private subscriptions = new Subscription();
+    private subscriptions$ = new Subscription();
 
     @ViewChild('button') private button: ElementRef;
 
@@ -48,8 +48,8 @@ export class ColorPicklistComponent implements OnChanges, AfterContentInit, OnDe
     ) { }
 
     ngOnChanges(changes: SimpleChanges) {
-        if (changes.closeClickOutside && changes.closeClickOutside.currentValue) {
-            this.subscriptions.add(
+        if (changes.closeClickOutside?.currentValue) {
+            this.subscriptions$.add(
                 this.renderer.listen('document', 'click', (evt: Event) => {
                     if (this.button && this.colorsPopover &&
                         evt.target !== this.button.nativeElement && evt.target !== this.colorsPopover.nativeElement) {
@@ -61,13 +61,13 @@ export class ColorPicklistComponent implements OnChanges, AfterContentInit, OnDe
     }
 
     ngAfterContentInit() {
-        this.subscriptions.add(
+        this.subscriptions$.add(
             this.pick.unoPickChange.subscribe(() => this.openChange.emit(false))
         );
     }
 
     ngOnDestroy() {
-        this.subscriptions.unsubscribe();
+        this.subscriptions$.unsubscribe();
     }
 
     isOptionActive(item: any) {

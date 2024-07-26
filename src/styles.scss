@@ -9,17 +9,20 @@ $color-highlight: #c41d7f;
     display: flex;
     flex-direction: column;
     width: 16rem;
-    border-right: 1px solid #D8DEE6;
+    border-right: 1px solid #d8dee6;
     top: $top;
 }
 
-html, body { overflow-x: hidden;}
+html,
+body {
+    overflow-x: hidden;
+}
 
 .header-uno-ui-lib {
     font-size: 24px;
-    background-color: var(--sapphire);
-    color: var(--white);
-    box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+    background-color: var(--light-primary);
+    color: var(--light-gray-13);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
     position: fixed;
     z-index: 10001; /* So <uno-popover />s opened, can also be covered! */
 }
@@ -45,10 +48,10 @@ app-root {
     width: 100%;
 }
 
-@media(min-width: 48em) {
+@media (min-width: 48em) {
     .aside {
         @include side-element(59px);
-  
+
         padding-bottom: 1.5rem;
         overflow-y: hidden;
 
@@ -57,7 +60,7 @@ app-root {
             overflow-y: auto;
         }
     }
-  
+
     .main {
         margin-left: 16rem;
         width: calc(100% - 16rem);
@@ -73,10 +76,11 @@ app-root {
     padding: 0 10px;
 }
 
-.component__header, .page__header {
+.component__header,
+.page__header {
     padding: 1rem 0;
     color: #54698d;
-  
+
     h1 {
         font-weight: 300;
         font-size: 1.5rem;
@@ -86,33 +90,35 @@ app-root {
 }
 
 @media (min-width: 64em) {
-    .component__header, .page__header {
+    .component__header,
+    .page__header {
         height: 6.25rem;
-    
+
         h1 {
             font-size: 2.75rem;
         }
     }
 }
 
-.readme, .api {
+.readme,
+.api {
     font-size: 1rem;
-  
+
     code {
         margin: 0 1px;
         background: #f2f4f5;
-        padding: .2em .2em;
+        padding: 0.2em 0.2em;
         border-radius: 3px;
         font-size: 1rem;
         border: 1px solid #eee;
     }
 }
-  
+
 .readme {
     p {
         margin: 5px 0;
     }
-  
+
     ul {
         list-style: disc;
         margin-left: 1.25rem;
@@ -122,65 +128,67 @@ app-root {
 
 .api {
     h3 {
-      font-size: 1.375rem;
+        font-size: 1.375rem;
     }
-  
+
     h4 {
-      color: $color-highlight;
-    }
-  
-    h3:not(:first-of-type), h4:not(:first-of-type) {
-      margin-top: 2rem;
-    }
-  
-    h3, h4 {
-      display: inline-block;
-      margin-bottom: 1.25rem;
-    }
-  
-    h3 + h4 {
-      margin-left: 0.75rem;
-  
-      // force line break
-      + h3 {
-        display: inline;
-  
-        &::before {
-          content: "\A";
-          white-space: pre;
-        }
-      }
-    }
-  
-    table {
-      font-size: 0.875rem;
-      line-height: 1.5;
-      border-width: 0;
-  
-      th {
-        background-color: #e8e8e8;
-        color: rgb(81, 79, 77);
-        padding: .5rem;
-      }
-  
-      td {
-        padding: .5rem;
-        border-width: 1px 0;
-        border-bottom: 1px solid #e8e8e8;
-      }
-  
-      td:nth-child(3) {
-        font-size: 0.8125rem;
         color: $color-highlight;
-      }
-  
-      tr:hover>td {
-        background-color: #f3f2f2;
-      }
     }
-  
+
+    h3:not(:first-of-type),
+    h4:not(:first-of-type) {
+        margin-top: 2rem;
+    }
+
+    h3,
+    h4 {
+        display: inline-block;
+        margin-bottom: 1.25rem;
+    }
+
+    h3 + h4 {
+        margin-left: 0.75rem;
+
+        // force line break
+        + h3 {
+            display: inline;
+
+            &::before {
+                content: "\A";
+                white-space: pre;
+            }
+        }
+    }
+
+    table {
+        font-size: 0.875rem;
+        line-height: 1.5;
+        border-width: 0;
+
+        th {
+            background-color: #e8e8e8;
+            color: rgb(81, 79, 77);
+            padding: 0.5rem;
+        }
+
+        td {
+            padding: 0.5rem;
+            border-width: 1px 0;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        td:nth-child(3) {
+            font-size: 0.8125rem;
+            color: $color-highlight;
+        }
+
+        tr:hover > td {
+            background-color: #f3f2f2;
+        }
+    }
+
     p + table {
-      margin-top: 1rem;
+        margin-top: 1rem;
     }
 }
 
@@ -196,21 +204,33 @@ app-root {
 
 .main-has-fixed-menu {
     margin-top: 50px;
-    } .main-has-fixed-menu > div:nth-child(1) { position: fixed;
-    } .main-has-fixed-menu > div:nth-child(2) { margin-left: 16.6666666667%;
+}
+.main-has-fixed-menu > div:nth-child(1) {
+    position: fixed;
+}
+.main-has-fixed-menu > div:nth-child(2) {
+    margin-left: 16.6666666667%;
 }
 
-.menu-components-link-container:hover li a { opacity: 0.5;}
-.menu-components-link-container li:hover > a { opacity: 1}
+.menu-components-link-container:hover li a {
+    opacity: 0.5;
+}
+.menu-components-link-container li:hover > a {
+    opacity: 1;
+}
 .menu-components-link-container li > a:active,
 .menu-components-link-container li > a:hover {
     color: red;
     text-decoration: none;
 }
 
-.blink-me { animation: blinker 2s linear infinite; }
+.blink-me {
+    animation: blinker 2s linear infinite;
+}
 @keyframes blinker {
-    10% { color: transparent; }
+    10% {
+        color: transparent;
+    }
 }
 
 /*
@@ -227,12 +247,23 @@ app-root {
 */
 .slds-theme--badge-3d,
 .slds-theme--badge-2d {
-    font-family: 'OpenSans'; font-size: 12px !important; color: white !important;
+    font-family: "OpenSans";
+    font-size: 12px !important;
+    color: white !important;
     padding: 0 15px !important;
-    margin-right: 10px;    
+    margin-right: 10px;
 }
-.slds-theme--badge-3d { background-image: linear-gradient(to right, var(--dark-lime-green) 10%, var(--greenish-teal) 90%); }
-.slds-theme--badge-2d { background-image: linear-gradient(to right, var(--sun-yellow), var(--orangey-yellow) 48%, var(--tomato-red)); }
+.slds-theme--badge-3d {
+    background-image: linear-gradient(to right, var(--special-green-4) 10%, var(--special-green-3) 90%);
+}
+.slds-theme--badge-2d {
+    background-image: linear-gradient(
+        to right,
+        var(--special-yellow-2),
+        var(--special-yellow-3) 48%,
+        var(--special-red-2)
+    );
+}
 
 /* ******************************************************** */
 
@@ -242,8 +273,12 @@ app-root {
     ==========================================================
 */
 /* Tab's header text height controlling - might have sub title/heading: */
-.has-heading-sub .slds-tabs--scoped__link, .has-heading-sub .slds-tabs_scoped__link,
-.has-heading-sub .slds-tabs--default__link, .has-heading-sub .slds-tabs_default__link { line-height: inherit;}
+.has-heading-sub .slds-tabs--scoped__link,
+.has-heading-sub .slds-tabs_scoped__link,
+.has-heading-sub .slds-tabs--default__link,
+.has-heading-sub .slds-tabs_default__link {
+    line-height: inherit;
+}
 /* ******************************************************** */
 
 /*
@@ -259,8 +294,8 @@ app-root {
     min-width: 136px;
     height: 34px;
 
-    color: var(--white);
-    background-color: var(--bluey-grey);
+    color: var(--light-gray-13);
+    background-color: var(--light-gray-7);
 
     border: none;
     border-radius: 100px;
@@ -271,8 +306,13 @@ app-root {
 
     object-fit: contain;
 }
-.slds-uno-button:hover { background-color: var(--slate-grey); }
-.slds-uno-button:disabled { background-color: var(--grey); cursor: not-allowed; }
+.slds-uno-button:hover {
+    background-color: var(--light-gray-4);
+}
+.slds-uno-button:disabled {
+    background-color: var(--grey);
+    cursor: not-allowed;
+}
 
 /*
     ============================
@@ -280,54 +320,85 @@ app-root {
     ============================
 */
 .slds-uno-button--secondary {
-    color: var(--sapphire);
+    color: var(--light-primary);
     background-color: transparent;
     border: 1px solid;
-    border-color: var(--sapphire);
+    border-color: var(--light-primary);
 }
-.slds-uno-button--secondary:hover { background-color: var(--sapphire); color: var(--white); }
-.slds-uno-button--secondary:disabled { background-color: var(--white); color: var(--grey); border: 1px solid; }
+.slds-uno-button--secondary:hover {
+    background-color: var(--light-primary);
+    color: var(--light-gray-13);
+}
+.slds-uno-button--secondary:disabled {
+    background-color: var(--light-gray-13);
+    color: var(--grey);
+    border: 1px solid;
+}
 
 .slds-uno-button--blue {
-    background-color: var(--sapphire);
+    background-color: var(--light-primary);
 }
-.slds-uno-button--blue:hover { background-color: var(--periwinkle); }
-.slds-uno-button--blue:disabled { background-color: rgba(0, 132, 249, 0.35); }
+.slds-uno-button--blue:hover {
+    background-color: var(--special-violet-2);
+}
+.slds-uno-button--blue:disabled {
+    background-color: rgba(0, 132, 249, 0.35);
+}
 
-.slds-uno-button--green { background-color: var(--greenish-teal); }
-.slds-uno-button--green:hover { background-color: var(--weird-green); }
-.slds-uno-button--green:disabled { background-color: rgba(97, 213, 116, 0.35); }
+.slds-uno-button--green {
+    background-color: var(--special-green-4);
+}
+.slds-uno-button--green:hover {
+    background-color: var(--special-green-2);
+}
+.slds-uno-button--green:disabled {
+    background-color: rgba(97, 213, 116, 0.35);
+}
 
 /* Specific to use on Excel Worksheet simulation, like in Action PLan, Plants, etc. Collapsible Tables: */
 .slds-uno-button--worksheet-default,
 .slds-uno-button--worksheet-add {
     font-size: 11px;
 
-    color: var(--dusk);
-    background-color: var(--white);
+    color: var(--light-gray-3);
+    background-color: var(--light-gray-13);
 
     border-radius: 108px;
-    border: solid 1px var(--dusk);
+    border: solid 1px var(--light-gray-3);
     border-style: dashed;
-} .slds-uno-button--worksheet-default {
+}
+.slds-uno-button--worksheet-default {
     height: 18px;
-} .slds-uno-button--worksheet-add {
-    min-width: max-content; height: 21px;
+}
+.slds-uno-button--worksheet-add {
+    min-width: max-content;
+    height: 21px;
     padding-left: 10px;
     padding-right: 10px;
 }
 .slds-uno-button--worksheet-default:hover,
-.slds-uno-button--worksheet-add:hover{ background-color: #f4f6f9; }
+.slds-uno-button--worksheet-add:hover {
+    background-color: #f4f6f9;
+}
 .slds-uno-button--worksheet-default:disabled,
-.slds-uno-button--worksheet-add:disabled{ background-color: #e0e5ee; }
+.slds-uno-button--worksheet-add:disabled {
+    background-color: #e0e5ee;
+}
 
 /*
     ============================
         Nano APP unoButton SIZEs:
     ============================
 */
-.slds-uno-button-size--small{ min-width: 104px; height: 26px; }
-.slds-uno-button-size--x-small{ min-width: max-content; height: 21px; font-size: smaller;}
+.slds-uno-button-size--small {
+    min-width: 104px;
+    height: 26px;
+}
+.slds-uno-button-size--x-small {
+    min-width: max-content;
+    height: 21px;
+    font-size: smaller;
+}
 
 /* ******************************************************** */
 
@@ -342,41 +413,53 @@ app-root {
     ==========================================================
 */
 .slds-uno-icon-info--text-header {
-    font-family: Nunito;
+    font-family: "Nunito";
     font-size: 18px;
     line-height: 1.5;
 
-    color: var(--dark-blue-grey);
+    color: var(--light-gray-1);
 
-    padding-left: 0.45rem
+    padding-left: 0.45rem;
 }
 
 .slds-uno-icon-info--text-parameter {
-    font-family: Nunito;
+    font-family: "Nunito";
     font-size: 12px;
     font-weight: 600;
 
-    color: var(--sapphire);
+    color: var(--light-primary);
 }
 
 .slds-uno-icon-info--text-parameter-value {
-    font-family: OpenSans;
+    font-family: "OpenSans";
     font-size: 12px;
     font-weight: 600;
 
-    color: var(--dark)
+    color: var(--light-gray-1);
 }
-.slds-uno-icon-info--text-parameter-value.smaller-font-size {font-size: 10px; font-weight: normal;}
+.slds-uno-icon-info--text-parameter-value.smaller-font-size {
+    font-size: 10px;
+    font-weight: normal;
+}
 
 /*
     ==========================================================
         Nano APP uno-popover, for "downloadContent" TEMPLATE
     ==========================================================
 */
-.slds-uno-icon-download--files-list-container { height: 100px; overflow-y: auto; }
+.slds-uno-icon-download--files-list-container {
+    height: 100px;
+    overflow-y: auto;
+}
 .slds-uno-icon-download--file-container > span:not(:nth-child(1)),
-.slds-uno-icon-download--file-container > uno-icon { padding-right: .75rem; display: inherit; outline: none; }
-.slds-uno-icon-download--file-container > span.slds-truncate { max-width: 180px; }
+.slds-uno-icon-download--file-container > uno-icon {
+    padding-right: 0.75rem;
+    display: inherit;
+    outline: none;
+}
+.slds-uno-icon-download--file-container > span.slds-truncate {
+    max-width: 180px;
+}
 
 /*
     ==========================================================
@@ -384,7 +467,10 @@ app-root {
     ==========================================================
 */
 /* Redefine min-width of Lightning System popover large class: 2rem extra, needed for the DatePicker calendar */
-.slds-popover--large, .slds-popover_large { min-width: 27rem !important; }
+.slds-popover--large,
+.slds-popover_large {
+    min-width: 27rem !important;
+}
 
 /* ******************************************************** */
 
@@ -393,7 +479,9 @@ app-root {
         Nano APP uno-pill:
     ==========================================================
 */
-.slds-pill__label:focus {box-shadow: none !important;}
+.slds-pill__label:focus {
+    box-shadow: none !important;
+}
 
 /* ******************************************************** */
 
@@ -412,56 +500,75 @@ app-root {
  * Creates a 'warning' orangish button style
  *
  */
- .slds-button--warning {
-   padding-left: 1rem;
-   padding-right: 1rem;
-   text-align: center;
-   vertical-align: middle;
-   border: 1px solid #dddbda;
-   transition: border 0.15s linear;
-   background-color: #ffae1c;
-   border-color: #ffae1c;
-   color: white; }
- 
- .slds-button--warning:link,
- .slds-button--warning:visited,
- .slds-button--warning:active {
-   color: white; }
- 
- .slds-button--warning:hover,
- .slds-button--warning:focus {
-   background-color: #faa200;
-   color: white; }
- 
- .slds-button--warning:active {
-   background-color: #d68b00;
-   border-color: #d68b00; }
- 
- .slds-button--warning[disabled] {
-   background: #e0e5ee;
-   border-color: transparent;
-   color: white;
+.slds-button--warning {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #dddbda;
+    transition: border 0.15s linear;
+    background-color: var(--special-orange-2);
+    border-color: var(--special-orange-2);
+    color: var(--light-gray-13);
 }
- 
+
+.slds-button--warning:link,
+.slds-button--warning:visited,
+.slds-button--warning:active {
+    color: var(--light-gray-13);
+}
+
+.slds-button--warning:hover,
+.slds-button--warning:focus {
+    background-color: #faa200;
+    color: var(--light-gray-13);
+}
+
+.slds-button--warning:active {
+    background-color: #d68b00;
+    border-color: #d68b00;
+}
+
+.slds-button--warning[disabled] {
+    background: #e0e5ee;
+    border-color: transparent;
+    color: var(--light-gray-13);
+}
+
 /*
     ============================
         Nano APP uno-modal FOOTER BUTTONs:
     ============================
 */
-.slds-modal__footer--directional > button:first-child { float: left; }
-.slds-modal__footer > button:last-child{ margin-left: .5rem; }
+.slds-modal__footer--directional > button:first-child {
+    float: left;
+}
+.slds-modal__footer > button:last-child {
+    margin-left: 0.5rem;
+}
 
 /* Adopt a minimum, different, width for all <uno-modal /> that have a Nano app Template: */
-.slds-modal-small-container--of-template { width: 28% !important; min-width: 20rem !important; }
-.slds-modal--medium { width: 70% !important; min-width: 20rem !important; max-width: 50rem !important; }
+.slds-modal-small-container--of-template {
+    width: 28% !important;
+    min-width: 20rem !important;
+}
+.slds-modal--medium {
+    width: 70% !important;
+    min-width: 20rem !important;
+    max-width: 50rem !important;
+}
 
 /*
     ============================
         Nano APP uno-modal 'assets3DModal' Template:
     ============================
 */
-.slds-radio__label { cursor: pointer; }
-span.slds-radio { border-bottom: 1px solid var(--grey); }
+.slds-radio__label {
+    cursor: pointer;
+}
+span.slds-radio {
+    border-bottom: 1px solid var(--grey);
+}
 
 /* ******************************************************** */
 
@@ -471,36 +578,49 @@ span.slds-radio { border-bottom: 1px solid var(--grey); }
     ==========================================================
 */
 uno-datepicker {
-    display: block; overflow: auto;
+    display: block;
+    overflow: auto;
     /* Limited width ?*/
     /* width: 390px; */
 }
 
 /* Uniformize selected day with month's buttons coloring: */
-.slds-datepicker td.slds-is-selected>.slds-day {
-    background: var(--sapphire) !important;
+.slds-datepicker td.slds-is-selected > .slds-day {
+    background: var(--light-primary) !important;
     opacity: 0.6;
 }
-.slds-datepicker td.slds-is-selected>.slds-day:hover { opacity: 1; }
+.slds-datepicker td.slds-is-selected > .slds-day:hover {
+    opacity: 1;
+}
 /* Uniformize (reverse coloring) the day navigation dot: */
-.slds-datepicker td.slds-is-today>.slds-day {
+.slds-datepicker td.slds-is-today > .slds-day {
     background-color: transparent;
-    box-shadow: 1px 2px 8px 0 var(--sapphire);
+    box-shadow: 1px 2px 8px 0 var(--light-primary);
 }
 
-.slds-datepicker__filter { background: #ecebea; }
+.slds-datepicker__filter {
+    background: #ecebea;
+}
 /* Align vertical "month" label: */
-uno-badge.month-label { display: flex; }
+uno-badge.month-label {
+    display: flex;
+}
 /* Get rid of the blur on both <button class="slds-button" /> Next/Previous month: */
-.slds-datepicker__filter--month button:focus { box-shadow: none !important; }
+.slds-datepicker__filter--month button:focus {
+    box-shadow: none !important;
+}
 /* Month filter only occupies MAX 1/3 table width...? */
-.slds-datepicker__filter--month  { flex-grow: 0.32 !important; margin-left: 2.4rem; }
+.slds-datepicker__filter--month {
+    flex-grow: 0.32 !important;
+    margin-left: 2.4rem;
+}
 /* Year selector the other half...?*/
 .slds-datepicker__filter button.go-to-today,
-.slds-datepicker__filter uno-date-year { margin: auto; }
+.slds-datepicker__filter uno-date-year {
+    margin: auto;
+}
 
 /* ******************************************************** */
-
 
 /*
     ==========================================================
@@ -508,11 +628,20 @@ uno-badge.month-label { display: flex; }
         NOT existent @ Lightning Design System CSS
     ==========================================================
 */
-.text-capitalize{ text-transform: capitalize; }
-.color-full-black { color: black; }
-.slds-m-top--xxx-large { margin-top: 6rem; }
+.text-capitalize {
+    text-transform: capitalize;
+}
 
-.slds-icon--xxx-small, .slds-icon_xxx-small {
+.color-full-black {
+    color: var(--dark-gray-13);
+}
+
+.slds-m-top--xxx-large {
+    margin-top: 6rem;
+}
+
+.slds-icon--xxx-small,
+.slds-icon_xxx-small {
     width: 0.675rem;
     height: 0.675rem;
     line-height: 1;
@@ -523,7 +652,7 @@ div.validator-error-message {
     bottom: 0;
     left: 0;
     margin-bottom: -8px;
-    color: var(--vermillion);
+    color: var(--special-red-2);
     /* Don't let text slide under uno-icon: */
     white-space: nowrap;
 
@@ -547,7 +676,7 @@ uno-smart-table {
 }
 
 uno-smart-table tbody tr {
-    background: var(--white);
+    background: var(--light-gray-13);
 }
 
 uno-smart-table table > thead {
@@ -566,7 +695,7 @@ uno-smart-table table > thead {
 
 .ng2-smart-title {
     font-weight: normal;
-    color: var(--dark-blue-grey);
+    color: var(--light-gray-1);
 }
 /* table thead > tr > th*/
 th.ng2-smart-th {
@@ -596,8 +725,12 @@ uno-smart-table thead tr > th {
     height: 45px;
 }
 
-uno-smart-table table:not(.without-stripes) tbody tr:nth-child(odd) { background: var(--very-light-blue); }
-uno-smart-table table:not(.without-stripes) tbody tr:nth-child(even) { background: var(--white); }
+uno-smart-table table:not(.without-stripes) tbody tr:nth-child(odd) {
+    background: var(--very-light-blue);
+}
+uno-smart-table table:not(.without-stripes) tbody tr:nth-child(even) {
+    background: var(--light-gray-13);
+}
 
 .text-red {
     color: black;

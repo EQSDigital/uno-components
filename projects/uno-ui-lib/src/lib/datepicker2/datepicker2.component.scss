@@ -1,6 +1,6 @@
 .date-input {
     font-size: 12px;
-    color: var(--dark-blue-grey);
+    color: var(--light-gray-1);
     font-family: "OpenSans";
     min-height: 36px;
     cursor: pointer;
@@ -30,8 +30,8 @@
     transition: opacity 300s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
 }
 ::ng-deep .mat-calendar-body-selected {
-    background-color: var(--sapphire);
-    color: #fff;
+    background-color: var(--light-primary);
+    color: var(--light-gray-13);
 }
 ::ng-deep
     .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid
@@ -42,7 +42,7 @@
     font-size: 13px;
     font-weight: bold;
     font-family: "OpenSans";
-    color: var(--dark-blue-grey);
+    color: var(--light-gray-1);
 }
 ::ng-deep .mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-outline {
     color: rgba(0, 0, 0, 0.06);
@@ -50,7 +50,7 @@
 }
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
     margin: 0 !important;
-    background-color: var(--light);
+    background-color: var(--light-gray-13);
     border-radius: 5px;
 }
 ::ng-deep .mat-form-field-wrapper {

@@ -2,42 +2,38 @@
     <uno-picture image="http://ceres.eqs.local:9090/v1/image/get/3869531d-c4ac-4640-a2c3-2a2e6060de7e.png"></uno-picture>
 </div>
 
-<uno-picture
-    #picture
-    class="slds-p-horizontal--medium"
-    width="150px"
-    height="150px"
-    defaultImage="http://localhost:4200/assets/imgs/asset-visualizer-default-image.png"
-    image="http://ceres.eqs.local:9090/v1/image/get/3869531d-c4ac-4640-a2c3-2a2e6060de7e.png"
-    rounded=true
-    (uploadedImage)="uploadedImage($event)"
-    (deleteImage)="deletedImage()">
+<uno-picture #picture
+             class="slds-p-horizontal--medium"
+             width="150px"
+             height="150px"
+             defaultImage="http://localhost:4200/assets/imgs/asset-visualizer-default-image.png"
+             image="http://ceres.eqs.local:9090/v1/image/get/3869531d-c4ac-4640-a2c3-2a2e6060de7e.png"
+             rounded=true
+             (uploadedImage)="uploadedImage($event)"
+             (deleteImage)="deletedImage()">
 </uno-picture>
 
-<uno-picture
-    #picture2
-    class="slds-p-horizontal--medium"
-    width="150px"
-    height="150px"
-    [showUpIcon]="true"
-    UpIconSize="medium"
-    defaultImage="https://img.freepik.com/free-photo/gray-painted-background_53876-94041.jpg?size=626&ext=jpg"
-    rounded=true
-    (uploadedImage)="uploadedImage($event)"
-    (deleteImage)="deletedImage()">
+<uno-picture #picture2
+             class="slds-p-horizontal--medium"
+             width="150px"
+             height="150px"
+             [showUpIcon]="true"
+             UpIconSize="medium"
+             defaultImage="https://img.freepik.com/free-photo/gray-painted-background_53876-94041.jpg?size=626&ext=jpg"
+             rounded=true
+             (uploadedImage)="uploadedImage($event)"
+             (deleteImage)="deletedImage()">
 </uno-picture>
 
-<uno-picture
-    class="slds-p-horizontal--medium"
-    width="200px"
-    height="200px"
-    image="http://ceres.eqs.local:9090/v1/image/get/3869531d-c4ac-4640-a2c3-2a2e6060de7e.png"
-    [onlyViewImage]="true">
+<uno-picture class="slds-p-horizontal--medium"
+             width="200px"
+             height="200px"
+             image="http://ceres.eqs.local:9090/v1/image/get/3869531d-c4ac-4640-a2c3-2a2e6060de7e.png"
+             [onlyViewImage]="true">
 </uno-picture>
 <button (click)="openModalLarge=!openModalLarge">button</button>
-<uno-modal
-    [(open)]="openModalLarge"
-    size="large">
+<uno-modal [(open)]="openModalLarge"
+           size="large">
 
     <ng-template unoModalHeader>
         <h2 style="font-family: 'Nunito'; font-size: 26px;">Title</h2>
@@ -45,16 +41,15 @@
     </ng-template>
 
     <div>
-        <uno-picture
-            #picture
-            class="slds-p-horizontal--medium"
-            width="90px"
-            height="90px"
-            defaultImage="http://localhost:4200/assets/imgs/asset-visualizer-default-image.png"
-            image="http://ceres.eqs.local:9090/v1/image/get/3869531d-c4ac-4640-a2c3-2a2e6060de7e.png"
-            rounded=true
-            (uploadedImage)="uploadedImage($event)"
-            (deleteImage)="deletedImage()">
+        <uno-picture #picture
+                     class="slds-p-horizontal--medium"
+                     width="90px"
+                     height="90px"
+                     defaultImage="http://localhost:4200/assets/imgs/asset-visualizer-default-image.png"
+                     image="http://ceres.eqs.local:9090/v1/image/get/3869531d-c4ac-4640-a2c3-2a2e6060de7e.png"
+                     rounded=true
+                     (uploadedImage)="uploadedImage($event)"
+                     (deleteImage)="deletedImage()">
         </uno-picture>
     </div>
 

@@ -84,7 +84,7 @@ export class InputTagsComponent implements OnChanges {
     constructor(private eRef: ElementRef, private render: Renderer2) { }
 
     ngOnChanges(changes: SimpleChanges) {
-        if (changes.selectedObjects && changes.selectedObjects.currentValue) {
+        if (changes.selectedObjects?.currentValue) {
             this.filterArray();
         }
     }

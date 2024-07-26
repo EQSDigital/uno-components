@@ -28,7 +28,7 @@ export class SearchComponent implements AfterViewInit {
         if (this.currentSearch && this.currentSearch.length > 0) {
             this.inSearchMode = true;
             this.renderer.setProperty(this.inputSearch.nativeElement, 'value', this.currentSearch);
-            this.renderer.setStyle(this.unoSearch.nativeElement, 'border-bottom', '2px solid var(--sapphire)');
+            this.renderer.setStyle(this.unoSearch.nativeElement, 'border-bottom', '2px solid var(--light-primary)');
             this.cdr.detectChanges();
         }
     }
@@ -47,7 +47,7 @@ export class SearchComponent implements AfterViewInit {
                 this.searchTerm.emit('');
             } else {
                 if (this.unoSearch) {
-                    this.renderer.setStyle(this.unoSearch.nativeElement, 'border-bottom', '2px solid var(--sapphire)');
+                    this.renderer.setStyle(this.unoSearch.nativeElement, 'border-bottom', '2px solid var(--light-primary)');
                 }
 
                 this.searchTerm.emit(text);
@@ -72,7 +72,7 @@ export class SearchComponent implements AfterViewInit {
                 this.inSearchMode = true;
 
                 if (this.unoSearch) {
-                    this.renderer.setStyle(this.unoSearch.nativeElement, 'border-bottom', '2px solid var(--sapphire)');
+                    this.renderer.setStyle(this.unoSearch.nativeElement, 'border-bottom', '2px solid var(--light-primary)');
                 }
             } else {
                 this.inSearchMode = false;

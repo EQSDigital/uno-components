@@ -17,5 +17,12 @@
 
 <div class="slds-p-around--large slds-size--1-of-2">
     Single image
-    <uno-drag-drop-image image="https://img.freepik.com/free-photo/gray-painted-background_53876-94041.jpg?size=626&ext=jpg" [disabled]="false" [disabledDownload]="false" [disabledDelete]="false" (deleteFile)="onDeleteFile($event)" (downloadFile)="onDownloadFile($event)" (uploadedImage)="onUploadImage($event)"></uno-drag-drop-image>
+    <uno-drag-drop-image image="https://img.freepik.com/free-photo/gray-painted-background_53876-94041.jpg?size=626&ext=jpg"
+                         [disabled]="false"
+                         [disabledDownload]="false"
+                         [disabledDelete]="false"
+                         (deleteFile)="onDeleteFile($event)"
+                         (downloadFile)="onDownloadFile($event)"
+                         (uploadedImage)="onUploadImage($event)">
+    </uno-drag-drop-image>
 </div>

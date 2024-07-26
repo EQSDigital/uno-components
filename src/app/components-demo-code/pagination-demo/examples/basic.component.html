@@ -5,7 +5,7 @@
             <input class="slds-input" type="number" [(ngModel)]="length" min="0">
         </div>
     </div>
-    
+
     <div class="slds-size--1-of-4 slds-form-element">
         <label class="slds-form-element__label" for="form-element-01">Page size</label>
         <div class="slds-form-element__control">
@@ -28,12 +28,11 @@
     </div>
 </div>
 
-<uno-pagination
-    [numItems]="length"
-    [pageSize]="pageSize"
-    [pageIndex]="pageIndex"
-    [pageSizeOptions]="pageSizeOptions"
-    (page)="pageEvent = $event">
+<uno-pagination [numItems]="length"
+                [pageSize]="pageSize"
+                [pageIndex]="pageIndex"
+                [pageSizeOptions]="pageSizeOptions"
+                (page)="pageEvent = $event">
 </uno-pagination>
 
 <div class="slds-p-top--large" *ngIf="pageEvent">

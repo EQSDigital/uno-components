@@ -3,10 +3,14 @@
     textarea {
         width: 100%;
         line-height: normal;
-        padding: .375em .75em;
+        padding: 0.375em 0.75em;
         // Form validators, for Input text and Textare
-        &.form-control.ng-invalid.ng-touched { border: 1px solid var(--vermillion) }
-        &.form-control.ng-valid.ng-touched:not(.no-validator) { border: none }
+        &.form-control.ng-invalid.ng-touched {
+            border: 1px solid var(--special-red-2);
+        }
+        &.form-control.ng-valid.ng-touched:not(.no-validator) {
+            border: none;
+        }
     }
 }
 

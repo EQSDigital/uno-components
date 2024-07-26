@@ -1,8 +1,10 @@
 <p>
-    Make a group of elements behave like a set of radio buttons - <strong>single option</strong> - by using <strong>uno-pick</strong> and <strong>uno-pick-option</strong> Directives inside any HTML 5 tag.
+    Make a group of elements behave like a set of radio buttons - <strong>single option</strong> - by using <strong>uno-pick</strong> and
+    <strong>uno-pick-option</strong> Directives inside any HTML 5 tag.
 </p>
 <P>
-    You can alternatively make them behave like a set of checkboxes - <strong>multiple</strong> pick options - by setting the "<strong>unoPickMultiple</strong>" Directive.
+    You can alternatively make them behave like a set of checkboxes - <strong>multiple</strong> pick options - by setting the "<strong>unoPickMultiple</strong>"
+    Directive.
 </P>
 
 <!-- /////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -10,63 +12,56 @@
 <div class="slds-text-title--caps slds-m-top--xx-large slds-m-bottom--small"><strong>Single</strong> selection</div>
 <div class="slds-m-bottom--small">Currently selected: <code><strong>{{ selected }} button</strong></code></div>
 <div unoPick [(unoPick)]="selected" unoPickActiveClass="slds-button--destructive" class="slds-button-group" role="group">
-    <button
-        type="button"
-        unoButton
-        unoType="secondary"
-        unoSize="small"
-        uno-pick-option
-        unoPickOption="left">Left
+    <button type="button"
+            unoButton
+            unoType="secondary"
+            unoSize="small"
+            uno-pick-option
+            unoPickOption="left">Left
     </button>
-    <button
-        type="button"
-        unoButton
-        unoType="secondary"
-        unoSize="small"
-        uno-pick-option
-        unoPickOption="middle">Middle
+    <button type="button"
+            unoButton
+            unoType="secondary"
+            unoSize="small"
+            uno-pick-option
+            unoPickOption="middle">Middle
     </button>
-    <button
-        type="button"
-        unoButton
-        unoType="secondary"
-        unoSize="small"
-        uno-pick-option
-        [unoPickOption]="'right'"
-        unoPickActiveClass="slds-button--success">Right
+    <button type="button"
+            unoButton
+            unoType="secondary"
+            unoSize="small"
+            uno-pick-option
+            [unoPickOption]="'right'"
+            unoPickActiveClass="slds-button--success">Right
     </button>
 </div>
 
 <!-- /////////////////////////////////////////////////////////////////////////////////////////// -->
 
-<div class="slds-text-title--caps slds-m-top--xx-large slds-m-bottom--small slds-m-top--x-large"><strong>Multiple</strong> selection, with <strong>OBJ</strong> data</div>
+<div class="slds-text-title--caps slds-m-top--xx-large slds-m-bottom--small slds-m-top--x-large"><strong>Multiple</strong> selection, with <strong>OBJ</strong>
+    data</div>
 <div *ngIf="arrayTrues.length > 0" class="slds-m-bottom--small">Selected: <code><strong>{{ multipleObject | json }}</strong></code></div>
 <div *ngIf="arrayTrues.length === 0" class="slds-m-bottom--small">Click a button to pick:</div>
 <div class="slds-button-group" role="group"
-    unoPick
-    [(unoPick)]="multipleObject"
-    
-    unoPickMultiple
-    unoPickActiveClass="slds-button--brand" 
-    
-    (unoPickChange)="newPickEvent($event)">
-    
-    <button
-        type="button"
-        class="slds-button--neutral slds-p-horizontal--large"
-        uno-pick-option
-        unoPickOption="left">Left
+     unoPick
+     [(unoPick)]="multipleObject"
+     unoPickMultiple
+     unoPickActiveClass="slds-button--brand"
+     (unoPickChange)="newPickEvent($event)">
+
+    <button type="button"
+            class="slds-button--neutral slds-p-horizontal--large"
+            uno-pick-option
+            unoPickOption="left">Left
     </button>
-    <button
-        type="button"
-        class="slds-button--neutral slds-p-horizontal--large"
-        uno-pick-option
-        unoPickOption="middle">Middle
+    <button type="button"
+            class="slds-button--neutral slds-p-horizontal--large"
+            uno-pick-option
+            unoPickOption="middle">Middle
     </button>
-    <button
-        type="button"
-        class="slds-button--neutral slds-p-horizontal--large"
-        uno-pick-option
-        [unoPickOption]="'right'">Right
+    <button type="button"
+            class="slds-button--neutral slds-p-horizontal--large"
+            uno-pick-option
+            [unoPickOption]="'right'">Right
     </button>
 </div>

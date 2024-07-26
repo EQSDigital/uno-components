@@ -225,7 +225,7 @@ export class LookupEditorComponent extends DefaultEditorDirective implements OnI
         setTimeout( // Give a sec for the switch between tags occurs inside <uno-lookup />
             () => {
                 const formInput = this.checkCurrentInputTag();
-                const statusColor = this.editingFormGroup.controls[this.cell.column.id].errors ? 'var(--vermillion)' : '';
+                const statusColor = this.editingFormGroup.controls[this.cell.column.id].errors ? 'var(--special-red-2)' : '';
 
                 // Tell the world:
                 if (statusColor) {

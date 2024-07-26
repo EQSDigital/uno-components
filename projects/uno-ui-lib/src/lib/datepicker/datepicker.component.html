@@ -12,21 +12,19 @@
         </button>
     </div>
 
-    <button
-        *ngIf="todayButton"
-        class="go-to-today"
-        (click)="selectToday()"
-        unoButton
-        unoType="secondary"
-        unoSize="small" translate>TODAY
+    <button *ngIf="todayButton"
+            class="go-to-today"
+            (click)="selectToday()"
+            unoButton
+            unoType="secondary"
+            unoSize="small" translate>TODAY
     </button>
 
-    <uno-date-year
-        class="slds-shrink-none slds-p-horizontal--x-small"
-        [year]="current.year"
-        [numYearsBefore]="numYearsBefore"
-        [numYearsAfter]="numYearsAfter"
-        (yearChange)="moveYear($event)">
+    <uno-date-year class="slds-shrink-none slds-p-horizontal--x-small"
+                   [year]="current.year"
+                   [numYearsBefore]="numYearsBefore"
+                   [numYearsAfter]="numYearsAfter"
+                   (yearChange)="moveYear($event)">
     </uno-date-year>
 </div>
 

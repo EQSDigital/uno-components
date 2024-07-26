@@ -10,13 +10,13 @@
     box-shadow: rgb(223, 223, 223) 0 0 0 0 inset;
     transition: 0.3s ease-out all;
     -webkit-transition: 0.3s ease-out all;
-    background-color: var(--light-blue-grey);
+    background-color: var(--light-gray-9);
 }
 
 mark {
     background-color: inherit; // Reset Lightning System CSS for <mark />
     border-radius: 100%;
-    background-color: var(--light);
+    background-color: var(--light-gray-13);
     // box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
     position: absolute;
     top: 1px;
@@ -27,7 +27,7 @@ mark {
 
 .switch.checked mark {
     border: none;
-    background: var(--light);
+    background: var(--light-gray-13);
 }
 
 .disabled {

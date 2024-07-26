@@ -37,13 +37,7 @@ export class LookupHeaderDirective {
 @Component({
     selector: 'uno-lookup',
     templateUrl: './lookup.component.html',
-    styles: [
-        `.slds-dropdown__item--active > a {
-            outline: 0;
-            text-decoration: none;
-            background-color: #f4f6f9;
-        }`
-    ],
+    styleUrls: ['lookup.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 
 })
@@ -157,7 +151,7 @@ export class LookupComponent implements OnInit, OnChanges, AfterViewChecked, OnD
         );
     }
 
-    ngOnChanges(changes?: any) {
+    ngOnChanges() {
         this._label = this.labelTemplate ? this.labelTemplate.templateRef : (this.label || '');
     }
 

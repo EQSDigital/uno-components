@@ -5,8 +5,10 @@
 
 <p>
     <br><em><strong>Space</strong></em> and <em><strong>Enter</strong></em> on an <strong>unoDropdownTrigger</strong> will toggle the dropdown's open status.
-    <br><em><strong>DownArrow</strong></em> on an <strong>unoDropdownTrigger</strong> will open the dropdown and <strong>move focus</strong> to the first dropdown item.
-    <br><em><strong>DownArrow</strong></em> and <em><strong>UpArrow</strong></em> on an <strong>opened</strong>&nbsp; <strong>unoDropdown</strong> will move focus to the next and previous items respectively.
+    <br><em><strong>DownArrow</strong></em> on an <strong>unoDropdownTrigger</strong> will open the dropdown and <strong>move focus</strong> to the first
+    dropdown item.
+    <br><em><strong>DownArrow</strong></em> and <em><strong>UpArrow</strong></em> on an <strong>opened</strong>&nbsp; <strong>unoDropdown</strong> will move
+    focus to the next and previous items respectively.
     <br>
     <br>An opened <strong>unoDropdown</strong> has aria-selected="true" and a closed one has aria-selected="false"
     <br>
@@ -17,12 +19,12 @@
 <span unoDropdown [(open)]="openDropdown" class="slds-m-top--xx-large">
 
     <!-- the Dropdown trigger: -->
-    <button unoDropdownTrigger class="slds-button slds-button--neutral" >
+    <button unoDropdownTrigger class="slds-button slds-button--neutral">
         <span *ngIf="!selected" class="slds-truncate">Select an item</span>
         <span *ngIf="selected" class="slds-truncate">{{ selected }}</span>
         <uno-icon icon="down_s" size="xx-small" class="slds-m-left_small"></uno-icon>
     </button>
-    
+
     <!-- the Dropdown list of items -->
     <div class="slds-dropdown slds-dropdown--left">
         <ul class="dropdown__list" role="menu">
@@ -57,18 +59,18 @@
     Check that clicking outside won't close an opened <strong>Dropdown</strong>,
     <br>if you pass in <em>Input Directive</em>&nbsp; <strong>[unoDropdownHandlePageEvents]="false"</strong>:
     <span class="slds-m-top--x-small"
-        unoDropdown
-        [(open)]="openSimpleDropdown"
-        [unoDropdownHandlePageEvents]="false"
-        
-        (openChange)=dropdownState($event)
-        (selectedElem)=optionSelected($event)>
+          unoDropdown
+          [(open)]="openSimpleDropdown"
+          [unoDropdownHandlePageEvents]="false"
+
+          (openChange)=dropdownState($event)
+          (selectedElem)=optionSelected($event)>
         <!-- the Dropdown trigger: -->
-        <button unoDropdownTrigger class="slds-button slds-button--neutral" >
+        <button unoDropdownTrigger class="slds-button slds-button--neutral">
             <span class="slds-truncate">{{ selectedItem }}</span>
             <uno-icon icon="down_s" size="xx-small" class="slds-m-left_small"></uno-icon>
         </button>
-        
+
         <!-- the Dropdown list of items -->
         <div class="slds-dropdown slds-dropdown--left">
             <ul class="dropdown__list" role="menu">
@@ -78,7 +80,9 @@
                 </li>
                 <!-- All the useful ones -->
                 <li *ngFor="let item of anotherItems;" class="slds-dropdown__item">
-                    <a unoDropdownItem role="menuitem"><p class="slds-truncate">{{ item.value }}</p></a>
+                    <a unoDropdownItem role="menuitem">
+                        <p class="slds-truncate">{{ item.value }}</p>
+                    </a>
                 </li>
 
             </ul>
@@ -87,6 +91,7 @@
     </span>
 
     <br>
-    <small>Notice, by catching <em>(selectedElem) emitter</em>, we are not using <strong>(click)</strong> on any of the <strong>unoDropdownItem</strong>s! Check the console.log to catch <strong>&#60;span unoDropdown /&#62;</strong> outside container &nbsp;<em>selectedElem()</em> event!</small>
+    <small>Notice, by catching <em>(selectedElem) emitter</em>, we are not using <strong>(click)</strong> on any of the <strong>unoDropdownItem</strong>s! Check
+        the console.log to catch <strong>&#60;span unoDropdown /&#62;</strong> outside container &nbsp;<em>selectedElem()</em> event!</small>
 
 </p>

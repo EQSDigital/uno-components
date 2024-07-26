@@ -1,19 +1,17 @@
 <button (click)="onClickIdentified()">Identified</button>
 <button (click)="onClickEvaluated()">Evaluated</button>
-<uno-smart-table
-    [settings]="tableSettings"
-    [source]="tableData"
-    (internalAction)="gridAffairAction($event)"
-    (createConfirm)="confirmRowActionEvent($event, 'create')"
-    (editConfirm)="confirmRowActionEvent($event, 'edit')"
-    (deleteConfirm)="confirmRowActionEvent($event, 'delete')"
-    (cancelCreate)="onCancel()"
-    (cancelEdit)="onCancel()">
+<uno-smart-table [settings]="tableSettings"
+                 [source]="tableData"
+                 (internalAction)="gridAffairAction($event)"
+                 (createConfirm)="confirmRowActionEvent($event, 'create')"
+                 (editConfirm)="confirmRowActionEvent($event, 'edit')"
+                 (deleteConfirm)="confirmRowActionEvent($event, 'delete')"
+                 (cancelCreate)="onCancel()"
+                 (cancelEdit)="onCancel()">
 </uno-smart-table>
 
-<uno-modal
-    [headerStr]="'selectedChemicalProducts' | translate"
-    [(open)]="openModalChemical">
+<uno-modal [headerStr]="'selectedChemicalProducts' | translate"
+           [(open)]="openModalChemical">
     <div modalBody class="slds-p-around--large" style="background-color: var(--pale-grey)">
         <div class="slds-input-has-icon slds-input-has-icon_right">
             <uno-icon icon="search" size="xx-small" class="slds-input__icon slds-input__icon_right"></uno-icon>
@@ -21,16 +19,15 @@
         </div>
         <div class="slds-m-top--medium slds-p-horizontal--x-small" style="background-color: var(--white)">
             <div
-                *ngFor="let elem of dataModal"
-                class="slds-grid slds-align--absolute-center modal-row">
-                    <div class="slds-size--1-of-12 slds-align--absolute-center">
-                        <input
-                            type="checkbox"
-                            [checked]="elem.isSelected"
-                            (click)="$event.stopPropagation();"
-                            [disabled]="false">
-                    </div>
-                    <div class="slds-size--11-of-12 slds-p-right--medium line-clamp-2 open-sans-12" [title]="elem.name">{{ elem.name }}</div>
+                 *ngFor="let elem of dataModal"
+                 class="slds-grid slds-align--absolute-center modal-row">
+                <div class="slds-size--1-of-12 slds-align--absolute-center">
+                    <input type="checkbox"
+                           [checked]="elem.isSelected"
+                           (click)="$event.stopPropagation();"
+                           [disabled]="false">
+                </div>
+                <div class="slds-size--11-of-12 slds-p-right--medium line-clamp-2 open-sans-12" [title]="elem.name">{{ elem.name }}</div>
             </div>
             <!-- <div
                 class="slds-grid slds-border--top modal-row"

@@ -96,7 +96,7 @@ export class Datepicker2Component implements OnChanges {
 
     constructor(private fb: UntypedFormBuilder) { }
 
-    ngOnChanges(changes: SimpleChanges) {
+    public ngOnChanges(changes: SimpleChanges) {
         if (changes.disable && this.disable) {
             this.dateForm.disable();
         }
@@ -109,7 +109,7 @@ export class Datepicker2Component implements OnChanges {
             this.dateForm.setValidators(Validators.required);
         }
 
-        if (changes.date && changes.date.currentValue) {
+        if (changes.date?.currentValue) {
             this.dateForm.reset();
             this.dateForm.setValue(this.date);
 
@@ -126,32 +126,32 @@ export class Datepicker2Component implements OnChanges {
             this.dateForm.setValue(null);
         }
 
-        if (changes.dateRange && changes.dateRange.currentValue) {
+        if (changes.dateRange?.currentValue) {
             this.form = this.fb.group({
                 start: [{ value: '', disabled: true }],
                 end: [{ value: '', disabled: true }]
             })
         }
 
-        if (changes.startDateRange && changes.startDateRange.currentValue) {
+        if (changes.startDateRange?.currentValue) {
             if (this.form) {
                 this.form.controls.start.setValue(this.startDateRange);
             }
         }
 
-        if (changes.endDateRange && changes.endDateRange.currentValue) {
+        if (changes.endDateRange?.currentValue) {
             if (this.form) {
                 this.form.controls.end.setValue(this.endDateRange);
             }
         }
 
-        if (changes.min && changes.min.currentValue) {
+        if (changes.min?.currentValue) {
             // When change the min date value the datepicker dont remove the error message if date are valid.
             // It's need a click to update template. I try ChangeDetectionRef and didn't work.
             setTimeout(() => { document.getElementById('date').click() });
         }
 
-        if (changes.max && changes.max.currentValue) {
+        if (changes.max?.currentValue) {
             // When change the min date value the datepicker dont remove the error message if date are valid.
             // It's need a click to update template. I try ChangeDetectionRef and didn't work.
             setTimeout(() => { document.getElementById('date').click() });

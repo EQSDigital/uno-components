@@ -1,15 +1,14 @@
 Hovering on
 <a uno-popover-trigger
-    unoPopoverBehavior
-    unoPopover="Simplest &#60;uno-popover /&#62; configuration you can have. It works!"
->this link</a> you have the simplest <strong>&#60;uno-popover /&#62;</strong> of all!
+   unoPopoverBehavior
+   unoPopover="Simplest &#60;uno-popover /&#62; configuration you can have. It works!">this link</a> you have the simplest <strong>&#60;uno-popover
+    /&#62;</strong> of all!
 <br />
 We can improve it style by adding single Input Directive
 <a uno-popover-trigger
-    unoPopoverBehavior
-    unoPopover="But 'tooltip' styling improves it, no CSS added!'"
-    unoPopoverTooltip="true"
-><strong>unoPopoverTooltip="true"</strong></a> - hover it and see the difference!
+   unoPopoverBehavior
+   unoPopover="But 'tooltip' styling improves it, no CSS added!'"
+   unoPopoverTooltip="true"><strong>unoPopoverTooltip="true"</strong></a> - hover it and see the difference!
 
 <!-- ********************************************************************************************************************************** -->
 <hr />
@@ -18,23 +17,23 @@ We can improve it style by adding single Input Directive
 <div>
     Your <strong>&#60;uno-popover /&#62;</strong> can start opened, and then follow typical <em>mouse over/out</em>
     <a uno-popover-trigger
-        [unoPopover]="PopoverContent1"
-        [unoPopoverPlacement]="placement"
-        [unoPopoverOpen]="open"
+       [unoPopover]="PopoverContent1"
+       [unoPopoverPlacement]="placement"
+       [unoPopoverOpen]="open"
 
-        (mouseenter)="open=true"
-        (mouseleave)="open=false"
-    > BEHAVIOUR</a>. You can test on the next link a typical <em>mouseOver</em>
+       (mouseenter)="open=true"
+       (mouseleave)="open=false"> BEHAVIOUR</a>. You can test on the next link a typical <em>mouseOver</em>
     <a uno-popover-trigger
-        [unoPopover]="PopoverContent2"
+       [unoPopover]="PopoverContent2"
 
-        unoPopoverBehavior
+       unoPopoverBehavior
 
-        unoPopoverHeader="This is the uno-popover-behavior's «unoPopoverHeader» Input"
-        unoPopoverFooter="This is the uno-popover-behavior's «unoPopoverFooter» Input"
-    > POPOVER</a>, where we customize some header/footer, similar to what we do with modals.
+       unoPopoverHeader="This is the uno-popover-behavior's «unoPopoverHeader» Input"
+       unoPopoverFooter="This is the uno-popover-behavior's «unoPopoverFooter» Input"> POPOVER</a>, where we customize some header/footer, similar to what we do
+    with modals.
     <br />
-    Please notice that by injecting <em><strong>unoPopoverBehavior</strong></em> Directive, we don't need to specify <em>mouseenter</em>/<em>mouseleave</em> coding or any <em><strong>unoPopoverOpen</strong></em> TS var/coding.
+    Please notice that by injecting <em><strong>unoPopoverBehavior</strong></em> Directive, we don't need to specify <em>mouseenter</em>/<em>mouseleave</em>
+    coding or any <em><strong>unoPopoverOpen</strong></em> TS var/coding.
 </div>
 <!-- Popover(s) Template(s) to show inside: -->
 <ng-template #PopoverContent1>
@@ -72,58 +71,55 @@ We can improve it style by adding single Input Directive
 <hr />
 
 <div class="slds-m-top--x-large">
-    <button
-        unoButton
-        unoType="blue"
-        class="slds-m-around_x-small"
-        uno-popover-trigger
-        [unoPopover]="PopoverContent2"
-        unoPopoverTheme="success"
-        [unoPopoverOpen]="openClickMe"
+    <button unoButton
+            unoType="blue"
+            class="slds-m-around_x-small"
+            uno-popover-trigger
+            [unoPopover]="PopoverContent2"
+            unoPopoverTheme="success"
+            [unoPopoverOpen]="openClickMe"
 
-        unoPopoverSize="small"
+            unoPopoverSize="small"
 
-        (click)="openClickMe = !openClickMe">
-            Click (success) me!
+            (click)="openClickMe = !openClickMe">
+        Click (success) me!
     </button>
-    <button
-        unoButton
-        class="slds-button--destructive slds-m-around_x-small"
-        uno-popover-trigger
-        [unoPopover]="PopoverContent2"
-        unoPopoverTheme="warning"
-        [unoPopoverOpen]="openClickMeAlso"
-        (click)="openClickMeAlso = !openClickMeAlso"
-        
-        unoPopoverPlacement="topRight"
-        unoPopoverNubbin="bottom-left">
-            Click me (warning, with indicator shifted left) also!
+    <button unoButton
+            class="slds-button--destructive slds-m-around_x-small"
+            uno-popover-trigger
+            [unoPopover]="PopoverContent2"
+            unoPopoverTheme="warning"
+            [unoPopoverOpen]="openClickMeAlso"
+            (click)="openClickMeAlso = !openClickMeAlso"
+
+            unoPopoverPlacement="topRight"
+            unoPopoverNubbin="bottom-left">
+        Click me (warning, with indicator shifted left) also!
     </button>
-    <button
-        unoButton
-        unoType="green"
-        class="slds-m-around_x-small"
-        uno-popover-trigger
-        [unoPopover]="PopoverContent2"
-        unoPopoverTheme="shade"
-        [unoPopoverOpen]="openClickMeToo"
+    <button unoButton
+            unoType="green"
+            class="slds-m-around_x-small"
+            uno-popover-trigger
+            [unoPopover]="PopoverContent2"
+            unoPopoverTheme="shade"
+            [unoPopoverOpen]="openClickMeToo"
 
-        unoPopoverSize="large"
+            unoPopoverSize="large"
 
-        (click)="openClickMeToo = !openClickMeToo">
-            Click me (shade) too!
+            (click)="openClickMeToo = !openClickMeToo">
+        Click me (shade) too!
     </button>
 </div>
 
 <div class="slds-m-top--x-large">
     <span uno-popover-trigger
-        unoPopover="is always TRUE, @ bottom right and with an «info» theme!"
-        unoPopoverOpen="true"
-        unoPopoverPlacement="right"
-        
-        unoPopoverTooltip="true"
-        unoPopoverTheme="info">
-            You can also make <strong>tooltips</strong> that <em><strong>unoPopoverOpen</strong></em>
+          unoPopover="is always TRUE, @ bottom right and with an «info» theme!"
+          unoPopoverOpen="true"
+          unoPopoverPlacement="right"
+
+          unoPopoverTooltip="true"
+          unoPopoverTheme="info">
+        You can also make <strong>tooltips</strong> that <em><strong>unoPopoverOpen</strong></em>
     </span>
 </div>
 
@@ -132,13 +128,13 @@ We can improve it style by adding single Input Directive
 
 <div class="hover-delay-container">
     <a uno-popover-trigger
-        unoPopover="Notice..? I do open and close with 1 second delay!"
-        unoPopoverTooltip="true"
+       unoPopover="Notice..? I do open and close with 1 second delay!"
+       unoPopoverTooltip="true"
 
-        unoPopoverBehavior
-        
-        unoPopoverDelay="1000"
-        #x="unoPopoverTrigger">Hover me...</a> and <strong>wait</strong>!<br />
+       unoPopoverBehavior
+
+       unoPopoverDelay="1000"
+       #x="unoPopoverTrigger">Hover me...</a> and <strong>wait</strong>!<br />
     But you can still
     <button unoButton unoType="secondary" unoSize="x-small" (click)="x.open(0)">open it immediately</button>
     or
@@ -149,15 +145,15 @@ We can improve it style by adding single Input Directive
 <p>&nbsp;</p>
 And you can even have
 <a uno-popover-trigger
-    [unoPopover]="contentInteractive"
-    unoPopoverTooltip="true"
-    unoPopoverTheme="offline"
-    unoPopoverPlacement="bottom"
+   [unoPopover]="contentInteractive"
+   unoPopoverTooltip="true"
+   unoPopoverTheme="offline"
+   unoPopoverPlacement="bottom"
 
-    unoPopoverInteractive="true"
-    
-    unoPopoverBehavior
-    unoPopoverDelay="500">
+   unoPopoverInteractive="true"
+
+   unoPopoverBehavior
+   unoPopoverDelay="500">
 
     <strong>links</strong>, inside your <strong>&#60;uno-popover /&#62;</strong>
 </a> HTML's <strong>&#60;ng-template /&#62;</strong> content, passing in <em><strong>unoPopoverInteractive</strong></em> as TRUE!
@@ -173,61 +169,63 @@ And you can even have
 <hr />
 
 <p>
-    Specific popover <strong>content template</strong> (for "info", "download", etc.) with any HTML 5 tag trigger - set <em><strong>unoPopoverTemplate</strong></em> to the desired one and passs in the convenient DATA to show:
+    Specific popover <strong>content template</strong> (for "info", "download", etc.) with any HTML 5 tag trigger - set
+    <em><strong>unoPopoverTemplate</strong></em> to the desired one and passs in the convenient DATA to show:
 </p>
 <div style="margin-left: 30%">
     <strong>CLICK icon</strong> to see <strong>Info</strong> details:
     <uno-icon icon="info" size="x-small"
-        uno-popover-trigger
-        unoPopoverPlacement="leftBottom"
-        unoPopoverNubbin="right-top"
-        
-        [infoTitle]="'Info | Detail'"
-        [infoCreatedBy]="'Created By'"
-        [infoModifiedBy]="'Modified By'"
-        [infoDate]="'Date'"
+              uno-popover-trigger
+              unoPopoverPlacement="leftBottom"
+              unoPopoverNubbin="right-top"
 
-        unoPopoverTemplate = "infoContent"
-        [unoPopoverTemplateData]="infoContentData"
-        
-        uno-popover-click-behavior>
+              [infoTitle]="'Info | Detail'"
+              [infoCreatedBy]="'Created By'"
+              [infoModifiedBy]="'Modified By'"
+              [infoDate]="'Date'"
+
+              unoPopoverTemplate="infoContent"
+              [unoPopoverTemplateData]="infoContentData"
+
+              uno-popover-click-behavior>
     </uno-icon>
 </div>
 <div style="margin-left: 30%">
     Or <strong>HOVER icon</strong> to see <strong>Download</strong> details:
     <uno-icon icon="info" size="x-small"
-        uno-popover-trigger
-        unoPopoverPlacement="rightBottom"
-        unoPopoverNubbin="left-top"
-        
-        unoPopoverTemplate="downloadContent"
-        [unoPopoverTemplateData]="downloadContentData"
-        (unoPopoverTemplateEvent)="templateEventEmited($event)"
-        
-        unoPopoverBehavior
-        unoPopoverInteractive="true"
-        unoPopoverDelay="100">
+              uno-popover-trigger
+              unoPopoverPlacement="rightBottom"
+              unoPopoverNubbin="left-top"
+
+              unoPopoverTemplate="downloadContent"
+              [unoPopoverTemplateData]="downloadContentData"
+              (unoPopoverTemplateEvent)="templateEventEmited($event)"
+
+              unoPopoverBehavior
+              unoPopoverInteractive="true"
+              unoPopoverDelay="100">
     </uno-icon> (click inside icons and console.log!)
 </div>
 <div style="text-align: center;">
     Previous content (<strong>larger</strong> container) on former <strong>CLICK icon</strong> (<strong>Download</strong> details):
     <uno-icon icon="info" size="x-small"
-        uno-popover-trigger
-        unoPopoverPlacement="leftBottom"
-        unoPopoverNubbin="right-top"
-        unoPopoverSize="large"
-        [hasEdit]="true"
-        [hasDelete]="false"
-        unoPopoverTemplate="downloadContent"
-        [unoPopoverTemplateData]="downloadContentData"
-        (unoPopoverTemplateEvent)="templateEventEmited($event)"
-        
-        uno-popover-click-behavior>
+              uno-popover-trigger
+              unoPopoverPlacement="leftBottom"
+              unoPopoverNubbin="right-top"
+              unoPopoverSize="large"
+              [hasEdit]="true"
+              [hasDelete]="false"
+              unoPopoverTemplate="downloadContent"
+              [unoPopoverTemplateData]="downloadContentData"
+              (unoPopoverTemplateEvent)="templateEventEmited($event)"
+
+              uno-popover-click-behavior>
     </uno-icon> (check close button!)
 </div>
-    
+
 <div class="slds-m-top--large">
-    <strong>NOTE:</strong> In order to use the <strong>close</strong> SVG icon inside (and also to be able to close the popover on any outside click), use the <em><strong>uno-popover-click-behavior</strong></em> Directive.
+    <strong>NOTE:</strong> In order to use the <strong>close</strong> SVG icon inside (and also to be able to close the popover on any outside click), use the
+    <em><strong>uno-popover-click-behavior</strong></em> Directive.
 </div>
 
 <p>&nbsp;</p>
@@ -236,17 +234,18 @@ And you can even have
 </span>
 <div class="date-picker-demo-container" style="display: inline-flex; width: 130px;">
     <div class="slds-input slds-truncate datepicker-small-height form-small-height" style="position: relative;"
-        uno-popover-trigger
-        unoPopoverSize="large"
-        unoPopoverPlacement="leftBottom"
-        unoPopoverNubbin="right-top"
+         uno-popover-trigger
+         unoPopoverSize="large"
+         unoPopoverPlacement="leftBottom"
+         unoPopoverNubbin="right-top"
 
-        unoPopoverTemplate="datePickerContent"
-        [unoPopoverTemplateData]="datePickerData"
-        (unoPopoverTemplateEvent)="templateEventEmited($event)"
+         unoPopoverTemplate="datePickerContent"
+         [unoPopoverTemplateData]="datePickerData"
+         (unoPopoverTemplateEvent)="templateEventEmited($event)"
 
-        uno-popover-click-behavior>
-            <uno-icon icon="calendar" size="x-small" color="black"  style="position: absolute; top: 0; left: 0; margin: -2px 3px 0 3px;"></uno-icon>
-            <span style="margin-left: 10px; font-size: smaller;">{{ datePickerData.dateChosen ? (datePickerData.dateChosen | date:'EEE, dd/MM/yyyy' ) : 'choose a date...' }}</span>
+         uno-popover-click-behavior>
+        <uno-icon icon="calendar" size="x-small" color="black" style="position: absolute; top: 0; left: 0; margin: -2px 3px 0 3px;"></uno-icon>
+        <span style="margin-left: 10px; font-size: smaller;">{{ datePickerData.dateChosen ? (datePickerData.dateChosen | date:'EEE, dd/MM/yyyy' ) : 'choose a
+            date...' }}</span>
     </div>
 </div>
