@@ -1,22 +1,32 @@
 /* Since caps-lock of the title/heading is directive controled, we need to reset it @ Lightning System class: */
 /* 1) Class ".slds-tabs--default__item" is ALREADY caps lock - we must create a new class of NOT caps lock: */
 .slds-text-title_natural-caps,
-.slds-text-title--natural-caps  { text-transform: unset !important;}
+.slds-text-title--natural-caps {
+    text-transform: unset !important;
+}
 /* 2) On the other hand, ".slds-tabs--scoped__item" is NOT caps lock, by CSS Lightning System - we must add it, in order to function with both: */
 .slds-tabs_scoped__item,
-.slds-tabs--scoped__item {text-transform: uppercase;}
+.slds-tabs--scoped__item {
+    text-transform: uppercase;
+}
 
 /* Tab's  <li> click() event to disabled (needs also JS!) */
-.slds-tabs--is-disabled{
+.slds-tabs--is-disabled {
     opacity: 0.4;
-    } .slds-tabs--is-disabled > a { cursor: not-allowed;
+}
+.slds-tabs--is-disabled > a {
+    cursor: not-allowed;
 }
 
 /* Tab's header "alignment" directive: */
-.slds-tabs--right { justify-content: flex-end; }
+.slds-tabs--right {
+    justify-content: flex-end;
+}
 
 /* Tab's header text - might have a 2nd <div> child with sub title/heading: */
-.tab-header-text-container { text-align: center;}
+.tab-header-text-container {
+    text-align: center;
+}
 .tab-header-text-container > div:nth-child(2) {
     font-size: smaller;
     font-weight: 300;
@@ -24,4 +34,6 @@
 
 /* Custom color for the underline dash of the active(or hovered) tab */
 .slds-tabs--default__item.slds-active:after,
-.slds-tabs--default__item:hover:after { background-color: var(--active-tab-dash-bg-color); }
+.slds-tabs--default__item:hover:after {
+    background-color: var(--light-primary);
+}

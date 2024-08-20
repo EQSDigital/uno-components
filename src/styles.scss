@@ -247,7 +247,7 @@ app-root {
 */
 .slds-theme--badge-3d,
 .slds-theme--badge-2d {
-    font-family: "OpenSans";
+    font-family: "Open Sans";
     font-size: 12px !important;
     color: white !important;
     padding: 0 15px !important;
@@ -287,24 +287,18 @@ app-root {
     ==========================================================
 */
 .slds-uno-button {
-    font-size: 14px;
-    line-height: 1.29;
-    letter-spacing: 0px;
-
-    min-width: 136px;
+    min-width: 140px;
     height: 34px;
-
+    font-family: "Nunito";
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
     color: var(--light-gray-13);
     background-color: var(--light-gray-7);
-
     border: none;
-    border-radius: 100px;
+    border-radius: 10px;
     outline: none;
-
-    padding-left: 12px;
-    padding-right: 12px;
-
-    object-fit: contain;
+    padding: 10px 20px;
 }
 .slds-uno-button:hover {
     background-color: var(--light-gray-4);
@@ -358,14 +352,13 @@ app-root {
 /* Specific to use on Excel Worksheet simulation, like in Action PLan, Plants, etc. Collapsible Tables: */
 .slds-uno-button--worksheet-default,
 .slds-uno-button--worksheet-add {
-    font-size: 11px;
-
+    font-size: 10px;
     color: var(--light-gray-3);
     background-color: var(--light-gray-13);
-
-    border-radius: 108px;
-    border: solid 1px var(--light-gray-3);
+    border: 1px solid var(--light-gray-3);
+    border-radius: 10px;
     border-style: dashed;
+    padding: 2px 10px;
 }
 .slds-uno-button--worksheet-default {
     height: 18px;
@@ -373,8 +366,6 @@ app-root {
 .slds-uno-button--worksheet-add {
     min-width: max-content;
     height: 21px;
-    padding-left: 10px;
-    padding-right: 10px;
 }
 .slds-uno-button--worksheet-default:hover,
 .slds-uno-button--worksheet-add:hover {
@@ -390,14 +381,29 @@ app-root {
         Nano APP unoButton SIZEs:
     ============================
 */
+.slds-uno-button-size--large {
+    min-width: 144px;
+    height: 40px;
+    padding: 12px 24px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+}
 .slds-uno-button-size--small {
-    min-width: 104px;
-    height: 26px;
+    min-width: 112px;
+    height: 28px;
+    padding: 8px 20px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 12px;
 }
 .slds-uno-button-size--x-small {
-    min-width: max-content;
-    height: 21px;
-    font-size: smaller;
+    min-width: 110px;
+    height: 24px;
+    padding: 7px 16px;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 10px;
 }
 
 /* ******************************************************** */
@@ -431,7 +437,7 @@ app-root {
 }
 
 .slds-uno-icon-info--text-parameter-value {
-    font-family: "OpenSans";
+    font-family: "Open Sans";
     font-size: 12px;
     font-weight: 600;
 

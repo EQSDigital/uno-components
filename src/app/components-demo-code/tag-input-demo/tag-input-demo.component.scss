@@ -21,7 +21,7 @@
             color: var(--dark-blue-grey);
             background-color: var(--very-light-blue);
             border: 1px solid var(--light-blue-grey);
-        
+
             &:hover {
                 border: solid 1px var(--light-blue-grey);
                 background-color: var(--light-periwinkle-two);
@@ -38,7 +38,7 @@
         vertical-align: top;
         white-space: normal;
         border: none;
-        outline: none
+        outline: none;
     }
 
     & > .dropdown {
@@ -49,7 +49,7 @@
         border-top: 1px solid var(--sapphire);
 
         & > .item {
-            font-family: 'OpenSans';
+            font-family: "Open Sans";
             font-size: 12px;
             font-weight: normal;
             font-style: normal;

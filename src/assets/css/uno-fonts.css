@@ -1,82 +1,13 @@
-@font-face {
-    font-family: 'OpenSans Light';
-    src: url("../fonts/nano-fonts/OpenSans-Light.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: 'OpenSans Light Italic';
-    src: url("../fonts/nano-fonts/OpenSans-LightItalic.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: 'OpenSans';
-    src: url("../fonts/nano-fonts/OpenSans-Regular.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: 'OpenSans Italic';
-    src: url("../fonts/nano-fonts/OpenSans-Italic.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: 'OpenSans Bold';
-    src: url("../fonts/nano-fonts/OpenSans-Bold.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: 'OpenSans Bold Italic';
-    src: url("../fonts/nano-fonts/OpenSans-BoldItalic.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: 'OpenSans Semibold';
-    src: url("../fonts/nano-fonts/OpenSans-Semibold.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: 'OpenSans Semibold Italic';
-    src: url("../fonts/nano-fonts/OpenSans-SemiboldItalic.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: 'Nunito Light';
-    src: url("../fonts/nano-fonts/Nunito-Light.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: 'Nunito Light Italic';
-    src: url("../fonts/nano-fonts/Nunito-LightItalic.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: 'Nunito';
-    src: url("../fonts/nano-fonts/Nunito-Regular.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: 'Nunito Italic';
-    src: url("../fonts/nano-fonts/Nunito-Italic.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: 'Nunito Bold';
-    src: url("../fonts/nano-fonts/Nunito-Bold.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: 'Nunito Bold Italic';
-    src: url("../fonts/nano-fonts/Nunito-BoldItalic.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: 'Nunito Semibold';
-    src: url("../fonts/nano-fonts/Nunito-SemiBold.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: 'Nunito Semibold Italic';
-    src: url("../fonts/nano-fonts/Nunito-SemiBoldItalic.ttf") format("truetype");
-}
+@import "@fontsource/open-sans/300.css";
+@import "@fontsource/open-sans/400.css";
+@import "@fontsource/open-sans/600.css";
+@import "@fontsource/open-sans/700.css";
+@import "@fontsource/open-sans/400-italic.css";
+@import "@fontsource/nunito/300.css";
+@import "@fontsource/nunito/400.css";
+@import "@fontsource/nunito/600.css";
+@import "@fontsource/nunito/700.css";
+@import "@fontsource/nunito/400-italic.css";
 
 .table-header-title {
     font-size: 10px;
@@ -87,15 +18,25 @@
 }
 
 .Modal-Title {
-    font-family: 'OpenSans';
+    font-family: 'Open Sans';
     font-size: 23px;
     color: #152935;
 }
 
 .Modal-Sub-Title {
-    font-family: 'OpenSans';
+    font-family: 'Open Sans';
     font-size: 14px;
     color: #4a4a4a;
+}
+
+.open-sans-8 {
+    font-family: 'Open Sans';
+    font-size: 8px;
+}
+
+.open-sans-9 {
+    font-family: 'Open Sans';
+    font-size: 9px;
 }
 
 .nunito-10 {
@@ -104,77 +45,134 @@
 }
 
 .nunito-semibold-10 {
-    font-family: 'Nunito Semibold';
+    font-family: 'Nunito';
+    font-weight: 600;
+    font-size: 10px;
+}
+
+.nunito-bold-10 {
+    font-family: 'Nunito';
+    font-weight: 700;
     font-size: 10px;
 }
 
 .open-sans-10 {
-    font-family: 'OpenSans';
+    font-family: 'Open Sans';
     font-size: 10px;
 }
 
 .open-sans-semibold-9 {
-    font-family: 'OpenSans Bold';
+    font-family: 'Open Sans';
+    font-weight: 700;
     font-size: 9px;
 }
 
 .open-sans-semibold-10 {
-    font-family: 'OpenSans Semibold';
+    font-family: 'Open Sans';
+    font-weight: 600;
     font-size: 10px;
 }
 
 .open-sans-bold-10 {
-    font-family: 'OpenSans Bold';
+    font-family: 'Open Sans';
+    font-weight: 700;
+    font-size: 10px;
+}
+
+.open-sans-italic-10 {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-size: 10px;
+}
+
+.open-sans-light-10 {
+    font-family: 'Open Sans';
+    font-weight: 300;
     font-size: 10px;
 }
 
 .open-sans-light-11 {
-    font-family: 'OpenSans Light';
+    font-family: 'Open Sans';
+    font-weight: 300;
     font-size: 11px;
 }
 
 .open-sans-11 {
-    font-family: 'OpenSans';
+    font-family: 'Open Sans';
     font-size: 11px;
 }
 
 .open-sans-12 {
-    font-family: 'OpenSans';
+    font-family: 'Open Sans';
     font-size: 12px;
 }
 
 .open-sans-semibold-12 {
-    font-family: 'OpenSans Semibold';
+    font-family: 'Open Sans';
+    font-weight: 600;
     font-size: 12px;
 }
 
 .open-sans-bold-12 {
-    font-family: 'OpenSans Bold';
+    font-family: 'Open Sans';
+    font-weight: 700;
     font-size: 12px;
 }
 
 .open-sans-italic-12 {
-    font-family: 'OpenSans Italic';
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.nunito-12 {
+    font-family: 'Nunito';
     font-size: 12px;
 }
 
 .nunito-semibold-12 {
-    font-family: 'Nunito Semibold';
+    font-family: 'Nunito';
+    font-weight: 600;
     font-size: 12px;
 }
 
+.nunito-bold-12 {
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.open-sans-13 {
+    font-family: 'Open Sans';
+    font-size: 13px;
+}
+
 .open-sans-14 {
-    font-family: 'OpenSans';
+    font-family: 'Open Sans';
     font-size: 14px;
 }
 
 .open-sans-light-14 {
-    font-family: 'OpenSans Light';
+    font-family: 'Open Sans';
+    font-weight: 300;
     font-size: 14px;
 }
 
 .open-sans-semibold-14 {
-    font-family: 'OpenSans Semibold';
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.open-sans-bold-14 {
+    font-family: 'Open Sans';
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.open-sans-italic-14 {
+    font-family: 'Open Sans';
+    font-weight: 300;
     font-size: 14px;
 }
 
@@ -184,32 +182,55 @@
 }
 
 .nunito-semibold-14 {
-    font-family: 'Nunito Semibold';
+    font-family: 'Nunito';
+    font-weight: 600;
     font-size: 14px;
 }
 
+.nunito-bold-14 {
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.open-sans-light-15 {
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-size: 15px;
+}
+
 .open-sans-16 {
-    font-family: 'OpenSans';
+    font-family: 'Open Sans';
     font-size: 16px;
 }
 
 .open-sans-semibold-16 {
-    font-family: 'OpenSans Semibold';
+    font-family: 'Open Sans';
+    font-weight: 600;
     font-size: 16px;
 }
 
-.open-sans-light-15 {
-    font-family: 'OpenSans Light';
-    font-size: 15px;
+.open-sans-bold-16 {
+    font-family: 'Open Sans';
+    font-weight: 700;
+    font-size: 16px;
 }
 
 .open-sans-light-16 {
-    font-family: 'OpenSans Light';
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.open-sans-italic-16 {
+    font-family: 'Open Sans';
+    font-style: italic;
     font-size: 16px;
 }
 
 .nunito-semibold-16 {
-    font-family: 'Nunito Semibold';
+    font-family: 'Nunito';
+    font-weight: 600;
     font-size: 16px;
 }
 
@@ -219,12 +240,19 @@
 }
 
 .open-sans-18 {
-    font-family: 'OpenSans';
+    font-family: 'Open Sans';
     font-size: 18px;
 }
 
 .open-sans-semibold-18 {
-    font-family: 'OpenSans Semibold';
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.open-sans-bold-18 {
+    font-family: 'Open Sans';
+    font-weight: 700;
     font-size: 18px;
 }
 
@@ -234,13 +262,59 @@
 }
 
 .nunito-semibold-18 {
-    font-family: 'Nunito Semibold';
+    font-family: 'Nunito';
+    font-weight: 600;
     font-size: 18px;
 }
 
+.open-sans-20 {
+    font-family: 'Open Sans';
+    font-size: 20px;
+}
+
+.open-sans-bold-20 {
+    font-family: 'Open Sans';
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.open-sans-italic-20 {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-size: 20px;
+}
+
+.nunito-20 {
+    font-family: 'Nunito';
+    font-size: 20px;
+}
+
+.nunito-24 {
+    font-family: 'Nunito';
+    font-size: 24px;
+}
+
 .open-sans-25 {
-    font-family: 'OpenSans';
+    font-family: 'Open Sans';
     font-size: 25px;
+}
+
+.open-sans-bold-25 {
+    font-family: 'Open Sans';
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.open-sans-bold-26 {
+    font-family: 'Open Sans';
+    font-weight: 700;
+    font-size: 26px;
+}
+
+.open-sans-semibold-26 {
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 26px;
 }
 
 .nunito-26 {
@@ -248,9 +322,28 @@
     font-size: 26px;
 }
 
+.open-sans-bold-28 {
+    font-family: 'Open Sans';
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.nunito-bold-28 {
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 28px;
+}
+
 .open-sans-semibold-30 {
-    font-family: 'OpenSans Semibold';
+    font-family: 'Open Sans';
+    font-weight: 600;
     font-size: 30px;
+}
+
+.open-sans-bold-32 {
+    font-family: 'Open Sans';
+    font-weight: 700;
+    font-size: 32px;
 }
 
 .nunito-32 {
@@ -259,6 +352,7 @@
 }
 
 .open-sans-bold-40 {
-    font-family: 'OpenSans Bold';
+    font-family: 'Open Sans';
+    font-weight: 700;
     font-size: 40px;
 }

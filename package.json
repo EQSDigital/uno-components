@@ -27,6 +27,8 @@
     "@angular/platform-browser": "^14.3.0",
     "@angular/platform-browser-dynamic": "^14.3.0",
     "@angular/router": "^14.3.0",
+    "@fontsource/nunito": "^5.0.19",
+    "@fontsource/open-sans": "^5.0.29",
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
     "core-js": "^3.20.2",

@@ -1,12 +1,12 @@
 .uno-search {
     width: 337px;
-    border-bottom: solid 2px var(--grey);
+    border-bottom: 2px solid var(--grey);
     display: inline-block;
 
     &::placeholder {
         width: 300px;
         height: 17px;
-        font-family: "OpenSans";
+        font-family: "Open Sans";
         font-size: 12px;
         font-weight: 300;
         font-style: italic;
@@ -19,7 +19,7 @@
     .search-input {
         width: 300px;
         height: 27px;
-        font-family: "OpenSans";
+        font-family: "Open Sans";
         font-size: 12px;
         font-weight: 300;
         font-style: italic;
