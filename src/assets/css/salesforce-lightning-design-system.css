@@ -23778,23 +23778,23 @@ a.slds-button--inverse:focus {
    */ }
 
 .slds-theme_default, .slds-theme--default {
-  background-color: var(--light-gray-13);
+  background-color: var(--light-gray-14);
   color: #3e3e3c; }
 
 .slds-theme_shade, .slds-theme--shade {
   background-color: #f3f2f2; }
 
 .slds-theme_inverse, .slds-theme--inverse {
-  color: var(--light-gray-13);
+  color: var(--light-gray-14);
   background-color: #061c3f;
   border-color: #061c3f; }
 
 .slds-theme_inverse a:not(.slds-button--neutral), .slds-theme--inverse a:not(.slds-button--neutral) {
-  color: var(--light-gray-13);
+  color: var(--light-gray-14);
   text-decoration: underline; }
 
 .slds-theme_inverse a:not(.slds-button--neutral):link, .slds-theme_inverse a:not(.slds-button--neutral):visited, .slds-theme--inverse a:not(.slds-button--neutral):link, .slds-theme--inverse a:not(.slds-button--neutral):visited {
-  color: var(--light-gray-13); }
+  color: var(--light-gray-14); }
 
 .slds-theme_inverse a:not(.slds-button--neutral):hover, .slds-theme_inverse a:not(.slds-button--neutral):focus, .slds-theme--inverse a:not(.slds-button--neutral):hover, .slds-theme--inverse a:not(.slds-button--neutral):focus {
   color: rgba(255, 255, 255, 0.75); }
@@ -23806,16 +23806,16 @@ a.slds-button--inverse:focus {
   color: rgba(255, 255, 255, 0.15); }
 
 .slds-theme_alt-inverse, .slds-theme--alt-inverse {
-  color: var(--light-gray-13);
+  color: var(--light-gray-14);
   background-color: #16325c;
   border-color: #16325c; }
 
 .slds-theme_alt-inverse a:not(.slds-button--neutral), .slds-theme--alt-inverse a:not(.slds-button--neutral) {
-  color: var(--light-gray-13);
+  color: var(--light-gray-14);
   text-decoration: underline; }
 
 .slds-theme_alt-inverse a:not(.slds-button--neutral):link, .slds-theme_alt-inverse a:not(.slds-button--neutral):visited, .slds-theme--alt-inverse a:not(.slds-button--neutral):link, .slds-theme--alt-inverse a:not(.slds-button--neutral):visited {
-  color: var(--light-gray-13); }
+  color: var(--light-gray-14); }
 
 .slds-theme_alt-inverse a:not(.slds-button--neutral):hover, .slds-theme_alt-inverse a:not(.slds-button--neutral):focus, .slds-theme--alt-inverse a:not(.slds-button--neutral):hover, .slds-theme--alt-inverse a:not(.slds-button--neutral):focus {
   color: rgba(255, 255, 255, 0.75); }
@@ -23827,15 +23827,15 @@ a.slds-button--inverse:focus {
   color: rgba(255, 255, 255, 0.15); }
 
 .slds-theme_success, .slds-theme--success {
-  color: var(--light-gray-13);
+  color: var(--light-gray-14);
   background-color: var(--light-success); }
 
 .slds-theme_success a:not(.slds-button--neutral), .slds-theme--success a:not(.slds-button--neutral) {
-  color: var(--light-gray-13);
+  color: var(--light-gray-14);
   text-decoration: underline; }
 
 .slds-theme_success a:not(.slds-button--neutral):link, .slds-theme_success a:not(.slds-button--neutral):visited, .slds-theme--success a:not(.slds-button--neutral):link, .slds-theme--success a:not(.slds-button--neutral):visited {
-  color: var(--light-gray-13); }
+  color: var(--light-gray-14); }
 
 .slds-theme_success a:not(.slds-button--neutral):hover, .slds-theme_success a:not(.slds-button--neutral):focus, .slds-theme--success a:not(.slds-button--neutral):hover, .slds-theme--success a:not(.slds-button--neutral):focus {
   color: rgba(255, 255, 255, 0.75); }
@@ -23847,15 +23847,15 @@ a.slds-button--inverse:focus {
   color: rgba(255, 255, 255, 0.15); }
 
 .slds-theme_info, .slds-theme--info {
-  color: var(--light-gray-13);
+  color: var(--light-gray-14);
   background-color: var(--light-information); }
 
 .slds-theme_info a:not(.slds-button--neutral), .slds-theme--info a:not(.slds-button--neutral) {
-  color: var(--light-gray-13);
+  color: var(--light-gray-14);
   text-decoration: underline; }
 
 .slds-theme_info a:not(.slds-button--neutral):link, .slds-theme_info a:not(.slds-button--neutral):visited, .slds-theme--info a:not(.slds-button--neutral):link, .slds-theme--info a:not(.slds-button--neutral):visited {
-  color: var(--light-gray-13); }
+  color: var(--light-gray-14); }
 
 .slds-theme_info a:not(.slds-button--neutral):hover, .slds-theme_info a:not(.slds-button--neutral):focus, .slds-theme--info a:not(.slds-button--neutral):hover, .slds-theme--info a:not(.slds-button--neutral):focus {
   color: rgba(255, 255, 255, 0.75); }
@@ -23882,15 +23882,15 @@ a.slds-button--inverse:focus {
   text-decoration: underline; }
 
 .slds-theme_error, .slds-theme--error {
-  color: var(--light-gray-13);
+  color: var(--light-gray-14);
   background-color: var(--light-error); }
 
 .slds-theme_error a:not(.slds-button--neutral), .slds-theme--error a:not(.slds-button--neutral) {
-  color: var(--light-gray-13);
+  color: var(--light-gray-14);
   text-decoration: underline; }
 
 .slds-theme_error a:not(.slds-button--neutral):link, .slds-theme_error a:not(.slds-button--neutral):visited, .slds-theme--error a:not(.slds-button--neutral):link, .slds-theme--error a:not(.slds-button--neutral):visited {
-  color: var(--light-gray-13); }
+  color: var(--light-gray-14); }
 
 .slds-theme_error a:not(.slds-button--neutral):hover, .slds-theme_error a:not(.slds-button--neutral):focus, .slds-theme--error a:not(.slds-button--neutral):hover, .slds-theme--error a:not(.slds-button--neutral):focus {
   color: rgba(255, 255, 255, 0.75); }
@@ -23902,15 +23902,15 @@ a.slds-button--inverse:focus {
   color: rgba(255, 255, 255, 0.15); }
 
 .slds-theme_offline, .slds-theme--offline {
-  color: var(--light-gray-13);
+  color: var(--light-gray-14);
   background-color: #444; }
 
 .slds-theme_offline a:not(.slds-button--neutral), .slds-theme--offline a:not(.slds-button--neutral) {
-  color: var(--light-gray-13);
+  color: var(--light-gray-14);
   text-decoration: underline; }
 
 .slds-theme_offline a:not(.slds-button--neutral):link, .slds-theme_offline a:not(.slds-button--neutral):visited, .slds-theme--offline a:not(.slds-button--neutral):link, .slds-theme--offline a:not(.slds-button--neutral):visited {
-  color: var(--light-gray-13); }
+  color: var(--light-gray-14); }
 
 .slds-theme_offline a:not(.slds-button--neutral):hover, .slds-theme_offline a:not(.slds-button--neutral):focus, .slds-theme--offline a:not(.slds-button--neutral):hover, .slds-theme--offline a:not(.slds-button--neutral):focus {
   color: rgba(255, 255, 255, 0.75); }
@@ -23926,14 +23926,14 @@ a.slds-button--inverse:focus {
   background-size: 64px 64px; }
 
 .slds-theme_inverse-text, .slds-theme--inverse-text {
-  color: var(--light-gray-13); }
+  color: var(--light-gray-14); }
 
 .slds-theme_inverse-text a:not(.slds-button--neutral), .slds-theme--inverse-text a:not(.slds-button--neutral) {
-  color: var(--light-gray-13);
+  color: var(--light-gray-14);
   text-decoration: underline; }
 
 .slds-theme_inverse-text a:not(.slds-button--neutral):link, .slds-theme_inverse-text a:not(.slds-button--neutral):visited, .slds-theme--inverse-text a:not(.slds-button--neutral):link, .slds-theme--inverse-text a:not(.slds-button--neutral):visited {
-  color: var(--light-gray-13); }
+  color: var(--light-gray-14); }
 
 .slds-theme_inverse-text a:not(.slds-button--neutral):hover, .slds-theme_inverse-text a:not(.slds-button--neutral):focus, .slds-theme--inverse-text a:not(.slds-button--neutral):hover, .slds-theme--inverse-text a:not(.slds-button--neutral):focus {
   color: rgba(255, 255, 255, 0.75); }

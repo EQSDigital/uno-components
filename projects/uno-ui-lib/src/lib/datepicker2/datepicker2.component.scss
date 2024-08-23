@@ -31,7 +31,7 @@
 }
 ::ng-deep .mat-calendar-body-selected {
     background-color: var(--light-primary);
-    color: var(--light-gray-13);
+    color: var(--light-gray-14);
 }
 ::ng-deep
     .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid
@@ -46,11 +46,11 @@
 }
 ::ng-deep .mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-outline {
     color: rgba(0, 0, 0, 0.06);
-    background-color: var(--very-light-blue);
+    background-color: var(--light-gray-12);
 }
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
     margin: 0 !important;
-    background-color: var(--light-gray-13);
+    background-color: var(--light-gray-14);
     border-radius: 5px;
 }
 ::ng-deep .mat-form-field-wrapper {

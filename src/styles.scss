@@ -21,7 +21,7 @@ body {
 .header-uno-ui-lib {
     font-size: 24px;
     background-color: var(--light-primary);
-    color: var(--light-gray-13);
+    color: var(--light-gray-14);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
     position: fixed;
     z-index: 10001; /* So <uno-popover />s opened, can also be covered! */
@@ -290,10 +290,10 @@ app-root {
     min-width: 140px;
     height: 34px;
     font-family: "Nunito";
-    font-weight: 700;
+    font-weight: 600;
     font-size: 14px;
     line-height: 14px;
-    color: var(--light-gray-13);
+    color: var(--light-gray-14);
     background-color: var(--light-gray-7);
     border: none;
     border-radius: 10px;
@@ -304,7 +304,7 @@ app-root {
     background-color: var(--light-gray-4);
 }
 .slds-uno-button:disabled {
-    background-color: var(--grey);
+    background-color: var(--light-gray-12);
     cursor: not-allowed;
 }
 
@@ -321,11 +321,11 @@ app-root {
 }
 .slds-uno-button--secondary:hover {
     background-color: var(--light-primary);
-    color: var(--light-gray-13);
+    color: var(--light-gray-14);
 }
 .slds-uno-button--secondary:disabled {
-    background-color: var(--light-gray-13);
-    color: var(--grey);
+    background-color: var(--light-gray-14);
+    color: var(--light-gray-12);
     border: 1px solid;
 }
 
@@ -354,7 +354,7 @@ app-root {
 .slds-uno-button--worksheet-add {
     font-size: 10px;
     color: var(--light-gray-3);
-    background-color: var(--light-gray-13);
+    background-color: var(--light-gray-14);
     border: 1px solid var(--light-gray-3);
     border-radius: 10px;
     border-style: dashed;
@@ -393,7 +393,7 @@ app-root {
     min-width: 112px;
     height: 28px;
     padding: 8px 20px;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 12px;
     line-height: 12px;
 }
@@ -401,7 +401,7 @@ app-root {
     min-width: 110px;
     height: 24px;
     padding: 7px 16px;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 10px;
     line-height: 10px;
 }
@@ -515,19 +515,19 @@ app-root {
     transition: border 0.15s linear;
     background-color: var(--special-orange-2);
     border-color: var(--special-orange-2);
-    color: var(--light-gray-13);
+    color: var(--light-gray-14);
 }
 
 .slds-button--warning:link,
 .slds-button--warning:visited,
 .slds-button--warning:active {
-    color: var(--light-gray-13);
+    color: var(--light-gray-14);
 }
 
 .slds-button--warning:hover,
 .slds-button--warning:focus {
     background-color: #faa200;
-    color: var(--light-gray-13);
+    color: var(--light-gray-14);
 }
 
 .slds-button--warning:active {
@@ -538,7 +538,7 @@ app-root {
 .slds-button--warning[disabled] {
     background: #e0e5ee;
     border-color: transparent;
-    color: var(--light-gray-13);
+    color: var(--light-gray-14);
 }
 
 /*
@@ -573,7 +573,7 @@ app-root {
     cursor: pointer;
 }
 span.slds-radio {
-    border-bottom: 1px solid var(--grey);
+    border-bottom: 1px solid var(--light-gray-12);
 }
 
 /* ******************************************************** */
@@ -639,7 +639,7 @@ uno-badge.month-label {
 }
 
 .color-full-black {
-    color: var(--dark-gray-13);
+    color: var(--dark-gray-14);
 }
 
 .slds-m-top--xxx-large {
@@ -682,7 +682,7 @@ uno-smart-table {
 }
 
 uno-smart-table tbody tr {
-    background: var(--light-gray-13);
+    background: var(--light-gray-14);
 }
 
 uno-smart-table table > thead {
@@ -732,10 +732,10 @@ uno-smart-table thead tr > th {
 }
 
 uno-smart-table table:not(.without-stripes) tbody tr:nth-child(odd) {
-    background: var(--very-light-blue);
+    background: var(--light-gray-12);
 }
 uno-smart-table table:not(.without-stripes) tbody tr:nth-child(even) {
-    background: var(--light-gray-13);
+    background: var(--light-gray-14);
 }
 
 .text-red {

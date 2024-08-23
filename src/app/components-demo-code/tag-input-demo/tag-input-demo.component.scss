@@ -19,12 +19,12 @@
 
         &.slds-pill {
             color: var(--dark-blue-grey);
-            background-color: var(--very-light-blue);
+            background-color: var(--light-gray-12);
             border: 1px solid var(--light-blue-grey);
 
             &:hover {
                 border: solid 1px var(--light-blue-grey);
-                background-color: var(--light-periwinkle-two);
+                background-color: var(--light-gray-12);
             }
         }
     }
@@ -59,7 +59,7 @@
             color: var(--dark-blue-grey);
 
             &:hover {
-                background-color: var(--very-light-blue);
+                background-color: var(--light-gray-12);
             }
         }
     }

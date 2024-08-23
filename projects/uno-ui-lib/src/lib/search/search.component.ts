@@ -41,7 +41,7 @@ export class SearchComponent implements AfterViewInit {
                 this.renderer.setProperty(this.inputSearch.nativeElement, 'value', '');
 
                 if (this.unoSearch) {
-                    this.renderer.setStyle(this.unoSearch.nativeElement, 'border-bottom', '2px solid var(--grey)');
+                    this.renderer.setStyle(this.unoSearch.nativeElement, 'border-bottom', '2px solid var(--light-gray-12)');
                 }
 
                 this.searchTerm.emit('');
@@ -56,7 +56,7 @@ export class SearchComponent implements AfterViewInit {
             this.inSearchMode = false;
 
             if (this.unoSearch) {
-                this.renderer.setStyle(this.unoSearch.nativeElement, 'border-bottom', '2px solid var(--grey)');
+                this.renderer.setStyle(this.unoSearch.nativeElement, 'border-bottom', '2px solid var(--light-gray-12)');
             }
 
             this.searchTerm.emit('');
@@ -78,7 +78,7 @@ export class SearchComponent implements AfterViewInit {
                 this.inSearchMode = false;
 
                 if (this.unoSearch) {
-                    this.renderer.setStyle(this.unoSearch.nativeElement, 'border-bottom', '2px solid var(--grey)');
+                    this.renderer.setStyle(this.unoSearch.nativeElement, 'border-bottom', '2px solid var(--light-gray-12)');
                 }
             }
         }

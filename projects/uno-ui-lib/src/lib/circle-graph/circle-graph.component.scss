@@ -6,7 +6,8 @@
         width: 100px;
         top: 42px;
         left: 40px;
-        font-family: "Nunito Bold";
+        font-family: "Nunito";
+        font-weight: 700;
         font-size: 12px;
         color: var(--light-gray-3);
     }
@@ -15,7 +16,8 @@
         position: absolute;
         left: 80px;
         width: 70px;
-        font-family: "Nunito Bold";
+        font-family: "Nunito";
+        font-weight: 700;
         font-size: 16px;
         cursor: pointer;
         color: var(--light-gray-1);
@@ -33,7 +35,8 @@
         position: absolute;
         width: 82px;
         left: 52px;
-        font-family: "Nunito Semibold";
+        font-family: "Nunito";
+        font-weight: 600;
         font-size: 11px;
         cursor: pointer;
         color: var(--light-gray-1);

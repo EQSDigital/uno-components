@@ -1,11 +1,11 @@
 .input-tags {
     position: relative;
     display: inline-block;
-    border: 1px solid var(--light-periwinkle-two);
+    border: 1px solid var(--light-gray-12);
     width: 100%;
     border-radius: 0.25rem;
     cursor: text;
-    background-color: var(--light-gray-13);
+    background-color: var(--light-gray-14);
     min-height: calc(1.875rem + (3px * 2 + 1px));
 
     &.open {
@@ -27,12 +27,12 @@
 
         &.slds-pill {
             color: var(--light-gray-1);
-            background-color: var(--very-light-blue);
+            background-color: var(--light-gray-12);
             border: 1px solid var(--light-gray-9);
 
             &:hover {
                 border: solid 1px var(--light-gray-9);
-                background-color: var(--light-periwinkle-two);
+                background-color: var(--light-gray-12);
             }
         }
     }
@@ -56,7 +56,7 @@
         overflow-y: auto;
         cursor: pointer;
         border: 1px solid var(--light-primary);
-        background-color: var(--light-gray-13);
+        background-color: var(--light-gray-14);
         z-index: 2;
 
         & > .item {
@@ -70,14 +70,14 @@
             color: var(--light-gray-1);
 
             &:hover {
-                background-color: var(--very-light-blue);
+                background-color: var(--light-gray-12);
             }
         }
     }
 
     &.disable {
         pointer-events: none;
-        background-color: var(--grey);
+        background-color: var(--light-gray-12);
         cursor: not-allowed;
     }
 

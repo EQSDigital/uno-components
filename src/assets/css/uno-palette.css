@@ -1,9 +1,4 @@
 ﻿:root {
-    --grey: #e9ecf1;
-    --light-periwinkle: #cbceef;
-    --very-light-blue: #e9edf1;
-    --light-periwinkle-two: #e0e3ea;
-
     /* NEW PALETT */
 
     /* PRIMARY COLORS */
@@ -116,9 +111,10 @@
     --light-gray-8: #A8B3C3;
     --light-gray-9: #BEC8D4;
     --light-gray-10: #D7DDE5;
-    --light-gray-11: #F0F3F6;
-    --light-gray-12: #F4F7FA;
-    --light-gray-13: #FFFFFF;
+	--light-gray-11: #E6EBF1;
+    --light-gray-12: #F0F3F6;
+    --light-gray-13: #F4F7FA;
+    --light-gray-14: #FFFFFF;
 
     --dark-gray-0: #FAFAFA;
     --dark-gray-1: #D8DDE4;
@@ -131,9 +127,10 @@
     --dark-gray-8: #42475C;
     --dark-gray-9: #363A4E;
     --dark-gray-10: #2D2E3F;
-    --dark-gray-11: #1A1A26;
-    --dark-gray-12: #14141F;
-    --dark-gray-13: #11111A;
+	--dark-gray-11: #242533;
+    --dark-gray-12: #1A1A26;
+    --dark-gray-13: #14141F;
+    --dark-gray-14: #11111A;
 
 	/* SPECIAL COLORS */
 	--special-green-1: #00B4A0;

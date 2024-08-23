@@ -1,10 +1,10 @@
 main {
-    box-shadow: 1px 3px 5px 2px var(--grey);
+    box-shadow: 1px 3px 5px 2px var(--light-gray-12);
 }
 
 section.asset-image {
     height: 250px;
-    border-bottom: 1px solid var(--grey);
+    border-bottom: 1px solid var(--light-gray-12);
 }
 
 section.bottom-bar-container {
@@ -27,5 +27,5 @@ section.bottom-bar-container > .right-actions-container > .file-input-container 
 a,
 :visited {
     text-decoration: none;
-    color: var(--light-gray-13);
+    color: var(--light-gray-14);
 }
