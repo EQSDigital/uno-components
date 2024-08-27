@@ -4,7 +4,7 @@
             <div class="slds-dropdown-trigger open-sans-semibold-12" (clickOutside)="onClickedOutside($event)">
                 <button class="drop-select-num-items button-style slds-button_icon slds-button__icon--right" (click)="showList = !showList">
                     <span class="slds-p-horizontal--xx-small">{{ pageSize }}</span>
-                    <uno-icon id="order_down" icon="order_down" size="xx-small"></uno-icon>
+                    <uno-icon id="order_down" icon="order_down" size="x-small"></uno-icon>
                 </button>
             </div>
             <div class="slds-dropdown slds-dropdown--bottom" *ngIf="showList">
@@ -29,13 +29,13 @@
             <div style="display: inline-block" *ngIf="numItems > pageSize">
                 <div style="display: inline-block; vertical-align: top; height: 18px;" *ngIf="pageIndex > 0">
                     <button class="slds-button slds-button_icon" aria-haspopup="true" title="First page" (click)="firstPage()" [disabled]="pageIndex === 0">
-                        <uno-icon id="first_page" icon="first_page" size="xxx-small"></uno-icon>
+                        <uno-icon id="first_page" icon="first_page" size="x-small"></uno-icon>
                     </button>
                 </div>
                 <div style="display: inline-block; vertical-align: top; height: 18px;" *ngIf="pageIndex > 0">
                     <button class="slds-button slds-button_icon" aria-haspopup="true" title="Previous page" (click)="previousPage()"
                             [disabled]="pageIndex === 0">
-                        <uno-icon id="back_page" icon="back_page" size="xxx-small"></uno-icon>
+                        <uno-icon id="back_page" icon="back_page" size="x-small"></uno-icon>
                     </button>
                 </div>
                 <div *ngFor="let page of pages" style="display:inline-block">
@@ -53,13 +53,13 @@
                 <div style="display: inline-block; vertical-align: top; height: 18px;" *ngIf="pageIndex + 1 < numberOfPages">
                     <button class="slds-button slds-button_icon" aria-haspopup="true" title="Next page" (click)="nextPage()"
                             [disabled]="(pageIndex + 1) === numberOfPages">
-                        <uno-icon id="next_page" icon="next_page" size="xxx-small"></uno-icon>
+                        <uno-icon id="next_page" icon="next_page" size="x-small"></uno-icon>
                     </button>
                 </div>
                 <div style="display: inline-block; vertical-align: top; height: 18px;" *ngIf="pageIndex + 1 < numberOfPages">
                     <button class="slds-button slds-button_icon" aria-haspopup="true" title="Last page" (click)="lastPage()"
                             [disabled]="(pageIndex + 1) === numberOfPages">
-                        <uno-icon id="last_page" icon="last_page" size="xxx-small"></uno-icon>
+                        <uno-icon id="last_page" icon="last_page" size="x-small"></uno-icon>
                     </button>
                 </div>
             </div>

@@ -108,7 +108,7 @@ export class BasicComponent implements AfterViewInit {
 
             delete: { confirmDelete: true },
 
-            hoveringRow: { css: 'outline: 1px solid var(--sapphire)' }, // outline: 1px solid var(--sapphire)
+            hoveringRow: { css: 'outline: 1px solid var(--light-primary)' }, // outline: 1px solid var(--light-primary)
 
             rowPopoverErrors: true,
 

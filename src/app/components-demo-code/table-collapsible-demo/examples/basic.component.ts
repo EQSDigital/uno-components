@@ -65,10 +65,10 @@ export class BasicComponent {
             ]
         },
         add: { confirmCreate: true },
-        edit: { confirmSave: true},
-        delete: { confirmDelete: true},
+        edit: { confirmSave: true },
+        delete: { confirmDelete: true },
 
-        hoveringRow: { css: 'box-shadow: 0 1px 3px var(--sapphire)' }, // outline: 1px solid var(--sapphire)
+        hoveringRow: { css: 'box-shadow: 0 1px 3px var(--light-primary)' }, // outline: 1px solid var(--light-primary)
 
         rowPopoverErrors: true,
 
@@ -118,7 +118,7 @@ export class BasicComponent {
                         maxLength: 'Tem [current length field] de comprimento e só pode ter [maxlength field] ([value field])'
                     },
                     popoverErrors: true,
-                    inputPopoverTheme : 'warning'
+                    inputPopoverTheme: 'warning'
                 }
             },
             // ....................................................................
@@ -178,11 +178,11 @@ export class BasicComponent {
     // ==========================================
     // OUTPUT <uno-smart-table /> EVENTS:
     // ==========================================
-    isInCreating (evt) {
+    isInCreating(evt) {
         console.log('A NEW row is about to be CREATEd, using current grid\'s SOURCE data:', evt);
     }
 
-    isInEditing (evt) {
+    isInEditing(evt) {
         console.log('This row just entered on EDITING mode:', evt);
     }
 
@@ -227,11 +227,11 @@ export class BasicComponent {
         window.alert(
             'Some "custom" row Action event was triggered\ninside <uno-smart-table /> ("' + evt.action + '")\n\n' +
             JSON.stringify(
-                { title: evt.title , data: evt.data }
+                { title: evt.title, data: evt.data }
             )
-            .replace(new RegExp('{', 'g'), '{\n')
-            .replace(new RegExp(',"', 'g'), ',\n"')
-            .replace(new RegExp('}', 'g'), '\n}')
+                .replace(new RegExp('{', 'g'), '{\n')
+                .replace(new RegExp(',"', 'g'), ',\n"')
+                .replace(new RegExp('}', 'g'), '\n}')
         );
     }
 

@@ -2,8 +2,7 @@
     <div class="slds-grid">
         <ng-container *ngIf="!dateRange">
             <div style="width: 100%;">
-                <input
-                       [formControl]="dateForm"
+                <input [formControl]="dateForm"
                        (click)="markAsDirty()"
                        class="date-input"
                        matInput
@@ -15,7 +14,7 @@
                 <mat-datepicker [disabled]="disableCalendar" #picker></mat-datepicker>
             </div>
             <div style="padding-top: 8px;">
-                <uno-icon icon="calendar" (click)="picker.open()" size="x-small"></uno-icon>
+                <uno-icon icon="calendar" (click)="picker.open()" size="small"></uno-icon>
             </div>
         </ng-container>
         <!-- TODO: UPGRADE TO V10 TO BE ABLE TO USE DATE RANGE -->
@@ -28,16 +27,16 @@
                 <mat-date-range-picker #pickerRange [disabled]="disableCalendar" (closed)="onCloseDatePickerRange()"></mat-date-range-picker>
             </div>
             <div style="padding-top: 8px;">
-                <uno-icon icon="calendar" (click)="pickerRange.open()" size="x-small"></uno-icon>
+                <uno-icon icon="calendar" (click)="pickerRange.open()" size="small"></uno-icon>
             </div>
         </ng-container>
     </div>
 </mat-form-field>
 <mat-error *ngIf="dateForm.hasError('required') && dateForm.dirty && !hideError" class="slds-truncate">
-    <uno-icon size="x-small" icon="error_icon" svgType="sprite-color" [withOpacity]="false"></uno-icon>
+    <uno-icon size="small" icon="error_icon" svgType="sprite-color" [withOpacity]="false"></uno-icon>
     <span class="slds-p-left_xx-small" translate>requiredField</span>
 </mat-error>
 <mat-error *ngIf="(dateForm.hasError('matDatepickerMin') || dateForm.hasError('matDatepickerMax')) && dateForm.dirty && !hideError" class="slds-truncate">
-    <uno-icon size="x-small" icon="error_icon" svgType="sprite-color" [withOpacity]="false"></uno-icon>
+    <uno-icon size="small" icon="error_icon" svgType="sprite-color" [withOpacity]="false"></uno-icon>
     <span class="slds-p-left_xx-small" translate>invalidDate</span>
 </mat-error>

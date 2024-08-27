@@ -56,11 +56,11 @@ import { ActionCustom } from '../../../table.interfaces';
                         *ngIf="action.visible"
                         [icon]="action.icon"
                         [title]="action.title"
-                        size="xx-small"
+                        size="x-small"
                         (click)="customAction.emit(action)">
                     </uno-icon>
                 </ng-container>
-                <uno-icon class="slds-float--right" icon="close" size="xx-small" (click)="selectAllRows.emit(false)"></uno-icon>
+                <uno-icon class="slds-float--right" icon="close" size="x-small" (click)="selectAllRows.emit(false)"></uno-icon>
             </th>
         </ng-template>
   `

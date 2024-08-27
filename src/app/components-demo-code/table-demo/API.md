@@ -1,6 +1,7 @@
 ### \<uno-smart-table\>
 
 ## [Documentation](https://akveo.github.io/ng2-smart-table/#/)
+
 #### UnoSmartTable
 
 | Property | Description | Type | Default |
@@ -28,11 +29,11 @@
 | (cancelCreate) | ONLY triggered when the user click on cancel create. | EventEmitter\<any\> | |
 | (cancelEdit) | ONLY triggered when the user click on cancel edit. | EventEmitter\<any\> | |
 
-### Configuration Object - [settings] Input:
+### Configuration Object - [settings] Input
 
 * `hideHeader`: `boolean = false` Set to true to not display the table column titles.
 * `noDataMessage`: `string` Customize string when no Data exists to be displayed.
-* `hoveringRow`: `Object = { css: 'box-shadow: 0 1px 3px var(--sapphire)' | 'outline: 1px solid var(--sapphire)' }` Contains the CSS property of a possible border over hovering row.
+* `hoveringRow`: `Object = { css: 'box-shadow: 0 1px 3px var(--light-primary)' | 'outline: 1px solid var(--light-primary)' }` Contains the CSS property of a possible border over hovering row.
 * `attr`: `{ id: string, class: string }` Allows you to set HTML attributes to the `<uno-smart-table />` ('id' and 'class').
 * `filter`: `{ inputClass: string }` Common class atributed to all container's Input filter top row.
 * `rowPopoverErrors` : `boolean = false` Stating if all form's Input errors (independently of each have its own, or not) are collected at a single Popover, next to submit ("update" | "create") trigger. By default, NO Popover errors will show.
@@ -109,7 +110,6 @@ On `validatorMsgs` the passed string can have fields to be full filled - form pr
 * `filter`: `boolean` If column can be filtered or not.
 * `lineClamp?`: `boolean = true` Whether it's a column that can clamp line in two. In `custom` columns like dropbox it's need desable the line clamp because don't show the list.
 
-
 ### DataSource Methods - ways to reach and CRUD table grid's data
 
 * `load(data)`: `data: Array` Data to load into the table - allows you to reload some fresh new data, i.e., received by the server uppon some triggering.
@@ -149,9 +149,9 @@ Example: this.source.addFilter( { field: 'bars', search: 'foobar' } );
 () => this.dataUnoSmartTable.getAll().then(
     (elements) => console.log('... and LOADED @ dataUnoSmartTable:', elements)
 )))`
-* `You can try and see if a certain field/column data is to be found - will return true/false: `
+* `You can try and see if a certain field/column data is to be found - will return true/false:`
 `this.tableData.find(rowWithSelectorName.data)`
-* `.. and update an internal row, manually: `
+* `.. and update an internal row, manually:`
 `this.tableData.update(rowWithSelectorName.data, Object.assign(
     {},
     rowWithSelectorName.data,

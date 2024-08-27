@@ -1,6 +1,6 @@
 <div [ngClass]="{ 'input-tags': true, 'open': openDrop, 'disable': isDisable }"
      (click)="onDivClick(); $event.stopPropagation()">
-    <uno-icon *ngIf="!isDisable" [icon]="openDrop ? 'up_s' : 'down_s'" size="xx-small" (click)="onDivClick(); $event.stopPropagation()"></uno-icon>
+    <uno-icon *ngIf="!isDisable" [icon]="openDrop ? 'up_s' : 'down_s'" size="x-small" (click)="onDivClick(); $event.stopPropagation()"></uno-icon>
     <div class="slds-p-right--large tags-input">
         <uno-pill *ngFor="let obj of selectedObjects"
                   class="slds-m-around--xx-small slds-p-horizontal--x-small"

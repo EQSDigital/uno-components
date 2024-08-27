@@ -8,35 +8,32 @@ import { DefaultCreateSaveCancel } from '../../../lib/create-save-cancel-default
     selector: 'ng2-st-tbody-save-cancel',
     template: `
         <div class="form-editor-submit" [formGroup]="editingFormGroup">
-            <button
-                type="submit"
-                class="slds-m-right--x-small uno-smart-table-action uno-smart-table-action-edit-save text-uppercase"
-                unoButton
-                unoType="green"
-                unoSize="x-small"
-                (click)="onSave($event)"
-                [disabled]="!editingFormGroup.valid"
-                [title]="saveButtonContent | translate"
+            <button type="submit"
+                    class="slds-m-right--x-small uno-smart-table-action uno-smart-table-action-edit-save text-uppercase"
+                    unoButton
+                    unoType="green"
+                    unoSize="small"
+                    (click)="onSave($event)"
+                    [disabled]="!editingFormGroup.valid"
+                    [title]="saveButtonContent | translate"
 
-                uno-popover-trigger
-                [unoPopover]="formErrorsTemplate"
-                [unoPopoverOpen]="openValidatorPopover"
+                    uno-popover-trigger
+                    [unoPopover]="formErrorsTemplate"
+                    [unoPopoverOpen]="openValidatorPopover"
 
-                unoPopoverPlacement="leftBottom"
-                unoPopoverNubbin="right-top"
-                unoPopoverSize="small"
-                unoPopoverTooltip="true"
-                [unoPopoverTheme]="grid.getSetting('popoverTheme') || 'info'">
-                    {{ saveButtonContent | translate }}
+                    unoPopoverPlacement="leftBottom"
+                    unoPopoverNubbin="right-top"
+                    unoPopoverSize="small"
+                    unoPopoverTooltip="true"
+                    [unoPopoverTheme]="grid.getSetting('popoverTheme') || 'info'">
+                {{ saveButtonContent | translate }}
             </button>
 
-            <uno-icon
-                id="close"
-                icon="close"
-                size="x-small"
-                class="uno-smart-table-action uno-smart-table-action-edit-cancel"
-                [title]="cancelButtonContent | translate"
-                (click)="onCancelEdit($event)">
+            <uno-icon id="close"
+                      icon="close"
+                      class="uno-smart-table-action uno-smart-table-action-edit-cancel"
+                      [title]="cancelButtonContent | translate"
+                      (click)="onCancelEdit($event)">
             </uno-icon>
 
         </div>

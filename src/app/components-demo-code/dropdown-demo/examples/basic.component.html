@@ -22,7 +22,7 @@
     <button unoDropdownTrigger class="slds-button slds-button--neutral">
         <span *ngIf="!selected" class="slds-truncate">Select an item</span>
         <span *ngIf="selected" class="slds-truncate">{{ selected }}</span>
-        <uno-icon icon="down_s" size="xx-small" class="slds-m-left_small"></uno-icon>
+        <uno-icon icon="down_s" size="x-small" class="slds-m-left_small"></uno-icon>
     </button>
 
     <!-- the Dropdown list of items -->
@@ -32,7 +32,7 @@
             <li *ngFor="let item of items;" class="slds-dropdown__item">
                 <a unoDropdownItem role="menuitem" (click)="selected=item.value; selectedIcon=item.icon;">
                     <p class="slds-truncate">{{ item.value }}</p>
-                    <uno-icon [icon]="item.icon" size="xx-small" class="slds-m-left--medium"></uno-icon>
+                    <uno-icon [icon]="item.icon" size="x-small" class="slds-m-left--medium"></uno-icon>
                 </a>
             </li>
             <!-- reset chosen item: -->
@@ -45,8 +45,8 @@
 
 </span>
 
-<button type="button" unoButton unoType="secondary" unoSize="x-small" class="slds-m-left--small" (click)="onToggle($event)">Open Dropdown</button>
-<button type="button" unoButton unoType="secondary" unoSize="x-small" class="slds-m-left--small" (click)="openDropdown = !openDropdown">Toggle</button>
+<button type="button" unoButton unoType="secondary" unoSize="small" class="slds-m-left--small" (click)="onToggle($event)">Open Dropdown</button>
+<button type="button" unoButton unoType="secondary" unoSize="small" class="slds-m-left--small" (click)="openDropdown = !openDropdown">Toggle</button>
 
 <div *ngIf="selectedIcon" class="slds-m-top--large">
     <uno-icon [icon]="selectedIcon" class="slds-m-left--medium"></uno-icon>
@@ -68,7 +68,7 @@
         <!-- the Dropdown trigger: -->
         <button unoDropdownTrigger class="slds-button slds-button--neutral">
             <span class="slds-truncate">{{ selectedItem }}</span>
-            <uno-icon icon="down_s" size="xx-small" class="slds-m-left_small"></uno-icon>
+            <uno-icon icon="down_s" size="x-small" class="slds-m-left_small"></uno-icon>
         </button>
 
         <!-- the Dropdown list of items -->

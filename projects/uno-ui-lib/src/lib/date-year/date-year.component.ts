@@ -9,7 +9,7 @@ import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, OnInit
 
                 <button unoDropdownTrigger (click)="goToYear()" class="slds-button slds-button--neutral">
                     <span class="slds-truncate">{{ year }}</span>
-                    <uno-icon icon="down_s" size="xx-small" class="slds-m-left_small slds-float--right"></uno-icon>
+                    <uno-icon icon="down_s" size="x-small" class="slds-m-left_small slds-float--right"></uno-icon>
                 </button>
 
                 <div class="slds-dropdown slds-dropdown--left">

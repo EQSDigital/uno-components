@@ -3,11 +3,10 @@
     <uno-icon class="slds-m-left--x-small"
               [style.visibility]="showIcon ? 'visible' : 'hidden'"
               icon="filters"
-              size="xx-small"
+              size="x-small"
               [withOpacity]="false"
               uno-popover-trigger
               [unoPopoverOpen]="openPopoverOptions"
-
               [unoPopover]="sortFilter"
               unoPopoverPlacement="bottomLeft"
               unoPopoverNubbin="top-right"
@@ -20,15 +19,21 @@
                 <div class="slds-size--1-of-1 slds-p-around--x-small open-sans-12"
                      [style.cursor]="'pointer'"
                      (click)="_sort($event, sortDirectionEnum.ASC)">
-                    <uno-icon icon="order_down" size="xx-small" [color]="currentDirection === 'asc' ? 'sapphire' : 'light-grey-blue'"
-                              [withOpacity]="false"></uno-icon>
+                    <uno-icon icon="order-down"
+                              size="x-small"
+                              [color]="currentDirection === 'asc' ? 'default' : 'light-gray-9'"
+                              [withOpacity]="false">
+                    </uno-icon>
                     <span translate>sort</span> A - Z
                 </div>
                 <div class="slds-size--1-of-1 slds-p-around--x-small open-sans-12"
                      [style.cursor]="'pointer'"
                      (click)="_sort($event, sortDirectionEnum.DESC)">
-                    <uno-icon icon="order_up" size="xx-small" [color]="currentDirection === 'desc' ? 'sapphire' : 'light-grey-blue'"
-                              [withOpacity]="false"></uno-icon>
+                    <uno-icon icon="order-up"
+                              size="x-small"
+                              [color]="currentDirection === 'desc' ? 'default' : 'light-gray-9'"
+                              [withOpacity]="false">
+                    </uno-icon>
                     <span translate>sort</span> Z - A
                 </div>
             </ng-container>
@@ -38,7 +43,8 @@
                 </div>
                 <div
                      class="slds-size--1-of-1 slds-p-horizontal--x-small nunito-semibold-14">
-                    <input class="slds-input" (input)="onSearchFilter($event.target.value)"
+                    <input class="slds-input"
+                           (input)="onSearchFilter($event.target.value)"
                            [placeholder]="('search' | translate) + ' ' + (column.title | translate)" />
                 </div>
                 <div class="slds-size--1-of-1 slds-p-around--x-small open-sans-10 select-unselect">
@@ -54,8 +60,8 @@
                     </div>
                 </div>
                 <div class="slds-size--1-of-1 slds-p-around--x-small nunito-semibold-14">
-                    <!-- button unoButton unoSize="x-small" unoType="secondary" translate>cancel</button -->
-                    <button unoButton unoSize="x-small" unoType="blue" class="slds-float--right" (click)="onApplyFilter()" translate>ok</button>
+                    <!-- button unoButton unoSize="small" unoType="secondary" translate>cancel</button -->
+                    <button unoButton unoSize="small" unoType="blue" class="slds-float--right" (click)="onApplyFilter()" translate>ok</button>
                 </div>
             </ng-container>
         </div>

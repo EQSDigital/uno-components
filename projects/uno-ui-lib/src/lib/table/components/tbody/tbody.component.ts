@@ -263,7 +263,7 @@ export class Ng2SmartTableTbodyComponent implements OnChanges, AfterContentInit,
             <uno-icon
                 [id]="action.icon"
                 *ngIf="!action.rowProperty && action.visible"
-                size="xx-small"
+                size="x-small"
                 [icon]="action.icon"
                 class="slds-button__icon--left uno-smart-table-action uno-smart-table-action-custom-custom"
                 [title]="action.title | translate"
@@ -274,7 +274,7 @@ export class Ng2SmartTableTbodyComponent implements OnChanges, AfterContentInit,
             <uno-icon
                 [id]="action.icon"
                 *ngIf="row.data[action.rowProperty] && action.visible"
-                size="xx-small"
+                size="x-small"
                 [icon]="action.icon"
                 [color]="action.color || 'default'"
                 class="slds-button__icon--left uno-smart-table-action uno-smart-table-action-custom-custom"
@@ -287,7 +287,7 @@ export class Ng2SmartTableTbodyComponent implements OnChanges, AfterContentInit,
             id="down"
             *ngIf="row.data?.downloadContentData"
             icon="down"
-            size="x-small"
+            size="small"
             uno-popover-trigger
 
             unoPopoverPlacement="leftBottom"

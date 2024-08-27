@@ -2,13 +2,13 @@
 
     <div class="slds-datepicker__filter--month slds-grid slds-grid--align-spread slds-grow slds-size-">
         <button (click)="keyboardHandler($event, 'MoveMonth', -1)" class="slds-button slds-button--icon-container">
-            <uno-icon icon="back_b" size="x-small"></uno-icon><span class="slds-assistive-text">Previous Month</span>
+            <uno-icon icon="back_b" size="small"></uno-icon><span class="slds-assistive-text">Previous Month</span>
         </button>
         <h2 [id]="uid + '_month'" aria-live="assertive" aria-atomic="true" class="slds-align-middle">
             <uno-badge type="info" class="month-label">{{ monthLabel }}</uno-badge>
         </h2>
         <button (click)="keyboardHandler($event, 'MoveMonth', 1)" class="slds-button slds-button--icon-container">
-            <uno-icon icon="next_b" size="x-small"></uno-icon><span class="slds-assistive-text">Next Month</span>
+            <uno-icon icon="next_b" size="small"></uno-icon><span class="slds-assistive-text">Next Month</span>
         </button>
     </div>
 
@@ -17,7 +17,9 @@
             (click)="selectToday()"
             unoButton
             unoType="secondary"
-            unoSize="small" translate>TODAY
+            unoSize="small"
+            translate>
+        TODAY
     </button>
 
     <uno-date-year class="slds-shrink-none slds-p-horizontal--x-small"

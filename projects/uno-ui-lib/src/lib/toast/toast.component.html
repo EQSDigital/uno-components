@@ -2,10 +2,10 @@
     <div class="toast-status" [ngClass]="type"></div>
     <div class="toast-container">
         <div class="slds-size--1-of-12" [ngSwitch]="type">
-            <uno-icon *ngSwitchCase="'error'" icon="error_icon" svgType="sprite-color" [withOpacity]="false" size="x-small"></uno-icon>
-            <uno-icon *ngSwitchCase="'warning'" icon="alert-over" svgType="sprite-color" [withOpacity]="false" size="x-small"></uno-icon>
-            <uno-icon *ngSwitchCase="'info'" icon="info" svgType="sprite-color" [withOpacity]="false" size="x-small"></uno-icon>
-            <uno-icon *ngSwitchCase="'success'" icon="validate_o" svgType="sprite-color" [withOpacity]="false" size="x-small"></uno-icon>
+            <uno-icon *ngSwitchCase="'error'" icon="error_icon" svgType="sprite-color" [withOpacity]="false" size="small"></uno-icon>
+            <uno-icon *ngSwitchCase="'warning'" icon="alert-over" svgType="sprite-color" [withOpacity]="false" size="small"></uno-icon>
+            <uno-icon *ngSwitchCase="'info'" icon="info" svgType="sprite-color" [withOpacity]="false" size="small"></uno-icon>
+            <uno-icon *ngSwitchCase="'success'" icon="validate_o" svgType="sprite-color" [withOpacity]="false" size="small"></uno-icon>
         </div>
         <div class="slds-grid slds-grid--vertical slds-size--10-of-12">
             <div class="slds-grid">
@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="slds-size--1-of-12 slds-text-align--right">
-            <uno-icon icon="close" size="x-small" (click)="onClose()"></uno-icon>
+            <uno-icon icon="close" size="small" (click)="onClose()"></uno-icon>
         </div>
         <div *ngIf="showAction" class="slds-size--1-of-1 slds-text-align--right slds-p-top--x-small">
             <button class="action-button" [ngClass]="type" (click)="onClickAction()" translate>{{ actionTitle }}</button>

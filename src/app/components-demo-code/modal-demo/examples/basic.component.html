@@ -17,12 +17,12 @@
     <div class="slds-m-bottom--small">
         <p class="slds-m-bottom--x-small">Simplest Modal ('small') using Input Directives for the Header set up and
             Angular Template for the Footer:</p>
-        <button unoButton unoType="green" unoSize="x-small" (click)="openModalSmall=true;">Open Small Modal</button>
+        <button unoButton unoType="green" unoSize="small" (click)="openModalSmall=true;">Open Small Modal</button>
     </div>
 
     <div class="slds-m-vertical--small">
         <p class="slds-m-bottom--x-small">Simplest Modal ('large') using Angular Template for the Header and Footer:</p>
-        <button unoButton unoType="blue" unoSize="x-small" (click)="openModalLarge=true;">Open Large Modal</button>
+        <button unoButton unoType="blue" unoSize="small" (click)="openModalLarge=true;">Open Large Modal</button>
     </div>
 
     <hr>
@@ -181,8 +181,7 @@
 </uno-modal>
 
 <!-- Docs to Upload Modal, with Angular Reactive Form: -->
-<uno-modal
-           [(open)]="openModalDocsUpload"
+<uno-modal [(open)]="openModalDocsUpload"
            templateType="docsUploadModal"
            [docTypeSelector]="docUpload_possibleTypes"
            [docStatusSelector]="docUpload_possibleStatus"
@@ -210,19 +209,19 @@
                 <h2 style="font-family: 'Nunito'; font-size: 26px;">Upload your files</h2>
             </div>
             <div class="slds-col slds-size--1-of-12" style="padding-top: 5px; padding-left: 1.5rem;">
-                <uno-icon icon="close" size="small" color="sapphire" class="slds-button__icon--left"
-                          (click)="openModalDocsUpload=false; isFormToReset=true; editData = null"></uno-icon>
+                <uno-icon icon="close" size="small"
+                          class="slds-button__icon--left"
+                          (click)="openModalDocsUpload=false; isFormToReset=true; editData = null">
+                </uno-icon>
             </div>
         </div>
     </ng-template>
 
     <ng-template unoModalFooter>
-        <button
-                unoType="secondary"
+        <button unoType="secondary"
                 unoButton
                 (click)="openModalDocsUpload=false; isFormToReset=true; editData=null; editData = null">Cancel</button>
-        <button
-                unoButton
+        <button unoButton
                 unoType="blue"
                 disabled
                 class="add-uploaded-doc"
@@ -232,8 +231,7 @@
 </uno-modal>
 
 <!-- Docs to Upload Modal, with Angular Reactive Form: -->
-<uno-modal
-           [(open)]="openModalSSCUpload"
+<uno-modal [(open)]="openModalSSCUpload"
            [templateType]="'sscUploadModal'"
            [sscStatusSelector]="docUpload_possibleSSCStatus"
            [editData]="editData"
@@ -263,10 +261,8 @@
                 <h2 style="font-family: 'Nunito'; font-size: 26px;">Upload your files</h2>
             </div>
             <div class="slds-col slds-size--1-of-12" style="padding-top: 5px; padding-left: 1.5rem;">
-                <uno-icon
-                          icon="close"
+                <uno-icon icon="close"
                           size="small"
-                          color="sapphire"
                           class="slds-button__icon--left"
                           (click)="openModalSSCUpload=false; isFormToReset=true; editData = null">
                 </uno-icon>
@@ -275,22 +271,19 @@
     </ng-template>
 
     <ng-template unoModalFooter>
-        <button
-                unoType="secondary"
+        <button unoType="secondary"
                 unoButton
                 (click)="openModalSSCUpload=false; isFormToReset=true; editData=null">
             Cancel
         </button>
-        <button
-                *ngIf="isFormDirty"
+        <button *ngIf="isFormDirty"
                 unoButton
                 unoType="blue"
                 class="ssc-add-uploaded-doc"
                 (click)="openModalSSCUpload=false; isFormToBeSubmited=true;">
             Add
         </button>
-        <button
-                *ngIf="!isFormDirty"
+        <button *ngIf="!isFormDirty"
                 unoButton
                 unoType="blue"
                 class="ssc-add-uploaded-doc"

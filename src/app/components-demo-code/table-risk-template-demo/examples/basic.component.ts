@@ -180,7 +180,7 @@ export class BasicComponent {
                 class: 'uno-smart-table',
             },
             // Table custom aspects:
-            hoveringRow: { css: 'outline: 1px solid var(--sapphire)' },
+            hoveringRow: { css: 'outline: 1px solid var(--light-primary)' },
 
             // The columns:
             columns: {
@@ -329,7 +329,7 @@ export class BasicComponent {
                 class: 'uno-smart-table',
             },
             // Table custom aspects:
-            hoveringRow: { css: 'outline: 1px solid var(--sapphire)' },
+            hoveringRow: { css: 'outline: 1px solid var(--light-primary)' },
 
             // The columns:
             columns: {

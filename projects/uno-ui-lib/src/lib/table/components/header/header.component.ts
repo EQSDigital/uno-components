@@ -1,4 +1,4 @@
-import { Component, OnChanges, Input, Output, EventEmitter, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnChanges, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { cloneDeep } from 'lodash';
 
 import { Grid } from '../../lib/grid';

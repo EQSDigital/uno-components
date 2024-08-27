@@ -241,7 +241,7 @@ export class BasicComponent {
     private createTableSettings(): UnoSmartTableSettings {
         return {
             showSearch: true,
-            hoveringRow: { css: 'outline: 1px solid var(--sapphire)' }, // 'box-shadow: 0 1px 3px var(--sapphire)'
+            hoveringRow: { css: 'outline: 1px solid var(--light-primary)' }, // 'box-shadow: 0 1px 3px var(--light-primary)'
             columns: {
                 id: {
                     title: 'ID',

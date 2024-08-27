@@ -38,7 +38,7 @@ export class IconComponent {
     /**
      * Pre-defined - see Lightning System CSS for the allow measurements.
      */
-    @Input() size: 'large' | 'small' | 'x-small' | 'xx-small' = 'small';
+    @Input() size: 'large' | 'medium' | 'small' | 'x-small' = 'medium';
 
     @Input() customColor;
 

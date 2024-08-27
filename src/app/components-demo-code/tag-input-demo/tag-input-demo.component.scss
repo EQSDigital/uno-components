@@ -1,12 +1,12 @@
 .tag-input {
     position: relative;
     display: inline-block;
-    border: 1px solid var(--sapphire);
+    border: 1px solid var(--light-primary);
     width: 100%;
     // box-shadow: 0 2px 3px 0 rgba(34,36,38,.15);
     border-radius: 2px;
     cursor: text;
-    background-color: var(--white);
+    background-color: var(--light-gray-14);
 
     & uno-icon {
         position: absolute;
@@ -18,12 +18,12 @@
         cursor: pointer;
 
         &.slds-pill {
-            color: var(--dark-blue-grey);
+            color: var(--light-gray-1);
             background-color: var(--light-gray-12);
-            border: 1px solid var(--light-blue-grey);
+            border: 1px solid var(--light-gray-9);
 
             &:hover {
-                border: solid 1px var(--light-blue-grey);
+                border: solid 1px var(--light-gray-9);
                 background-color: var(--light-gray-12);
             }
         }
@@ -46,7 +46,7 @@
         max-height: 150px;
         overflow-y: auto;
         cursor: pointer;
-        border-top: 1px solid var(--sapphire);
+        border-top: 1px solid var(--light-primary);
 
         & > .item {
             font-family: "Open Sans";

@@ -7,44 +7,36 @@ import { Row } from '../../../lib/data-set/row';
     selector: 'ng2-st-tbody-edit-delete',
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: `
-        <uno-icon
-            [id]="edit"
-            *ngIf="!editRowProperty && isActionEdit"
-            size="xx-small"
-            icon="edit"
-            class="slds-button__icon--left uno-smart-table-action uno-smart-table-action-edit-edit"
-            [title]="editRowButtonContent | translate"
-            (click)="onEdit($event)">
+        <uno-icon [id]="edit"
+                  *ngIf="!editRowProperty && isActionEdit"
+                  icon="edit"
+                  class="slds-button__icon--left uno-smart-table-action uno-smart-table-action-edit-edit"
+                  [title]="editRowButtonContent | translate"
+                  (click)="onEdit($event)">
         </uno-icon>
 
-        <uno-icon
-            [id]="edit"
-            *ngIf="row.data[editRowProperty] && isActionEdit"
-            size="xx-small"
-            icon="edit"
-            class="slds-button__icon--left uno-smart-table-action uno-smart-table-action-edit-edit"
-            [title]="editRowButtonContent | translate"
-            (click)="onEdit($event)">
+        <uno-icon [id]="edit"
+                  *ngIf="row.data[editRowProperty] && isActionEdit"
+                  icon="edit"
+                  class="slds-button__icon--left uno-smart-table-action uno-smart-table-action-edit-edit"
+                  [title]="editRowButtonContent | translate"
+                  (click)="onEdit($event)">
         </uno-icon>
 
-        <uno-icon
-            id="trash"
-            *ngIf="!deleteRowProperty && isActionDelete"
-            size="xx-small"
-            icon="trash"
-            class="uno-smart-table-action uno-smart-table-action-delete-delete"
-            [title]="deleteRowButtonContent | translate"
-            (click)="onDelete($event)">
+        <uno-icon id="trash"
+                  *ngIf="!deleteRowProperty && isActionDelete"
+                  icon="trash"
+                  class="uno-smart-table-action uno-smart-table-action-delete-delete"
+                  [title]="deleteRowButtonContent | translate"
+                  (click)="onDelete($event)">
         </uno-icon>
 
-        <uno-icon
-            id="trash"
-            *ngIf="row.data[deleteRowProperty] && isActionDelete"
-            size="x-small"
-            icon="trash"
-            class="uno-smart-table-action uno-smart-table-action-delete-delete"
-            [title]="deleteRowButtonContent | translate"
-            (click)="onDelete($event)">
+        <uno-icon id="trash"
+                  *ngIf="row.data[deleteRowProperty] && isActionDelete"
+                  icon="trash"
+                  class="uno-smart-table-action uno-smart-table-action-delete-delete"
+                  [title]="deleteRowButtonContent | translate"
+                  (click)="onDelete($event)">
         </uno-icon>
   `,
 })

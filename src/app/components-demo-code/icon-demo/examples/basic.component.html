@@ -2,13 +2,13 @@
     <uno-icon size="large"
               [icon]="getPlantString"
               svgType="sprite-color"
-              (click)="toggleIcon('component');"
-              class="slds-show--inline-block slds-p-around_x-small">
+              (click)="toggleIcon('component');">
     </uno-icon>
 </p>
-<uno-icon size="large" icon="checklist" [withOpacity]="false" color="black" class="slds-show--inline-block slds-p-around_x-small"></uno-icon>
-
-<uno-icon icon="close" class="slds-show--inline-block slds-p-around_x-small"></uno-icon>
-
-<uno-icon size="x-small" icon="clone" color="green-menu" class="slds-show--inline-block slds-p-around_x-small"></uno-icon>
-<uno-icon size="xx-small" icon="edit" color="white" style="background-color: var(--sapphire);" class="slds-show--inline-block slds-p-around_x-small"></uno-icon>
+<div class="slds-grid slds-grid--align-space">
+    <uno-icon size="large" icon="checklist" [withOpacity]="false" color="black"></uno-icon>
+    <uno-icon icon="close"></uno-icon>
+    <uno-icon size="medium" icon="clone" color="green-menu"></uno-icon>
+    <uno-icon size="small" icon="clone" color="green-menu"></uno-icon>
+    <uno-icon size="x-small" icon="edit" color="default"></uno-icon>
+</div>

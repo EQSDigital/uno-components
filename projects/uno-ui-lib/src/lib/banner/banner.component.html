@@ -1,10 +1,10 @@
 <div class="uno-banner" [ngClass]="type">
     <div class="toast-container" [ngClass]="{'with-action': showAction}">
         <div [ngSwitch]="type">
-            <uno-icon *ngSwitchCase="'error'" icon="error_icon" svgType="sprite-color" [withOpacity]="false" size="x-small"></uno-icon>
-            <uno-icon *ngSwitchCase="'warning'" icon="alert-over" svgType="sprite-color" [withOpacity]="false" size="x-small"></uno-icon>
-            <uno-icon *ngSwitchCase="'info'" icon="info" svgType="sprite-color" [withOpacity]="false" size="x-small"></uno-icon>
-            <uno-icon *ngSwitchCase="'success'" icon="validate_o" svgType="sprite-color" [withOpacity]="false" size="x-small"></uno-icon>
+            <uno-icon *ngSwitchCase="'error'" icon="error_icon" svgType="sprite-color" [withOpacity]="false" size="small"></uno-icon>
+            <uno-icon *ngSwitchCase="'warning'" icon="alert-over" svgType="sprite-color" [withOpacity]="false" size="small"></uno-icon>
+            <uno-icon *ngSwitchCase="'info'" icon="info" svgType="sprite-color" [withOpacity]="false" size="small"></uno-icon>
+            <uno-icon *ngSwitchCase="'success'" icon="validate_o" svgType="sprite-color" [withOpacity]="false" size="small"></uno-icon>
         </div>
         <div class="slds-grid slds-grid--vertical-align-center line-clamp-2">
             <label class="slds-p-right--xx-small open-sans-semibold-12" style="line-height: 16px;" translate>{{ title }}</label>

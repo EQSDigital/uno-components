@@ -51,3 +51,25 @@
 .slds-icon-text-light-grey-blue {
     fill: var(--light-gray-9);
 }
+
+.icon--x-small {
+    width: 16px;
+    height: 16px;
+    line-height: 1;
+}
+
+.icon--small {
+    width: 24px;
+    height: 24px;
+    line-height: 1;
+}
+
+.icon--medium {
+    width: 32px;
+    height: 32px;
+}
+
+.icon--large {
+    width: 44px;
+    height: 44px;
+}

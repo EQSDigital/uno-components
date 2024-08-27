@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100" version="1.1"
-    [ngClass]="['slds-icon-text-' + color, 'slds-icon_' + size]"
-    [style.fill]="customColor"
-    [class.slds-icon-with-opacity] = "withOpacity"
-    aria-hidden="true">
+     [ngClass]="['slds-icon-text-' + color, 'icon--' + size]"
+     [style.fill]="customColor"
+     [class.slds-icon-with-opacity]="withOpacity"
+     aria-hidden="true">
 
     <use [attr.xlink:href]="iconPath()"></use>
 </svg>

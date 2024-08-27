@@ -13,7 +13,7 @@
 
         <!-- Input search -->
         <div class="slds-grow slds-input-has-icon slds-input-has-icon--right">
-            <uno-icon *ngIf="searchIcon" icon="search" size="xx-small" [withOpacity]="false" class="slds-input__icon"></uno-icon>
+            <uno-icon *ngIf="searchIcon" icon="search" size="x-small" [withOpacity]="false" class="slds-input__icon"></uno-icon>
             <input class="slds-input slds-lookup__search-input slds-p-right_xx-large"
                    #lookupInput
                    [id]="inputId"
@@ -21,17 +21,13 @@
                    aria-autocomplete="list"
                    role="combobox"
                    autocomplete="off"
-
                    [placeholder]="placeholder || ''"
                    [disabled]="isDisabled"
                    [attr.aria-expanded]="!!expanded"
                    [attr.aria-activedescendant]="optionId(activeIndex)"
-
                    [ngModel]="inputValue"
                    (ngModelChange)="onInputChange($event)"
-
                    (blur)="inputWasTouched.emit($event)"
-
                    (keydown.Esc)="close($event)"
                    (keydown.ArrowDown)="moveActive($event, 1)"
                    (keydown.ArrowUp)="moveActive($event, -1)"

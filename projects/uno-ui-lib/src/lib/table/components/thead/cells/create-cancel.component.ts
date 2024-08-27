@@ -11,7 +11,7 @@ import { DefaultCreateSaveCancel } from '../../../lib/create-save-cancel-default
                 class="slds-m-right--x-small uno-smart-table-action uno-smart-table-action-add-create text-uppercase"
                 unoButton
                 unoType="green"
-                unoSize="x-small"
+                unoSize="small"
                 (click)="$event.preventDefault(); create.emit($event)"
                 [disabled]="!editingFormGroup.valid"
                 [title]="createButtonContent | translate"
@@ -30,7 +30,7 @@ import { DefaultCreateSaveCancel } from '../../../lib/create-save-cancel-default
 
             <uno-icon
                 icon="close"
-                size="xx-small"
+                size="x-small"
                 class="uno-smart-table-action uno-smart-table-action-add-cancel"
                 [title]="cancelButtonContent | translate"
                 (click)="onCancel($event)">
