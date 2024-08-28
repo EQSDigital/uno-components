@@ -260,48 +260,41 @@ export class Ng2SmartTableTbodyComponent implements OnChanges, AfterContentInit,
         <ng-container *ngFor="let action of grid.getSetting('actions.custom')">
 
             <!-- This container will be repeated for ALL rows: -->
-            <uno-icon
-                [id]="action.icon"
-                *ngIf="!action.rowProperty && action.visible"
-                size="x-small"
-                [icon]="action.icon"
-                class="slds-button__icon--left uno-smart-table-action uno-smart-table-action-custom-custom"
-                [title]="action.title | translate"
-                (click)="onCustom(action, $event)">
+            <uno-icon [id]="action.icon"
+                      *ngIf="!action.rowProperty && action.visible"
+                      size="small"
+                      [icon]="action.icon"
+                      class="slds-button__icon--left uno-smart-table-action uno-smart-table-action-custom-custom"
+                      [title]="action.title | translate"
+                      (click)="onCustom(action, $event)">
             </uno-icon>
 
             <!-- This container will be repeated ONLY on config property "rowProperty" passed in @ TableDemoComponent app: -->
-            <uno-icon
-                [id]="action.icon"
-                *ngIf="row.data[action.rowProperty] && action.visible"
-                size="x-small"
-                [icon]="action.icon"
-                [color]="action.color || 'default'"
-                class="slds-button__icon--left uno-smart-table-action uno-smart-table-action-custom-custom"
-                [title]="action.title | translate"
-                (click)="onCustom(action, $event)">
+            <uno-icon [id]="action.icon"
+                      *ngIf="row.data[action.rowProperty] && action.visible"
+                      size="small"
+                      [icon]="action.icon"
+                      [color]="action.color || 'default'"
+                      class="slds-button__icon--left uno-smart-table-action uno-smart-table-action-custom-custom"
+                      [title]="action.title | translate"
+                      (click)="onCustom(action, $event)">
             </uno-icon>
         </ng-container>
 
-        <uno-icon
-            id="down"
-            *ngIf="row.data?.downloadContentData"
-            icon="down"
-            size="small"
-            uno-popover-trigger
-
-            unoPopoverPlacement="leftBottom"
-            unoPopoverNubbin="right-top"
-            unoPopoverSize="large"
-
-            unoPopoverTemplate="downloadContent"
-            [unoPopoverTemplateData]="row.data?.downloadContentData"
-
-            uno-popover-click-behavior
-            (unoPopoverTemplateEvent)="downloadInnerEventEmited($event)"
-
-            class="slds-button__icon--left uno-smart-table-action uno-smart-table-action-custom-custom"
-            title="Files to download">
+        <uno-icon id="down"
+                  *ngIf="row.data?.downloadContentData"
+                  icon="down"
+                  size="small"
+                  uno-popover-trigger
+                  unoPopoverPlacement="leftBottom"
+                  unoPopoverNubbin="right-top"
+                  unoPopoverSize="large"
+                  unoPopoverTemplate="downloadContent"
+                  [unoPopoverTemplateData]="row.data?.downloadContentData"
+                  uno-popover-click-behavior
+                  (unoPopoverTemplateEvent)="downloadInnerEventEmited($event)"
+                  class="slds-button__icon--left uno-smart-table-action uno-smart-table-action-custom-custom"
+                  title="Files to download">
         </uno-icon>
     `
 })

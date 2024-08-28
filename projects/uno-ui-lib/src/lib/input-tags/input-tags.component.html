@@ -1,11 +1,15 @@
 <div [ngClass]="{ 'input-tags': true, 'open': openDrop, 'disable': isDisable }"
      (click)="onDivClick(); $event.stopPropagation()">
-    <uno-icon *ngIf="!isDisable" [icon]="openDrop ? 'up_s' : 'down_s'" size="x-small" (click)="onDivClick(); $event.stopPropagation()"></uno-icon>
+    <uno-icon *ngIf="!isDisable"
+              [icon]="openDrop ? 'left-special' : 'right-special'"
+              size="small"
+              (click)="onDivClick(); $event.stopPropagation()">
+    </uno-icon>
     <div class="slds-p-right--large tags-input">
         <uno-pill *ngFor="let obj of selectedObjects"
                   class="slds-m-around--xx-small slds-p-horizontal--x-small"
                   (click)="$event.stopPropagation()"
-                  closeIcon="close_tag"
+                  closeIcon="close-tag"
                   [unoPillRemovable]="!isDisable"
                   unoPillRemove
                   (unoPillRemoveElem)="removeObject(obj)">
@@ -22,7 +26,9 @@
     </div>
     <div [style.display]="openDrop ? 'block' : 'none'" class="dropdown">
         <div class="slds-p-around--x-small item" *ngFor="let obj of filteredObjects" (click)="addObject(obj); $event.stopPropagation()">{{ obj[value] }}</div>
-        <div *ngIf="newTags && search.value" class="slds-p-around--x-small item" (click)="addObject(search.value); $event.stopPropagation()">
+        <div *ngIf="newTags && search.value"
+             class="slds-p-around--x-small item"
+             (click)="addObject(search.value); $event.stopPropagation()">
             {{ search.value }} ({{ ('newLabel' | translate) }})
         </div>
     </div>

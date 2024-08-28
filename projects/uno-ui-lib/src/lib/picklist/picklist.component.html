@@ -7,7 +7,7 @@
      (openChange)="openChange.emit($event)"
      (selectedElem)="onSelectedElem($event)">
 
-    <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon--right">
+    <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon--right" style="position: relative;">
         <!-- the Dropdown trigger: -->
         <button type="button"
                 class="slds-grid slds-grid--vertical-align-center"
@@ -17,8 +17,9 @@
                 [disabled]="isDisabled">
             <ng-content></ng-content>
         </button>
-        <span class="slds-icon__container slds-input__icon slds-input__icon--right" unoDropdownTrigger>
-            <uno-icon icon="down_s" size="x-small" class="slds-m-left_small slds-float--right"></uno-icon>
+        <span class="slds-icon__container slds-input__icon slds-input__icon--right"
+              style="position: absolute; top: 8px; right: 16px;" unoDropdownTrigger>
+            <uno-icon icon="down-special"></uno-icon>
         </span>
 
         <!-- the Dropdown list of items -->

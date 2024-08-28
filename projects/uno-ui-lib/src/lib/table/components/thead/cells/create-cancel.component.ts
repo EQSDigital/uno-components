@@ -8,32 +8,31 @@ import { DefaultCreateSaveCancel } from '../../../lib/create-save-cancel-default
     template: `
         <div class="form-creator-submit" [formGroup]="editingFormGroup">
             <button type="submit"
-                class="slds-m-right--x-small uno-smart-table-action uno-smart-table-action-add-create text-uppercase"
-                unoButton
-                unoType="green"
-                unoSize="small"
-                (click)="$event.preventDefault(); create.emit($event)"
-                [disabled]="!editingFormGroup.valid"
-                [title]="createButtonContent | translate"
+                    class="slds-m-right--x-small uno-smart-table-action uno-smart-table-action-add-create text-uppercase"
+                    unoButton
+                    unoType="green"
+                    unoSize="small"
+                    (click)="$event.preventDefault(); create.emit($event)"
+                    [disabled]="!editingFormGroup.valid"
+                    [title]="createButtonContent | translate"
 
-                uno-popover-trigger
-                [unoPopover]="formErrorsTemplate"
-                [unoPopoverOpen]="openValidatorPopover"
+                    uno-popover-trigger
+                    [unoPopover]="formErrorsTemplate"
+                    [unoPopoverOpen]="openValidatorPopover"
 
-                unoPopoverPlacement="leftBottom"
-                unoPopoverNubbin="right-top"
-                unoPopoverSize="small"
-                unoPopoverTooltip="true"
-                [unoPopoverTheme]="grid.getSetting('popoverTheme') || 'info'">
-                    {{ createButtonContent | translate }}
+                    unoPopoverPlacement="leftBottom"
+                    unoPopoverNubbin="right-top"
+                    unoPopoverSize="small"
+                    unoPopoverTooltip="true"
+                    [unoPopoverTheme]="grid.getSetting('popoverTheme') || 'info'">
+                {{ createButtonContent | translate }}
             </button>
 
-            <uno-icon
-                icon="close"
-                size="x-small"
-                class="uno-smart-table-action uno-smart-table-action-add-cancel"
-                [title]="cancelButtonContent | translate"
-                (click)="onCancel($event)">
+            <uno-icon icon="close"
+                      size="small"
+                      class="uno-smart-table-action uno-smart-table-action-add-cancel"
+                      [title]="cancelButtonContent | translate"
+                      (click)="onCancel($event)">
             </uno-icon>
         </div>
 

@@ -10,7 +10,8 @@ import { Row } from '../../../lib/data-set/row';
         <uno-icon [id]="edit"
                   *ngIf="!editRowProperty && isActionEdit"
                   icon="edit"
-                  class="slds-button__icon--left uno-smart-table-action uno-smart-table-action-edit-edit"
+                  size="small"
+                  class="uno-smart-table-action uno-smart-table-action-edit-edit"
                   [title]="editRowButtonContent | translate"
                   (click)="onEdit($event)">
         </uno-icon>
@@ -18,7 +19,8 @@ import { Row } from '../../../lib/data-set/row';
         <uno-icon [id]="edit"
                   *ngIf="row.data[editRowProperty] && isActionEdit"
                   icon="edit"
-                  class="slds-button__icon--left uno-smart-table-action uno-smart-table-action-edit-edit"
+                  size="small"
+                  class="uno-smart-table-action uno-smart-table-action-edit-edit"
                   [title]="editRowButtonContent | translate"
                   (click)="onEdit($event)">
         </uno-icon>
@@ -26,6 +28,7 @@ import { Row } from '../../../lib/data-set/row';
         <uno-icon id="trash"
                   *ngIf="!deleteRowProperty && isActionDelete"
                   icon="trash"
+                  size="small"
                   class="uno-smart-table-action uno-smart-table-action-delete-delete"
                   [title]="deleteRowButtonContent | translate"
                   (click)="onDelete($event)">
@@ -34,6 +37,7 @@ import { Row } from '../../../lib/data-set/row';
         <uno-icon id="trash"
                   *ngIf="row.data[deleteRowProperty] && isActionDelete"
                   icon="trash"
+                  size="small"
                   class="uno-smart-table-action uno-smart-table-action-delete-delete"
                   [title]="deleteRowButtonContent | translate"
                   (click)="onDelete($event)">

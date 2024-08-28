@@ -15,7 +15,7 @@
          [style.border-radius]="rounded ? '50%' : 'none'"
          [style.width]="width"
          [style.height]="height">
-        <uno-icon [icon]="iconOverlay" size="small" [withOpacity]="false" color="white"></uno-icon>
+        <uno-icon [icon]="iconOverlay" [withOpacity]="false" color="white"></uno-icon>
         <span class="slds-p-top--small" style="text-align: center;" translate>{{ textOverlay }}</span>
     </div>
     <div *ngIf="!onlyViewImage && showDropdown"

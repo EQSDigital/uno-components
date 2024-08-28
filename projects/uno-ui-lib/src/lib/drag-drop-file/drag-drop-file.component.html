@@ -6,13 +6,13 @@
      (fileDropped)="onFileDropped($event)"
      (click)="onClickUpload()">
     <ng-container *ngIf="!file; else showFile">
-        <uno-icon icon="upload" size="small" class="slds-button__icon--left"></uno-icon>
+        <uno-icon icon="up" size="small" class="slds-button__icon--left"></uno-icon>
         <span class="slds-m-right--small" style="font-size: 14px; color: var(--light-gray-9);" translate>chooseFileLabel</span>
     </ng-container>
     <ng-template #showFile>
         <span class="slds-m-right--small" class="open-sans-semibold-14">{{ file?.name }}</span>
-        <uno-icon *ngIf="!disabledTrash" icon="trash" size="x-small" class="slds-button__icon--right" (click)="onDeleteFile($event)"></uno-icon>
-        <uno-icon *ngIf="!disabledDownload" icon="download_l" size="x-small" class="slds-button__icon--right" (click)="onDownloadFile($event)"></uno-icon>
+        <uno-icon *ngIf="!disabledTrash" icon="trash" size="small" class="slds-button__icon--right" (click)="onDeleteFile($event)"></uno-icon>
+        <uno-icon *ngIf="!disabledDownload" icon="down" size="small" (click)="onDownloadFile($event)"></uno-icon>
     </ng-template>
     <input #fileInput id="file-input" type="file" [multiple]="multipleFiles" (change)="fileToUploadChange($event)">
 </div>

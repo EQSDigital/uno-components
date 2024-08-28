@@ -1,9 +1,8 @@
 <div class="ng2-smart-title slds-truncate">
     <span class="ng2-smart-sort" translate>{{ column.title }}</span>
-    <uno-icon class="slds-m-left--x-small"
-              [style.visibility]="showIcon ? 'visible' : 'hidden'"
-              icon="filters"
-              size="x-small"
+    <uno-icon [style.visibility]="showIcon ? 'visible' : 'hidden'"
+              icon="filter"
+              size="small"
               [withOpacity]="false"
               uno-popover-trigger
               [unoPopoverOpen]="openPopoverOptions"
@@ -20,8 +19,7 @@
                      [style.cursor]="'pointer'"
                      (click)="_sort($event, sortDirectionEnum.ASC)">
                     <uno-icon icon="order-down"
-                              size="x-small"
-                              [color]="currentDirection === 'asc' ? 'default' : 'light-gray-9'"
+                              [color]="currentDirection === 'asc' ? 'default' : 'grey'"
                               [withOpacity]="false">
                     </uno-icon>
                     <span translate>sort</span> A - Z
@@ -30,8 +28,7 @@
                      [style.cursor]="'pointer'"
                      (click)="_sort($event, sortDirectionEnum.DESC)">
                     <uno-icon icon="order-up"
-                              size="x-small"
-                              [color]="currentDirection === 'desc' ? 'default' : 'light-gray-9'"
+                              [color]="currentDirection === 'desc' ? 'default' : 'grey'"
                               [withOpacity]="false">
                     </uno-icon>
                     <span translate>sort</span> Z - A
@@ -41,8 +38,7 @@
                 <div class="slds-size--1-of-1 slds-p-around--x-small open-sans-bold-10 text-uppercase" translate>
                     viewItems
                 </div>
-                <div
-                     class="slds-size--1-of-1 slds-p-horizontal--x-small nunito-semibold-14">
+                <div class="slds-size--1-of-1 slds-p-horizontal--x-small nunito-semibold-14">
                     <input class="slds-input"
                            (input)="onSearchFilter($event.target.value)"
                            [placeholder]="('search' | translate) + ' ' + (column.title | translate)" />
