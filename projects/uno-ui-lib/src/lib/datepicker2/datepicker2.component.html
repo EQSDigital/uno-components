@@ -33,10 +33,10 @@
     </div>
 </mat-form-field>
 <mat-error *ngIf="dateForm.hasError('required') && dateForm.dirty && !hideError" class="slds-truncate">
-    <uno-icon size="small" icon="error_icon" svgType="sprite-color" [withOpacity]="false"></uno-icon>
+    <uno-icon size="x-small" icon="error_icon" svgType="sprite-color" [withOpacity]="false"></uno-icon>
     <span class="slds-p-left_xx-small" translate>requiredField</span>
 </mat-error>
 <mat-error *ngIf="(dateForm.hasError('matDatepickerMin') || dateForm.hasError('matDatepickerMax')) && dateForm.dirty && !hideError" class="slds-truncate">
-    <uno-icon size="small" icon="error_icon" svgType="sprite-color" [withOpacity]="false"></uno-icon>
+    <uno-icon size="x-small" icon="error_icon" svgType="sprite-color" [withOpacity]="false"></uno-icon>
     <span class="slds-p-left_xx-small" translate>invalidDate</span>
 </mat-error>
