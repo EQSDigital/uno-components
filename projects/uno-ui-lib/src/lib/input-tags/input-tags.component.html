@@ -1,7 +1,7 @@
 <div [ngClass]="{ 'input-tags': true, 'open': openDrop, 'disable': isDisable }"
      (click)="onDivClick(); $event.stopPropagation()">
     <uno-icon *ngIf="!isDisable"
-              [icon]="openDrop ? 'left-special' : 'right-special'"
+              [icon]="openDrop ? 'up-special' : 'down-special'"
               size="small"
               (click)="onDivClick(); $event.stopPropagation()">
     </uno-icon>

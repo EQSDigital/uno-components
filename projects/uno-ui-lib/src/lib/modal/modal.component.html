@@ -33,10 +33,10 @@
             <div [ngSwitch]="templateType">
 
                 <ng-template [ngSwitchCase]="'successModal'">
-                    <div class="success-modal-container slds-text-align--center slds-p-around--x-large">
-                        <h2 style="font-family: 'Nunito'; font-size: 32px;" translate>successTitle</h2>
-                        <h2 style="font-family: 'Open Sans'; font-size: 14px; color: var(--light-gray-1)" [innerHTML]="templateCustomMsg"></h2>
-                        <div class="success-modal-logo-container slds-m-vertical--xx-large">
+                    <div class="slds-grid slds-grid--vertical slds-grid--vertical-align-center slds-p-around--x-large">
+                        <h2 class="nunito-32 slds-text-align--center" translate>successTitle</h2>
+                        <h2 class="open-sans-14 slds-text-align--center" style="color: var(--light-gray-1)" [innerHTML]="templateCustomMsg"></h2>
+                        <div class="slds-m-vertical--xx-large">
                             <img [src]="templateIconPath" [alt]="'actionAccomplishedSuccess' | translate" width="159" heigth="159" />
                         </div>
                         <button unoButton unoType="green" class="slds-m-top--x-large" (click)="modalClose('Ok');" translate>okLabel</button>
@@ -44,10 +44,10 @@
                 </ng-template>
 
                 <ng-template [ngSwitchCase]="'warningModal'">
-                    <div class="warning-modal-container slds-text-align--center slds-p-around--x-large">
-                        <h2 style="font-family: 'Nunito'; font-size: 32px;" translate>warningTitle</h2>
-                        <h2 style="font-family: 'Open Sans'; font-size: 14px; color: var(--light-gray-1)" [innerHTML]="templateCustomMsg"></h2>
-                        <div class="success-modal-logo-container slds-m-vertical--xx-large">
+                    <div class="slds-grid slds-grid--vertical slds-grid--vertical-align-center slds-p-around--x-large">
+                        <h2 class="nunito-32 slds-text-align--center" translate>warningTitle</h2>
+                        <h2 class="open-sans-14 slds-text-align--center" style="color: var(--light-gray-1)" [innerHTML]="templateCustomMsg"></h2>
+                        <div class="slds-m-vertical--xx-large">
                             <img [src]="templateIconPath" [alt]="'actionNotMeetingCurrentSpecifications' | translate" width="159" heigth="159" />
                         </div>
                         <button unoButton class="slds-button--warning slds-m-top--x-large" (click)="modalClose('Ok');" translate>okLabel</button>
@@ -55,35 +55,27 @@
                 </ng-template>
 
                 <ng-template [ngSwitchCase]="'confirmDelModal'">
-                    <div class="confirm-delete-modal-container slds-text-align--center slds-p-around--x-large">
-                        <h2 style="font-family: 'Nunito'; font-size: 32px;" translate>warningTitle</h2>
-                        <h2 style="font-family: 'Open Sans'; font-size: 18px; margin-bottom: 5px;" translate>deleteSubTitle</h2>
-                        <h2 style="font-family: 'Open Sans'; font-size: 14px; color: var(--light-gray-1)" [innerHTML]="templateCustomMsg"></h2>
-                        <div class="success-modal-logo-container slds-m-vertical--xx-large">
+                    <div class="slds-grid slds-grid--vertical slds-grid--vertical-align-center slds-p-around--x-large">
+                        <h2 class="nunito-32 slds-text-align--center" translate>warningTitle</h2>
+                        <h2 class="open-sans-18 slds-text-align--center" style="margin-bottom: 5px;" translate>deleteSubTitle</h2>
+                        <h2 class="open-sans-14 slds-text-align--center" style="color: var(--light-gray-1)" [innerHTML]="templateCustomMsg"></h2>
+                        <div class="slds-m-vertical--xx-large">
                             <img [src]="templateIconPath" [alt]="'proceedWithDeletion' | translate" width="159" heigth="159" />
                         </div>
-                        <div>
-                            <button unoButton class="slds-button--destructive slds-m-top--x-large" (click)="modalClose('Delete');" translate>delete</button>
-                        </div>
-                        <div>
-                            <button unoButton unoType="secondary" class="slds-m-top--x-small" (click)="modalClose('Cancel');" translate>cancel</button>
-                        </div>
+                        <button unoButton class="slds-button--destructive slds-m-top--x-large" (click)="modalClose('Delete');" translate>delete</button>
+                        <button unoButton unoType="secondary" class="slds-m-top--x-small" (click)="modalClose('Cancel');" translate>cancel</button>
                     </div>
                 </ng-template>
 
                 <ng-template [ngSwitchCase]="'confirmActionModal'">
-                    <div class="confirm-modal-container slds-text-align--center slds-p-around--x-large">
-                        <h2 style="font-family: 'Nunito'; font-size: 32px;" translate>confirmTitle</h2>
-                        <h2 style="font-family: 'Open Sans'; font-size: 14px; color: var(--light-gray-1)" [innerHTML]="templateCustomMsg"></h2>
-                        <div class="success-modal-logo-container slds-m-vertical--xx-large">
+                    <div class="slds-grid slds-grid--vertical slds-grid--vertical-align-center slds-p-around--x-large">
+                        <h2 class="nunito-32 slds-text-align--center" translate>confirmTitle</h2>
+                        <h2 class="open-sans-14 slds-text-align--center" style="color: var(--light-gray-1)" [innerHTML]="templateCustomMsg"></h2>
+                        <div class="slds-m-vertical--xx-large">
                             <img [src]="templateIconPath" [alt]="'confirmAction' | translate" width="159" heigth="159" />
                         </div>
-                        <div>
-                            <button unoButton class="slds-button--warning slds-m-top--x-large" (click)="modalClose('Proceed');" translate>proceedLabel</button>
-                        </div>
-                        <div>
-                            <button unoButton unoType="secondary" class="slds-m-top--x-small" (click)="modalClose('Cancel');" translate>cancel</button>
-                        </div>
+                        <button unoButton class="slds-button--warning slds-m-top--x-large" (click)="modalClose('Proceed');" translate>proceedLabel</button>
+                        <button unoButton unoType="secondary" class="slds-m-top--x-small" (click)="modalClose('Cancel');" translate>cancel</button>
                     </div>
                 </ng-template>
 
