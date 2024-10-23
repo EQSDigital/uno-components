@@ -128,9 +128,7 @@ export class PicklistComponent implements AfterContentInit, OnDestroy {
                     () => !this.pick.isMultiple
                 )
             )
-            .subscribe(
-                () => this.openChange.emit(false)
-            );
+            .subscribe(() => this.openChange.emit(false));
 
         // By default, allow picklist Dropdown to close, once user clicks outside:
         if (this.closeClickOutside === undefined) {
@@ -154,10 +152,8 @@ export class PicklistComponent implements AfterContentInit, OnDestroy {
         if (!this.data || !this.hasFilter || !this.userFilter) {
             return this.data;
         }
-        const
-            inputedFilter = <any>this.filterDataField
+        const inputedFilter = <any>this.filterDataField;
 
-            ;
         switch (typeof (inputedFilter)) {
             case 'string':
                 return this.data.filter(

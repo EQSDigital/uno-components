@@ -1,4 +1,4 @@
-import { Directive, Host, Optional, HostBinding, ElementRef, HostListener, Input } from '@angular/core';
+import { Directive, Host, Optional, HostBinding, ElementRef, HostListener } from '@angular/core';
 
 // We'll need to determine if Dropdown is wrapped on (has as parent) a <uno-picklist /> (all PicklistComponents have "uno-pick-option"):
 import { PickOptionDirective } from '../pick/pick-option.directive';
