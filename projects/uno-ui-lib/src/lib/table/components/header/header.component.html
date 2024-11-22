@@ -24,7 +24,8 @@
                   unoPopoverPlacement="left"
                   unoPopoverTooltip="true">
         </uno-icon>
-        <uno-icon id="more_opt_v"
+        <uno-icon *ngIf="grid.settings.headerActions.length > 4"
+                  id="more_opt_v"
                   icon="more-options"
                   [title]="'options' | translate"
                   uno-popover-trigger
@@ -51,30 +52,6 @@
                         {{ icon.title }}
                     </div>
                 </ng-container>
-                <div class="slds-size--1-of-1 slds-p-around--small open-sans-bold-10 text-uppercase" translate>
-                    viewColumns
-                </div>
-                <div *ngFor="let column of grid.dataSet.columns"
-                     class="slds-size--1-of-1 slds-p-around--small slds-truncate open-sans-10"
-                     (click)="onCheckColumn(column)"
-                     [style.cursor]="column.isRequired ? 'normal' : 'pointer'">
-                    <input type="checkbox" class="slds-align-middle" [checked]="column.isVisibled" [disabled]="column.isRequired">
-                    <span class="slds-p-left--x-small slds-align-middle" translate>{{ column.title }}</span>
-                </div>
-                <div *ngIf="showButtonSave"
-                     class="slds-size--1-of-1 slds-p-around--x-small nunito-semibold-14">
-                    <!--button unoButton unoSize="small" unoType="secondary" (click)="openPopoverOptions = !openPopoverOptions" translate>cancel
-                        </button-->
-                    <button *ngIf="grid.getSetting('showSaveColumns')"
-                            unoButton
-                            unoSize="small"
-                            unoType="green"
-                            class="slds-float--right"
-                            (click)="onSave()"
-                            translate>
-                        save
-                    </button>
-                </div>
             </div>
         </ng-template>
     </div>

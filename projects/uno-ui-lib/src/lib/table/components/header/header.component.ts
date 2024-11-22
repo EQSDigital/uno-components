@@ -1,9 +1,7 @@
 import { Component, OnChanges, Input, Output, EventEmitter, ViewChild } from '@angular/core';
-import { cloneDeep } from 'lodash';
 
 import { Grid } from '../../lib/grid';
 import { ActionCustom } from '../../table.interfaces';
-import { Column } from '../../lib/data-set/column';
 import { Row } from '../../lib/data-set/row';
 import { SearchComponent } from '../../../search/search.component';
 
@@ -28,8 +26,6 @@ export class HeaderComponent implements OnChanges {
 
     @Output() clickIconOptions = new EventEmitter<boolean>();
 
-    @Output() saveOptions = new EventEmitter<any>();
-
     /**
      * The main actions there are the icons I can see on the header.
      */
@@ -50,11 +46,6 @@ export class HeaderComponent implements OnChanges {
      */
     openPopoverOptions = false;
 
-    /**
-     * Variable to control the show/hide button save on popover options.
-     */
-    showButtonSave = false;
-
     @ViewChild(SearchComponent) search: SearchComponent;
 
     /**
@@ -62,21 +53,17 @@ export class HeaderComponent implements OnChanges {
      */
     private headerActions: ActionCustom[];
 
-    private columnsFirstState: Column[];
-
     ngOnChanges() {
         this.headerActions = this.grid.settings.headerActions;
 
         // ONLY SHOW 4 ICONS ON HEADER, THE OTHERS GO TO POPOVER.
         if (this.grid.settings.actions.add) { // CHECK IF ADD IS EDIT IN LINE
-            this.mainActions = this.headerActions.slice(0, 2);
-            this.otherActions = this.headerActions.slice(2, this.headerActions.length);
-        } else {
             this.mainActions = this.headerActions.slice(0, 3);
             this.otherActions = this.headerActions.slice(3, this.headerActions.length);
+        } else {
+            this.mainActions = this.headerActions.slice(0, 4);
+            this.otherActions = this.headerActions.slice(4, this.headerActions.length);
         }
-
-        this.columnsFirstState = cloneDeep(this.grid.dataSet.columns);
     }
 
     onAdd() {
@@ -98,47 +85,8 @@ export class HeaderComponent implements OnChanges {
         }
     }
 
-    onCheckColumn(column: Column) {
-        if (!column.isRequired) {
-            column.isVisibled = !column.isVisibled;
-
-            let findDiferences = false;
-            this.columnsFirstState.forEach((col: Column) => {
-                if (col.isVisibled !== column.isVisibled) {
-                    findDiferences = true;
-                }
-            });
-
-            if (findDiferences) {
-                this.showButtonSave = true;
-            } else {
-                this.showButtonSave = false;
-            }
-        }
-    }
-
     onClickOptions() {
         this.openPopoverOptions = !this.openPopoverOptions;
         this.clickIconOptions.emit(this.openPopoverOptions);
-        this.columnsFirstState = cloneDeep(this.grid.dataSet.columns);
-    }
-
-    onSave() {
-        const obj = [];
-
-        this.grid.dataSet.columns.forEach((column: Column) => {
-            obj.push({
-                parameterName: column.id,
-                isVisible: column.isVisibled,
-                isRequire: column.isRequired,
-                isSorted: column.isSortable,
-                isFilter: column.filter ? true : false,
-                width: column.width
-            });
-        });
-
-        this.saveOptions.emit(obj);
-        this.openPopoverOptions = false;
-        this.showButtonSave = false;
     }
 }

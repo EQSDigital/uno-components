@@ -256,7 +256,12 @@ export class BasicComponent implements AfterViewInit {
                     icon: 'share',
                     visible: false,
                     title: 'share'
-                }
+                },
+                {
+                    icon: 'column-filter',
+                    visible: true,
+                    title: 'column filter'
+                },
             ],
             selectActions: [
                 {

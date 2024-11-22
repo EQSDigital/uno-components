@@ -4,8 +4,7 @@
         (create)="createRowNew()"
         (searchTerm)="searchTerm.emit($event)"
         (customAction)="rowHeaderActionCustomEvent.emit($event)"
-        (clickIconOptions)="onClickIconOptions($event)"
-        (saveOptions)="onSaveOptions($event)">
+        (clickIconOptions)="onClickIconOptions($event)">
 </header>
 
 <form [formGroup]="form" autocomplete="off">
@@ -25,7 +24,8 @@
                (sort)="sort($event)"
                (filter)="filter($event)"
                (getColumnFilters)="getColumnFilters.emit($event)"
-               (customAction)="rowSelectActionCustomEvent.emit($event)">
+               (customAction)="rowSelectActionCustomEvent.emit($event)"
+               (saveOptions)="onSaveOptions($event)">
         </thead>
 
         <tbody ng2-st-tbody

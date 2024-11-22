@@ -44,7 +44,7 @@ import { ActionCustom } from '../../../table.interfaces';
         </ng-container>
 
         <!-- ACTIONS -->
-        <th ng2-st-actions-title *ngIf="showActionColumnRight && grid.getSelectedRows().length === 0" [grid]="grid" class="slds-p-bottom--xx-small"></th>
+        <th ng2-st-actions-title *ngIf="showActionColumnRight && grid.getSelectedRows().length === 0" [grid]="grid"></th>
 
         <ng-template #selectedTemplate>
             <th [attr.colspan]="grid.dataSet.columns.length" class="open-sans-14">
@@ -96,7 +96,7 @@ export class TheadTitlesRowComponent implements OnChanges, OnDestroy {
         this.showActionColumnRight = this.grid.showActionColumn('right');
         this.tableCollapsible = this.grid.getSetting('tableCollapsible');
 
-        if (changes.grid && changes.grid.currentValue) {
+        if (changes.grid?.currentValue) {
             this.subscription$ = this.grid.source.onChanged().subscribe(() => {
                 if (this.grid.source.getSort().length > 0) {
                     const column = this.columnsTitle.find((val) => val.column.id === this.grid.source.getSort()[0].field);
