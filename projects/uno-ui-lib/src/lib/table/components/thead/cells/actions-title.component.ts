@@ -26,7 +26,7 @@ import { Column } from '../../../lib/data-set/column';
                         viewColumns
                     </div>
                     <div *ngFor="let column of grid.dataSet.columns"
-                        class="slds-size--1-of-1 slds-p-around--small slds-truncate open-sans-10"
+                        class="slds-size--1-of-1 slds-p-around--x-small slds-truncate open-sans-10"
                         (click)="onCheckColumn(column)"
                         [style.cursor]="column.isRequired ? 'normal' : 'pointer'">
                         <input type="checkbox" class="slds-align-middle" [checked]="column.isVisibled" [disabled]="column.isRequired">

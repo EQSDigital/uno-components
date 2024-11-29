@@ -24,7 +24,7 @@
                   unoPopoverPlacement="left"
                   unoPopoverTooltip="true">
         </uno-icon>
-        <uno-icon *ngIf="grid.settings.headerActions.length > 4"
+        <uno-icon *ngIf="grid.settings.headerActions.length > 3"
                   id="more_opt_v"
                   icon="more-options"
                   [title]="'options' | translate"
@@ -41,14 +41,9 @@
                 <ng-container *ngFor="let icon of otherActions">
                     <div *ngIf="icon.visible"
                          (click)="customAction.emit(icon); openPopoverOptions = false;"
-                         class="slds-size--1-of-1 slds-p-around--small slds-truncate popover-actions"
+                         class="slds-size--1-of-1 slds-p-around--x-small slds-truncate popover-actions"
                          [title]="icon.title"
                          translate>
-                        <uno-icon [id]="icon.icon"
-                                  [icon]="icon.icon"
-                                  [title]="icon.title | translate"
-                                  [withOpacity]="false">
-                        </uno-icon>
                         {{ icon.title }}
                     </div>
                 </ng-container>

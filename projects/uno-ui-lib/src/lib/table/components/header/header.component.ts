@@ -58,11 +58,11 @@ export class HeaderComponent implements OnChanges {
 
         // ONLY SHOW 4 ICONS ON HEADER, THE OTHERS GO TO POPOVER.
         if (this.grid.settings.actions.add) { // CHECK IF ADD IS EDIT IN LINE
+            this.mainActions = this.headerActions.slice(0, 2);
+            this.otherActions = this.headerActions.slice(2, this.headerActions.length);
+        } else {
             this.mainActions = this.headerActions.slice(0, 3);
             this.otherActions = this.headerActions.slice(3, this.headerActions.length);
-        } else {
-            this.mainActions = this.headerActions.slice(0, 4);
-            this.otherActions = this.headerActions.slice(4, this.headerActions.length);
         }
     }
 
