@@ -2,7 +2,7 @@ import {
     Component, ChangeDetectionStrategy, OnInit, OnDestroy, Input, Output, EventEmitter,
     ContentChild, HostListener, ElementRef, ChangeDetectorRef, OnChanges, SimpleChanges, Inject, ViewChild
 } from '@angular/core';
-import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DOCUMENT } from '@angular/common';
 import { BlockScrollStrategy, Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ConfigurableFocusTrapFactory, FocusTrap } from '@angular/cdk/a11y';
@@ -64,7 +64,6 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
     @Input() disableSSCDate = false;
     @Input() disableSSCStatus = false;
     @Input() disableDescription = false;
-    @Input() disableComments = false;
 
     @Input() fileSize: number;
     @Input() acceptedTypes = '*/*';
@@ -163,7 +162,7 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
     public datePickerExpiredData: Date;
 
     // Exclusively for 'docsUploadModal' template:
-    public uploadForm: UntypedFormGroup;
+    public uploadForm: FormGroup;
 
     public file: any;
     public sscFileName: any;
@@ -193,7 +192,7 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
     private subscriptions$ = new Subscription();
 
     constructor(
-        private fb: UntypedFormBuilder,
+        private fb: FormBuilder,
         private cdRef: ChangeDetectorRef,
         private focusTrapFactory: ConfigurableFocusTrapFactory,
         @Inject(DOCUMENT) private document: any,
@@ -233,7 +232,6 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
                 expiredDate: [null],
                 documentResult: [''],
                 description: ['', [Validators.minLength(3), Validators.maxLength(255), noWhitespaceValidator]],
-                comments: ['', [Validators.minLength(3), Validators.maxLength(255), noWhitespaceValidator]],
                 uploadedFile: [null, Validators.required]
             });
 
@@ -299,7 +297,6 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
 
             this.uploadForm.controls.documentDate.setValue(this.editData.documentDate);
             this.uploadForm.controls.description.setValue(this.editData.description);
-            this.uploadForm.controls.comments.setValue(this.editData.comments);
 
             if (this.editData.expiredDate) {
                 const date = new Date(this.editData.expiredDate);
@@ -322,10 +319,6 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
 
             if (this.disableDescription) {
                 this.uploadForm.controls.description.disable();
-            }
-
-            if (this.disableComments) {
-                this.uploadForm.controls.comments.disable();
             }
 
             if (this.disableSSCType) {

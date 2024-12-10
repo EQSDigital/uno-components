@@ -1,5 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
-import { ModalComponent } from 'uno-ui-lib';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'basic-example',
@@ -135,7 +134,6 @@ export class BasicComponent {
                 siteId: 1
             },
             description: 'gggggg',
-            comments: 'uuuuu',
             expiredDate: new Date(2022, 9, 22),
             documentStatus: { name: 'Pending', id: 2, siteId: 1, color: '#ffeb3b' },
             name: 'tttt',
