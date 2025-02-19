@@ -11,8 +11,7 @@
     "build-lib": "ng build --configuration production uno-ui-lib",
     "npm-pack-lib": "cd dist/uno-ui-lib && npm pack",
     "build-ng": "ng build --configuration production uno-ui-lib && ng serve --port 3000",
-    "pack-lib": "ng build --configuration production uno-ui-lib && cd dist/uno-ui-lib && npm pack",
-    "postinstall": "ngcc"
+    "pack-lib": "ng build --configuration production uno-ui-lib && cd dist/uno-ui-lib && npm pack"
   },
   "private": true,
   "dependencies": {
@@ -29,8 +28,8 @@
     "@angular/router": "^16.2.12",
     "@fontsource/nunito": "^5.0.19",
     "@fontsource/open-sans": "^5.0.29",
-    "@ngx-translate/core": "^13.0.0",
-    "@ngx-translate/http-loader": "^6.0.0",
+    "@ngx-translate/core": "14.0.0",
+    "@ngx-translate/http-loader": "8.0.0",
     "core-js": "^3.20.2",
     "lodash": "^4.17.21",
     "moment": "^2.29.3",
