@@ -1,6 +1,6 @@
 {
     "name": "uno-ui-lib",
-    "version": "0.0.244",
+    "version": "0.0.246",
     "keywords": [
         "Angular",
         "UI Components",
@@ -15,9 +15,9 @@
         "tslib": "^2.0.0"
     },
     "peerDependencies": {
-        "@angular/common": "^14.3.0",
-        "@angular/core": "^14.3.0",
-        "@angular/material": "^14.2.7",
-        "typescript": "~4.6.4"
+        "@angular/common": "^16.2.12",
+        "@angular/core": "^16.2.12",
+        "@angular/material": "^16.2.14",
+        "typescript": "~4.9.3"
     }
 }
