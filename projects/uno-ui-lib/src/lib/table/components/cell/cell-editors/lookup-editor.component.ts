@@ -35,7 +35,7 @@ import { Observable } from 'rxjs';
                 unoPopoverTooltip="true"
                 [unoPopoverTheme]="cell.column.editor?.inputPopoverTheme || 'info'">
                     <div uno-lookup-header class="slds-text-body--small">
-                        Github users with "{{ lookUpAsyncScrollerStr }}" @ login name:
+                        Github users with "{{ lookUpAsyncScrollerStr }}" &#64; login name:
                         <b>{{ asyncScrollerCurrentResults }}</b> / <b style="color: red;">{{ asyncScrollerTotalResults }}</b>
                     </div>
                     <ng-template uno-lookup-item let-itemAsync>

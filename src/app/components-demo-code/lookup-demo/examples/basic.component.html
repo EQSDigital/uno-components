@@ -102,7 +102,7 @@
                     (scrollEndReached)="trigger_cumulatedLookupAsyncScroller($event)"
                     (pickChange)="pickedAsyncScroller($event)">
 
-            <div unoLookupHeader class="slds-text-body--small">Github users with "{{ lookUpAsyncScrollerStr }}" @ login name: <b>{{ asyncScrollerCurrentResults
+            <div unoLookupHeader class="slds-text-body--small">Github users with "{{ lookUpAsyncScrollerStr }}" &#64; login name: <b>{{ asyncScrollerCurrentResults
                     }}</b> / <b style="color: red;">{{ asyncScrollerTotalResults }}</b></div>
             <ng-template unoLookupItem let-itemAsync>
                 <img src="{{ itemAsync.avatar_url }}" class="slds-avatar slds-m-right--xx-small">

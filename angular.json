@@ -84,10 +84,10 @@
                     },
                     "configurations": {
                         "production": {
-                            "browserTarget": "uno-ui-lib-app:build:production"
+                          "buildTarget": "uno-ui-lib-app:build:production"
                         },
                         "development": {
-                            "browserTarget": "uno-ui-lib-app:build:development"
+                          "buildTarget": "uno-ui-lib-app:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -95,7 +95,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "uno-ui-lib-app:build"
+                      "buildTarget": "uno-ui-lib-app:build"
                     }
                 },
                 "test": {
