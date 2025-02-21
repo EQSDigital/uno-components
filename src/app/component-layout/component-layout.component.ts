@@ -16,7 +16,7 @@ export class ComponentLayoutComponent {
 
     selectedTab: 'markup' | 'ts' = 'markup';
 
-    constructor(private route: ActivatedRoute) {
+    constructor(private readonly route: ActivatedRoute) {
         const aux = routes.find((route: any) => route.path === this.route.snapshot.parent.url[0].path);
 
         this.title = aux.label || aux.path;

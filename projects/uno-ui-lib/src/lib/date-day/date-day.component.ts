@@ -22,6 +22,6 @@ export class DateDayComponent {
     @Input() daySelected: boolean;
 
     get label() {
-        return this.day < 10 ? `0${this.day}` : this.day;
+        return Number(this.day) < 10 ? `0${this.day}` : this.day;
     }
 }
