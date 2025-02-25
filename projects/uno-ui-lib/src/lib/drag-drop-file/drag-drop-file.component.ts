@@ -1,9 +1,15 @@
 import { Component, ElementRef, EventEmitter, Input, Output, Renderer2, ViewChild, OnChanges, SimpleChanges } from '@angular/core';
+import { TranslateDirective } from '@ngx-translate/core';
+import { IconComponent } from '../icon/icon.component';
+
+import { DragAndDropFileDirective } from './drag-and-drop-files.directive';
 
 @Component({
     selector: 'uno-drag-drop-file',
     templateUrl: 'drag-drop-file.component.html',
-    styleUrls: ['drag-drop-file.component.scss']
+    styleUrls: ['drag-drop-file.component.scss'],
+    standalone: true,
+    imports: [DragAndDropFileDirective, IconComponent, TranslateDirective]
 })
 
 export class DragDropFileComponent implements OnChanges {

@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
+import { DatePipe } from '@angular/common';
+import { ButtonDirective, IconComponent, PopoverBehaviorDirective, PopoverClickBehaviorDirective, PopoverTriggerDirective } from 'uno-ui-lib';
 
 @Component({
     selector: 'basic-example',
     templateUrl: 'basic.component.html',
-    styleUrls: ['../popover-demo.component.css']
+    styleUrls: ['../popover-demo.component.css'],
+    standalone: true,
+    imports: [ButtonDirective, IconComponent, DatePipe, PopoverTriggerDirective, PopoverBehaviorDirective, PopoverClickBehaviorDirective]
 })
 
 export class BasicComponent {

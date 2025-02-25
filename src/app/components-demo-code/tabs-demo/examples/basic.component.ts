@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
-import { of } from 'rxjs';
+
+import { TabsComponent, ButtonDirective } from 'uno-ui-lib';
 
 @Component({
     selector: 'basic-example',
-    templateUrl: 'basic.component.html'
+    templateUrl: 'basic.component.html',
+    standalone: true,
+    imports: [TabsComponent, ButtonDirective]
 })
 
 export class BasicComponent {

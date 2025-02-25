@@ -4,11 +4,17 @@ import { Grid } from '../../lib/grid';
 import { ActionCustom } from '../../table.interfaces';
 import { Row } from '../../lib/data-set/row';
 import { SearchComponent } from '../../../search/search.component';
+import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
+import { PopoverTriggerDirective } from '../../../popover/popover.component';
+import { IconComponent } from '../../../icon/icon.component';
+
 
 @Component({
     selector: 'header',
     templateUrl: 'header.component.html',
-    styleUrls: ['header.component.css']
+    styleUrls: ['header.component.css'],
+    standalone: true,
+    imports: [SearchComponent, IconComponent, PopoverTriggerDirective, TranslateDirective, TranslatePipe]
 })
 
 export class HeaderComponent implements OnChanges {

@@ -2,7 +2,7 @@ import {
     Component, OnDestroy, ElementRef, Renderer2, OnChanges, SimpleChanges,
     Input, Output, EventEmitter, ContentChild, ChangeDetectionStrategy, ViewChild, ChangeDetectorRef
 } from '@angular/core';
-import { UntypedFormGroup } from '@angular/forms';
+import { UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
 import { Grid } from './lib/grid';
@@ -16,11 +16,16 @@ import { LocalDataSource } from './lib/data-source/local/local.data-source';
 import { SetUpFormControllers } from './lib/data-set/form-validators';
 import { TbodyCollapseContentDirective } from './components/tbody/tbody-collapse-content.directive';
 import { HeaderComponent } from './components/header/header.component';
+import { Ng2SmartTableTbodyComponent } from './components/tbody/tbody.component';
+import { Ng2SmartTableTheadComponent } from './components/thead/thead.component';
+import { NgClass } from '@angular/common';
 
 @Component({
     selector: 'uno-smart-table',
     templateUrl: './table.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [HeaderComponent, FormsModule, ReactiveFormsModule, NgClass, Ng2SmartTableTheadComponent, Ng2SmartTableTbodyComponent]
 })
 export class TableComponent implements OnChanges, OnDestroy {
 

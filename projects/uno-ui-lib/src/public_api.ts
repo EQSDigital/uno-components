@@ -1,7 +1,7 @@
 /*
  * Public API Surface of uno-ui-lib
  */
-export * from './lib/uno-ui-lib.module';
+
 
 export * from './lib/asset-visualizer/public_api';
 export * from './lib/badge/public_api';

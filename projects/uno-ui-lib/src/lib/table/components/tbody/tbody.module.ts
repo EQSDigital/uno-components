@@ -11,9 +11,9 @@ import { TbodyEditDeleteComponent } from './cells/edit-delete.component';
 // import { TbodyCustomComponent } from './cells/custom.component';
 import { TbodyCollapseContentDirective } from './tbody-collapse-content.directive';
 
-import { UnoIconModule } from '../../../icon/icon.module';
-import { UnoButtonModule } from '../../../button/button.module';
-import { UnoPopoverModule } from '../../../popover/popover.module';
+
+
+
 
 const TBODY_COMPONENTS = [
     TbodySaveCancelComponent,
@@ -25,18 +25,13 @@ const TBODY_COMPONENTS = [
 
 @NgModule({
     imports: [
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        CellModule,
-        TranslateModule,
-        UnoIconModule,
-        UnoButtonModule,
-        UnoPopoverModule
-    ],
-    declarations: [
-        ...TBODY_COMPONENTS,
-    ],
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CellModule,
+    TranslateModule,
+    ...TBODY_COMPONENTS
+],
     exports: [
         ...TBODY_COMPONENTS,
     ],

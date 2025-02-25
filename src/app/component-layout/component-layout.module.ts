@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MarkdownModule } from 'ngx-markdown';
-import { UnoUiLibModule } from 'uno-ui-lib';
 
 import { ComponentLayoutComponent } from './component-layout.component';
 
@@ -9,10 +8,9 @@ import { ComponentLayoutComponent } from './component-layout.component';
     imports: [
         CommonModule,
         MarkdownModule.forChild(),
-        UnoUiLibModule
+        ComponentLayoutComponent
     ],
     exports: [ComponentLayoutComponent],
-    declarations: [ComponentLayoutComponent],
     providers: [],
 })
 export class ComponentLayoutModule { }

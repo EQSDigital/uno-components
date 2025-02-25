@@ -1,10 +1,13 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { PictureComponent } from '../picture/picture.component';
 
 @Component({
     selector: 'uno-asset-visualizer',
     templateUrl: './asset-visualizer.component.html',
     styleUrls: ['./asset-visualizer.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [PictureComponent]
 })
 export class AssetVisualizerComponent {
     /**

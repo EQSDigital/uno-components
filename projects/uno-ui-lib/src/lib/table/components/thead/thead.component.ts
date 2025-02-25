@@ -3,11 +3,16 @@ import { UntypedFormGroup } from '@angular/forms';
 
 import { Grid } from '../../lib/grid';
 import { ActionCustom } from '../../table.interfaces';
+import { TheadFormRowComponent } from './rows/thead-form-row.component';
+import { TheadTitlesRowComponent } from './rows/thead-titles-row.component';
+
 
 @Component({
     selector: '[ng2-st-thead]',
     templateUrl: './thead.component.html',
-    changeDetection: ChangeDetectionStrategy.Default
+    changeDetection: ChangeDetectionStrategy.Default,
+    standalone: true,
+    imports: [TheadTitlesRowComponent, TheadFormRowComponent]
 })
 export class Ng2SmartTableTheadComponent implements OnChanges, AfterViewInit {
 

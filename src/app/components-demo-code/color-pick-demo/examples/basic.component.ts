@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
+import { NgStyle } from '@angular/common';
+import { ColorPicklistComponent, PickDirective } from 'uno-ui-lib';
 
 @Component({
     selector: 'basic-example',
-    templateUrl: 'basic.component.html'
+    templateUrl: 'basic.component.html',
+    standalone: true,
+    imports: [ColorPicklistComponent, PickDirective, NgStyle]
 })
 
 export class BasicComponent {

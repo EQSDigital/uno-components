@@ -3,6 +3,11 @@ import { Subscription } from 'rxjs';
 
 import { Column } from '../../../lib/data-set/column';
 import { Grid } from '../../../lib/grid';
+import { ButtonDirective } from '../../../../button/button.directive';
+
+import { PopoverTriggerDirective } from '../../../../popover/popover.component';
+import { IconComponent } from '../../../../icon/icon.component';
+import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
 
 enum SortDirectionEnum {
     ASC = 'asc',
@@ -12,7 +17,9 @@ enum SortDirectionEnum {
 @Component({
     selector: 'ng2-st-column-title',
     templateUrl: 'column-title.component.html',
-    styleUrls: ['column-title.component.scss']
+    styleUrls: ['column-title.component.scss'],
+    standalone: true,
+    imports: [TranslateDirective, IconComponent, PopoverTriggerDirective, ButtonDirective, TranslatePipe]
 })
 export class ColumnTitleComponent implements OnChanges, OnDestroy {
     @Input() grid: Grid;

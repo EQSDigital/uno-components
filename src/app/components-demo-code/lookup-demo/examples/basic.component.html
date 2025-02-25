@@ -1,19 +1,19 @@
 <div style="color: #000;">
-    <p class="slds-text-title--caps slds-m-bottom--small" style="text-decoration: underline;">
-        Use UNO library's <strong>&#60;uno-lookup /&#62;</strong> or <strong>&#60;uno-picklist /&#62;</strong> ui-component...?
-    </p>
-    <p>
-        On <strong>&#60;uno-lookup /&#62;</strong> an Input <em><b>query</b></em> must be sent to the <b>back end</b> - the results, already obeying the done
-        query, can come with, or without, pagination, cumulating items on <em>scrollDown</em> or not.
-    </p>
-    <p class="slds-m-bottom--x-large">No filtering is possible at the <b>front side</b> - you have to trigger an Input change to get different results from the
-        back end.</p>
-    <p>
-        On <strong>&#60;uno-picklist /&#62;</strong> data can be <em><b>filtered</b></em> at the <b>front end</b> - coming with, or without, pagination,
-        cumulating items on <em>scrollDown</em> or not.
-    </p>
-    <p class="slds-m-bottom--large">Multiple options can be selected, if <strong>&#60;uno-pick /&#62;</strong>'s "<strong>unoPickMultiple</strong>" Directive is
-        set to true</p>
+  <p class="slds-text-title--caps slds-m-bottom--small" style="text-decoration: underline;">
+    Use UNO library's <strong>&#60;uno-lookup /&#62;</strong> or <strong>&#60;uno-picklist /&#62;</strong> ui-component...?
+  </p>
+  <p>
+    On <strong>&#60;uno-lookup /&#62;</strong> an Input <em><b>query</b></em> must be sent to the <b>back end</b> - the results, already obeying the done
+    query, can come with, or without, pagination, cumulating items on <em>scrollDown</em> or not.
+  </p>
+  <p class="slds-m-bottom--x-large">No filtering is possible at the <b>front side</b> - you have to trigger an Input change to get different results from the
+back end.</p>
+<p>
+  On <strong>&#60;uno-picklist /&#62;</strong> data can be <em><b>filtered</b></em> at the <b>front end</b> - coming with, or without, pagination,
+  cumulating items on <em>scrollDown</em> or not.
+</p>
+<p class="slds-m-bottom--large">Multiple options can be selected, if <strong>&#60;uno-pick /&#62;</strong>'s "<strong>unoPickMultiple</strong>" Directive is
+set to true</p>
 </div>
 
 <!-- ********************************************************************************************************************************** -->
@@ -21,108 +21,114 @@
 
 <!-- Simplest <uno-lookup />: -->
 <div class="slds-grid">
-    <div class="slds-col slds-size--3-of-4 slds-m-bottom--large">
+  <div class="slds-col slds-size--3-of-4 slds-m-bottom--large">
 
-        <div class="slds-text-title--caps slds-m-bottom--small">Static results</div>
+    <div class="slds-text-title--caps slds-m-bottom--small">Static results</div>
 
-        <uno-lookup label="Who is your favorite superhero?" [lookup]="lookup" [(pick)]="superhero" debounce="0"
-                    placeholder="Hint: type `man` or `r` | `c` for no results)"></uno-lookup>
+    <uno-lookup label="Who is your favorite superhero?" [lookup]="lookup" [(pick)]="superhero" debounce="0"
+    placeholder="Hint: type `man` or `r` | `c` for no results)"></uno-lookup>
 
-        <!-- Test selection made:-->
-        <div *ngIf="superhero" class="slds-m-top--small">
-            My favorite superhero is <b>{{superhero}}</b>
-        </div>
+    <!-- Test selection made:-->
+    @if (superhero) {
+      <div class="slds-m-top--small">
+        My favorite superhero is <b>{{superhero}}</b>
+      </div>
+    }
 
-    </div>
+  </div>
 </div>
 
 <!-- <uno-lookup /> filled by Observable http GET request: -->
 <div class="slds-grid slds-m-top--xx-large ">
-    <div class="slds-col slds-size--3-of-4">
+  <div class="slds-col slds-size--3-of-4">
 
-        <div class="slds-m-bottom--small">
-            <span class="slds-text-title--caps">Asynchronous object results</span> using <strong>&#60;uno-lookup&#62;</strong>'s &#60;ng-template&#62;
-            DIRECTIVES
-            <br /><small>(notice the absence of <strong>"search" icon</strong> or any <strong><em>placeholder</em></strong> string...)</small>
-        </div>
-
-        <uno-lookup [(value)]="value"
-                    [lookup]="lookupAsync"
-                    field="website"
-
-                    [(pick)]="APIUserObj"
-
-                    [searchIcon]="false"
-
-                    (inputWasTouched)="onInputBlur($event)">
-
-            <!-- As we are using a template, pass in the <uno-lookup /> proper Directives: -->
-            <ng-template unoLookupLabel>Type an <b>web address</b> extension like `.info`, to have several <b>users matches</b>:</ng-template>
-
-            <div unoLookupHeader class="slds-text-body--small">JsonPlaceHolder User API's <b>websites</b> found:</div>
-            <ng-template unoLookupItem let-ctx>
-                <div class="slds-media__body">
-                    <div class="slds-lookup__result-text"><b>{{ ctx.website }}</b></div>
-                    <span class="slds-lookup__result-meta slds-text-body--small">
-                        Name: {{ ctx.name }}
-                        <br>Address: {{ ctx.address.street }}
-                        <br>Suite: {{ ctx.address.suite }}
-                        <br>City: {{ ctx.address.city }}
-                        <br>Phone: {{ ctx.phone }}
-                    </span>
-                </div>
-            </ng-template>
-
-        </uno-lookup>
-
-        <!-- Test results: -->
-        <div *ngIf="APIUserObj" class="slds-m-top--small">
-            Selected JsonPlaceHolder User: <b>{{ APIUserObj.name }}</b> (<code>{{ APIUserObj.email }}</code>)
-        </div>
-
+    <div class="slds-m-bottom--small">
+      <span class="slds-text-title--caps">Asynchronous object results</span> using <strong>&#60;uno-lookup&#62;</strong>'s &#60;ng-template&#62;
+      DIRECTIVES
+      <br /><small>(notice the absence of <strong>"search" icon</strong> or any <strong><em>placeholder</em></strong> string...)</small>
     </div>
-</div>
 
-<!-- <uno-lookup /> filled by PAGED Observable http GET request, cumulating PAGE's ITEMS through scrolllDown: -->
-<div class="slds-grid slds-m-top--xx-large ">
-    <div class="slds-col slds-size--3-of-4">
+    <uno-lookup [(value)]="value"
+      [lookup]="lookupAsync"
+      field="website"
 
-        <div class="slds-m-bottom--small"><span class="slds-text-title--caps">Asynchronous <strong>paginated</strong> object results</span>, cumulating on
-            <em>scrollDown</em> event:
+      [(pick)]="APIUserObj"
+
+      [searchIcon]="false"
+
+      (inputWasTouched)="onInputBlur($event)">
+
+      <!-- As we are using a template, pass in the <uno-lookup /> proper Directives: -->
+      <ng-template unoLookupLabel>Type an <b>web address</b> extension like `.info`, to have several <b>users matches</b>:</ng-template>
+
+      <div unoLookupHeader class="slds-text-body--small">JsonPlaceHolder User API's <b>websites</b> found:</div>
+      <ng-template unoLookupItem let-ctx>
+        <div class="slds-media__body">
+          <div class="slds-lookup__result-text"><b>{{ ctx.website }}</b></div>
+          <span class="slds-lookup__result-meta slds-text-body--small">
+            Name: {{ ctx.name }}
+            <br>Address: {{ ctx.address.street }}
+              <br>Suite: {{ ctx.address.suite }}
+                <br>City: {{ ctx.address.city }}
+                  <br>Phone: {{ ctx.phone }}
+                  </span>
+                </div>
+              </ng-template>
+
+            </uno-lookup>
+
+            <!-- Test results: -->
+            @if (APIUserObj) {
+              <div class="slds-m-top--small">
+                Selected JsonPlaceHolder User: <b>{{ APIUserObj.name }}</b> (<code>{{ APIUserObj.email }}</code>)
+              </div>
+            }
+
+          </div>
         </div>
 
-        <uno-lookup [(value)]="lookUpAsyncScrollerStr"
-                    [lookup]="lookupAsyncScroller"
-                    field="login"
-                    placeholder="Filter a login Name @ Github users API:"
+        <!-- <uno-lookup /> filled by PAGED Observable http GET request, cumulating PAGE's ITEMS through scrolllDown: -->
+        <div class="slds-grid slds-m-top--xx-large ">
+          <div class="slds-col slds-size--3-of-4">
 
-                    [(pick)]="githubUser"
+            <div class="slds-m-bottom--small"><span class="slds-text-title--caps">Asynchronous <strong>paginated</strong> object results</span>, cumulating on
+            <em>scrollDown</em> event:
+          </div>
 
-                    (valueChange)="trigger_lookupAsyncScroller($event)"
-                    (scrollEndReached)="trigger_cumulatedLookupAsyncScroller($event)"
-                    (pickChange)="pickedAsyncScroller($event)">
+          <uno-lookup [(value)]="lookUpAsyncScrollerStr"
+            [lookup]="lookupAsyncScroller"
+            field="login"
+            placeholder="Filter a login Name @ Github users API:"
 
-            <div unoLookupHeader class="slds-text-body--small">Github users with "{{ lookUpAsyncScrollerStr }}" &#64; login name: <b>{{ asyncScrollerCurrentResults
-                    }}</b> / <b style="color: red;">{{ asyncScrollerTotalResults }}</b></div>
-            <ng-template unoLookupItem let-itemAsync>
+            [(pick)]="githubUser"
+
+            (valueChange)="trigger_lookupAsyncScroller($event)"
+            (scrollEndReached)="trigger_cumulatedLookupAsyncScroller($event)"
+            (pickChange)="pickedAsyncScroller($event)">
+
+            <div unoLookupHeader class="slds-text-body--small">Github users with "{{ lookUpAsyncScrollerStr }}" &#64; login name: <b>
+              {{ asyncScrollerCurrentResults }}</b> / <b style="color: red;">{{ asyncScrollerTotalResults }}</b></div>
+              <ng-template unoLookupItem let-itemAsync>
                 <img src="{{ itemAsync.avatar_url }}" class="slds-avatar slds-m-right--xx-small">
                 {{ itemAsync.login }}
-            </ng-template>
+              </ng-template>
 
-        </uno-lookup>
+            </uno-lookup>
 
-        <!-- Test results: -->
-        <div *ngIf="githubUser" class="slds-m-top--small">
-            <img src="{{ githubUser.avatar_url }}" class="slds-avatar slds-avatar--large slds-avatar_circle slds-m-right--small"
-                 style="vertical-align: inherit;">
-            <span style="display: inline-block;">
-                <strong>{{ githubUser.login }}</strong>
-                <br />
-                Id=<strong>{{ githubUser.id }}</strong>
-                <br />
-                <a href="{{ githubUser.html_url }}" target="_blank">{{ githubUser.html_url }}</a>
-            </span>
-        </div>
+            <!-- Test results: -->
+            @if (githubUser) {
+              <div class="slds-m-top--small">
+                <img src="{{ githubUser.avatar_url }}" class="slds-avatar slds-avatar--large slds-avatar_circle slds-m-right--small"
+                  style="vertical-align: inherit;">
+                  <span style="display: inline-block;">
+                    <strong>{{ githubUser.login }}</strong>
+                    <br />
+                    Id=<strong>{{ githubUser.id }}</strong>
+                    <br />
+                    <a href="{{ githubUser.html_url }}" target="_blank">{{ githubUser.html_url }}</a>
+                  </span>
+                </div>
+              }
 
-    </div>
-</div>
+            </div>
+          </div>

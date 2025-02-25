@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
 
+import { DropdownDirective, IconComponent, DateDayComponent } from 'uno-ui-lib';
+
 @Component({
     selector: 'basic-example',
-    templateUrl: 'basic.component.html'
+    templateUrl: 'basic.component.html',
+    standalone: true,
+    imports: [DropdownDirective, IconComponent, DateDayComponent]
 })
 
 export class BasicComponent {

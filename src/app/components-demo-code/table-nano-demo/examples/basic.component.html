@@ -1,39 +1,37 @@
-<div *ngIf="(showTable$ | async)?.length > 0 && !showTable">
+@if ((showTable$ | async)?.length > 0 && !showTable) {
+  <div>
     <uno-smart-table [settings]="tableSettings"
-                     [source]="tableData"
-                     [updateColumnList]="updateColumnList"
-                     [userSettings]="userSettings"
-                     (internalAction)="gridAffairAction($event)"
-
-                     (createSave)="createSaveEvent($event)"
-                     (createConfirm)="confirmRowActionEvent($event, 'create')"
-
-                     (editSave)="rowActionEditSaveEvent($event)"
-                     (editConfirm)="confirmRowActionEvent($event, 'edit')"
-
-                     (deleteConfirm)="confirmRowActionEvent($event, 'delete')"
-                     (formChanges)="onFormChanges($event)"
-                     (searchTerm)="onSearch($event)">
+      [source]="tableData"
+      [updateColumnList]="updateColumnList"
+      [userSettings]="userSettings"
+      (internalAction)="gridAffairAction($event)"
+      (createSave)="createSaveEvent($event)"
+      (createConfirm)="confirmRowActionEvent($event, 'create')"
+      (editSave)="rowActionEditSaveEvent($event)"
+      (editConfirm)="confirmRowActionEvent($event, 'edit')"
+      (deleteConfirm)="confirmRowActionEvent($event, 'delete')"
+      (formChanges)="onFormChanges($event)"
+      (searchTerm)="onSearch($event)">
     </uno-smart-table>
-
     <!-- Our pagination system simulator (just "Next" and "Previous") -->
     <div uno-pick
-         class="slds-button-group slds-m-bottom--xx-large"
-         role="group"
-         [(unoPick)]="setPage"
-         unoPickActiveClass="slds-button--brand">
-        <button class="slds-button--neutral slds-p-horizontal--medium slds-m-right--small"
-                uno-pick-option
-                unoPickOption="Previous"
-                (click)="navigateTo()">
-            <<
-               </button>
-                &nbsp;or&nbsp;
-                <button class="slds-button--neutral slds-p-horizontal--medium slds-m-horizontal--small"
-                        uno-pick-option
-                        unoPickOption="Next"
-                        (click)="navigateTo()">
-                    >>
-                </button>
+      class="slds-button-group slds-m-bottom--xx-large"
+      role="group"
+      [(unoPick)]="setPage"
+      unoPickActiveClass="slds-button--brand">
+      <button class="slds-button--neutral slds-p-horizontal--medium slds-m-right--small"
+        uno-pick-option
+        unoPickOption="Previous"
+        (click)="navigateTo()">
+        <<
+      </button>
+      &nbsp;or&nbsp;
+      <button class="slds-button--neutral slds-p-horizontal--medium slds-m-horizontal--small"
+        uno-pick-option
+        unoPickOption="Next"
+        (click)="navigateTo()">
+        >>
+      </button>
     </div>
-</div>
+  </div>
+}

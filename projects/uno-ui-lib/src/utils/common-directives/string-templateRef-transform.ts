@@ -1,9 +1,12 @@
 import { Component, Input, TemplateRef, OnChanges, ChangeDetectionStrategy } from '@angular/core';
+import { NgTemplateOutlet } from '@angular/common';
 
 @Component({
     selector: '[unoHelperStringTemplateRef]',
     template: `{{content}}<ng-template [ngTemplateOutlet]="contentTemplate"></ng-template>`,
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgTemplateOutlet]
 })
 export class StringTemplateRefTransformComponent implements OnChanges {
     @Input() unoHelperStringTemplateRef: string | TemplateRef<any>;

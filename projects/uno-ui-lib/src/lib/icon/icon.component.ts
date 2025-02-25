@@ -1,10 +1,13 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { NgClass } from '@angular/common';
 
 @Component({
     selector: 'uno-icon',
     templateUrl: './icon.component.html',
     styleUrls: ['./icon.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgClass]
 })
 export class IconComponent {
 

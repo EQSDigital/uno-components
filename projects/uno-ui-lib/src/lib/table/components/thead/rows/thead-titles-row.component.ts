@@ -5,65 +5,81 @@ import { Grid } from '../../../lib/grid';
 import { Column } from '../../../lib/data-set/column';
 import { ColumnTitleComponent } from '../cells/column-title.component';
 import { ActionCustom } from '../../../table.interfaces';
+import { IconComponent } from '../../../../icon/icon.component';
+import { TranslateDirective } from '@ngx-translate/core';
+import { ActionsTitleComponent } from '../cells/actions-title.component';
+import { CheckboxSelectAllComponent } from '../cells/checkbox-select-all.component';
+import { NgClass } from '@angular/common';
 
 @Component({
     selector: '[ng2-st-thead-titles-row]',
     template: `
-        <th *ngIf="colorRow" [style.padding]="0"></th>
-        <th ng2-st-checkbox-select-all
-            *ngIf="isMultiSelectVisible"
+        @if (colorRow) {
+          <th [style.padding]="0"></th>
+        }
+        @if (isMultiSelectVisible) {
+          <th ng2-st-checkbox-select-all
             class="ng2-smart-th ng2-smart-action-multiple-select"
             [ngClass]="{ 'ng2-smart-th': grid.getSelectedRows().length === 0 }"
             [grid]="grid"
             (click)="selectAllRows.emit($event.target.checked)">
-        </th>
-
+          </th>
+        }
+        
         <!-- Empty th for the collapsed icon -->
-        <th *ngIf="tableCollapsible.isCollapsible" class="ng2-smart-th"></th>
-
+        @if (tableCollapsible.isCollapsible) {
+          <th class="ng2-smart-th"></th>
+        }
+        
         <!-- COLUMNS TITLE -->
-        <ng-container *ngIf="grid.getSelectedRows().length === 0; else selectedTemplate">
-            <ng-container *ngFor="let column of grid.dataSet.columns">
-                <th *ngIf="column.isVisibled"
-                    [id]="column.id"
-                    class="ng2-smart-th slds-p-bottom--xx-small"
-                    [class.columns]="column.title"
-                    [style.width]="column.width"
-                    [style.cursor]="column.isSortable || column.filter ? 'pointer' : 'default'"
-                    (mouseenter)="onMouseEnter(column)"
-                    (mouseleave)="onMouseLeave(column)">
-                        <ng2-st-column-title
-                            [grid]="grid"
-                            [column]="column"
-                            (sort)="sort.emit($event)"
-                            (hidePopovers)="hidePopovers()"
-                            (getColumnFilters)="getColumnFilters.emit($event)">
-                        </ng2-st-column-title>
-                </th>
-            </ng-container>
-        </ng-container>
-
+        @if (grid.getSelectedRows().length === 0) {
+          @for (column of grid.dataSet.columns; track column) {
+            @if (column.isVisibled) {
+              <th
+                [id]="column.id"
+                class="ng2-smart-th slds-p-bottom--xx-small"
+                [class.columns]="column.title"
+                [style.width]="column.width"
+                [style.cursor]="column.isSortable || column.filter ? 'pointer' : 'default'"
+                (mouseenter)="onMouseEnter(column)"
+                (mouseleave)="onMouseLeave(column)">
+                <ng2-st-column-title
+                  [grid]="grid"
+                  [column]="column"
+                  (sort)="sort.emit($event)"
+                  (hidePopovers)="hidePopovers()"
+                  (getColumnFilters)="getColumnFilters.emit($event)">
+                </ng2-st-column-title>
+              </th>
+            }
+          }
+        } @else {
+          <th [attr.colspan]="grid.dataSet.columns.length" class="open-sans-14">
+            {{ grid.getSelectedRows().length }} <span class="slds-p-horizontal--medium" translate>itemsSelected</span>
+            @for (action of grid.settings.selectActions; track action) {
+              @if (action.visible) {
+                <uno-icon
+                  [id]="action.icon"
+                  class="slds-p-horizontal--x-small"
+                  [icon]="action.icon"
+                  [title]="action.title"
+                  size="x-small"
+                  (click)="customAction.emit(action)">
+                </uno-icon>
+              }
+            }
+            <uno-icon class="slds-float--right" icon="close" size="x-small" (click)="selectAllRows.emit(false)"></uno-icon>
+          </th>
+        }
+        
         <!-- ACTIONS -->
-        <th ng2-st-actions-title *ngIf="showActionColumnRight && grid.getSelectedRows().length === 0" [grid]="grid"></th>
-
-        <ng-template #selectedTemplate>
-            <th [attr.colspan]="grid.dataSet.columns.length" class="open-sans-14">
-                {{ grid.getSelectedRows().length }} <span class="slds-p-horizontal--medium" translate>itemsSelected</span>
-                <ng-container *ngFor="let action of grid.settings.selectActions">
-                    <uno-icon
-                        [id]="action.icon"
-                        class="slds-p-horizontal--x-small"
-                        *ngIf="action.visible"
-                        [icon]="action.icon"
-                        [title]="action.title"
-                        size="x-small"
-                        (click)="customAction.emit(action)">
-                    </uno-icon>
-                </ng-container>
-                <uno-icon class="slds-float--right" icon="close" size="x-small" (click)="selectAllRows.emit(false)"></uno-icon>
-            </th>
-        </ng-template>
-  `
+        @if (showActionColumnRight && grid.getSelectedRows().length === 0) {
+          <th ng2-st-actions-title [grid]="grid"></th>
+        }
+        
+        `,
+    standalone: true,
+    imports: [CheckboxSelectAllComponent, NgClass, ColumnTitleComponent, ActionsTitleComponent, TranslateDirective, IconComponent]
 })
 export class TheadTitlesRowComponent implements OnChanges, OnDestroy {
     @Input() grid: Grid;

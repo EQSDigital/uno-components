@@ -1,14 +1,20 @@
 import { Component, Input, ChangeDetectionStrategy, OnInit, OnChanges } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
+import { BadgeComponent } from '../badge/badge.component';
+
 
 @Component({
-    // tslint:disable-next-line:component-selector
     selector: 'tr[uno-date-weekdays]',
     template: `
-        <th *ngFor="let day of weekdays" [id]="day.id" scope="col">
+        @for (day of weekdays; track day) {
+          <th [id]="day.id" scope="col">
             <uno-badge [title]="'day.title' | translate" tranlate>{{ day.label }}</uno-badge>
-        </th>
-    `,
-    changeDetection: ChangeDetectionStrategy.OnPush
+          </th>
+        }
+        `,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [BadgeComponent, TranslatePipe]
 })
 export class DateWeekdaysComponent implements OnInit, OnChanges {
 

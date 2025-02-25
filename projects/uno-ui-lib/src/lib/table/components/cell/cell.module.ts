@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { UnoLookupModule } from '../../../lookup/lookup.module';
-import { UnoPopoverModule } from '../../../popover/popover.module';
-import { UnoPicklistModule } from '../../../picklist/picklist.module';
-import { UnoPickModule } from '../../../pick/pick.module';
-import { UnoSwitchModule } from '../../../switch/switch.module';
+
+
+
+
+
 
 import { CellComponent } from './cell.component';
 import { CustomEditComponent } from './cell-edit-mode/custom-edit.component';
@@ -41,20 +41,12 @@ const CELL_COMPONENTS = [
 
 @NgModule({
     imports: [
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        TranslateModule,
-        UnoLookupModule,
-        UnoPopoverModule,
-        UnoPicklistModule,
-        UnoPickModule,
-        UnoSwitchModule
-    ],
-
-    declarations: [
-        ...CELL_COMPONENTS,
-    ],
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    TranslateModule,
+    ...CELL_COMPONENTS
+],
     exports: [
         ...CELL_COMPONENTS,
     ],

@@ -7,27 +7,24 @@ import { TableComponent } from './table.component';
 import { CellModule } from './components/cell/cell.module';
 import { TBodyModule } from './components/tbody/tbody.module';
 import { THeadModule } from './components/thead/thead.module';
-import { HeaderModule } from './components/header/header.module';
+
 
 
 
 @NgModule({
     imports: [
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        CellModule,
-        TBodyModule,
-        THeadModule,
-        TranslateModule,
-        HeaderModule
-    ],
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CellModule,
+    TBodyModule,
+    THeadModule,
+    TranslateModule,
+    TableComponent
+],
     exports: [
         TableComponent,
         CellModule
-    ],
-    declarations: [
-        TableComponent
     ],
     providers: [],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]

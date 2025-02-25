@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 
 import { DefaultEditorDirective } from '../../../lib/editor-cell-default';
+import { SwitchComponent } from '../../../../switch/switch.component';
 
 @Component({
     selector: 'switch-editor',
@@ -9,7 +10,9 @@ import { DefaultEditorDirective } from '../../../lib/editor-cell-default';
             <uno-switch [checked]="checked" [disable]="disable"></uno-switch>
         </div>
     `,
-    styleUrls: ['./editor.component.scss']
+    styleUrls: ['./editor.component.scss'],
+    standalone: true,
+    imports: [SwitchComponent]
 })
 export class SwitchEditorComponent extends DefaultEditorDirective implements OnInit {
 

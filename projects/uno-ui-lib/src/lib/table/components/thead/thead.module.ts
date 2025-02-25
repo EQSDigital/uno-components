@@ -13,9 +13,9 @@ import { TheadFormRowComponent } from './rows/thead-form-row.component';
 import { TheadTitlesRowComponent } from './rows/thead-titles-row.component';
 import { DefaultEditorDirective } from '../../lib/editor-cell-default';
 
-import { UnoIconModule } from '../../../icon/icon.module';
-import { UnoButtonModule } from '../../../button/button.module';
-import { UnoPopoverModule } from '../../../popover/popover.module';
+
+
+
 
 const THEAD_COMPONENTS = [
     THeadCreateCancelComponent,
@@ -30,18 +30,13 @@ const THEAD_COMPONENTS = [
 
 @NgModule({
     imports: [
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        CellModule,
-        TranslateModule,
-        UnoIconModule,
-        UnoButtonModule,
-        UnoPopoverModule
-    ],
-    declarations: [
-        ...THEAD_COMPONENTS,
-    ],
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CellModule,
+    TranslateModule,
+    ...THEAD_COMPONENTS
+],
     exports: [
         ...THEAD_COMPONENTS,
     ],

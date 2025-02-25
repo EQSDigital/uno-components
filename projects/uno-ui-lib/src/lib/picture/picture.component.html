@@ -1,57 +1,73 @@
 <div (click)="onPictureClick($event)"
-     (mouseenter)="showOverlay = true"
-     (mouseleave)="onMouseLeavePicture()"
-     class="picture"
-     [style.background-size]="rounded ? 'cover' : 'contain'"
-     [style.width]="width"
-     [style.height]="height"
-     [style.background-image]="'url(' + (image || defaultImage) + ')'"
-     [style.border-radius]="rounded ? '50%' : 'none'">
-    <div *ngIf="showUpIcon" class="slds-align--absolute-center" style="position: absolute; width: 100%; height: 100%;">
-        <uno-icon icon="up_image" [size]="UpIconSize" [withOpacity]="false" color="white"></uno-icon>
+  (mouseenter)="showOverlay = true"
+  (mouseleave)="onMouseLeavePicture()"
+  class="picture"
+  [style.background-size]="rounded ? 'cover' : 'contain'"
+  [style.width]="width"
+  [style.height]="height"
+  [style.background-image]="'url(' + (image || defaultImage) + ')'"
+  [style.border-radius]="rounded ? '50%' : 'none'">
+  @if (showUpIcon) {
+    <div class="slds-align--absolute-center" style="position: absolute; width: 100%; height: 100%;">
+      <uno-icon icon="up_image" [size]="UpIconSize" [withOpacity]="false" color="white"></uno-icon>
     </div>
-    <div *ngIf="!onlyViewImage && showOverlay && image"
-         class="overlay"
-         [style.border-radius]="rounded ? '50%' : 'none'"
-         [style.width]="width"
-         [style.height]="height">
-        <uno-icon [icon]="iconOverlay" [withOpacity]="false" color="white"></uno-icon>
-        <span class="slds-p-top--small" style="text-align: center;" translate>{{ textOverlay }}</span>
+  }
+  @if (!onlyViewImage && showOverlay && image) {
+    <div
+      class="overlay"
+      [style.border-radius]="rounded ? '50%' : 'none'"
+      [style.width]="width"
+      [style.height]="height">
+      <uno-icon [icon]="iconOverlay" [withOpacity]="false" color="white"></uno-icon>
+      <span class="slds-p-top--small" style="text-align: center;" translate>{{ textOverlay }}</span>
     </div>
-    <div *ngIf="!onlyViewImage && showDropdown"
-         class="slds-p-vertical--small picture-dropdown"
-         [style.top]="pictureDropdownPosition.top"
-         [style.left]="pictureDropdownPosition.left">
-        <span *ngIf="showViewImage" (click)="onViewImage(); $event.stopPropagation()" translate>{{ viewImageText }}</span>
-        <span *ngIf="showEditImage" (click)="onEditImage(); $event.stopPropagation()" translate>{{ editImageText }}</span>
-        <span *ngIf="showUploadImage" (click)="onUploadImage(); $event.stopPropagation()" translate>{{ uploadImageText }}</span>
-        <span *ngIf="showRemoveImage && image" (click)="onRemoveImage($event); $event.stopPropagation()" translate>{{ removeImageText }}</span>
+  }
+  @if (!onlyViewImage && showDropdown) {
+    <div
+      class="slds-p-vertical--small picture-dropdown"
+      [style.top]="pictureDropdownPosition.top"
+      [style.left]="pictureDropdownPosition.left">
+      @if (showViewImage) {
+        <span (click)="onViewImage(); $event.stopPropagation()" translate>{{ viewImageText }}</span>
+      }
+      @if (showEditImage) {
+        <span (click)="onEditImage(); $event.stopPropagation()" translate>{{ editImageText }}</span>
+      }
+      @if (showUploadImage) {
+        <span (click)="onUploadImage(); $event.stopPropagation()" translate>{{ uploadImageText }}</span>
+      }
+      @if (showRemoveImage && image) {
+        <span (click)="onRemoveImage($event); $event.stopPropagation()" translate>{{ removeImageText }}</span>
+      }
     </div>
+  }
 </div>
 
 <uno-modal headerStr='Crop image'
-           [(open)]="openImgCropper"
-           modalIsDeaf="true">
-    <div>
-        <p class="slds-m-vertical--medium" [style.pointer-events]="openImgCropper ? 'all' : 'none'">
-            <uno-image-cropper [imageChangedEvent]="imageChangedEvent"
-                               [maintainAspectRatio]="false"
-                               [roundCropper]="rounded"
-                               (imageCropped)="imageCropped($event)"
-                               (imageLoaded)="openImgCropper = true">
-            </uno-image-cropper>
-        </p>
-    </div>
+  [(open)]="openImgCropper"
+  modalIsDeaf="true">
+  <div>
+    <p class="slds-m-vertical--medium" [style.pointer-events]="openImgCropper ? 'all' : 'none'">
+      <uno-image-cropper [imageChangedEvent]="imageChangedEvent"
+        [maintainAspectRatio]="false"
+        [roundCropper]="rounded"
+        (imageCropped)="imageCropped($event)"
+        (imageLoaded)="openImgCropper = true">
+      </uno-image-cropper>
+    </p>
+  </div>
 
-    <ng-template unoModalFooter>
-        <button unoButton (click)="openImgCropper = false">Cancel</button>
-        <button unoButton unoType="green" (click)="saveImgCropper();">Save</button>
-    </ng-template>
+  <ng-template unoModalFooter>
+    <button unoButton (click)="openImgCropper = false">Cancel</button>
+    <button unoButton unoType="green" (click)="saveImgCropper();">Save</button>
+  </ng-template>
 
 </uno-modal>
 
-<uno-modal [(open)]="openImgViewer" *ngIf="image">
+@if (image) {
+  <uno-modal [(open)]="openImgViewer">
     <div style="text-align: center">
-        <img [src]="image">
+      <img [src]="image">
     </div>
-</uno-modal>
+  </uno-modal>
+}

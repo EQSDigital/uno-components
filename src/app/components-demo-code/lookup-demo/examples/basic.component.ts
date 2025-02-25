@@ -3,9 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+import { LookupComponent } from 'uno-ui-lib';
+
 @Component({
     selector: 'basic-example',
-    templateUrl: 'basic.component.html'
+    templateUrl: 'basic.component.html',
+    standalone: true,
+    imports: [LookupComponent]
 })
 
 export class BasicComponent {
@@ -27,7 +31,7 @@ export class BasicComponent {
     APIUserObj: any;
 
 
-    constructor(private http: HttpClient) { }
+    constructor(private readonly http: HttpClient) { }
 
     lookup = (query: string, source = this.superheroes): string[] => {
         if (!query) {

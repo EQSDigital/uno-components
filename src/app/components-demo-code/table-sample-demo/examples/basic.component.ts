@@ -1,13 +1,15 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { TableComponent, LocalDataSource, UnoSmartTableSettings, LocalSorter } from 'uno-ui-lib';
+import { TableComponent, LocalDataSource, UnoSmartTableSettings, LocalSorter, UnoTableModule } from 'uno-ui-lib';
 
 // Check @ https://stackoverflow.com/a/48123576
 declare var require: any;
 
 @Component({
     selector: 'basic-example',
-    templateUrl: 'basic.component.html'
+    templateUrl: 'basic.component.html',
+    standalone: true,
+    imports: [UnoTableModule]
 })
 
 export class BasicComponent implements AfterViewInit {

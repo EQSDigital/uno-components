@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
 
+import { DropdownDirective, IconComponent, ButtonDirective } from 'uno-ui-lib';
+
 @Component({
     selector: 'basic-example',
     templateUrl: 'basic.component.html',
-    styleUrls: ['../dropdown-demo.component.css']
+    styleUrls: ['../dropdown-demo.component.css'],
+    standalone: true,
+    imports: [DropdownDirective, IconComponent, ButtonDirective]
 })
 
 export class BasicComponent {

@@ -1,16 +1,18 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 
 import { DefaultEditorDirective } from 'projects/uno-ui-lib/src/lib/table';
+import { InputTagsComponent } from 'uno-ui-lib';
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: `
-        <uno-input-tags
-            [objects]="skills"
-            [selectedObjects]="selectedValues"
-            (objectsSelected)="objectsSelected($event)">
+        <uno-input-tags [objects]="skills"
+                        [selectedObjects]="selectedValues"
+                        (objectsSelected)="objectsSelected($event)">
         </uno-input-tags>
-    `
+    `,
+    standalone: true,
+    imports: [InputTagsComponent]
 })
 
 export class RenderInputTagsComponent extends DefaultEditorDirective implements OnInit {

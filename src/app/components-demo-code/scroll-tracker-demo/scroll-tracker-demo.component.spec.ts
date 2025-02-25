@@ -8,8 +8,8 @@ describe('ScrollTrackerDemoComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [ScrollTrackerDemoComponent]
-        })
+    imports: [ScrollTrackerDemoComponent]
+})
             .compileComponents();
     }));
 

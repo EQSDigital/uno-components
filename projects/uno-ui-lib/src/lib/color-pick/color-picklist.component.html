@@ -9,29 +9,31 @@
       [unoPopoverNubbin]="nubbinPosition"
       (click)="open = !open">
 
-    <button #button
-            type="button"
-            class="slds-uno-picklist--label"
-            style="padding: 0 10px"
-            [class.slds-input]="!isForInlineTableCSS"
-            [class.slds-button]="isForInlineTableCSS"
-            [disabled]="isDisabled">
-        <ng-content></ng-content>
-        <uno-icon icon="down_s" size="x-small" class="slds-m-left_small slds-float--right"></uno-icon>
-    </button>
+  <button #button
+          type="button"
+          class="slds-uno-picklist--label"
+          style="padding: 0 10px"
+          [class.slds-input]="!isForInlineTableCSS"
+          [class.slds-button]="isForInlineTableCSS"
+          [disabled]="isDisabled">
+    <ng-content></ng-content>
+    <uno-icon icon="down_s" size="x-small" class="slds-m-left_small slds-float--right"></uno-icon>
+  </button>
 </span>
 
 <ng-template #colorsContent>
-    <div class="slds-grid slds-wrap slds-p-around--small" #divColors>
-        <!-- Cycle of all [colors] elements: -->
-        <div class="slds-size--1-of-7 slds-p-around--x-small" *ngFor="let item of data; let i = index;"
-             uno-pick-option
-             [unoPickOption]="item">
-            <span class="span-color-picker"
-                  [class.slds-is-active]="isOptionActive(item)"
-                  (click)="selectedElem.emit(item);"
-                  [style.background-color]="item.color">
-            </span>
-        </div>
+  <div class="slds-grid slds-wrap slds-p-around--small" #divColors>
+    <!-- Cycle of all [colors] elements: -->
+    @for (item of data; track item; let i = $index) {
+    <div class="slds-size--1-of-7 slds-p-around--x-small"
+         uno-pick-option
+         [unoPickOption]="item">
+      <span class="span-color-picker"
+            [class.slds-is-active]="isOptionActive(item)"
+            (click)="selectedElem.emit(item);"
+            [style.background-color]="item.color">
+      </span>
     </div>
+    }
+  </div>
 </ng-template>

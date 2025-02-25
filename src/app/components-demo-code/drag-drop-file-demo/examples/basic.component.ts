@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
 
+import { DragDropFileComponent, DragDropImageComponent } from 'uno-ui-lib';
+
 @Component({
     selector: 'basic-example',
-    templateUrl: 'basic.component.html'
+    templateUrl: 'basic.component.html',
+    standalone: true,
+    imports: [DragDropFileComponent, DragDropImageComponent]
 })
 
 export class BasicComponent {

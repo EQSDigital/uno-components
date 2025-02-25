@@ -208,7 +208,8 @@ And you can even have
 </div>
 <div style="text-align: center;">
     Previous content (<strong>larger</strong> container) on former <strong>CLICK icon</strong> (<strong>Download</strong> details):
-    <uno-icon icon="info" size="x-small"
+    <uno-icon icon="info"
+              size="x-small"
               uno-popover-trigger
               unoPopoverPlacement="leftBottom"
               unoPopoverNubbin="right-top"
@@ -218,7 +219,6 @@ And you can even have
               unoPopoverTemplate="downloadContent"
               [unoPopoverTemplateData]="downloadContentData"
               (unoPopoverTemplateEvent)="templateEventEmited($event)"
-
               uno-popover-click-behavior>
     </uno-icon> (check close button!)
 </div>
@@ -245,7 +245,8 @@ And you can even have
 
          uno-popover-click-behavior>
         <uno-icon icon="calendar" size="x-small" color="black" style="position: absolute; top: 0; left: 0; margin: -2px 3px 0 3px;"></uno-icon>
-        <span style="margin-left: 10px; font-size: smaller;">{{ datePickerData.dateChosen ? (datePickerData.dateChosen | date:'EEE, dd/MM/yyyy' ) : 'choose a
-            date...' }}</span>
+        <span style="margin-left: 10px; font-size: smaller;">
+            {{ datePickerData.dateChosen ? (datePickerData.dateChosen | date:'EEE, dd/MM/yyyy' ) : 'choose a date...' }}
+        </span>
     </div>
 </div>

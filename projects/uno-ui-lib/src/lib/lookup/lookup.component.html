@@ -1,19 +1,26 @@
 <div class="slds-lookup slds-form-element"
      data-select="single"
      [class.slds-is-open]="expanded">
-    <label *ngIf="_label" class="slds-form-element__label" [attr.for]="inputId" [unoHelperStringTemplateRef]="_label"></label>
+    @if (_label) {
+    <label class="slds-form-element__label" [attr.for]="inputId" [unoHelperStringTemplateRef]="_label"></label>
+    }
 
     <!-- If a selection was made: -->
-    <div *ngIf="pick" class="slds-form-element__control">
-        <uno-pill unoPillRemove (unoPillRemoveElem)="removeUserSelection()" class="slds-pill_container slds-p-horizontal_small">{{ resolveLabel(pick)
-            }}</uno-pill>
+    @if (pick) {
+    <div class="slds-form-element__control">
+        <uno-pill unoPillRemove (unoPillRemoveElem)="removeUserSelection()" class="slds-pill_container slds-p-horizontal_small">
+            {{ resolveLabel(pick) }}
+        </uno-pill>
     </div>
-    <!-- Default, ready to go: -->
-    <div *ngIf="!pick" class="slds-form-element__control slds-grid">
+    }
+    @else {
+    <div class="slds-form-element__control slds-grid">
 
         <!-- Input search -->
         <div class="slds-grow slds-input-has-icon slds-input-has-icon--right">
-            <uno-icon *ngIf="searchIcon" icon="search" size="x-small" [withOpacity]="false" class="slds-input__icon"></uno-icon>
+            @if (searchIcon) {
+            <uno-icon icon="search" size="x-small" [withOpacity]="false" class="slds-input__icon"></uno-icon>
+            }
             <input class="slds-input slds-lookup__search-input slds-p-right_xx-large"
                    #lookupInput
                    [id]="inputId"
@@ -33,46 +40,41 @@
                    (keydown.ArrowUp)="moveActive($event, -1)"
                    (keydown.Enter)="pickActive($event)" />
         </div>
-
     </div>
+    }
 
     <!-- Dropdown -->
-    <div *ngIf="expanded" class="slds-lookup__menu" role="listbox" [ngSwitch]="!!itemTemplate">
-
+    @if (expanded) {
+    <div class="slds-lookup__menu" role="listbox">
         <ng-content select="[unoLookupHeader]"></ng-content>
 
-        <div *ngSwitchCase="false">
+        <div>
             <ul class="slds-lookup__list" role="presentation"
                 unoScrollTracker
                 (scrollEndReached)="handleScroll($event)">
 
-                <li *ngIf="noResults" class="slds-lookup__item--label">{{ noResultsText }}</li>
-                <li *ngFor="let item of suggestions; let i=index"
-                    (click)="handlePick(item)"
+                @if (noResults) {
+                <li class="slds-lookup__item--label">{{ noResultsText }}</li>
+                }
+
+                @for (item of suggestions; track item; let i = $index) {
+                <li (click)="handlePick(item)"
                     [ngClass]="{'slds-dropdown__item--active': i === activeIndex }">
 
                     <a class="slds-lookup__item-action" [id]="optionId(i)" role="option">
+                        @switch (!!itemTemplate) {
+                        @case (false) {
                         {{ resolveLabel(item) }}
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-        <div *ngSwitchCase="true">
-            <ul class="slds-lookup__list" role="presentation"
-                unoScrollTracker
-                (scrollEndReached)="handleScroll($event)">
-
-                <li *ngIf="noResults" class="slds-lookup__item--label">{{ noResultsText }}</li>
-                <li *ngFor="let item of suggestions; let i=index"
-                    (click)="handlePick(item)"
-                    [ngClass]="{'slds-dropdown__item--active': i === activeIndex }">
-
-                    <a class="slds-lookup__item-action" [id]="optionId(i)" role="option">
+                        }
+                        @case (true) {
                         <ng-template [ngTemplateOutlet]="itemTemplate?.templateRef" [ngTemplateOutletContext]="{$implicit: item}"></ng-template>
+                        }
+                        }
                     </a>
                 </li>
+                }
             </ul>
         </div>
     </div>
+    }
 </div>

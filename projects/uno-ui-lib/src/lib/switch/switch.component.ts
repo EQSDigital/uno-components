@@ -1,24 +1,31 @@
 import { Component, Input, Output, EventEmitter, HostListener, ChangeDetectionStrategy } from '@angular/core';
 
+
 @Component({
     selector: 'uno-switch',
     template: `
         <div class="switch-container" [style.minWidth]="minWidth">
-            <span class="switch"
-                [class.checked]="checked"
-                [class.disabled]="disable"
-                [class.switch-large]="size === 'large'"
-                [class.switch-medium]="size === 'medium'"
-                [class.switch-small]="size === 'small'">
-
-                <mark></mark>
-            </span>
-            <span *ngIf="checked && enabledText" class="uno-switch-boolean enabled-text">{{ enabledText }}</span>
-            <span *ngIf="!checked && disabledText" class="uno-switch-boolean disabled-text">{{ disabledText }}</span>
+          <span class="switch"
+            [class.checked]="checked"
+            [class.disabled]="disable"
+            [class.switch-large]="size === 'large'"
+            [class.switch-medium]="size === 'medium'"
+            [class.switch-small]="size === 'small'">
+        
+            <mark></mark>
+          </span>
+          @if (checked && enabledText) {
+            <span class="uno-switch-boolean enabled-text">{{ enabledText }}</span>
+          }
+          @if (!checked && disabledText) {
+            <span class="uno-switch-boolean disabled-text">{{ disabledText }}</span>
+          }
         </div>
-    `,
+        `,
     styleUrls: ['./switch.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: []
 })
 export class SwitchComponent {
 

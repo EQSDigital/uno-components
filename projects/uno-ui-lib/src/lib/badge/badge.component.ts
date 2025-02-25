@@ -1,10 +1,13 @@
 import { Component, OnChanges, AfterViewInit, ChangeDetectionStrategy, ElementRef, Input } from '@angular/core';
+import { NgClass, NgStyle } from '@angular/common';
 
 @Component({
     selector: 'uno-badge',
     templateUrl: './badge.component.html',
     styleUrls: ['./badge.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgClass, NgStyle]
 })
 export class BadgeComponent implements OnChanges, AfterViewInit {
 

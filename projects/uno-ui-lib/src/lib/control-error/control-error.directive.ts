@@ -10,7 +10,8 @@ import { ControlErrorContainerDirective } from './control-error-container.direct
 // https://netbasal.com/make-your-angular-forms-error-messages-magically-appear-1e32350b7fa5
 
 @Directive({
-    selector: '[formControl], [formControlName]'
+    selector: '[formControl], [formControlName]',
+    standalone: true
 })
 export class ControlErrorDirective implements OnInit, OnDestroy {
     @Input() public customErrors = {};

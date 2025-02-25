@@ -1,42 +1,52 @@
 <uno-smart-table [settings]="settings"
-                 [source]="dataTable"
-                 (internalAction)="gridAffairAction($event)"
+  [source]="dataTable"
+  (internalAction)="gridAffairAction($event)"
 
-                 (userRowSelect)="onUserRowSelect($event)"
+  (userRowSelect)="onUserRowSelect($event)"
 
-                 (create)="isInCreating($event)"
-                 (createSave)="createSaveEvent($event)"
-                 (createConfirm)="confirmRowActionEvent($event, 'create')"
+  (create)="isInCreating($event)"
+  (createSave)="createSaveEvent($event)"
+  (createConfirm)="confirmRowActionEvent($event, 'create')"
 
-                 (edit)="isInEditing($event)"
-                 (selectedElem)="onSelectedElem($event)"
-                 (editSave)="rowActionEditSaveEvent($event)"
-                 (editConfirm)="confirmRowActionEvent($event, 'edit')"
+  (edit)="isInEditing($event)"
+  (selectedElem)="onSelectedElem($event)"
+  (editSave)="rowActionEditSaveEvent($event)"
+  (editConfirm)="confirmRowActionEvent($event, 'edit')"
 
-                 (deleteConfirm)="confirmRowActionEvent($event, 'delete')"
+  (deleteConfirm)="confirmRowActionEvent($event, 'delete')"
 
-                 (rowActionCustomEvent)="rowActionCustomEvent($event)"
-                 (rowActionDownloadCustomEvent)="rowActionDownloadCustomEvent($event)">
-    <ng-template unoTbodyCollapseContent let-row let-form="form" let-grid="grid" let-mode="mode">
-        <tr>
-            <td *ngIf="grid.hasColorRow()" [ngStyle]="{'border-left': '5px solid' + row.data?.color, 'padding': '0' }"></td>
-            <td *ngIf="grid.isMultiSelectVisible()"></td>
-            <td *ngIf="grid.getSetting('tableCollapsible')"></td>
-            <ng-container *ngFor="let cell of row.cells">
-                <td *ngIf="cell.column.isVisibled">
-                    <ng2-smart-table-cell [isInEditing]="row.isInEditing"
-                                          [editingFormGroup]="form"
-                                          [cell]="cell"
-                                          [grid]="grid"
-                                          [row]="row"
-                                          [isNew]="false"
-                                          [mode]="mode"
-                                          [isExpanded]="true"
-                                          [inputClass]="grid.getSetting('edit.inputClass')">
-                    </ng2-smart-table-cell>
-                </td>
-            </ng-container>
-            <td *ngIf="this.grid.showActionColumn('right')"></td>
-        </tr>
-    </ng-template>
+  (rowActionCustomEvent)="rowActionCustomEvent($event)"
+  (rowActionDownloadCustomEvent)="rowActionDownloadCustomEvent($event)">
+  <ng-template unoTbodyCollapseContent let-row let-form="form" let-grid="grid" let-mode="mode">
+    <tr>
+      @if (grid.hasColorRow()) {
+        <td [ngStyle]="{'border-left': '5px solid' + row.data?.color, 'padding': '0' }"></td>
+      }
+      @if (grid.isMultiSelectVisible()) {
+        <td></td>
+      }
+      @if (grid.getSetting('tableCollapsible')) {
+        <td></td>
+      }
+      @for (cell of row.cells; track cell) {
+        @if (cell.column.isVisibled) {
+          <td>
+            <ng2-smart-table-cell [isInEditing]="row.isInEditing"
+              [editingFormGroup]="form"
+              [cell]="cell"
+              [grid]="grid"
+              [row]="row"
+              [isNew]="false"
+              [mode]="mode"
+              [isExpanded]="true"
+              [inputClass]="grid.getSetting('edit.inputClass')">
+            </ng2-smart-table-cell>
+          </td>
+        }
+      }
+      @if (this.grid.showActionColumn('right')) {
+        <td></td>
+      }
+    </tr>
+  </ng-template>
 </uno-smart-table>

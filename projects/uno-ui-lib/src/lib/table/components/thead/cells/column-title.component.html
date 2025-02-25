@@ -1,65 +1,67 @@
 <div class="ng2-smart-title slds-truncate">
-    <span class="ng2-smart-sort" translate>{{ column.title }}</span>
-    <uno-icon [style.visibility]="showIcon ? 'visible' : 'hidden'"
-              icon="filter"
-              size="small"
-              [withOpacity]="false"
-              uno-popover-trigger
-              [unoPopoverOpen]="openPopoverOptions"
-              [unoPopover]="sortFilter"
-              unoPopoverPlacement="bottomLeft"
-              unoPopoverNubbin="top-right"
-              unoPopoverSize="small"
-              (click)="onClick()">
-    </uno-icon>
-    <ng-template #sortFilter>
-        <div class="slds-grid slds-wrap">
-            <ng-container *ngIf="column.isSortable">
-                <div class="slds-size--1-of-1 slds-p-around--x-small open-sans-12"
-                     [style.cursor]="'pointer'"
-                     (click)="_sort($event, sortDirectionEnum.ASC)">
-                    <uno-icon icon="order-down"
-                              [color]="currentDirection === 'asc' ? 'default' : 'grey'"
-                              [withOpacity]="false">
-                    </uno-icon>
-                    <span translate>sort</span> A - Z
-                </div>
-                <div class="slds-size--1-of-1 slds-p-around--x-small open-sans-12"
-                     [style.cursor]="'pointer'"
-                     (click)="_sort($event, sortDirectionEnum.DESC)">
-                    <uno-icon icon="order-up"
-                              [color]="currentDirection === 'desc' ? 'default' : 'grey'"
-                              [withOpacity]="false">
-                    </uno-icon>
-                    <span translate>sort</span> Z - A
-                </div>
-            </ng-container>
-            <ng-container *ngIf="column.filter">
-                <div class="slds-size--1-of-1 slds-p-around--x-small open-sans-bold-10 text-uppercase" translate>
-                    viewItems
-                </div>
-                <div class="slds-size--1-of-1 slds-p-horizontal--x-small nunito-semibold-14">
-                    <input class="slds-input"
-                           (input)="onSearchFilter($event.target.value)"
-                           [placeholder]="('search' | translate) + ' ' + (column.title | translate)" />
-                </div>
-                <div class="slds-size--1-of-1 slds-p-around--x-small open-sans-10 select-unselect">
-                    <span (click)="onSelectAll()" translate>selectAll</span> - <span (click)="onClearAll()" translate>clearAll</span>
-                </div>
-                <div style="height: 287px; overflow: auto">
-                    <div *ngFor="let filter of column.displayedFilters"
-                         class="slds-size--1-of-1 slds-p-around--x-small slds-truncate open-sans-10"
-                         (click)="onCheckFilter(filter)"
-                         [style.cursor]="'pointer'">
-                        <input type="checkbox" class="slds-align-middle" [checked]="filter.checked">
-                        <span class="slds-p-left--x-small slds-align-middle">{{ filter.name }}</span>
-                    </div>
-                </div>
-                <div class="slds-size--1-of-1 slds-p-around--x-small nunito-semibold-14">
-                    <!-- button unoButton unoSize="small" unoType="secondary" translate>cancel</button -->
-                    <button unoButton unoSize="small" unoType="blue" class="slds-float--right" (click)="onApplyFilter()" translate>ok</button>
-                </div>
-            </ng-container>
+  <span class="ng2-smart-sort" translate>{{ column.title }}</span>
+  <uno-icon [style.visibility]="showIcon ? 'visible' : 'hidden'"
+    icon="filter"
+    size="small"
+    [withOpacity]="false"
+    uno-popover-trigger
+    [unoPopoverOpen]="openPopoverOptions"
+    [unoPopover]="sortFilter"
+    unoPopoverPlacement="bottomLeft"
+    unoPopoverNubbin="top-right"
+    unoPopoverSize="small"
+    (click)="onClick()">
+  </uno-icon>
+  <ng-template #sortFilter>
+    <div class="slds-grid slds-wrap">
+      @if (column.isSortable) {
+        <div class="slds-size--1-of-1 slds-p-around--x-small open-sans-12"
+          [style.cursor]="'pointer'"
+          (click)="_sort($event, sortDirectionEnum.ASC)">
+          <uno-icon icon="order-down"
+            [color]="currentDirection === 'asc' ? 'default' : 'grey'"
+            [withOpacity]="false">
+          </uno-icon>
+          <span translate>sort</span> A - Z
         </div>
+        <div class="slds-size--1-of-1 slds-p-around--x-small open-sans-12"
+          [style.cursor]="'pointer'"
+          (click)="_sort($event, sortDirectionEnum.DESC)">
+          <uno-icon icon="order-up"
+            [color]="currentDirection === 'desc' ? 'default' : 'grey'"
+            [withOpacity]="false">
+          </uno-icon>
+          <span translate>sort</span> Z - A
+        </div>
+      }
+      @if (column.filter) {
+        <div class="slds-size--1-of-1 slds-p-around--x-small open-sans-bold-10 text-uppercase" translate>
+          viewItems
+        </div>
+        <div class="slds-size--1-of-1 slds-p-horizontal--x-small nunito-semibold-14">
+          <input class="slds-input"
+            (input)="onSearchFilter($event.target.value)"
+            [placeholder]="('search' | translate) + ' ' + (column.title | translate)" />
+          </div>
+          <div class="slds-size--1-of-1 slds-p-around--x-small open-sans-10 select-unselect">
+            <span (click)="onSelectAll()" translate>selectAll</span> - <span (click)="onClearAll()" translate>clearAll</span>
+          </div>
+          <div style="height: 287px; overflow: auto">
+            @for (filter of column.displayedFilters; track filter) {
+              <div
+                class="slds-size--1-of-1 slds-p-around--x-small slds-truncate open-sans-10"
+                (click)="onCheckFilter(filter)"
+                [style.cursor]="'pointer'">
+                <input type="checkbox" class="slds-align-middle" [checked]="filter.checked">
+                <span class="slds-p-left--x-small slds-align-middle">{{ filter.name }}</span>
+              </div>
+            }
+          </div>
+          <div class="slds-size--1-of-1 slds-p-around--x-small nunito-semibold-14">
+            <!-- button unoButton unoSize="small" unoType="secondary" translate>cancel</button -->
+            <button unoButton unoSize="small" unoType="blue" class="slds-float--right" (click)="onApplyFilter()" translate>ok</button>
+          </div>
+        }
+      </div>
     </ng-template>
-</div>
+  </div>

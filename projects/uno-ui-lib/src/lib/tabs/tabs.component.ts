@@ -3,6 +3,8 @@ import { Component, AfterContentInit, QueryList, ContentChildren, Input, Output,
 import { isInt } from '../../utils/util';
 
 import { TabDirective } from './tab.directive';
+import { TranslateDirective } from '@ngx-translate/core';
+import { NgClass, NgStyle, NgTemplateOutlet } from '@angular/common';
 
 /**
  * The Tabs component contains <unoTab />, TabDirective template
@@ -24,7 +26,9 @@ import { TabDirective } from './tab.directive';
 @Component({
     selector: 'uno-tabs',
     templateUrl: './tabs.component.html',
-    styleUrls: ['./tabs.component.scss']
+    styleUrls: ['./tabs.component.scss'],
+    standalone: true,
+    imports: [NgClass, NgStyle, TranslateDirective, NgTemplateOutlet]
 })
 
 export class TabsComponent implements AfterContentInit {

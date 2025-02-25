@@ -1,42 +1,44 @@
 <div class="slds-p-bottom--large slds-grid">
-    <div class="slds-size--1-of-4 slds-form-element">
-        <label class="slds-form-element__label" for="form-element-01">Number of items</label>
-        <div class="slds-form-element__control">
-            <input class="slds-input" type="number" [(ngModel)]="length" min="0">
-        </div>
+  <div class="slds-size--1-of-4 slds-form-element">
+    <label class="slds-form-element__label" for="form-element-01">Number of items</label>
+    <div class="slds-form-element__control">
+      <input class="slds-input" type="number" [(ngModel)]="length" min="0">
     </div>
+  </div>
 
-    <div class="slds-size--1-of-4 slds-form-element">
-        <label class="slds-form-element__label" for="form-element-01">Page size</label>
-        <div class="slds-form-element__control">
-            <input class="slds-input" type="number" [(ngModel)]="pageSize" min="0">
-        </div>
+  <div class="slds-size--1-of-4 slds-form-element">
+    <label class="slds-form-element__label" for="form-element-01">Page size</label>
+    <div class="slds-form-element__control">
+      <input class="slds-input" type="number" [(ngModel)]="pageSize" min="0">
     </div>
+  </div>
 
-    <div class="slds-size--1-of-4 slds-form-element">
-        <label class="slds-form-element__label" for="form-element-01">Page index</label>
-        <div class="slds-form-element__control">
-            <input class="slds-input" type="number" [(ngModel)]="pageIndex" min="0">
-        </div>
+  <div class="slds-size--1-of-4 slds-form-element">
+    <label class="slds-form-element__label" for="form-element-01">Page index</label>
+    <div class="slds-form-element__control">
+      <input class="slds-input" type="number" [(ngModel)]="pageIndex" min="0">
     </div>
+  </div>
 
-    <div class="slds-size--1-of-4 slds-form-element">
-        <label class="slds-form-element__label" for="form-element-01">Page size options</label>
-        <div class="slds-form-element__control">
-            <input class="slds-input" type="text" [ngModel]="pageSizeOptions" (ngModelChange)="setPageSizeOptions($event)" placeholder="Ex: 10,25,50">
-        </div>
+  <div class="slds-size--1-of-4 slds-form-element">
+    <label class="slds-form-element__label" for="form-element-01">Page size options</label>
+    <div class="slds-form-element__control">
+      <input class="slds-input" type="text" [ngModel]="pageSizeOptions" (ngModelChange)="setPageSizeOptions($event)" placeholder="Ex: 10,25,50">
     </div>
+  </div>
 </div>
 
 <uno-pagination [numItems]="length"
-                [pageSize]="pageSize"
-                [pageIndex]="pageIndex"
-                [pageSizeOptions]="pageSizeOptions"
-                (page)="pageEvent = $event">
+  [pageSize]="pageSize"
+  [pageIndex]="pageIndex"
+  [pageSizeOptions]="pageSizeOptions"
+  (page)="pageEvent = $event">
 </uno-pagination>
 
-<div class="slds-p-top--large" *ngIf="pageEvent">
+@if (pageEvent) {
+  <div class="slds-p-top--large">
     <h4>Page changes event</h4>
     <div>Page size: {{ pageEvent.howManyPerPage }}</div>
     <div>Page index: {{ pageEvent.currentIndex }}</div>
-</div>
+  </div>
+}

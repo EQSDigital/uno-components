@@ -1,6 +1,6 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { TableComponent, ActionCustom, UnoSmartTableSettings, LocalSorter, LocalDataSource } from 'uno-ui-lib';
+import { TableComponent, ActionCustom, UnoSmartTableSettings, LocalSorter, LocalDataSource, UnoTableModule } from 'uno-ui-lib';
 
 // Components that will implemnet customized Cell Editor and Render, for delared fields @ "columns":
 import { EditorLinkComponent } from '../editor-cell-link';
@@ -14,7 +14,9 @@ declare var require: any;
 
 @Component({
     selector: 'basic-example',
-    templateUrl: 'basic.component.html'
+    templateUrl: 'basic.component.html',
+    standalone: true,
+    imports: [UnoTableModule]
 })
 
 export class BasicComponent implements AfterViewInit {
@@ -37,7 +39,7 @@ export class BasicComponent implements AfterViewInit {
         searchTerm: 'teste',
     }
 
-    @ViewChild(TableComponent, { static: true }) private table: TableComponent;
+    @ViewChild(TableComponent, { static: true }) private readonly table: TableComponent;
 
     constructor() {
         this.dataTable = new LocalDataSource(require('../table-data/data.json'));

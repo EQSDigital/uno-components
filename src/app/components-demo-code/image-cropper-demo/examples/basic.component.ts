@@ -1,9 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
-import { ImageCropperComponent, ImageCroppedEvent } from 'uno-ui-lib';
+import { ImageCropperComponent, ImageCroppedEvent, ButtonDirective } from 'uno-ui-lib';
 
 @Component({
     selector: 'basic-example',
-    templateUrl: 'basic.component.html'
+    templateUrl: 'basic.component.html',
+    standalone: true,
+    imports: [ButtonDirective, ImageCropperComponent]
 })
 
 export class BasicComponent {

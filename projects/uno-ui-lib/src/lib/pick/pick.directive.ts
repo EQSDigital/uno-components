@@ -2,7 +2,10 @@ import { Directive, Input, Output, EventEmitter, AfterContentInit} from '@angula
 import { BehaviorSubject } from 'rxjs';
 import { toBoolean } from '../../utils/util';
 
-@Directive({selector: '[unoPick]' })
+@Directive({
+    selector: '[unoPick]',
+    standalone: true
+})
 
 export class PickDirective implements AfterContentInit {
 

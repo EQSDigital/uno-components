@@ -1,42 +1,46 @@
 <mat-form-field [class.form-field]="!dateForm.disable && !dateForm.valid && dateForm.dirty" appearance="outline" style="width: 100%;" id="date">
-    <div class="slds-grid">
-        <ng-container *ngIf="!dateRange">
-            <div style="width: 100%;">
-                <input [formControl]="dateForm"
-                       (click)="markAsDirty()"
-                       class="date-input"
-                       matInput
-                       [matDatepicker]="picker"
-                       [placeholder]="chooseLabel"
-                       (dateChange)="addEvent('change', $event)"
-                       [min]="min"
-                       [max]="max">
-                <mat-datepicker [disabled]="disableCalendar" #picker></mat-datepicker>
-            </div>
-            <div class="slds-align-middle">
-                <uno-icon icon="calendar" (click)="picker.open()" size="small"></uno-icon>
-            </div>
-        </ng-container>
-        <!-- TODO: UPGRADE TO V10 TO BE ABLE TO USE DATE RANGE -->
-        <ng-container *ngIf="dateRange">
-            <div style="width: 100%;">
-                <mat-date-range-input [formGroup]="form" [rangePicker]="pickerRange" [min]="min" [max]="max" (click)="pickerRange.open()">
-                    <input matStartDate formControlName="start" [placeholder]="'startDate' | translate">
-                    <input class="date-input" matEndDate formControlName="end" [placeholder]="'endDate' | translate">
-                </mat-date-range-input>
-                <mat-date-range-picker #pickerRange [disabled]="disableCalendar" (closed)="onCloseDatePickerRange()"></mat-date-range-picker>
-            </div>
-            <div style="padding-top: 8px;">
-                <uno-icon icon="calendar" (click)="pickerRange.open()" size="small"></uno-icon>
-            </div>
-        </ng-container>
+  <div class="slds-grid">
+    @if (!dateRange) {
+    <div style="width: 100%;">
+      <input [formControl]="dateForm"
+             (click)="markAsDirty()"
+             class="date-input"
+             matInput
+             [matDatepicker]="picker"
+             [placeholder]="chooseLabel"
+             (dateChange)="addEvent('change', $event)"
+             [min]="min"
+             [max]="max">
+      <mat-datepicker [disabled]="disableCalendar" #picker></mat-datepicker>
     </div>
+    <div class="slds-align-middle">
+      <uno-icon icon="calendar" (click)="picker.open()" size="small"></uno-icon>
+    </div>
+    }
+    <!-- TODO: UPGRADE TO V10 TO BE ABLE TO USE DATE RANGE -->
+    @if (dateRange) {
+    <div style="width: 100%;">
+      <mat-date-range-input [formGroup]="form" [rangePicker]="pickerRange" [min]="min" [max]="max" (click)="pickerRange.open()">
+        <input matStartDate formControlName="start" [placeholder]="'startDate' | translate">
+        <input class="date-input" matEndDate formControlName="end" [placeholder]="'endDate' | translate">
+      </mat-date-range-input>
+      <mat-date-range-picker #pickerRange [disabled]="disableCalendar" (closed)="onCloseDatePickerRange()"></mat-date-range-picker>
+    </div>
+    <div style="padding-top: 8px;">
+      <uno-icon icon="calendar" (click)="pickerRange.open()" size="small"></uno-icon>
+    </div>
+    }
+  </div>
 </mat-form-field>
-<mat-error *ngIf="dateForm.hasError('required') && dateForm.dirty && !hideError" class="slds-truncate">
-    <uno-icon size="x-small" icon="error_icon" svgType="sprite-color" [withOpacity]="false"></uno-icon>
-    <span class="slds-p-left_xx-small" translate>requiredField</span>
+@if (dateForm.hasError('required') && dateForm.dirty && !hideError) {
+<mat-error class="slds-truncate">
+  <uno-icon size="x-small" icon="error_icon" svgType="sprite-color" [withOpacity]="false"></uno-icon>
+  <span class="slds-p-left_xx-small" translate>requiredField</span>
 </mat-error>
-<mat-error *ngIf="(dateForm.hasError('matDatepickerMin') || dateForm.hasError('matDatepickerMax')) && dateForm.dirty && !hideError" class="slds-truncate">
-    <uno-icon size="x-small" icon="error_icon" svgType="sprite-color" [withOpacity]="false"></uno-icon>
-    <span class="slds-p-left_xx-small" translate>invalidDate</span>
+}
+@if ((dateForm.hasError('matDatepickerMin') || dateForm.hasError('matDatepickerMax')) && dateForm.dirty && !hideError) {
+<mat-error class="slds-truncate">
+  <uno-icon size="x-small" icon="error_icon" svgType="sprite-color" [withOpacity]="false"></uno-icon>
+  <span class="slds-p-left_xx-small" translate>invalidDate</span>
 </mat-error>
+}

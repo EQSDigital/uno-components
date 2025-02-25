@@ -2,13 +2,17 @@ import {
     Component, ChangeDetectionStrategy, HostBinding,
     ChangeDetectorRef, Input, Output, EventEmitter, ViewEncapsulation
 } from '@angular/core';
+import { IconComponent } from '../icon/icon.component';
+
 
 @Component({
     selector: 'uno-pill',
     templateUrl: './pill.component.html',
     styleUrls: ['./pill.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [IconComponent]
 })
 export class PillComponent {
     @Input() closeIcon = 'close';

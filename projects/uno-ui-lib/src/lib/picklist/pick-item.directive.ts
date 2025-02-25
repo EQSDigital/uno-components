@@ -1,6 +1,9 @@
 import { Directive, TemplateRef } from '@angular/core';
 
-@Directive({ selector: '[uno-picklist-item]' })
+@Directive({
+    selector: '[uno-picklist-item]',
+    standalone: true
+})
 
 export class PickItemDirective {
 

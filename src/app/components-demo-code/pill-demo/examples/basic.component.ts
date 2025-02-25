@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
+import { PillComponent, IconComponent, ButtonDirective } from 'uno-ui-lib';
+
 @Component({
     selector: 'basic-example',
-    templateUrl: 'basic.component.html'
+    templateUrl: 'basic.component.html',
+    standalone: true,
+    imports: [PillComponent, IconComponent, ButtonDirective]
 })
 
 export class BasicComponent implements OnInit {

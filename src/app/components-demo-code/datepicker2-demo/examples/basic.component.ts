@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { Datepicker2Component } from 'uno-ui-lib';
 
 @Component({
     selector: 'basic-example',
-    templateUrl: 'basic.component.html'
+    templateUrl: 'basic.component.html',
+    standalone: true,
+    imports: [Datepicker2Component]
 })
 
 export class BasicComponent {

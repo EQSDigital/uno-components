@@ -11,10 +11,7 @@ const openEventEmitter = new EventEmitter<any>();
 
 @Directive({
     selector: '[unoDropdown]',
-    // host: {
-    //     '[class.slds-dropdown-trigger]': 'true',
-    //     '[class.slds-dropdown-trigger--click]': 'true',
-    // },
+    standalone: true,
 })
 export class DropdownDirective implements OnInit, OnDestroy {
 

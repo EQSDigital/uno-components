@@ -7,12 +7,23 @@ import { filter } from 'rxjs/operators';
 import { PickItemDirective } from './pick-item.directive';
 import { PickDirective } from '../pick/pick.directive';
 import { toBoolean } from '../../utils/util';
+import { TranslateDirective } from '@ngx-translate/core';
+import { DropdownItemDirective } from '../dropdown/dropdown-item.directive';
+import { PickOptionDirective } from '../pick/pick-option.directive';
+import { ScrollTrackerDirective } from '../scroll-tracker/scroll-tracker.directive';
+import { FormsModule } from '@angular/forms';
+import { NgClass, NgTemplateOutlet } from '@angular/common';
+import { IconComponent } from '../icon/icon.component';
+import { DropdownTriggerDirective } from '../dropdown/dropdown-trigger.directive';
+import { DropdownDirective } from '../dropdown/dropdown.directive';
 
 @Component({
     selector: 'uno-picklist[unoPick]',
     templateUrl: './picklist.component.html',
     styleUrls: ['./picklist.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [DropdownDirective, DropdownTriggerDirective, IconComponent, NgClass, FormsModule, ScrollTrackerDirective, PickOptionDirective, DropdownItemDirective, TranslateDirective, NgTemplateOutlet]
 })
 export class PicklistComponent implements AfterContentInit, OnDestroy {
 

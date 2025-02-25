@@ -1,9 +1,14 @@
 import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter, OnChanges, HostListener, SimpleChanges } from '@angular/core';
-import { MatDatepickerInputEvent } from '@angular/material/datepicker';
+import { MatDatepickerInputEvent, MatDatepickerInput, MatDatepicker, MatDateRangeInput, MatStartDate, MatEndDate, MatDateRangePicker } from '@angular/material/datepicker';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
-import { Validators, UntypedFormControl, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { Validators, UntypedFormControl, UntypedFormBuilder, UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDateFormats } from '@angular/material/core';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
+import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
+import { IconComponent } from '../icon/icon.component';
+import { MatInput } from '@angular/material/input';
+
+import { MatFormField, MatError } from '@angular/material/form-field';
 
 class CustomDateAdapter extends MomentDateAdapter {
     getDayOfWeekNames(style: 'long' | 'short' | 'narrow') {
@@ -31,7 +36,6 @@ export const MY_FORMATS: MatDateFormats = {
         // the component level here, due to limitations of our example generation script.
         { provide: MAT_DATE_LOCALE, useValue: 'pt-PT' },
         { provide: DateAdapter, useClass: CustomDateAdapter, deps: [MAT_DATE_LOCALE] },
-
         // `MomentDateAdapter` and `MAT_MOMENT_DATE_FORMATS` can be automatically provided by importing
         // `MatMomentDateModule` in your applications root module. We provide it at the component level
         // here, due to limitations of our example generation script.
@@ -42,7 +46,9 @@ export const MY_FORMATS: MatDateFormats = {
         // },
         { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
     ],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [MatFormField, MatInput, FormsModule, MatDatepickerInput, ReactiveFormsModule, MatDatepicker, IconComponent, MatDateRangeInput, MatStartDate, MatEndDate, MatDateRangePicker, MatError, TranslateDirective, TranslatePipe]
 })
 export class Datepicker2Component implements OnChanges {
 

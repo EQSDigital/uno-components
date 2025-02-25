@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { InputTagsComponent, ModalComponent, ButtonDirective } from 'uno-ui-lib';
 
 @Component({
     selector: 'basic-example',
     templateUrl: 'basic.component.html',
-    styleUrls: ['../tag-input-demo.component.scss']
+    styleUrls: ['../tag-input-demo.component.scss'],
+    standalone: true,
+    imports: [InputTagsComponent, ModalComponent, ButtonDirective]
 })
 
 export class BasicComponent {

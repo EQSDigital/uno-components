@@ -1,9 +1,20 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
+import { TranslateDirective } from '@ngx-translate/core';
+
+import { ButtonDirective } from '../button/button.directive';
+import { ModalFooterDirective } from '../modal/footer.directive';
+import { ImageCropperComponent } from '../image-cropper/image-cropper.component';
+import { ModalComponent } from '../modal/modal.component';
+import { IconComponent } from '../icon/icon.component';
+import { DragAndDropImageDirective } from './drag-and-drop-image.directive';
+
 @Component({
     selector: 'uno-drag-drop-image',
     templateUrl: 'drag-drop-image.component.html',
-    styleUrls: ['drag-drop-image.component.scss']
+    styleUrls: ['drag-drop-image.component.scss'],
+    standalone: true,
+    imports: [DragAndDropImageDirective, IconComponent, TranslateDirective, ModalComponent, ImageCropperComponent, ModalFooterDirective, ButtonDirective]
 })
 
 export class DragDropImageComponent {
@@ -96,7 +107,7 @@ export class DragDropImageComponent {
     saveImgCropper() {
         this.openImgCropper = false;
 
-        if (this.savedImageCropped && this.savedImageCropped.target) {
+        if (this.savedImageCropped?.target) {
             const reader = new FileReader;
 
             reader.onload = () => {

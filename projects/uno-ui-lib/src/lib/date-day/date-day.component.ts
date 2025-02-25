@@ -3,7 +3,8 @@ import { Component, Input, HostBinding, ChangeDetectionStrategy } from '@angular
 @Component({
     selector: 'td[uno-date-day]',
     template: ` <span class="slds-day">{{ label }}</span>`,
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true
 })
 export class DateDayComponent {
 

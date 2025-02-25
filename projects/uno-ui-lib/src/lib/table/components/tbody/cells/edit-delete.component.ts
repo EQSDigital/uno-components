@@ -2,47 +2,59 @@ import { Component, Input, Output, EventEmitter, OnChanges, ChangeDetectionStrat
 
 import { Grid } from '../../../lib/grid';
 import { Row } from '../../../lib/data-set/row';
+import { TranslatePipe } from '@ngx-translate/core';
+import { IconComponent } from '../../../../icon/icon.component';
+
 
 @Component({
     selector: 'ng2-st-tbody-edit-delete',
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: `
-        <uno-icon [id]="edit"
-                  *ngIf="!editRowProperty && isActionEdit"
-                  icon="edit"
-                  size="small"
-                  class="uno-smart-table-action uno-smart-table-action-edit-edit"
-                  [title]="editRowButtonContent | translate"
-                  (click)="onEdit($event)">
-        </uno-icon>
-
-        <uno-icon [id]="edit"
-                  *ngIf="row.data[editRowProperty] && isActionEdit"
-                  icon="edit"
-                  size="small"
-                  class="uno-smart-table-action uno-smart-table-action-edit-edit"
-                  [title]="editRowButtonContent | translate"
-                  (click)="onEdit($event)">
-        </uno-icon>
-
-        <uno-icon id="trash"
-                  *ngIf="!deleteRowProperty && isActionDelete"
-                  icon="trash"
-                  size="small"
-                  class="uno-smart-table-action uno-smart-table-action-delete-delete"
-                  [title]="deleteRowButtonContent | translate"
-                  (click)="onDelete($event)">
-        </uno-icon>
-
-        <uno-icon id="trash"
-                  *ngIf="row.data[deleteRowProperty] && isActionDelete"
-                  icon="trash"
-                  size="small"
-                  class="uno-smart-table-action uno-smart-table-action-delete-delete"
-                  [title]="deleteRowButtonContent | translate"
-                  (click)="onDelete($event)">
-        </uno-icon>
-  `,
+        @if (!editRowProperty && isActionEdit) {
+          <uno-icon [id]="edit"
+            icon="edit"
+            size="small"
+            class="uno-smart-table-action uno-smart-table-action-edit-edit"
+            [title]="editRowButtonContent | translate"
+            (click)="onEdit($event)">
+          </uno-icon>
+        }
+        
+        @if (row.data[editRowProperty] && isActionEdit) {
+          <uno-icon [id]="edit"
+            icon="edit"
+            size="small"
+            class="uno-smart-table-action uno-smart-table-action-edit-edit"
+            [title]="editRowButtonContent | translate"
+            (click)="onEdit($event)">
+          </uno-icon>
+        }
+        
+        @if (!deleteRowProperty && isActionDelete) {
+          <uno-icon id="trash"
+            icon="trash"
+            size="small"
+            class="uno-smart-table-action uno-smart-table-action-delete-delete"
+            [title]="deleteRowButtonContent | translate"
+            (click)="onDelete($event)">
+          </uno-icon>
+        }
+        
+        @if (row.data[deleteRowProperty] && isActionDelete) {
+          <uno-icon id="trash"
+            icon="trash"
+            size="small"
+            class="uno-smart-table-action uno-smart-table-action-delete-delete"
+            [title]="deleteRowButtonContent | translate"
+            (click)="onDelete($event)">
+          </uno-icon>
+        }
+        `,
+    standalone: true,
+    imports: [
+    IconComponent,
+    TranslatePipe
+],
 })
 export class TbodyEditDeleteComponent implements OnChanges {
 

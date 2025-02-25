@@ -1,15 +1,24 @@
-import { Component, OnChanges, AfterContentInit, Input, Output, EventEmitter, ElementRef, Renderer2, ChangeDetectorRef, OnDestroy, ChangeDetectionStrategy, Host } from '@angular/core';
-import { UntypedFormGroup } from '@angular/forms';
+import { Component, OnChanges, AfterContentInit, Input, Output, EventEmitter, ElementRef, Renderer2, ChangeDetectorRef, OnDestroy, ChangeDetectionStrategy, Host, forwardRef } from '@angular/core';
+import { UntypedFormGroup, FormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
 import { Grid } from '../../lib/grid';
 import { TbodyCollapseContentDirective } from './tbody-collapse-content.directive';
 import { Row } from '../../../../lib/table/lib/data-set/row';
+import { TbodyEditDeleteComponent } from './cells/edit-delete.component';
+import { TbodySaveCancelComponent } from './cells/save-cancel.component';
+import { CellComponent } from '../cell/cell.component';
+import { TranslatePipe, TranslateDirective } from '@ngx-translate/core';
+import { PopoverTriggerDirective, PopoverClickBehaviorDirective } from '../../../popover/popover.component';
+import { IconComponent } from '../../../icon/icon.component';
+import { NgClass, NgStyle, NgTemplateOutlet } from '@angular/common';
 
 @Component({
     selector: '[ng2-st-tbody]',
     styleUrls: ['./tbody.component.scss'],
-    templateUrl: './tbody.component.html'
+    templateUrl: './tbody.component.html',
+    standalone: true,
+    imports: [NgClass, NgStyle, FormsModule, IconComponent, CellComponent, TbodySaveCancelComponent, forwardRef(() => TbodyCustomComponent), TbodyEditDeleteComponent, NgTemplateOutlet, TranslateDirective]
 })
 export class Ng2SmartTableTbodyComponent implements OnChanges, AfterContentInit, OnDestroy {
 
@@ -257,46 +266,49 @@ export class Ng2SmartTableTbodyComponent implements OnChanges, AfterContentInit,
     selector: 'ng2-st-tbody-custom',
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: `
-        <ng-container *ngFor="let action of grid.getSetting('actions.custom')">
-
-            <!-- This container will be repeated for ALL rows: -->
+        @for (action of grid.getSetting('actions.custom'); track action) {
+          <!-- This container will be repeated for ALL rows: -->
+          @if (!action.rowProperty && action.visible) {
             <uno-icon [id]="action.icon"
-                      *ngIf="!action.rowProperty && action.visible"
-                      size="small"
-                      [icon]="action.icon"
-                      class="slds-button__icon--left uno-smart-table-action uno-smart-table-action-custom-custom"
-                      [title]="action.title | translate"
-                      (click)="onCustom(action, $event)">
+              size="small"
+              [icon]="action.icon"
+              class="slds-button__icon--left uno-smart-table-action uno-smart-table-action-custom-custom"
+              [title]="action.title | translate"
+              (click)="onCustom(action, $event)">
             </uno-icon>
-
-            <!-- This container will be repeated ONLY on config property "rowProperty" passed in @ TableDemoComponent app: -->
+          }
+          <!-- This container will be repeated ONLY on config property "rowProperty" passed in @ TableDemoComponent app: -->
+          @if (row.data[action.rowProperty] && action.visible) {
             <uno-icon [id]="action.icon"
-                      *ngIf="row.data[action.rowProperty] && action.visible"
-                      size="small"
-                      [icon]="action.icon"
-                      [color]="action.color || 'default'"
-                      class="slds-button__icon--left uno-smart-table-action uno-smart-table-action-custom-custom"
-                      [title]="action.title | translate"
-                      (click)="onCustom(action, $event)">
+              size="small"
+              [icon]="action.icon"
+              [color]="action.color || 'default'"
+              class="slds-button__icon--left uno-smart-table-action uno-smart-table-action-custom-custom"
+              [title]="action.title | translate"
+              (click)="onCustom(action, $event)">
             </uno-icon>
-        </ng-container>
-
-        <uno-icon id="down"
-                  *ngIf="row.data?.downloadContentData"
-                  icon="down"
-                  size="small"
-                  uno-popover-trigger
-                  unoPopoverPlacement="leftBottom"
-                  unoPopoverNubbin="right-top"
-                  unoPopoverSize="large"
-                  unoPopoverTemplate="downloadContent"
-                  [unoPopoverTemplateData]="row.data?.downloadContentData"
-                  uno-popover-click-behavior
-                  (unoPopoverTemplateEvent)="downloadInnerEventEmited($event)"
-                  class="slds-button__icon--left uno-smart-table-action uno-smart-table-action-custom-custom"
-                  title="Files to download">
-        </uno-icon>
-    `
+          }
+        }
+        
+        @if (row.data?.downloadContentData) {
+          <uno-icon id="down"
+            icon="down"
+            size="small"
+            uno-popover-trigger
+            unoPopoverPlacement="leftBottom"
+            unoPopoverNubbin="right-top"
+            unoPopoverSize="large"
+            unoPopoverTemplate="downloadContent"
+            [unoPopoverTemplateData]="row.data?.downloadContentData"
+            uno-popover-click-behavior
+            (unoPopoverTemplateEvent)="downloadInnerEventEmited($event)"
+            class="slds-button__icon--left uno-smart-table-action uno-smart-table-action-custom-custom"
+            title="Files to download">
+          </uno-icon>
+        }
+        `,
+    standalone: true,
+    imports: [IconComponent, PopoverTriggerDirective, PopoverClickBehaviorDirective, TranslatePipe]
 })
 export class TbodyCustomComponent {
 

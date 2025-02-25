@@ -1,63 +1,82 @@
 <div class="slds-grid slds-grid--vertical-align-center border"
-     [class.border--cursor]="disabled"
-     unoDragDropImage
-     [multiple]="false"
-     [disabled]="disabled"
-     (fileDropped)="onFileDropped($event)"
-     (click)="onUploadImage()">
-    <ng-container *ngIf="!image; else showFile">
-        <div class="slds-align--absolute-center border-dots">
-            <uno-icon icon="upload" color="black" class="slds-button__icon--left"></uno-icon>
-            <span class="slds-m-right--small" style="font-size: 17px; color: var(--light-gray-9);" translate>{{label}}</span>
-        </div>
-    </ng-container>
-    <ng-template #showFile>
-        <img src="{{image}}" style="height: 52px; justify-content: left;" />
-    </ng-template>
-    <input #fileInput id="file-input" type="file" [multiple]="false">
+  [class.border--cursor]="disabled"
+  unoDragDropImage
+  [multiple]="false"
+  [disabled]="disabled"
+  (fileDropped)="onFileDropped($event)"
+  (click)="onUploadImage()">
+  @if (!image) {
+    <div class="slds-align--absolute-center border-dots">
+      <uno-icon icon="upload" color="black" class="slds-button__icon--left"></uno-icon>
+      <span class="slds-m-right--small" style="font-size: 17px; color: var(--light-gray-9);" translate>{{label}}</span>
+    </div>
+  } @else {
+    <img src="{{image}}" style="height: 52px; justify-content: left;" />
+  }
+  <input #fileInput id="file-input" type="file" [multiple]="false">
 </div>
-<div *ngIf="image;" class="slds-size--1-of-1 slds-p-top--x-small">
-    <span [ngSwitch]="originalFileNameType?.type">
-        <uno-icon class="slds-button__icon--left" *ngSwitchCase="'image/jpg'" icon="file_jpg" svgType="sprite-color" [withOpacity]="false"></uno-icon>
-        <uno-icon class="slds-button__icon--left" *ngSwitchCase="'image/jpeg'" icon="file_jpg" svgType="sprite-color" [withOpacity]="false"></uno-icon>
-        <uno-icon class="slds-button__icon--left" *ngSwitchCase="'image/png'" icon="file_png" svgType="sprite-color" [withOpacity]="false"></uno-icon>
+@if (image;) {
+  <div class="slds-size--1-of-1 slds-p-top--x-small">
+    <span>
+      @switch (originalFileNameType?.type) {
+        @case ('image/jpg') {
+          <uno-icon class="slds-button__icon--left" icon="file_jpg" svgType="sprite-color" [withOpacity]="false"></uno-icon>
+        }
+        @case ('image/jpeg') {
+          <uno-icon class="slds-button__icon--left" icon="file_jpg" svgType="sprite-color" [withOpacity]="false"></uno-icon>
+        }
+        @case ('image/png') {
+          <uno-icon class="slds-button__icon--left" icon="file_png" svgType="sprite-color" [withOpacity]="false"></uno-icon>
+        }
+      }
     </span>
     <span class="slds-m-right--small" class="open-sans-semibold-14">{{ originalFileNameType?.name }}</span>
-    <uno-icon *ngIf="!disabledDelete" icon="trash" size="small" class="slds-button__icon--right" (click)="onDeleteFile($event)"
-              style="float: right"></uno-icon>
-    <uno-icon *ngIf="!disabledDownload" icon="download_l" size="small" class="slds-button__icon--right" (click)="onDownloadFile($event)"
-              style="float: right"></uno-icon>
-    <uno-icon *ngIf="!disabled" icon="upload" size="small" class="slds-button__icon--right" (click)="onUploadImageIcon()" style="float: right"></uno-icon>
-</div>
-<div *ngIf="fileUploadIsToBig" class="slds-col" style="color: var(--special-red-2)">
+    @if (!disabledDelete) {
+      <uno-icon icon="trash" size="small" class="slds-button__icon--right" (click)="onDeleteFile($event)"
+      style="float: right"></uno-icon>
+    }
+    @if (!disabledDownload) {
+      <uno-icon icon="download_l" size="small" class="slds-button__icon--right" (click)="onDownloadFile($event)"
+      style="float: right"></uno-icon>
+    }
+    @if (!disabled) {
+      <uno-icon icon="upload" size="small" class="slds-button__icon--right" (click)="onUploadImageIcon()" style="float: right"></uno-icon>
+    }
+  </div>
+}
+@if (fileUploadIsToBig) {
+  <div class="slds-col" style="color: var(--special-red-2)">
     <span translate>fileSizeExceed</span> {{ file?.size / 1000000 }}mb
-</div>
+  </div>
+}
 
 
 <uno-modal headerStr='Crop image'
-           [(open)]="openImgCropper"
-           modalIsDeaf="true">
+  [(open)]="openImgCropper"
+  modalIsDeaf="true">
 
-    <div>
-        <p class="slds-m-vertical--medium" [style.pointer-events]="openImgCropper ? 'all' : 'none'">
-            <uno-image-cropper [imageChangedEvent]="imageChangedEvent"
-                               [maintainAspectRatio]="false"
-                               [roundCropper]="false"
-                               (imageCropped)="imageCropped($event)"
-                               (imageLoaded)="openImgCropper = true">
-            </uno-image-cropper>
-        </p>
-    </div>
+  <div>
+    <p class="slds-m-vertical--medium" [style.pointer-events]="openImgCropper ? 'all' : 'none'">
+      <uno-image-cropper [imageChangedEvent]="imageChangedEvent"
+        [maintainAspectRatio]="false"
+        [roundCropper]="false"
+        (imageCropped)="imageCropped($event)"
+        (imageLoaded)="openImgCropper = true">
+      </uno-image-cropper>
+    </p>
+  </div>
 
-    <ng-template unoModalFooter>
-        <button unoButton (click)="openImgCropper = false">Cancel</button>
-        <button unoButton unoType="green" (click)="saveImgCropper();">Save</button>
-    </ng-template>
+  <ng-template unoModalFooter>
+    <button unoButton (click)="openImgCropper = false">Cancel</button>
+    <button unoButton unoType="green" (click)="saveImgCropper();">Save</button>
+  </ng-template>
 
 </uno-modal>
 
-<uno-modal [(open)]="openImgViewer" *ngIf="image">
+@if (image) {
+  <uno-modal [(open)]="openImgViewer">
     <div style="text-align: center">
-        <img [src]="image">
+      <img [src]="image">
     </div>
-</uno-modal>
+  </uno-modal>
+}

@@ -1,10 +1,15 @@
-import { Component, ChangeDetectionStrategy, Input, Output, ElementRef, Renderer2, ChangeDetectorRef, EventEmitter, HostBinding, HostListener, AfterViewInit, Directive, TemplateRef, OnDestroy, ComponentRef, EmbeddedViewRef, ViewContainerRef, Injector, NgZone } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, Output, ElementRef, Renderer2, ChangeDetectorRef, EventEmitter, HostBinding, HostListener, AfterViewInit, Directive, TemplateRef, OnDestroy, ComponentRef, EmbeddedViewRef, ViewContainerRef, Injector, NgZone, forwardRef } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
 import Tether from 'tether';
+import { NgClass, DatePipe } from '@angular/common';
+import { TranslateDirective } from '@ngx-translate/core';
 
 import { replaceClass, toBoolean, uniqueId } from '../../utils/util';
 import { placement } from './placements';
+import { DatepickerComponent } from '../datepicker/datepicker.component';
+import { IconComponent } from '../icon/icon.component';
+import { BadgeComponent } from '../badge';
 
 export type Direction = 'top' | 'top-left' | 'top-right' |
     'right' | 'right-top' | 'right-bottom' |
@@ -17,7 +22,9 @@ export type Size = 'small' | 'medium' | 'large';
     selector: 'uno-popover',
     templateUrl: './popover.component.html',
     styleUrls: ['./popover.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgClass, IconComponent, TranslateDirective, forwardRef(() => PopoverTriggerDirective), forwardRef(() => PopoverBehaviorDirective), DatepickerComponent, DatePipe, BadgeComponent]
 })
 export class PopoverComponent implements AfterViewInit {
 
@@ -58,7 +65,7 @@ export class PopoverComponent implements AfterViewInit {
     }
 
     @Output() afterViewInit = new EventEmitter();
-    // tslint:disable-next-line:no-output-on-prefix
+
     @Output() onInteraction = new EventEmitter<boolean>();
     // Emit ANY EVENT happening on <uno-popover /> on a specific <ng-template /> TEMPLATE:
     @Output() templateEventEmiter = new EventEmitter<any>();
@@ -145,7 +152,8 @@ export class PopoverComponent implements AfterViewInit {
 
 @Directive({
     selector: '[uno-popover-trigger]',
-    exportAs: 'unoPopoverTrigger'
+    exportAs: 'unoPopoverTrigger',
+    standalone: true
 })
 export class PopoverTriggerDirective implements OnDestroy {
 
@@ -224,11 +232,11 @@ export class PopoverTriggerDirective implements OnDestroy {
     private interactive$: Subscription;
 
     constructor(
-        private element: ElementRef,
-        private viewContainer: ViewContainerRef,
-        private injector: Injector,
-        private ngZone: NgZone,
-        private renderer: Renderer2
+        private readonly element: ElementRef,
+        private readonly viewContainer: ViewContainerRef,
+        private readonly injector: Injector,
+        private readonly ngZone: NgZone,
+        private readonly renderer: Renderer2
     ) { }
 
     // Expose open method
@@ -394,7 +402,10 @@ export class PopoverTriggerDirective implements OnDestroy {
 }
 
 
-@Directive({ selector: '[uno-popover-click-behavior]' })
+@Directive({
+    selector: '[uno-popover-click-behavior]',
+    standalone: true
+})
 export class PopoverClickBehaviorDirective {
 
     triggerElement: HTMLElement;
@@ -405,7 +416,7 @@ export class PopoverClickBehaviorDirective {
         // On ClickToClose Directive, we also have access to all Trigger Directive's Methods:
         // (like "unoPopover", "unoPopoverHeader", "unoPopoverOpen()", etc.)
         // *********************************************************************************
-        private trigger: PopoverTriggerDirective,
+        private readonly trigger: PopoverTriggerDirective,
     ) { }
 
     // Clicking specific on TRIGGER (icon, button, div, span, etc.):
@@ -430,7 +441,7 @@ export class PopoverClickBehaviorDirective {
 
     // Clicking... all over!
     @HostListener('document:click', ['$event'])
-    public closePopoverTrigger (evt) {
+    public closePopoverTrigger(evt) {
         // Must be opened, to close it! ;-)
         if (this.isInfoPopoverOpened === true) {
 
@@ -452,7 +463,10 @@ export class PopoverClickBehaviorDirective {
 
 }
 
-@Directive({ selector: '[unoPopoverBehavior]' })
+@Directive({
+    selector: '[unoPopoverBehavior]',
+    standalone: true
+})
 export class PopoverBehaviorDirective {
 
     @HostBinding('attr.tabindex') public tabindex = 0;
@@ -462,7 +476,7 @@ export class PopoverBehaviorDirective {
         // On Behaviour Directive, we also have access to all Trigger Directive's Methods:
         // (like "unoPopover", "unoPopoverHeader", "unoPopoverOpen()", etc.)
         // *********************************************************************************
-        private trigger: PopoverTriggerDirective
+        private readonly trigger: PopoverTriggerDirective
     ) { }
 
     @HostListener('mouseenter')

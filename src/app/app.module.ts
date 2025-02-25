@@ -24,27 +24,4 @@ const routes: Routes = [
     },
 ];
 
-@NgModule({
-    declarations: [
-        AppComponent
-    ],
-    imports: [
-        BrowserAnimationsModule,
-        LayoutModule,
-        HttpClientModule,
-        TranslateModule.forRoot({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: HttpLoaderFactory,
-                deps: [HttpClient]
-            }
-        }),
-        RouterModule.forRoot(routes, {
-            useHash: true,
-            scrollPositionRestoration: 'enabled',
-        })
-    ],
-    providers: [],
-    bootstrap: [AppComponent]
-})
-export class AppModule { }
+

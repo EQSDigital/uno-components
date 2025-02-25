@@ -30,9 +30,7 @@ const routes: Routes = [
         MarkdownModule.forRoot({
             loader: HttpClient,
             sanitize: SecurityContext.NONE
-        })
-    ],
-    declarations: [
+        }),
         ComponentsComponent
     ]
 })

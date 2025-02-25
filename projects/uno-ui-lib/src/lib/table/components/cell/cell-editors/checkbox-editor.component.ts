@@ -2,40 +2,51 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 
 import { DefaultEditorDirective } from '../../../lib/editor-cell-default';
 
+import { PopoverTriggerDirective } from '../../../../popover/popover.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @Component({
     selector: 'checkbox-editor',
     styleUrls: ['./editor.component.scss'],
     template: `
         <div class="form-cell form-editor-checkbox" [formGroup]="editingFormGroup">
-            <input
-                type="checkbox"
-                class="form-control"
-
-                [formControlName]="cell.column.id"
-                [name]="cell.column.id"
-
-                (click)="onClick.emit($event)"
-                (change)="onChange($event)"
-
-                uno-popover-trigger
-                [unoPopover]="formErrorsContent"
-                [unoPopoverOpen]="openValidatorPopover"
-                unoPopoverSize="small"
-                unoPopoverTooltip="true"
-                [unoPopoverTheme]="cell.column.editor?.inputPopoverTheme || 'info'" >
-        </div>
-
-        <!-- This Controller's Input Validator errors: -->
-        <ng-template #formErrorsContent>
-            <ng-container *ngFor="let errors of errorsData">
-                <ng-container *ngIf="errors.input === cell.column.id">
-                    <div *ngFor="let strError of errors.translated">
-                        {{ strError }}
-                    </div>
-                </ng-container>
-            </ng-container>
-        </ng-template>
-    `,
+          <input
+            type="checkbox"
+            class="form-control"
+        
+            [formControlName]="cell.column.id"
+            [name]="cell.column.id"
+        
+            (click)="onClick.emit($event)"
+            (change)="onChange($event)"
+        
+            uno-popover-trigger
+            [unoPopover]="formErrorsContent"
+            [unoPopoverOpen]="openValidatorPopover"
+            unoPopoverSize="small"
+            unoPopoverTooltip="true"
+            [unoPopoverTheme]="cell.column.editor?.inputPopoverTheme || 'info'" >
+          </div>
+        
+          <!-- This Controller's Input Validator errors: -->
+          <ng-template #formErrorsContent>
+            @for (errors of errorsData; track errors) {
+              @if (errors.input === cell.column.id) {
+                @for (strError of errors.translated; track strError) {
+                  <div>
+                    {{ strError }}
+                  </div>
+                }
+              }
+            }
+          </ng-template>
+        `,
+    standalone: true,
+    imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    PopoverTriggerDirective
+],
 })
 export class CheckboxEditorComponent extends DefaultEditorDirective implements OnInit {
 

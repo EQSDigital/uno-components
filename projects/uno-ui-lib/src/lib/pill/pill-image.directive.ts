@@ -2,6 +2,7 @@ import { Directive, AfterContentInit, ElementRef, Renderer2 } from '@angular/cor
 
 @Directive({
     selector: '[unoPillImage]',
+    standalone: true,
 })
 export class PillImageDirective implements AfterContentInit {
 

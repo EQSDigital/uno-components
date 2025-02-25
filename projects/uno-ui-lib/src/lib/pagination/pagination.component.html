@@ -1,50 +1,69 @@
 <div class="slds-grid slds-wrap slds-grid--vertical-align-center">
-    <div class="slds-size--5-of-12 slds-grid slds-wrap">
-        <div class="slds-size--1-of-6" style="position: relative" *ngIf="pageSizeOptions.length > 1">
-            <div class="slds-dropdown-trigger open-sans-semibold-12" (clickOutside)="onClickedOutside($event)">
-                <button class="drop-select-num-items button-style slds-grid slds-grid--vertical-align-center" (click)="showList = !showList">
-                    <span class="slds-p-horizontal--xx-small">{{ pageSize }}</span>
-                    <uno-icon id="order_down" icon="order-down"></uno-icon>
-                </button>
-            </div>
-            <div class="slds-dropdown slds-dropdown--bottom" *ngIf="showList">
-                <ul class="slds-dropdown__list" role="menu">
-                    <li class="slds-dropdown__item" role="presentation" *ngFor="let item of displayPageSizeOptions; let index = index">
-                        <a role="menuitem" [attr.tabindex]="index" (click)="changePageSize(item); showList = !showList">
-                            <span class="slds-truncate" [attr.title]="item">{{ item }}</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+  <div class="slds-size--5-of-12 slds-grid slds-wrap">
+    @if (pageSizeOptions.length > 1) {
+      <div class="slds-size--1-of-6" style="position: relative">
+        <div class="slds-dropdown-trigger open-sans-semibold-12" (clickOutside)="onClickedOutside($event)">
+          <button class="drop-select-num-items button-style slds-grid slds-grid--vertical-align-center" (click)="showList = !showList">
+            <span class="slds-p-horizontal--xx-small">{{ pageSize }}</span>
+            <uno-icon id="order_down" icon="order-down"></uno-icon>
+          </button>
         </div>
-        <div class="slds-size--5-of-6 open-sans-12 slds-p-left--small">
-            <span translate>itemsPerPage</span> | {{ startRange }} - {{ endRange }} <span translate>of</span> {{ numItems }}
-        </div>
+        @if (showList) {
+          <div class="slds-dropdown slds-dropdown--bottom">
+            <ul class="slds-dropdown__list" role="menu">
+              @for (item of displayPageSizeOptions; track item; let index = $index) {
+                <li class="slds-dropdown__item" role="presentation">
+                  <a role="menuitem" [attr.tabindex]="index" (click)="changePageSize(item); showList = !showList">
+                    <span class="slds-truncate" [attr.title]="item">{{ item }}</span>
+                  </a>
+                </li>
+              }
+            </ul>
+          </div>
+        }
+      </div>
+    }
+    <div class="slds-size--5-of-6 open-sans-12 slds-p-left--small">
+      <span translate>itemsPerPage</span> | {{ startRange }} - {{ endRange }} <span translate>of</span> {{ numItems }}
     </div>
-    <div class="slds-size--7-of-12 slds-grid slds-grid--vertical-align-center slds-grid--align-end">
-        <div class="open-sans-12">
-            {{ numberOfPages === 0 ? 0 : pageIndex + 1 }} <span translate>of</span> {{ numberOfPages }} <span translate>pages</span>
-        </div>
-        <ng-container *ngIf="numItems > pageSize">
-            <uno-icon *ngIf="pageIndex > 0" id="first_page" icon="left-pipe-special" (click)="firstPage()"></uno-icon>
-            <uno-icon *ngIf="pageIndex > 0" id="back_page" icon="back-special" (click)="previousPage()"></uno-icon>
-
-            <div *ngFor="let page of pages">
-                <div *ngIf="page.label === '...'">
-                    <label>{{ page.label }}</label>
-                </div>
-                <div class="open-sans-12 pagination-controls"
-                     *ngIf="pageIndex + 1 !== page.value && page.label !== '...'"
-                     (click)="setNumber($event, page.value - 1)">
-                    {{ page.label }}
-                </div>
-                <div class="open-sans-semibold-12 pagination-controls" [style.cursor]="'default'" *ngIf="pageIndex + 1 === page.value">
-                    {{ page.label }}
-                </div>
-            </div>
-
-            <uno-icon *ngIf="pageIndex + 1 < numberOfPages" id="next_page" icon="next-special" (click)="nextPage()"></uno-icon>
-            <uno-icon *ngIf="pageIndex + 1 < numberOfPages" id="last_page" icon="right-pipe-special" (click)="lastPage()"></uno-icon>
-        </ng-container>
+  </div>
+  <div class="slds-size--7-of-12 slds-grid slds-grid--vertical-align-center slds-grid--align-end">
+    <div class="open-sans-12">
+      {{ numberOfPages === 0 ? 0 : pageIndex + 1 }} <span translate>of</span> {{ numberOfPages }} <span translate>pages</span>
     </div>
+    @if (numItems > pageSize) {
+      @if (pageIndex > 0) {
+        <uno-icon id="first_page" icon="left-pipe-special" (click)="firstPage()"></uno-icon>
+      }
+      @if (pageIndex > 0) {
+        <uno-icon id="back_page" icon="back-special" (click)="previousPage()"></uno-icon>
+      }
+      @for (page of pages; track page) {
+        <div>
+          @if (page.label === '...') {
+            <div>
+              <label>{{ page.label }}</label>
+            </div>
+          }
+          @if (pageIndex + 1 !== page.value && page.label !== '...') {
+            <div class="open-sans-12 pagination-controls"
+              (click)="setNumber($event, page.value - 1)">
+              {{ page.label }}
+            </div>
+          }
+          @if (pageIndex + 1 === page.value) {
+            <div class="open-sans-semibold-12 pagination-controls" [style.cursor]="'default'">
+              {{ page.label }}
+            </div>
+          }
+        </div>
+      }
+      @if (pageIndex + 1 < numberOfPages) {
+        <uno-icon id="next_page" icon="next-special" (click)="nextPage()"></uno-icon>
+      }
+      @if (pageIndex + 1 < numberOfPages) {
+        <uno-icon id="last_page" icon="right-pipe-special" (click)="lastPage()"></uno-icon>
+      }
+    }
+  </div>
 </div>

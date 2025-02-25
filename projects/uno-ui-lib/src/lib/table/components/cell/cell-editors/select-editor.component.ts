@@ -3,59 +3,71 @@ import { Component, OnInit, ElementRef, Renderer2, AfterViewInit, EventEmitter, 
 import { DefaultEditorDirective } from '../../../lib/editor-cell-default';
 import { Row } from '../../../lib/data-set/row';
 
+import { PickItemDirective } from '../../../../picklist/pick-item.directive';
+import { PickDirective } from '../../../../pick/pick.directive';
+import { PopoverTriggerDirective } from '../../../../popover/popover.component';
+import { PicklistComponent } from '../../../../picklist/picklist.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @Component({
     selector: 'select-editor',
     template: `
         <div class="form-cell form-editor-selector" [formGroup]="editingFormGroup" style="max-width: 20rem">
-            <uno-picklist
-                class="form-control"
-
-                [data]="items"
-                [(open)]="open"
-                (selectedElem)="optionPicked(cell.row, cell.column.id)"
-                [insertBlankElement]="!cell.column.isRequired"
-                [isDisabled]="disabled"
-
-                uno-pick
-                [(unoPick)]="pick"
-
-                [formControlName]="cell.column.id"
-                ngDefaultControl
-
-                filterDataField="value"
-
-                fluid
-
-                (click)="onClickDropdownButton($event)"
-                (keydown.enter)="onEdited.emit($event)"
-                (keydown.esc)="onStopEditing.emit()"
-
-                uno-popover-trigger
-                [unoPopover]="formErrorsContent"
-                [unoPopoverOpen]="openValidatorPopover"
-                unoPopoverSize="small"
-                unoPopoverTooltip="true"
-                [unoPopoverTheme]="cell.column.editor?.inputPopoverTheme || 'info'">
-                    <span class="slds-truncate" [title]="pickLabel">{{ pickLabel }}</span>
-                    <ng-template uno-picklist-item let-item>
-                        <span [title]="item.value">{{ item.value }}</span>
-                        <span *ngIf="item.title" [title]="item.title"> ({{ item.title }})</span>
-                    </ng-template>
-
-            </uno-picklist>
+          <uno-picklist
+            class="form-control"
+        
+            [data]="items"
+            [(open)]="open"
+            (selectedElem)="optionPicked(cell.row, cell.column.id)"
+            [insertBlankElement]="!cell.column.isRequired"
+            [isDisabled]="disabled"
+        
+            uno-pick
+            [(unoPick)]="pick"
+        
+            [formControlName]="cell.column.id"
+            ngDefaultControl
+        
+            filterDataField="value"
+        
+            fluid
+        
+            (click)="onClickDropdownButton($event)"
+            (keydown.enter)="onEdited.emit($event)"
+            (keydown.esc)="onStopEditing.emit()"
+        
+            uno-popover-trigger
+            [unoPopover]="formErrorsContent"
+            [unoPopoverOpen]="openValidatorPopover"
+            unoPopoverSize="small"
+            unoPopoverTooltip="true"
+            [unoPopoverTheme]="cell.column.editor?.inputPopoverTheme || 'info'">
+            <span class="slds-truncate" [title]="pickLabel">{{ pickLabel }}</span>
+            <ng-template uno-picklist-item let-item>
+              <span [title]="item.value">{{ item.value }}</span>
+              @if (item.title) {
+                <span [title]="item.title"> ({{ item.title }})</span>
+              }
+            </ng-template>
+        
+          </uno-picklist>
         </div>
-
+        
         <!-- This Controller's Input Validator errors: -->
         <ng-template #formErrorsContent>
-            <ng-container *ngFor="let errors of errorsData">
-                <ng-container *ngIf="errors.input === cell.column.id">
-                    <div *ngFor="let strError of errors.translated">
-                        {{ strError }}
-                    </div>
-                </ng-container>
-            </ng-container>
+          @for (errors of errorsData; track errors) {
+            @if (errors.input === cell.column.id) {
+              @for (strError of errors.translated; track strError) {
+                <div>
+                  {{ strError }}
+                </div>
+              }
+            }
+          }
         </ng-template>
-    `
+        `,
+    standalone: true,
+    imports: [FormsModule, ReactiveFormsModule, PicklistComponent, PopoverTriggerDirective, PickDirective, PickItemDirective]
 })
 export class SelectEditorComponent extends DefaultEditorDirective implements OnInit, AfterViewInit, OnChanges {
 

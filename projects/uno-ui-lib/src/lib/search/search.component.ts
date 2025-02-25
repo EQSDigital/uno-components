@@ -1,9 +1,14 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild, ElementRef, Renderer2, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
+import { IconComponent } from '../icon/icon.component';
+
 @Component({
     selector: 'uno-search',
     templateUrl: 'search.component.html',
     styleUrls: ['search.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [IconComponent, TranslatePipe]
 })
 export class SearchComponent implements AfterViewInit {
 

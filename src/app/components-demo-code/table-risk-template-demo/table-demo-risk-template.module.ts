@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { UnoUiLibModule } from 'uno-ui-lib';
 
 import { TableDemoRiskTemplateComponent } from './table-demo-risk-template.component';
 import { ComponentLayoutModule } from '../../component-layout/component-layout.module';
@@ -20,12 +19,8 @@ const routes: Routes = [
     imports: [
         CommonModule,
         RouterModule.forChild(routes),
-        UnoUiLibModule,
         TranslateModule,
-        ComponentLayoutModule
-    ],
-    exports: [],
-    declarations: [
+        ComponentLayoutModule,
         TableDemoRiskTemplateComponent,
         RenderDuskBadgeColumnComponent,
         RenderCommentsColumnComponent,
@@ -33,6 +28,7 @@ const routes: Routes = [
         RenderControlLevelColumnComponent,
         BasicComponent
     ],
+    exports: [],
     providers: [],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

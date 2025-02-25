@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
 import { PageEvent } from 'uno-ui-lib/lib/pagination/pagination.component';
 
+import { FormsModule } from '@angular/forms';
+import { PaginationComponent } from 'uno-ui-lib';
+
 @Component({
     selector: 'basic-example',
-    templateUrl: 'basic.component.html'
+    templateUrl: 'basic.component.html',
+    standalone: true,
+    imports: [FormsModule, PaginationComponent]
 })
 
 export class BasicComponent {

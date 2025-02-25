@@ -19,7 +19,8 @@ import { Directive, OnChanges, Input, Optional, TemplateRef } from '@angular/cor
  */
 
 @Directive({
-    selector: '[unoTab]'
+    selector: '[unoTab]',
+    standalone: true
 })
 
 export class TabDirective implements OnChanges {

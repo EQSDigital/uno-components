@@ -1,11 +1,13 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
-import { PictureComponent } from 'projects/uno-ui-lib/src/public_api';
+import { PictureComponent, ModalComponent, ButtonDirective } from 'uno-ui-lib';
 
 @Component({
     selector: 'basic-example',
     templateUrl: 'basic.component.html',
-    styleUrls: ['../picture-demo.component.scss']
+    styleUrls: ['../picture-demo.component.scss'],
+    standalone: true,
+    imports: [PictureComponent, ModalComponent, ButtonDirective]
 })
 
 export class BasicComponent implements AfterViewInit {

@@ -4,47 +4,66 @@ import { UntypedFormGroup } from '@angular/forms';
 import { Grid } from '../../../lib/grid';
 import { Row } from '../../../lib/data-set/row';
 import { Cell } from '../../../lib/data-set/cell';
+import { THeadCreateCancelComponent } from '../cells/create-cancel.component';
+import { CellComponent } from '../../cell/cell.component';
+import { ActionsTitleComponent } from '../cells/actions-title.component';
+
 
 @Component({
     selector: '[ng2-st-thead-form-row]',
     template: `
-        <th *ngIf="colorRow" class="ng2-smart-actions"></th>
-        <th *ngIf="isMultiSelectVisible" class="ng2-smart-th ng2-smart-action-multiple-select">
-        </th>
+        @if (colorRow) {
+          <th class="ng2-smart-actions"></th>
+        }
+        @if (isMultiSelectVisible) {
+          <th class="ng2-smart-th ng2-smart-action-multiple-select">
+          </th>
+        }
         <!-- Empty th for the collapsed icon -->
-        <th ng2-st-actions-title
-            *ngIf="tableCollapsible.isCollapsible"
+        @if (tableCollapsible.isCollapsible) {
+          <th ng2-st-actions-title
             [grid]="grid"
             class="slds-p-top--small slds-p-bottom--xx-small">
-        </th>
-
-        <ng-container *ngFor="let cell of grid.getNewRow().cells">
-            <th *ngIf="cell.column.isVisibled">
-                <ng2-smart-table-cell
-                    [editingFormGroup]="editingFormGroup"
-                    [cell]="cell"
-                    [grid]="grid"
-                    [isNew]="true"
-                    [updateColumnList]="updateColumnList"
-                    [createConfirm]="createConfirm"
-                    [inputClass]="addInputClass"
-                    [isInEditing]="grid.getNewRow().isInEditing"
-                    (selectedElem)="selectedElem.emit($event)"
-                    (edited)="onCreate($event)">
-                </ng2-smart-table-cell>
-            </th>
-        </ng-container>
-
-        <!-- ACTIONS -->
-        <th *ngIf="showActionColumnRight" class="ng2-smart-actions slds-text-align--right">
-            <ng2-st-actions
+          </th>
+        }
+        
+        @for (cell of grid.getNewRow().cells; track cell) {
+          @if (cell.column.isVisibled) {
+            <th>
+              <ng2-smart-table-cell
                 [editingFormGroup]="editingFormGroup"
+                [cell]="cell"
                 [grid]="grid"
-                [cancelCreate]="cancelCreate"
-                (create)="onCreate($event)">
+                [isNew]="true"
+                [updateColumnList]="updateColumnList"
+                [createConfirm]="createConfirm"
+                [inputClass]="addInputClass"
+                [isInEditing]="grid.getNewRow().isInEditing"
+                (selectedElem)="selectedElem.emit($event)"
+                (edited)="onCreate($event)">
+              </ng2-smart-table-cell>
+            </th>
+          }
+        }
+        
+        <!-- ACTIONS -->
+        @if (showActionColumnRight) {
+          <th class="ng2-smart-actions slds-text-align--right">
+            <ng2-st-actions
+              [editingFormGroup]="editingFormGroup"
+              [grid]="grid"
+              [cancelCreate]="cancelCreate"
+              (create)="onCreate($event)">
             </ng2-st-actions>
-        </th>
-  `,
+          </th>
+        }
+        `,
+    standalone: true,
+    imports: [
+    ActionsTitleComponent,
+    CellComponent,
+    THeadCreateCancelComponent
+],
 })
 export class TheadFormRowComponent implements OnChanges {
 

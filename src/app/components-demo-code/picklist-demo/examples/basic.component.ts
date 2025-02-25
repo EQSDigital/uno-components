@@ -3,9 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+import { PicklistComponent, PickDirective, ButtonDirective, BadgeComponent, IconComponent, PickItemDirective } from 'uno-ui-lib';
+
 @Component({
     selector: 'basic-example',
-    templateUrl: 'basic.component.html'
+    templateUrl: 'basic.component.html',
+    standalone: true,
+    imports: [PicklistComponent, PickDirective, ButtonDirective, BadgeComponent, IconComponent, PickItemDirective]
 })
 
 export class BasicComponent implements OnDestroy {
@@ -67,7 +71,7 @@ export class BasicComponent implements OnDestroy {
     ];
     filteringStr: string;
 
-    constructor(private http: HttpClient) { }
+    constructor(private readonly http: HttpClient) { }
 
     ngOnDestroy() {
         if (this.asyncSubscriber) {
@@ -77,7 +81,7 @@ export class BasicComponent implements OnDestroy {
 
     // User can choose how picklist Dropdown will be filled, since Github brings items always PAGINATED:
     changePicklistFillInType(evt) {
-        this.asyncCumulateItems = (this.selectedFill === 'Cumulate') ? true : false;
+        this.asyncCumulateItems = this.selectedFill === 'Cumulate';
         // Reinit the Dropdown list, calling http service, as if for the 1st time:
         this.asyncItems = [];
         this.asyncPageNumber = 1;
@@ -122,7 +126,6 @@ export class BasicComponent implements OnDestroy {
 
     // You can have a function, instead of an item property (string), to filter through several properties or to compose filtering
     multiFilteringFilter() {
-        // return 'login';
         return filterProp =>
             filterProp.name.indexOf(this.filteringStr) !== -1
             ||
@@ -137,7 +140,7 @@ export class BasicComponent implements OnDestroy {
 
     get pickLabel() {
         if (this.multiple) {
-            return this.pick && this.pick.length ? `${this.pick.length} options selected` : 'Select option(s)';
+            return this.pick?.length ? `${this.pick.length} options selected` : 'Select option(s)';
         } else {
             return this.pick.value || 'Select an option';
         }

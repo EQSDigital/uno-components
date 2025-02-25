@@ -4,58 +4,66 @@ import { DefaultEditorDirective } from '../../../lib/editor-cell-default';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
+import { PopoverTriggerDirective } from '../../../../popover/popover.component';
+import { LookupComponent } from '../../../../lookup/lookup.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @Component({
     selector: 'lookup-editor',
     styleUrls: ['./editor.component.scss'],
     template: `
         <div class="form-cell form-editor-lookup" [formGroup]="editingFormGroup">
-            <uno-lookup
-                class="form-control"
-
-                [(value)]="lookUpAsyncScrollerStr"
-                [lookup]="lookupAsyncScroller"
-                [field]="searchField"
-                placeholder="Start typing GitHub's {{ searchField }} Name:"
-                [isDisabled]="!cell.column.isEditable"
-
-                [(pick)]="githubUser"
-
-                [formControlName]="cell.column.id"
-                ngDefaultControl
-
-                (inputWasTouched)="inputIsTouched($event)"
-
-                (scrollEndReached)="trigger_cumulatedLookupAsyncScroller($event)"
-                (pickChange)="onEditedCompleter($event)"
-
-                uno-popover-trigger
-                [unoPopover]="formErrorsContent"
-                [unoPopoverOpen]="openValidatorPopover"
-                unoPopoverSize="small"
-                unoPopoverTooltip="true"
-                [unoPopoverTheme]="cell.column.editor?.inputPopoverTheme || 'info'">
-                    <div uno-lookup-header class="slds-text-body--small">
-                        Github users with "{{ lookUpAsyncScrollerStr }}" &#64; login name:
-                        <b>{{ asyncScrollerCurrentResults }}</b> / <b style="color: red;">{{ asyncScrollerTotalResults }}</b>
-                    </div>
-                    <ng-template uno-lookup-item let-itemAsync>
-                        <img src="{{ itemAsync.avatar_url }}" class="slds-avatar slds-m-right--xx-small">
-                        {{ itemAsync[searchField] }}
-                    </ng-template>
-            </uno-lookup>
+          <uno-lookup
+            class="form-control"
+        
+            [(value)]="lookUpAsyncScrollerStr"
+            [lookup]="lookupAsyncScroller"
+            [field]="searchField"
+            placeholder="Start typing GitHub's {{ searchField }} Name:"
+            [isDisabled]="!cell.column.isEditable"
+        
+            [(pick)]="githubUser"
+        
+            [formControlName]="cell.column.id"
+            ngDefaultControl
+        
+            (inputWasTouched)="inputIsTouched($event)"
+        
+            (scrollEndReached)="trigger_cumulatedLookupAsyncScroller($event)"
+            (pickChange)="onEditedCompleter($event)"
+        
+            uno-popover-trigger
+            [unoPopover]="formErrorsContent"
+            [unoPopoverOpen]="openValidatorPopover"
+            unoPopoverSize="small"
+            unoPopoverTooltip="true"
+            [unoPopoverTheme]="cell.column.editor?.inputPopoverTheme || 'info'">
+            <div uno-lookup-header class="slds-text-body--small">
+              Github users with "{{ lookUpAsyncScrollerStr }}" &#64; login name:
+              <b>{{ asyncScrollerCurrentResults }}</b> / <b style="color: red;">{{ asyncScrollerTotalResults }}</b>
+            </div>
+            <ng-template uno-lookup-item let-itemAsync>
+              <img src="{{ itemAsync.avatar_url }}" class="slds-avatar slds-m-right--xx-small">
+              {{ itemAsync[searchField] }}
+            </ng-template>
+          </uno-lookup>
         </div>
-
+        
         <!-- This Controller's Input Validator errors: -->
         <ng-template #formErrorsContent>
-            <ng-container *ngFor="let errors of errorsData">
-                <ng-container *ngIf="errors.input === cell.column.id">
-                    <div *ngFor="let strError of errors.translated">
-                        {{ strError }}
-                    </div>
-                </ng-container>
-            </ng-container>
+          @for (errors of errorsData; track errors) {
+            @if (errors.input === cell.column.id) {
+              @for (strError of errors.translated; track strError) {
+                <div>
+                  {{ strError }}
+                </div>
+              }
+            }
+          }
         </ng-template>
-    `
+        `,
+    standalone: true,
+    imports: [FormsModule, ReactiveFormsModule, LookupComponent, PopoverTriggerDirective]
 })
 export class LookupEditorComponent extends DefaultEditorDirective implements OnInit, AfterViewInit {
 

@@ -5,6 +5,7 @@ import { toBoolean } from '../../utils/util';
 
 @Directive({
     selector: '[unoPillRemove]',
+    standalone: true,
 })
 export class PillRemoveDirective implements OnInit {
 

@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { DateYearComponent } from 'uno-ui-lib';
 
 @Component({
     selector: 'basic-example',
     templateUrl: 'basic.component.html',
-    styleUrls: ['../date-year-demo.component.css']
+    styleUrls: ['../date-year-demo.component.css'],
+    standalone: true,
+    imports: [DateYearComponent]
 })
 
 export class BasicComponent {

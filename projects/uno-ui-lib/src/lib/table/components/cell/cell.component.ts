@@ -4,28 +4,34 @@ import { UntypedFormGroup } from '@angular/forms';
 import { Grid } from '../../lib/grid';
 import { Cell } from '../../lib/data-set/cell';
 import { Row } from '../../lib/data-set/row';
+import { EditCellComponent } from './cell-edit-mode/edit-cell.component';
+import { ViewCellComponent } from './cell-view-mode/view-cell.component';
+
 
 @Component({
     selector: 'ng2-smart-table-cell',
     template: `
-        <ng-container [ngSwitch]="isInEditing">
-            <table-cell-view-mode
-                *ngSwitchCase="false"
-                [cell]="cell"
-                [isExpanded]="isExpanded">
-            </table-cell-view-mode>
-
-            <table-cell-edit-mode
-                *ngSwitchCase="true"
-                [editingFormGroup]="editingFormGroup"
-                [cell]="cell"
-                [inputClass]="inputClass"
-                [updateColumnList]="updateColumnList"
-                (edited)="onEdited()"
-                (selectedElem)="selectedElem.emit($event)">
-            </table-cell-edit-mode>
-        </ng-container>
-    `
+@switch (isInEditing) {
+  @case (false) {
+    <table-cell-view-mode
+      [cell]="cell"
+      [isExpanded]="isExpanded">
+    </table-cell-view-mode>
+  }
+  @case (true) {
+    <table-cell-edit-mode
+      [editingFormGroup]="editingFormGroup"
+      [cell]="cell"
+      [inputClass]="inputClass"
+      [updateColumnList]="updateColumnList"
+      (edited)="onEdited()"
+      (selectedElem)="selectedElem.emit($event)">
+    </table-cell-edit-mode>
+  }
+}
+`,
+    standalone: true,
+    imports: [ViewCellComponent, EditCellComponent]
 })
 export class CellComponent {
     /**

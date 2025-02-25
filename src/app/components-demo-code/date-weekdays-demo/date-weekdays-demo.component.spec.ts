@@ -8,8 +8,8 @@ describe('DateWeekdaysDemoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DateWeekdaysDemoComponent ]
-    })
+    imports: [DateWeekdaysDemoComponent]
+})
     .compileComponents();
   }));
 

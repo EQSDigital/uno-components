@@ -1,44 +1,46 @@
 <div class="slds-m-top--large">
-    <uno-tabs [(selected)]="selectedDefaultTab">
-        <!-- <ng-template unoTab unoTabId="tab1" heading="tab1" bgColorContent="pale-grey" bgHeightContent="100%">
-            Tab 1
-        </ng-template> -->
-        <!-- <ng-template unoTab unoTabId="tab2" heading="Tab 2" headingSub="4 likes" headingNaturalCase="true">
-            Tab 2
-        </ng-template>
-        <ng-template unoTab unoTabId="tab3" heading="Tab 3" disableTab="true">
-            Tab should be disabled!
-        </ng-template> -->
+  <uno-tabs [(selected)]="selectedDefaultTab">
+    <!-- <ng-template unoTab unoTabId="tab1" heading="tab1" bgColorContent="pale-grey" bgHeightContent="100%">
+    Tab 1
+  </ng-template> -->
+  <!-- <ng-template unoTab unoTabId="tab2" heading="Tab 2" headingSub="4 likes" headingNaturalCase="true">
+  Tab 2
+</ng-template>
+<ng-template unoTab unoTabId="tab3" heading="Tab 3" disableTab="true">
+  Tab should be disabled!
+</ng-template> -->
 
-        <!-- Tabs (heading and content) can be added dynamically, -->
-        <!-- through the use of <unoTab /> Directive, with "unoTabHeading" and "unoTabContent" Directives inside: -->
-        <uno-tab *ngFor="let newTab of newTabs" [unoTabId]="newTab" [heading]="'Dynamic Tab ' + newTab">
-            <ng-template unoTabContent>
-                <p>Some detail text for <b>{{ newTab }}</b>.</p>
-                <!-- Think on a way to delete this dynamically created Tab: -->
-                <button type="button" unoButton unoSize="x-small" class="slds-button--destructive" (click)="removeTab(newTab)">Remove this</button>
-            </ng-template>
-        </uno-tab>
-    </uno-tabs>
+<!-- Tabs (heading and content) can be added dynamically, -->
+<!-- through the use of <unoTab /> Directive, with "unoTabHeading" and "unoTabContent" Directives inside: -->
+@for (newTab of newTabs; track newTab) {
+  <uno-tab [unoTabId]="newTab" [heading]="'Dynamic Tab ' + newTab">
+    <ng-template unoTabContent>
+      <p>Some detail text for <b>{{ newTab }}</b>.</p>
+      <!-- Think on a way to delete this dynamically created Tab: -->
+      <button type="button" unoButton unoSize="x-small" class="slds-button--destructive" (click)="removeTab(newTab)">Remove this</button>
+    </ng-template>
+  </uno-tab>
+}
+</uno-tabs>
 
-    <p class="slds-m-vertical--large">
-        You can add <strong>extra Tabs</strong> (new <strong>&#60;unoTab /&#62;</strong> component), dynamically:
-        <button type="button" unoButton unoType="blue" unoSize="x-small" (click)="addDetail()">Add new Tab!</button>
-    </p>
+<p class="slds-m-vertical--large">
+  You can add <strong>extra Tabs</strong> (new <strong>&#60;unoTab /&#62;</strong> component), dynamically:
+  <button type="button" unoButton unoType="blue" unoSize="x-small" (click)="addDetail()">Add new Tab!</button>
+</p>
 </div>
 
 
 <div class="slds-m-top--xx-large">
-    <uno-tabs [(selected)]="selectedScopeTab" type="scoped" alignment="right">
-        <ng-template unoTab unoTabId="tabScoped1" heading="Tab 1" txtColorContent="tomato-red">
-            Tab 1 scopped
-        </ng-template>
-        <ng-template unoTab unoTabId="tabScoped2" heading="Tab 2" headingNaturalCase="true" headingSub="(no likes)" bgColorHeading="dark-lime-green"
-                     txtColorHeading="tomato-red">
-            Tab 2 scopped
-        </ng-template>
-        <ng-template unoTab unoTabId="tabScoped3" heading="Tab 3" headingNaturalCase="true">
-            Tab 3 scopped
-        </ng-template>
-    </uno-tabs>
+  <uno-tabs [(selected)]="selectedScopeTab" type="scoped" alignment="right">
+    <ng-template unoTab unoTabId="tabScoped1" heading="Tab 1" txtColorContent="tomato-red">
+      Tab 1 scopped
+    </ng-template>
+    <ng-template unoTab unoTabId="tabScoped2" heading="Tab 2" headingNaturalCase="true" headingSub="(no likes)" bgColorHeading="dark-lime-green"
+      txtColorHeading="tomato-red">
+      Tab 2 scopped
+    </ng-template>
+    <ng-template unoTab unoTabId="tabScoped3" heading="Tab 3" headingNaturalCase="true">
+      Tab 3 scopped
+    </ng-template>
+  </uno-tabs>
 </div>

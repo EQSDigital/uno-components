@@ -8,7 +8,8 @@ import { ViewCell } from '../../../lib/view-cell-interface';
 @Component({
     selector: 'table-cell-custom-editor',
     template: `<ng-template #dynamicTarget></ng-template>`,
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true
 })
 export class CustomEditComponent extends EditCellDefault implements OnInit, OnChanges, OnDestroy {
 

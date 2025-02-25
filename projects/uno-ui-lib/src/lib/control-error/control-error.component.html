@@ -1,4 +1,6 @@
-<div *ngIf="_useOurValidation" class="validator-error-message slds-truncate" [class.hide]="_hide">
+@if (_useOurValidation) {
+  <div class="validator-error-message slds-truncate" [class.hide]="_hide">
     <uno-icon size="x-small" icon="error_icon" svgType="sprite-color" [withOpacity]="false"></uno-icon>
     <span class="slds-p-left_xx-small">{{ _text }}</span>
-</div>
+  </div>
+}

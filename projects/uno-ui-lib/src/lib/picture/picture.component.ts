@@ -1,10 +1,19 @@
 import { Component, HostListener, ElementRef, ChangeDetectionStrategy, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { ButtonDirective } from '../button/button.directive';
+import { ModalFooterDirective } from '../modal/footer.directive';
+import { ImageCropperComponent } from '../image-cropper/image-cropper.component';
+import { ModalComponent } from '../modal/modal.component';
+import { TranslateDirective } from '@ngx-translate/core';
+import { IconComponent } from '../icon/icon.component';
+
 
 @Component({
     selector: 'uno-picture',
     templateUrl: './picture.component.html',
     styleUrls: ['./picture.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [IconComponent, TranslateDirective, ModalComponent, ImageCropperComponent, ModalFooterDirective, ButtonDirective]
 })
 export class PictureComponent implements OnChanges {
     /**

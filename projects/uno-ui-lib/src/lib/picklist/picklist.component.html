@@ -1,89 +1,95 @@
 <!-- picklist HTML is a <span unoDropdown /> markup, with specific TS behaviors - like multiple selection, items list online filtering, etc. -->
 <div class="slds-combobox"
-     unoDropdown
-     [open]="open"
-     [unoDropdownHandlePageEvents]="closeClickOutside"
+  unoDropdown
+  [open]="open"
+  [unoDropdownHandlePageEvents]="closeClickOutside"
 
-     (openChange)="openChange.emit($event)"
-     (selectedElem)="onSelectedElem($event)">
+  (openChange)="openChange.emit($event)"
+  (selectedElem)="onSelectedElem($event)">
 
-    <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon--right" style="position: relative;">
-        <!-- the Dropdown trigger: -->
-        <button type="button"
-                class="slds-grid slds-grid--vertical-align-center"
-                unoDropdownTrigger
-                [class.slds-input]="!isForInlineTableCSS"
-                [class.slds-button]="isForInlineTableCSS"
-                [disabled]="isDisabled">
-            <ng-content></ng-content>
-        </button>
-        <span class="slds-input__icon"
-              style="position: absolute; top: 12px; right: 16px;" unoDropdownTrigger>
-            <uno-icon icon="down-special"></uno-icon>
-        </span>
+  <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon--right" style="position: relative;">
+    <!-- the Dropdown trigger: -->
+    <button type="button"
+      class="slds-grid slds-grid--vertical-align-center"
+      unoDropdownTrigger
+      [class.slds-input]="!isForInlineTableCSS"
+      [class.slds-button]="isForInlineTableCSS"
+      [disabled]="isDisabled">
+      <ng-content></ng-content>
+    </button>
+    <span class="slds-input__icon"
+      style="position: absolute; top: 12px; right: 16px;" unoDropdownTrigger>
+      <uno-icon icon="down-special"></uno-icon>
+    </span>
 
-        <!-- the Dropdown list of items -->
-        <div class="slds-dropdown slds-dropdown--left"
-             [ngClass]="{ 'slds-dropdown_fluid': fluid, 'slds-p-top--none': hasFilter, 'slds-dropdown--open-up': isToOpenUp, 'positionInherit': position }"
-             role="listbox">
+    <!-- the Dropdown list of items -->
+    <div class="slds-dropdown slds-dropdown--left"
+      [ngClass]="{ 'slds-dropdown_fluid': fluid, 'slds-p-top--none': hasFilter, 'slds-dropdown--open-up': isToOpenUp, 'positionInherit': position }"
+      role="listbox">
 
-            <!-- filtering user input box possibility-->
-            <input *ngIf="hasFilter"
-                   class="slds-input"
-                   #filterInput
-                   [attr.placeholder]="filterPlaceholder"
-                   [ngModel]="userFilter"
-                   (ngModelChange)="filterChange($event)"
+      <!-- filtering user input box possibility-->
+      @if (hasFilter) {
+        <input
+          class="slds-input"
+          #filterInput
+          [attr.placeholder]="filterPlaceholder"
+          [ngModel]="userFilter"
+          (ngModelChange)="filterChange($event)"
+          (keydown.enter)="onFilterPick()"
+          (keydown.arrowdown)="setFilterActive(1, $event)"
+          (keydown.arrowup)="setFilterActive(-1, $event)"
+          (focus)="onFilterFocus()"
+          (blur)="onFilterBlur()">
+      }
 
-                   (keydown.enter)="onFilterPick()"
-                   (keydown.arrowdown)="setFilterActive(1, $event)"
-                   (keydown.arrowup)="setFilterActive(-1, $event)"
-                   (focus)="onFilterFocus()"
-                   (blur)="onFilterBlur()">
+      <!-- the Dropdown list of items -->
+      <ul style="max-height: 250px; overflow-y: auto;"
+        class="slds-listbox slds-listbox_vertical"
+        [ngClass]="dropdownListClass"
+        role="presentation"
+        unoScrollTracker
+        (scrollEndReached)="scrollEndReached.emit($event)">
 
-            <!-- the Dropdown list of items -->
-            <ul style="max-height: 250px; overflow-y: auto;"
-                class="slds-listbox slds-listbox_vertical"
-                [ngClass]="dropdownListClass"
-                role="presentation"
-                unoScrollTracker
-                (scrollEndReached)="scrollEndReached.emit($event)">
-
-                <!-- Insert blank element, to reset piked item ? -->
-                <li *ngIf="insertBlankElement && !pick.isMultiple" class="slds-dropdown__item unselect-item"
-                    uno-pick-option
-                    [unoPickOption]="''"
-                    (mouseover)="onOptionHover(-1)">
-
-                    <a unoDropdownItem role="menuitem" translate>-- (select none) --</a>
-                </li>
-                <!-- Cycle of all [filteredData] elements: -->
-                <li *ngFor="let item of filteredData; let i = index;" class="slds-dropdown__item"
-                    uno-pick-option
-                    [unoPickOption]="item"
-                    [class.slds-is-active]="isOptionActive(item)"
-                    (mouseover)="onOptionHover(i)">
-
-                    <span unoDropdownItem role="menuitem" class="picklist-box picklist-border">
-                        <p class="slds-truncate" style="display: contents;">
-                            <input *ngIf="showCheckBox" type="checkbox" [checked]="isOptionActive(item)">
-                            <span class="picklist-text slds-truncate">
-                                <ng-template [ngTemplateOutlet]="itemTemplate?.templateRef" [ngTemplateOutletContext]="{$implicit: item}"></ng-template>
-                            </span>
-                        </p>
-                    </span>
-                </li>
-                <li *ngIf="insertCreateButton" class="slds-dropdown__item"
-                    uno-pick-option
-                    [unoPickOption]="'addButton'"
-                    (mouseover)="onOptionHover(0)">
-
-                    <a unoDropdownItem role="menuitem" class="slds-p-around--small" style="cursor: pointer; display: block; border-top: solid 1px #9e9e9e45">
-                        <uno-icon size="small" icon="plus" style="padding-right: 10px"></uno-icon>
-                        {{ addButton }}
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <!-- Insert blank element, to reset piked item ? -->
+        @if (insertBlankElement && !pick.isMultiple) {
+          <li class="slds-dropdown__item unselect-item"
+            uno-pick-option
+            [unoPickOption]="''"
+            (mouseover)="onOptionHover(-1)">
+            <a unoDropdownItem role="menuitem" translate>-- (select none) --</a>
+          </li>
+        }
+        <!-- Cycle of all [filteredData] elements: -->
+        @for (item of filteredData; track item; let i = $index) {
+          <li class="slds-dropdown__item"
+            uno-pick-option
+            [unoPickOption]="item"
+            [class.slds-is-active]="isOptionActive(item)"
+            (mouseover)="onOptionHover(i)">
+            <span unoDropdownItem role="menuitem" class="picklist-box picklist-border">
+              <p class="slds-truncate" style="display: contents;">
+                @if (showCheckBox) {
+                  <input type="checkbox" [checked]="isOptionActive(item)">
+                }
+                <span class="picklist-text slds-truncate">
+                  <ng-template [ngTemplateOutlet]="itemTemplate?.templateRef" [ngTemplateOutletContext]="{$implicit: item}"></ng-template>
+                </span>
+              </p>
+            </span>
+          </li>
+        }
+        @if (insertCreateButton) {
+          <li class="slds-dropdown__item"
+            uno-pick-option
+            [unoPickOption]="'addButton'"
+            (mouseover)="onOptionHover(0)">
+            <a unoDropdownItem role="menuitem" class="slds-p-around--small" style="cursor: pointer; display: block; border-top: solid 1px #9e9e9e45">
+              <uno-icon size="small" icon="plus" style="padding-right: 10px"></uno-icon>
+              {{ addButton }}
+            </a>
+          </li>
+        }
+      </ul>
     </div>
+  </div>
 </div>

@@ -1,6 +1,7 @@
 import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 
 import { DefaultEditorDirective } from 'projects/uno-ui-lib/src/lib/table';
+import { NgClass } from '@angular/common';
 
 @Component({
     template: `
@@ -29,6 +30,8 @@ import { DefaultEditorDirective } from 'projects/uno-ui-lib/src/lib/table';
         </div>
         <div [hidden]="true" [innerHTML]="cell.getValue()" #htmlValue></div>
     `,
+    standalone: true,
+    imports: [NgClass],
 })
 export class EditorLinkComponent extends DefaultEditorDirective implements AfterViewInit {
 

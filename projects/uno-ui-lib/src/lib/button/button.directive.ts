@@ -3,7 +3,8 @@ import { Directive, Input, ElementRef, Renderer2 } from '@angular/core';
 import { replaceClass } from '../../utils/util';
 
 @Directive({
-    selector: '[unoButton]'
+    selector: '[unoButton]',
+    standalone: true
 })
 
 export class ButtonDirective {

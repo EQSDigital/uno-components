@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { JsonPipe } from '@angular/common';
+import { PickDirective, ButtonDirective, PickOptionDirective } from 'uno-ui-lib';
 
 @Component({
     selector: 'basic-example',
-    templateUrl: 'basic.component.html'
+    templateUrl: 'basic.component.html',
+    standalone: true,
+    imports: [PickDirective, PickOptionDirective, ButtonDirective, JsonPipe]
 })
 
 export class BasicComponent implements OnInit {

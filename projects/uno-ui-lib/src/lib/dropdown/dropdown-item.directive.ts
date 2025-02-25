@@ -5,9 +5,7 @@ import { PickOptionDirective } from '../pick/pick-option.directive';
 
 @Directive({
     selector: '[unoDropdownItem]',
-    // host: {
-    //     'tabindex': '0',
-    // },
+    standalone: true,
 })
 export class DropdownItemDirective {
 

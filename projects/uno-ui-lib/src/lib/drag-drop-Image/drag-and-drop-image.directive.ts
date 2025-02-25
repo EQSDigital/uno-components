@@ -1,7 +1,8 @@
 import { Directive, EventEmitter, HostBinding, HostListener, Input, Output } from '@angular/core';
 
 @Directive({
-    selector: '[unoDragDropImage]'
+    selector: '[unoDragDropImage]',
+    standalone: true
 })
 export class DragAndDropImageDirective {
     @HostBinding('class.fileover') fileOver: boolean;
@@ -15,7 +16,7 @@ export class DragAndDropImageDirective {
     @HostListener('dragover', ['$event']) onDragEvent(evt: any) {
         evt.preventDefault();
         evt.stopPropagation();
-        this.fileOver = this.disabled ? false : true;
+        this.fileOver = !this.disabled;
     }
 
     @HostListener('dragleave', ['$event']) onDragLeave(evt: any) {

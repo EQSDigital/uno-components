@@ -1,17 +1,19 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PopoverTriggerDirective } from 'uno-ui-lib';
 
 @Component({
     template: `
-        <a
-            class="uno-smart-table-cell-view view-custom"
-            uno-popover-trigger
-            uno-popover-behavior
-            unoPopover="This is an add text, description, etc for '{{ originalRenderValue }}'"
-            unoPopoverTooltip="true"
-            [title]="renderValue">
-                {{ renderValue }}
+        <a class="uno-smart-table-cell-view view-custom"
+           uno-popover-trigger
+           uno-popover-behavior
+           unoPopover="This is an add text, description, etc for '{{ originalRenderValue }}'"
+           unoPopoverTooltip="true"
+           [title]="renderValue">
+           {{ renderValue }}
         </a>
-    `
+    `,
+    standalone: true,
+    imports: [PopoverTriggerDirective]
 })
 export class RenderUsernameComponent implements OnInit {
 

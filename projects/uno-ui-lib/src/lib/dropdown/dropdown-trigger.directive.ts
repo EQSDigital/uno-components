@@ -4,9 +4,7 @@ import { DropdownDirective } from './dropdown.directive';
 
 @Directive({
     selector: '[unoDropdownTrigger]',
-    // host: {
-    //     'aria-haspopup': 'true',
-    // },
+    standalone: true,
 })
 export class DropdownTriggerDirective implements OnDestroy {
 

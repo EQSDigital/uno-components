@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
 
-import { LocalDataSource, UnoSmartTableSettings } from 'uno-ui-lib';
+import { LocalDataSource, UnoSmartTableSettings, UnoTableModule, ModalComponent, IconComponent, ButtonDirective } from 'uno-ui-lib';
 
 import { RenderDuskBadgeColumnComponent } from '../badge.renderDuskBadgeColumn';
 import { RenderCommentsColumnComponent } from '../comments.renderCommentsColumn';
 import { RenderControlLevelColumnComponent } from '../controlLevel.renderControlLevelColumn';
 import { RenderLikelihoodColumnComponent } from '../likelihood.renderLikelihoodColumn';
+import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
+
 
 @Component({
     selector: 'basic-example',
-    templateUrl: 'basic.component.html'
+    templateUrl: 'basic.component.html',
+    standalone: true,
+    imports: [UnoTableModule, ModalComponent, IconComponent, ButtonDirective, TranslateDirective, TranslatePipe]
 })
 
 export class BasicComponent {

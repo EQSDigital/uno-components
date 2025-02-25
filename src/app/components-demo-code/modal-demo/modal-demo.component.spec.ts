@@ -8,8 +8,8 @@ describe('ModalDemoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModalDemoComponent ]
-    })
+    imports: [ModalDemoComponent]
+})
     .compileComponents();
   }));
 

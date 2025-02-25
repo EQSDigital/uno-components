@@ -1,10 +1,14 @@
 import { Component, ViewChild, ElementRef, ChangeDetectionStrategy, Input, OnChanges, Output, EventEmitter, OnInit, Renderer2 } from '@angular/core';
+import { DecimalPipe } from '@angular/common';
+import { TranslateDirective } from '@ngx-translate/core';
 
 @Component({
     selector: 'uno-circle-graph',
     templateUrl: 'circle-graph.component.html',
     styleUrls: ['circle-graph.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [TranslateDirective, DecimalPipe]
 })
 export class CircleGraphComponent implements OnInit, OnChanges {
 

@@ -2,6 +2,7 @@ import { Directive, HostListener, Output, EventEmitter } from '@angular/core';
 
 @Directive({
     selector: '[unoScrollTracker]',
+    standalone: true,
 })
 export class ScrollTrackerDirective {
 

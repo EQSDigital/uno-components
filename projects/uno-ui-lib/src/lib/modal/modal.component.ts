@@ -2,8 +2,8 @@ import {
     Component, ChangeDetectionStrategy, OnInit, OnDestroy, Input, Output, EventEmitter,
     ContentChild, HostListener, ElementRef, ChangeDetectorRef, OnChanges, SimpleChanges, Inject, ViewChild
 } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { DOCUMENT } from '@angular/common';
+import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DOCUMENT, NgClass, NgTemplateOutlet } from '@angular/common';
 import { BlockScrollStrategy, Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ConfigurableFocusTrapFactory, FocusTrap } from '@angular/cdk/a11y';
 import { Subscription } from 'rxjs';
@@ -12,6 +12,15 @@ import { InputBoolean, noWhitespaceValidator, toBoolean, uniqueId } from '../../
 import { ModalHeaderDirective } from './header.directive';
 import { ModalFooterDirective } from './footer.directive';
 import { DragDropFileComponent } from '../drag-drop-file/drag-drop-file.component';
+import { IconComponent } from '../icon/icon.component';
+import { Datepicker2Component } from '../datepicker2/datepicker2.component';
+import { PickItemDirective } from '../picklist/pick-item.directive';
+import { PickDirective } from '../pick/pick.directive';
+import { PicklistComponent } from '../picklist/picklist.component';
+import { ControlErrorDirective } from '../control-error/control-error.directive';
+import { ButtonDirective } from '../button/button.directive';
+import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
+import { CdkScrollable } from '@angular/cdk/scrolling';
 
 interface DropDownSelector {
     id: number;
@@ -24,7 +33,9 @@ interface DropDownSelector {
     selector: 'uno-modal',
     templateUrl: './modal.component.html',
     styleUrls: ['./modal.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgClass, NgTemplateOutlet, CdkScrollable, TranslateDirective, ButtonDirective, FormsModule, ReactiveFormsModule, DragDropFileComponent, ControlErrorDirective, PicklistComponent, PickDirective, PickItemDirective, Datepicker2Component, IconComponent, TranslatePipe]
 })
 export class ModalComponent implements OnInit, OnChanges, OnDestroy {
     // To save time @ component's instalation, we have already prepared HTML templates for certain, often used, Modals:

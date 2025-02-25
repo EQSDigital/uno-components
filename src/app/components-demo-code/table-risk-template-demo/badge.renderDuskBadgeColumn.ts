@@ -1,13 +1,23 @@
 import { Component, ChangeDetectionStrategy, OnInit, EventEmitter, Output, ChangeDetectorRef } from '@angular/core';
+import { BadgeComponent } from 'uno-ui-lib';
+
 
 @Component({
     template: `
-        <div [ngSwitch]="checkIfArray" (click)="badgeClick.emit()" [style.cursor]="isClick ? 'pointer' : 'default'">
-            <uno-badge *ngSwitchCase="false" bgColor="dusk" txtColor="white">{{ value || 0 }}</uno-badge>
-            <uno-badge *ngSwitchCase="true" bgColor="dusk" txtColor="white">{{ rowData[objectToLength].length }}</uno-badge>
+        <div (click)="badgeClick.emit()" [style.cursor]="isClick ? 'pointer' : 'default'">
+          @switch (checkIfArray) {
+            @case (false) {
+              <uno-badge bgColor="dusk" txtColor="white">{{ value || 0 }}</uno-badge>
+            }
+            @case (true) {
+              <uno-badge bgColor="dusk" txtColor="white">{{ rowData[objectToLength].length }}</uno-badge>
+            }
+          }
         </div>
-    `,
-    changeDetection: ChangeDetectionStrategy.OnPush
+        `,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [BadgeComponent]
 })
 export class RenderDuskBadgeColumnComponent implements OnInit {
     /**

@@ -1,53 +1,61 @@
 <div class="slds-grid slds-wrap slds-p-bottom--medium">
-    <div class="slds-size--1-of-2">
-        <uno-search *ngIf="grid.settings.showSearch" [currentSearch]="currentSearch" (searchTerm)="searchTerm.emit($event)"></uno-search>
-    </div>
-    <div class="slds-size--1-of-2 slds-grid slds-grid--align-end">
-        <ng-container *ngFor="let icon of mainActions">
-            <uno-icon [id]="icon.icon"
-                      *ngIf="icon.visible"
-                      [icon]="icon.icon"
-                      [title]="icon.title | translate"
-                      (click)="customAction.emit(icon)">
-            </uno-icon>
-        </ng-container>
-        <uno-icon id="plus"
-                  *ngIf="grid.settings.actions.add"
-                  icon="plus"
-                  [title]="grid.settings.add.addButtonContent | translate"
-                  (click)="onAdd()"
-                  (mouseenter)="hoverIn()"
-                  (mouseleave)="openPopover = false"
-                  uno-popover-trigger
-                  [unoPopoverOpen]="openPopover"
-                  unoPopover="You are editing one row. Finish it, first, please..."
-                  unoPopoverPlacement="left"
-                  unoPopoverTooltip="true">
+  <div class="slds-size--1-of-2">
+    @if (grid.settings.showSearch) {
+      <uno-search [currentSearch]="currentSearch" (searchTerm)="searchTerm.emit($event)"></uno-search>
+    }
+  </div>
+  <div class="slds-size--1-of-2 slds-grid slds-grid--align-end">
+    @for (icon of mainActions; track icon) {
+      @if (icon.visible) {
+        <uno-icon [id]="icon.icon"
+          [icon]="icon.icon"
+          [title]="icon.title | translate"
+          (click)="customAction.emit(icon)">
         </uno-icon>
-        <uno-icon *ngIf="grid.settings.headerActions.length > 3"
-                  id="more_opt_v"
-                  icon="more-options"
-                  [title]="'options' | translate"
-                  uno-popover-trigger
-                  [unoPopoverOpen]="openPopoverOptions"
-                  [unoPopover]="moreOptions"
-                  unoPopoverPlacement="bottomLeft"
-                  unoPopoverNubbin="top-right"
-                  unoPopoverSize="small"
-                  (click)="onClickOptions()">
-        </uno-icon>
-        <ng-template #moreOptions>
-            <div class="slds-grid slds-wrap">
-                <ng-container *ngFor="let icon of otherActions">
-                    <div *ngIf="icon.visible"
-                         (click)="customAction.emit(icon); openPopoverOptions = false;"
-                         class="slds-size--1-of-1 slds-p-around--x-small slds-truncate popover-actions"
-                         [title]="icon.title"
-                         translate>
-                        {{ icon.title }}
-                    </div>
-                </ng-container>
+      }
+    }
+    @if (grid.settings.actions.add) {
+      <uno-icon id="plus"
+        icon="plus"
+        [title]="grid.settings.add.addButtonContent | translate"
+        (click)="onAdd()"
+        (mouseenter)="hoverIn()"
+        (mouseleave)="openPopover = false"
+        uno-popover-trigger
+        [unoPopoverOpen]="openPopover"
+        unoPopover="You are editing one row. Finish it, first, please..."
+        unoPopoverPlacement="left"
+        unoPopoverTooltip="true">
+      </uno-icon>
+    }
+    @if (grid.settings.headerActions.length > 3) {
+      <uno-icon
+        id="more_opt_v"
+        icon="more-options"
+        [title]="'options' | translate"
+        uno-popover-trigger
+        [unoPopoverOpen]="openPopoverOptions"
+        [unoPopover]="moreOptions"
+        unoPopoverPlacement="bottomLeft"
+        unoPopoverNubbin="top-right"
+        unoPopoverSize="small"
+        (click)="onClickOptions()">
+      </uno-icon>
+    }
+    <ng-template #moreOptions>
+      <div class="slds-grid slds-wrap">
+        @for (icon of otherActions; track icon) {
+          @if (icon.visible) {
+            <div
+              (click)="customAction.emit(icon); openPopoverOptions = false;"
+              class="slds-size--1-of-1 slds-p-around--x-small slds-truncate popover-actions"
+              [title]="icon.title"
+              translate>
+              {{ icon.title }}
             </div>
-        </ng-template>
-    </div>
+          }
+        }
+      </div>
+    </ng-template>
+  </div>
 </div>

@@ -3,12 +3,21 @@ import { Subscription } from 'rxjs';
 
 import { ColorPickItemDirective } from './color-picklist-item.directive';
 import { PickDirective } from '../pick/pick.directive';
+import { PickOptionDirective } from '../pick/pick-option.directive';
+
+import { IconComponent } from '../icon/icon.component';
+import { PopoverTriggerDirective } from '../popover/popover.component';
 
 @Component({
     selector: 'uno-color-picklist[unoPick]',
     templateUrl: './color-picklist.component.html',
     styleUrls: ['./color-picklist.component.scss'],
-    // Don't use changeDetection because uno popover don't close.
+    standalone: true,
+    imports: [
+    PopoverTriggerDirective,
+    IconComponent,
+    PickOptionDirective
+],
 })
 export class ColorPicklistComponent implements OnChanges, AfterContentInit, OnDestroy {
 

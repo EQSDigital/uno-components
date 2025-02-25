@@ -4,6 +4,7 @@ import { PillComponent } from './pill.component';
 
 @Directive({
     selector: 'a',
+    standalone: true,
 })
 export class PillLinkDirective {
 

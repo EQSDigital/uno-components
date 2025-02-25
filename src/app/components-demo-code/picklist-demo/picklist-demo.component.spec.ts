@@ -8,8 +8,8 @@ describe('PicklistDemoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PicklistDemoComponent ]
-    })
+    imports: [PicklistDemoComponent]
+})
     .compileComponents();
   }));
 

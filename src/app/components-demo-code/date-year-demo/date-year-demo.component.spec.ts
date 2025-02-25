@@ -8,8 +8,8 @@ describe('DateYearDemoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DateYearDemoComponent ]
-    })
+    imports: [DateYearDemoComponent]
+})
     .compileComponents();
   }));
 

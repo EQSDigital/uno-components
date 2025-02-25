@@ -1,16 +1,28 @@
-<div *ngIf="type !== 'secondary'" class="uno-search" #unoSearch>
+@if (type !== 'secondary') {
+  <div class="uno-search" #unoSearch>
     <input class="search-input" #searchText [placeholder]="placeholder | translate" (keydown)="keyDownFunction($event, searchText.value)" />
     <button (click)="onButtonClick(searchText.value)" class="slds-button slds-button--icon-small" style="float: right">
-        <uno-icon id="search" *ngIf="!inSearchMode" icon="search" class="slds-align--absolute-center"></uno-icon>
-        <uno-icon id="close" *ngIf="inSearchMode" icon="close" class="slds-align--absolute-center"></uno-icon>
+      @if (!inSearchMode) {
+        <uno-icon id="search" icon="search" class="slds-align--absolute-center"></uno-icon>
+      }
+      @if (inSearchMode) {
+        <uno-icon id="close" icon="close" class="slds-align--absolute-center"></uno-icon>
+      }
     </button>
-</div>
+  </div>
+}
 
-<div *ngIf="type === 'secondary'" class="slds-input-has-icon slds-input-has-icon_right" style="top: 38% !important">
+@if (type === 'secondary') {
+  <div class="slds-input-has-icon slds-input-has-icon_right" style="top: 38% !important">
     <input class="slds-input" #searchText [placeholder]="placeholder | translate" (keydown)="keyDownFunction($event, searchText.value)" />
     <button (click)="onButtonClick(searchText.value)" class="slds-button slds-button_icon slds-input__icon_right"
-            style="position: absolute; top: 5px; right: 5px;">
-        <uno-icon id="search" *ngIf="!inSearchMode" icon="search" size="small"></uno-icon>
-        <uno-icon id="close" *ngIf="inSearchMode" icon="close" size="small"></uno-icon>
+      style="position: absolute; top: 5px; right: 5px;">
+      @if (!inSearchMode) {
+        <uno-icon id="search" icon="search" size="small"></uno-icon>
+      }
+      @if (inSearchMode) {
+        <uno-icon id="close" icon="close" size="small"></uno-icon>
+      }
     </button>
-</div>
+  </div>
+}

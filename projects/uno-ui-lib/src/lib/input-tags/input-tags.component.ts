@@ -2,12 +2,19 @@ import {
     Component, ChangeDetectionStrategy, ViewChild, ElementRef,
     Renderer2, Input, OnChanges, SimpleChanges, Output, EventEmitter, HostListener
 } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
+import { PillRemoveDirective } from '../pill/pill-remove.directive';
+import { PillComponent } from '../pill/pill.component';
+import { IconComponent } from '../icon/icon.component';
+import { NgClass } from '@angular/common';
 
 @Component({
     selector: 'uno-input-tags',
     templateUrl: './input-tags.component.html',
     styleUrls: ['./input-tags.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgClass, IconComponent, PillComponent, PillRemoveDirective, TranslatePipe]
 })
 export class InputTagsComponent implements OnChanges {
     /**

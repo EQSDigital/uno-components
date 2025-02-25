@@ -1,29 +1,36 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { DropdownItemDirective } from '../dropdown/dropdown-item.directive';
+
+import { DropdownTriggerDirective } from '../dropdown/dropdown-trigger.directive';
+import { DropdownDirective } from '../dropdown/dropdown.directive';
+import { IconComponent } from '../icon';
 
 @Component({
     selector: 'uno-date-year',
     template: `
         <div class="uno-dropdown-container">
-
-            <span unoDropdown [(open)]="openDropdown">
-
-                <button unoDropdownTrigger (click)="goToYear()" class="slds-button slds-button--neutral">
-                    <span class="slds-truncate">{{ year }}</span>
-                    <uno-icon icon="down_s" size="x-small" class="slds-m-left_small slds-float--right"></uno-icon>
-                </button>
-
-                <div class="slds-dropdown slds-dropdown--left">
-                    <ul #ulList class="dropdown__list" role="menu">
-                        <li *ngFor="let eachYear of range" [id]="eachYear" class="slds-dropdown__item">
-                            <a unoDropdownItem role="menuitem" (click)="year = eachYear; yearChange.emit(year)">
-                                <p class="slds-truncate">{{ eachYear }}</p>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </span>
+        
+          <span unoDropdown [(open)]="openDropdown">
+        
+            <button unoDropdownTrigger (click)="goToYear()" class="slds-button slds-button--neutral">
+              <span class="slds-truncate">{{ year }}</span>
+              <uno-icon icon="down_s" size="x-small" class="slds-m-left_small slds-float--right"></uno-icon>
+            </button>
+        
+            <div class="slds-dropdown slds-dropdown--left">
+              <ul #ulList class="dropdown__list" role="menu">
+                @for (eachYear of range; track eachYear) {
+                  <li [id]="eachYear" class="slds-dropdown__item">
+                    <a unoDropdownItem role="menuitem" (click)="year = eachYear; yearChange.emit(year)">
+                      <p class="slds-truncate">{{ eachYear }}</p>
+                    </a>
+                  </li>
+                }
+              </ul>
+            </div>
+          </span>
         </div>
-    `,
+        `,
     styles: [`
         div.uno-dropdown-container { width: 96px; }
         div.uno-dropdown-container > span:first-child { width: 100%; }
@@ -31,8 +38,9 @@ import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, OnInit
 
         ul.dropdown__list { max-height: 200px; overflow: auto; }
     `],
-    changeDetection: ChangeDetectionStrategy.OnPush
-
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [DropdownDirective, DropdownTriggerDirective, DropdownItemDirective, IconComponent]
 })
 export class DateYearComponent implements OnInit {
 

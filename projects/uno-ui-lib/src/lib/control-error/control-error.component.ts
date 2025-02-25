@@ -1,4 +1,6 @@
 import { Component, ChangeDetectorRef, Input, ChangeDetectionStrategy } from '@angular/core';
+import { IconComponent } from '../icon/icon.component';
+
 
 @Component({
     templateUrl: 'control-error.component.html',
@@ -7,7 +9,9 @@ import { Component, ChangeDetectorRef, Input, ChangeDetectionStrategy } from '@a
         `.hide {
             display: none
         }`
-    ]
+    ],
+    standalone: true,
+    imports: [IconComponent]
 })
 
 export class ControlErrorComponent {

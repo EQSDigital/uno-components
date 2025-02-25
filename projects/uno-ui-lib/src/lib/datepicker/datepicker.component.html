@@ -12,8 +12,8 @@
         </button>
     </div>
 
-    <button *ngIf="todayButton"
-            class="go-to-today"
+    @if (todayButton) {
+    <button class="go-to-today"
             (click)="selectToday()"
             unoButton
             unoType="secondary"
@@ -21,6 +21,7 @@
             translate>
         TODAY
     </button>
+    }
 
     <uno-date-year class="slds-shrink-none slds-p-horizontal--x-small"
                    [year]="current.year"
@@ -39,15 +40,18 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let week of weeks; trackBy:indexTrackBy">
-            <td *ngFor="let date of week;"
-                [class.slds-is-today]="isActive(date)"
+        @for (week of weeks; track indexTrackBy($index)) {
+        <tr>
+            @for (date of week; track date) {
+            <td [class.slds-is-today]="isActive(date)"
                 (click)="select(date);"
                 uno-date-day
                 [day]="date.day"
                 [daySelected]="isSelected(date)"
                 [dayDisabled]="date.disabled">
             </td>
+            }
         </tr>
+        }
     </tbody>
 </table>

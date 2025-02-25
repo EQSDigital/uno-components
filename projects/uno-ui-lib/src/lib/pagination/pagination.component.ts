@@ -1,4 +1,7 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { TranslateDirective } from '@ngx-translate/core';
+import { IconComponent } from '../icon/icon.component';
+
 
 /**
  * The Pagination component
@@ -26,7 +29,9 @@ const DEFAULT_PAGE_SIZE = 10;
     selector: 'uno-pagination',
     templateUrl: 'pagination.component.html',
     styleUrls: ['./pagination.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [IconComponent, TranslateDirective]
 })
 export class PaginationComponent {
 

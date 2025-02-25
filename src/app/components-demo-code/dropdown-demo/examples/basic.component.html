@@ -1,97 +1,107 @@
 <p>
-    <strong>Dropdowns</strong> offer items that the user can choose from.
+  <strong>Dropdowns</strong> offer items that the user can choose from.
 </p>
 <p>&nbsp;</p>
 
 <p>
-    <br><em><strong>Space</strong></em> and <em><strong>Enter</strong></em> on an <strong>unoDropdownTrigger</strong> will toggle the dropdown's open status.
-    <br><em><strong>DownArrow</strong></em> on an <strong>unoDropdownTrigger</strong> will open the dropdown and <strong>move focus</strong> to the first
-    dropdown item.
-    <br><em><strong>DownArrow</strong></em> and <em><strong>UpArrow</strong></em> on an <strong>opened</strong>&nbsp; <strong>unoDropdown</strong> will move
-    focus to the next and previous items respectively.
-    <br>
+  <br><em><strong>Space</strong></em> and <em><strong>Enter</strong></em> on an <strong>unoDropdownTrigger</strong> will toggle the dropdown's open status.
+  <br><em><strong>DownArrow</strong></em> on an <strong>unoDropdownTrigger</strong> will open the dropdown and <strong>move focus</strong> to the first
+  dropdown item.
+  <br><em><strong>DownArrow</strong></em> and <em><strong>UpArrow</strong></em> on an <strong>opened</strong>&nbsp; <strong>unoDropdown</strong> will move
+  focus to the next and previous items respectively.
+  <br>
     <br>An opened <strong>unoDropdown</strong> has aria-selected="true" and a closed one has aria-selected="false"
     <br>
-    <br><em><strong>Escape</strong></em> closes an open <strong>uno-dropdown</strong> and moves focus to the <strong>unoDropdownTrigger</strong>
-    <br><em><strong>Tab</strong></em> closes an open <strong>unoDropdown</strong> and moves focus to the next focusable element.
-</p>
+      <br><em><strong>Escape</strong></em> closes an open <strong>uno-dropdown</strong> and moves focus to the <strong>unoDropdownTrigger</strong>
+      <br><em><strong>Tab</strong></em> closes an open <strong>unoDropdown</strong> and moves focus to the next focusable element.
+    </p>
 
-<span unoDropdown [(open)]="openDropdown" class="slds-m-top--xx-large">
+    <span unoDropdown [(open)]="openDropdown" class="slds-m-top--xx-large">
 
-    <!-- the Dropdown trigger: -->
-    <button unoDropdownTrigger class="slds-button slds-button--neutral">
-        <span *ngIf="!selected" class="slds-truncate">Select an item</span>
-        <span *ngIf="selected" class="slds-truncate">{{ selected }}</span>
+      <!-- the Dropdown trigger: -->
+      <button unoDropdownTrigger class="slds-button slds-button--neutral">
+        @if (!selected) {
+          <span class="slds-truncate">Select an item</span>
+        }
+        @if (selected) {
+          <span class="slds-truncate">{{ selected }}</span>
+        }
         <uno-icon icon="down_s" size="x-small" class="slds-m-left_small"></uno-icon>
-    </button>
+      </button>
 
-    <!-- the Dropdown list of items -->
-    <div class="slds-dropdown slds-dropdown--left">
+      <!-- the Dropdown list of items -->
+      <div class="slds-dropdown slds-dropdown--left">
         <ul class="dropdown__list" role="menu">
 
-            <li *ngFor="let item of items;" class="slds-dropdown__item">
-                <a unoDropdownItem role="menuitem" (click)="selected=item.value; selectedIcon=item.icon;">
-                    <p class="slds-truncate">{{ item.value }}</p>
-                    <uno-icon [icon]="item.icon" size="x-small" class="slds-m-left--medium"></uno-icon>
-                </a>
+          @for (item of items; track item) {
+            <li class="slds-dropdown__item">
+              <a unoDropdownItem role="menuitem" (click)="selected=item.value; selectedIcon=item.icon;">
+                <p class="slds-truncate">{{ item.value }}</p>
+                <uno-icon [icon]="item.icon" size="x-small" class="slds-m-left--medium"></uno-icon>
+              </a>
             </li>
-            <!-- reset chosen item: -->
-            <li class="slds-dropdown__item unselect-item">
-                <a unoDropdownItem role="menuitem" (click)="selected=''; selectedIcon='';">-- (select none) --</a>
-            </li>
+          }
+          <!-- reset chosen item: -->
+          <li class="slds-dropdown__item unselect-item">
+            <a unoDropdownItem role="menuitem" (click)="selected=''; selectedIcon='';">-- (select none) --</a>
+          </li>
 
         </ul>
-    </div>
+      </div>
 
-</span>
+    </span>
 
-<button type="button" unoButton unoType="secondary" unoSize="small" class="slds-m-left--small" (click)="onToggle($event)">Open Dropdown</button>
-<button type="button" unoButton unoType="secondary" unoSize="small" class="slds-m-left--small" (click)="openDropdown = !openDropdown">Toggle</button>
+    <button type="button" unoButton unoType="secondary" unoSize="small" class="slds-m-left--small" (click)="onToggle($event)">Open Dropdown</button>
+    <button type="button" unoButton unoType="secondary" unoSize="small" class="slds-m-left--small" (click)="openDropdown = !openDropdown">Toggle</button>
 
-<div *ngIf="selectedIcon" class="slds-m-top--large">
-    <uno-icon [icon]="selectedIcon" class="slds-m-left--medium"></uno-icon>
-</div>
+    @if (selectedIcon) {
+      <div class="slds-m-top--large">
+        <uno-icon [icon]="selectedIcon" class="slds-m-left--medium"></uno-icon>
+      </div>
+    }
 
-<!-- ********************************************************************************************************************************** -->
-<hr />
+    <!-- ********************************************************************************************************************************** -->
+    <hr />
 
-<p>
-    Check that clicking outside won't close an opened <strong>Dropdown</strong>,
-    <br>if you pass in <em>Input Directive</em>&nbsp; <strong>[unoDropdownHandlePageEvents]="false"</strong>:
-    <span class="slds-m-top--x-small"
-          unoDropdown
-          [(open)]="openSimpleDropdown"
-          [unoDropdownHandlePageEvents]="false"
+    <p>
+      Check that clicking outside won't close an opened <strong>Dropdown</strong>,
+      <br>if you pass in <em>Input Directive</em>&nbsp; <strong>[unoDropdownHandlePageEvents]="false"</strong>:
+      <span class="slds-m-top--x-small"
+        unoDropdown
+        [(open)]="openSimpleDropdown"
+        [unoDropdownHandlePageEvents]="false"
 
-          (openChange)=dropdownState($event)
-          (selectedElem)=optionSelected($event)>
+        (openChange)=dropdownState($event)
+        (selectedElem)=optionSelected($event)>
         <!-- the Dropdown trigger: -->
         <button unoDropdownTrigger class="slds-button slds-button--neutral">
-            <span class="slds-truncate">{{ selectedItem }}</span>
-            <uno-icon icon="down_s" size="x-small" class="slds-m-left_small"></uno-icon>
+          <span class="slds-truncate">{{ selectedItem }}</span>
+          <uno-icon icon="down_s" size="x-small" class="slds-m-left_small"></uno-icon>
         </button>
 
         <!-- the Dropdown list of items -->
         <div class="slds-dropdown slds-dropdown--left">
-            <ul class="dropdown__list" role="menu">
-                <!-- reset chosen item: -->
-                <li class="slds-dropdown__item unselect-item">
-                    <a unoDropdownItem role="menuitem">-- (select none) --</a>
-                </li>
-                <!-- All the useful ones -->
-                <li *ngFor="let item of anotherItems;" class="slds-dropdown__item">
-                    <a unoDropdownItem role="menuitem">
-                        <p class="slds-truncate">{{ item.value }}</p>
-                    </a>
-                </li>
+          <ul class="dropdown__list" role="menu">
+            <!-- reset chosen item: -->
+            <li class="slds-dropdown__item unselect-item">
+              <a unoDropdownItem role="menuitem">-- (select none) --</a>
+            </li>
+            <!-- All the useful ones -->
+            @for (item of anotherItems; track item) {
+              <li class="slds-dropdown__item">
+                <a unoDropdownItem role="menuitem">
+                  <p class="slds-truncate">{{ item.value }}</p>
+                </a>
+              </li>
+            }
 
-            </ul>
+          </ul>
         </div>
 
-    </span>
+      </span>
 
-    <br>
-    <small>Notice, by catching <em>(selectedElem) emitter</em>, we are not using <strong>(click)</strong> on any of the <strong>unoDropdownItem</strong>s! Check
+      <br>
+        <small>Notice, by catching <em>(selectedElem) emitter</em>, we are not using <strong>(click)</strong> on any of the <strong>unoDropdownItem</strong>s! Check
         the console.log to catch <strong>&#60;span unoDropdown /&#62;</strong> outside container &nbsp;<em>selectedElem()</em> event!</small>
 
-</p>
+      </p>

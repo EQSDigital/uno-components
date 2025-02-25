@@ -1,6 +1,13 @@
 import { Component, ChangeDetectionStrategy, HostBinding, Input, Output, EventEmitter, HostListener } from '@angular/core';
+import { TranslateDirective } from '@ngx-translate/core';
 
 import { uniqueId } from '../../utils/util';
+import { DateDayComponent } from '../date-day/date-day.component';
+import { DateWeekdaysComponent } from '../date-weekdays/date-weekdays.component';
+import { DateYearComponent } from '../date-year/date-year.component';
+import { ButtonDirective } from '../button/button.directive';
+import { BadgeComponent } from '../badge/badge.component';
+import { IconComponent } from '../icon/icon.component';
 
 export interface NanoInternalDate {
     year: number;
@@ -12,7 +19,9 @@ export interface NanoInternalDate {
 @Component({
     selector: 'uno-datepicker',
     templateUrl: './datepicker.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [IconComponent, BadgeComponent, ButtonDirective, TranslateDirective, DateYearComponent, DateWeekdaysComponent, DateDayComponent]
 })
 export class DatepickerComponent {
 
@@ -22,7 +31,7 @@ export class DatepickerComponent {
 
     date: NanoInternalDate;
     current: NanoInternalDate;
-    weeks: NanoInternalDate[];
+    weeks: NanoInternalDate[][];
     uid = uniqueId('datepicker');
     monthLabel: string;
 
@@ -39,7 +48,7 @@ export class DatepickerComponent {
         this.date = this.parseDate(date);
 
         if (this.date) {
-            this.current = Object.assign({}, this.date);
+            this.current = { ...this.date };
         }
 
         this.render();
@@ -113,7 +122,7 @@ export class DatepickerComponent {
                 this.render();
                 break;
 
-            case 'MoveMonth':
+            case 'MoveMonth': {
                 const aux: NanoInternalDate = this.date || this.parseDate(new Date());
                 // ONLY MOVE PREVIOUS IF CURRENT DATE IS MORE GREATER OR EQUAL TO NUMBER OF YEARS BEFORE
                 if (param === -1 && new Date(this.current.year, this.current.month, this.current.day) <= new Date(aux.year - this.numYearsBefore, aux.month, aux.day)) { return; }
@@ -124,6 +133,7 @@ export class DatepickerComponent {
                 this.current = { year: date.getFullYear(), month: date.getMonth(), day };
                 this.render();
                 break;
+            }
 
             case 'MoveDayTo':
                 this.current.day = +param;

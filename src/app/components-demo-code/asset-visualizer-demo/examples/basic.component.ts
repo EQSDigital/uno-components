@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { AssetVisualizerComponent } from 'uno-ui-lib';
 
 @Component({
     selector: 'basic-example',
-    templateUrl: 'basic.component.html'
+    templateUrl: 'basic.component.html',
+    standalone: true,
+    imports: [AssetVisualizerComponent]
 })
 
 export class BasicComponent {

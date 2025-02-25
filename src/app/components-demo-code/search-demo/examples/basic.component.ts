@@ -1,11 +1,13 @@
-import { Component, Renderer2, ViewChild } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 
 import { SearchComponent } from 'uno-ui-lib';
 
 
 @Component({
     selector: 'basic-example',
-    templateUrl: 'basic.component.html'
+    templateUrl: 'basic.component.html',
+    standalone: true,
+    imports: [SearchComponent]
 })
 
 export class BasicComponent {

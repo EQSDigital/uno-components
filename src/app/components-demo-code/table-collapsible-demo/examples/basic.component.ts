@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
-import { UnoSmartTableSettings, LocalDataSource } from 'uno-ui-lib';
+import { UnoSmartTableSettings, LocalDataSource, UnoTableModule, CellModule } from 'uno-ui-lib';
 
 import { RenderBadgeComponent } from '../render-badge';
 import { RenderInputTagsComponent } from '../render-input-tags';
 import { RenderBadgesComponent } from '../render-badges';
+import { NgStyle } from '@angular/common';
 
 declare var require: any;
 
 @Component({
     selector: 'basic-example',
-    templateUrl: 'basic.component.html'
+    templateUrl: 'basic.component.html',
+    standalone: true,
+    imports: [UnoTableModule, NgStyle, CellModule]
 })
 
 export class BasicComponent {

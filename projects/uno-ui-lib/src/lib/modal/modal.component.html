@@ -6,308 +6,316 @@
      [attr.aria-describedby]="contentId"
      role="dialog">
 
-    <div class="slds-modal__container" [class.slds-modal-small-container--of-template]="smallerModal">
+  <div class="slds-modal__container" [class.slds-modal-small-container--of-template]="smallerModal">
 
-        <!-- Modal Header -->
-        <header class="slds-modal__header" [class.slds-modal__header--empty]="!(headerStr || headerDirective)" [style.text-align]="headerAlign">
+    <!-- Modal Header -->
+    <header class="slds-modal__header" [class.slds-modal__header--empty]="!(headerStr || headerDirective)" [style.text-align]="headerAlign">
 
-            <!-- ... using Input Directives: -->
-            <ng-template #localHeader>
-                <h2 *ngIf="headerStr" class="slds-text-heading_large" [id]="headingId">{{ headerStr }}</h2>
-                <h3 *ngIf="subHeaderStr" class="slds-text-heading_small" style="color: var(--light-gray-4)">{{ subHeaderStr }}</h3>
-            </ng-template>
+      <!-- ... using Input Directives: -->
 
-            <!-- ...using Angular Template: -->
-            <ng-template *ngIf="headerDirective; else localHeader" [ngTemplateOutlet]="headerDirective.templateRef"
-                         [ngTemplateOutletContext]="{ id: headingId }"></ng-template>
+      <!-- ...using Angular Template: -->
+      @if (headerDirective) {
+      <ng-template [ngTemplateOutlet]="headerDirective.templateRef"
+                   [ngTemplateOutletContext]="{ id: headingId }"></ng-template>
+      } @else {
+      @if (headerStr) {
+      <h2 class="slds-text-heading_large" [id]="headingId">{{ headerStr }}</h2>
+      }
+      @if (subHeaderStr) {
+      <h3 class="slds-text-heading_small" style="color: var(--light-gray-4)">{{ subHeaderStr }}</h3>
+      }
+      }
 
-        </header>
+    </header>
 
-        <!-- Modal Body -->
-        <div class="slds-modal__content" [id]="contentId" cdkScrollable="cdkScrollable">
+    <!-- Modal Body -->
+    <div class="slds-modal__content" [id]="contentId" cdkScrollable="cdkScrollable">
 
-            <!-- ... using Angular Template (by Content Tag/Id) to be fully done @ instalation HTML -->
-            <ng-content></ng-content>
+      <!-- ... using Angular Template (by Content Tag/Id) to be fully done @ instalation HTML -->
+      <ng-content></ng-content>
 
-            <!-- ... using pre-defined UNO ui lib Angular Templates, SPECIFIC to apply into Nano APP!-->
-            <div [ngSwitch]="templateType">
-
-                <ng-template [ngSwitchCase]="'successModal'">
-                    <div class="slds-grid slds-grid--vertical slds-grid--vertical-align-center slds-p-around--x-large">
-                        <h2 class="nunito-32 slds-text-align--center" translate>successTitle</h2>
-                        <h2 class="open-sans-14 slds-text-align--center" style="color: var(--light-gray-1)" [innerHTML]="templateCustomMsg"></h2>
-                        <div class="slds-m-vertical--xx-large">
-                            <img [src]="templateIconPath" [alt]="'actionAccomplishedSuccess' | translate" width="159" heigth="159" />
-                        </div>
-                        <button unoButton unoType="green" class="slds-m-top--x-large" (click)="modalClose('Ok');" translate>okLabel</button>
-                    </div>
-                </ng-template>
-
-                <ng-template [ngSwitchCase]="'warningModal'">
-                    <div class="slds-grid slds-grid--vertical slds-grid--vertical-align-center slds-p-around--x-large">
-                        <h2 class="nunito-32 slds-text-align--center" translate>warningTitle</h2>
-                        <h2 class="open-sans-14 slds-text-align--center" style="color: var(--light-gray-1)" [innerHTML]="templateCustomMsg"></h2>
-                        <div class="slds-m-vertical--xx-large">
-                            <img [src]="templateIconPath" [alt]="'actionNotMeetingCurrentSpecifications' | translate" width="159" heigth="159" />
-                        </div>
-                        <button unoButton class="slds-button--warning slds-m-top--x-large" (click)="modalClose('Ok');" translate>okLabel</button>
-                    </div>
-                </ng-template>
-
-                <ng-template [ngSwitchCase]="'confirmDelModal'">
-                    <div class="slds-grid slds-grid--vertical slds-grid--vertical-align-center slds-p-around--x-large">
-                        <h2 class="nunito-32 slds-text-align--center" translate>warningTitle</h2>
-                        <h2 class="open-sans-18 slds-text-align--center" style="margin-bottom: 5px;" translate>deleteSubTitle</h2>
-                        <h2 class="open-sans-14 slds-text-align--center" style="color: var(--light-gray-1)" [innerHTML]="templateCustomMsg"></h2>
-                        <div class="slds-m-vertical--xx-large">
-                            <img [src]="templateIconPath" [alt]="'proceedWithDeletion' | translate" width="159" heigth="159" />
-                        </div>
-                        <button unoButton class="slds-button--destructive slds-m-top--x-large" (click)="modalClose('Delete');" translate>delete</button>
-                        <button unoButton unoType="secondary" class="slds-m-top--x-small" (click)="modalClose('Cancel');" translate>cancel</button>
-                    </div>
-                </ng-template>
-
-                <ng-template [ngSwitchCase]="'confirmActionModal'">
-                    <div class="slds-grid slds-grid--vertical slds-grid--vertical-align-center slds-p-around--x-large">
-                        <h2 class="nunito-32 slds-text-align--center" translate>confirmTitle</h2>
-                        <h2 class="open-sans-14 slds-text-align--center" style="color: var(--light-gray-1)" [innerHTML]="templateCustomMsg"></h2>
-                        <div class="slds-m-vertical--xx-large">
-                            <img [src]="templateIconPath" [alt]="'confirmAction' | translate" width="159" heigth="159" />
-                        </div>
-                        <button unoButton class="slds-button--warning slds-m-top--x-large" (click)="modalClose('Proceed');" translate>proceedLabel</button>
-                        <button unoButton unoType="secondary" class="slds-m-top--x-small" (click)="modalClose('Cancel');" translate>cancel</button>
-                    </div>
-                </ng-template>
-
-                <ng-template [ngSwitchCase]="'docsUploadModal'">
-                    <form [formGroup]="uploadForm" class="uno-forms slds-grid slds-gutters_small slds-wrap slds-p-around--large"
-                          style="background: var(--light-gray-12);">
-
-                        <div class="slds-col slds-size--1-of-1">
-                            <uno-drag-drop-file [file]="file"
-                                                [disabled]="disableInputFile"
-                                                [maxFileSize]="fileSize"
-                                                [disabledTrash]="true"
-                                                [disabledDownload]="true"
-                                                (filesDropped)="onFileDropped($event)"
-                                                (deleteFile)="onDeleteFile($event)">
-                            </uno-drag-drop-file>
-                        </div>
-
-                        <div class="slds-col slds-size--1-of-1" *ngIf="showName">
-                            <fieldset class="slds-form-element">
-                                <label translate>nameLabel</label>
-                                <input type="text" class="slds-input" [placeholder]="'insertName' | translate" formControlName="name">
-                            </fieldset>
-                        </div>
-
-                        <div class="slds-col slds-size--1-of-2" *ngIf="showTag">
-                            <fieldset class="slds-form-element">
-                                <label translate>tagLabel</label>
-                                <input type="text" class="slds-input" [placeholder]="'insertTag' | translate" formControlName="tag">
-                            </fieldset>
-                        </div>
-
-                        <div class="slds-col slds-size_1-of-2" *ngIf="showType">
-                            <fieldset class="slds-form-element">
-                                <label translate>documentTypeLabel</label>
-                                <uno-picklist [data]="docTypeSelector"
-                                              [(open)]="dD?.docType.opened"
-                                              fluid="true"
-                                              unoPick
-                                              [(unoPick)]="pickDocType"
-                                              (selectedElem)="updateWithSelectedOption('docType', pickDocType, 'documentType')">
-                                    <span class="slds-truncate" [title]="dD?.docType.name || ('selectItemLabel' | translate)">{{ dD?.docType.name ||
-                                        ('selectItemLabel' | translate) }}</span>
-                                    <ng-template uno-picklist-item let-item>{{ item.name }}</ng-template>
-                                </uno-picklist>
-                            </fieldset>
-                        </div>
-
-                        <div class="slds-col slds-size_1-of-3" *ngIf="showDate">
-                            <fieldset class="slds-form-element">
-                                <label translate>documentDateLabel</label>
-                                <div class="date-picker-demo-container">
-                                    <uno-datepicker2 [min]="documentMinDate"
-                                                     [max]="documentMaxDate"
-                                                     (dateChange)="templateEventEmited($event)"
-                                                     [date]="datePickerData"
-                                                     [chooseLabel]="'chooseDateLabel' | translate"
-                                                     [disableCalendar]="false"
-                                                     [reset]="resetDatePicker"
-                                                     [disable]="false">
-                                    </uno-datepicker2>
-                                </div>
-                            </fieldset>
-                        </div>
-
-                        <div class="slds-col slds-size_1-of-3" *ngIf="showExpiredDate">
-                            <fieldset class="slds-form-element">
-                                <label translate>documentDateLabel</label>
-                                <div class="date-picker-demo-container">
-                                    <uno-datepicker2 [min]="expireMinDate"
-                                                     [max]="expireMaxDate"
-                                                     (dateChange)="expireDateEmited($event)"
-                                                     [date]="datePickerExpiredData"
-                                                     [chooseLabel]="'chooseDateLabel' | translate"
-                                                     [disableCalendar]="false"
-                                                     [reset]="resetDatePicker"
-                                                     [disable]="false">
-                                    </uno-datepicker2>
-                                </div>
-                            </fieldset>
-                        </div>
-
-                        <div class="slds-col slds-size_1-of-3" *ngIf="docStatusSelector">
-                            <fieldset class="slds-form-element">
-                                <label translate>documentStatusLabel</label>
-                                <uno-picklist [data]="docStatusSelector"
-                                              [(open)]="dD?.docStatus.opened"
-                                              fluid="true"
-                                              unoPick
-                                              [(unoPick)]="pickDocStatus"
-                                              (selectedElem)="updateWithSelectedOption('docStatus', pickDocStatus, 'documentStatus')">
-                                    <span class="slds-truncate" [title]="dD?.docStatus.name || ('selectItemLabel' | translate)">{{ dD?.docStatus.name ||
-                                        ('selectItemLabel' | translate) }}</span>
-                                    <ng-template uno-picklist-item let-item>{{ item.name }}</ng-template>
-                                </uno-picklist>
-                            </fieldset>
-                        </div>
-
-                        <div class="slds-col slds-size_1-of-3" *ngIf="docResultSelector">
-                            <fieldset class="slds-form-element">
-                                <label translate>documentResultLabel</label>
-                                <uno-picklist [data]="docResultSelector"
-                                              [(open)]="dD?.docResult.opened"
-                                              fluid="true"
-                                              unoPick
-                                              [(unoPick)]="pickDocResult"
-                                              (selectedElem)="updateWithSelectedOption('docResult', pickDocResult, 'documentResult')">
-                                    <span class="slds-truncate" [title]="dD?.docResult.name || ('selectItemLabel' | translate)">{{ dD?.docResult.name ||
-                                        ('selectItemLabel' | translate) }}</span>
-                                    <ng-template uno-picklist-item let-item>{{ item.name }}</ng-template>
-                                </uno-picklist>
-                            </fieldset>
-                        </div>
-
-                        <div class="slds-col slds-size--1-of-1" *ngIf="showComment">
-                            <fieldset class="slds-form-element">
-                                <label translate>commentsLabel<span style="font-style: italic" translate>optionalLabel</span></label>
-                                <textarea rows="4" class="slds-input" [placeholder]="'insertComments' | translate" formControlName="description"></textarea>
-                            </fieldset>
-                        </div>
-                    </form>
-                </ng-template>
-
-                <ng-template [ngSwitchCase]="'sscUploadModal'">
-                    <form [formGroup]="uploadForm" class="uno-forms slds-grid slds-gutters_small slds-wrap slds-p-around--large"
-                          style="background: var(--light-gray-12);">
-
-                        <div class="slds-col slds-size--1-of-1">
-                            <uno-drag-drop-file [file]="file"
-                                                [disabled]="disableInputFile"
-                                                [maxFileSize]="fileSize"
-                                                [disabledTrash]="true"
-                                                [disabledDownload]="true"
-                                                (filesDropped)="onFileDropped($event)"
-                                                (deleteFile)="onDeleteFile($event)">
-                            </uno-drag-drop-file>
-                        </div>
-
-                        <div *ngIf="editData?.documentType?.templateName" class="slds-col slds-size--1-of-1 slds-p-top--small">
-                            <div class="reference-template slds-grid slds-grid--vertical-align-center">
-                                <uno-icon icon="info" size="x-small" [withOpacity]="false" class="slds-p-left--small slds-p-right--xx-small"></uno-icon>
-                                {{ 'referenceTemplate' | translate }}:
-                                <span (click)="onDownloadTemplate()">{{ editData.documentType.templateName }}</span>
-                            </div>
-                        </div>
-
-                        <div class="slds-col slds-size--1-of-1">
-                            <fieldset class="slds-form-element">
-                                <label translate>nameLabel</label>
-                                <input type="text" class="slds-input" [placeholder]="'insertName' | translate" formControlName="name">
-                            </fieldset>
-                        </div>
-
-                        <div class="slds-col slds-size_1-of-2" *ngIf="showSSCType">
-                            <fieldset class="slds-form-element">
-                                <label translate>documentTypeLabel</label>
-                                <uno-picklist [data]="docTypeSelector"
-                                              [(open)]="dD?.docType.opened"
-                                              fluid="true"
-                                              unoPick
-                                              [(unoPick)]="pickDocType"
-                                              (selectedElem)="updateWithSelectedOption('docType', pickDocType, 'documentType')">
-                                    <span class="slds-truncate" [title]="dD?.docType.name || ('selectItemLabel' | translate)">{{ dD?.docType.name ||
-                                        ('selectItemLabel' | translate) }}</span>
-                                    <ng-template uno-picklist-item let-item>{{ item.name }}</ng-template>
-                                </uno-picklist>
-                            </fieldset>
-                        </div>
-
-                        <div class="slds-col slds-size_1-of-3">
-                            <fieldset class="slds-form-element">
-                                <label translate>expireDateLabel</label>
-                                <div class="date-picker-demo-container">
-                                    <uno-datepicker2 [min]="expireMinDate"
-                                                     [max]="expireMaxDate"
-                                                     [date]="datePickerExpiredData"
-                                                     [chooseLabel]="'chooseDateLabel' | translate"
-                                                     [disableCalendar]="disableSSCDate"
-                                                     [reset]="resetDatePicker"
-                                                     [disable]="disableSSCDate"
-                                                     (dateChange)="expireDateEmited($event)">
-                                    </uno-datepicker2>
-                                </div>
-                            </fieldset>
-                        </div>
-
-                        <div class="slds-col slds-size_1-of-3">
-                            <fieldset class="slds-form-element">
-                                <label translate>{{ sscStatusLabel }}</label>
-                                <uno-picklist [data]="sscStatusSelector"
-                                              [(open)]="dD?.sscStatus.opened"
-                                              fluid="true"
-                                              unoPick
-                                              [(unoPick)]="pickStatus"
-                                              (selectedElem)="updateWithSelectedOption('sscStatus', pickStatus, 'sscStatus')"
-                                              [isDisabled]="disableSSCStatus">
-                                    <span *ngIf="dD?.sscStatus.name" style="height: 12px; width: 12px; border-radius: 50%; margin-right: 10px;"
-                                          [style.background-color]="dD?.sscStatus.color"></span>
-                                    <span class="slds-truncate" [title]="dD?.sscStatus.name || ('selectItemLabel' | translate)">{{ dD?.sscStatus.name ||
-                                        ('selectItemLabel' | translate) }}</span>
-                                    <ng-template uno-picklist-item let-item>
-                                        <span style="height: 12px; width: 12px; border-radius: 50%; margin-right: 10px; padding-left: 16px;"
-                                              [style.background-color]="item.color"></span>
-                                        {{ item.name | translate}}
-                                    </ng-template>
-                                </uno-picklist>
-                            </fieldset>
-                        </div>
-
-                        <div class="slds-col slds-size--1-of-1">
-                            <fieldset class="slds-form-element">
-                                <label translate>descriptionLabel<span style="font-style: italic" translate>optionalLabel</span></label>
-                                <textarea rows="4" class="slds-input" [placeholder]="'insertDescription' | translate" formControlName="description"></textarea>
-                            </fieldset>
-                        </div>
-
-                        <!-- <div class="slds-col slds-size--1-of-1">
-                            <fieldset class="slds-form-element">
-                                <label translate>commentsLabel<span style="font-style: italic" translate>optionalLabel</span></label>
-                                <textarea rows="4" class="slds-input" [placeholder]="'insertComments' | translate" formControlName="comments"></textarea>
-                            </fieldset>
-                        </div> -->
-                    </form>
-                </ng-template>
-            </div>
+      <!-- ... using pre-defined UNO ui lib Angular Templates, SPECIFIC to apply into Nano APP!-->
+      <div>
+        @switch (templateType) {
+        @case ('successModal') {
+        <div class="slds-grid slds-grid--vertical slds-grid--vertical-align-center slds-p-around--x-large">
+          <h2 class="nunito-32 slds-text-align--center" translate>successTitle</h2>
+          <h2 class="open-sans-14 slds-text-align--center" style="color: var(--light-gray-1)" [innerHTML]="templateCustomMsg"></h2>
+          <div class="slds-m-vertical--xx-large">
+            <img [src]="templateIconPath" [alt]="'actionAccomplishedSuccess' | translate" width="159" heigth="159" />
+          </div>
+          <button unoButton unoType="green" class="slds-m-top--x-large" (click)="modalClose('Ok');" translate>okLabel</button>
         </div>
-
-        <!-- Modal Footer-->
-        <footer class="slds-modal__footer" *ngIf="footerDirective" [class.slds-modal__footer--directional]="separateButtons">
-            <ng-template [ngTemplateOutlet]="footerDirective.templateRef"></ng-template>
-        </footer>
+        }
+        @case ('warningModal') {
+        <div class="slds-grid slds-grid--vertical slds-grid--vertical-align-center slds-p-around--x-large">
+          <h2 class="nunito-32 slds-text-align--center" translate>warningTitle</h2>
+          <h2 class="open-sans-14 slds-text-align--center" style="color: var(--light-gray-1)" [innerHTML]="templateCustomMsg"></h2>
+          <div class="slds-m-vertical--xx-large">
+            <img [src]="templateIconPath" [alt]="'actionNotMeetingCurrentSpecifications' | translate" width="159" heigth="159" />
+          </div>
+          <button unoButton class="slds-button--warning slds-m-top--x-large" (click)="modalClose('Ok');" translate>okLabel</button>
+        </div>
+        }
+        @case ('confirmDelModal') {
+        <div class="slds-grid slds-grid--vertical slds-grid--vertical-align-center slds-p-around--x-large">
+          <h2 class="nunito-32 slds-text-align--center" translate>warningTitle</h2>
+          <h2 class="open-sans-18 slds-text-align--center" style="margin-bottom: 5px;" translate>deleteSubTitle</h2>
+          <h2 class="open-sans-14 slds-text-align--center" style="color: var(--light-gray-1)" [innerHTML]="templateCustomMsg"></h2>
+          <div class="slds-m-vertical--xx-large">
+            <img [src]="templateIconPath" [alt]="'proceedWithDeletion' | translate" width="159" heigth="159" />
+          </div>
+          <button unoButton class="slds-button--destructive slds-m-top--x-large" (click)="modalClose('Delete');" translate>delete</button>
+          <button unoButton unoType="secondary" class="slds-m-top--x-small" (click)="modalClose('Cancel');" translate>cancel</button>
+        </div>
+        }
+        @case ('confirmActionModal') {
+        <div class="slds-grid slds-grid--vertical slds-grid--vertical-align-center slds-p-around--x-large">
+          <h2 class="nunito-32 slds-text-align--center" translate>confirmTitle</h2>
+          <h2 class="open-sans-14 slds-text-align--center" style="color: var(--light-gray-1)" [innerHTML]="templateCustomMsg"></h2>
+          <div class="slds-m-vertical--xx-large">
+            <img [src]="templateIconPath" [alt]="'confirmAction' | translate" width="159" heigth="159" />
+          </div>
+          <button unoButton class="slds-button--warning slds-m-top--x-large" (click)="modalClose('Proceed');" translate>proceedLabel</button>
+          <button unoButton unoType="secondary" class="slds-m-top--x-small" (click)="modalClose('Cancel');" translate>cancel</button>
+        </div>
+        }
+        @case ('docsUploadModal') {
+        <form [formGroup]="uploadForm" class="uno-forms slds-grid slds-gutters_small slds-wrap slds-p-around--large"
+              style="background: var(--light-gray-12);">
+          <div class="slds-col slds-size--1-of-1">
+            <uno-drag-drop-file [file]="file"
+                                [disabled]="disableInputFile"
+                                [maxFileSize]="fileSize"
+                                [disabledTrash]="true"
+                                [disabledDownload]="true"
+                                (filesDropped)="onFileDropped($event)"
+                                (deleteFile)="onDeleteFile($event)">
+            </uno-drag-drop-file>
+          </div>
+          @if (showName) {
+          <div class="slds-col slds-size--1-of-1">
+            <fieldset class="slds-form-element">
+              <label translate>nameLabel</label>
+              <input type="text" class="slds-input" [placeholder]="'insertName' | translate" formControlName="name">
+            </fieldset>
+          </div>
+          }
+          @if (showTag) {
+          <div class="slds-col slds-size--1-of-2">
+            <fieldset class="slds-form-element">
+              <label translate>tagLabel</label>
+              <input type="text" class="slds-input" [placeholder]="'insertTag' | translate" formControlName="tag">
+            </fieldset>
+          </div>
+          }
+          @if (showType) {
+          <div class="slds-col slds-size_1-of-2">
+            <fieldset class="slds-form-element">
+              <label translate>documentTypeLabel</label>
+              <uno-picklist [data]="docTypeSelector"
+                            [(open)]="dD?.docType.opened"
+                            fluid="true"
+                            unoPick
+                            [(unoPick)]="pickDocType"
+                            (selectedElem)="updateWithSelectedOption('docType', pickDocType, 'documentType')">
+                <span class="slds-truncate" [title]="dD?.docType.name || ('selectItemLabel' | translate)">{{ dD?.docType.name ||
+                  ('selectItemLabel' | translate) }}</span>
+                <ng-template uno-picklist-item let-item>{{ item.name }}</ng-template>
+              </uno-picklist>
+            </fieldset>
+          </div>
+          }
+          @if (showDate) {
+          <div class="slds-col slds-size_1-of-3">
+            <fieldset class="slds-form-element">
+              <label translate>documentDateLabel</label>
+              <div class="date-picker-demo-container">
+                <uno-datepicker2 [min]="documentMinDate"
+                                 [max]="documentMaxDate"
+                                 (dateChange)="templateEventEmited($event)"
+                                 [date]="datePickerData"
+                                 [chooseLabel]="'chooseDateLabel' | translate"
+                                 [disableCalendar]="false"
+                                 [reset]="resetDatePicker"
+                                 [disable]="false">
+                </uno-datepicker2>
+              </div>
+            </fieldset>
+          </div>
+          }
+          @if (showExpiredDate) {
+          <div class="slds-col slds-size_1-of-3">
+            <fieldset class="slds-form-element">
+              <label translate>documentDateLabel</label>
+              <div class="date-picker-demo-container">
+                <uno-datepicker2 [min]="expireMinDate"
+                                 [max]="expireMaxDate"
+                                 (dateChange)="expireDateEmited($event)"
+                                 [date]="datePickerExpiredData"
+                                 [chooseLabel]="'chooseDateLabel' | translate"
+                                 [disableCalendar]="false"
+                                 [reset]="resetDatePicker"
+                                 [disable]="false">
+                </uno-datepicker2>
+              </div>
+            </fieldset>
+          </div>
+          }
+          @if (docStatusSelector) {
+          <div class="slds-col slds-size_1-of-3">
+            <fieldset class="slds-form-element">
+              <label translate>documentStatusLabel</label>
+              <uno-picklist [data]="docStatusSelector"
+                            [(open)]="dD?.docStatus.opened"
+                            fluid="true"
+                            unoPick
+                            [(unoPick)]="pickDocStatus"
+                            (selectedElem)="updateWithSelectedOption('docStatus', pickDocStatus, 'documentStatus')">
+                <span class="slds-truncate" [title]="dD?.docStatus.name || ('selectItemLabel' | translate)">{{ dD?.docStatus.name ||
+                  ('selectItemLabel' | translate) }}</span>
+                <ng-template uno-picklist-item let-item>{{ item.name }}</ng-template>
+              </uno-picklist>
+            </fieldset>
+          </div>
+          }
+          @if (docResultSelector) {
+          <div class="slds-col slds-size_1-of-3">
+            <fieldset class="slds-form-element">
+              <label translate>documentResultLabel</label>
+              <uno-picklist [data]="docResultSelector"
+                            [(open)]="dD?.docResult.opened"
+                            fluid="true"
+                            unoPick
+                            [(unoPick)]="pickDocResult"
+                            (selectedElem)="updateWithSelectedOption('docResult', pickDocResult, 'documentResult')">
+                <span class="slds-truncate" [title]="dD?.docResult.name || ('selectItemLabel' | translate)">{{ dD?.docResult.name ||
+                  ('selectItemLabel' | translate) }}</span>
+                <ng-template uno-picklist-item let-item>{{ item.name }}</ng-template>
+              </uno-picklist>
+            </fieldset>
+          </div>
+          }
+          @if (showComment) {
+          <div class="slds-col slds-size--1-of-1">
+            <fieldset class="slds-form-element">
+              <label translate>commentsLabel<span style="font-style: italic" translate>optionalLabel</span></label>
+              <textarea rows="4" class="slds-input" [placeholder]="'insertComments' | translate" formControlName="description"></textarea>
+            </fieldset>
+          </div>
+          }
+        </form>
+        }
+        @case ('sscUploadModal') {
+        <form [formGroup]="uploadForm" class="uno-forms slds-grid slds-gutters_small slds-wrap slds-p-around--large"
+              style="background: var(--light-gray-12);">
+          <div class="slds-col slds-size--1-of-1">
+            <uno-drag-drop-file [file]="file"
+                                [disabled]="disableInputFile"
+                                [maxFileSize]="fileSize"
+                                [disabledTrash]="true"
+                                [disabledDownload]="true"
+                                (filesDropped)="onFileDropped($event)"
+                                (deleteFile)="onDeleteFile($event)">
+            </uno-drag-drop-file>
+          </div>
+          @if (editData?.documentType?.templateName) {
+          <div class="slds-col slds-size--1-of-1 slds-p-top--small">
+            <div class="reference-template slds-grid slds-grid--vertical-align-center">
+              <uno-icon icon="info" size="x-small" [withOpacity]="false" class="slds-p-left--small slds-p-right--xx-small"></uno-icon>
+              {{ 'referenceTemplate' | translate }}:
+              <span (click)="onDownloadTemplate()">{{ editData.documentType.templateName }}</span>
+            </div>
+          </div>
+          }
+          <div class="slds-col slds-size--1-of-1">
+            <fieldset class="slds-form-element">
+              <label translate>nameLabel</label>
+              <input type="text" class="slds-input" [placeholder]="'insertName' | translate" formControlName="name">
+            </fieldset>
+          </div>
+          @if (showSSCType) {
+          <div class="slds-col slds-size_1-of-2">
+            <fieldset class="slds-form-element">
+              <label translate>documentTypeLabel</label>
+              <uno-picklist [data]="docTypeSelector"
+                            [(open)]="dD?.docType.opened"
+                            fluid="true"
+                            unoPick
+                            [(unoPick)]="pickDocType"
+                            (selectedElem)="updateWithSelectedOption('docType', pickDocType, 'documentType')">
+                <span class="slds-truncate" [title]="dD?.docType.name || ('selectItemLabel' | translate)">{{ dD?.docType.name ||
+                  ('selectItemLabel' | translate) }}</span>
+                <ng-template uno-picklist-item let-item>{{ item.name }}</ng-template>
+              </uno-picklist>
+            </fieldset>
+          </div>
+          }
+          <div class="slds-col slds-size_1-of-3">
+            <fieldset class="slds-form-element">
+              <label translate>expireDateLabel</label>
+              <div class="date-picker-demo-container">
+                <uno-datepicker2 [min]="expireMinDate"
+                                 [max]="expireMaxDate"
+                                 [date]="datePickerExpiredData"
+                                 [chooseLabel]="'chooseDateLabel' | translate"
+                                 [disableCalendar]="disableSSCDate"
+                                 [reset]="resetDatePicker"
+                                 [disable]="disableSSCDate"
+                                 (dateChange)="expireDateEmited($event)">
+                </uno-datepicker2>
+              </div>
+            </fieldset>
+          </div>
+          <div class="slds-col slds-size_1-of-3">
+            <fieldset class="slds-form-element">
+              <label translate>{{ sscStatusLabel }}</label>
+              <uno-picklist [data]="sscStatusSelector"
+                            [(open)]="dD?.sscStatus.opened"
+                            fluid="true"
+                            unoPick
+                            [(unoPick)]="pickStatus"
+                            (selectedElem)="updateWithSelectedOption('sscStatus', pickStatus, 'sscStatus')"
+                            [isDisabled]="disableSSCStatus">
+                @if (dD?.sscStatus.name) {
+                <span style="height: 12px; width: 12px; border-radius: 50%; margin-right: 10px;"
+                      [style.background-color]="dD?.sscStatus.color"></span>
+                }
+                <span class="slds-truncate" [title]="dD?.sscStatus.name || ('selectItemLabel' | translate)">{{ dD?.sscStatus.name ||
+                  ('selectItemLabel' | translate) }}</span>
+                <ng-template uno-picklist-item let-item>
+                  <span style="height: 12px; width: 12px; border-radius: 50%; margin-right: 10px; padding-left: 16px;"
+                        [style.background-color]="item.color"></span>
+                  {{ item.name | translate}}
+                </ng-template>
+              </uno-picklist>
+            </fieldset>
+          </div>
+          <div class="slds-col slds-size--1-of-1">
+            <fieldset class="slds-form-element">
+              <label translate>descriptionLabel<span style="font-style: italic" translate>optionalLabel</span></label>
+              <textarea rows="4" class="slds-input" [placeholder]="'insertDescription' | translate" formControlName="description"></textarea>
+            </fieldset>
+          </div>
+          <!-- <div class="slds-col slds-size--1-of-1">
+              <fieldset class="slds-form-element">
+                <label translate>commentsLabel<span style="font-style: italic" translate>optionalLabel</span></label>
+                <textarea rows="4" class="slds-input" [placeholder]="'insertComments' | translate" formControlName="comments"></textarea>
+              </fieldset>
+            </div> -->
+        </form>
+        }
+        }
+      </div>
     </div>
+
+    <!-- Modal Footer-->
+    @if (footerDirective) {
+    <footer class="slds-modal__footer" [class.slds-modal__footer--directional]="separateButtons">
+      <ng-template [ngTemplateOutlet]="footerDirective.templateRef"></ng-template>
+    </footer>
+    }
+  </div>
 </div>
 
 <!-- Do the background Modal: -->

@@ -10,12 +10,18 @@ import { TabDirective } from './tab.directive';
  *    </ng-template>
  * </uno-tab>
  */
-@Directive({ selector: '[unoTabHeading]' })
+@Directive({
+    selector: '[unoTabHeading]',
+    standalone: true
+})
 export class TabHeadingDirective {
     constructor(public templateRef: TemplateRef<any>) { }
 }
 
-@Directive({ selector: '[unoTabContent]' })
+@Directive({
+    selector: '[unoTabContent]',
+    standalone: true
+})
 export class TabContentDirective {
     constructor(public templateRef: TemplateRef<any>) { }
 }
@@ -23,9 +29,10 @@ export class TabContentDirective {
 @Directive({
     selector: 'uno-tab',
     providers: [{
-        provide: TabDirective,
-        useExisting: TabHeadingDetailDirective
-    }],
+            provide: TabDirective,
+            useExisting: TabHeadingDetailDirective
+        }],
+    standalone: true,
 })
 export class TabHeadingDetailDirective extends TabDirective implements AfterContentInit {
 

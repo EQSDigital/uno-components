@@ -8,8 +8,8 @@ describe('TableDemoCollapsibleComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TableDemoCollapsibleComponent ]
-    })
+    imports: [TableDemoCollapsibleComponent]
+})
     .compileComponents();
   }));
 

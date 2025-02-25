@@ -1,44 +1,45 @@
 <button (click)="onClickIdentified()">Identified</button>
 <button (click)="onClickEvaluated()">Evaluated</button>
 <uno-smart-table [settings]="tableSettings"
-                 [source]="tableData"
-                 (internalAction)="gridAffairAction($event)"
-                 (createConfirm)="confirmRowActionEvent($event, 'create')"
-                 (editConfirm)="confirmRowActionEvent($event, 'edit')"
-                 (deleteConfirm)="confirmRowActionEvent($event, 'delete')"
-                 (cancelCreate)="onCancel()"
-                 (cancelEdit)="onCancel()">
+  [source]="tableData"
+  (internalAction)="gridAffairAction($event)"
+  (createConfirm)="confirmRowActionEvent($event, 'create')"
+  (editConfirm)="confirmRowActionEvent($event, 'edit')"
+  (deleteConfirm)="confirmRowActionEvent($event, 'delete')"
+  (cancelCreate)="onCancel()"
+  (cancelEdit)="onCancel()">
 </uno-smart-table>
 
 <uno-modal [headerStr]="'selectedChemicalProducts' | translate"
-           [(open)]="openModalChemical">
-    <div modalBody class="slds-p-around--large" style="background-color: var(--pale-grey)">
-        <div class="slds-input-has-icon slds-input-has-icon_right">
-            <uno-icon icon="search" size="x-small" class="slds-input__icon slds-input__icon_right"></uno-icon>
-            <input [placeholder]="'searchBox' | translate" class="slds-input" />
-        </div>
-        <div class="slds-m-top--medium slds-p-horizontal--x-small" style="background-color: var(--white)">
-            <div
-                 *ngFor="let elem of dataModal"
-                 class="slds-grid slds-align--absolute-center modal-row">
-                <div class="slds-size--1-of-12 slds-align--absolute-center">
-                    <input type="checkbox"
-                           [checked]="elem.isSelected"
-                           (click)="$event.stopPropagation();"
-                           [disabled]="false">
-                </div>
-                <div class="slds-size--11-of-12 slds-p-right--medium line-clamp-2 open-sans-12" [title]="elem.name">{{ elem.name }}</div>
-            </div>
-            <!-- <div
-                class="slds-grid slds-border--top modal-row"
-                (click)="onOpenCreateChemical()">
-                    <uno-icon class="slds-align-middle slds-p-horizontal--small" icon="plus" [withOpacity]="false"></uno-icon>
-                    <span class="slds-align-middle open-sans-12" translate>createChemicalProduct</span>
-            </div> -->
-        </div>
+  [(open)]="openModalChemical">
+  <div modalBody class="slds-p-around--large" style="background-color: var(--pale-grey)">
+    <div class="slds-input-has-icon slds-input-has-icon_right">
+      <uno-icon icon="search" size="x-small" class="slds-input__icon slds-input__icon_right"></uno-icon>
+      <input [placeholder]="'searchBox' | translate" class="slds-input" />
     </div>
-    <ng-template unoModalFooter>
-        <button unoButton (click)="openModalChemical = false;" translate>cancel</button>
-        <button unoButton unoType="green" (click)="onSaveChemicals()" translate>save</button>
-    </ng-template>
+    <div class="slds-m-top--medium slds-p-horizontal--x-small" style="background-color: var(--white)">
+      @for (elem of dataModal; track elem) {
+        <div
+          class="slds-grid slds-align--absolute-center modal-row">
+          <div class="slds-size--1-of-12 slds-align--absolute-center">
+            <input type="checkbox"
+              [checked]="elem.isSelected"
+              (click)="$event.stopPropagation();"
+              [disabled]="false">
+            </div>
+            <div class="slds-size--11-of-12 slds-p-right--medium line-clamp-2 open-sans-12" [title]="elem.name">{{ elem.name }}</div>
+          </div>
+        }
+        <!-- <div
+        class="slds-grid slds-border--top modal-row"
+        (click)="onOpenCreateChemical()">
+        <uno-icon class="slds-align-middle slds-p-horizontal--small" icon="plus" [withOpacity]="false"></uno-icon>
+        <span class="slds-align-middle open-sans-12" translate>createChemicalProduct</span>
+      </div> -->
+    </div>
+  </div>
+  <ng-template unoModalFooter>
+    <button unoButton (click)="openModalChemical = false;" translate>cancel</button>
+    <button unoButton unoType="green" (click)="onSaveChemicals()" translate>save</button>
+  </ng-template>
 </uno-modal>

@@ -5,10 +5,7 @@ import { PickDirective } from './pick.directive';
 @Directive({
     selector: '[uno-pick-option]',
     exportAs: 'unoPickOption',
-    // host: {
-    //     'role': 'button'
-    // }
-
+    standalone: true,
 })
 
 export class PickOptionDirective implements OnInit, OnDestroy {
@@ -30,8 +27,8 @@ export class PickOptionDirective implements OnInit, OnDestroy {
     private _subscription: Subscription;
 
     constructor(
-        private element: ElementRef,
-        private renderer: Renderer2,
+        private readonly element: ElementRef,
+        private readonly renderer: Renderer2,
         public unoPick: PickDirective
     ) { }
 

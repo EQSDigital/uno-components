@@ -7,6 +7,7 @@ import { Grid } from '../../../lib/grid';
     template: `
         <input type="checkbox" [checked]="grid.getSelectedRows().length === this.grid.dataSet.rows.length" [indeterminate]="grid.getSelectedRows().length > 0 && grid.getSelectedRows().length !== grid.dataSet.rows.length">
     `,
+    standalone: true,
 })
 export class CheckboxSelectAllComponent {
     @Input() grid: Grid;

@@ -2,12 +2,17 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChild, Ev
 import { Subscription, interval } from 'rxjs';
 
 import { ToastDescriptionDirective } from './toast-description.directive';
+import { TranslateDirective } from '@ngx-translate/core';
+import { IconComponent } from '../icon/icon.component';
+import { NgClass, NgTemplateOutlet } from '@angular/common';
 
 @Component({
     selector: 'uno-toast',
     templateUrl: 'toast.component.html',
     styleUrls: ['toast.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgClass, IconComponent, TranslateDirective, NgTemplateOutlet]
 })
 
 export class ToastComponent implements OnChanges {

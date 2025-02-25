@@ -14,7 +14,10 @@ export interface Editor {
     onClick: EventEmitter<any>;
 }
 
-@Directive({ selector: 'default-editor' })
+@Directive({
+    selector: 'default-editor',
+    standalone: true
+})
 // Allthough this is a simple Class definition,
 // in order to import it @ "uno-ui-lib-module.ts" needs to be a @Pipe, @Directive or @Component
 

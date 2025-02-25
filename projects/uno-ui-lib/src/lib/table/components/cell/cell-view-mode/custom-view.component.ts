@@ -2,6 +2,7 @@ import { Component, Input, ViewChild, ViewContainerRef, OnInit, OnDestroy, Chang
 
 import { Cell } from '../../../lib/data-set/cell';
 import { ViewCell } from '../../../lib/view-cell-interface';
+import { NgClass } from '@angular/common';
 
 @Component({
     selector: 'custom-view-component',
@@ -11,7 +12,9 @@ import { ViewCell } from '../../../lib/view-cell-interface';
         </div>
     `,
     styleUrls: ['../cell-editors/editor.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgClass]
 })
 export class CustomViewComponent implements OnInit, OnDestroy {
 

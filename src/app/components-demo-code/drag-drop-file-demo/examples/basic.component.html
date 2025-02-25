@@ -1,28 +1,30 @@
 <div class="slds-p-around--large">
-    Single file
-    <uno-drag-drop-file (filesDropped)="onFilesDropped($event)"></uno-drag-drop-file>
+  Single file
+  <uno-drag-drop-file (filesDropped)="onFilesDropped($event)"></uno-drag-drop-file>
 </div>
 
 <div class="slds-p-around--large">
-    Multiple files
-    <uno-drag-drop-file [multipleFiles]="true" (filesDropped)="onFilesDropped($event)"></uno-drag-drop-file>
+  Multiple files
+  <uno-drag-drop-file [multipleFiles]="true" (filesDropped)="onFilesDropped($event)"></uno-drag-drop-file>
 </div>
 
 <div class="slds-p-around--large">
-    Files
-    <div *ngFor="let file of files">
-        {{ file.name }}
+  Files
+  @for (file of files; track file) {
+    <div>
+      {{ file.name }}
     </div>
+  }
 </div>
 
 <div class="slds-p-around--large slds-size--1-of-2">
-    Single image
-    <uno-drag-drop-image image="https://img.freepik.com/free-photo/gray-painted-background_53876-94041.jpg?size=626&ext=jpg"
-                         [disabled]="false"
-                         [disabledDownload]="false"
-                         [disabledDelete]="false"
-                         (deleteFile)="onDeleteFile($event)"
-                         (downloadFile)="onDownloadFile($event)"
-                         (uploadedImage)="onUploadImage($event)">
-    </uno-drag-drop-image>
+  Single image
+  <uno-drag-drop-image image="https://img.freepik.com/free-photo/gray-painted-background_53876-94041.jpg?size=626&ext=jpg"
+    [disabled]="false"
+    [disabledDownload]="false"
+    [disabledDelete]="false"
+    (deleteFile)="onDeleteFile($event)"
+    (downloadFile)="onDownloadFile($event)"
+    (uploadedImage)="onUploadImage($event)">
+  </uno-drag-drop-image>
 </div>

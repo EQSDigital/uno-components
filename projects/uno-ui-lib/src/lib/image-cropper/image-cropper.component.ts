@@ -13,13 +13,16 @@ import { DomSanitizer, SafeUrl, SafeStyle } from '@angular/platform-browser';
 import { MoveStart, Dimensions, CropperPosition, ImageCroppedEvent } from './image.cropper.interfaces';
 import { resetExifOrientation, transformBase64BasedOnExifRotation, resizeCanvas } from './image-cropper.utils';
 
+
 export type OutputType = 'base64' | 'file' | 'both';
 
 @Component({
     selector: 'uno-image-cropper',
     templateUrl: './image-cropper.component.html',
     styleUrls: ['./image-cropper.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: []
 })
 export class ImageCropperComponent implements OnChanges {
     private originalImage: any;

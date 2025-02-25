@@ -3,29 +3,41 @@ import {
     ElementRef, Renderer2, ChangeDetectorRef, ViewChild, TemplateRef,
     OnInit, OnChanges, AfterViewChecked, OnDestroy
 } from '@angular/core';
+import { NgClass, NgTemplateOutlet } from '@angular/common';
 import { Observable, BehaviorSubject, of, Subscription } from 'rxjs';
 import { switchMap, skip, tap } from 'rxjs/operators';
+import { FormsModule } from '@angular/forms';
 
 import { uniqueId, isObject, toBoolean } from '../../utils/util';
+import { PillLinkDirective } from '../pill/pill-link.directive';
+import { ScrollTrackerDirective } from '../scroll-tracker/scroll-tracker.directive';
+import { IconComponent } from '../icon/icon.component';
+import { PillRemoveDirective } from '../pill/pill-remove.directive';
+import { PillComponent } from '../pill/pill.component';
+import { StringTemplateRefTransformComponent } from '../../utils/common-directives/string-templateRef-transform';
 
 // ======================
 // Directives we'll use INSIDE <uno-lookup /> UNO ui-library component:
 // ======================
-@Directive({ selector: '[unoLookupItem]' })
+@Directive({
+    selector: '[unoLookupItem]',
+    standalone: true
+})
 export class LookupItemDirective {
     constructor(public templateRef: TemplateRef<any>) { }
 }
 
-@Directive({ selector: '[unoLookupLabel]' })
+@Directive({
+    selector: '[unoLookupLabel]',
+    standalone: true
+})
 export class LookupLabelDirective {
     constructor(public templateRef: TemplateRef<any>) { }
 }
 
 @Directive({
     selector: '[unoLookupHeader]',
-    // host: {
-    //     '[class.slds-lookup__item--label]': 'true',
-    // },
+    standalone: true,
 })
 export class LookupHeaderDirective {
     @HostBinding('class.slds-lookup__item--label') hasLabel = true;
@@ -38,8 +50,9 @@ export class LookupHeaderDirective {
     selector: 'uno-lookup',
     templateUrl: './lookup.component.html',
     styleUrls: ['lookup.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
-
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [StringTemplateRefTransformComponent, PillComponent, PillRemoveDirective, IconComponent, FormsModule, ScrollTrackerDirective, NgClass, PillLinkDirective, NgTemplateOutlet]
 })
 export class LookupComponent implements OnInit, OnChanges, AfterViewChecked, OnDestroy {
 
@@ -119,7 +132,7 @@ export class LookupComponent implements OnInit, OnChanges, AfterViewChecked, OnD
     }
 
     inputValue = '';
-    private inputSubject = new BehaviorSubject(undefined);
+    private readonly inputSubject = new BehaviorSubject(undefined);
     suggestions: any[];
     suggestionsSubscription: Subscription;
     noResults = false;
@@ -128,9 +141,9 @@ export class LookupComponent implements OnInit, OnChanges, AfterViewChecked, OnD
     private pendingFocus = false;
 
     constructor(
-        private element: ElementRef,
-        private renderer: Renderer2,
-        private detector: ChangeDetectorRef
+        private readonly element: ElementRef,
+        private readonly renderer: Renderer2,
+        private readonly detector: ChangeDetectorRef
     ) { }
 
     // ======================
@@ -300,7 +313,7 @@ export class LookupComponent implements OnInit, OnChanges, AfterViewChecked, OnD
             // .refCount() // Single instance
         );
 
-        return new Observable<any>();
+        // return new Observable<any>();
     }
 
     resolveLabel(item: any) {
