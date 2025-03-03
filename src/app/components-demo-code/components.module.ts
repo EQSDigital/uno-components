@@ -1,7 +1,7 @@
 import { NgModule, SecurityContext } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { MarkdownModule } from 'ngx-markdown';
 
 import { routes as demoRoutes } from './routes';
@@ -15,10 +15,7 @@ const routes: Routes = [
     },
 ];
 
-@NgModule({
-    imports: [
-        CommonModule,
-        HttpClientModule,
+@NgModule({ imports: [CommonModule,
         RouterModule.forChild([
             {
                 path: '',
@@ -31,7 +28,5 @@ const routes: Routes = [
             loader: HttpClient,
             sanitize: SecurityContext.NONE
         }),
-        ComponentsComponent
-    ]
-})
+        ComponentsComponent], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class ComponentsModule { }
