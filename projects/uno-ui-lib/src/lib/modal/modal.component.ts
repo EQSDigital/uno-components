@@ -136,8 +136,6 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
 
     @Output() openChange = new EventEmitter();
     @Output() clickedButton = new EventEmitter();
-    // Exclusively for assets3DModal Template
-    @Output() selected3DScene = new EventEmitter();
     // Exclusively for 'docsUploadModal' template:
     // @Output() imageUploaded = new EventEmitter();
     @Output() selectedTypeEmitter = new EventEmitter();
@@ -151,7 +149,7 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
 
     @Output() downloadTemplate = new EventEmitter();
 
-    @ViewChild(DragDropFileComponent) private dragDropFile: DragDropFileComponent;
+    @ViewChild(DragDropFileComponent) private readonly dragDropFile: DragDropFileComponent;
 
     @ContentChild(ModalHeaderDirective) public headerDirective: ModalHeaderDirective;
     @ContentChild(ModalFooterDirective) public footerDirective: ModalFooterDirective;
@@ -409,13 +407,6 @@ export class ModalComponent implements OnInit, OnChanges, OnDestroy {
         this.openChange.emit(false);
         // Emit back:
         this.clickedButton.emit(action);
-    }
-
-    // ===========================================
-    // Exclusively for assets3DModal Template;
-    // ===========================================
-    onSelectingScene(sceneIdx: number) {
-        this.selected3DScene.emit(sceneIdx);
     }
 
     // ===========================================

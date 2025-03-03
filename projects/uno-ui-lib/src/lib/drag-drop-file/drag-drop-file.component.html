@@ -1,26 +1,26 @@
 <div class="slds-grid slds-grid--align-center slds-grid--vertical-align-center border"
-  [class.border--cursor]="disabled"
-  unoDragDropFile
-  [multiple]="multipleFiles"
-  [disabled]="disabled"
-  (fileDropped)="onFileDropped($event)"
-  (click)="onClickUpload()">
-  @if (!file) {
+     [class.border--cursor]="disabled"
+     unoDragDropFile
+     [multiple]="multipleFiles"
+     [disabled]="disabled"
+     (fileDropped)="onFileDropped($event)"
+     (click)="onClickUpload()">
+    @if (!file) {
     <uno-icon icon="up" size="small" class="slds-button__icon--left"></uno-icon>
     <span class="slds-m-right--small" style="font-size: 14px; color: var(--light-gray-9);" translate>chooseFileLabel</span>
-  } @else {
+    } @else {
     <span class="slds-m-right--small" class="open-sans-semibold-14">{{ file?.name }}</span>
     @if (!disabledTrash) {
-      <uno-icon icon="trash" size="small" class="slds-button__icon--right" (click)="onDeleteFile($event)"></uno-icon>
+    <uno-icon icon="trash" size="small" class="slds-button__icon--right" (click)="onDeleteFile($event)"></uno-icon>
     }
     @if (!disabledDownload) {
-      <uno-icon icon="down" size="small" (click)="onDownloadFile($event)"></uno-icon>
+    <uno-icon icon="down" size="small" (click)="onDownloadFile($event)"></uno-icon>
     }
-  }
-  <input #fileInput id="file-input" type="file" [multiple]="multipleFiles" (change)="fileToUploadChange($event)">
+    }
+    <input #fileInput id="file-input" type="file" [multiple]="multipleFiles" (change)="fileToUploadChange($event)">
 </div>
 @if (fileUploadIsToBig) {
-  <div class="slds-col" style="color: var(--special-red-2)">
+<div class="slds-col" style="color: var(--special-red-2)">
     <span translate>fileSizeExceed</span> {{ file?.size / 1000000 }}mb
-  </div>
+</div>
 }

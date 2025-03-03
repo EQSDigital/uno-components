@@ -34,5 +34,5 @@ export class ControlErrorComponent {
         }
     }
 
-    constructor(private cdr: ChangeDetectorRef) { }
+    constructor(private readonly cdr: ChangeDetectorRef) { }
 }

@@ -18,16 +18,16 @@ export class SearchComponent implements AfterViewInit {
 
     @Input() public currentSearch: string;
 
-    @Output() private searchTerm = new EventEmitter<string>();
+    @Output() private readonly searchTerm = new EventEmitter<string>();
 
     public inSearchMode: boolean;
 
     // Get access to the input to manipulate it.
     @ViewChild('searchText') inputSearch: ElementRef;
 
-    @ViewChild('unoSearch') private unoSearch: ElementRef;
+    @ViewChild('unoSearch') private readonly unoSearch: ElementRef;
 
-    constructor(private renderer: Renderer2, private cdr: ChangeDetectorRef) { }
+    constructor(private readonly renderer: Renderer2, private readonly cdr: ChangeDetectorRef) { }
 
     public ngAfterViewInit() {
         if (this.currentSearch && this.currentSearch.length > 0) {

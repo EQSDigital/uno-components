@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
-import { TabsComponent, ButtonDirective } from 'uno-ui-lib';
+import { TabsComponent, ButtonDirective, TabDirective, TabHeadingDetailDirective, TabContentDirective } from 'uno-ui-lib';
 
 @Component({
     selector: 'basic-example',
     templateUrl: 'basic.component.html',
     standalone: true,
-    imports: [TabsComponent, ButtonDirective]
+    imports: [TabsComponent, TabDirective, TabHeadingDetailDirective, TabContentDirective, ButtonDirective]
 })
 
 export class BasicComponent {
