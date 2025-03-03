@@ -1,17 +1,16 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { IconComponent } from 'uno-ui-lib';
+import { IconComponent, PopoverBehaviorDirective, PopoverTriggerDirective } from 'uno-ui-lib';
 
 
 @Component({
-  template: `
+    template: `
     @if (value) {
       <div class="slds-align-top" style="display: inline-block">
-        <uno-icon
-          icon="info"
-          size="xx-small"
-          uno-popover-trigger
-          [unoPopover]="PopoverContent"
-          unoPopoverBehavior>
+        <uno-icon icon="info"
+                  size="xx-small"
+                  uno-popover-trigger
+                  [unoPopover]="PopoverContent"
+                  unoPopoverBehavior>
         </uno-icon>
       </div>
       <ng-template #PopoverContent>
@@ -21,10 +20,10 @@ import { IconComponent } from 'uno-ui-lib';
       </ng-template>
     }
     `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
-  imports: [IconComponent]
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [IconComponent, PopoverTriggerDirective, PopoverBehaviorDirective]
 })
 export class RenderControlLevelColumnComponent {
-  public value: any;
+    public value: any;
 }

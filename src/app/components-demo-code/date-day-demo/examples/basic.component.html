@@ -7,11 +7,11 @@ Select a day:
   <div class="slds-dropdown slds-dropdown--left">
     <ul class="dropdown__list" role="menu" style="max-height: 200px; overflow: auto;">
       @for (selectDay of setOfDays; track selectDay) {
-        <li class="slds-dropdown__item">
-          <a unoDropdownItem role="menuitem" (click)="daySelected=selectDay;">
-            <p class="slds-truncate">{{ selectDay }}</p>
-          </a>
-        </li>
+      <li class="slds-dropdown__item">
+        <a unoDropdownItem role="menuitem" (click)="daySelected = selectDay;">
+          <p class="slds-truncate">{{ selectDay }}</p>
+        </a>
+      </li>
       }
     </ul>
   </div>
@@ -28,15 +28,15 @@ Select a day:
 
     <tbody>
       @for (week of weeks; track week) {
-        <tr>
-          @for (date of week; track date) {
-            <td (click)="disabledDays.indexOf(date.day) < 0 ? daySelected=date.day : false;"
-              uno-date-day
-              [day]="date.day"
-              [daySelected]="daySelected ? date.day === daySelected : date.day === 1"
+      <tr>
+        @for (date of week; track date) {
+        <td (click)="disabledDays.indexOf(date.day) < 0 ? daySelected = date.day : false;"
+            uno-date-day
+            [day]="date.day"
+            [daySelected]="daySelected ? date.day === daySelected : date.day === 1"
             [dayDisabled]="disabledDays.indexOf(date.day) > -1"></td>
-          }
-        </tr>
+        }
+      </tr>
       }
     </tbody>
 
