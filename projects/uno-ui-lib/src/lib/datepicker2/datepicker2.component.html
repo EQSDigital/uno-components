@@ -1,7 +1,7 @@
-<mat-form-field [class.form-field]="!dateForm.disable && !dateForm.valid && dateForm.dirty" appearance="outline" style="width: 100%;" id="date">
+<mat-form-field [class.form-field]="!dateForm.disable && !dateForm.valid && dateForm.dirty" appearance="outline" style="width: 100%; height: 36px;" id="date">
     <div class="slds-grid">
         @if (!dateRange) {
-        <div style="width: 100%;">
+        <div style="width: 100%; height: 36px">
             <input [formControl]="dateForm"
                    (click)="markAsDirty()"
                    class="date-input"

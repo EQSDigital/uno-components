@@ -12,7 +12,6 @@ import { LayoutComponent } from './layout.component';
         BrowserModule,
         RouterModule,
     ],
-    providers: [],
     bootstrap: [LayoutComponent]
 })
 export class LayoutModule { }

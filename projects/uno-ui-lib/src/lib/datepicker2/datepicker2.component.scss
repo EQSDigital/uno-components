@@ -59,3 +59,9 @@
 ::ng-deep .mat-form-field-infix {
     border-top: 0.45em solid transparent !important;
 }
+::ng-deep mat-form-field div.mat-mdc-form-field-infix {
+    padding-top: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+}

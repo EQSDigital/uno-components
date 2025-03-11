@@ -1,13 +1,13 @@
-import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter, OnChanges, HostListener, SimpleChanges } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter, OnChanges, HostListener, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { MatDatepickerInputEvent, MatDatepickerInput, MatDatepicker, MatDateRangeInput, MatStartDate, MatEndDate, MatDateRangePicker, MatDatepickerModule } from '@angular/material/datepicker';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatDateFormats } from '@angular/material/core';
 import { Validators, UntypedFormControl, UntypedFormBuilder, UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
-import { IconComponent } from '../icon/icon.component';
 import { MatInputModule } from '@angular/material/input';
-
 import { MatFormField, MatError } from '@angular/material/form-field';
+
+import { IconComponent } from '../icon/icon.component';
 
 class CustomDateAdapter extends MomentDateAdapter {
     getDayOfWeekNames(style: 'long' | 'short' | 'narrow') {
@@ -46,6 +46,7 @@ export const MY_FORMATS: MatDateFormats = {
         { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
     standalone: true,
     imports: [MatDatepickerModule, MatFormField, MatInputModule, FormsModule, MatDatepickerInput, ReactiveFormsModule, MatDatepicker, IconComponent, MatDateRangeInput, MatStartDate, MatEndDate, MatDateRangePicker, MatError, TranslateDirective, TranslatePipe]
 })

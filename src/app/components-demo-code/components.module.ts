@@ -15,7 +15,8 @@ const routes: Routes = [
     },
 ];
 
-@NgModule({ imports: [CommonModule,
+@NgModule({
+    imports: [CommonModule,
         RouterModule.forChild([
             {
                 path: '',
@@ -28,5 +29,7 @@ const routes: Routes = [
             loader: HttpClient,
             sanitize: SecurityContext.NONE
         }),
-        ComponentsComponent], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        ComponentsComponent],
+    providers: [provideHttpClient(withInterceptorsFromDi())]
+})
 export class ComponentsModule { }
