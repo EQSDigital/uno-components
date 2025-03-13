@@ -1,11 +1,11 @@
 import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter, OnChanges, HostListener, SimpleChanges, ViewEncapsulation } from '@angular/core';
-import { MatDatepickerInputEvent, MatDatepickerInput, MatDatepicker, MatDateRangeInput, MatStartDate, MatEndDate, MatDateRangePicker, MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDatepickerInputEvent, MatDatepickerInput, MatDatepicker, MatDatepickerModule } from '@angular/material/datepicker';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatDateFormats } from '@angular/material/core';
 import { Validators, UntypedFormControl, UntypedFormBuilder, UntypedFormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
-import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
+import { TranslateDirective } from '@ngx-translate/core';
 import { MatInputModule } from '@angular/material/input';
-import { MatFormField, MatError } from '@angular/material/form-field';
+import { MatFormField, MatError, MatFormFieldModule } from '@angular/material/form-field';
 
 import { IconComponent } from '../icon/icon.component';
 
@@ -48,7 +48,7 @@ export const MY_FORMATS: MatDateFormats = {
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [MatDatepickerModule, MatFormField, MatInputModule, FormsModule, MatDatepickerInput, ReactiveFormsModule, MatDatepicker, IconComponent, MatDateRangeInput, MatStartDate, MatEndDate, MatDateRangePicker, MatError, TranslateDirective, TranslatePipe]
+    imports: [MatDatepickerModule, MatFormFieldModule, MatFormField, MatInputModule, FormsModule, MatDatepickerInput, ReactiveFormsModule, MatDatepicker, IconComponent, MatError, TranslateDirective]
 })
 export class Datepicker2Component implements OnChanges {
 

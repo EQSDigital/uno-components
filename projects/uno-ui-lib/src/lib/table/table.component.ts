@@ -398,7 +398,7 @@ export class TableComponent implements OnChanges, OnDestroy {
     }
 
     setSearchTerm(term: string) {
-        this.render.setProperty(this.header.search.inputSearch.nativeElement, 'value', term);
+        this.render.setProperty(this.header.search.inputSearch().nativeElement, 'value', term);
     }
 
     private resetAllSelector() {

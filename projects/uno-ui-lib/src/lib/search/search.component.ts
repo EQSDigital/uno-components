@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewChild, ElementRef, Renderer2, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ElementRef, Renderer2, AfterViewInit, ChangeDetectorRef, viewChild, inject } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { IconComponent } from '../icon/icon.component';
 
@@ -23,17 +23,21 @@ export class SearchComponent implements AfterViewInit {
     public inSearchMode: boolean;
 
     // Get access to the input to manipulate it.
-    @ViewChild('searchText') inputSearch: ElementRef;
+    public inputSearch = viewChild<ElementRef>('searchText');
 
-    @ViewChild('unoSearch') private readonly unoSearch: ElementRef;
+    private readonly unoSearch = viewChild<ElementRef>('unoSearch');
 
-    constructor(private readonly renderer: Renderer2, private readonly cdr: ChangeDetectorRef) { }
+    private readonly renderer = inject(Renderer2);
+
+    private readonly cdr = inject(ChangeDetectorRef);
+
+    constructor() { }
 
     public ngAfterViewInit() {
         if (this.currentSearch && this.currentSearch.length > 0) {
             this.inSearchMode = true;
-            this.renderer.setProperty(this.inputSearch.nativeElement, 'value', this.currentSearch);
-            this.renderer.setStyle(this.unoSearch.nativeElement, 'border-bottom', '2px solid var(--light-primary)');
+            this.renderer.setProperty(this.inputSearch().nativeElement, 'value', this.currentSearch);
+            this.renderer.setStyle(this.unoSearch().nativeElement, 'border-bottom', '2px solid var(--light-primary)');
             this.cdr.detectChanges();
         }
     }
@@ -43,16 +47,16 @@ export class SearchComponent implements AfterViewInit {
             this.inSearchMode = !this.inSearchMode;
 
             if (!this.inSearchMode) {
-                this.renderer.setProperty(this.inputSearch.nativeElement, 'value', '');
+                this.renderer.setProperty(this.inputSearch().nativeElement, 'value', '');
 
-                if (this.unoSearch) {
-                    this.renderer.setStyle(this.unoSearch.nativeElement, 'border-bottom', '2px solid var(--light-gray-12)');
+                if (this.unoSearch()) {
+                    this.renderer.setStyle(this.unoSearch().nativeElement, 'border-bottom', '2px solid var(--light-gray-12)');
                 }
 
                 this.searchTerm.emit('');
             } else {
-                if (this.unoSearch) {
-                    this.renderer.setStyle(this.unoSearch.nativeElement, 'border-bottom', '2px solid var(--light-primary)');
+                if (this.unoSearch()) {
+                    this.renderer.setStyle(this.unoSearch().nativeElement, 'border-bottom', '2px solid var(--light-primary)');
                 }
 
                 this.searchTerm.emit(text);
@@ -60,8 +64,8 @@ export class SearchComponent implements AfterViewInit {
         } else {
             this.inSearchMode = false;
 
-            if (this.unoSearch) {
-                this.renderer.setStyle(this.unoSearch.nativeElement, 'border-bottom', '2px solid var(--light-gray-12)');
+            if (this.unoSearch()) {
+                this.renderer.setStyle(this.unoSearch().nativeElement, 'border-bottom', '2px solid var(--light-gray-12)');
             }
 
             this.searchTerm.emit('');
@@ -76,14 +80,14 @@ export class SearchComponent implements AfterViewInit {
             if (text.length > 0) {
                 this.inSearchMode = true;
 
-                if (this.unoSearch) {
-                    this.renderer.setStyle(this.unoSearch.nativeElement, 'border-bottom', '2px solid var(--light-primary)');
+                if (this.unoSearch()) {
+                    this.renderer.setStyle(this.unoSearch().nativeElement, 'border-bottom', '2px solid var(--light-primary)');
                 }
             } else {
                 this.inSearchMode = false;
 
-                if (this.unoSearch) {
-                    this.renderer.setStyle(this.unoSearch.nativeElement, 'border-bottom', '2px solid var(--light-gray-12)');
+                if (this.unoSearch()) {
+                    this.renderer.setStyle(this.unoSearch().nativeElement, 'border-bottom', '2px solid var(--light-gray-12)');
                 }
             }
         }
